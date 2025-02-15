@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "biomeswevegone:red_rock",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:dacite",
+      "required": false
+    },
+    {
+      "id": "deep_aether:aseterite",
+      "required": false
+    },
+    {
+      "id": "deep_aether:clorite",
+      "required": false
+    }
+  ]
+}

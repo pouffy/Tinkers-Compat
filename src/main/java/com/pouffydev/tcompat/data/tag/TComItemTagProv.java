@@ -11,6 +11,8 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 
 import java.util.List;
@@ -22,8 +24,14 @@ public class TComItemTagProv extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
+    protected void addTags(HolderLookup.@NotNull Provider provider) {
         addPlanks();
+        addMetals();
+    }
+
+    private void addMetals() {
+        this.tag(TinkerTags.Items.ANVIL_METAL)
+                .addOptional(new ResourceLocation("%s:%s".formatted("deep_aether", "stratus_block")));
     }
 
     private void addPlanks() {
@@ -65,6 +73,8 @@ public class TComItemTagProv extends ItemTagsProvider {
 
     private void rockTagging(String rockName, String namespace) {
         this.tag(itemTag("%s:%s".formatted(namespace, rockName)))
+                .addOptional(new ResourceLocation("%s:%s".formatted(namespace, rockName)));
+        this.tag(TinkerTags.Items.WORKSTATION_ROCK)
                 .addOptional(new ResourceLocation("%s:%s".formatted(namespace, rockName)));
     }
 

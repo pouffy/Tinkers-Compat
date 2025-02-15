@@ -1,8 +1,9 @@
 import org.slf4j.event.Level
 
 mixin {
-    config "${project.mod_id}.mixins.json"
-    add sourceSets.main, "${project.mod_id}.refmap.json"
+    var refmap = add sourceSets.main, "tcompat.refmap.json"
+    slimJar.from refmap
+    config 'tcompat.mixins.json'
 }
 
 legacyForge {

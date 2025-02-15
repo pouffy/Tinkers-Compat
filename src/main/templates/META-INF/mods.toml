@@ -34,3 +34,10 @@ embedded = true
 versionRange = "[${ldlib_version},)"
 ordering = "AFTER"
 side = "BOTH"
+[[dependencies.${mod_id}]]
+modId = "tconstruct"
+mandatory = true
+embedded = true
+versionRange = "[${tconstruct_version},)"
+ordering = "AFTER"
+side = "BOTH"
