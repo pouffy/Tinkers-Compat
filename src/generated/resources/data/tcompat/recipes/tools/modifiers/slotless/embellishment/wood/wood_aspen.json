@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "tag": "biomeswevegone:aspen_planks"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "biomeswevegone:aspen_planks"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#aspen"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

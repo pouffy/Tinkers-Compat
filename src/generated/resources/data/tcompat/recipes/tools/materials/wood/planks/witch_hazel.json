@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:witch_hazel_planks"
+  },
+  "material": "tconstruct:wood#witch_hazel",
+  "needed": 1,
+  "value": 1
+}

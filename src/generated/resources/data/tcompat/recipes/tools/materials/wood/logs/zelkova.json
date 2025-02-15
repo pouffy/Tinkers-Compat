@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:zelkova_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:zelkova_planks"
+  },
+  "material": "tconstruct:wood#zelkova",
+  "needed": 1,
+  "value": 4
+}

@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:fir_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:fir_planks"
+  },
+  "material": "tconstruct:wood#fir",
+  "needed": 1,
+  "value": 4
+}

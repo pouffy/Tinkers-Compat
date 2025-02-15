@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:skyris_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:skyris_planks"
+  },
+  "material": "tconstruct:wood#skyris",
+  "needed": 1,
+  "value": 4
+}

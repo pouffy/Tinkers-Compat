@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "tag": "biomeswevegone:ironwood_planks"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "biomeswevegone:ironwood_planks"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#ironwood"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

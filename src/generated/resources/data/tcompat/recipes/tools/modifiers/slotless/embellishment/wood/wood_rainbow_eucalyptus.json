@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "tag": "biomeswevegone:rainbow_eucalyptus_planks"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "biomeswevegone:rainbow_eucalyptus_planks"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#rainbow_eucalyptus"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

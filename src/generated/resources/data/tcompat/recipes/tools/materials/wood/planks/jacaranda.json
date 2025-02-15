@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:jacaranda_planks"
+  },
+  "material": "tconstruct:wood#jacaranda",
+  "needed": 1,
+  "value": 1
+}

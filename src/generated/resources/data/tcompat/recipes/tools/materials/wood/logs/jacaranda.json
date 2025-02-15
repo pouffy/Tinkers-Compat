@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:jacaranda_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:jacaranda_planks"
+  },
+  "material": "tconstruct:wood#jacaranda",
+  "needed": 1,
+  "value": 4
+}

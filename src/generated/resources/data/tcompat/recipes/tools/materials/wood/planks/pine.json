@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:pine_planks"
+  },
+  "material": "tconstruct:wood#pine",
+  "needed": 1,
+  "value": 1
+}

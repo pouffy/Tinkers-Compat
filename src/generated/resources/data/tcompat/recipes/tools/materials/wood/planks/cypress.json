@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:cypress_planks"
+  },
+  "material": "tconstruct:wood#cypress",
+  "needed": 1,
+  "value": 1
+}

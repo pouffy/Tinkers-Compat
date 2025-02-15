@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "tag": "biomeswevegone:pine_planks"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "biomeswevegone:pine_planks"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#pine"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

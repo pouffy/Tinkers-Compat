@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:redwood_planks"
+  },
+  "material": "tconstruct:wood#redwood",
+  "needed": 1,
+  "value": 1
+}

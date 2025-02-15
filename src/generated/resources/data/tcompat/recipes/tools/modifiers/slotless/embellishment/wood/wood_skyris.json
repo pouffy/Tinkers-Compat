@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "tag": "biomeswevegone:skyris_planks"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "biomeswevegone:skyris_planks"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#skyris"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

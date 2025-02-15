@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:green_enchanted_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:green_enchanted_planks"
+  },
+  "material": "tconstruct:wood#green_enchanted",
+  "needed": 1,
+  "value": 4
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:blue_enchanted_planks"
+  },
+  "material": "tconstruct:wood#blue_enchanted",
+  "needed": 1,
+  "value": 1
+}

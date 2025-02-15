@@ -1,0 +1,49 @@
+//file:noinspection DependencyNotationArgument
+dependencies {
+    compileOnly(libs.jetbrains.annotations)
+
+    // LDLib
+    jarJar(modApi(forge.ldlib.get()))
+
+    // Registrate
+    //jarJar(modApi(forge.registrate.get()))
+
+    // Configuration
+    //jarJar(modApi(forge.configuration.get()))
+
+    // Mixin (& Extras)
+    annotationProcessor(variantOf(libs.mixin) { classifier("processor") })
+    annotationProcessor(forge.mixinExtras.common)
+    api(forge.mixinExtras.common)
+    jarJar(forge.mixinExtras.forge)
+    // Recipe Viewers
+    modCompileOnly(forge.bundles.jei)
+    modCompileOnly(forge.bundles.rei)
+    modCompileOnly(forge.emi)
+
+    // Tinkers
+    //modImplementation(forge.bundles.tinkers)
+
+    modImplementation("slimeknights.mantle:Mantle:${minecraft_version}-${forge.versions.mantle.get()}")
+    modImplementation("slimeknights.tconstruct:TConstruct:${minecraft_version}-${forge.versions.tconstruct.get()}")
+
+    // GregTech
+    //modImplementation(forge.gtceu)
+
+
+
+    // KJS
+    //modCompileOnly(forge.kubejs)
+    //modCompileOnly(forge.architectury)
+    //modCompileOnly(forge.rhino)
+
+    // Runtime Recipe Viewers - uncomment whichever group you want to use //
+    modRuntimeOnly(forge.emi)
+
+    //modExtraRuntimeOnly(forge.bundles.kjs)
+    modExtraRuntimeOnly(forge.bundles.jei)
+    modCompileOnly(forge.bundles.otbwg)
+    modExtraRuntimeOnly(forge.bundles.otbwg)
+
+    //testImplementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+}

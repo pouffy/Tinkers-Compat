@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:ironwood_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:ironwood_planks"
+  },
+  "material": "tconstruct:wood#ironwood",
+  "needed": 1,
+  "value": 4
+}

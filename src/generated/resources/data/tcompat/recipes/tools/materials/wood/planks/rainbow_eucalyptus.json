@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:rainbow_eucalyptus_planks"
+  },
+  "material": "tconstruct:wood#rainbow_eucalyptus",
+  "needed": 1,
+  "value": 1
+}

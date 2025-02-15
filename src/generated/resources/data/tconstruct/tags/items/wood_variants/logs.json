@@ -1,0 +1,104 @@
+{
+  "values": [
+    {
+      "id": "#biomeswevegone:aspen_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:baobab_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:blue_enchanted_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:cika_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:cypress_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:ebony_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:fir_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:florus_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:green_enchanted_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:holly_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:ironwood_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:jacaranda_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:mahogany_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:maple_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:palm_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:palo_verde_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:pine_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:rainbow_eucalyptus_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:redwood_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:sakura_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:skyris_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:white_mangrove_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:willow_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:witch_hazel_logs",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:zelkova_logs",
+      "required": false
+    }
+  ]
+}

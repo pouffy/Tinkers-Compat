@@ -1,0 +1,104 @@
+{
+  "values": [
+    {
+      "id": "#biomeswevegone:aspen_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:baobab_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:blue_enchanted_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:cika_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:cypress_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:ebony_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:fir_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:florus_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:green_enchanted_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:holly_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:ironwood_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:jacaranda_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:mahogany_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:maple_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:palm_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:palo_verde_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:pine_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:rainbow_eucalyptus_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:redwood_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:sakura_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:skyris_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:white_mangrove_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:willow_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:witch_hazel_planks",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:zelkova_planks",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:baobab_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:baobab_planks"
+  },
+  "material": "tconstruct:wood#baobab",
+  "needed": 1,
+  "value": 4
+}

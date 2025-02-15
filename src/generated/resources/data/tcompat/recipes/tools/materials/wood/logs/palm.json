@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:palm_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:palm_planks"
+  },
+  "material": "tconstruct:wood#palm",
+  "needed": 1,
+  "value": 4
+}

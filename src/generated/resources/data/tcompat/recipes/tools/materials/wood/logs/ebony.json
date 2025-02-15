@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:ebony_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:ebony_planks"
+  },
+  "material": "tconstruct:wood#ebony",
+  "needed": 1,
+  "value": 4
+}

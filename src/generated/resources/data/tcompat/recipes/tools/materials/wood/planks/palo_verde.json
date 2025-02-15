@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:palo_verde_planks"
+  },
+  "material": "tconstruct:wood#palo_verde",
+  "needed": 1,
+  "value": 1
+}

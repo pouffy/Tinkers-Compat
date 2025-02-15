@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:florus_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:florus_planks"
+  },
+  "material": "tconstruct:wood#florus",
+  "needed": 1,
+  "value": 4
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:willow_planks"
+  },
+  "material": "tconstruct:wood#willow",
+  "needed": 1,
+  "value": 1
+}

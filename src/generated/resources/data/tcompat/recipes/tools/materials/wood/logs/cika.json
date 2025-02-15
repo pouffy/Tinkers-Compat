@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "biomeswevegone:cika_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "biomeswevegone:cika_planks"
+  },
+  "material": "tconstruct:wood#cika",
+  "needed": 1,
+  "value": 4
+}
