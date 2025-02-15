@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "deep_aether:sunroot_planks"
+  },
+  "material": "tcompat:aether_wood#sunroot",
+  "needed": 1,
+  "value": 1
+}

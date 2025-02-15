@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
   "ingredient": {
     "tag": "biomeswevegone:baobab_logs"
   },

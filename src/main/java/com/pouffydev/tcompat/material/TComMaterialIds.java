@@ -10,41 +10,81 @@ import java.util.List;
 
 public class TComMaterialIds {
 
-    public static final List<MaterialVariantId> otbwgVariants = new ArrayList<>();
+    public static final List<MaterialVariantId> aetherVariantWoods = new ArrayList<>();
+    public static final List<MaterialVariantId> aetherVariantRocks = new ArrayList<>();
+    public static final List<MaterialVariantId> deepAetherVariantWoods = new ArrayList<>();
+    public static final List<MaterialVariantId> deepAetherVariantRocks = new ArrayList<>();
+    public static final List<MaterialVariantId> otbwgVariantWoods = new ArrayList<>();
+    public static final List<MaterialVariantId> otbwgVariantRocks = new ArrayList<>();
 
     // wood
+    // The Aether
+    public static final MaterialId aetherWood = id("aether_wood");
+    public static final MaterialId aetherRock = id("aether_rock");
+    public static final MaterialVariantId
+            skyroot = aetherWoodVariant("skyroot", aetherVariantWoods),
+            roseroot = aetherWoodVariant("roseroot", deepAetherVariantWoods),
+            yagroot = aetherWoodVariant("yagroot", deepAetherVariantWoods),
+            cruderoot = aetherWoodVariant("cruderoot", deepAetherVariantWoods),
+            conberry = aetherWoodVariant("conberry", deepAetherVariantWoods),
+            sunroot = aetherWoodVariant("sunroot", deepAetherVariantWoods),
+
+            holystone = aetherRockVariant("holystone", aetherVariantRocks),
+            aseterite = aetherRockVariant("aseterite", deepAetherVariantRocks),
+            clorite = aetherRockVariant("clorite", deepAetherVariantRocks);
 
     // Oh, The Biomes We've Gone
     public static final MaterialVariantId
-            aspen = woodVariant("aspen", otbwgVariants),
-            baobab = woodVariant("baobab", otbwgVariants),
-            blueEnchanted = woodVariant("blue_enchanted", otbwgVariants),
-            cika = woodVariant("cika", otbwgVariants),
-            cypress = woodVariant("cypress", otbwgVariants),
-            ebony = woodVariant("ebony", otbwgVariants),
-            fir = woodVariant("fir", otbwgVariants),
-            florus = woodVariant("florus", otbwgVariants),
-            greenEnchanted = woodVariant("green_enchanted", otbwgVariants),
-            holly = woodVariant("holly", otbwgVariants),
-            ironwood = woodVariant("ironwood", otbwgVariants),
-            jacaranda = woodVariant("jacaranda", otbwgVariants),
-            mahogany = woodVariant("mahogany", otbwgVariants),
-            maple = woodVariant("maple", otbwgVariants),
-            palm = woodVariant("palm", otbwgVariants),
-            paloVerde = woodVariant("palo_verde", otbwgVariants),
-            pine = woodVariant("pine", otbwgVariants),
-            rainbowEucalyptus = woodVariant("rainbow_eucalyptus", otbwgVariants),
-            redwood = woodVariant("redwood", otbwgVariants),
-            sakura = woodVariant("sakura", otbwgVariants),
-            skyris = woodVariant("skyris", otbwgVariants),
-            whiteMangrove = woodVariant("white_mangrove", otbwgVariants),
-            willow = woodVariant("willow", otbwgVariants),
-            witchHazel = woodVariant("witch_hazel", otbwgVariants),
-            zelkova = woodVariant("zelkova", otbwgVariants);
+            aspen = woodVariant("aspen", otbwgVariantWoods),
+            baobab = woodVariant("baobab", otbwgVariantWoods),
+            blueEnchanted = woodVariant("blue_enchanted", otbwgVariantWoods),
+            cika = woodVariant("cika", otbwgVariantWoods),
+            cypress = woodVariant("cypress", otbwgVariantWoods),
+            ebony = woodVariant("ebony", otbwgVariantWoods),
+            fir = woodVariant("fir", otbwgVariantWoods),
+            florus = woodVariant("florus", otbwgVariantWoods),
+            greenEnchanted = woodVariant("green_enchanted", otbwgVariantWoods),
+            holly = woodVariant("holly", otbwgVariantWoods),
+            ironwood = woodVariant("ironwood", otbwgVariantWoods),
+            jacaranda = woodVariant("jacaranda", otbwgVariantWoods),
+            mahogany = woodVariant("mahogany", otbwgVariantWoods),
+            maple = woodVariant("maple", otbwgVariantWoods),
+            palm = woodVariant("palm", otbwgVariantWoods),
+            paloVerde = woodVariant("palo_verde", otbwgVariantWoods),
+            pine = woodVariant("pine", otbwgVariantWoods),
+            rainbowEucalyptus = woodVariant("rainbow_eucalyptus", otbwgVariantWoods),
+            redwood = woodVariant("redwood", otbwgVariantWoods),
+            sakura = woodVariant("sakura", otbwgVariantWoods),
+            skyris = woodVariant("skyris", otbwgVariantWoods),
+            whiteMangrove = woodVariant("white_mangrove", otbwgVariantWoods),
+            willow = woodVariant("willow", otbwgVariantWoods),
+            witchHazel = woodVariant("witch_hazel", otbwgVariantWoods),
+            zelkova = woodVariant("zelkova", otbwgVariantWoods),
+
+            redRock = rockVariant("red_rock", otbwgVariantRocks),
+            dacite = rockVariant("dacite", otbwgVariantRocks);
 
 
     private static MaterialVariantId woodVariant(String name, List<MaterialVariantId> list) {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.wood, name);
+        list.add(id);
+        return id;
+    }
+
+    private static MaterialVariantId aetherWoodVariant(String name, List<MaterialVariantId> list) {
+        MaterialVariantId id = MaterialVariantId.create(aetherWood, name);
+        list.add(id);
+        return id;
+    }
+
+    private static MaterialVariantId rockVariant(String name, List<MaterialVariantId> list) {
+        MaterialVariantId id = MaterialVariantId.create(MaterialIds.rock, name);
+        list.add(id);
+        return id;
+    }
+
+    private static MaterialVariantId aetherRockVariant(String name, List<MaterialVariantId> list) {
+        MaterialVariantId id = MaterialVariantId.create(aetherRock, name);
         list.add(id);
         return id;
     }

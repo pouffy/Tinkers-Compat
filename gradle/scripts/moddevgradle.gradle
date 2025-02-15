@@ -1,10 +1,9 @@
 import org.slf4j.event.Level
 
-//mixin {
-//    var refmap = add sourceSets.main, "gtconstruct.refmap.json"
-//    slimJar.from refmap
-//    config 'gtconstruct.mixins.json'
-//}
+mixin {
+    config "${project.mod_id}.mixins.json"
+    add sourceSets.main, "${project.mod_id}.refmap.json"
+}
 
 legacyForge {
     // Specify Forge version

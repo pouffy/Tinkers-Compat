@@ -40,10 +40,20 @@ dependencies {
     // Runtime Recipe Viewers - uncomment whichever group you want to use //
     modRuntimeOnly(forge.emi)
 
+    modCompileOnly(forge.deepaether)
+    modExtraRuntimeOnly(forge.deepaether)
+
     //modExtraRuntimeOnly(forge.bundles.kjs)
     modExtraRuntimeOnly(forge.bundles.jei)
     modCompileOnly(forge.bundles.otbwg)
     modExtraRuntimeOnly(forge.bundles.otbwg)
+    modCompileOnly(forge.bundles.aether)
+    modExtraRuntimeOnly(forge.bundles.aether)
+    modCompileOnly("local:aeroblender:1.20.1-1.0.2-rc1-neoforge")
+    modExtraRuntimeOnly("local:aeroblender:1.20.1-1.0.2-rc1-neoforge")
+    //jarJar("local:aeroblender:1.20.1-1.0.2-rc1-neoforge") {
+    //    jarJar.ranged(it, "[1.20.1-1.0.2-rc1,)")
+    //}
 
     //testImplementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }

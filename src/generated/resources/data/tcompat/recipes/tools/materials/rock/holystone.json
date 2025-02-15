@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "aether:holystone"
+  },
+  "material": "tcompat:aether_rock#holystone",
+  "needed": 1,
+  "value": 1
+}

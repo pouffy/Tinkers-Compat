@@ -61,10 +61,6 @@
       "required": false
     },
     {
-      "id": "#biomeswevegone:palo_verde_planks",
-      "required": false
-    },
-    {
       "id": "#biomeswevegone:pine_planks",
       "required": false
     },
@@ -98,6 +94,30 @@
     },
     {
       "id": "#biomeswevegone:zelkova_planks",
+      "required": false
+    },
+    {
+      "id": "#aether:skyroot_planks",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:roseroot_planks",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:yagroot_planks",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:cruderoot_planks",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:conberry_planks",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:sunroot_planks",
       "required": false
     }
   ]

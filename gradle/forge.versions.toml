@@ -27,6 +27,12 @@ terrablender = "1.20.1-3.0.1.7"
 ohthetreesyoullgrow = "1.20.1-1.3.4"
 otbwg = "1.5.5-Forge"
 
+aether = "1.20.1-1.5.1-neoforge"
+nitrogen = "1.20.1-1.0.11-neoforge"
+cumulus = "1.20.1-1.0.1-neoforge"
+aeroblender = "1.20.1-1.0.2-rc1-neoforge"
+deepaether = "1.20.1-1.1.4"
+
 [libraries]
 ldlib               = { module = "com.lowdragmc.ldlib:ldlib-forge-1.20.1", version.ref = "ldlib" }
 #registrate          = { module = "com.tterrag.registrate:Registrate", version.ref = "registrate" }
@@ -51,6 +57,12 @@ terrablender        = { module = "com.github.glitchfiend:TerraBlender-forge", ve
 ohthetreesyoullgrow = { module = "dev.corgitaco:Oh-The-Trees-Youll-Grow-forge", version.ref = "ohthetreesyoullgrow" }
 otbwg               = { module = "maven.modrinth:oh-the-biomes-weve-gone", version.ref = "otbwg" }
 
+aether              = { module = "com.aetherteam.aether:aether", version.ref = "aether" }
+nitrogen            = { module = "com.aetherteam.nitrogen:nitrogen_internals", version.ref = "nitrogen" }
+cumulus             = { module = "com.aetherteam.cumulus:cumulus_menus", version.ref = "cumulus" }
+aeroblender         = { module = "io.github.razordevs:aeroblender", version.ref = "aeroblender" }
+deepaether          = { module = "maven.modrinth:deep-aether", version.ref = "deepaether" }
+
 clothconfig         = { module = "me.shedaniel.cloth:cloth-config-forge", version.ref = "clothconfig" }
 
 #kotlinforforge      = { module = "thedarkcolour:kotlinforforge", version.ref = "kotlinforforge" }
@@ -67,3 +79,4 @@ rei-runtime = ["rei-forge", "architectury", "clothconfig"]
 #kjs = ["kubejs", "rhino", "architectury"]
 tinkers = ["tconstruct", "mantle"]
 otbwg = ["corgilib", "geckolib", "terrablender", "ohthetreesyoullgrow", "otbwg"]
+aether = ["aether", "nitrogen", "cumulus"]

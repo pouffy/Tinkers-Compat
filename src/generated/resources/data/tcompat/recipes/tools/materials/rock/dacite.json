@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
+  "ingredient": {
+    "tag": "biomeswevegone:dacite"
+  },
+  "material": "tconstruct:rock#dacite",
+  "needed": 1,
+  "value": 1
+}

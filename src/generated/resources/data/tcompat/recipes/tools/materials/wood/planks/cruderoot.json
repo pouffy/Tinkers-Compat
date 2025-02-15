@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "deep_aether:cruderoot_planks"
+  },
+  "material": "tcompat:aether_wood#cruderoot",
+  "needed": 1,
+  "value": 1
+}

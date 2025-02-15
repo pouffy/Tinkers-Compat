@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "aether:skyroot_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "aether:skyroot_planks"
+  },
+  "material": "tcompat:aether_wood#skyroot",
+  "needed": 1,
+  "value": 4
+}

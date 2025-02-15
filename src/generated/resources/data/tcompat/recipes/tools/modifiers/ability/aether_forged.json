@@ -1,0 +1,36 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "aether:gems/zanite"
+    },
+    {
+      "tag": "aether:golden_oak_logs"
+    },
+    {
+      "tag": "aether:gems/zanite"
+    },
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "minecraft:glowstone"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:aether_forged",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/harvest"
+  }
+}

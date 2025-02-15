@@ -4,6 +4,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
+    id 'io.github.0ffz.github-packages' version '[1,2)'
     alias libs.plugins.modDevGradle
     alias libs.plugins.machete // automatic jar compressing on build
     //alias libs.plugins.shadow

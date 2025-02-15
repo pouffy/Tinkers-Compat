@@ -35,6 +35,9 @@ public class TCompat {
     public static ResourceLocation getResource(String name) {
         return new ResourceLocation(MOD_ID, name);
     }
+    public static ResourceLocation getResource(String namespace, String name) {
+        return new ResourceLocation(namespace, name);
+    }
 
     public static void sealTComClass(Object self, String base, String solution) {
         String name = self.getClass().getName();

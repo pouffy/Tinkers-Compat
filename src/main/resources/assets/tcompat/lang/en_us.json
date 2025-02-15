@@ -1,8 +1,54 @@
 {
   "_comment": "Oh The Biomes We've Gone Materials",
-  "material.tconstruct.wood.aspen":      "Aspen Wood",
-  "material.tconstruct.wood.baobab":      "Baobab Wood",
-  "material.tconstruct.wood.blue_enchanted":      "Blue Enchanted Wood",
-  "material.tconstruct.wood.cika":      "Cika Wood"
+  "material.tconstruct.wood.aspen": "Aspen Wood",
+  "material.tconstruct.wood.baobab": "Baobab Wood",
+  "material.tconstruct.wood.blue_enchanted": "Blue Enchanted Wood",
+  "material.tconstruct.wood.cika": "Cika Wood",
+  "material.tconstruct.wood.cypress": "Cypress Wood",
+  "material.tconstruct.wood.ebony": "Ebony Wood",
+  "material.tconstruct.wood.fir": "Fir Wood",
+  "material.tconstruct.wood.florus": "Florus Wood",
+  "material.tconstruct.wood.green_enchanted": "Green Enchanted Wood",
+  "material.tconstruct.wood.holly": "Holly Wood",
+  "material.tconstruct.wood.ironwood": "Ironwood",
+  "material.tconstruct.wood.jacaranda": "Jacaranda Wood",
+  "material.tconstruct.wood.mahogany": "Mahogany Wood",
+  "material.tconstruct.wood.maple": "Maple Wood",
+  "material.tconstruct.wood.palm": "Palm Wood",
+  "material.tconstruct.wood.palo_verde": "Palo Verde Wood",
+  "material.tconstruct.wood.pine": "Pine Wood",
+  "material.tconstruct.wood.rainbow_eucalyptus": "Rainbow Eucalyptus",
+  "material.tconstruct.wood.redwood": "Redwood Wood",
+  "material.tconstruct.wood.sakura": "Sakura Wood",
+  "material.tconstruct.wood.skyris": "Skyris Wood",
+  "material.tconstruct.wood.white_mangrove": "White Mangrove Wood",
+  "material.tconstruct.wood.willow": "Willow Wood",
+  "material.tconstruct.wood.witch_hazel": "Witch Hazel Wood",
+  "material.tconstruct.wood.zelkova": "Zelkova Wood",
+
+  "material.tcompat.aether_wood": "Skyroot",
+  "material.tcompat.aether_wood.skyroot": "Skyroot",
+  "material.tcompat.aether_wood.conberry": "Conberry",
+  "material.tcompat.aether_wood.cruderoot": "Cruderoot",
+  "material.tcompat.aether_wood.roseroot": "Roseroot",
+  "material.tcompat.aether_wood.sunroot": "Sunroot",
+  "material.tcompat.aether_wood.yagroot": "Yagroot",
+
+
+
+
+  "material.tconstruct.rock.red_rock": "Red Rock",
+  "material.tconstruct.rock.dacite": "Dacite",
+
+  "material.tcompat.aether_rock": "Holystone",
+  "material.tcompat.aether_rock.holystone": "Holystone",
+  "material.tcompat.aether_rock.aseterite": "Aseterite",
+  "material.tcompat.aether_rock.clorite": "Clorite",
+
+
+  "_comment": "Modifiers",
+  "modifier.tcompat.aether_forged": "Aether Forged",
+  "modifier.tcompat.aether_forged.flavor": "Heaven Grade",
+  "modifier.tcompat.aether_forged.description": "Allows your tool to use it's full mining speed in The Aether"
 
 }

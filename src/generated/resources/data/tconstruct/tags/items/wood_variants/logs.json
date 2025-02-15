@@ -99,6 +99,30 @@
     {
       "id": "#biomeswevegone:zelkova_logs",
       "required": false
+    },
+    {
+      "id": "#aether:skyroot_logs",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:roseroot_logs",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:yagroot_logs",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:cruderoot_logs",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:conberry_logs",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:sunroot_logs",
+      "required": false
     }
   ]
 }

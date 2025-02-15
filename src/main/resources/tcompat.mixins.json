@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.pouffydev.tcompat.mixin",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "tcompat.refmap.json",
+  "plugin": "com.pouffydev.tcompat.mixin.TComMixinPlugin",
+  "mixins": [
+    "aether.AbilityHooksMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
