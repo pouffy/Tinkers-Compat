@@ -32,16 +32,24 @@ public class TComMaterialStatsProv extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(130, 4f, STONE, 1f),
                 HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.05f).build(),
                 StatlessMaterialStats.BINDING);
+        addMaterialStats(TComMaterialIds.alchemicalCalx, StatlessMaterialStats.BINDING);
+        addMaterialStats(TComMaterialIds.spiritFabric, StatlessMaterialStats.BINDING);
+        addMaterialStats(TComMaterialIds.astralWeave, StatlessMaterialStats.BINDING);
     }
 
     private void addRanged() {
         addMaterialStats(TComMaterialIds.aetherWood,
                 new LimbMaterialStats(60, 0, 0, 0),
                 new GripMaterialStats(0f, 0, 0));
+
+        addMaterialStats(TComMaterialIds.spiritFabric, StatlessMaterialStats.BOWSTRING);
+        addMaterialStats(TComMaterialIds.astralWeave, StatlessMaterialStats.BOWSTRING);
     }
 
     private void addArmor() {
         addMaterialStats(TComMaterialIds.aetherWood, StatlessMaterialStats.SHIELD_CORE);
+
+        addMaterialStats(TComMaterialIds.spiritFabric, StatlessMaterialStats.MAILLE);
     }
 
     private void addMisc() {

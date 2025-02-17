@@ -33,6 +33,10 @@ cumulus = "1.20.1-1.0.1-neoforge"
 aeroblender = "1.20.1-1.0.2-rc1-neoforge"
 deepaether = "1.20.1-1.1.4"
 
+malum = "1.20.1-1.6.5.1"
+lodestone = "1.20.1-1.6.4.252"
+curiosapi = "5.11.0+1.20.1"
+
 [libraries]
 ldlib               = { module = "com.lowdragmc.ldlib:ldlib-forge-1.20.1", version.ref = "ldlib" }
 #registrate          = { module = "com.tterrag.registrate:Registrate", version.ref = "registrate" }
@@ -63,6 +67,10 @@ cumulus             = { module = "com.aetherteam.cumulus:cumulus_menus", version
 aeroblender         = { module = "io.github.razordevs:aeroblender", version.ref = "aeroblender" }
 deepaether          = { module = "maven.modrinth:deep-aether", version.ref = "deepaether" }
 
+malum               = { module = "maven.modrinth:malum", version.ref = "malum" }
+lodestone           = { module = "team.lodestar.lodestone:lodestone", version.ref = "lodestone" }
+curiosapi           = { module = "top.theillusivec4.curios:curios-forge", version.ref = "curiosapi" }
+
 clothconfig         = { module = "me.shedaniel.cloth:cloth-config-forge", version.ref = "clothconfig" }
 
 #kotlinforforge      = { module = "thedarkcolour:kotlinforforge", version.ref = "kotlinforforge" }
@@ -80,3 +88,4 @@ rei-runtime = ["rei-forge", "architectury", "clothconfig"]
 tinkers = ["tconstruct", "mantle"]
 otbwg = ["corgilib", "geckolib", "terrablender", "ohthetreesyoullgrow", "otbwg"]
 aether = ["aether", "nitrogen", "cumulus"]
+malum = ["malum", "lodestone"]

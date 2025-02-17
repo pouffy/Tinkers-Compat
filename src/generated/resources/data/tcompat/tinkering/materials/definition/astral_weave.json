@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "malum"
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 20,
+  "tier": 1
+}

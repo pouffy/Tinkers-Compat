@@ -45,6 +45,10 @@
   "material.tcompat.aether_rock.aseterite": "Aseterite",
   "material.tcompat.aether_rock.clorite": "Clorite",
 
+  "material.tcompat.alchemical_calx": "Alchemical Calx",
+  "material.tcompat.spirit_fabric": "Spirit Fabric",
+  "material.tcompat.astral_weave": "Astral Weave",
+
 
   "_comment": "Modifiers",
   "modifier.tcompat.aether_forged": "Aether Forged",

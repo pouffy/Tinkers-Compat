@@ -16,6 +16,10 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+    maven {
+        name = "Curios maven"
+        url = uri("https://maven.theillusivec4.top/")
+    }
     exclusiveContent { // Modrinth Maven
         forRepository { maven { url = "https://api.modrinth.com/maven" } }
         filter { includeGroup("maven.modrinth") }

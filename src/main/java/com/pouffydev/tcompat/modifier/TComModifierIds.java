@@ -6,6 +6,8 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 public class TComModifierIds {
 
     public static final ModifierId aetherForged = id("aether_forged");
+    public static final ModifierId magicProficiency = id("magic_proficiency");
+    public static final ModifierId blissfulHarmony = id("blissful_harmony");
 
     private TComModifierIds() {}
 

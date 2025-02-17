@@ -7,8 +7,11 @@ import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpri
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToSpriteTransformer;
 import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTransformer;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.WOOD;
 
@@ -70,6 +73,9 @@ public class TComMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildRock(TComMaterialIds.aseterite, 0xFF746772, 0xFF7F717D, 0xFF897A87, 0xFF938595, 0xFFA296A1, 0xFFB9ADB8);
         buildRock(TComMaterialIds.clorite, 0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
 
+        buildBindingOnly(TComMaterialIds.alchemicalCalx, 0xFF6f5d51, 0xFF857164, 0xFF928773, 0xFFb09f83, 0xFFc9b586, 0xFFe1d1a2, 0xFFf6ecce, false, "calx");
+        buildBindingOnly(TComMaterialIds.astralWeave, 0xFF534276, 0xFF665b89, 0xFF6672b2, 0xFF779ec3, 0xFF7ccdc7, 0xFFbbf1f4, true, "string");
+        buildBindingOnly(TComMaterialIds.spiritFabric, 0xFF1d1c20, 0xFF272429, 0xFF312c31, 0xFF3e2e3e, 0xFF463652, 0xFF5e367a, 0xFF8129bf, true, "primitive", "spirit_fabric");
     }
 
     public static ISpriteTransformer transformerFromSprite(ResourceLocation texture, int frames, int highlightColor) {
@@ -108,16 +114,46 @@ public class TComMaterialSpriteProv extends AbstractMaterialSpriteProvider {
                 .build());
     }
 
+    private MaterialSpriteInfoBuilder buildBindingOnly(MaterialId material, int c63, int c102, int c140, int c178, int c216, int c255, boolean bowstring, String... fallbacks) {
+        MaterialSpriteInfoBuilder builder = buildBlankMaterial(material, fallbacks).statType(StatlessMaterialStats.BINDING.getIdentifier()).repairKit();
+        if (bowstring) builder.statType(StatlessMaterialStats.BOWSTRING.getIdentifier());
+        return builder.colorMapper(GreyToColorMapping.builderFromBlack()
+                .addARGB(63, c63)
+                .addARGB(102, c102)
+                .addARGB(140, c140)
+                .addARGB(178, c178)
+                .addARGB(216, c216)
+                .addARGB(255, c255)
+                .build());
+    }
+    private MaterialSpriteInfoBuilder buildBindingOnly(MaterialId material, int c63, int c102, int c140, int c178, int c216, int c234, int c255, boolean bowstring, String... fallbacks) {
+        MaterialSpriteInfoBuilder builder = buildBlankMaterial(material, fallbacks).statType(StatlessMaterialStats.BINDING.getIdentifier()).repairKit();
+        if (bowstring) builder.statType(StatlessMaterialStats.BOWSTRING.getIdentifier());
+        return builder.colorMapper(GreyToColorMapping.builderFromBlack()
+                .addARGB(63, c63)
+                .addARGB(102, c102)
+                .addARGB(140, c140)
+                .addARGB(178, c178)
+                .addARGB(216, c216)
+                .addARGB(234, c234)
+                .addARGB(255, c255)
+                .build());
+    }
+
     /** Adds a plank type as a wood variant */
     private MaterialSpriteInfoBuilder buildPlanks(MaterialVariantId material) {
-        return buildMaterial(material)
-                .variant().meleeHarvest().ranged().shieldCore().statType(WOOD)
-                .fallbacks("wood", "stick", "primitive");
+        return buildBlankVariant(material, "wood", "stick", "primitive").meleeHarvest().ranged().shieldCore().statType(WOOD);
     }
 
     private MaterialSpriteInfoBuilder buildRock(MaterialVariantId material) {
-        return buildMaterial(material)
-                .meleeHarvest()
-                .fallbacks("rock").variant();
+        return buildBlankVariant(material, "rock").meleeHarvest().variant();
+    }
+
+    private MaterialSpriteInfoBuilder buildBlankVariant(MaterialVariantId materialVariant, String... fallbacks) {
+        return buildMaterial(materialVariant).fallbacks(fallbacks).variant();
+    }
+
+    private MaterialSpriteInfoBuilder buildBlankMaterial(MaterialId material, String... fallbacks) {
+        return buildMaterial(material).fallbacks(fallbacks);
     }
 }

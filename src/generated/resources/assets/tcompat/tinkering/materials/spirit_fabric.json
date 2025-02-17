@@ -1,0 +1,54 @@
+{
+  "color": "FF5E367A",
+  "fallbacks": [
+    "primitive",
+    "spirit_fabric"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:binding",
+      "tconstruct:repair_kit",
+      "tconstruct:bowstring"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF1D1C20",
+            "grey": 63
+          },
+          {
+            "color": "FF272429",
+            "grey": 102
+          },
+          {
+            "color": "FF312C31",
+            "grey": 140
+          },
+          {
+            "color": "FF3E2E3E",
+            "grey": 178
+          },
+          {
+            "color": "FF463652",
+            "grey": 216
+          },
+          {
+            "color": "FF5E367A",
+            "grey": 234
+          },
+          {
+            "color": "FF8129BF",
+            "grey": 255
+          }
+        ]
+      }
+    }
+  }
+}
