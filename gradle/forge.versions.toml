@@ -37,6 +37,8 @@ malum = "1.20.1-1.6.5.1"
 lodestone = "1.20.1-1.6.4.252"
 curiosapi = "5.11.0+1.20.1"
 
+vivecraft = "1.20.1-1.2.4-forge"
+
 [libraries]
 ldlib               = { module = "com.lowdragmc.ldlib:ldlib-forge-1.20.1", version.ref = "ldlib" }
 #registrate          = { module = "com.tterrag.registrate:Registrate", version.ref = "registrate" }
@@ -70,6 +72,8 @@ deepaether          = { module = "maven.modrinth:deep-aether", version.ref = "de
 malum               = { module = "maven.modrinth:malum", version.ref = "malum" }
 lodestone           = { module = "team.lodestar.lodestone:lodestone", version.ref = "lodestone" }
 curiosapi           = { module = "top.theillusivec4.curios:curios-forge", version.ref = "curiosapi" }
+
+vivecraft           = { module = "maven.modrinth:vivecraft", version.ref = "vivecraft" }
 
 clothconfig         = { module = "me.shedaniel.cloth:cloth-config-forge", version.ref = "clothconfig" }
 

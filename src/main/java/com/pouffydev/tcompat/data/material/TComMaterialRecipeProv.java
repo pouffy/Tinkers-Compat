@@ -73,6 +73,7 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         materialRecipe(malumConsumer, TComMaterialIds.spiritFabric, Ingredient.of(itemTag("malum:spirit_fabric")), 1, 2, folder + "spirit_fabric");
         materialRecipe(malumConsumer, TComMaterialIds.alchemicalCalx, Ingredient.of(itemTag("malum:alchemical_calx")), 1, 1, folder + "alchemical_calx");
         materialRecipe(malumConsumer, TComMaterialIds.astralWeave, Ingredient.of(itemTag("malum:astral_weave")), 2, 1, folder + "astral_weave");
+        materialRecipe(malumConsumer, TComMaterialIds.soulstone, Ingredient.of(itemTag("malum:processed_soulstone")), 1, 1, folder + "soulstone");
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {

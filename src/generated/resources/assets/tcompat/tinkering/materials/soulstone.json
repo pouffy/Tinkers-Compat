@@ -1,13 +1,17 @@
 {
-  "color": "FF779EC3",
+  "color": "FF42324D",
   "fallbacks": [
-    "string"
+    "rock",
+    "soulstone"
   ],
   "generator": {
     "supported_stats": [
       "tconstruct:repair_kit",
+      "tconstruct:head",
+      "tconstruct:handle",
       "tconstruct:binding",
-      "tconstruct:bowstring"
+      "tconstruct:limb",
+      "tconstruct:grip"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",
@@ -19,27 +23,31 @@
             "grey": 0
           },
           {
-            "color": "FF534276",
+            "color": "FF30203A",
             "grey": 63
           },
           {
-            "color": "FF665B89",
+            "color": "FF382D47",
             "grey": 102
           },
           {
-            "color": "FF6672B2",
+            "color": "FF4E3655",
             "grey": 140
           },
           {
-            "color": "FF779EC3",
+            "color": "FF5F3C61",
             "grey": 178
           },
           {
-            "color": "FF7CCDC7",
+            "color": "FF723E6B",
             "grey": 216
           },
           {
-            "color": "FFBBF1F4",
+            "color": "FF874483",
+            "grey": 234
+          },
+          {
+            "color": "FFA539AA",
             "grey": 255
           }
         ]

@@ -5,8 +5,8 @@
   ],
   "generator": {
     "supported_stats": [
-      "tconstruct:binding",
-      "tconstruct:repair_kit"
+      "tconstruct:repair_kit",
+      "tconstruct:binding"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

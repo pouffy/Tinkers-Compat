@@ -34,6 +34,7 @@ public class TComItemTagProv extends ItemTagsProvider {
         this.tag(itemTag("malum:spirit_fabric")).addOptional(new ResourceLocation("malum:spirit_fabric"));
         this.tag(itemTag("malum:astral_weave")).addOptional(new ResourceLocation("malum:astral_weave"));
         this.tag(itemTag("malum:alchemical_calx")).addOptional(new ResourceLocation("malum:alchemical_calx"));
+        this.tag(itemTag("malum:processed_soulstone")).addOptional(new ResourceLocation("malum:processed_soulstone"));
     }
 
     private void addMetals() {

@@ -7,8 +7,7 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataPr
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.*;
 
-import static net.minecraft.world.item.Tiers.STONE;
-import static net.minecraft.world.item.Tiers.WOOD;
+import static net.minecraft.world.item.Tiers.*;
 
 public class TComMaterialStatsProv extends AbstractMaterialStatsDataProvider {
     public TComMaterialStatsProv(PackOutput packOutput, AbstractMaterialDataProvider materials) {
@@ -35,12 +34,19 @@ public class TComMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TComMaterialIds.alchemicalCalx, StatlessMaterialStats.BINDING);
         addMaterialStats(TComMaterialIds.spiritFabric, StatlessMaterialStats.BINDING);
         addMaterialStats(TComMaterialIds.astralWeave, StatlessMaterialStats.BINDING);
+        addMaterialStats(TComMaterialIds.soulstone,
+                new HeadMaterialStats(320, 2f, IRON, 1.78f),
+                HandleMaterialStats.multipliers().durability(1.1f).miningSpeed(0.95f).attackDamage(1.23f).build(),
+                StatlessMaterialStats.BINDING);
     }
 
     private void addRanged() {
         addMaterialStats(TComMaterialIds.aetherWood,
                 new LimbMaterialStats(60, 0, 0, 0),
                 new GripMaterialStats(0f, 0, 0));
+        addMaterialStats(TComMaterialIds.soulstone,
+                new LimbMaterialStats(240, 1.2f, 0.85f, 0.62f),
+                new GripMaterialStats(1.1f, 0.84f, 1.23f));
 
         addMaterialStats(TComMaterialIds.spiritFabric, StatlessMaterialStats.BOWSTRING);
         addMaterialStats(TComMaterialIds.astralWeave, StatlessMaterialStats.BOWSTRING);
@@ -53,6 +59,11 @@ public class TComMaterialStatsProv extends AbstractMaterialStatsDataProvider {
     }
 
     private void addMisc() {
+        addMaterialStats(TComMaterialIds.spiritFabric, StatlessMaterialStats.REPAIR_KIT);
+        addMaterialStats(TComMaterialIds.astralWeave, StatlessMaterialStats.REPAIR_KIT);
+        addMaterialStats(TComMaterialIds.alchemicalCalx, StatlessMaterialStats.REPAIR_KIT);
+        addMaterialStats(TComMaterialIds.soulstone, StatlessMaterialStats.REPAIR_KIT);
+
 
     }
 

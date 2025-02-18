@@ -12,7 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.Tags;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
@@ -22,7 +21,6 @@ import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifier
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.tables.TinkerTables;
 import slimeknights.tconstruct.tools.TinkerModifiers;
-import slimeknights.tconstruct.tools.data.ModifierRecipeProvider;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;

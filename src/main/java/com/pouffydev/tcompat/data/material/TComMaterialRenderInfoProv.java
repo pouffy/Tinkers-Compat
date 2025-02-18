@@ -39,6 +39,7 @@ public class TComMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvid
         buildRenderInfo(TComMaterialIds.spiritFabric).color(0x5e367a).fallbacks("primitive", "spirit_fabric");
         buildRenderInfo(TComMaterialIds.alchemicalCalx).color(0xe1d1a2).fallbacks("calx");
         buildRenderInfo(TComMaterialIds.astralWeave).color(0x779ec3).fallbacks("string");
+        buildRenderInfo(TComMaterialIds.soulstone).color(0x42324d).fallbacks("rock", "soulstone");
     }
 
     @Override

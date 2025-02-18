@@ -24,6 +24,7 @@ public class TComMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         noTraits(TComMaterialIds.astralWeave);
         noTraits(TComMaterialIds.alchemicalCalx);
         noTraits(TComMaterialIds.spiritFabric);
+        noTraits(TComMaterialIds.soulstone);
 
     }
 

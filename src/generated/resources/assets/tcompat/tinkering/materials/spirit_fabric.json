@@ -6,8 +6,8 @@
   ],
   "generator": {
     "supported_stats": [
-      "tconstruct:binding",
       "tconstruct:repair_kit",
+      "tconstruct:binding",
       "tconstruct:bowstring"
     ],
     "transformer": {
