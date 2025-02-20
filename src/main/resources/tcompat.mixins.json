@@ -6,8 +6,7 @@
   "refmap": "tcompat.refmap.json",
   "plugin": "com.pouffydev.tcompat.mixin.TComMixinPlugin",
   "mixins": [
-    "aether.AbilityHooksMixin",
-    "malum.ModifiableArmorItemLodestoneMixin"
+    "aether.AbilityHooksMixin"
   ],
   "client": [
   ],

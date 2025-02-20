@@ -64,13 +64,13 @@ public class TComMaterialIds {
             redRock = rockVariant("red_rock", otbwgVariantRocks),
             dacite = rockVariant("dacite", otbwgVariantRocks);
 
-    public static final MaterialId astralWeave = id("astral_weave"); //Binding
-    public static final MaterialId alchemicalCalx = id("alchemical_calx"); //Binding
-    public static final MaterialId spiritFabric = id("spirit_fabric"); //Binding
-    public static final MaterialId soulstone = id("soulstone");
-    public static final MaterialId soulstainedSteel = id("soul_stained_steel");
-    public static final MaterialId malignantPewter = id("malignant_pewter");
-    public static final MaterialId hallowedGold = id("hallowed_gold");
+    //public static final MaterialId astralWeave = id("astral_weave"); //Binding
+    //public static final MaterialId alchemicalCalx = id("alchemical_calx"); //Binding
+    //public static final MaterialId spiritFabric = id("spirit_fabric"); //Binding
+    //public static final MaterialId soulstone = id("soulstone");
+    //public static final MaterialId soulstainedSteel = id("soul_stained_steel");
+    //public static final MaterialId malignantPewter = id("malignant_pewter");
+    //public static final MaterialId hallowedGold = id("hallowed_gold");
 
 
 

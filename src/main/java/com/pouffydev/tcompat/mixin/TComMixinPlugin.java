@@ -22,9 +22,9 @@ public class TComMixinPlugin implements IMixinConfigPlugin {
         if (mixinClassName.contains("com.pouffydev.tcompat.mixin.aether")) {
             return MixinPluginShared.isClassFound("com.aetherteam.aether.Aether");
         }
-        if (mixinClassName.contains("com.pouffydev.tcompat.mixin.malum")) {
-            return MixinPluginShared.isClassFound("com.sammy.malum.MalumMod");
-        }
+        //if (mixinClassName.contains("com.pouffydev.tcompat.mixin.malum")) {
+        //    return MixinPluginShared.isClassFound("com.sammy.malum.MalumMod");
+        //}
         return true;
     }
 

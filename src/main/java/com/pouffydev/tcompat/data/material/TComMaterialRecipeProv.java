@@ -42,7 +42,7 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         Consumer<FinishedRecipe> otbwgConsumer = withCondition(consumer, modLoaded("biomeswevegone"));
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
-        Consumer<FinishedRecipe> malumConsumer = withCondition(consumer, modLoaded("malum"));
+        //Consumer<FinishedRecipe> malumConsumer = withCondition(consumer, modLoaded("malum"));
         List<MaterialVariantId> noPlanks = List.of(TComMaterialIds.paloVerde);
 
 
@@ -70,10 +70,10 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantRocks) {
             rockVariantRecipe(deepAetherConsumer, materialVariantId, "deep_aether");
         }
-        materialRecipe(malumConsumer, TComMaterialIds.spiritFabric, Ingredient.of(itemTag("malum:spirit_fabric")), 1, 2, folder + "spirit_fabric");
-        materialRecipe(malumConsumer, TComMaterialIds.alchemicalCalx, Ingredient.of(itemTag("malum:alchemical_calx")), 1, 1, folder + "alchemical_calx");
-        materialRecipe(malumConsumer, TComMaterialIds.astralWeave, Ingredient.of(itemTag("malum:astral_weave")), 2, 1, folder + "astral_weave");
-        materialRecipe(malumConsumer, TComMaterialIds.soulstone, Ingredient.of(itemTag("malum:processed_soulstone")), 1, 1, folder + "soulstone");
+        //materialRecipe(malumConsumer, TComMaterialIds.spiritFabric, Ingredient.of(itemTag("malum:spirit_fabric")), 1, 2, folder + "spirit_fabric");
+        //materialRecipe(malumConsumer, TComMaterialIds.alchemicalCalx, Ingredient.of(itemTag("malum:alchemical_calx")), 1, 1, folder + "alchemical_calx");
+        //materialRecipe(malumConsumer, TComMaterialIds.astralWeave, Ingredient.of(itemTag("malum:astral_weave")), 2, 1, folder + "astral_weave");
+        //materialRecipe(malumConsumer, TComMaterialIds.soulstone, Ingredient.of(itemTag("malum:processed_soulstone")), 1, 1, folder + "soulstone");
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
