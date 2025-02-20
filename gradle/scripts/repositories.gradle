@@ -62,10 +62,6 @@ repositories {
         forRepository { maven { url = "https://dvs1.progwml6.com/files/maven" } }
         filter { includeGroup("slimeknights") }
     }
-    exclusiveContent {
-        forRepository { maven { url = "https://maven.gtceu.com" } }
-        filter { includeGroup("com.gregtechceu.gtceu") }
-    }
     exclusiveContent { // tterrag - registrate
         forRepository { maven { url = "https://maven.tterrag.com/" } }
         filter { includeGroup("com.tterrag.registrate") }
