@@ -22,8 +22,6 @@ public class TComModifierProv extends AbstractModifierProvider implements ICondi
 
         buildModifier(TComModifierIds.aetherForged, modLoaded("aether"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
-        //buildModifier(TComModifierIds.magicProficiency, modLoaded("malum"))
-        //        .addModule(AttributeModule.builder(LodestoneAttributeRegistry.MAGIC_PROFICIENCY.get(), AttributeModifier.Operation.MULTIPLY_BASE).slots(armorSlots).eachLevel(0.15f));
     }
 
     @Override

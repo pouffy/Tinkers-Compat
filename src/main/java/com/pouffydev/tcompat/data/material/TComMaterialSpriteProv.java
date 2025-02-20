@@ -78,11 +78,7 @@ public class TComMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildRock(TComMaterialIds.aseterite, 0xFF746772, 0xFF7F717D, 0xFF897A87, 0xFF938595, 0xFFA296A1, 0xFFB9ADB8);
         buildRock(TComMaterialIds.clorite, 0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
 
-        //buildBindingOnly(TComMaterialIds.alchemicalCalx, 0xFF6f5d51, 0xFF857164, 0xFF928773, 0xFFb09f83, 0xFFc9b586, 0xFFe1d1a2, 0xFFf6ecce, false, "calx");
-        //buildBindingOnly(TComMaterialIds.astralWeave, 0xFF534276, 0xFF665b89, 0xFF6672b2, 0xFF779ec3, 0xFF7ccdc7, 0xFFbbf1f4, true, "string");
-        //buildBindingOnly(TComMaterialIds.spiritFabric, 0xFF1d1c20, 0xFF272429, 0xFF312c31, 0xFF3e2e3e, 0xFF463652, 0xFF5e367a, 0xFF8129bf, true, "primitive", "spirit_fabric");
 
-        //buildGeneric(TComMaterialIds.soulstone, 0xFF30203a, 0xFF382d47, 0xFF4e3655, 0xFF5f3c61, 0xFF723e6b, 0xFF874483, 0xFFa539aa, addStats(), "rock", "soulstone").meleeHarvest().ranged();
     }
 
     public static ISpriteTransformer transformerFromSprite(ResourceLocation texture, int frames, int highlightColor) {

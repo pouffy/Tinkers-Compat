@@ -12,8 +12,5 @@ public class TComModifiers extends TCompatModule {
         MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-    //public static final StaticModifier<TotemicRuneModifier> totemicRune = MODIFIERS.register("totemic_rune", TotemicRuneModifier::new);
-//
-    //public static final RegistryObject<RecipeSerializer<TotemicRuneRecipe>> totemicRuneSerializer = RECIPE_SERIALIZERS.register("totemic_rune_modifier", () -> new SimpleRecipeSerializer<>(TotemicRuneRecipe::new));
 
 }

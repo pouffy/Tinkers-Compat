@@ -21,10 +21,6 @@ public class TComMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TComMaterialIds.aetherWood, TComModifierIds.aetherForged, ModifierIds.cultivated);
         addDefaultTraits(TComMaterialIds.aetherRock, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TinkerModifiers.stonebound.getId(), 1));
 
-        //noTraits(TComMaterialIds.astralWeave);
-        //noTraits(TComMaterialIds.alchemicalCalx);
-        //noTraits(TComMaterialIds.spiritFabric);
-        //noTraits(TComMaterialIds.soulstone);
 
     }
 

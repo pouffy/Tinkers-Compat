@@ -25,11 +25,5 @@ public class TComMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TComMaterialIds.aetherWood, 1, ORDER_HARVEST, true, false, aetherLoadedCondition);
         addMaterial(TComMaterialIds.aetherRock, 1, ORDER_HARVEST, true, false, aetherLoadedCondition);
 
-        //addMaterial(TComMaterialIds.astralWeave, 1, ORDER_BINDING, true, false, malumLoadedCondition);
-        //addMaterial(TComMaterialIds.alchemicalCalx, 1, ORDER_BINDING, true, false, malumLoadedCondition);
-        //addMaterial(TComMaterialIds.spiritFabric, 1, ORDER_BINDING, true, false, malumLoadedCondition);
-        //addMaterial(TComMaterialIds.soulstone, 2, ORDER_HARVEST, true, false, malumLoadedCondition);
-        //addMaterial(GTCMaterialIds.bismuth,                 2, ORDER_COMPAT + ORDER_GENERAL, false);
-
     }
 }

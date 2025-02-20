@@ -51,7 +51,6 @@ public class TComModifierRecipeProv extends TComBaseRecipeProvider {
         String abilityFolder = "tools/modifiers/ability/";
         String abilitySalvage = "tools/modifiers/salvage/ability/";
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
-        Consumer<FinishedRecipe> malumConsumer = withCondition(consumer, modLoaded("malum"));
 
         ModifierRecipeBuilder.modifier(TComModifierIds.aetherForged)
                 .setTools(TinkerTags.Items.HARVEST)
@@ -64,72 +63,6 @@ public class TComModifierRecipeProv extends TComBaseRecipeProvider {
                 .setSlots(SlotType.ABILITY, 1)
                 .saveSalvage(aetherConsumer, prefix(TComModifierIds.aetherForged, abilitySalvage))
                 .save(aetherConsumer, prefix(TComModifierIds.aetherForged, abilityFolder));
-
-        //ModifierRecipeBuilder.modifier(TComModifierIds.magicProficiency)
-        //        .setTools(TinkerTags.Items.ARMOR)
-        //        .addInput(itemTag("malum:spirit_fabric"))
-        //        .addInput(itemTag("malum:processed_soulstone"))
-        //        .addInput(itemTag("malum:spirit_fabric"))
-        //        .addInput(itemTag("malum:spirit_fabric"))
-        //        .addInput(itemTag("malum:spirit_fabric"))
-        //        .setMaxLevel(1)
-        //        .setSlots(SlotType.ABILITY, 1)
-        //        .allowCrystal()
-        //        .save(malumConsumer, wrap(TComModifierIds.magicProficiency, abilityFolder, "_level_1"));
-        //ModifierRecipeBuilder.modifier(TComModifierIds.magicProficiency)
-        //        .setTools(TinkerTags.Items.ARMOR)
-        //        .addInput(itemTag("malum:spirit_fabric"))
-        //        .addInput(itemTag("malum:chunk_of_brilliance"))
-        //        .addInput(itemTag("malum:spirit_fabric"))
-        //        .addInput(itemTag("malum:processed_soulstone"))
-        //        .addInput(itemTag("malum:processed_soulstone"))
-        //        .exactLevel(2)
-        //        .disallowCrystal()
-        //        .save(malumConsumer, wrap(TComModifierIds.magicProficiency, abilityFolder, "_level_2"));
-        //ModifierRecipeBuilder.modifier(TComModifierIds.magicProficiency)
-        //        .setTools(TinkerTags.Items.ARMOR)
-        //        .addInput(itemTag("malum:spirit_fabric"))
-        //        .addInput(itemTag("forge:storage_blocks/brilliance"))
-        //        .addInput(itemTag("malum:spirit_fabric"))
-        //        .addInput(itemTag("forge:storage_blocks/processed_soulstone"))
-        //        .addInput(itemTag("forge:storage_blocks/processed_soulstone"))
-        //        .exactLevel(3)
-        //        .disallowCrystal()
-        //        .save(malumConsumer, wrap(TComModifierIds.magicProficiency, abilityFolder, "_level_3"));
-
-        //ModifierRecipeBuilder.modifier(TComModifierIds.soulWarding)
-        //        .setTools(TinkerTags.Items.ARMOR)
-        //        .addInput(itemTag("malum:processed_soulstone"))
-        //        .addInput(itemTag("malum:twisted_rock_blocks"))
-        //        .addInput(itemTag("malum:processed_soulstone"))
-        //        .addInput(itemTag("forge:plating/soul_stained_steel"))
-        //        .addInput(itemTag("forge:plating/soul_stained_steel"))
-        //        .setMaxLevel(1)
-        //        .setSlots(SlotType.ABILITY, 1)
-        //        .allowCrystal()
-        //        .save(malumConsumer, wrap(TComModifierIds.soulWarding, abilityFolder, "_level_1"));
-        //ModifierRecipeBuilder.modifier(TComModifierIds.soulWarding)
-        //        .setTools(TinkerTags.Items.ARMOR)
-        //        .addInput(itemTag("forge:storage_blocks/processed_soulstone"))
-        //        .addInput(itemTag("malum:twisted_rock_blocks"))
-        //        .addInput(itemTag("forge:storage_blocks/processed_soulstone"))
-        //        .addInput(itemTag("forge:plating/soul_stained_steel"))
-        //        .addInput(itemTag("forge:plating/soul_stained_steel"))
-        //        .exactLevel(2)
-        //        .disallowCrystal()
-        //        .save(malumConsumer, wrap(TComModifierIds.soulWarding, abilityFolder, "_level_2"));
-        //ModifierRecipeBuilder.modifier(TComModifierIds.soulWarding)
-        //        .setTools(TinkerTags.Items.ARMOR)
-        //        .addInput(itemTag("forge:storage_blocks/processed_soulstone"))
-        //        .addInput(itemTag("malum:cthonic_gold"))
-        //        .addInput(itemTag("forge:storage_blocks/processed_soulstone"))
-        //        .addInput(itemTag("forge:plating/soul_stained_steel"))
-        //        .addInput(itemTag("forge:plating/soul_stained_steel"))
-        //        .exactLevel(3)
-        //        .disallowCrystal()
-        //        .save(malumConsumer, wrap(TComModifierIds.soulWarding, abilityFolder, "_level_3"));
-
-        //malumConsumer.accept(new SimpleFinishedRecipe(location(abilityFolder + "totemic_rune"), TComModifiers.totemicRuneSerializer.get()));
     }
 
     private void addTextureRecipes(Consumer<FinishedRecipe> consumer) {
