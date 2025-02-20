@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "malum:processed_soulstone"
+    },
+    {
+      "tag": "malum:twisted_rock_blocks"
+    },
+    {
+      "tag": "malum:processed_soulstone"
+    },
+    {
+      "tag": "forge:plating/soul_stained_steel"
+    },
+    {
+      "tag": "forge:plating/soul_stained_steel"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:soul_warding",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor"
+  }
+}

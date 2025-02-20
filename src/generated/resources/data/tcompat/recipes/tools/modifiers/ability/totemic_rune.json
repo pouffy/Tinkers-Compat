@@ -1,0 +1,9 @@
+{
+  "type": "tcompat:totemic_rune_modifier",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ]
+}

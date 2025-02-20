@@ -1,6 +1,7 @@
 package com.pouffydev.tcompat;
 
 import com.pouffydev.tcompat.data.TComDataGen;
+import com.pouffydev.tcompat.modifier.TComModifiers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import slimeknights.tconstruct.library.utils.Util;
 
 @Mod(TCompat.MOD_ID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -29,6 +31,10 @@ public class TCompat {
                 .getModEventBus();
         IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
+        modEventBus.register(new TComModifiers());
+        TCompatModule.initRegisters();
+
+
         modEventBus.addListener(EventPriority.LOWEST, TComDataGen::gatherData);
     }
 
@@ -39,10 +45,23 @@ public class TCompat {
         return new ResourceLocation(namespace, name);
     }
 
+    public static String makeTranslationKey(String base, String name) {
+        return Util.makeTranslationKey(base, getResource(name));
+    }
+
     public static void sealTComClass(Object self, String base, String solution) {
         String name = self.getClass().getName();
         if (!name.startsWith("com.pouffydev.tcompat.")) {
             throw new IllegalStateException(base + " being extended from invalid package " + name + ". " + solution);
+        }
+    }
+
+    public static boolean isClassFound(String className) {
+        try {
+            Class.forName(className, false, Thread.currentThread().getContextClassLoader());
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
         }
     }
 }

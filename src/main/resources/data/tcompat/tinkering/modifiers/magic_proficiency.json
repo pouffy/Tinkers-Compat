@@ -1,0 +1,23 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "lodestone"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "lodestone:magic_proficiency",
+      "each_level": 0.05,
+      "operation": "multiply_base",
+      "slots": [
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "unique": "tcompat.modifier.magic_proficiency"
+    }
+  ],
+  "tooltip_display": "always"
+}

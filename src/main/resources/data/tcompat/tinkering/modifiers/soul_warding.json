@@ -1,0 +1,36 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "malum"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "malum:soul_ward_recovery_rate",
+      "each_level": 0.05,
+      "operation": "multiply_base",
+      "slots": [
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "unique": "tcompat.modifier.soul_warding"
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "malum:soul_ward_capacity",
+      "each_level": 1.0,
+      "operation": "addition",
+      "slots": [
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "unique": "tcompat.modifier.soul_warding"
+    }
+  ],
+  "tooltip_display": "always"
+}

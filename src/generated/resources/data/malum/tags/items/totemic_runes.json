@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "malum:rune_of_motion",
+      "required": false
+    },
+    {
+      "id": "malum:rune_of_loyalty",
+      "required": false
+    },
+    {
+      "id": "malum:rune_of_warding",
+      "required": false
+    },
+    {
+      "id": "malum:rune_of_haste",
+      "required": false
+    },
+    {
+      "id": "malum:rune_of_the_aether",
+      "required": false
+    },
+    {
+      "id": "malum:rune_of_the_seas",
+      "required": false
+    },
+    {
+      "id": "malum:rune_of_the_arena",
+      "required": false
+    },
+    {
+      "id": "malum:rune_of_the_hells",
+      "required": false
+    }
+  ]
+}

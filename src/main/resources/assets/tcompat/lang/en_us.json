@@ -50,10 +50,35 @@
   "material.tcompat.astral_weave": "Astral Weave",
   "material.tcompat.soulstone": "Soulstone",
 
+  "_comment": "Tooltips",
 
   "_comment": "Modifiers",
   "modifier.tcompat.aether_forged": "Aether Forged",
   "modifier.tcompat.aether_forged.flavor": "Heaven Grade",
-  "modifier.tcompat.aether_forged.description": "Allows your tool to use it's full mining speed in The Aether"
+  "modifier.tcompat.aether_forged.description": "Allows your tool to use it's full mining speed in The Aether",
+
+  "modifier.tcompat.magic_proficiency": "Magic Proficiency",
+  "modifier.tcompat.magic_proficiency.flavor": "Alakazowch",
+  "modifier.tcompat.magic_proficiency.description": "Increased Magic damage",
+
+  "modifier.tcompat.soul_warding": "Soul Warding",
+  "modifier.tcompat.soul_warding.flavor": "A soul a day keeps the reaper away",
+  "modifier.tcompat.soul_warding.description": "Increased Soul Ward stats",
+
+  "modifier.tcompat.totemic_rune": "Totemic Rune",
+  "modifier.tcompat.totemic_rune.flavor": "#Blessed",
+  "modifier.tcompat.totemic_rune.description": "Engraves a Totemic Rune into your Chestplate",
+  "modifier.tcompat.totemic_rune.formatted": "Rune of %s",
+  "tcompat.totemic_rune.zephyrs_courage": "Motion",
+  "tcompat.totemic_rune.poseidons_grasp": "Loyalty",
+  "tcompat.totemic_rune.gaias_bulwark": "Warding",
+  "tcompat.totemic_rune.miners_rage": "Haste",
+  "tcompat.totemic_rune.aethers_charm": "the Aether",
+  "tcompat.totemic_rune.anglers_lure": "the Seas",
+  "tcompat.totemic_rune.earthen_might": "the Arena",
+  "tcompat.totemic_rune.ifrits_embrace": "the Hells"
+
+
+
 
 }

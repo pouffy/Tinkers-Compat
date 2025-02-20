@@ -28,6 +28,7 @@ public class TComItemTagProv extends ItemTagsProvider {
         addPlanks();
         addMetals();
         addMisc();
+        addForge();
     }
 
     private void addMisc() {
@@ -35,6 +36,23 @@ public class TComItemTagProv extends ItemTagsProvider {
         this.tag(itemTag("malum:astral_weave")).addOptional(new ResourceLocation("malum:astral_weave"));
         this.tag(itemTag("malum:alchemical_calx")).addOptional(new ResourceLocation("malum:alchemical_calx"));
         this.tag(itemTag("malum:processed_soulstone")).addOptional(new ResourceLocation("malum:processed_soulstone"));
+        this.tag(itemTag("malum:chunk_of_brilliance")).addOptional(new ResourceLocation("malum:chunk_of_brilliance"));
+        this.tag(itemTag("malum:cthonic_gold")).addOptional(new ResourceLocation("malum:cthonic_gold"));
+        this.tag(itemTag("malum:totemic_runes"))
+                .addOptional(new ResourceLocation("malum:rune_of_motion"))
+                .addOptional(new ResourceLocation("malum:rune_of_loyalty"))
+                .addOptional(new ResourceLocation("malum:rune_of_warding"))
+                .addOptional(new ResourceLocation("malum:rune_of_haste"))
+                .addOptional(new ResourceLocation("malum:rune_of_the_aether"))
+                .addOptional(new ResourceLocation("malum:rune_of_the_seas"))
+                .addOptional(new ResourceLocation("malum:rune_of_the_arena"))
+                .addOptional(new ResourceLocation("malum:rune_of_the_hells"));
+    }
+
+    private void addForge() {
+        this.tag(itemTag("forge:storage_blocks/processed_soulstone")).addOptional(new ResourceLocation("malum:block_of_soulstone"));
+        this.tag(itemTag("forge:storage_blocks/brilliance")).addOptional(new ResourceLocation("malum:block_of_brilliance"));
+        this.tag(itemTag("forge:plating/soul_stained_steel")).addOptional(new ResourceLocation("malum:soul_stained_steel_plating"));
     }
 
     private void addMetals() {

@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "malum:spirit_fabric"
+    },
+    {
+      "tag": "forge:storage_blocks/brilliance"
+    },
+    {
+      "tag": "malum:spirit_fabric"
+    },
+    {
+      "tag": "forge:storage_blocks/processed_soulstone"
+    },
+    {
+      "tag": "forge:storage_blocks/processed_soulstone"
+    }
+  ],
+  "level": 3,
+  "result": "tcompat:magic_proficiency",
+  "tools": {
+    "tag": "tconstruct:modifiable/armor"
+  }
+}

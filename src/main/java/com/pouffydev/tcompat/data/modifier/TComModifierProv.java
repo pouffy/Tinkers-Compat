@@ -2,9 +2,14 @@ package com.pouffydev.tcompat.data.modifier;
 
 import com.pouffydev.tcompat.modifier.TComModifierIds;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
+
+import static slimeknights.tconstruct.library.tools.definition.ModifiableArmorMaterial.ARMOR_SLOTS;
 
 public class TComModifierProv extends AbstractModifierProvider implements IConditionBuilder {
     public TComModifierProv(PackOutput packOutput) {
@@ -13,9 +18,12 @@ public class TComModifierProv extends AbstractModifierProvider implements ICondi
 
     @Override
     protected void addModifiers() {
+        EquipmentSlot[] armorSlots = ARMOR_SLOTS;
+
         buildModifier(TComModifierIds.aetherForged, modLoaded("aether"))
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
-        ;
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        //buildModifier(TComModifierIds.magicProficiency, modLoaded("malum"))
+        //        .addModule(AttributeModule.builder(LodestoneAttributeRegistry.MAGIC_PROFICIENCY.get(), AttributeModifier.Operation.MULTIPLY_BASE).slots(armorSlots).eachLevel(0.15f));
     }
 
     @Override
