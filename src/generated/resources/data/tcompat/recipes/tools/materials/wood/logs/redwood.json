@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:redwood_logs"
+    "tag": "tcompat:redwood_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:redwood_planks"
+    "tag": "tcompat:redwood_planks"
   },
   "material": "tconstruct:wood#redwood",
   "needed": 1,

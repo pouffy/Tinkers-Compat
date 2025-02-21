@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:skyris_logs"
+    "tag": "tcompat:skyris_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:skyris_planks"
+    "tag": "tcompat:skyris_planks"
   },
   "material": "tconstruct:wood#skyris",
   "needed": 1,

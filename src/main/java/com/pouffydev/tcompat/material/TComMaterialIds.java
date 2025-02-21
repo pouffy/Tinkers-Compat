@@ -64,6 +64,10 @@ public class TComMaterialIds {
             redRock = rockVariant("red_rock", otbwgVariantRocks),
             dacite = rockVariant("dacite", otbwgVariantRocks);
 
+    public static final MaterialId hellbark = id("hellbark");
+
+    public static final MaterialId brass = id("brass");
+    public static final MaterialId zinc = id("zinc");
 
 
     private static MaterialVariantId woodVariant(String name, List<MaterialVariantId> list) {

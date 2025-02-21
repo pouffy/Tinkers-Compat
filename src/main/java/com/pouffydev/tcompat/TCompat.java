@@ -1,6 +1,7 @@
 package com.pouffydev.tcompat;
 
 import com.pouffydev.tcompat.data.TComDataGen;
+import com.pouffydev.tcompat.data.TComTags;
 import com.pouffydev.tcompat.modifier.TComModifiers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +34,8 @@ public class TCompat {
 
         modEventBus.register(new TComModifiers());
         TCompatModule.initRegisters();
+
+        TComTags.init();
 
 
         modEventBus.addListener(EventPriority.LOWEST, TComDataGen::gatherData);

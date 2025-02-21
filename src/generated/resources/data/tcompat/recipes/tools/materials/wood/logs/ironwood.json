@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:ironwood_logs"
+    "tag": "tcompat:ironwood_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:ironwood_planks"
+    "tag": "tcompat:ironwood_planks"
   },
   "material": "tconstruct:wood#ironwood",
   "needed": 1,

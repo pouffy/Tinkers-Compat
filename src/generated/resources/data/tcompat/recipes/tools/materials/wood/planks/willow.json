@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:willow_planks"
+    "tag": "tcompat:willow_planks"
   },
   "material": "tconstruct:wood#willow",
   "needed": 1,

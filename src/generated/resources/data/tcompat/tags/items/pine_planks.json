@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "biomeswevegone:pine_planks",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:pine_planks",
+      "required": false
+    }
+  ]
+}

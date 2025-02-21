@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:palm_planks"
+    "tag": "tcompat:palm_planks"
   },
   "material": "tconstruct:wood#palm",
   "needed": 1,

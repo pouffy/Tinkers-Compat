@@ -123,6 +123,38 @@
     {
       "id": "#deep_aether:sunroot_logs",
       "required": false
+    },
+    {
+      "id": "#biomesoplenty:fir_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:pine_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:maple_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:redwood_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:mahogany_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:jacaranda_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:palm_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:willow_logs",
+      "required": false
     }
   ]
 }

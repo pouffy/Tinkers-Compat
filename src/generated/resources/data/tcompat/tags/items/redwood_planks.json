@@ -3,6 +3,10 @@
     {
       "id": "biomeswevegone:redwood_planks",
       "required": false
+    },
+    {
+      "id": "biomesoplenty:redwood_planks",
+      "required": false
     }
   ]
 }

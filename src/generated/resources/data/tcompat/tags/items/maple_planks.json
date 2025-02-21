@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "biomeswevegone:maple_planks",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:maple_planks",
+      "required": false
+    }
+  ]
+}

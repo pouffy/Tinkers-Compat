@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:aspen_planks"
+    "tag": "tcompat:aspen_planks"
   },
   "material": "tconstruct:wood#aspen",
   "needed": 1,

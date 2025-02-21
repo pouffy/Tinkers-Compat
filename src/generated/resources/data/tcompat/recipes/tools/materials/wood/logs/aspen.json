@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:aspen_logs"
+    "tag": "tcompat:aspen_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:aspen_planks"
+    "tag": "tcompat:aspen_planks"
   },
   "material": "tconstruct:wood#aspen",
   "needed": 1,

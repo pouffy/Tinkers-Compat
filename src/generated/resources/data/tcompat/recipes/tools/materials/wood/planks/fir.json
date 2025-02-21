@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:fir_planks"
+    "tag": "tcompat:fir_planks"
   },
   "material": "tconstruct:wood#fir",
   "needed": 1,

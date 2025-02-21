@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:white_mangrove_planks"
+    "tag": "tcompat:white_mangrove_planks"
   },
   "material": "tconstruct:wood#white_mangrove",
   "needed": 1,

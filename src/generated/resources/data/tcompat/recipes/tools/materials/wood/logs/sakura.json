@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:sakura_logs"
+    "tag": "tcompat:sakura_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:sakura_planks"
+    "tag": "tcompat:sakura_planks"
   },
   "material": "tconstruct:wood#sakura",
   "needed": 1,

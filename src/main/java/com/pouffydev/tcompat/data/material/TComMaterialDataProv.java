@@ -20,7 +20,6 @@ public class TComMaterialDataProv extends AbstractMaterialDataProvider {
     @Override
     protected void addMaterials() {
         ICondition aetherLoadedCondition = new ModLoadedCondition("aether");
-        ICondition malumLoadedCondition = new ModLoadedCondition("malum");
 
         addMaterial(TComMaterialIds.aetherWood, 1, ORDER_HARVEST, true, false, aetherLoadedCondition);
         addMaterial(TComMaterialIds.aetherRock, 1, ORDER_HARVEST, true, false, aetherLoadedCondition);

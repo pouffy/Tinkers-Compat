@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:rainbow_eucalyptus_logs"
+    "tag": "tcompat:rainbow_eucalyptus_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:rainbow_eucalyptus_planks"
+    "tag": "tcompat:rainbow_eucalyptus_planks"
   },
   "material": "tconstruct:wood#rainbow_eucalyptus",
   "needed": 1,

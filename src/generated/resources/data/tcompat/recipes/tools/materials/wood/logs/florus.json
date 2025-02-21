@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:florus_logs"
+    "tag": "tcompat:florus_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:florus_planks"
+    "tag": "tcompat:florus_planks"
   },
   "material": "tconstruct:wood#florus",
   "needed": 1,

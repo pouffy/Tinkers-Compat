@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "biomeswevegone:jacaranda_planks",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:jacaranda_planks",
+      "required": false
+    }
+  ]
+}

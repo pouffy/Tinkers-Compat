@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#biomeswevegone:jacaranda_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:jacaranda_logs",
+      "required": false
+    }
+  ]
+}

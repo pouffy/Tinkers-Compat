@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#biomeswevegone:willow_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:willow_logs",
+      "required": false
+    }
+  ]
+}

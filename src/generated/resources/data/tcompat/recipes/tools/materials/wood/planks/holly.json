@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:holly_planks"
+    "tag": "tcompat:holly_planks"
   },
   "material": "tconstruct:wood#holly",
   "needed": 1,

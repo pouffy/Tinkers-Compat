@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:maple_logs"
+    "tag": "tcompat:maple_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:maple_planks"
+    "tag": "tcompat:maple_planks"
   },
   "material": "tconstruct:wood#maple",
   "needed": 1,

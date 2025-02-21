@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:ironwood_planks"
+    "tag": "tcompat:ironwood_planks"
   },
   "material": "tconstruct:wood#ironwood",
   "needed": 1,

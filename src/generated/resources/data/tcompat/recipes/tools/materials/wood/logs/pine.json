@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:pine_logs"
+    "tag": "tcompat:pine_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:pine_planks"
+    "tag": "tcompat:pine_planks"
   },
   "material": "tconstruct:wood#pine",
   "needed": 1,

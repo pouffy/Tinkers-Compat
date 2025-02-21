@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:blue_enchanted_planks"
+    "tag": "tcompat:blue_enchanted_planks"
   },
   "material": "tconstruct:wood#blue_enchanted",
   "needed": 1,

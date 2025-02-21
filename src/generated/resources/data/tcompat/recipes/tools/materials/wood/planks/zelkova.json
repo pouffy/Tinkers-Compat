@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:zelkova_planks"
+    "tag": "tcompat:zelkova_planks"
   },
   "material": "tconstruct:wood#zelkova",
   "needed": 1,

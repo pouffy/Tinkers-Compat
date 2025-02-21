@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#biomeswevegone:palm_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:palm_logs",
+      "required": false
+    }
+  ]
+}

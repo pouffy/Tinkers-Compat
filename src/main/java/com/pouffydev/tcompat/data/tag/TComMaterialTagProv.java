@@ -1,6 +1,8 @@
 package com.pouffydev.tcompat.data.tag;
 
 import com.pouffydev.tcompat.TCompat;
+import com.pouffydev.tcompat.data.TComTags;
+import com.pouffydev.tcompat.material.TComMaterialIds;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.TagKey;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -18,7 +20,10 @@ public class TComMaterialTagProv extends AbstractMaterialTagProvider {
 
     @Override
     protected void addTags() {
-        //tag(materialTag("aether")).add();
+        tag(TComTags.Materials.AETHER).add(
+                TComMaterialIds.aetherRock,
+                TComMaterialIds.aetherWood
+        );
     }
 
     private static TagKey<IMaterial> materialTag(String name) {

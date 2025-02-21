@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#biomeswevegone:redwood_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:redwood_logs",
+      "required": false
+    }
+  ]
+}

@@ -30,6 +30,11 @@ cumulus = "1.20.1-1.0.1-neoforge"
 aeroblender = "1.20.1-1.0.2-rc1-neoforge"
 deepaether = "1.20.1-1.1.4"
 
+oreberries = "0.5.2"
+
+biomesoplenty = "19.0.0.94"
+glitchcore = "0.0.1.1"
+
 vivecraft = "1.20.1-1.2.4-forge"
 
 [libraries]
@@ -61,6 +66,10 @@ cumulus             = { module = "com.aetherteam.cumulus:cumulus_menus", version
 aeroblender         = { module = "io.github.razordevs:aeroblender", version.ref = "aeroblender" }
 deepaether          = { module = "maven.modrinth:deep-aether", version.ref = "deepaether" }
 
+oreberries          = { module = "maven.modrinth:oreberries-replanted", version.ref = "oreberries" }
+
+biomesoplenty       = { module = "maven.modrinth:biomes-o-plenty", version.ref = "biomesoplenty" }
+glitchcore          = { module = "maven.modrinth:glitchcore", version.ref = "glitchcore" }
 
 vivecraft           = { module = "maven.modrinth:vivecraft", version.ref = "vivecraft" }
 
@@ -78,3 +87,4 @@ rei-runtime = ["rei-forge", "architectury", "clothconfig"]
 tinkers = ["tconstruct", "mantle"]
 otbwg = ["corgilib", "geckolib", "terrablender", "ohthetreesyoullgrow", "otbwg"]
 aether = ["aether", "nitrogen", "cumulus"]
+bop = ["biomesoplenty", "glitchcore"]

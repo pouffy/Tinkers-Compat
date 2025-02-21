@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "aether:skyroot_logs"
+    "tag": "tcompat:skyroot_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "aether:skyroot_planks"
+    "tag": "tcompat:skyroot_planks"
   },
   "material": "tcompat:aether_wood#skyroot",
   "needed": 1,

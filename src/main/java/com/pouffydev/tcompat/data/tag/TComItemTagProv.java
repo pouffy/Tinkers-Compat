@@ -1,6 +1,7 @@
 package com.pouffydev.tcompat.data.tag;
 
 import com.pouffydev.tcompat.TCompat;
+import com.pouffydev.tcompat.data.TComTags;
 import com.pouffydev.tcompat.material.TComMaterialIds;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -36,7 +37,9 @@ public class TComItemTagProv extends ItemTagsProvider {
     }
 
     private void addForge() {
-
+        for (TComTags.Items.Oreberries oreberry : TComTags.Items.Oreberries.values()) {
+            this.tag(oreberry.tag()).addOptional(oreberry.item());
+        }
     }
 
     private void addMetals() {
@@ -68,16 +71,28 @@ public class TComItemTagProv extends ItemTagsProvider {
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantRocks) {
             rockTagging(materialVariantId.getVariant(), "deep_aether");
         }
+
+        woodTagging("fir", "biomesoplenty", false);
+        woodTagging("pine", "biomesoplenty", false);
+        woodTagging("maple", "biomesoplenty", false);
+        woodTagging("redwood", "biomesoplenty", false);
+        woodTagging("mahogany", "biomesoplenty", false);
+        woodTagging("jacaranda", "biomesoplenty", false);
+        woodTagging("palm", "biomesoplenty", false);
+        woodTagging("willow", "biomesoplenty", false);
+
     }
 
     private void woodTagging(String woodName, String namespace, boolean noPlanks) {
         if (!noPlanks) {
-            this.tag(itemTag("%s:%s_planks".formatted(namespace, woodName)))
+            this.tag(TComTags.Items.Woods.plankTag(woodName))
                     .addOptional(new ResourceLocation("%s:%s_planks".formatted(namespace, woodName)));
-            this.tag(itemTag("tconstruct:wood_variants/planks"))
+            this.tag(TinkerTags.Items.VARIANT_PLANKS)
                     .addOptionalTag(itemTag("%s:%s_planks".formatted(namespace, woodName)));
         }
-        this.tag(itemTag("tconstruct:wood_variants/logs"))
+        this.tag(TComTags.Items.Woods.logTag(woodName))
+                .addOptionalTag(itemTag("%s:%s_logs".formatted(namespace, woodName)));
+        this.tag(TinkerTags.Items.VARIANT_LOGS)
                 .addOptionalTag(itemTag("%s:%s_logs".formatted(namespace, woodName)));
     }
 

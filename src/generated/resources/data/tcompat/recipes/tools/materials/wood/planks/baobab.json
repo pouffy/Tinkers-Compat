@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:baobab_planks"
+    "tag": "tcompat:baobab_planks"
   },
   "material": "tconstruct:wood#baobab",
   "needed": 1,

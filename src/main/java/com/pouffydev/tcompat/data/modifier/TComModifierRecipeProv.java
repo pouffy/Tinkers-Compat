@@ -30,8 +30,8 @@ import java.util.function.Consumer;
 
 public class TComModifierRecipeProv extends TComBaseRecipeProvider {
 
-    public TComModifierRecipeProv(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(packOutput, lookupProvider);
+    public TComModifierRecipeProv(PackOutput packOutput) {
+        super(packOutput);
     }
 
     @Override

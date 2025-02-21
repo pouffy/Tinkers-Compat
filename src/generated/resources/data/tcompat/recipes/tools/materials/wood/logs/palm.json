@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:palm_logs"
+    "tag": "tcompat:palm_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:palm_planks"
+    "tag": "tcompat:palm_planks"
   },
   "material": "tconstruct:wood#palm",
   "needed": 1,

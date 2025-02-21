@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:mahogany_logs"
+    "tag": "tcompat:mahogany_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "biomeswevegone:mahogany_planks"
+    "tag": "tcompat:mahogany_planks"
   },
   "material": "tconstruct:wood#mahogany",
   "needed": 1,

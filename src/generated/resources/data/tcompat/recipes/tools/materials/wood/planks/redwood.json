@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:redwood_planks"
+    "tag": "tcompat:redwood_planks"
   },
   "material": "tconstruct:wood#redwood",
   "needed": 1,

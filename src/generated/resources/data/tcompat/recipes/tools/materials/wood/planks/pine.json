@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:pine_planks"
+    "tag": "tcompat:pine_planks"
   },
   "material": "tconstruct:wood#pine",
   "needed": 1,

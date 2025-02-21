@@ -30,6 +30,10 @@ dependencies {
     modExtraRuntimeOnly(forge.bundles.aether)
     modCompileOnly("local:aeroblender:1.20.1-1.0.2-rc1-neoforge")
     modExtraRuntimeOnly("local:aeroblender:1.20.1-1.0.2-rc1-neoforge")
+    modCompileOnly(forge.oreberries)
+    modExtraRuntimeOnly(forge.oreberries)
+    modCompileOnly(forge.bundles.bop)
+    modExtraRuntimeOnly(forge.bundles.bop)
 
     modExtraRuntimeOnly(forge.vivecraft)
 }

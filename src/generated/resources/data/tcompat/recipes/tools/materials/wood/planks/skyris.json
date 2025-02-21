@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:skyris_planks"
+    "tag": "tcompat:skyris_planks"
   },
   "material": "tconstruct:wood#skyris",
   "needed": 1,

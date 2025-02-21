@@ -14,11 +14,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
 
 public abstract class TComBaseRecipeProvider extends RecipeProvider implements IConditionBuilder, IRecipeHelper {
-    private final CompletableFuture<HolderLookup.Provider> lookupProvider;
 
-    public TComBaseRecipeProvider(PackOutput generator, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    public TComBaseRecipeProvider(PackOutput generator) {
         super(generator);
-        this.lookupProvider = lookupProvider;
         TCompat.sealTComClass(this, "TComBaseRecipeProvider", "TComBaseRecipeProvider is trivial to recreate and directly extending can lead to addon recipes polluting our namespace.");
     }
 
@@ -27,14 +25,6 @@ public abstract class TComBaseRecipeProvider extends RecipeProvider implements I
 
     @Override
     public abstract String getName();
-
-    public HolderLookup.Provider getLookupProvider() {
-        try {
-            return lookupProvider.get();
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     @Override
     public String getModId() {

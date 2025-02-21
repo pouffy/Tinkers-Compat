@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "deep_aether:cruderoot_logs"
+    "tag": "tcompat:cruderoot_logs"
   },
   "leftover": {
     "count": 1,
-    "tag": "deep_aether:cruderoot_planks"
+    "tag": "tcompat:cruderoot_planks"
   },
   "material": "tcompat:aether_wood#cruderoot",
   "needed": 1,

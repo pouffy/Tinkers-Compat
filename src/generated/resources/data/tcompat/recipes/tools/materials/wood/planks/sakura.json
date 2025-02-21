@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:sakura_planks"
+    "tag": "tcompat:sakura_planks"
   },
   "material": "tconstruct:wood#sakura",
   "needed": 1,

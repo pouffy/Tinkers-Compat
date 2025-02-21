@@ -1,6 +1,7 @@
 package com.pouffydev.tcompat.data.tag;
 
 import com.pouffydev.tcompat.TCompat;
+import com.pouffydev.tcompat.data.TComTags;
 import com.pouffydev.tcompat.material.TComMaterialIds;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -29,7 +30,7 @@ public class TComBlockTagProv extends BlockTagsProvider {
         // handle otbwg plank tags
         for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantWoods) {
             String woodName = materialVariantId.getVariant();
-            this.tag(blockTag("biomeswevegone:%s_planks".formatted(woodName)))
+            this.tag(TComTags.Blocks.Woods.plankTag(woodName))
                     .addOptional(new ResourceLocation("biomeswevegone:%s_planks".formatted(woodName)));
         }
     }

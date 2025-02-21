@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:oreberries/iron"
+  },
+  "result": {
+    "amount": 25,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 15
+}

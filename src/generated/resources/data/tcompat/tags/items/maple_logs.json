@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#biomeswevegone:maple_logs",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:maple_logs",
+      "required": false
+    }
+  ]
+}

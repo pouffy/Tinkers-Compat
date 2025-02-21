@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:witch_hazel_planks"
+    "tag": "tcompat:witch_hazel_planks"
   },
   "material": "tconstruct:wood#witch_hazel",
   "needed": 1,

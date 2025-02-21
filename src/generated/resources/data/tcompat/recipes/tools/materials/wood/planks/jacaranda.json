@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:jacaranda_planks"
+    "tag": "tcompat:jacaranda_planks"
   },
   "material": "tconstruct:wood#jacaranda",
   "needed": 1,

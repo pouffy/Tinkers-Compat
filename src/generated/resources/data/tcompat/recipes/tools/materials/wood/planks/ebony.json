@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:ebony_planks"
+    "tag": "tcompat:ebony_planks"
   },
   "material": "tconstruct:wood#ebony",
   "needed": 1,

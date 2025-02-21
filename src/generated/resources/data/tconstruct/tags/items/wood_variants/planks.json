@@ -119,6 +119,38 @@
     {
       "id": "#deep_aether:sunroot_planks",
       "required": false
+    },
+    {
+      "id": "#biomesoplenty:fir_planks",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:pine_planks",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:maple_planks",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:redwood_planks",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:mahogany_planks",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:jacaranda_planks",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:palm_planks",
+      "required": false
+    },
+    {
+      "id": "#biomesoplenty:willow_planks",
+      "required": false
     }
   ]
 }
