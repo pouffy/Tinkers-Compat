@@ -1,0 +1,49 @@
+{
+  "color": "FF474C52",
+  "generator": {
+    "supported_stats": [
+      "tconstruct:repair_kit",
+      "tconstruct:bowstring"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF141C27",
+            "grey": 63
+          },
+          {
+            "color": "FF1D252F",
+            "grey": 102
+          },
+          {
+            "color": "FF2B343D",
+            "grey": 140
+          },
+          {
+            "color": "FF3E444D",
+            "grey": 178
+          },
+          {
+            "color": "FF474C52",
+            "grey": 216
+          },
+          {
+            "color": "FF68696C",
+            "grey": 234
+          },
+          {
+            "color": "FF878789",
+            "grey": 255
+          }
+        ]
+      }
+    }
+  }
+}

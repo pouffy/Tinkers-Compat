@@ -6,6 +6,7 @@ import com.pouffydev.tcompat.data.modifier.TComModifierProv;
 import com.pouffydev.tcompat.data.modifier.TComModifierRecipeProv;
 import com.pouffydev.tcompat.data.smeltery.TComSmelteryRecipeProv;
 import com.pouffydev.tcompat.data.tag.TComBlockTagProv;
+import com.pouffydev.tcompat.data.tag.TComFluidTagProv;
 import com.pouffydev.tcompat.data.tag.TComItemTagProv;
 import com.pouffydev.tcompat.data.tag.TComMaterialTagProv;
 import net.minecraft.core.HolderLookup;
@@ -32,6 +33,7 @@ public class TComDataGen {
         TComBlockTagProv blockTags = new TComBlockTagProv(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(server, blockTags);
         generator.addProvider(server, new TComItemTagProv(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
+        generator.addProvider(server, new TComFluidTagProv(packOutput, lookupProvider, existingFileHelper));
 
         TComMaterialDataProv materials = new TComMaterialDataProv(packOutput);
         TComMaterialSpriteProv materialSprites = new TComMaterialSpriteProv();

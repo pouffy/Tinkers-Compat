@@ -34,6 +34,8 @@ dependencies {
     modExtraRuntimeOnly(forge.oreberries)
     modCompileOnly(forge.bundles.bop)
     modExtraRuntimeOnly(forge.bundles.bop)
+    modCompileOnly(forge.twilightforest)
+    modExtraRuntimeOnly(forge.twilightforest)
 
     modExtraRuntimeOnly(forge.vivecraft)
 }

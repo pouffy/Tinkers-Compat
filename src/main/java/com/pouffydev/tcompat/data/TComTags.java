@@ -76,6 +76,8 @@ public class TComTags {
             }
         }
 
+
+
         /** Makes a tag in the tinkers compat domain */
         private static TagKey<Block> local(String name) {
             return TagKey.create(Registries.BLOCK, getResource(name));
@@ -131,7 +133,8 @@ public class TComTags {
                 return new ResourceLocation("oreberriesreplanted", this.name().toLowerCase() + "_oreberry");
             }
         }
-
+        public static TagKey<Item> STEELEAF_INGOTS = common("ingots/steeleaf");
+        public static TagKey<Item> STEELEAF_BLOCKS = common("storage_blocks/steeleaf");
 
         /** Makes a tag in the tinkers compat domain */
         private static TagKey<Item> local(String name) {

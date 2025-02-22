@@ -11,6 +11,7 @@ import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
+import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import java.util.ArrayList;
@@ -77,6 +78,12 @@ public class TComMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildRock(TComMaterialIds.holystone, 0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2);
         buildRock(TComMaterialIds.aseterite, 0xFF746772, 0xFF7F717D, 0xFF897A87, 0xFF938595, 0xFFA296A1, 0xFFB9ADB8);
         buildRock(TComMaterialIds.clorite, 0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
+
+        buildGeneric(TComMaterialIds.fiery, 0xFFFFD83A, 0xFFDA7600, 0xFF0B0507, 0xFF191313, 0xFF3A2424, 0xFF413333, addStats()).meleeHarvest();
+        buildGeneric(TComMaterialIds.knightmetal, 0xFF6f4377, 0xFF947f9f, 0xFFaaaaaa, 0xFFb4c9aa, 0xFFd8e7c0, 0xFFf3ffce, 0xFFffffff, addStats()).meleeHarvest();
+        buildGeneric(TComMaterialIds.nagascale, 0xFF0C1708, 0xFF172911, 0xFF1B4B4E, 0xFF254B29, 0xFF325D25, 0xFF575E1C, addStats(HeadMaterialStats.ID));
+        buildGeneric(TComMaterialIds.ravenFeather, 0xFF141c27, 0xFF1d252f, 0xFF2b343d, 0xFF3e444d, 0xFF474c52, 0xFF68696c, 0xFF878789, addStats(StatlessMaterialStats.BOWSTRING.getIdentifier()));
+        buildGeneric(TComMaterialIds.steeleaf, 0xFF081608, 0xFF1A2B11, 0xFF27401D, 0xFF345E27, 0xFF569243, 0xFF8CB05A, addStats()).meleeHarvest();
 
 
     }

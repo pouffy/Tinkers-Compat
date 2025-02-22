@@ -37,6 +37,8 @@ glitchcore = "0.0.1.1"
 
 vivecraft = "1.20.1-1.2.4-forge"
 
+twilightforest = "5468648"
+
 [libraries]
 ldlib               = { module = "com.lowdragmc.ldlib:ldlib-forge-1.20.1", version.ref = "ldlib" }
 configuration       = { module = "dev.toma.configuration:configuration-forge-1.20.1", version.ref = "configuration" }
@@ -70,6 +72,8 @@ oreberries          = { module = "maven.modrinth:oreberries-replanted", version.
 
 biomesoplenty       = { module = "maven.modrinth:biomes-o-plenty", version.ref = "biomesoplenty" }
 glitchcore          = { module = "maven.modrinth:glitchcore", version.ref = "glitchcore" }
+
+twilightforest      = { module = "curse.maven:the-twilight-forest-227639", version.ref = "twilightforest" }
 
 vivecraft           = { module = "maven.modrinth:vivecraft", version.ref = "vivecraft" }
 

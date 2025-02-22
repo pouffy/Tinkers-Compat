@@ -3,7 +3,6 @@ package com.pouffydev.tcompat.data.material;
 import com.pouffydev.tcompat.data.TComTags;
 import com.pouffydev.tcompat.data.builder.TComBaseRecipeProvider;
 import com.pouffydev.tcompat.material.TComMaterialIds;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -16,10 +15,7 @@ import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IMaterialRecipeHelper {
@@ -44,6 +40,7 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
         //Consumer<FinishedRecipe> malumConsumer = withCondition(consumer, modLoaded("malum"));
+        Consumer<FinishedRecipe> twilightConsumer = withCondition(consumer, modLoaded("twilightforest"));
         List<MaterialVariantId> noPlanks = List.of(TComMaterialIds.paloVerde);
 
 

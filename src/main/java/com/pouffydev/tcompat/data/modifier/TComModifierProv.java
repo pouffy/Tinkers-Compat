@@ -1,6 +1,7 @@
 package com.pouffydev.tcompat.data.modifier;
 
 import com.pouffydev.tcompat.modifier.TComModifierIds;
+import com.pouffydev.tcompat.modifier.TComModifiers;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -21,6 +22,19 @@ public class TComModifierProv extends AbstractModifierProvider implements ICondi
         EquipmentSlot[] armorSlots = ARMOR_SLOTS;
 
         buildModifier(TComModifierIds.aetherForged, modLoaded("aether"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
+        buildModifier(TComModifiers.precipitate.getId(), modLoaded("twilightforest"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TComModifiers.stalwart.getId(), modLoaded("twilightforest"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TComModifiers.superheat.getId(), modLoaded("twilightforest"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TComModifiers.synergy.getId(), modLoaded("twilightforest"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TComModifiers.veiled.getId(), modLoaded("twilightforest"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TComModifiers.twilit.getId(), modLoaded("twilightforest"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 

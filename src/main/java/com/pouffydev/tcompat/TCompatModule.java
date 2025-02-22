@@ -1,14 +1,18 @@
 package com.pouffydev.tcompat;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataSerializer;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryType;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
@@ -25,6 +29,7 @@ import slimeknights.tconstruct.common.registration.EnumDeferredRegister;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 import slimeknights.tconstruct.library.recipe.TinkerRecipeTypes;
 
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -83,5 +88,20 @@ public class TCompatModule {
         LOOT_FUNCTIONS.register(bus);
         LOOT_ENTRIES.register(bus);
         TinkerRecipeTypes.init(bus);
+    }
+
+    /** Accepts the given item if the passed tag has items */
+    protected static boolean acceptIfTag(CreativeModeTab.Output output, ItemLike item, CreativeModeTab.TabVisibility visibility, TagKey<Item> tagCondition) {
+        Optional<HolderSet.Named<Item>> tag = BuiltInRegistries.ITEM.getTag(tagCondition);
+        if (tag.isPresent() && tag.get().size() > 0) {
+            output.accept(item, visibility);
+            return true;
+        }
+        return false;
+    }
+
+    /** Accepts the given item if the passed tag has items */
+    protected static boolean acceptIfTag(CreativeModeTab.Output output, ItemLike item, TagKey<Item> tagCondition) {
+        return acceptIfTag(output, item, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tagCondition);
     }
 }

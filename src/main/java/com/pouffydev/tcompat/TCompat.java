@@ -2,6 +2,7 @@ package com.pouffydev.tcompat;
 
 import com.pouffydev.tcompat.data.TComDataGen;
 import com.pouffydev.tcompat.data.TComTags;
+import com.pouffydev.tcompat.fluids.TComFluids;
 import com.pouffydev.tcompat.modifier.TComModifiers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,13 +13,14 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.utils.Util;
 
 @Mod(TCompat.MOD_ID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TCompat {
     public static final String MOD_ID = "tcompat";
-    public static final String NAME = "Tinker's Compatability";
+    public static final String NAME = "Tinkers' Compatability";
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
     public TCompat() {
@@ -33,6 +35,7 @@ public class TCompat {
         IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
         modEventBus.register(new TComModifiers());
+        modEventBus.register(new TComFluids());
         TCompatModule.initRegisters();
 
         TComTags.init();

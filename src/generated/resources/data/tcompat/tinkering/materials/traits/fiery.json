@@ -1,0 +1,20 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tcompat:twilit"
+    },
+    {
+      "level": 1,
+      "name": "tcompat:superheat"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:autosmelt"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:fiery"
+    }
+  ]
+}

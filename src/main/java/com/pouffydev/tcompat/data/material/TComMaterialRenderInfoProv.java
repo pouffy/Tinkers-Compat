@@ -35,6 +35,11 @@ public class TComMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvid
         for (MaterialVariantId materialId : TComMaterialIds.deepAetherVariantRocks) {
             buildRenderInfo(materialId);
         }
+        buildRenderInfo(TComMaterialIds.fiery).luminosity(15).fallbacks("metal");
+        buildRenderInfo(TComMaterialIds.knightmetal).fallbacks("metal");
+        buildRenderInfo(TComMaterialIds.nagascale);
+        buildRenderInfo(TComMaterialIds.ravenFeather);
+        buildRenderInfo(TComMaterialIds.steeleaf);
     }
 
     @Override
