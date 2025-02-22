@@ -68,6 +68,12 @@ public class TComMaterialIds {
 
     public static final MaterialId brass = id("brass");
     public static final MaterialId zinc = id("zinc");
+    
+    public static final MaterialId fiery = id("fiery");
+    public static final MaterialId knightmetal = id("knightmetal");
+    public static final MaterialId nagascale = id("nagascale");
+    public static final MaterialId ravenFeather = id("raven_feather");
+    public static final MaterialId steeleaf = id("steeleaf");
 
 
     private static MaterialVariantId woodVariant(String name, List<MaterialVariantId> list) {
