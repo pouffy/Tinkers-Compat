@@ -1,50 +1,62 @@
 {
-  "color": "FF3A2424",
+  "color": "FF4D2A0E",
   "fallbacks": [
     "metal"
   ],
   "generator": {
     "supported_stats": [
-      "tconstruct:repair_kit",
       "tconstruct:head",
       "tconstruct:handle",
-      "tconstruct:binding"
+      "tconstruct:binding",
+      "tconstruct:repair_kit",
+      "tconstruct:limb",
+      "tconstruct:grip",
+      "tconstruct:armor_plating",
+      "tconstruct:plating_helmet",
+      "tconstruct:plating_chestplate",
+      "tconstruct:plating_leggings",
+      "tconstruct:plating_boots",
+      "tconstruct:plating_shield",
+      "tconstruct:maille",
+      "tconstruct:armor_maille"
     ],
     "transformer": {
-      "type": "tconstruct:recolor_sprite",
-      "color_mapping": {
-        "type": "tconstruct:grey_to_color",
-        "palette": [
-          {
-            "color": "FF000000",
-            "grey": 0
-          },
-          {
-            "color": "FFFFD83A",
-            "grey": 63
-          },
-          {
-            "color": "FFDA7600",
-            "grey": 102
-          },
-          {
-            "color": "FF0B0507",
-            "grey": 140
-          },
-          {
-            "color": "FF191313",
-            "grey": 178
-          },
-          {
-            "color": "FF3A2424",
-            "grey": 216
-          },
-          {
-            "color": "FF413333",
-            "grey": 255
-          }
-        ]
-      }
+      "type": "tconstruct:animated_sprite",
+      "frames": 2,
+      "meta": "tcompat:generator/fiery",
+      "palette": [
+        {
+          "color": "FF000000",
+          "grey": 0
+        },
+        {
+          "color": "FFC8C8C8",
+          "grey": 63,
+          "path": "tcompat:generator/fiery_border"
+        },
+        {
+          "grey": 102,
+          "path": "tcompat:generator/fiery_border"
+        },
+        {
+          "color": "FFE1E1E1",
+          "grey": 140,
+          "path": "tcompat:generator/fiery"
+        },
+        {
+          "grey": 178,
+          "path": "tcompat:generator/fiery"
+        },
+        {
+          "color": "FFE1E1E1",
+          "grey": 216,
+          "path": "tcompat:generator/fiery_highlight"
+        },
+        {
+          "grey": 255,
+          "path": "tcompat:generator/fiery_highlight"
+        }
+      ]
     }
   },
   "luminosity": 15

@@ -21,7 +21,7 @@ public class SuperheatModifier extends NoLevelsModifier implements DamageDealtMo
 
     @Override
     public void onDamageDealt(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, LivingEntity target, DamageSource source, float amount, boolean isDirectDamage) {
-        if (target.isOnFire()) {
+        if (target.isOnFire() && source != null) {
             target.hurt(source, (amount * 0.35F));
         }
     }

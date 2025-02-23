@@ -7,6 +7,10 @@
         "type": "forge:tag_empty",
         "tag": "forge:nuggets/nickel"
       }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "oreberriesreplanted"
     }
   ],
   "ingredient": {

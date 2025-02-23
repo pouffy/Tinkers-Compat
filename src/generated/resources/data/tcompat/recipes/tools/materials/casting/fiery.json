@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_fiery"
+  },
+  "output": "tcompat:fiery",
+  "temperature": 1345
+}

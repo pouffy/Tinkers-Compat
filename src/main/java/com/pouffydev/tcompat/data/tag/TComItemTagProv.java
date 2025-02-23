@@ -33,6 +33,12 @@ public class TComItemTagProv extends ItemTagsProvider {
     }
 
     private void addMisc() {
+        this.tag(TComTags.Items.NAGA_SCALE).addOptional(new ResourceLocation("twilightforest", "naga_scale"));
+
+        this.tag(TComTags.Items.ARMOR_SHARD).addOptional(new ResourceLocation("twilightforest", "armor_shard"));
+        this.tag(TComTags.Items.ARMOR_SHARD_CLUSTER).addOptional(new ResourceLocation("twilightforest", "armor_shard_cluster"));
+        this.tag(TComTags.Items.KNIGHTMETAL_LOOP).addOptional(new ResourceLocation("twilightforest", "knightmetal_loop"));
+
 
     }
 
@@ -40,6 +46,13 @@ public class TComItemTagProv extends ItemTagsProvider {
         for (TComTags.Items.Oreberries oreberry : TComTags.Items.Oreberries.values()) {
             this.tag(oreberry.tag()).addOptional(oreberry.item());
         }
+        this.tag(TComTags.Items.STEELEAF_INGOTS).addOptional(new ResourceLocation("twilightforest", "steeleaf_ingot"));
+        this.tag(TComTags.Items.STEELEAF_BLOCKS).addOptional(new ResourceLocation("twilightforest", "steeleaf_block"));
+        this.tag(TComTags.Items.FIERY_INGOTS).addOptional(new ResourceLocation("twilightforest", "fiery_ingot"));
+        this.tag(TComTags.Items.FIERY_BLOCKS).addOptional(new ResourceLocation("twilightforest", "fiery_block"));
+        this.tag(TComTags.Items.KNIGHTMETAL_INGOTS).addOptional(new ResourceLocation("twilightforest", "knightmetal_ingot"));
+        this.tag(TComTags.Items.KNIGHTMETAL_BLOCKS).addOptional(new ResourceLocation("twilightforest", "knightmetal_block"));
+
     }
 
     private void addMetals() {

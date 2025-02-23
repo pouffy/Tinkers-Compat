@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/steeleaf"
+  },
+  "material": "tcompat:steeleaf",
+  "needed": 1,
+  "value": 9
+}

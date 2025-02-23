@@ -2,6 +2,7 @@ package com.pouffydev.tcompat.data.material;
 
 import com.pouffydev.tcompat.data.TComTags;
 import com.pouffydev.tcompat.data.builder.TComBaseRecipeProvider;
+import com.pouffydev.tcompat.fluids.TComFluids;
 import com.pouffydev.tcompat.material.TComMaterialIds;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -68,12 +69,20 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantRocks) {
             rockVariantRecipe(deepAetherConsumer, materialVariantId, "deep_aether");
         }
+
+        materialRecipe(twilightConsumer, TComMaterialIds.ravenFeather, Ingredient.of(TComTags.Items.RAVEN_FEATHER),      1, 1, folder + "raven_feather");
+        materialRecipe(twilightConsumer, TComMaterialIds.nagascale, Ingredient.of(TComTags.Items.NAGA_SCALE),      1, 1, folder + "nagascale");
+        materialRecipe(twilightConsumer, TComMaterialIds.steeleaf, Ingredient.of(TComTags.Items.STEELEAF_INGOTS),      1, 1, folder + "steeleaf/ingot");
+        materialRecipe(twilightConsumer, TComMaterialIds.steeleaf, Ingredient.of(TComTags.Items.STEELEAF_BLOCKS),      9, 1, folder + "steeleaf/block");
+
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
         String folder = "tools/materials/";
+        Consumer<FinishedRecipe> twilightConsumer = withCondition(consumer, modLoaded("twilightforest"));
+        materialMeltingCasting(twilightConsumer, TComMaterialIds.fiery, TComFluids.moltenFiery,    folder);
+        materialMeltingCasting(twilightConsumer, TComMaterialIds.knightmetal, TComFluids.moltenKnightmetal,    folder);
 
-        //materialMeltingCasting(consumer, GTCMaterialIds.sterlingSilver, GTMaterials.SterlingSilver.getFluid(),    folder);
 
     }
 

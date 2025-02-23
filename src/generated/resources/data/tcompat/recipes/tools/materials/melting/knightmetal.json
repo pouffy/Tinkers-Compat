@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "input": "tcompat:knightmetal",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_knightmetal"
+  },
+  "temperature": 915
+}

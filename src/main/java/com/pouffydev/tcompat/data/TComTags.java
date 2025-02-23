@@ -133,8 +133,22 @@ public class TComTags {
                 return new ResourceLocation("oreberriesreplanted", this.name().toLowerCase() + "_oreberry");
             }
         }
-        public static TagKey<Item> STEELEAF_INGOTS = common("ingots/steeleaf");
-        public static TagKey<Item> STEELEAF_BLOCKS = common("storage_blocks/steeleaf");
+        public static TagKey<Item> STEELEAF_INGOTS  = common("ingots/steeleaf");
+        public static TagKey<Item> STEELEAF_BLOCKS  = common("storage_blocks/steeleaf");
+        public static TagKey<Item> FIERY_INGOTS     = common("ingots/fiery");
+        public static TagKey<Item> FIERY_BLOCKS     = common("storage_blocks/fiery");
+        public static TagKey<Item> KNIGHTMETAL_INGOTS     = common("ingots/knightmetal");
+        public static TagKey<Item> KNIGHTMETAL_BLOCKS     = common("storage_blocks/knightmetal");
+
+        public static TagKey<Item> ARMOR_SHARD = local("armor_shard");
+        public static TagKey<Item> ARMOR_SHARD_CLUSTER = local("armor_shard_cluster");
+        public static TagKey<Item> KNIGHTMETAL_LOOP = local("knightmetal_loop");
+
+        public static TagKey<Item> RAVEN_FEATHER = local("raven_feathers");
+        public static TagKey<Item> NAGA_SCALE = local("naga_scales");
+
+        public static TagKey<Item> FIERY_VIAL = TagKey.create(Registries.ITEM, new ResourceLocation("twilightforest", "fiery_vial"));
+
 
         /** Makes a tag in the tinkers compat domain */
         private static TagKey<Item> local(String name) {

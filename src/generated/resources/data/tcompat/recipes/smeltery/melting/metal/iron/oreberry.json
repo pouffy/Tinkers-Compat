@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "oreberriesreplanted"
+    }
+  ],
   "ingredient": {
     "tag": "forge:oreberries/iron"
   },

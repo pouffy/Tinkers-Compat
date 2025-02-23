@@ -51,6 +51,10 @@ public class TCompat {
         return new ResourceLocation(namespace, name);
     }
 
+    public static String makeDescriptionId(String type, String name) {
+        return type + "." + MOD_ID + "." + name;
+    }
+
     public static String makeTranslationKey(String base, String name) {
         return Util.makeTranslationKey(base, getResource(name));
     }

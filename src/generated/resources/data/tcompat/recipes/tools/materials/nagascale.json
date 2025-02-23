@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:naga_scales"
+  },
+  "material": "tcompat:nagascale",
+  "needed": 1,
+  "value": 1
+}

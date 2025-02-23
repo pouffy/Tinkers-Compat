@@ -45,10 +45,29 @@
   "material.tcompat.aether_rock.aseterite": "Aseterite",
   "material.tcompat.aether_rock.clorite": "Clorite",
 
+  "material.tcompat.fiery": "Fiery",
+  "material.tcompat.knightmetal": "Knightmetal",
+  "material.tcompat.steeleaf": "Steeleaf",
+  "material.tcompat.nagascale": "Nagascale",
+  "material.tcompat.raven_feather": "Raven Feather",
+
+
+
   "material.tcompat.alchemical_calx": "Alchemical Calx",
   "material.tcompat.spirit_fabric": "Spirit Fabric",
   "material.tcompat.astral_weave": "Astral Weave",
   "material.tcompat.soulstone": "Soulstone",
+
+  "block.tcompat.molten_fiery_fluid": "Molten Fiery",
+  "block.tcompat.molten_knightmetal_fluid": "Molten Knightmetal",
+  "block.tcompat.fiery_essence_fluid": "Fiery Essence",
+  "fluid.tcompat.molten_fiery": "Molten Fiery",
+  "fluid.tcompat.molten_knightmetal": "Molten Knightmetal",
+  "fluid.tcompat.fiery_essence": "Fiery Essence",
+
+  "item.tcompat.molten_fiery_bucket": "Molten Fiery Bucket",
+  "item.tcompat.molten_knightmetal_bucket": "Molten Knightmetal Bucket",
+  "item.tcompat.fiery_essence_bucket": "Fiery Essence Bucket",
 
   "_comment": "Tooltips",
 
@@ -56,6 +75,14 @@
   "modifier.tcompat.aether_forged": "Aether Forged",
   "modifier.tcompat.aether_forged.flavor": "Heaven Grade",
   "modifier.tcompat.aether_forged.description": "Allows your tool to use it's full mining speed in The Aether",
+
+  "modifier.tcompat.twilit": "Twilit",
+  "modifier.tcompat.precipitate": "Precipitate",
+  "modifier.tcompat.stalwart": "Stalwart",
+  "modifier.tcompat.superheat": "Superheat",
+  "modifier.tcompat.synergy": "Synergy",
+  "modifier.tcompat.veiled": "Veiled",
+
 
   "modifier.tcompat.magic_proficiency": "Magic Proficiency",
   "modifier.tcompat.magic_proficiency.flavor": "Alakazowch",

@@ -1,0 +1,68 @@
+{
+  "modifier.tcompat": {
+    "__abilities__": null,
+    "aether_forged":          "#7df0e7",
+
+    "__traits__": null,
+    "precipitate":            "#575e1c",
+    "stalwart":               "#b4c9aa",
+    "superheat":              "#fdcd47",
+    "synergy":                "#a0cf6e",
+    "veiled":                 "#646669",
+    "twilit":                 "#c5b172"
+  },
+  "material.tconstruct": {
+    "__tier_1_wood__": null,
+    "wood.aspen":             "#C18260",
+    "wood.baobab":            "#87764E",
+    "wood.blue_enchanted":    "#4757A2",
+    "wood.cika":              "#714439",
+    "wood.cypress":           "#807B61",
+    "wood.ebony":             "#1F1F1F",
+    "wood.fir":               "#794D3A",
+    "wood.florus":            "#44592A",
+    "wood.green_enchanted":   "#3A8D4A",
+    "wood.holly":             "#B48769",
+    "wood.ironwood":          "#7D7673",
+    "wood.jacaranda":         "#916964",
+    "wood.mahogany":          "#854E6D",
+    "wood.maple":             "#695952",
+    "wood.palm":              "#877E68",
+    "wood.palo_verde":        "#E0CFA5",
+    "wood.pine":              "#998E70",
+    "wood.rainbow_eucalyptus": "#7F4D39",
+    "wood.redwood":           "#974949",
+    "wood.sakura":            "#742941",
+    "wood.skyris":            "#6798AE",
+    "wood.white_mangrove":    "#B5B0B0",
+    "wood.willow":            "#515C38",
+    "wood.witch_hazel":       "#225337",
+    "wood.zelkova":           "#824A23",
+
+    "__tier_1_rock__": null,
+    "rock.red_rock":          "#904727",
+    "rock.dacite":            "#6D4536"
+  },
+  "material.tcompat": {
+    "__aether__": null,
+    "aether_wood":            "#5C5B41",
+    "aether_wood.skyroot":    "#5C5B41",
+    "aether_wood.roseroot":   "#DFA7AF",
+    "aether_wood.yagroot":    "#564D67",
+    "aether_wood.cruderoot":  "#7E79A0",
+    "aether_wood.conberry":   "#826653",
+    "aether_wood.sunroot":    "#C6AB98",
+
+    "aether_rock":            "#ADADAD",
+    "aether_rock.holystone":  "#ADADAD",
+    "aether_rock.aseterite":  "#938595",
+    "aether_rock.clorite":    "#699AA1",
+
+    "__twilight_forest__": null,
+    "fiery":                  "#FC8D0B",
+    "knightmetal":            "#B4C9AA",
+    "nagascale":              "#325D25",
+    "raven_feather":          "#313B49",
+    "steeleaf":               "#52873A"
+  }
+}

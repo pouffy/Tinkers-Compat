@@ -71,6 +71,8 @@ public class TComMaterialStatsProv extends AbstractMaterialStatsDataProvider {
 
     private void addArmor() {
         addMaterialStats(TComMaterialIds.aetherWood, StatlessMaterialStats.SHIELD_CORE);
+        addArmorShieldStats(TComMaterialIds.fiery,     PlatingMaterialStats.builder().durabilityFactor(56).armor(4, 7, 9, 4).knockbackResistance(1.5f), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TComMaterialIds.knightmetal,     PlatingMaterialStats.builder().durabilityFactor(56).armor(3, 6, 8, 3).toughness(1f), StatlessMaterialStats.MAILLE);
 
     }
 
