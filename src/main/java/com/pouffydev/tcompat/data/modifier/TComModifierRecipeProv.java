@@ -1,5 +1,6 @@
 package com.pouffydev.tcompat.data.modifier;
 
+import com.pouffydev.tcompat.data.TComTags;
 import com.pouffydev.tcompat.data.builder.TComBaseRecipeProvider;
 import com.pouffydev.tcompat.material.TComMaterialIds;
 import com.pouffydev.tcompat.modifier.TComModifierIds;
@@ -54,14 +55,12 @@ public class TComModifierRecipeProv extends TComBaseRecipeProvider {
 
         ModifierRecipeBuilder.modifier(TComModifierIds.aetherForged)
                 .setTools(TinkerTags.Items.HARVEST)
-                .addInput(itemTag("aether:gems/zanite"))
+                .addInput(TComTags.Items.ZANITE_BLOCKS)
                 .addInput(itemTag("aether:golden_oak_logs"))
-                .addInput(itemTag("aether:gems/zanite"))
+                .addInput(TComTags.Items.ZANITE_BLOCKS)
                 .addInput(Items.GLOWSTONE)
                 .addInput(Items.GLOWSTONE)
                 .setMaxLevel(1).checkTraitLevel()
-                .setSlots(SlotType.ABILITY, 1)
-                .saveSalvage(aetherConsumer, prefix(TComModifierIds.aetherForged, abilitySalvage))
                 .save(aetherConsumer, prefix(TComModifierIds.aetherForged, abilityFolder));
     }
 

@@ -22,6 +22,8 @@ dependencies {
 
     modCompileOnly(forge.deepaether)
     modExtraRuntimeOnly(forge.deepaether)
+    modCompileOnly(forge.aetherredux)
+    modExtraRuntimeOnly(forge.aetherredux)
 
     modExtraRuntimeOnly(forge.bundles.jei)
     modCompileOnly(forge.bundles.otbwg)

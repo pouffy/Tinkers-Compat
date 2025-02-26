@@ -37,9 +37,9 @@ public class TComItemTagProv extends ItemTagsProvider {
 
         this.tag(TComTags.Items.ARMOR_SHARD).addOptional(new ResourceLocation("twilightforest", "armor_shard"));
         this.tag(TComTags.Items.ARMOR_SHARD_CLUSTER).addOptional(new ResourceLocation("twilightforest", "armor_shard_cluster"));
-        this.tag(TComTags.Items.KNIGHTMETAL_LOOP).addOptional(new ResourceLocation("twilightforest", "knightmetal_loop"));
+        this.tag(TComTags.Items.KNIGHTMETAL_LOOP).addOptional(new ResourceLocation("twilightforest", "knightmetal_ring"));
 
-
+        this.tag(TComTags.Items.ZANITE_BLOCKS).addOptional(new ResourceLocation("aether", "zanite_block"));
     }
 
     private void addForge() {

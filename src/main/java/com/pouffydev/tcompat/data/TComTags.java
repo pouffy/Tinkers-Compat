@@ -139,6 +139,28 @@ public class TComTags {
         public static TagKey<Item> FIERY_BLOCKS     = common("storage_blocks/fiery");
         public static TagKey<Item> KNIGHTMETAL_INGOTS     = common("ingots/knightmetal");
         public static TagKey<Item> KNIGHTMETAL_BLOCKS     = common("storage_blocks/knightmetal");
+        public static TagKey<Item> ZANITE_GEMS  = common("gems/zanite");
+        public static TagKey<Item> ZANITE_BLOCKS  = common("storage_blocks/zanite");
+        public static TagKey<Item> ZANITE_ORES  = common("ores/zanite");
+        public static TagKey<Item> SKYJADE_GEMS  = common("gems/skyjade");
+        public static TagKey<Item> SKYJADE_BLOCKS  = common("storage_blocks/skyjade");
+        public static TagKey<Item> SKYJADE_ORES  = common("ores/skyjade");
+        public static TagKey<Item> GRAVITITE_INGOTS  = common("ingots/gravitite");
+        public static TagKey<Item> GRAVITITE_BLOCKS  = common("storage_blocks/gravitite");
+        public static TagKey<Item> GRAVITITE_ORES  = common("ores/gravitite");
+        public static TagKey<Item> GRAVITITE_RAW_ORES  = common("raw_materials/gravitite");
+        public static TagKey<Item> GRAVITITE_RAW_BLOCKS  = common("storage_blocks/raw_gravitite");
+        public static TagKey<Item> VERIDIUM_INGOTS  = common("ingots/veridium");
+        public static TagKey<Item> VERIDIUM_NUGGETS  = common("nuggets/veridium");
+        public static TagKey<Item> VERIDIUM_BLOCKS  = common("storage_blocks/veridium");
+        public static TagKey<Item> VERIDIUM_ORES  = common("ores/veridium");
+        public static TagKey<Item> VERIDIUM_RAW_ORES  = common("raw_materials/veridium");
+        public static TagKey<Item> VERIDIUM_RAW_BLOCKS  = common("storage_blocks/raw_veridium");
+        public static TagKey<Item> REFINED_SENTRITE_INGOTS  = common("ingots/refined_sentrite");
+        public static TagKey<Item> REFINED_SENTRITE_NUGGETS  = common("nuggets/refined_sentrite");
+        public static TagKey<Item> REFINED_SENTRITE_BLOCKS  = common("storage_blocks/refined_sentrite");
+        public static TagKey<Item> REFINED_SENTRITE_ORES  = common("ores/refined_sentrite");
+
 
         public static TagKey<Item> ARMOR_SHARD = local("armor_shard");
         public static TagKey<Item> ARMOR_SHARD_CLUSTER = local("armor_shard_cluster");
@@ -157,6 +179,10 @@ public class TComTags {
 
         private static TagKey<Item> common(String name) {
             return TagKey.create(Registries.ITEM, commonResource(name));
+        }
+
+        private static TagKey<Item> named(String namespace, String name) {
+            return TagKey.create(Registries.ITEM, new ResourceLocation(namespace, name));
         }
     }
 

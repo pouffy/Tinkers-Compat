@@ -29,6 +29,7 @@ nitrogen = "1.20.1-1.0.11-neoforge"
 cumulus = "1.20.1-1.0.1-neoforge"
 aeroblender = "1.20.1-1.0.2-rc1-neoforge"
 deepaether = "1.20.1-1.1.4"
+aetherredux = "2.0.18-1.20.1"
 
 oreberries = "0.5.2"
 
@@ -67,6 +68,7 @@ nitrogen            = { module = "com.aetherteam.nitrogen:nitrogen_internals", v
 cumulus             = { module = "com.aetherteam.cumulus:cumulus_menus", version.ref = "cumulus" }
 aeroblender         = { module = "io.github.razordevs:aeroblender", version.ref = "aeroblender" }
 deepaether          = { module = "maven.modrinth:deep-aether", version.ref = "deepaether" }
+aetherredux         = { module = "maven.modrinth:the-aether-redux", version.ref = "aetherredux" }
 
 oreberries          = { module = "maven.modrinth:oreberries-replanted", version.ref = "oreberries" }
 

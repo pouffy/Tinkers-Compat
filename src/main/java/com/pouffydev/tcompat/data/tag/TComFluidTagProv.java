@@ -28,10 +28,25 @@ public class TComFluidTagProv extends FluidTagsProvider {
         fluidTag(TComFluids.moltenKnightmetal);
         fluidTag(TComFluids.moltenFiery);
         fluidTag(TComFluids.fieryEssence);
+        fluidTag(TComFluids.moltenGravitite);
+        fluidTag(TComFluids.moltenZanite);
+        fluidTag(TComFluids.moltenSkyjade);
+        fluidTag(TComFluids.moltenRefinedSentrite);
+        fluidTag(TComFluids.moltenVeridium);
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(
                 // twilight forest metals
                 TComFluids.moltenKnightmetal.getTag(),
-                TComFluids.moltenFiery.getTag()
+                TComFluids.moltenFiery.getTag(),
+                // aether materials
+                TComFluids.moltenGravitite.getTag(),
+                TComFluids.moltenVeridium.getTag(),
+                TComFluids.moltenRefinedSentrite.getTag()
+        );
+        this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
+                // aether materials
+                TComFluids.moltenZanite.getTag(),
+                TComFluids.moltenSkyjade.getTag()
+
         );
         this.tag(TinkerTags.Fluids.SLIME_TOOLTIPS).addTag(FluidTags.create(TComFluids.fieryEssence.getId()));
     }

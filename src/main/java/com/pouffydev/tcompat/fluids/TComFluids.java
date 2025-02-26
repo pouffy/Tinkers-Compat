@@ -44,6 +44,15 @@ public final class TComFluids extends TCompatModule {
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenFiery = FLUIDS.register("molten_fiery").type(hot("molten_fiery").temperature(1645).lightLevel(12)).block(createBurning(MapColor.COLOR_LIGHT_GREEN, 12, 25, 4f)).bucket().commonTag().flowing();
     public static final FluidObject<UnplaceableFluid> fieryEssence = FLUIDS.register("fiery_essence").type(hot("fiery_essence").temperature(1500).lightLevel(0)).bucket().commonTag().unplacable();
 
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenZanite = FLUIDS.register("molten_zanite").type(hot("molten_zanite").temperature(1750).lightLevel(13)).block(createBurning(MapColor.COLOR_PURPLE, 13, 10, 6.5f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenSkyjade = FLUIDS.register("molten_skyjade").type(hot("molten_skyjade").temperature(1625).lightLevel(13)).block(createBurning(MapColor.COLOR_LIGHT_GREEN, 13, 10, 5f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenGravitite = FLUIDS.register("molten_gravitite").type(hot("molten_gravitite").density(-2000).temperature(1775).lightLevel(7)).block(createBurning(MapColor.COLOR_MAGENTA, 7, 8, 6f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenVeridium = FLUIDS.register("molten_veridium").type(hot("molten_veridium").temperature(1425).lightLevel(13)).block(createBurning(MapColor.COLOR_BLUE, 13, 10, 5f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenRefinedSentrite = FLUIDS.register("molten_refined_sentrite").type(hot("molten_refined_sentrite").temperature(1755).lightLevel(8)).block(createBurning(MapColor.TERRACOTTA_GRAY, 8, 13, 7.5f)).bucket().commonTag().flowing();
+
+
+
+
     private static FluidType.Properties hot(String name) {
         return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000)
                 .descriptionId(TCompat.makeDescriptionId("fluid", name))

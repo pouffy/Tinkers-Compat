@@ -10,13 +10,13 @@
   ],
   "inputs": [
     {
-      "tag": "aether:gems/zanite"
+      "tag": "aether:zanite_blocks"
     },
     {
       "tag": "aether:golden_oak_logs"
     },
     {
-      "tag": "aether:gems/zanite"
+      "tag": "aether:zanite_blocks"
     },
     {
       "item": "minecraft:glowstone"
@@ -27,9 +27,6 @@
   ],
   "level": 1,
   "result": "tcompat:aether_forged",
-  "slots": {
-    "abilities": 1
-  },
   "tools": {
     "tag": "tconstruct:modifiable/harvest"
   }

@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/molten/compat_ore/veridium/flowing",
+  "still": "tcompat:fluid/molten/compat_ore/veridium/still"
+}
