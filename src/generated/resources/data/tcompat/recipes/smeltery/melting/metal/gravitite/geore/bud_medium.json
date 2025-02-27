@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:geore_medium_buds/gravitite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_medium_buds/gravitite"
+  },
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_gravitite"
+  },
+  "temperature": 1475,
+  "time": 119
+}

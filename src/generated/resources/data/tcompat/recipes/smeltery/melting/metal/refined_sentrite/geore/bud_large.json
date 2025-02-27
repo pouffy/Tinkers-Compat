@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:geore_large_buds/refined_sentrite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_large_buds/refined_sentrite"
+  },
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_refined_sentrite"
+  },
+  "temperature": 1455,
+  "time": 158
+}

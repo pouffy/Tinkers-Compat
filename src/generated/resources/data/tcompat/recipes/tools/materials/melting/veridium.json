@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "input": "tcompat:veridium",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_veridium"
+  },
+  "temperature": 1125
+}

@@ -10,13 +10,13 @@
   ],
   "inputs": [
     {
-      "tag": "aether:zanite_blocks"
+      "tag": "forge:storage_blocks/zanite"
     },
     {
       "tag": "aether:golden_oak_logs"
     },
     {
-      "tag": "aether:zanite_blocks"
+      "tag": "forge:storage_blocks/zanite"
     },
     {
       "item": "minecraft:glowstone"

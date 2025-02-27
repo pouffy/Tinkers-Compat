@@ -39,12 +39,15 @@ public class TComItemTagProv extends ItemTagsProvider {
         this.tag(TComTags.Items.ARMOR_SHARD_CLUSTER).addOptional(new ResourceLocation("twilightforest", "armor_shard_cluster"));
         this.tag(TComTags.Items.KNIGHTMETAL_LOOP).addOptional(new ResourceLocation("twilightforest", "knightmetal_ring"));
 
-        this.tag(TComTags.Items.ZANITE_BLOCKS).addOptional(new ResourceLocation("aether", "zanite_block"));
+
     }
 
     private void addForge() {
         for (TComTags.Items.Oreberries oreberry : TComTags.Items.Oreberries.values()) {
             this.tag(oreberry.tag()).addOptional(oreberry.item());
+        }
+        for (TComTags.Items.Gloves glove : TComTags.Items.Gloves.values()) {
+            this.tag(glove.tag()).addOptional(glove.item());
         }
         this.tag(TComTags.Items.STEELEAF_INGOTS).addOptional(new ResourceLocation("twilightforest", "steeleaf_ingot"));
         this.tag(TComTags.Items.STEELEAF_BLOCKS).addOptional(new ResourceLocation("twilightforest", "steeleaf_block"));
@@ -52,6 +55,28 @@ public class TComItemTagProv extends ItemTagsProvider {
         this.tag(TComTags.Items.FIERY_BLOCKS).addOptional(new ResourceLocation("twilightforest", "fiery_block"));
         this.tag(TComTags.Items.KNIGHTMETAL_INGOTS).addOptional(new ResourceLocation("twilightforest", "knightmetal_ingot"));
         this.tag(TComTags.Items.KNIGHTMETAL_BLOCKS).addOptional(new ResourceLocation("twilightforest", "knightmetal_block"));
+
+        this.tag(TComTags.Items.ZANITE_GEMS).addOptional(new ResourceLocation("aether", "zanite_gemstone"));
+        this.tag(TComTags.Items.ZANITE_BLOCKS).addOptional(new ResourceLocation("aether", "zanite_block"));
+        this.tag(TComTags.Items.ZANITE_ORES).addOptional(new ResourceLocation("aether", "zanite_ore"));
+        this.tag(TComTags.Items.SKYJADE_GEMS).addOptional(new ResourceLocation("deep_aether", "skyjade"));
+        this.tag(TComTags.Items.SKYJADE_BLOCKS).addOptional(new ResourceLocation("deep_aether", "skyjade_block"));
+        this.tag(TComTags.Items.SKYJADE_ORES).addOptional(new ResourceLocation("deep_aether", "skyjade_ore"));
+        this.tag(TComTags.Items.GRAVITITE_INGOTS).addOptional(new ResourceLocation("aether_redux", "gravitite_ingot")).addOptional(new ResourceLocation("aether", "enchanted_gravitite"));
+        this.tag(TComTags.Items.GRAVITITE_BLOCKS).addOptional(new ResourceLocation("aether_redux", "gravitite_block"));
+        this.tag(TComTags.Items.GRAVITITE_ORES).addOptional(new ResourceLocation("aether", "gravitite_ore"));
+        this.tag(TComTags.Items.GRAVITITE_RAW_BLOCKS).addOptional(new ResourceLocation("aether_redux", "raw_gravitite_block"));
+        this.tag(TComTags.Items.GRAVITITE_RAW_ORES).addOptional(new ResourceLocation("aether_redux", "raw_gravitite"));
+        this.tag(TComTags.Items.VERIDIUM_INGOTS).addOptional(new ResourceLocation("aether_redux", "veridium_ingot"));
+        this.tag(TComTags.Items.VERIDIUM_NUGGETS).addOptional(new ResourceLocation("aether_redux", "veridium_nugget"));
+        this.tag(TComTags.Items.VERIDIUM_BLOCKS).addOptional(new ResourceLocation("aether_redux", "veridium_block"));
+        this.tag(TComTags.Items.VERIDIUM_ORES).addOptional(new ResourceLocation("aether_redux", "veridium_ore"));
+        this.tag(TComTags.Items.VERIDIUM_RAW_BLOCKS).addOptional(new ResourceLocation("aether_redux", "raw_veridium_block"));
+        this.tag(TComTags.Items.VERIDIUM_RAW_ORES).addOptional(new ResourceLocation("aether_redux", "raw_veridium"));
+        this.tag(TComTags.Items.REFINED_SENTRITE_INGOTS).addOptional(new ResourceLocation("aether_redux", "refined_sentrite"));
+        this.tag(TComTags.Items.REFINED_SENTRITE_NUGGETS).addOptional(new ResourceLocation("aether_redux", "sentrite_chunk"));
+        this.tag(TComTags.Items.REFINED_SENTRITE_BLOCKS).addOptional(new ResourceLocation("aether_redux", "refined_sentrite_block"));
+        this.tag(TComTags.Items.REFINED_SENTRITE_ORES).addOptional(new ResourceLocation("aether_redux", "sentrite"));
 
     }
 

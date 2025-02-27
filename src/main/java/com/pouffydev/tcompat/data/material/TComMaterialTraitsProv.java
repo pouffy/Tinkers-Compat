@@ -20,7 +20,12 @@ public class TComMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         //addTraits(GTCMaterialIds.sterlingSilver, MELEE_HARVEST, ModifierIds.smite, new ModifierId(TConstruct.MOD_ID, "dwarven"));
 
         addDefaultTraits(TComMaterialIds.aetherWood, TComModifierIds.aetherForged, ModifierIds.cultivated);
-        addDefaultTraits(TComMaterialIds.aetherRock, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TinkerModifiers.stonebound.getId(), 1));
+        addDefaultTraits(TComMaterialIds.aetherRock, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.ambrogen, 1), new ModifierEntry(TinkerModifiers.stonebound.getId(), 1));
+        addDefaultTraits(TComMaterialIds.zanite, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.acclimatization, 1));
+        addDefaultTraits(TComMaterialIds.gravitite, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.ascension, 1));
+        addDefaultTraits(TComMaterialIds.skyjade, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.dulling, 1));
+        addDefaultTraits(TComMaterialIds.veridium, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.ambrofusion, 1));
+        addDefaultTraits(TComMaterialIds.refinedSentrite, new ModifierEntry(TComModifierIds.aetherForged, 1));
 
         addDefaultTraits(TComMaterialIds.fiery, TComModifiers.twilit.getId(), TComModifiers.superheat.getId(), TinkerModifiers.autosmelt.getId(), TinkerModifiers.fiery.getId());
         addDefaultTraits(TComMaterialIds.knightmetal, TComModifiers.twilit.getId(), TComModifiers.stalwart.getId());

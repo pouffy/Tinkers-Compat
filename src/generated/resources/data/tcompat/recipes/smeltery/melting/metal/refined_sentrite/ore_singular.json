@@ -1,0 +1,92 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "type": "tconstruct:tag_difference_present",
+      "base": "forge:ores/refined_sentrite",
+      "registry": "minecraft:item",
+      "subtracted": [
+        "forge:ore_rates/sparse",
+        "forge:ore_rates/dense"
+      ]
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/veridium"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "byproducts": [
+          {
+            "amount": 180,
+            "tag": "forge:molten_veridium"
+          }
+        ],
+        "ingredient": {
+          "type": "forge:difference",
+          "base": {
+            "tag": "forge:ores/refined_sentrite"
+          },
+          "subtracted": [
+            {
+              "tag": "forge:ore_rates/sparse"
+            },
+            {
+              "tag": "forge:ore_rates/dense"
+            }
+          ]
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 180,
+          "tag": "forge:molten_refined_sentrite"
+        },
+        "temperature": 1455,
+        "time": 198
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "type": "forge:difference",
+          "base": {
+            "tag": "forge:ores/refined_sentrite"
+          },
+          "subtracted": [
+            {
+              "tag": "forge:ore_rates/sparse"
+            },
+            {
+              "tag": "forge:ore_rates/dense"
+            }
+          ]
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 180,
+          "tag": "forge:molten_refined_sentrite"
+        },
+        "temperature": 1455,
+        "time": 198
+      }
+    }
+  ]
+}

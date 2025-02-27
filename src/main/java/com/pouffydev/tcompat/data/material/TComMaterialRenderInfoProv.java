@@ -40,6 +40,11 @@ public class TComMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvid
         buildRenderInfo(TComMaterialIds.nagascale);
         buildRenderInfo(TComMaterialIds.ravenFeather);
         buildRenderInfo(TComMaterialIds.steeleaf);
+        buildRenderInfo(TComMaterialIds.zanite).fallbacks("gem");
+        buildRenderInfo(TComMaterialIds.gravitite).fallbacks("metal");
+        buildRenderInfo(TComMaterialIds.skyjade).fallbacks("gem");
+        buildRenderInfo(TComMaterialIds.veridium).fallbacks("metal");
+        buildRenderInfo(TComMaterialIds.refinedSentrite).fallbacks("metal");
     }
 
     @Override

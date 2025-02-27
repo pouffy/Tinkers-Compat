@@ -133,6 +133,24 @@ public class TComTags {
                 return new ResourceLocation("oreberriesreplanted", this.name().toLowerCase() + "_oreberry");
             }
         }
+        public enum Gloves {
+            IRON,GOLD,DIAMOND,NETHERITE,OBSIDIAN,ZANITE,GRAVITITE,SKYJADE("deep_aether"),STRATUS("deep_aether")
+            ;
+            final String namespace;
+            Gloves() {
+                this.namespace = "aether";
+            }
+            Gloves(String namespace) {
+                this.namespace = namespace;
+            }
+            public TagKey<Item> tag() {
+                return common("aether_gloves/" + this.name().toLowerCase());
+            }
+
+            public ResourceLocation item() {
+                return new ResourceLocation(namespace, this.name().toLowerCase() + "_gloves");
+            }
+        }
         public static TagKey<Item> STEELEAF_INGOTS  = common("ingots/steeleaf");
         public static TagKey<Item> STEELEAF_BLOCKS  = common("storage_blocks/steeleaf");
         public static TagKey<Item> FIERY_INGOTS     = common("ingots/fiery");
@@ -161,6 +179,8 @@ public class TComTags {
         public static TagKey<Item> REFINED_SENTRITE_BLOCKS  = common("storage_blocks/refined_sentrite");
         public static TagKey<Item> REFINED_SENTRITE_ORES  = common("ores/refined_sentrite");
 
+
+        public static TagKey<Item> AMBROSIUM = local("ambrosium");
 
         public static TagKey<Item> ARMOR_SHARD = local("armor_shard");
         public static TagKey<Item> ARMOR_SHARD_CLUSTER = local("armor_shard_cluster");

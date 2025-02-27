@@ -80,9 +80,18 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
         String folder = "tools/materials/";
         Consumer<FinishedRecipe> twilightConsumer = withCondition(consumer, modLoaded("twilightforest"));
+        Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
+        Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
+        Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
+
         materialMeltingCasting(twilightConsumer, TComMaterialIds.fiery, TComFluids.moltenFiery,    folder);
         materialMeltingCasting(twilightConsumer, TComMaterialIds.knightmetal, TComFluids.moltenKnightmetal,    folder);
 
+        materialMeltingCasting(aetherConsumer, TComMaterialIds.zanite, TComFluids.moltenZanite, folder);
+        materialMeltingCasting(aetherConsumer, TComMaterialIds.gravitite, TComFluids.moltenGravitite, folder);
+        materialMeltingCasting(deepAetherConsumer, TComMaterialIds.skyjade, TComFluids.moltenSkyjade, folder);
+        materialMeltingCasting(aetherReduxConsumer, TComMaterialIds.veridium, TComFluids.moltenVeridium, folder);
+        materialMeltingCasting(aetherReduxConsumer, TComMaterialIds.refinedSentrite, TComFluids.moltenRefinedSentrite, folder);
 
     }
 

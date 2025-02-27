@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_refined_sentrite"
+  },
+  "output": "tcompat:refined_sentrite",
+  "temperature": 1455
+}

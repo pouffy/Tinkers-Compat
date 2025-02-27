@@ -1,0 +1,68 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:raw_materials/veridium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/gravitite"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "byproducts": [
+          {
+            "amount": 90,
+            "tag": "forge:molten_gravitite"
+          }
+        ],
+        "ingredient": {
+          "tag": "forge:raw_materials/veridium"
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 90,
+          "tag": "forge:molten_veridium"
+        },
+        "temperature": 1125,
+        "time": 105
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "tag": "forge:raw_materials/veridium"
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 90,
+          "tag": "forge:molten_veridium"
+        },
+        "temperature": 1125,
+        "time": 105
+      }
+    }
+  ]
+}

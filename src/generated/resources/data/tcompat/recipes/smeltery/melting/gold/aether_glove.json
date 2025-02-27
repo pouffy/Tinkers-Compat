@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:aether_gloves/gold"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:aether_gloves/gold"
+  },
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_gold",
+    "unit_size": 10
+  },
+  "temperature": 700,
+  "time": 80
+}

@@ -2,6 +2,7 @@ package com.pouffydev.tcompat.modifier;
 
 import com.pouffydev.tcompat.TCompat;
 import com.pouffydev.tcompat.TCompatModule;
+import com.pouffydev.tcompat.modifier.aether.*;
 import com.pouffydev.tcompat.modifier.twilightforest.*;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
@@ -18,6 +19,15 @@ public class TComModifiers extends TCompatModule {
     public static final StaticModifier<SynergyModifier> synergy = MODIFIERS.register("synergy", SynergyModifier::new);
     public static final StaticModifier<VeiledModifier> veiled = MODIFIERS.register("veiled", VeiledModifier::new);
     public static final StaticModifier<TwilitModifier> twilit = MODIFIERS.register("twilit", TwilitModifier::new);
+
+    public static final StaticModifier<AmbrogenModifier> ambrogen = MODIFIERS.register("ambrogen", AmbrogenModifier::new);
+    public static final StaticModifier<AscensionModifier> ascension = MODIFIERS.register("ascension", AscensionModifier::new);
+    public static final StaticModifier<DullingModifier> dulling = MODIFIERS.register("dulling", DullingModifier::new);
+    public static final StaticModifier<AcclimatizationModifier> acclimatization = MODIFIERS.register("acclimatization", AcclimatizationModifier::new);
+    //public static final StaticModifier<SentryflareModifier> sentryflare = MODIFIERS.register("sentryflare", SentryflareModifier::new);
+    public static final StaticModifier<AmbrofusionModifier> ambrofusion = MODIFIERS.register("ambrofusion", AmbrofusionModifier::new);
+
+
 
     public TComModifiers() {
         MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());

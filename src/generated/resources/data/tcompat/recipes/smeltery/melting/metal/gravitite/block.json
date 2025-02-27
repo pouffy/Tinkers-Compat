@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:storage_blocks/gravitite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/gravitite"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_gravitite"
+  },
+  "temperature": 1475,
+  "time": 239
+}

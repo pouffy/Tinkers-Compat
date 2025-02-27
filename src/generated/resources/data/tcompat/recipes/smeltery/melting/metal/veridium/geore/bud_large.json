@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:geore_large_buds/veridium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_large_buds/veridium"
+  },
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_veridium"
+  },
+  "temperature": 1125,
+  "time": 140
+}

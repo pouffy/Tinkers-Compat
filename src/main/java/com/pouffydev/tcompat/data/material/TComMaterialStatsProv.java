@@ -1,5 +1,6 @@
 package com.pouffydev.tcompat.data.material;
 
+import com.aetherteam.aether.item.tools.holystone.HolystonePickaxeItem;
 import com.pouffydev.tcompat.material.TComMaterialIds;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
@@ -48,6 +49,18 @@ public class TComMaterialStatsProv extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(180, 2.5f, IRON, 6f),
                 HandleMaterialStats.multipliers().durability(1.15f).miningSpeed(0.95f).build(),
                 StatlessMaterialStats.BINDING);
+
+        addMaterialStats(TComMaterialIds.zanite,
+                new HeadMaterialStats(251, 6f, IRON, 2f),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TComMaterialIds.skyjade,
+                new HeadMaterialStats(251, 6f, IRON, 2f),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TComMaterialIds.gravitite,
+                new HeadMaterialStats(1562, 3f, DIAMOND, 3.5f),
+                HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.12f).build(),
+                StatlessMaterialStats.BINDING);
+        //TODO: Veridium & Sentrite
     }
 
     private void addRanged() {
@@ -67,12 +80,15 @@ public class TComMaterialStatsProv extends AbstractMaterialStatsDataProvider {
 
         addMaterialStats(TComMaterialIds.ravenFeather,
                 StatlessMaterialStats.BOWSTRING);
+        //TODO: Gravitite, Sentrite
+
     }
 
     private void addArmor() {
         addMaterialStats(TComMaterialIds.aetherWood, StatlessMaterialStats.SHIELD_CORE);
         addArmorShieldStats(TComMaterialIds.fiery,     PlatingMaterialStats.builder().durabilityFactor(56).armor(4, 7, 9, 4).knockbackResistance(1.5f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TComMaterialIds.knightmetal,     PlatingMaterialStats.builder().durabilityFactor(56).armor(3, 6, 8, 3).toughness(1f), StatlessMaterialStats.MAILLE);
+        //TODO: Veridium, Gravitite, Zanite & Skyjade
 
     }
 

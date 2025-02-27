@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/skyjade"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/skyjade"
+  },
+  "result": {
+    "amount": 100,
+    "tag": "forge:molten_skyjade"
+  },
+  "temperature": 1325,
+  "time": 76
+}

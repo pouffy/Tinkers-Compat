@@ -75,6 +75,12 @@ public class TComMaterialIds {
     public static final MaterialId ravenFeather = id("raven_feather");
     public static final MaterialId steeleaf = id("steeleaf");
 
+    public static final MaterialId zanite = id("zanite");
+    public static final MaterialId skyjade = id("skyjade");
+    public static final MaterialId gravitite = id("gravitite");
+    public static final MaterialId veridium = id("veridium");
+    public static final MaterialId refinedSentrite = id("refined_sentrite");
+
 
     private static MaterialVariantId woodVariant(String name, List<MaterialVariantId> list) {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.wood, name);

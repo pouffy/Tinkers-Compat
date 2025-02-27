@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:aether_gloves/skyjade"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:aether_gloves/skyjade"
+  },
+  "result": {
+    "amount": 200,
+    "tag": "forge:molten_skyjade",
+    "unit_size": 25
+  },
+  "temperature": 1325,
+  "time": 113
+}

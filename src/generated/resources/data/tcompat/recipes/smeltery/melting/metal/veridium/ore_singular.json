@@ -1,0 +1,92 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "type": "tconstruct:tag_difference_present",
+      "base": "forge:ores/veridium",
+      "registry": "minecraft:item",
+      "subtracted": [
+        "forge:ore_rates/sparse",
+        "forge:ore_rates/dense"
+      ]
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/gravitite"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "byproducts": [
+          {
+            "amount": 180,
+            "tag": "forge:molten_gravitite"
+          }
+        ],
+        "ingredient": {
+          "type": "forge:difference",
+          "base": {
+            "tag": "forge:ores/veridium"
+          },
+          "subtracted": [
+            {
+              "tag": "forge:ore_rates/sparse"
+            },
+            {
+              "tag": "forge:ore_rates/dense"
+            }
+          ]
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 180,
+          "tag": "forge:molten_veridium"
+        },
+        "temperature": 1125,
+        "time": 175
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "type": "forge:difference",
+          "base": {
+            "tag": "forge:ores/veridium"
+          },
+          "subtracted": [
+            {
+              "tag": "forge:ore_rates/sparse"
+            },
+            {
+              "tag": "forge:ore_rates/dense"
+            }
+          ]
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 180,
+          "tag": "forge:molten_veridium"
+        },
+        "temperature": 1125,
+        "time": 175
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "input": "tcompat:zanite",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_zanite"
+  },
+  "temperature": 1450
+}

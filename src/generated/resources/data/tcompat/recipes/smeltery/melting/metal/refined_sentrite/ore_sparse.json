@@ -1,0 +1,85 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "type": "tconstruct:tag_intersection_present",
+      "registry": "minecraft:item",
+      "tags": [
+        "forge:ores/refined_sentrite",
+        "forge:ore_rates/sparse"
+      ]
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/veridium"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "byproducts": [
+          {
+            "amount": 90,
+            "tag": "forge:molten_veridium"
+          }
+        ],
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/refined_sentrite"
+            },
+            {
+              "tag": "forge:ore_rates/sparse"
+            }
+          ]
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 90,
+          "tag": "forge:molten_refined_sentrite"
+        },
+        "temperature": 1455,
+        "time": 119
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/refined_sentrite"
+            },
+            {
+              "tag": "forge:ore_rates/sparse"
+            }
+          ]
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 90,
+          "tag": "forge:molten_refined_sentrite"
+        },
+        "temperature": 1455,
+        "time": 119
+      }
+    }
+  ]
+}

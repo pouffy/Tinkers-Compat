@@ -1,0 +1,85 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "type": "tconstruct:tag_intersection_present",
+      "registry": "minecraft:item",
+      "tags": [
+        "forge:ores/veridium",
+        "forge:ore_rates/sparse"
+      ]
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/gravitite"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "byproducts": [
+          {
+            "amount": 90,
+            "tag": "forge:molten_gravitite"
+          }
+        ],
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/veridium"
+            },
+            {
+              "tag": "forge:ore_rates/sparse"
+            }
+          ]
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 90,
+          "tag": "forge:molten_veridium"
+        },
+        "temperature": 1125,
+        "time": 105
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/veridium"
+            },
+            {
+              "tag": "forge:ore_rates/sparse"
+            }
+          ]
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 90,
+          "tag": "forge:molten_veridium"
+        },
+        "temperature": 1125,
+        "time": 105
+      }
+    }
+  ]
+}

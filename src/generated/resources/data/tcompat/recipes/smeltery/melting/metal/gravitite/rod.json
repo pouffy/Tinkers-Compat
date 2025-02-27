@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/gravitite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:rods/gravitite"
+  },
+  "result": {
+    "amount": 45,
+    "tag": "forge:molten_gravitite"
+  },
+  "temperature": 1475,
+  "time": 16
+}
