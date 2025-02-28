@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:green_enchanted_planks"
+      "tag": "tcompat:green_enchanted_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:green_enchanted_planks"
+      "tag": "tcompat:green_enchanted_planks"
     }
   ],
   "result": {

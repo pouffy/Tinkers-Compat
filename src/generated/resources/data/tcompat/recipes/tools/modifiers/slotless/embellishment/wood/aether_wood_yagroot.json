@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "deep_aether:yagroot_planks"
+      "tag": "tcompat:yagroot_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "deep_aether:yagroot_planks"
+      "tag": "tcompat:yagroot_planks"
     }
   ],
   "result": {

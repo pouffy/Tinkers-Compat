@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:mangrove_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:mangrove_planks"
+  },
+  "material": "tcompat:twilight_wood#mangrove",
+  "needed": 1,
+  "value": 4
+}

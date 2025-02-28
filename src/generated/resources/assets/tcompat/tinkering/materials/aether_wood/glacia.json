@@ -1,0 +1,61 @@
+{
+  "color": "FF938F7E",
+  "fallbacks": [
+    "wood",
+    "stick",
+    "primitive"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:head",
+      "tconstruct:handle",
+      "tconstruct:binding",
+      "tconstruct:repair_kit",
+      "tconstruct:limb",
+      "tconstruct:grip",
+      "tconstruct:shield_core",
+      "tconstruct:wood"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF524D45",
+            "grey": 63
+          },
+          {
+            "color": "FF645F54",
+            "grey": 102
+          },
+          {
+            "color": "FF787365",
+            "grey": 140
+          },
+          {
+            "color": "FF848072",
+            "grey": 178
+          },
+          {
+            "color": "FF938F7E",
+            "grey": 216
+          },
+          {
+            "color": "FF9E9A89",
+            "grey": 234
+          },
+          {
+            "color": "FFA7A18F",
+            "grey": 255
+          }
+        ]
+      }
+    },
+    "variant": true
+  }
+}

@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:redwood_planks"
+      "tag": "tcompat:redwood_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:redwood_planks"
+      "tag": "tcompat:redwood_planks"
     }
   ],
   "result": {

@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:aether_rings/skyjade"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:aether_rings/skyjade"
+  },
+  "result": {
+    "amount": 400,
+    "tag": "forge:molten_skyjade"
+  },
+  "temperature": 1325,
+  "time": 159
+}

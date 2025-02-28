@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:crystal_planks"
+  },
+  "material": "tcompat:aether_wood#crystal",
+  "needed": 1,
+  "value": 1
+}

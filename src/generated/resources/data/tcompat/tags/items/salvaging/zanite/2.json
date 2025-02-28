@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "aether:zanite_sword",
+      "required": false
+    },
+    {
+      "id": "aether:zanite_hoe",
+      "required": false
+    }
+  ]
+}

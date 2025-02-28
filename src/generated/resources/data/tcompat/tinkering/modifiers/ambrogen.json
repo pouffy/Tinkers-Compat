@@ -3,6 +3,6 @@
     "type": "forge:mod_loaded",
     "modid": "aether"
   },
-  "level_display": "tconstruct:no_levels",
+  "level_display": "tconstruct:default",
   "tooltip_display": "always"
 }

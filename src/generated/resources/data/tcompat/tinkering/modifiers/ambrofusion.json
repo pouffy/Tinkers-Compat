@@ -1,8 +1,0 @@
-{
-  "condition": {
-    "type": "forge:mod_loaded",
-    "modid": "aether_redux"
-  },
-  "level_display": "tconstruct:no_levels",
-  "tooltip_display": "always"
-}

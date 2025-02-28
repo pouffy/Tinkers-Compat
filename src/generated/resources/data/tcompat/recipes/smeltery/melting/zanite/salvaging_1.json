@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:salvaging/zanite/1"
+  },
+  "result": {
+    "amount": 100,
+    "tag": "forge:molten_zanite"
+  },
+  "temperature": 1450,
+  "time": 83
+}

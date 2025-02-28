@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:ebony_planks"
+      "tag": "tcompat:ebony_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:ebony_planks"
+      "tag": "tcompat:ebony_planks"
     }
   ],
   "result": {

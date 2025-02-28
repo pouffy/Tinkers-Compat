@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:cika_planks"
+      "tag": "tcompat:cika_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:cika_planks"
+      "tag": "tcompat:cika_planks"
     }
   ],
   "result": {

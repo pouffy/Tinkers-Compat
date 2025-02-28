@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:glacia_planks"
+  },
+  "material": "tcompat:aether_wood#glacia",
+  "needed": 1,
+  "value": 1
+}

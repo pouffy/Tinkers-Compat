@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:skyris_planks"
+      "tag": "tcompat:skyris_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:skyris_planks"
+      "tag": "tcompat:skyris_planks"
     }
   ],
   "result": {

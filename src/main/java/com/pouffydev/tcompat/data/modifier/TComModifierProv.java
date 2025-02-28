@@ -41,10 +41,10 @@ public class TComModifierProv extends AbstractModifierProvider implements ICondi
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TComModifiers.acclimatization.getId(), modLoaded("aether"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
-        buildModifier(TComModifiers.ambrofusion.getId(), modLoaded("aether_redux"))
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        //buildModifier(TComModifiers.ambrofusion.getId(), modLoaded("aether_redux"))
+        //        .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TComModifiers.ambrogen.getId(), modLoaded("aether"))
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+                .levelDisplay(ModifierLevelDisplay.DEFAULT);
         buildModifier(TComModifiers.dulling.getId(), modLoaded("deep_aether"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         //buildModifier(TComModifiers.sentryflare.getId(), modLoaded("aether_redux"))

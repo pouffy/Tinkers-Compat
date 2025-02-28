@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:willow_planks"
+      "tag": "tcompat:willow_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:willow_planks"
+      "tag": "tcompat:willow_planks"
     }
   ],
   "result": {

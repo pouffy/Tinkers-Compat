@@ -1,0 +1,29 @@
+{
+  "stats": {
+    "tconstruct:head": {
+      "durability": 150,
+      "melee_attack": 2.0,
+      "mining_speed": 10.0,
+      "mining_tier": "minecraft:iron"
+    },
+    "tconstruct:plating_boots": {
+      "armor": 3.0,
+      "durability": 39
+    },
+    "tconstruct:plating_chestplate": {
+      "armor": 8.0,
+      "durability": 48
+    },
+    "tconstruct:plating_helmet": {
+      "armor": 3.0,
+      "durability": 33
+    },
+    "tconstruct:plating_leggings": {
+      "armor": 6.0,
+      "durability": 45
+    },
+    "tconstruct:plating_shield": {
+      "durability": 54
+    }
+  }
+}

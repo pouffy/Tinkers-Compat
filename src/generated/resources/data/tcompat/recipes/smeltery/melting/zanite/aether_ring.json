@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:aether_rings/zanite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:aether_rings/zanite"
+  },
+  "result": {
+    "amount": 400,
+    "tag": "forge:molten_zanite"
+  },
+  "temperature": 1450,
+  "time": 166
+}

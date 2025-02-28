@@ -14,6 +14,7 @@ public class TComModifiers extends TCompatModule {
 
     //Traits
     public static final StaticModifier<PrecipitateModifier> precipitate = MODIFIERS.register("precipitate", PrecipitateModifier::new);
+    public static final StaticModifier<UprootingModifier> uprooting = MODIFIERS.register("uprooting", UprootingModifier::new);
     public static final StaticModifier<StalwartModifier> stalwart = MODIFIERS.register("stalwart", StalwartModifier::new);
     public static final StaticModifier<SuperheatModifier> superheat = MODIFIERS.register("superheat", SuperheatModifier::new);
     public static final StaticModifier<SynergyModifier> synergy = MODIFIERS.register("synergy", SynergyModifier::new);
@@ -25,7 +26,7 @@ public class TComModifiers extends TCompatModule {
     public static final StaticModifier<DullingModifier> dulling = MODIFIERS.register("dulling", DullingModifier::new);
     public static final StaticModifier<AcclimatizationModifier> acclimatization = MODIFIERS.register("acclimatization", AcclimatizationModifier::new);
     //public static final StaticModifier<SentryflareModifier> sentryflare = MODIFIERS.register("sentryflare", SentryflareModifier::new);
-    public static final StaticModifier<AmbrofusionModifier> ambrofusion = MODIFIERS.register("ambrofusion", AmbrofusionModifier::new);
+    //public static final StaticModifier<AmbrofusionModifier> ambrofusion = MODIFIERS.register("ambrofusion", AmbrofusionModifier::new);
 
 
 

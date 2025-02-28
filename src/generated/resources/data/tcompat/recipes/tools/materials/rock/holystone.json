@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "aether:holystone"
+    "tag": "tcompat:holystone"
   },
   "material": "tcompat:aether_rock#holystone",
   "needed": 1,

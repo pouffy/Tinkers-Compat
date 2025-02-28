@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "deep_aether:aseterite"
+    "tag": "tcompat:aseterite"
   },
   "material": "tcompat:aether_rock#aseterite",
   "needed": 1,

@@ -72,19 +72,22 @@ public class TComModifierRecipeProv extends TComBaseRecipeProvider {
 
 
         for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantWoods) {
-            woodTexture(otbwgConsumer, materialVariantId, "biomeswevegone");
+            woodTexture(otbwgConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.aetherVariantWoods) {
-            woodTexture(aetherConsumer, materialVariantId, "aether");
+            woodTexture(aetherConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantWoods) {
-            woodTexture(deepAetherConsumer, materialVariantId, "deep_aether");
+            woodTexture(deepAetherConsumer, materialVariantId);
+        }
+        for (MaterialVariantId materialVariantId : TComMaterialIds.tfVariantWoods) {
+            woodTexture(deepAetherConsumer, materialVariantId);
         }
     }
 
-    private void woodTexture(Consumer<FinishedRecipe> consumer, MaterialVariantId material, String namespace) {
+    private void woodTexture(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
         String folder = "tools/modifiers/slotless/";
-        woodTexture(consumer, material, itemTag("%s:%s_planks".formatted(namespace, material.getVariant())), folder);
+        woodTexture(consumer, material, TComTags.Items.Woods.plankTag(material.getVariant()), folder);
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, MaterialVariantId material, TagKey<Item> planks, String folder) {

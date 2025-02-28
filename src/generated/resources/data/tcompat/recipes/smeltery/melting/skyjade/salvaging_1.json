@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:salvaging/skyjade/1"
+  },
+  "result": {
+    "amount": 100,
+    "tag": "forge:molten_skyjade"
+  },
+  "temperature": 1325,
+  "time": 80
+}

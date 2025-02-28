@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:darkwood_planks"
+  },
+  "material": "tcompat:twilight_wood#darkwood",
+  "needed": 1,
+  "value": 1
+}

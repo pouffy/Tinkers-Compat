@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:rainbow_eucalyptus_planks"
+      "tag": "tcompat:rainbow_eucalyptus_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:rainbow_eucalyptus_planks"
+      "tag": "tcompat:rainbow_eucalyptus_planks"
     }
   ],
   "result": {

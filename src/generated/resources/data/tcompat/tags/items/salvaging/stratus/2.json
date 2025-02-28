@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "deep_aether:stratus_sword",
+      "required": false
+    },
+    {
+      "id": "deep_aether:stratus_hoe",
+      "required": false
+    }
+  ]
+}

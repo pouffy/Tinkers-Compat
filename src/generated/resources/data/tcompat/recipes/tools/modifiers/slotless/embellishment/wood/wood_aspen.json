@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:aspen_planks"
+      "tag": "tcompat:aspen_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:aspen_planks"
+      "tag": "tcompat:aspen_planks"
     }
   ],
   "result": {

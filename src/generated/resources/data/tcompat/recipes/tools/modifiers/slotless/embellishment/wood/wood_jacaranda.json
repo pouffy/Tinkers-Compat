@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:jacaranda_planks"
+      "tag": "tcompat:jacaranda_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:jacaranda_planks"
+      "tag": "tcompat:jacaranda_planks"
     }
   ],
   "result": {

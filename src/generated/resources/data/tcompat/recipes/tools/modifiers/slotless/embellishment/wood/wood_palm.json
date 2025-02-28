@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:palm_planks"
+      "tag": "tcompat:palm_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:palm_planks"
+      "tag": "tcompat:palm_planks"
     }
   ],
   "result": {

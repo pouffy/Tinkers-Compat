@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:sortingwood_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:sortingwood_planks"
+  },
+  "material": "tcompat:twilight_wood#sortingwood",
+  "needed": 1,
+  "value": 4
+}

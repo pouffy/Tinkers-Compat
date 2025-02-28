@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "aether:skyroot_planks"
+      "tag": "tcompat:skyroot_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "aether:skyroot_planks"
+      "tag": "tcompat:skyroot_planks"
     }
   ],
   "result": {

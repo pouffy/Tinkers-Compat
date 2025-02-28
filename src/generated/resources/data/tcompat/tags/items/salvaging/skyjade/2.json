@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "deep_aether:skyjade_sword",
+      "required": false
+    },
+    {
+      "id": "deep_aether:skyjade_hoe",
+      "required": false
+    }
+  ]
+}

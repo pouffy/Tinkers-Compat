@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "biomeswevegone:dacite"
+    "tag": "tcompat:dacite"
   },
   "material": "tconstruct:rock#dacite",
   "needed": 1,

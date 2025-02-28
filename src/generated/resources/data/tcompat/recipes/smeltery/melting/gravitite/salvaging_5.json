@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:salvaging/gravitite/5"
+  },
+  "result": {
+    "amount": 450,
+    "tag": "forge:molten_gravitite"
+  },
+  "temperature": 1475,
+  "time": 178
+}

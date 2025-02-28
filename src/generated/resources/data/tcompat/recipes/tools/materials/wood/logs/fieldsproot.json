@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:fieldsproot_logs"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:fieldsproot_planks"
+  },
+  "material": "tcompat:aether_wood#fieldsproot",
+  "needed": 1,
+  "value": 4
+}

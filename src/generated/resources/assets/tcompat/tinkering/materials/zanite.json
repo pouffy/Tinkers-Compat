@@ -1,5 +1,58 @@
 {
+  "color": "FFAF7FF6",
   "fallbacks": [
     "gem"
-  ]
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:repair_kit",
+      "tconstruct:armor_plating",
+      "tconstruct:plating_helmet",
+      "tconstruct:plating_chestplate",
+      "tconstruct:plating_leggings",
+      "tconstruct:plating_boots",
+      "tconstruct:plating_shield",
+      "tconstruct:head"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF1C0D3B",
+            "grey": 63
+          },
+          {
+            "color": "FF350F6C",
+            "grey": 102
+          },
+          {
+            "color": "FF5B22B0",
+            "grey": 140
+          },
+          {
+            "color": "FF8A4EE4",
+            "grey": 178
+          },
+          {
+            "color": "FFAF7FF6",
+            "grey": 216
+          },
+          {
+            "color": "FFBF9CF4",
+            "grey": 234
+          },
+          {
+            "color": "FFE1CDFF",
+            "grey": 255
+          }
+        ]
+      }
+    }
+  }
 }

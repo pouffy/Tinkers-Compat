@@ -26,6 +26,7 @@ public class TComMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TComMaterialIds.aetherWood, 1, ORDER_HARVEST, true, false, aetherLoadedCondition);
         addMaterial(TComMaterialIds.aetherRock, 1, ORDER_HARVEST, true, false, aetherLoadedCondition);
 
+        addMaterial(TComMaterialIds.twilightWood, 1, ORDER_HARVEST, true, false, twilightLoadedCondition);
         addMaterial(TComMaterialIds.fiery, 3, ORDER_WEAPON, false, false, twilightLoadedCondition);
         addMaterial(TComMaterialIds.knightmetal, 3, ORDER_WEAPON, false, false, twilightLoadedCondition);
         addMaterial(TComMaterialIds.nagascale, 1, ORDER_WEAPON, true, false, twilightLoadedCondition);

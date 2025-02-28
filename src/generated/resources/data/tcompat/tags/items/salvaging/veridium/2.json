@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "aether_redux:veridium_sword",
+      "required": false
+    },
+    {
+      "id": "aether_redux:veridium_hoe",
+      "required": false
+    },
+    {
+      "id": "aether_redux:infused_veridium_sword",
+      "required": false
+    },
+    {
+      "id": "aether_redux:infused_veridium_hoe",
+      "required": false
+    }
+  ]
+}

@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:ironwood_planks"
+      "tag": "tcompat:ironwood_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:ironwood_planks"
+      "tag": "tcompat:ironwood_planks"
     }
   ],
   "result": {

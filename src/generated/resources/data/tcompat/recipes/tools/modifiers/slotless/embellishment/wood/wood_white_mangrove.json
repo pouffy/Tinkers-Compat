@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:white_mangrove_planks"
+      "tag": "tcompat:white_mangrove_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:white_mangrove_planks"
+      "tag": "tcompat:white_mangrove_planks"
     }
   ],
   "result": {

@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "aether_redux:sentry_ring",
+      "required": false
+    }
+  ]
+}

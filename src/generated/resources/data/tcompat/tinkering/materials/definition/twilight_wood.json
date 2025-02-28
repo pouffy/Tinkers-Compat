@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "twilightforest"
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 1,
+  "tier": 1
+}

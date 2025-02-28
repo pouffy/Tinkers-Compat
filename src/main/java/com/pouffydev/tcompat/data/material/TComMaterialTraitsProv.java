@@ -24,9 +24,10 @@ public class TComMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TComMaterialIds.zanite, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.acclimatization, 1));
         addDefaultTraits(TComMaterialIds.gravitite, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.ascension, 1));
         addDefaultTraits(TComMaterialIds.skyjade, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.dulling, 1));
-        addDefaultTraits(TComMaterialIds.veridium, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.ambrofusion, 1));
+        addDefaultTraits(TComMaterialIds.veridium, new ModifierEntry(TComModifierIds.aetherForged, 1));
         addDefaultTraits(TComMaterialIds.refinedSentrite, new ModifierEntry(TComModifierIds.aetherForged, 1));
 
+        addDefaultTraits(TComMaterialIds.twilightWood, TComModifiers.twilit.getId(), TComModifiers.uprooting.getId());
         addDefaultTraits(TComMaterialIds.fiery, TComModifiers.twilit.getId(), TComModifiers.superheat.getId(), TinkerModifiers.autosmelt.getId(), TinkerModifiers.fiery.getId());
         addDefaultTraits(TComMaterialIds.knightmetal, TComModifiers.twilit.getId(), TComModifiers.stalwart.getId());
         addDefaultTraits(TComMaterialIds.nagascale, TComModifiers.twilit.getId(), TComModifiers.precipitate.getId());

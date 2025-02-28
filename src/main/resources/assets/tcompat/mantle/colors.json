@@ -9,7 +9,12 @@
     "superheat":              "#fdcd47",
     "synergy":                "#a0cf6e",
     "veiled":                 "#646669",
-    "twilit":                 "#c5b172"
+    "twilit":                 "#c5b172",
+    "uprooting":              "#a9a15b",
+    "acclimatization":        "#af7ff6",
+    "ascension":              "#f195ef",
+    "dulling":                "#9ada5b",
+    "ambrogen":               "#e4de73"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,
@@ -58,11 +63,28 @@
     "aether_rock.aseterite":  "#938595",
     "aether_rock.clorite":    "#699AA1",
 
+    "zanite":                 "#8a4ee4",
+    "skyjade":                "#8cb955",
+    "gravitite":              "#da67d0",
+    "veridium":               "#5a90bd",
+    "refined_sentrite":       "#747477",
+
     "__twilight_forest__": null,
     "fiery":                  "#FC8D0B",
     "knightmetal":            "#B4C9AA",
     "nagascale":              "#325D25",
     "raven_feather":          "#313B49",
-    "steeleaf":               "#52873A"
+    "steeleaf":               "#52873A",
+
+    "twilight_wood":          "#8d7150",
+    "twilight_wood.twilight_oak": "#8d7150",
+    "twilight_wood.canopy":   "#4d3826",
+    "twilight_wood.darkwood": "#835931",
+    "twilight_wood.mangrove": "#c19871",
+    "twilight_wood.transwood":"#907f6e",
+    "twilight_wood.timewood": "#6e4739",
+    "twilight_wood.minewood": "#a2907f",
+    "twilight_wood.sortingwood": "#503420",
+    "twilight_wood.towerwood":"#815934"
   }
 }

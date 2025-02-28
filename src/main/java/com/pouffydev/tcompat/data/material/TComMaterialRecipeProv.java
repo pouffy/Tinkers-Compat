@@ -15,6 +15,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.recipe.FluidValues;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -40,9 +41,11 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         Consumer<FinishedRecipe> otbwgConsumer = withCondition(consumer, modLoaded("biomeswevegone"));
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
+        Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
         //Consumer<FinishedRecipe> malumConsumer = withCondition(consumer, modLoaded("malum"));
         Consumer<FinishedRecipe> twilightConsumer = withCondition(consumer, modLoaded("twilightforest"));
         List<MaterialVariantId> noPlanks = List.of(TComMaterialIds.paloVerde);
+        List<MaterialVariantId> stems = List.of(TComMaterialIds.cloudcap, TComMaterialIds.jellyshroom);
 
 
         for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantWoods) {
@@ -51,7 +54,7 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
             logVariantRecipe(otbwgConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantRocks) {
-            rockVariantRecipe(otbwgConsumer, materialVariantId, "biomeswevegone");
+            rockVariantRecipe(otbwgConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.aetherVariantWoods) {
             if (!noPlanks.contains(materialVariantId))
@@ -59,7 +62,7 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
             logVariantRecipe(aetherConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.aetherVariantRocks) {
-            rockVariantRecipe(aetherConsumer, materialVariantId, "aether");
+            rockVariantRecipe(aetherConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantWoods) {
             if (!noPlanks.contains(materialVariantId))
@@ -67,8 +70,25 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
             logVariantRecipe(deepAetherConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantRocks) {
-            rockVariantRecipe(deepAetherConsumer, materialVariantId, "deep_aether");
+            rockVariantRecipe(deepAetherConsumer, materialVariantId);
         }
+        for (MaterialVariantId materialVariantId : TComMaterialIds.aetherReduxVariantWoods) {
+            if (!noPlanks.contains(materialVariantId))
+                planksVariantRecipe(aetherReduxConsumer, materialVariantId);
+            if (!stems.contains(materialVariantId))
+                logVariantRecipe(aetherReduxConsumer, materialVariantId);
+            else
+                stemVariantRecipe(aetherReduxConsumer, materialVariantId);
+        }
+        for (MaterialVariantId materialVariantId : TComMaterialIds.aetherReduxVariantRocks) {
+            rockVariantRecipe(deepAetherConsumer, materialVariantId);
+        }
+        for (MaterialVariantId materialVariantId : TComMaterialIds.tfVariantWoods) {
+            if (materialVariantId != TComMaterialIds.towerwood)
+                logVariantRecipe(deepAetherConsumer, materialVariantId);
+            planksVariantRecipe(deepAetherConsumer, materialVariantId);
+        }
+
 
         materialRecipe(twilightConsumer, TComMaterialIds.ravenFeather, Ingredient.of(TComTags.Items.RAVEN_FEATHER),      1, 1, folder + "raven_feather");
         materialRecipe(twilightConsumer, TComMaterialIds.nagascale, Ingredient.of(TComTags.Items.NAGA_SCALE),      1, 1, folder + "nagascale");
@@ -87,9 +107,9 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         materialMeltingCasting(twilightConsumer, TComMaterialIds.fiery, TComFluids.moltenFiery,    folder);
         materialMeltingCasting(twilightConsumer, TComMaterialIds.knightmetal, TComFluids.moltenKnightmetal,    folder);
 
-        materialMeltingCasting(aetherConsumer, TComMaterialIds.zanite, TComFluids.moltenZanite, folder);
+        materialMeltingCasting(aetherConsumer, TComMaterialIds.zanite, TComFluids.moltenZanite, FluidValues.GEM, folder);
         materialMeltingCasting(aetherConsumer, TComMaterialIds.gravitite, TComFluids.moltenGravitite, folder);
-        materialMeltingCasting(deepAetherConsumer, TComMaterialIds.skyjade, TComFluids.moltenSkyjade, folder);
+        materialMeltingCasting(aetherConsumer, TComMaterialIds.skyjade, TComFluids.moltenSkyjade, FluidValues.GEM, folder);
         materialMeltingCasting(aetherReduxConsumer, TComMaterialIds.veridium, TComFluids.moltenVeridium, folder);
         materialMeltingCasting(aetherReduxConsumer, TComMaterialIds.refinedSentrite, TComFluids.moltenRefinedSentrite, folder);
 
@@ -105,9 +125,14 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         materialRecipe(consumer, material,      Ingredient.of(TComTags.Items.Woods.logTag(material.getVariant())),      4, 1, ItemOutput.fromTag(TComTags.Items.Woods.plankTag(material.getVariant())),      folder + "wood/logs/%s".formatted(material.getVariant()));
     }
 
-    private void rockVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material, String namespace) {
+    private void stemVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material,      Ingredient.of(itemTag("%s:%s".formatted(namespace, material.getVariant()))),      1, 1, folder + "rock/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material,      Ingredient.of(TComTags.Items.Woods.stemTag(material.getVariant())),      4, 1, ItemOutput.fromTag(TComTags.Items.Woods.plankTag(material.getVariant())),      folder + "wood/logs/%s".formatted(material.getVariant()));
+    }
+
+    private void rockVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
+        String folder = "tools/materials/";
+        materialRecipe(consumer, material,      Ingredient.of(itemTag("tcompat:%s".formatted(material.getVariant()))),      1, 1, folder + "rock/%s".formatted(material.getVariant()));
 
     }
 

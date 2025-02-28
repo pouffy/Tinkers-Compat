@@ -9,13 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TComMaterialIds {
-
+    public static final List<MaterialVariantId> allVariants = new ArrayList<>();
     public static final List<MaterialVariantId> aetherVariantWoods = new ArrayList<>();
     public static final List<MaterialVariantId> aetherVariantRocks = new ArrayList<>();
     public static final List<MaterialVariantId> deepAetherVariantWoods = new ArrayList<>();
     public static final List<MaterialVariantId> deepAetherVariantRocks = new ArrayList<>();
+    public static final List<MaterialVariantId> aetherReduxVariantWoods = new ArrayList<>();
+    public static final List<MaterialVariantId> aetherReduxVariantRocks = new ArrayList<>();
     public static final List<MaterialVariantId> otbwgVariantWoods = new ArrayList<>();
     public static final List<MaterialVariantId> otbwgVariantRocks = new ArrayList<>();
+    public static final List<MaterialVariantId> tfVariantWoods = new ArrayList<>();
 
     // wood
     // The Aether
@@ -28,10 +31,19 @@ public class TComMaterialIds {
             cruderoot = aetherWoodVariant("cruderoot", deepAetherVariantWoods),
             conberry = aetherWoodVariant("conberry", deepAetherVariantWoods),
             sunroot = aetherWoodVariant("sunroot", deepAetherVariantWoods),
+            blightwillow = aetherWoodVariant("blightwillow", aetherReduxVariantWoods),
+            fieldsproot = aetherWoodVariant("fieldsproot", aetherReduxVariantWoods),
+            cloudcap = aetherWoodVariant("cloudcap", aetherReduxVariantWoods),
+            jellyshroom = aetherWoodVariant("jellyshroom", aetherReduxVariantWoods),
+            crystal = aetherWoodVariant("crystal", aetherReduxVariantWoods),
+            glacia = aetherWoodVariant("glacia", aetherReduxVariantWoods),
 
             holystone = aetherRockVariant("holystone", aetherVariantRocks),
             aseterite = aetherRockVariant("aseterite", deepAetherVariantRocks),
-            clorite = aetherRockVariant("clorite", deepAetherVariantRocks);
+            clorite = aetherRockVariant("clorite", deepAetherVariantRocks),
+            divinite = aetherRockVariant("divinite", aetherReduxVariantRocks),
+            driftshale = aetherRockVariant("driftshale", aetherReduxVariantRocks)
+                    ;
 
     // Oh, The Biomes We've Gone
     public static final MaterialVariantId
@@ -68,7 +80,19 @@ public class TComMaterialIds {
 
     public static final MaterialId brass = id("brass");
     public static final MaterialId zinc = id("zinc");
-    
+
+    public static final MaterialId twilightWood = id("twilight_wood");
+    public static final MaterialVariantId
+            twilightOak = twilightWoodVariant("twilight_oak", tfVariantWoods),
+            canopy = twilightWoodVariant("canopy", tfVariantWoods),
+            mangrove = twilightWoodVariant("mangrove", tfVariantWoods),
+            darkwood = twilightWoodVariant("darkwood", tfVariantWoods),
+            timewood = twilightWoodVariant("timewood", tfVariantWoods),
+            transwood = twilightWoodVariant("transwood", tfVariantWoods),
+            minewood = twilightWoodVariant("minewood", tfVariantWoods),
+            sortingwood = twilightWoodVariant("sortingwood", tfVariantWoods),
+            towerwood = twilightWoodVariant("towerwood", tfVariantWoods)
+                    ;
     public static final MaterialId fiery = id("fiery");
     public static final MaterialId knightmetal = id("knightmetal");
     public static final MaterialId nagascale = id("nagascale");
@@ -85,24 +109,35 @@ public class TComMaterialIds {
     private static MaterialVariantId woodVariant(String name, List<MaterialVariantId> list) {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.wood, name);
         list.add(id);
+        allVariants.add(id);
         return id;
     }
 
     private static MaterialVariantId aetherWoodVariant(String name, List<MaterialVariantId> list) {
         MaterialVariantId id = MaterialVariantId.create(aetherWood, name);
         list.add(id);
+        allVariants.add(id);
+        return id;
+    }
+
+    private static MaterialVariantId twilightWoodVariant(String name, List<MaterialVariantId> list) {
+        MaterialVariantId id = MaterialVariantId.create(twilightWood, name);
+        list.add(id);
+        allVariants.add(id);
         return id;
     }
 
     private static MaterialVariantId rockVariant(String name, List<MaterialVariantId> list) {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.rock, name);
         list.add(id);
+        allVariants.add(id);
         return id;
     }
 
     private static MaterialVariantId aetherRockVariant(String name, List<MaterialVariantId> list) {
         MaterialVariantId id = MaterialVariantId.create(aetherRock, name);
         list.add(id);
+        allVariants.add(id);
         return id;
     }
 

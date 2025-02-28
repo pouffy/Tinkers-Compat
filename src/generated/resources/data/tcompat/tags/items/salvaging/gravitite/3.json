@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "aether:gravitite_axe",
+      "required": false
+    },
+    {
+      "id": "aether:gravitite_pickaxe",
+      "required": false
+    }
+  ]
+}

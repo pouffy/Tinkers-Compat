@@ -22,7 +22,20 @@ public class TComMaterialTagProv extends AbstractMaterialTagProvider {
     protected void addTags() {
         tag(TComTags.Materials.AETHER).add(
                 TComMaterialIds.aetherRock,
-                TComMaterialIds.aetherWood
+                TComMaterialIds.aetherWood,
+                TComMaterialIds.zanite,
+                TComMaterialIds.gravitite,
+                TComMaterialIds.skyjade,
+                TComMaterialIds.veridium,
+                TComMaterialIds.refinedSentrite
+        );
+        tag(TComTags.Materials.TWILIGHT_FOREST).add(
+                TComMaterialIds.twilightWood,
+                TComMaterialIds.fiery,
+                TComMaterialIds.knightmetal,
+                TComMaterialIds.nagascale,
+                TComMaterialIds.ravenFeather,
+                TComMaterialIds.steeleaf
         );
     }
 

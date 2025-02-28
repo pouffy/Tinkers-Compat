@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "aether:gravitite_sword",
+      "required": false
+    },
+    {
+      "id": "aether:gravitite_hoe",
+      "required": false
+    }
+  ]
+}

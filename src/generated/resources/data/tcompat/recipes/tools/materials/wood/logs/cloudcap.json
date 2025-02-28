@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:cloudcap_stems"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:cloudcap_planks"
+  },
+  "material": "tcompat:aether_wood#cloudcap",
+  "needed": 1,
+  "value": 4
+}

@@ -1,155 +1,219 @@
 {
   "values": [
     {
-      "id": "#biomeswevegone:aspen_planks",
+      "id": "#tcompat:aspen_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:baobab_planks",
+      "id": "#tcompat:baobab_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:blue_enchanted_planks",
+      "id": "#tcompat:blue_enchanted_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:cika_planks",
+      "id": "#tcompat:cika_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:cypress_planks",
+      "id": "#tcompat:cypress_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:ebony_planks",
+      "id": "#tcompat:ebony_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:fir_planks",
+      "id": "#tcompat:fir_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:florus_planks",
+      "id": "#tcompat:fir_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:green_enchanted_planks",
+      "id": "#tcompat:florus_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:holly_planks",
+      "id": "#tcompat:green_enchanted_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:ironwood_planks",
+      "id": "#tcompat:holly_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:jacaranda_planks",
+      "id": "#tcompat:ironwood_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:mahogany_planks",
+      "id": "#tcompat:jacaranda_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:maple_planks",
+      "id": "#tcompat:jacaranda_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:palm_planks",
+      "id": "#tcompat:mahogany_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:pine_planks",
+      "id": "#tcompat:mahogany_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:rainbow_eucalyptus_planks",
+      "id": "#tcompat:maple_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:redwood_planks",
+      "id": "#tcompat:maple_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:sakura_planks",
+      "id": "#tcompat:palm_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:skyris_planks",
+      "id": "#tcompat:palm_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:white_mangrove_planks",
+      "id": "#tcompat:palo_verde_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:willow_planks",
+      "id": "#tcompat:pine_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:witch_hazel_planks",
+      "id": "#tcompat:pine_planks",
       "required": false
     },
     {
-      "id": "#biomeswevegone:zelkova_planks",
+      "id": "#tcompat:rainbow_eucalyptus_planks",
       "required": false
     },
     {
-      "id": "#aether:skyroot_planks",
+      "id": "#tcompat:redwood_planks",
       "required": false
     },
     {
-      "id": "#deep_aether:roseroot_planks",
+      "id": "#tcompat:redwood_planks",
       "required": false
     },
     {
-      "id": "#deep_aether:yagroot_planks",
+      "id": "#tcompat:sakura_planks",
       "required": false
     },
     {
-      "id": "#deep_aether:cruderoot_planks",
+      "id": "#tcompat:skyris_planks",
       "required": false
     },
     {
-      "id": "#deep_aether:conberry_planks",
+      "id": "#tcompat:white_mangrove_planks",
       "required": false
     },
     {
-      "id": "#deep_aether:sunroot_planks",
+      "id": "#tcompat:willow_planks",
       "required": false
     },
     {
-      "id": "#biomesoplenty:fir_planks",
+      "id": "#tcompat:willow_planks",
       "required": false
     },
     {
-      "id": "#biomesoplenty:pine_planks",
+      "id": "#tcompat:witch_hazel_planks",
       "required": false
     },
     {
-      "id": "#biomesoplenty:maple_planks",
+      "id": "#tcompat:zelkova_planks",
       "required": false
     },
     {
-      "id": "#biomesoplenty:redwood_planks",
+      "id": "#tcompat:skyroot_planks",
       "required": false
     },
     {
-      "id": "#biomesoplenty:mahogany_planks",
+      "id": "#tcompat:roseroot_planks",
       "required": false
     },
     {
-      "id": "#biomesoplenty:jacaranda_planks",
+      "id": "#tcompat:yagroot_planks",
       "required": false
     },
     {
-      "id": "#biomesoplenty:palm_planks",
+      "id": "#tcompat:cruderoot_planks",
       "required": false
     },
     {
-      "id": "#biomesoplenty:willow_planks",
+      "id": "#tcompat:conberry_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:sunroot_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:cloudcap_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:jellyshroom_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:blightwillow_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:fieldsproot_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:crystal_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:glacia_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:twilight_oak_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:canopy_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:mangrove_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:darkwood_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:timewood_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:transwood_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:minewood_planks",
+      "required": false
+    },
+    {
+      "id": "#tcompat:sortingwood_planks",
+      "required": false
+    },
+    {
+      "id": "#twilightforest:towerwood",
       "required": false
     }
   ]

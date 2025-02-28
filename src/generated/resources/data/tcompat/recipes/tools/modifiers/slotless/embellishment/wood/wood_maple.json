@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:maple_planks"
+      "tag": "tcompat:maple_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:maple_planks"
+      "tag": "tcompat:maple_planks"
     }
   ],
   "result": {

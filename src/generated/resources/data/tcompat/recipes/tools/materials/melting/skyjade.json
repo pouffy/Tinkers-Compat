@@ -3,12 +3,12 @@
   "conditions": [
     {
       "type": "forge:mod_loaded",
-      "modid": "deep_aether"
+      "modid": "aether"
     }
   ],
   "input": "tcompat:skyjade",
   "result": {
-    "amount": 90,
+    "amount": 100,
     "tag": "forge:molten_skyjade"
   },
   "temperature": 1325

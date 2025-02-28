@@ -1,6 +1,5 @@
 package com.pouffydev.tcompat.data.material;
 
-import com.pouffydev.tcompat.TCompat;
 import com.pouffydev.tcompat.material.TComMaterialIds;
 import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
@@ -9,9 +8,10 @@ import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToSprit
 import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTransformer;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
-import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
-import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
+import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
+import slimeknights.tconstruct.tools.stats.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,6 +70,12 @@ public class TComMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildPlanks(TComMaterialIds.cruderoot, 0xFF4F5266, 0xFF5E6075, 0xFF71708E, 0xFF7E79A0, 0xFF8E84B3, 0xFF9689BD, 0xFFA99AC1);
         buildPlanks(TComMaterialIds.conberry, 0xFF544338, 0xFF5F4A3F, 0xFF705C4C, 0xFF826653, 0xFF99765D, 0xFFA68064, 0xFFAA886F);
         buildPlanks(TComMaterialIds.sunroot, 0xFF8E6B65, 0xFF9C7F77, 0xFFB39C8D, 0xFFC6AB98, 0xFFD9C2A3, 0xFFE2CCA9, 0xFFE9DABA);
+        buildPlanks(TComMaterialIds.blightwillow, 0xFF4B694E, 0xFF5E805C, 0xFF6C8C63, 0xFF7F9F74, 0xFF8FAC82, 0xFF9FBA90, 0xFFA8C198);
+        buildPlanks(TComMaterialIds.fieldsproot, 0xFF824241, 0xFF9A514E, 0xFFAF615B, 0xFFBF7069, 0xFFC97B72, 0xFFD4847B, 0xFFDB8B82);
+        buildPlanks(TComMaterialIds.cloudcap, 0xFF191A2B, 0xFF212338, 0xFF292C45, 0xFF323654, 0xFF3B3F60, 0xFF444A72, 0xFF4B537D);
+        buildPlanks(TComMaterialIds.jellyshroom, 0xFF373E4F, 0xFF414959, 0xFF4B5364, 0xFF555D6B, 0xFF646B76, 0xFF737982, 0xFF81868E);
+        buildPlanks(TComMaterialIds.crystal, 0xFF50607A, 0xFF5F728E, 0xFF6D84A3, 0xFF788FAB, 0xFF839CBA, 0xFF8DA6C1, 0xFF95AFC6);
+        buildPlanks(TComMaterialIds.glacia, 0xFF524D45, 0xFF645F54, 0xFF787365, 0xFF848072, 0xFF938F7E, 0xFF9E9A89, 0xFFA7A18F);
 
         // Rock
         buildRock(TComMaterialIds.redRock, 0xFF7F4026, 0xFF904727, 0xFF95522F, 0xFFA95936, 0xFFAD633E, 0xFFB36D44);
@@ -78,10 +84,27 @@ public class TComMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildRock(TComMaterialIds.holystone, 0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2);
         buildRock(TComMaterialIds.aseterite, 0xFF746772, 0xFF7F717D, 0xFF897A87, 0xFF938595, 0xFFA296A1, 0xFFB9ADB8);
         buildRock(TComMaterialIds.clorite, 0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
+        buildRock(TComMaterialIds.divinite, 0xFF8B7149, 0xFF987E55, 0xFFAA8F65, 0xFFBAA170, 0xFFCDB285, 0xFFD8C699);
+        buildRock(TComMaterialIds.driftshale, 0xFFAA9A5D, 0xFFBEB06C, 0xFFCEC277, 0xFFD9CE81, 0xFFDFDA95, 0xFFE3E2A8);
 
         ResourceLocation baseTexture = getResource("generator/fiery");
         ResourceLocation highlightTexture = getResource("generator/fiery_highlight");
         ResourceLocation borderTexture = getResource("generator/fiery_border");
+
+        buildMaterial(TComMaterialIds.twilightWood)
+                .meleeHarvest().ranged().shieldCore()
+                .fallbacks("wood", "stick", "primitive")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF614c34).addARGB(102, 0xFF69553c).addARGB(140, 0xFF7d6144).addARGB(178, 0xFF8d7150).addARGB(216, 0xFFa18159).addARGB(255, 0xFFaa8559).build());
+        buildPlanks(TComMaterialIds.twilightOak, 0xFF614c34, 0xFF69553c, 0xFF7d6144, 0xFF8d7150, 0xFF997d5d, 0xFFa18159, 0xFFaa8559);
+        buildPlanks(TComMaterialIds.canopy, 0xFF331e11, 0xFF402b15, 0xFF492f1e, 0xFF4d3826, 0xFF563c2b, 0xFF5f452b, 0xFF674d2f);
+        buildPlanks(TComMaterialIds.darkwood, 0xFF523820, 0xFF6a4429, 0xFF734829, 0xFF835931, 0xFF945d39, 0xFFac6539, 0xFFb46d39);
+        buildPlanks(TComMaterialIds.mangrove, 0xFF8f7553, 0xFF9b8564, 0xFFa5916d, 0xFFc19871, 0xFFcaa87d, 0xFFd6b484, 0xFFcfbf8d);
+        buildPlanks(TComMaterialIds.transwood, 0xFF605654, 0xFF6e6256, 0xFF7f6e5c, 0xFF907f6e, 0xFF968b79, 0xFFa29073, 0xFFad9c80);
+        buildPlanks(TComMaterialIds.timewood, 0xFF4b301c, 0xFF563528, 0xFF62412e, 0xFF6e4739, 0xFF79513f, 0xFF85563f, 0xFF8b5c3f);
+        buildPlanks(TComMaterialIds.minewood, 0xFF7f7362, 0xFF857968, 0xFF968573, 0xFFa2907f, 0xFFad9c85, 0xFFb3a28b, 0xFFb9a88b);
+        buildPlanks(TComMaterialIds.sortingwood, 0xFF381f0f, 0xFF402814, 0xFF4c2c18, 0xFF503420, 0xFF5d3c24, 0xFF673f1f, 0xFF6d4424);
+        buildPlanks(TComMaterialIds.towerwood, 0xFF563920, 0xFF684628, 0xFF704c2e, 0xFF815934, 0xFF955d38, 0xFFa8673f, 0xFFb36d3c);
+
 
         buildMaterial(TComMaterialIds.fiery)
                 .meleeHarvest().ranged().armor()
@@ -89,12 +112,16 @@ public class TComMaterialSpriteProv extends AbstractMaterialSpriteProvider {
                 .transformer(transformerFromSprite(borderTexture, baseTexture, highlightTexture, 2));
 
         //buildGeneric(TComMaterialIds.fiery, 0xFFFFD83A, 0xFFDA7600, 0xFF0B0507, 0xFF191313, 0xFF3A2424, 0xFF413333, addStats()).meleeHarvest();
-        buildGeneric(TComMaterialIds.knightmetal, 0xFF6f4377, 0xFF947f9f, 0xFFaaaaaa, 0xFFb4c9aa, 0xFFd8e7c0, 0xFFf3ffce, 0xFFffffff, addStats()).meleeHarvest();
+        buildGeneric(TComMaterialIds.knightmetal, 0xFF6f4377, 0xFF947f9f, 0xFFaaaaaa, 0xFFb4c9aa, 0xFFd8e7c0, 0xFFf3ffce, 0xFFffffff, addStats(), "metal").meleeHarvest();
         buildGeneric(TComMaterialIds.nagascale, 0xFF0C1708, 0xFF172911, 0xFF1B4B4E, 0xFF254B29, 0xFF325D25, 0xFF575E1C, addStats(HeadMaterialStats.ID));
         buildGeneric(TComMaterialIds.ravenFeather, 0xFF141c27, 0xFF1d252f, 0xFF2b343d, 0xFF3e444d, 0xFF474c52, 0xFF68696c, 0xFF878789, addStats(StatlessMaterialStats.BOWSTRING.getIdentifier()));
         buildGeneric(TComMaterialIds.steeleaf, 0xFF081608, 0xFF1A2B11, 0xFF27401D, 0xFF345E27, 0xFF569243, 0xFF8CB05A, addStats()).meleeHarvest();
 
-
+        buildGeneric(TComMaterialIds.zanite, 0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff, plating(HeadMaterialStats.ID), "gem", "metal");
+        buildGeneric(TComMaterialIds.skyjade, 0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397, plating(HeadMaterialStats.ID), "gem", "metal");
+        buildGeneric(TComMaterialIds.gravitite, 0xFF390c35, 0xFF5c1256, 0xFFb643a0, 0xFFda67d0, 0xFFf195ef, 0xFFffcbfd, addStats(), "metal").armor().ranged().meleeHarvest();
+        buildGeneric(TComMaterialIds.veridium, 0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb, addStats(), "metal").armor().meleeHarvest();
+        buildGeneric(TComMaterialIds.refinedSentrite, 0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1, addStats(GripMaterialStats.ID, HeadMaterialStats.ID), "metal");
     }
 
     public static ISpriteTransformer transformerFromSprite(ResourceLocation texture, int frames, int highlightColor) {
@@ -206,6 +233,17 @@ public class TComMaterialSpriteProv extends AbstractMaterialSpriteProvider {
     private Collection<MaterialStatsId> addStats(MaterialStatsId... statsIds) {
         Collection<MaterialStatsId> stats = new ArrayList<>(List.of());
         stats.addAll(Arrays.asList(statsIds));
+        return stats;
+    }
+
+    public Collection<MaterialStatsId> plating(MaterialStatsId... extraStats) {
+        Collection<MaterialStatsId> stats = new ArrayList<>(List.of());
+        stats.add(TinkerPartSpriteProvider.ARMOR_PLATING);
+        for (MaterialStatType<?> type : PlatingMaterialStats.TYPES) {
+            stats.add(type.getId());
+        }
+        stats.addAll(Arrays.asList(extraStats));
+        stats.add(StatlessMaterialStats.REPAIR_KIT.getIdentifier());
         return stats;
     }
 }

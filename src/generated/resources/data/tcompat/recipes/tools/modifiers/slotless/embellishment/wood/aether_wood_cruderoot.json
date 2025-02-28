@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "deep_aether:cruderoot_planks"
+      "tag": "tcompat:cruderoot_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "deep_aether:cruderoot_planks"
+      "tag": "tcompat:cruderoot_planks"
     }
   ],
   "result": {

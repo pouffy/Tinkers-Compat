@@ -1,6 +1,11 @@
 {
   "values": [
     "tcompat:aether_rock",
-    "tcompat:aether_wood"
+    "tcompat:aether_wood",
+    "tcompat:zanite",
+    "tcompat:gravitite",
+    "tcompat:skyjade",
+    "tcompat:veridium",
+    "tcompat:refined_sentrite"
   ]
 }

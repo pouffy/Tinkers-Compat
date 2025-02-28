@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "aether:zanite_axe",
+      "required": false
+    },
+    {
+      "id": "aether:zanite_pickaxe",
+      "required": false
+    }
+  ]
+}

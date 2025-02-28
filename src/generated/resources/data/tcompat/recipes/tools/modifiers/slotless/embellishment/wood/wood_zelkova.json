@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:zelkova_planks"
+      "tag": "tcompat:zelkova_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:zelkova_planks"
+      "tag": "tcompat:zelkova_planks"
     }
   ],
   "result": {

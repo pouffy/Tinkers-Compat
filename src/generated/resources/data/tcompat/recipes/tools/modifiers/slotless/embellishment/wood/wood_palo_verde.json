@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:palo_verde_planks"
+      "tag": "tcompat:palo_verde_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:palo_verde_planks"
+      "tag": "tcompat:palo_verde_planks"
     }
   ],
   "result": {

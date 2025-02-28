@@ -1,61 +1,38 @@
 package com.pouffydev.tcompat.modifier.aether;
 
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.phys.Vec3;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.combat.DamageDealtModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.BlockInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class AscensionModifier extends NoLevelsModifier implements BlockInteractionModifierHook {
+public class AscensionModifier extends NoLevelsModifier implements DamageDealtModifierHook {
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.BLOCK_INTERACT);
+        hookBuilder.addHook(this, ModifierHooks.DAMAGE_DEALT);
     }
 
-    public InteractionResult afterBlockUse(IToolStackView tool, ModifierEntry modifier, UseOnContext context, InteractionSource source) {
-        //TODO: Replace this with a different ability
-        //if (!this.floatBlock(context)) {
-        //    return InteractionResult.PASS;
-        //} else {
-        //    return InteractionResult.sidedSuccess(context.getLevel().isClientSide());
-        //}
-        return InteractionResult.PASS;
+    @Override
+    public void onDamageDealt(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, LivingEntity target, DamageSource source, float amount, boolean isDirectDamage) {
+        int chance = (int) (amount * 3f);
+        if (target.isAlive() && context.getLevel().getRandom().nextInt(chance) == 0) {
+            Vec3 lookVec = context.getEntity().getLookAngle();
+            target.setDeltaMovement(lookVec.add(0, 9.5, 0));
+            target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 80, 2, true, false, false));
+        }
     }
-
-    //boolean floatBlock(UseOnContext context) {
-    //    Level level = context.getLevel();
-    //    BlockPos blockPos = context.getClickedPos();
-    //    ItemStack itemStack = context.getItemInHand();
-    //    BlockState blockState = level.getBlockState(blockPos);
-    //    Player player = context.getPlayer();
-    //    InteractionHand hand = context.getHand();
-    //    if (itemStack.getItem() instanceof TieredItem tieredItem && TCompat.isClassFound("com.aetherteam.aether.entity.block.FloatingBlockEntity")) {
-    //        if (player != null && !player.isShiftKeyDown()) {
-    //            if ((itemStack.getDestroySpeed(blockState) == tieredItem.getTier().getSpeed() || itemStack.isCorrectToolForDrops(blockState)) && FloatingBlock.isFree(level.getBlockState(blockPos.above()))) {
-    //                if (level.getBlockEntity(blockPos) == null && blockState.getDestroySpeed(level, blockPos) >= 0.0F && !blockState.hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF) && !blockState.is(AetherTags.Blocks.GRAVITITE_ABILITY_BLACKLIST)) {
-    //                    if (!level.isClientSide()) {
-    //                        FloatingBlockEntity entity = new FloatingBlockEntity(level, blockPos.getX() + 0.5, blockPos.getY(), blockPos.getZ() + 0.5, blockState);
-    //                        entity.setNatural(false);
-    //                        if (blockState.is(BlockTags.ANVIL)) {
-    //                            entity.setHurtsEntities(2.0F, 40);
-    //                        }
-    //                        level.addFreshEntity(entity);
-    //                        level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
-    //                        itemStack.hurtAndBreak(4, player, (p) -> p.broadcastBreakEvent(hand));
-    //                    } else {
-    //                        player.swing(hand);
-    //                    }
-    //                    return true;
-    //                }
-    //            }
-    //        }
-    //    }
-    //    return false;
-    //}
 }

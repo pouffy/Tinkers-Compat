@@ -17,6 +17,7 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class TComItemTagProv extends ItemTagsProvider {
@@ -30,6 +31,7 @@ public class TComItemTagProv extends ItemTagsProvider {
         addMetals();
         addMisc();
         addForge();
+        addSalvage();
     }
 
     private void addMisc() {
@@ -42,6 +44,73 @@ public class TComItemTagProv extends ItemTagsProvider {
 
     }
 
+    private void addSalvage() {
+        //Zanite
+        this.tag(TComTags.Items.Salvaging.ZANITE_1.tag()).addOptional(new ResourceLocation("aether", "zanite_shovel"));
+        this.tag(TComTags.Items.Salvaging.ZANITE_2.tag()).addOptional(new ResourceLocation("aether", "zanite_sword")).addOptional(new ResourceLocation("aether", "zanite_hoe"));
+        this.tag(TComTags.Items.Salvaging.ZANITE_3.tag()).addOptional(new ResourceLocation("aether", "zanite_axe")).addOptional(new ResourceLocation("aether", "zanite_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.ZANITE_4.tag()).addOptional(new ResourceLocation("aether", "zanite_boots"));
+        this.tag(TComTags.Items.Salvaging.ZANITE_5.tag()).addOptional(new ResourceLocation("aether", "zanite_helmet"));
+        this.tag(TComTags.Items.Salvaging.ZANITE_7.tag()).addOptional(new ResourceLocation("aether", "zanite_leggings"));
+        this.tag(TComTags.Items.Salvaging.ZANITE_8.tag()).addOptional(new ResourceLocation("aether", "zanite_chestplate"));
+        //Gravitite
+        this.tag(TComTags.Items.Salvaging.GRAVITITE_1.tag()).addOptional(new ResourceLocation("aether", "gravitite_shovel"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE_2.tag()).addOptional(new ResourceLocation("aether", "gravitite_sword")).addOptional(new ResourceLocation("aether", "gravitite_hoe"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE_3.tag()).addOptional(new ResourceLocation("aether", "gravitite_axe")).addOptional(new ResourceLocation("aether", "gravitite_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE_4.tag()).addOptional(new ResourceLocation("aether", "gravitite_boots"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE_5.tag()).addOptional(new ResourceLocation("aether", "gravitite_helmet"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE_7.tag()).addOptional(new ResourceLocation("aether", "gravitite_leggings"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE_8.tag()).addOptional(new ResourceLocation("aether", "gravitite_chestplate"));
+        //Skyjade
+        this.tag(TComTags.Items.Salvaging.SKYJADE_1.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_shovel"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE_2.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_sword")).addOptional(new ResourceLocation("deep_aether", "skyjade_hoe"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE_3.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_axe")).addOptional(new ResourceLocation("deep_aether", "skyjade_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE_4.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_boots"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE_5.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_helmet"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE_7.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_leggings"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE_8.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_chestplate"));
+        //Stratus
+        this.tag(TComTags.Items.Salvaging.STRATUS_1.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_shovel"));
+        this.tag(TComTags.Items.Salvaging.STRATUS_2.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_sword")).addOptional(new ResourceLocation("deep_aether", "stratus_hoe"));
+        this.tag(TComTags.Items.Salvaging.STRATUS_3.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_axe")).addOptional(new ResourceLocation("deep_aether", "stratus_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.STRATUS_4.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_boots"));
+        this.tag(TComTags.Items.Salvaging.STRATUS_5.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_helmet"));
+        this.tag(TComTags.Items.Salvaging.STRATUS_7.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_leggings"));
+        this.tag(TComTags.Items.Salvaging.STRATUS_8.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_chestplate"));
+        //Veridium
+        this.tag(TComTags.Items.Salvaging.VERIDIUM_1.tag()).addOptional(new ResourceLocation("aether_redux", "veridium_shovel")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_shovel"));
+        this.tag(TComTags.Items.Salvaging.VERIDIUM_2.tag()).addOptional(new ResourceLocation("aether_redux", "veridium_sword")).addOptional(new ResourceLocation("aether_redux", "veridium_hoe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_sword")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_hoe"));
+        this.tag(TComTags.Items.Salvaging.VERIDIUM_3.tag()).addOptional(new ResourceLocation("aether_redux", "veridium_axe")).addOptional(new ResourceLocation("aether_redux", "veridium_pickaxe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_axe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_pickaxe"));
+        //Obsidian
+        this.tag(TComTags.Items.Salvaging.OBSIDIAN_4.tag()).addOptional(new ResourceLocation("aether", "obsidian_boots"));
+        this.tag(TComTags.Items.Salvaging.OBSIDIAN_5.tag()).addOptional(new ResourceLocation("aether", "obsidian_helmet"));
+        this.tag(TComTags.Items.Salvaging.OBSIDIAN_7.tag()).addOptional(new ResourceLocation("aether", "obsidian_leggings"));
+        this.tag(TComTags.Items.Salvaging.OBSIDIAN_8.tag()).addOptional(new ResourceLocation("aether", "obsidian_chestplate"));
+        //Steeleaf
+        this.tag(TComTags.Items.Salvaging.STEELEAF_1.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_shovel"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF_2.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_sword")).addOptional(new ResourceLocation("twilightforest", "steeleaf_hoe"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF_3.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_axe")).addOptional(new ResourceLocation("twilightforest", "steeleaf_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF_4.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_boots"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF_5.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_helmet"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF_7.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_leggings"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF_8.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_chestplate"));
+        //Knightmetal
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_2.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_sword"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_3.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_axe")).addOptional(new ResourceLocation("twilightforest", "knightmetal_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_4.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_boots"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_5.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_helmet"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_7.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_leggings")).addOptional(new ResourceLocation("twilightforest", "knightmetal_shield"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_8.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_chestplate"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_16.tag()).addOptional(new ResourceLocation("twilightforest", "block_and_chain"));
+        //Fiery
+        this.tag(TComTags.Items.Salvaging.FIERY_2.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_sword"));
+        this.tag(TComTags.Items.Salvaging.FIERY_3.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.FIERY_4.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_boots"));
+        this.tag(TComTags.Items.Salvaging.FIERY_5.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_helmet"));
+        this.tag(TComTags.Items.Salvaging.FIERY_7.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_leggings"));
+        this.tag(TComTags.Items.Salvaging.FIERY_8.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_chestplate"));
+    }
+
     private void addForge() {
         for (TComTags.Items.Oreberries oreberry : TComTags.Items.Oreberries.values()) {
             this.tag(oreberry.tag()).addOptional(oreberry.item());
@@ -49,6 +118,14 @@ public class TComItemTagProv extends ItemTagsProvider {
         for (TComTags.Items.Gloves glove : TComTags.Items.Gloves.values()) {
             this.tag(glove.tag()).addOptional(glove.item());
         }
+        for (TComTags.Items.Rings ring : TComTags.Items.Rings.values()) {
+            this.tag(ring.tag()).addOptional(ring.item());
+        }
+        for (TComTags.Items.Pendants pendant : TComTags.Items.Pendants.values()) {
+            this.tag(pendant.tag()).addOptional(pendant.item());
+        }
+        this.tag(TComTags.Items.WISDOM_RING).addOptional(new ResourceLocation("aether_redux", "ring_of_wisdom"));
+        this.tag(TComTags.Items.SENTRY_RING).addOptional(new ResourceLocation("aether_redux", "sentry_ring"));
         this.tag(TComTags.Items.STEELEAF_INGOTS).addOptional(new ResourceLocation("twilightforest", "steeleaf_ingot"));
         this.tag(TComTags.Items.STEELEAF_BLOCKS).addOptional(new ResourceLocation("twilightforest", "steeleaf_block"));
         this.tag(TComTags.Items.FIERY_INGOTS).addOptional(new ResourceLocation("twilightforest", "fiery_ingot"));
@@ -88,37 +165,44 @@ public class TComItemTagProv extends ItemTagsProvider {
     private void addPlanks() {
         List<MaterialVariantId> noPlanks = List.of(TComMaterialIds.paloVerde);
         // handle otbwg plank tags
-        for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantWoods) {
-            String woodName = materialVariantId.getVariant();
-            woodTagging(woodName, "biomeswevegone", noPlanks.contains(materialVariantId));
-        }
+        //for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantWoods) {
+        //    String woodName = materialVariantId.getVariant();
+        //    woodTagging(woodName, "biomeswevegone", noPlanks.contains(materialVariantId));
+        //}
         for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantRocks) {
             rockTagging(materialVariantId.getVariant(), "biomeswevegone");
         }
-        for (MaterialVariantId materialVariantId : TComMaterialIds.aetherVariantWoods) {
-            String woodName = materialVariantId.getVariant();
-            woodTagging(woodName, "aether", noPlanks.contains(materialVariantId));
-        }
+        //for (MaterialVariantId materialVariantId : TComMaterialIds.aetherVariantWoods) {
+        //    String woodName = materialVariantId.getVariant();
+        //    woodTagging(woodName, "aether", noPlanks.contains(materialVariantId));
+        //}
         //for (MaterialVariantId materialVariantId : TComMaterialIds.aetherVariantRocks) {
         //    rockTagging(materialVariantId.getVariant(), "aether");
         //}
-        for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantWoods) {
-            String woodName = materialVariantId.getVariant();
-            woodTagging(woodName, "deep_aether", noPlanks.contains(materialVariantId));
-        }
+        //for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantWoods) {
+        //    String woodName = materialVariantId.getVariant();
+        //    woodTagging(woodName, "deep_aether", noPlanks.contains(materialVariantId));
+        //}
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantRocks) {
             rockTagging(materialVariantId.getVariant(), "deep_aether");
         }
 
-        woodTagging("fir", "biomesoplenty", false);
-        woodTagging("pine", "biomesoplenty", false);
-        woodTagging("maple", "biomesoplenty", false);
-        woodTagging("redwood", "biomesoplenty", false);
-        woodTagging("mahogany", "biomesoplenty", false);
-        woodTagging("jacaranda", "biomesoplenty", false);
-        woodTagging("palm", "biomesoplenty", false);
-        woodTagging("willow", "biomesoplenty", false);
+        for (TComTags.Items.Woods wood : TComTags.Items.Woods.values()) {
+            String woodName = wood.name;
+            for (String namespace : wood.getNamespaces()) {
+                if (!wood.hasPlankRedirect()) {
+                    ResourceLocation plankId = wood.getSpecialPlankId(namespace) != null ? wood.getSpecialPlankId(namespace) : new ResourceLocation("%s:%s_planks".formatted(namespace, woodName));
+                    this.tag(wood.plankTag()).addOptional(plankId);
+                }
 
+                this.tag(TinkerTags.Items.VARIANT_PLANKS)
+                        .addOptionalTag(wood.plankTag());
+                this.tag(wood.logTag())
+                        .addOptionalTag(wood.externalLogTag(namespace));
+                this.tag(TinkerTags.Items.VARIANT_LOGS)
+                        .addOptionalTag(wood.logTag());
+            }
+        }
     }
 
     private void woodTagging(String woodName, String namespace, boolean noPlanks) {
@@ -135,10 +219,10 @@ public class TComItemTagProv extends ItemTagsProvider {
     }
 
     private void rockTagging(String rockName, String namespace) {
-        this.tag(itemTag("%s:%s".formatted(namespace, rockName)))
+        this.tag(itemTag("tcompat:%s".formatted(rockName)))
                 .addOptional(new ResourceLocation("%s:%s".formatted(namespace, rockName)));
         this.tag(TinkerTags.Items.WORKSTATION_ROCK)
-                .addOptional(new ResourceLocation("%s:%s".formatted(namespace, rockName)));
+                .addOptional(new ResourceLocation("tcompat:%s".formatted(rockName)));
     }
 
     private static TagKey<Item> itemTag(String name) {

@@ -3,11 +3,11 @@
   "conditions": [
     {
       "type": "forge:mod_loaded",
-      "modid": "deep_aether"
+      "modid": "aether"
     }
   ],
   "fluid": {
-    "amount": 90,
+    "amount": 100,
     "tag": "forge:molten_skyjade"
   },
   "output": "tcompat:skyjade",

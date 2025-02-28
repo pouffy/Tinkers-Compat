@@ -1,19 +1,19 @@
 {
   "values": [
     {
-      "id": "biomeswevegone:red_rock",
+      "id": "tcompat:red_rock",
       "required": false
     },
     {
-      "id": "biomeswevegone:dacite",
+      "id": "tcompat:dacite",
       "required": false
     },
     {
-      "id": "deep_aether:aseterite",
+      "id": "tcompat:aseterite",
       "required": false
     },
     {
-      "id": "deep_aether:clorite",
+      "id": "tcompat:clorite",
       "required": false
     }
   ]

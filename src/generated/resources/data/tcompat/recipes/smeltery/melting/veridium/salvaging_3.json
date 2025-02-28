@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:salvaging/veridium/3"
+  },
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_veridium"
+  },
+  "temperature": 1125,
+  "time": 121
+}

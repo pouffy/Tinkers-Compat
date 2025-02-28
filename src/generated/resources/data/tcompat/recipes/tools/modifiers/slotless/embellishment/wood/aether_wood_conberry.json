@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "deep_aether:conberry_planks"
+      "tag": "tcompat:conberry_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "deep_aether:conberry_planks"
+      "tag": "tcompat:conberry_planks"
     }
   ],
   "result": {

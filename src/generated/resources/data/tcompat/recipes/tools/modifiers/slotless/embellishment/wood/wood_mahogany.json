@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "biomeswevegone:mahogany_planks"
+      "tag": "tcompat:mahogany_planks"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "biomeswevegone:mahogany_planks"
+      "tag": "tcompat:mahogany_planks"
     }
   ],
   "result": {

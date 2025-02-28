@@ -17,24 +17,10 @@ public class TComMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvid
     protected void addMaterialRenderInfo() {
         buildRenderInfo(TComMaterialIds.aetherWood).color(0x5C5B41).fallbacks("wood", "stick", "primitive");
         redirect(TComMaterialIds.aetherRock, TComMaterialIds.holystone);
-        for (MaterialVariantId materialId : TComMaterialIds.otbwgVariantWoods) {
+        for (MaterialVariantId materialId : TComMaterialIds.allVariants) {
             buildRenderInfo(materialId);
         }
-        for (MaterialVariantId materialId : TComMaterialIds.otbwgVariantRocks) {
-            buildRenderInfo(materialId);
-        }
-        for (MaterialVariantId materialId : TComMaterialIds.aetherVariantWoods) {
-            buildRenderInfo(materialId);
-        }
-        for (MaterialVariantId materialId : TComMaterialIds.aetherVariantRocks) {
-            buildRenderInfo(materialId);
-        }
-        for (MaterialVariantId materialId : TComMaterialIds.deepAetherVariantWoods) {
-            buildRenderInfo(materialId);
-        }
-        for (MaterialVariantId materialId : TComMaterialIds.deepAetherVariantRocks) {
-            buildRenderInfo(materialId);
-        }
+        buildRenderInfo(TComMaterialIds.twilightWood).color(0x5C5B41).fallbacks("wood", "stick", "primitive");
         buildRenderInfo(TComMaterialIds.fiery).luminosity(15).fallbacks("metal");
         buildRenderInfo(TComMaterialIds.knightmetal).fallbacks("metal");
         buildRenderInfo(TComMaterialIds.nagascale);
