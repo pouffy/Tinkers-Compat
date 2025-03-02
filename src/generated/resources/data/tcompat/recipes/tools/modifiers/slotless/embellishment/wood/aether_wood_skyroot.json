@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:skyroot_planks"
+      "tag": "tcompat:planks/skyroot"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:skyroot_planks"
+      "tag": "tcompat:planks/skyroot"
     }
   ],
   "result": {

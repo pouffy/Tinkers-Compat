@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:transwood_logs"
+    "tag": "tcompat:logs/transwood"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:transwood_planks"
+    "tag": "tcompat:planks/transwood"
   },
   "material": "tcompat:twilight_wood#transwood",
   "needed": 1,

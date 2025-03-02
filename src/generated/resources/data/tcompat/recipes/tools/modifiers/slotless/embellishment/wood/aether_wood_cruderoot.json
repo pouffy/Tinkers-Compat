@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:cruderoot_planks"
+      "tag": "tcompat:planks/cruderoot"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:cruderoot_planks"
+      "tag": "tcompat:planks/cruderoot"
     }
   ],
   "result": {

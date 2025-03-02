@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:blightwillow_logs"
+    "tag": "tcompat:logs/blightwillow"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:blightwillow_planks"
+    "tag": "tcompat:planks/blightwillow"
   },
   "material": "tcompat:aether_wood#blightwillow",
   "needed": 1,

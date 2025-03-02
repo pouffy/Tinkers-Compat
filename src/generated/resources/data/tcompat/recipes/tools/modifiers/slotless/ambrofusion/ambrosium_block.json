@@ -1,0 +1,7 @@
+{
+  "type": "tcompat:ambrofusion_modifier",
+  "ingredient": {
+    "item": "aether:ambrosium_block"
+  },
+  "restore_amount": 36
+}

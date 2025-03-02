@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": {
+    "item": "aether_redux:veridium_shovel"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_veridium",
+    "unit_size": 10
+  },
+  "temperature": 1125,
+  "time": 70
+}

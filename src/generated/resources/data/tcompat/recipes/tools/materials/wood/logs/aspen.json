@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:aspen_logs"
+    "tag": "tcompat:logs/aspen"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:aspen_planks"
+    "tag": "tcompat:planks/aspen"
   },
   "material": "tconstruct:wood#aspen",
   "needed": 1,

@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:roseroot_planks"
+    "tag": "tcompat:planks/roseroot"
   },
   "material": "tcompat:aether_wood#roseroot",
   "needed": 1,

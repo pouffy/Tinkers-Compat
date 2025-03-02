@@ -1,19 +1,31 @@
 {
   "values": [
     {
-      "id": "tcompat:red_rock",
+      "id": "biomeswevegone:red_rock",
       "required": false
     },
     {
-      "id": "tcompat:dacite",
+      "id": "biomeswevegone:dacite",
       "required": false
     },
     {
-      "id": "tcompat:aseterite",
+      "id": "aether:holystone",
       "required": false
     },
     {
-      "id": "tcompat:clorite",
+      "id": "deep_aether:aseterite",
+      "required": false
+    },
+    {
+      "id": "deep_aether:clorite",
+      "required": false
+    },
+    {
+      "id": "aether_redux:divinite",
+      "required": false
+    },
+    {
+      "id": "aether_redux:driftshale",
       "required": false
     }
   ]

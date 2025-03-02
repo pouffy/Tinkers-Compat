@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:cypress_planks"
+      "tag": "tcompat:planks/cypress"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:cypress_planks"
+      "tag": "tcompat:planks/cypress"
     }
   ],
   "result": {

@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:twilight_oak_planks"
+    "tag": "tcompat:planks/twilight_oak"
   },
   "material": "tcompat:twilight_wood#twilight_oak",
   "needed": 1,

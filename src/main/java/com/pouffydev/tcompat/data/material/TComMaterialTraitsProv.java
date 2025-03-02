@@ -27,7 +27,7 @@ public class TComMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TComMaterialIds.zanite, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.acclimatization, 1));
         addDefaultTraits(TComMaterialIds.gravitite, TComModifierIds.aetherForged);
         addDefaultTraits(TComMaterialIds.skyjade, new ModifierEntry(TComModifierIds.aetherForged, 1), new ModifierEntry(TComModifiers.dulling, 1));
-        addDefaultTraits(TComMaterialIds.veridium, new ModifierEntry(TComModifierIds.aetherForged, 1));
+        addDefaultTraits(TComMaterialIds.veridium, TComModifierIds.aetherForged, TComModifiers.ambrofusion.getId());
         addDefaultTraits(TComMaterialIds.refinedSentrite, new ModifierEntry(TComModifierIds.aetherForged, 1));
 
         addTraits(TComMaterialIds.gravitite, MELEE_HARVEST, TComModifiers.ascension);

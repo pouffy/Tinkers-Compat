@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:naga_scales"
+    "item": "twilightforest:naga_scale"
   },
   "material": "tcompat:nagascale",
   "needed": 1,

@@ -24,7 +24,6 @@ public class AbilityHooksMixin {
         if (debuffTools) {
             if (stack.getItem() instanceof ModifiableItem) {
                 if ((state.getBlock().getDescriptionId().startsWith("block.aether.") || state.is(AetherTags.Blocks.TREATED_AS_AETHER_BLOCK)) && !state.is(AetherTags.Blocks.TREATED_AS_VANILLA_BLOCK)) {
-                    TCompat.LOGGER.info("applying aether speed modifier to tinker tool");
                     ToolStack toolStack = ToolStack.from(stack);
                     boolean isAetherForged = toolStack.getModifierLevel(TComModifierIds.aetherForged) > 0;
                     if (!isAetherForged)

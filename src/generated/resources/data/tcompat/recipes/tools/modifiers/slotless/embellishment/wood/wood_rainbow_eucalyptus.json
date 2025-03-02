@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:rainbow_eucalyptus_planks"
+      "tag": "tcompat:planks/rainbow_eucalyptus"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:rainbow_eucalyptus_planks"
+      "tag": "tcompat:planks/rainbow_eucalyptus"
     }
   ],
   "result": {

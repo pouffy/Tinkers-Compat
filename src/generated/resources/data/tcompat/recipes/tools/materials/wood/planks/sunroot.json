@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:sunroot_planks"
+    "tag": "tcompat:planks/sunroot"
   },
   "material": "tcompat:aether_wood#sunroot",
   "needed": 1,

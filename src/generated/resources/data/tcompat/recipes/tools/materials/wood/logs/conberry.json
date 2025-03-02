@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:conberry_logs"
+    "tag": "tcompat:logs/conberry"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:conberry_planks"
+    "tag": "tcompat:planks/conberry"
   },
   "material": "tcompat:aether_wood#conberry",
   "needed": 1,

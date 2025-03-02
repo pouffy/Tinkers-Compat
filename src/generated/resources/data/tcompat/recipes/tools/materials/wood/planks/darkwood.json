@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:darkwood_planks"
+    "tag": "tcompat:planks/darkwood"
   },
   "material": "tcompat:twilight_wood#darkwood",
   "needed": 1,

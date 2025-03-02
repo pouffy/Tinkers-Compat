@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:conberry_planks"
+    "tag": "tcompat:planks/conberry"
   },
   "material": "tcompat:aether_wood#conberry",
   "needed": 1,

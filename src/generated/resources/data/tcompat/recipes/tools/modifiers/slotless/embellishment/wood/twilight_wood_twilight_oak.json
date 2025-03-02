@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:twilight_oak_planks"
+      "tag": "tcompat:planks/twilight_oak"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:twilight_oak_planks"
+      "tag": "tcompat:planks/twilight_oak"
     }
   ],
   "result": {

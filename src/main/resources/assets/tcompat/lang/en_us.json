@@ -113,7 +113,7 @@
 
   "_comment": "Modifiers",
   "modifier.tcompat.aether_forged": "Aether Forged",
-  "modifier.tcompat.aether_forged.flavor": "Heaven Grade",
+  "modifier.tcompat.aether_forged.flavor": "Heavenly!",
   "modifier.tcompat.aether_forged.description": "Allows your tool to use it's full mining speed in The Aether",
 
   "modifier.tcompat.ambrogen": "Ambrogen",
@@ -122,6 +122,9 @@
   "modifier.tcompat.ascension": "Ascension",
   "modifier.tcompat.ascension.flavor": "Go Away!",
   "modifier.tcompat.ascension.description": "Hitting an entity can launch them towards the heavens.",
+  "modifier.tcompat.ambrofusion": "Ambrofusion",
+  "modifier.tcompat.ambrofusion.flavor": "Fuel For Thought",
+  "modifier.tcompat.ambrofusion.description": "Tool can have it's stats buffed with Ambrosium but durability depletes faster.",
   "modifier.tcompat.dulling": "Dulling",
   "modifier.tcompat.dulling.flavor": "Dull their Sparkle",
   "modifier.tcompat.dulling.description": "Gradually loses effectiveness.",

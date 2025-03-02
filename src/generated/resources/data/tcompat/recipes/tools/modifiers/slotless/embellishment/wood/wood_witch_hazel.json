@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:witch_hazel_planks"
+      "tag": "tcompat:planks/witch_hazel"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:witch_hazel_planks"
+      "tag": "tcompat:planks/witch_hazel"
     }
   ],
   "result": {

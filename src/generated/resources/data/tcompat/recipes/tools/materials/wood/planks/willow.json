@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:willow_planks"
+    "tag": "tcompat:planks/willow"
   },
   "material": "tconstruct:wood#willow",
   "needed": 1,

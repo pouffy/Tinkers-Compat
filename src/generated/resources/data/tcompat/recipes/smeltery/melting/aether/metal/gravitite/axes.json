@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "aether:gravitite_axe"
+    },
+    {
+      "item": "aether:gravitite_pickaxe"
+    }
+  ],
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_gravitite",
+    "unit_size": 10
+  },
+  "temperature": 1275,
+  "time": 129
+}

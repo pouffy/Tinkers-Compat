@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:aspen_planks"
+    "tag": "tcompat:planks/aspen"
   },
   "material": "tconstruct:wood#aspen",
   "needed": 1,

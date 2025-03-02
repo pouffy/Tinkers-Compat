@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "twilightforest:fiery_tears"
+    },
+    {
+      "item": "twilightforest:fiery_blood"
+    }
+  ],
+  "result": {
+    "amount": 250,
+    "tag": "forge:fiery_essence"
+  },
+  "temperature": 1200,
+  "time": 120
+}

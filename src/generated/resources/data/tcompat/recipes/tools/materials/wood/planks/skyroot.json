@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:skyroot_planks"
+    "tag": "tcompat:planks/skyroot"
   },
   "material": "tcompat:aether_wood#skyroot",
   "needed": 1,

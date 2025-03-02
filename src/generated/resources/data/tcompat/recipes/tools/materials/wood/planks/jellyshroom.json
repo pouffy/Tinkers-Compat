@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:jellyshroom_planks"
+    "tag": "tcompat:planks/jellyshroom"
   },
   "material": "tcompat:aether_wood#jellyshroom",
   "needed": 1,

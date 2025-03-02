@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:baobab_planks"
+      "tag": "tcompat:planks/baobab"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:baobab_planks"
+      "tag": "tcompat:planks/baobab"
     }
   ],
   "result": {

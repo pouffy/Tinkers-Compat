@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:white_mangrove_planks"
+      "tag": "tcompat:planks/white_mangrove"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:white_mangrove_planks"
+      "tag": "tcompat:planks/white_mangrove"
     }
   ],
   "result": {

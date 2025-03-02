@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:zelkova_planks"
+    "tag": "tcompat:planks/zelkova"
   },
   "material": "tconstruct:wood#zelkova",
   "needed": 1,

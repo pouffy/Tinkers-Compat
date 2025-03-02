@@ -13,11 +13,11 @@ import java.util.Locale;
 @Getter
 @RequiredArgsConstructor
 public enum TComByproduct implements IByproduct {
-    ZANITE(false, TComFluids.moltenZanite),
-    SKYJADE(false, TComFluids.moltenSkyjade),
-    GRAVITITE(false, TComFluids.moltenGravitite),
-    VERIDIUM(false, TComFluids.moltenVeridium),
-    STRATUS(false, TComFluids.moltenStratus),
+    ZANITE("zanite",false, TComFluids.moltenZanite, FluidValues.GEM),
+    SKYJADE("skyjade", false, TComFluids.moltenSkyjade, FluidValues.GEM),
+    GRAVITITE("gravitite", false, TComFluids.moltenGravitite, FluidValues.INGOT),
+    VERIDIUM("veridium", false, TComFluids.moltenVeridium, FluidValues.INGOT),
+    REFINED_SENTRITE("refined_sentrite", false, TComFluids.moltenRefinedSentrite, FluidValues.INGOT),
     ;
 
     private final String name;

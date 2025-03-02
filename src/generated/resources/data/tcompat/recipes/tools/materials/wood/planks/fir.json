@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:fir_planks"
+    "tag": "tcompat:planks/fir"
   },
   "material": "tconstruct:wood#fir",
   "needed": 1,

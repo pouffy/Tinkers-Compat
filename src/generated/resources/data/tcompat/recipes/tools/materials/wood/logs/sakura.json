@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:sakura_logs"
+    "tag": "tcompat:logs/sakura"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:sakura_planks"
+    "tag": "tcompat:planks/sakura"
   },
   "material": "tconstruct:wood#sakura",
   "needed": 1,

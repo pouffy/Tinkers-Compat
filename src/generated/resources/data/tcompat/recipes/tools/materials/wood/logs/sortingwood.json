@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:sortingwood_logs"
+    "tag": "tcompat:logs/sortingwood"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:sortingwood_planks"
+    "tag": "tcompat:planks/sortingwood"
   },
   "material": "tcompat:twilight_wood#sortingwood",
   "needed": 1,

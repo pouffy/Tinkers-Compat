@@ -1,0 +1,85 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "type": "tconstruct:tag_intersection_present",
+      "registry": "minecraft:item",
+      "tags": [
+        "forge:ores/skyjade",
+        "forge:ore_rates/sparse"
+      ]
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/zanite"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "byproducts": [
+          {
+            "amount": 50,
+            "tag": "forge:molten_zanite"
+          }
+        ],
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/skyjade"
+            },
+            {
+              "tag": "forge:ore_rates/sparse"
+            }
+          ]
+        },
+        "rate": "gem",
+        "result": {
+          "amount": 50,
+          "tag": "forge:molten_skyjade"
+        },
+        "temperature": 1325,
+        "time": 76
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/skyjade"
+            },
+            {
+              "tag": "forge:ore_rates/sparse"
+            }
+          ]
+        },
+        "rate": "gem",
+        "result": {
+          "amount": 50,
+          "tag": "forge:molten_skyjade"
+        },
+        "temperature": 1325,
+        "time": 76
+      }
+    }
+  ]
+}

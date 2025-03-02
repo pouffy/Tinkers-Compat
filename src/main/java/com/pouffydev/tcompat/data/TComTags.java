@@ -16,9 +16,6 @@ import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.materials.definition.MaterialManager;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierManager;
-import slimeknights.tconstruct.library.recipe.FluidValues;
-
-import java.util.*;
 
 import static com.pouffydev.tcompat.TCompat.getResource;
 import static slimeknights.mantle.Mantle.commonResource;
@@ -93,244 +90,6 @@ public class TComTags {
         private static void init() {
         }
 
-        /** Contains all compatible wood sets for recipes & tagging */
-        public enum Woods {
-            //BWG, BOP, TC
-            ASPEN(builder("biomeswevegone")), BAOBAB(builder("biomeswevegone")), BLUE_ENCHANTED(builder("biomeswevegone")),
-            CIKA(builder("biomeswevegone")), CYPRESS(builder("biomeswevegone")), EBONY(builder("biomeswevegone")),
-            FIR(builder("biomeswevegone", "biomesoplenty")), FLORUS(builder("biomeswevegone")), GREEN_ENCHANTED(builder("biomeswevegone")),
-            HOLLY(builder("biomeswevegone")), IRONWOOD(builder("biomeswevegone")), JACARANDA(builder("biomeswevegone", "biomesoplenty")),
-            MAHOGANY(builder("biomeswevegone", "biomesoplenty")), MAPLE(builder("biomeswevegone", "biomesoplenty")), PALM(builder("biomeswevegone", "biomesoplenty")),
-            PALO_VERDE(builder("biomeswevegone")), PINE(builder("biomeswevegone", "biomesoplenty")), RAINBOW_EUCALYPTUS(builder("biomeswevegone")), REDWOOD(builder("biomeswevegone", "biomesoplenty")),
-            SAKURA(builder("biomeswevegone")), SKYRIS(builder("biomeswevegone")), WHITE_MANGROVE(builder("biomeswevegone")), WILLOW(builder("biomeswevegone", "biomesoplenty")), WITCH_HAZEL(builder("biomeswevegone")),
-            ZELKOVA(builder("biomeswevegone")),
-
-            //Aether
-            SKYROOT(builder("aether")),
-            ROSEROOT(builder("deep_aether")),
-            YAGROOT(builder("deep_aether")),
-            CRUDEROOT(builder("deep_aether")),
-            CONBERRY(builder("deep_aether")),
-            SUNROOT(builder("deep_aether")),
-            CLOUDCAP(builder("aether_redux").stem()),
-            JELLYSHROOM(builder("aether_redux").stem()),
-            BLIGHTWILLOW(builder("aether_redux")),
-            FIELDSPROOT(builder("aether_redux")),
-            CRYSTAL(builder("aether_redux")),
-            GLACIA(builder("aether_redux")),
-
-            //Twilight Forest
-            TWILIGHT_OAK(builder("twilightforest")), CANOPY(builder("twilightforest")), MANGROVE(builder("twilightforest")),
-            DARKWOOD(builder("twilightforest").specialPlankId("twilightforest", "dark_planks")),
-            TIMEWOOD(builder("twilightforest").specialLogTag("twilightforest", "timewood_logs").specialPlankId("twilightforest", "time_planks")),
-            TRANSWOOD(builder("twilightforest").specialLogTag("twilightforest", "transwood_logs").specialPlankId("twilightforest", "transformation_planks")),
-            MINEWOOD(builder("twilightforest").specialLogTag("twilightforest", "mining_logs").specialPlankId("twilightforest", "mining_planks")),
-            SORTINGWOOD(builder("twilightforest").specialLogTag("twilightforest", "sortwood_logs").specialPlankId("twilightforest", "sorting_planks")),
-            TOWERWOOD(builder("twilightforest").redirectPlankTag("twilightforest", "towerwood"))
-            ;
-
-            public final String name;
-            public final Builder builder;
-
-            Woods(Builder builder) {
-                this.name = this.name().toLowerCase();
-                this.builder = builder;
-            }
-
-            static Builder builder(String... namespaces) {
-                return new Builder(namespaces);
-            }
-
-            public boolean isStem() {
-                return this.builder.stem;
-            }
-
-            public boolean hasPlankRedirect() {
-                return this.builder.redirectPlankTag != null;
-            }
-
-            public List<String> getNamespaces() {
-                return this.builder.namespaces;
-            }
-
-            public TagKey<Item> getSpecialLogTag(String namespace) {
-                return this.builder.specialLogTag.get(namespace);
-            }
-            public ResourceLocation getSpecialPlankId(String namespace) {
-                return this.builder.specialPlankId.get(namespace);
-            }
-
-            static class Builder {
-                public boolean stem = false;
-                public List<String> namespaces = List.of();
-                public Map<String, TagKey<Item>> specialLogTag = new HashMap<>();
-                public TagKey<Item> redirectPlankTag = null;
-                public Map<String, ResourceLocation> specialPlankId = new HashMap<>();
-
-                public Builder(String... namespaces) {
-                    Collection<String> namespaceList = new ArrayList<>(List.of());
-                    namespaceList.addAll(Arrays.asList(namespaces));
-                    this.namespaces = namespaceList.stream().toList();
-                }
-
-                public Builder stem() {
-                    this.stem = true;
-                    return this;
-                }
-
-                public Builder specialLogTag(String namespace, String name) {
-                    TagKey<Item> tag = named(namespace, name);
-                    this.specialLogTag.put(namespace, tag);
-                    return this;
-                }
-
-                public Builder redirectPlankTag(String namespace, String name) {
-                    this.redirectPlankTag = named(namespace, name);
-                    return this;
-                }
-
-                public Builder specialPlankId(String namespace, String name) {
-                    ResourceLocation id = new ResourceLocation(namespace, name);
-                    this.specialPlankId.put(namespace, id);
-                    return this;
-                }
-
-            }
-
-            public TagKey<Item> externalLogTag(String namespace) {
-                String suffix = this.builder.stem ? "_stems" : "_logs";
-                return Objects.requireNonNullElseGet(getSpecialLogTag(namespace), () -> named(namespace, this.name().toLowerCase() + suffix));
-            }
-            public TagKey<Item> plankTag() {
-                return Objects.requireNonNullElseGet(this.builder.redirectPlankTag, () -> local(this.name().toLowerCase() + "_planks"));
-            }
-            public TagKey<Item> logTag() {
-                String suffix = this.builder.stem ? "_stems" : "_logs";
-                return local(this.name().toLowerCase() + suffix);
-            }
-            public static TagKey<Item> plankTag(String name) {
-                for (Woods wood : values()) {
-                    if (wood.name().toLowerCase().equals(name)) {
-                        return wood.plankTag();
-                    }
-                }
-                return local(name + "_planks");
-            }
-            public static TagKey<Item> logTag(String name) {
-                for (Woods wood : values()) {
-                    if (wood.name().toLowerCase().equals(name)) {
-                        return wood.logTag();
-                    }
-                }
-                return local(name + "_logs");
-            }
-            public static TagKey<Item> stemTag(String name) {
-                return local(name + "_stems");
-            }
-        }
-        public enum Oreberries {
-            ALUMINUM, COPPER, GOLD, IRON,
-            LEAD, NICKEL, OSMIUM, SILVER,
-            TIN, URANIUM, ZINC
-            ;
-
-            public TagKey<Item> tag() {
-                return common("oreberries/" + this.name().toLowerCase());
-            }
-
-            public ResourceLocation item() {
-                return new ResourceLocation("oreberriesreplanted", this.name().toLowerCase() + "_oreberry");
-            }
-        }
-        public enum Gloves {
-            IRON,GOLD,DIAMOND,NETHERITE,OBSIDIAN,ZANITE,GRAVITITE,SKYJADE("deep_aether"),STRATUS("deep_aether")
-            ;
-            final String namespace;
-            Gloves() {
-                this.namespace = "aether";
-            }
-            Gloves(String namespace) {
-                this.namespace = namespace;
-            }
-            public TagKey<Item> tag() {
-                return common("aether_gloves/" + this.name().toLowerCase());
-            }
-
-            public ResourceLocation item() {
-                String suffix = this == GOLD ? "en_gloves" : "_gloves";
-                return new ResourceLocation(namespace, this.name().toLowerCase() + suffix);
-            }
-        }
-        public enum Rings {
-            IRON,GOLD,ZANITE,GRAVITITE,SKYJADE("deep_aether"),STRATUS("deep_aether")
-            ;
-            final String namespace;
-            Rings() {
-                this.namespace = "aether";
-            }
-            Rings(String namespace) {
-                this.namespace = namespace;
-            }
-            public TagKey<Item> tag() {
-                return common("aether_rings/" + this.name().toLowerCase());
-            }
-
-            public ResourceLocation item() {
-                String suffix = this == GOLD ? "en_ring" : "_ring";
-                return new ResourceLocation(namespace, this.name().toLowerCase() + suffix);
-            }
-        }
-        public enum Pendants {
-            IRON,GOLD,ZANITE
-            ;
-            final String namespace;
-            Pendants() {
-                this.namespace = "aether";
-            }
-            Pendants(String namespace) {
-                this.namespace = namespace;
-            }
-            public TagKey<Item> tag() {
-                return common("aether_pendants/" + this.name().toLowerCase());
-            }
-
-            public ResourceLocation item() {
-                String suffix = this == GOLD ? "en_pendant" : "_pendant";
-                return new ResourceLocation(namespace, this.name().toLowerCase() + suffix);
-            }
-        }
-        public enum Salvaging {
-            ZANITE(List.of(1,2,3,4,5,7,8), FluidValues.GEM),
-            SKYJADE(List.of(1,2,3,4,5,7,8), FluidValues.GEM),
-            GRAVITITE(List.of(1,2,3,4,5,7,8)),
-            STRATUS(List.of(1,2,3,4,5,7,8)),
-            VERIDIUM(List.of(1,2,3)),
-            OBSIDIAN(List.of(4,5,7,8), FluidValues.GLASS_BLOCK),
-            STEELEAF(List.of(1,2,3,4,5,7,8)),
-            KNIGHTMETAL(List.of(2,3,4,5,7,8,16)),
-            FIERY(List.of(2,3,4,5,7,8))
-            ;
-            public final List<Integer> permittedAmounts;
-            public final int singularUnit;
-
-            Salvaging(List<Integer> permittedAmounts) {
-                this.permittedAmounts = permittedAmounts;
-                this.singularUnit = FluidValues.INGOT;
-            }
-            Salvaging(List<Integer> permittedAmounts, int singularUnit) {
-                this.permittedAmounts = permittedAmounts;
-                this.singularUnit = singularUnit;
-            }
-
-            public int fluidValue(int amountToUse) {
-                return singularUnit * amountToUse;
-            }
-
-            public TagKey<Item> tag(int amountToUse) {
-                String material = this.name().toLowerCase();
-                return local("salvaging/" + material + "/" + amountToUse);
-            }
-        }
         public static TagKey<Item> STEELEAF_INGOTS  = common("ingots/steeleaf");
         public static TagKey<Item> STEELEAF_BLOCKS  = common("storage_blocks/steeleaf");
         public static TagKey<Item> FIERY_INGOTS     = common("ingots/fiery");
@@ -359,23 +118,8 @@ public class TComTags {
         public static TagKey<Item> REFINED_SENTRITE_BLOCKS  = common("storage_blocks/refined_sentrite");
         public static TagKey<Item> REFINED_SENTRITE_ORES  = common("ores/refined_sentrite");
 
-
-        public static TagKey<Item> AMBROSIUM = local("ambrosium");
-        public static TagKey<Item> SENTRY_RING = local("sentry_ring");
-        public static TagKey<Item> WISDOM_RING = local("ring_of_wisdom");
-
-        public static TagKey<Item> ARMOR_SHARD = local("armor_shard");
-        public static TagKey<Item> ARMOR_SHARD_CLUSTER = local("armor_shard_cluster");
-        public static TagKey<Item> KNIGHTMETAL_LOOP = local("knightmetal_loop");
-
-        public static TagKey<Item> RAVEN_FEATHER = local("raven_feathers");
-        public static TagKey<Item> NAGA_SCALE = local("naga_scales");
-
-        public static TagKey<Item> FIERY_VIAL = TagKey.create(Registries.ITEM, new ResourceLocation("twilightforest", "fiery_vial"));
-
-
         /** Makes a tag in the tinkers compat domain */
-        private static TagKey<Item> local(String name) {
+        public static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));
         }
 
@@ -383,7 +127,7 @@ public class TComTags {
             return TagKey.create(Registries.ITEM, commonResource(name));
         }
 
-        private static TagKey<Item> named(String namespace, String name) {
+        public static TagKey<Item> named(String namespace, String name) {
             return TagKey.create(Registries.ITEM, new ResourceLocation(namespace, name));
         }
     }

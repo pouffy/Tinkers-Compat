@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 360,
+      "tag": "forge:molten_gravitite"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "item": "deep_aether:stratus_ring"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_stratus"
+  },
+  "temperature": 1375,
+  "time": 77
+}

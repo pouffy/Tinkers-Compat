@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "item": "aether:obsidian_gloves"
+  },
+  "result": {
+    "amount": 2000,
+    "fluid": "tconstruct:molten_obsidian",
+    "unit_size": 250
+  },
+  "temperature": 1000,
+  "time": 313
+}

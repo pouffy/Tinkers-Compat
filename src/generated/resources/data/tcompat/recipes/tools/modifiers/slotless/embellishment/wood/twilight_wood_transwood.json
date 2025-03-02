@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:transwood_planks"
+      "tag": "tcompat:planks/transwood"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:transwood_planks"
+      "tag": "tcompat:planks/transwood"
     }
   ],
   "result": {

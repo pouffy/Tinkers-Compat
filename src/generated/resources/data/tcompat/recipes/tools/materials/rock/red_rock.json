@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:red_rock"
+    "item": "biomeswevegone:red_rock"
   },
   "material": "tconstruct:rock#red_rock",
   "needed": 1,

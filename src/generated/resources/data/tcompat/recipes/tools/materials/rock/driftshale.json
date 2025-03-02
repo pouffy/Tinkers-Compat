@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:driftshale"
+    "item": "aether_redux:driftshale"
   },
   "material": "tcompat:aether_rock#driftshale",
   "needed": 1,

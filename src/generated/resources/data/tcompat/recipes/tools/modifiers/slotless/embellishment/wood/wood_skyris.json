@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:skyris_planks"
+      "tag": "tcompat:planks/skyris"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:skyris_planks"
+      "tag": "tcompat:planks/skyris"
     }
   ],
   "result": {

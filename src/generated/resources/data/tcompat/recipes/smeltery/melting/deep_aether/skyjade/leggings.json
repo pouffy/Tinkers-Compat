@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "item": "deep_aether:skyjade_leggings"
+  },
+  "result": {
+    "amount": 700,
+    "tag": "forge:molten_skyjade",
+    "unit_size": 25
+  },
+  "temperature": 1325,
+  "time": 211
+}

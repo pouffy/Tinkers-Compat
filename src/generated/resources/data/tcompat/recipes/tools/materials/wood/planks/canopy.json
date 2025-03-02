@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:canopy_planks"
+    "tag": "tcompat:planks/canopy"
   },
   "material": "tcompat:twilight_wood#canopy",
   "needed": 1,

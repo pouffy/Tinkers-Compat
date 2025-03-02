@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:roseroot_logs"
+    "tag": "tcompat:logs/roseroot"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:roseroot_planks"
+    "tag": "tcompat:planks/roseroot"
   },
   "material": "tcompat:aether_wood#roseroot",
   "needed": 1,

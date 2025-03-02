@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:jacaranda_planks"
+      "tag": "tcompat:planks/jacaranda"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:jacaranda_planks"
+      "tag": "tcompat:planks/jacaranda"
     }
   ],
   "result": {

@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:pine_planks"
+    "tag": "tcompat:planks/pine"
   },
   "material": "tconstruct:wood#pine",
   "needed": 1,

@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:willow_planks"
+      "tag": "tcompat:planks/willow"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:willow_planks"
+      "tag": "tcompat:planks/willow"
     }
   ],
   "result": {

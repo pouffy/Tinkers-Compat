@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:minewood_planks"
+    "tag": "tcompat:planks/minewood"
   },
   "material": "tcompat:twilight_wood#minewood",
   "needed": 1,

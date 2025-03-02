@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:canopy_planks"
+      "tag": "tcompat:planks/canopy"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:canopy_planks"
+      "tag": "tcompat:planks/canopy"
     }
   ],
   "result": {

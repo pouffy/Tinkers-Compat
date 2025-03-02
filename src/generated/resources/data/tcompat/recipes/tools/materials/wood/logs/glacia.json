@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:glacia_logs"
+    "tag": "tcompat:logs/glacia"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:glacia_planks"
+    "tag": "tcompat:planks/glacia"
   },
   "material": "tcompat:aether_wood#glacia",
   "needed": 1,

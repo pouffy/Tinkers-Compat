@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:mahogany_planks"
+      "tag": "tcompat:planks/mahogany"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:mahogany_planks"
+      "tag": "tcompat:planks/mahogany"
     }
   ],
   "result": {

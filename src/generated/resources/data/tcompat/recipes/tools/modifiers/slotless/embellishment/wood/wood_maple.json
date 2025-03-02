@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:maple_planks"
+      "tag": "tcompat:planks/maple"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:maple_planks"
+      "tag": "tcompat:planks/maple"
     }
   ],
   "result": {

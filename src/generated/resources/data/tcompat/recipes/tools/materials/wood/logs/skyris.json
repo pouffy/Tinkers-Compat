@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:skyris_logs"
+    "tag": "tcompat:logs/skyris"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:skyris_planks"
+    "tag": "tcompat:planks/skyris"
   },
   "material": "tconstruct:wood#skyris",
   "needed": 1,

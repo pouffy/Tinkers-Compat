@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:minewood_planks"
+      "tag": "tcompat:planks/minewood"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:minewood_planks"
+      "tag": "tcompat:planks/minewood"
     }
   ],
   "result": {

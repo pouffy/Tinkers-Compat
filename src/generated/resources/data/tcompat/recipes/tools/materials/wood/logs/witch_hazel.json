@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:witch_hazel_logs"
+    "tag": "tcompat:logs/witch_hazel"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:witch_hazel_planks"
+    "tag": "tcompat:planks/witch_hazel"
   },
   "material": "tconstruct:wood#witch_hazel",
   "needed": 1,

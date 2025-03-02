@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:jacaranda_logs"
+    "tag": "tcompat:logs/jacaranda"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:jacaranda_planks"
+    "tag": "tcompat:planks/jacaranda"
   },
   "material": "tconstruct:wood#jacaranda",
   "needed": 1,

@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:sakura_planks"
+    "tag": "tcompat:planks/sakura"
   },
   "material": "tconstruct:wood#sakura",
   "needed": 1,

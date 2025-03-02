@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:ironwood_planks"
+    "tag": "tcompat:planks/ironwood"
   },
   "material": "tconstruct:wood#ironwood",
   "needed": 1,

@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:sortingwood_planks"
+    "tag": "tcompat:planks/sortingwood"
   },
   "material": "tcompat:twilight_wood#sortingwood",
   "needed": 1,

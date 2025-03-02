@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "deep_aether:skyjade_axe"
+    },
+    {
+      "item": "deep_aether:skyjade_pickaxe"
+    }
+  ],
+  "result": {
+    "amount": 300,
+    "tag": "forge:molten_skyjade",
+    "unit_size": 25
+  },
+  "temperature": 1325,
+  "time": 138
+}

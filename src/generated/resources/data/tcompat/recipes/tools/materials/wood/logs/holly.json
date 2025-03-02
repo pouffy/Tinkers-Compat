@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:holly_logs"
+    "tag": "tcompat:logs/holly"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:holly_planks"
+    "tag": "tcompat:planks/holly"
   },
   "material": "tconstruct:wood#holly",
   "needed": 1,

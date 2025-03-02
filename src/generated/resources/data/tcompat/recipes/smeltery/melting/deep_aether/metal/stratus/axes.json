@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "byproducts": [
+    {
+      "amount": 270,
+      "tag": "forge:molten_gravitite",
+      "unit_size": 10
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "deep_aether:stratus_axe"
+    },
+    {
+      "item": "deep_aether:stratus_pickaxe"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_stratus",
+    "unit_size": 10
+  },
+  "temperature": 1375,
+  "time": 133
+}

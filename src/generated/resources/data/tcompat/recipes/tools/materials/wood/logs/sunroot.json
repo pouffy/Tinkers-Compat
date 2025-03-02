@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:sunroot_logs"
+    "tag": "tcompat:logs/sunroot"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:sunroot_planks"
+    "tag": "tcompat:planks/sunroot"
   },
   "material": "tcompat:aether_wood#sunroot",
   "needed": 1,

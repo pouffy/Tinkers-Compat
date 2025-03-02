@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "item": "aether:zanite_leggings"
+  },
+  "result": {
+    "amount": 700,
+    "tag": "forge:molten_zanite",
+    "unit_size": 25
+  },
+  "temperature": 1450,
+  "time": 220
+}

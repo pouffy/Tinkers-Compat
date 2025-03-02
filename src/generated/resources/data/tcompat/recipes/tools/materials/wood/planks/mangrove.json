@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:mangrove_planks"
+    "tag": "tcompat:planks/mangrove"
   },
   "material": "tcompat:twilight_wood#mangrove",
   "needed": 1,

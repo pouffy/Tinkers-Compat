@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:fieldsproot_planks"
+    "tag": "tcompat:planks/fieldsproot"
   },
   "material": "tcompat:aether_wood#fieldsproot",
   "needed": 1,

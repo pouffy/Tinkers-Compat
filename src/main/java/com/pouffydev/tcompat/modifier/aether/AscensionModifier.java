@@ -35,7 +35,7 @@ public class AscensionModifier extends NoLevelsModifier implements MeleeHitModif
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (context.getLevel().random.nextIntBetweenInclusive(0, (int) damageDealt) <= (int) (damageDealt - (damageDealt/2))) {
             Vec3 vec3 = context.getLivingTarget().getDeltaMovement();
-            context.getLivingTarget().setDeltaMovement(vec3.x, 9.5, vec3.z);
+            context.getLivingTarget().setDeltaMovement(vec3.x, 4.5, vec3.z);
             context.getLivingTarget().addEffect(new MobEffectInstance(MobEffects.LEVITATION, 80, 2, true, false, false));
         }
     }

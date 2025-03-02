@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:zelkova_logs"
+    "tag": "tcompat:logs/zelkova"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:zelkova_planks"
+    "tag": "tcompat:planks/zelkova"
   },
   "material": "tconstruct:wood#zelkova",
   "needed": 1,

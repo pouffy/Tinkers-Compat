@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:florus_planks"
+    "tag": "tcompat:planks/florus"
   },
   "material": "tconstruct:wood#florus",
   "needed": 1,

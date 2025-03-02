@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:mangrove_logs"
+    "tag": "tcompat:logs/mangrove"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:mangrove_planks"
+    "tag": "tcompat:planks/mangrove"
   },
   "material": "tcompat:twilight_wood#mangrove",
   "needed": 1,

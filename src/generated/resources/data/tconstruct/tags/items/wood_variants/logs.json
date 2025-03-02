@@ -1,219 +1,219 @@
 {
   "values": [
     {
-      "id": "#tcompat:aspen_logs",
+      "id": "#tcompat:logs/aspen",
       "required": false
     },
     {
-      "id": "#tcompat:baobab_logs",
+      "id": "#tcompat:logs/baobab",
       "required": false
     },
     {
-      "id": "#tcompat:blue_enchanted_logs",
+      "id": "#tcompat:logs/blue_enchanted",
       "required": false
     },
     {
-      "id": "#tcompat:cika_logs",
+      "id": "#tcompat:logs/cika",
       "required": false
     },
     {
-      "id": "#tcompat:cypress_logs",
+      "id": "#tcompat:logs/cypress",
       "required": false
     },
     {
-      "id": "#tcompat:ebony_logs",
+      "id": "#tcompat:logs/ebony",
       "required": false
     },
     {
-      "id": "#tcompat:fir_logs",
+      "id": "#tcompat:logs/fir",
       "required": false
     },
     {
-      "id": "#tcompat:fir_logs",
+      "id": "#tcompat:logs/fir",
       "required": false
     },
     {
-      "id": "#tcompat:florus_logs",
+      "id": "#tcompat:logs/florus",
       "required": false
     },
     {
-      "id": "#tcompat:green_enchanted_logs",
+      "id": "#tcompat:logs/green_enchanted",
       "required": false
     },
     {
-      "id": "#tcompat:holly_logs",
+      "id": "#tcompat:logs/holly",
       "required": false
     },
     {
-      "id": "#tcompat:ironwood_logs",
+      "id": "#tcompat:logs/ironwood",
       "required": false
     },
     {
-      "id": "#tcompat:jacaranda_logs",
+      "id": "#tcompat:logs/jacaranda",
       "required": false
     },
     {
-      "id": "#tcompat:jacaranda_logs",
+      "id": "#tcompat:logs/jacaranda",
       "required": false
     },
     {
-      "id": "#tcompat:mahogany_logs",
+      "id": "#tcompat:logs/mahogany",
       "required": false
     },
     {
-      "id": "#tcompat:mahogany_logs",
+      "id": "#tcompat:logs/mahogany",
       "required": false
     },
     {
-      "id": "#tcompat:maple_logs",
+      "id": "#tcompat:logs/maple",
       "required": false
     },
     {
-      "id": "#tcompat:maple_logs",
+      "id": "#tcompat:logs/maple",
       "required": false
     },
     {
-      "id": "#tcompat:palm_logs",
+      "id": "#tcompat:logs/palm",
       "required": false
     },
     {
-      "id": "#tcompat:palm_logs",
+      "id": "#tcompat:logs/palm",
       "required": false
     },
     {
-      "id": "#tcompat:palo_verde_logs",
+      "id": "#tcompat:logs/palo_verde",
       "required": false
     },
     {
-      "id": "#tcompat:pine_logs",
+      "id": "#tcompat:logs/pine",
       "required": false
     },
     {
-      "id": "#tcompat:pine_logs",
+      "id": "#tcompat:logs/pine",
       "required": false
     },
     {
-      "id": "#tcompat:rainbow_eucalyptus_logs",
+      "id": "#tcompat:logs/rainbow_eucalyptus",
       "required": false
     },
     {
-      "id": "#tcompat:redwood_logs",
+      "id": "#tcompat:logs/redwood",
       "required": false
     },
     {
-      "id": "#tcompat:redwood_logs",
+      "id": "#tcompat:logs/redwood",
       "required": false
     },
     {
-      "id": "#tcompat:sakura_logs",
+      "id": "#tcompat:logs/sakura",
       "required": false
     },
     {
-      "id": "#tcompat:skyris_logs",
+      "id": "#tcompat:logs/skyris",
       "required": false
     },
     {
-      "id": "#tcompat:white_mangrove_logs",
+      "id": "#tcompat:logs/white_mangrove",
       "required": false
     },
     {
-      "id": "#tcompat:willow_logs",
+      "id": "#tcompat:logs/willow",
       "required": false
     },
     {
-      "id": "#tcompat:willow_logs",
+      "id": "#tcompat:logs/willow",
       "required": false
     },
     {
-      "id": "#tcompat:witch_hazel_logs",
+      "id": "#tcompat:logs/witch_hazel",
       "required": false
     },
     {
-      "id": "#tcompat:zelkova_logs",
+      "id": "#tcompat:logs/zelkova",
       "required": false
     },
     {
-      "id": "#tcompat:skyroot_logs",
+      "id": "#tcompat:logs/skyroot",
       "required": false
     },
     {
-      "id": "#tcompat:roseroot_logs",
+      "id": "#tcompat:logs/roseroot",
       "required": false
     },
     {
-      "id": "#tcompat:yagroot_logs",
+      "id": "#tcompat:logs/yagroot",
       "required": false
     },
     {
-      "id": "#tcompat:cruderoot_logs",
+      "id": "#tcompat:logs/cruderoot",
       "required": false
     },
     {
-      "id": "#tcompat:conberry_logs",
+      "id": "#tcompat:logs/conberry",
       "required": false
     },
     {
-      "id": "#tcompat:sunroot_logs",
+      "id": "#tcompat:logs/sunroot",
       "required": false
     },
     {
-      "id": "#tcompat:cloudcap_stems",
+      "id": "#tcompat:stems/cloudcap",
       "required": false
     },
     {
-      "id": "#tcompat:jellyshroom_stems",
+      "id": "#tcompat:stems/jellyshroom",
       "required": false
     },
     {
-      "id": "#tcompat:blightwillow_logs",
+      "id": "#tcompat:logs/blightwillow",
       "required": false
     },
     {
-      "id": "#tcompat:fieldsproot_logs",
+      "id": "#tcompat:logs/fieldsproot",
       "required": false
     },
     {
-      "id": "#tcompat:crystal_logs",
+      "id": "#tcompat:logs/crystal",
       "required": false
     },
     {
-      "id": "#tcompat:glacia_logs",
+      "id": "#tcompat:logs/glacia",
       "required": false
     },
     {
-      "id": "#tcompat:twilight_oak_logs",
+      "id": "#tcompat:logs/twilight_oak",
       "required": false
     },
     {
-      "id": "#tcompat:canopy_logs",
+      "id": "#tcompat:logs/canopy",
       "required": false
     },
     {
-      "id": "#tcompat:mangrove_logs",
+      "id": "#tcompat:logs/mangrove",
       "required": false
     },
     {
-      "id": "#tcompat:darkwood_logs",
+      "id": "#tcompat:logs/darkwood",
       "required": false
     },
     {
-      "id": "#tcompat:timewood_logs",
+      "id": "#tcompat:logs/timewood",
       "required": false
     },
     {
-      "id": "#tcompat:transwood_logs",
+      "id": "#tcompat:logs/transwood",
       "required": false
     },
     {
-      "id": "#tcompat:minewood_logs",
+      "id": "#tcompat:logs/minewood",
       "required": false
     },
     {
-      "id": "#tcompat:sortingwood_logs",
+      "id": "#tcompat:logs/sortingwood",
       "required": false
     },
     {
-      "id": "#tcompat:towerwood_logs",
+      "id": "#tcompat:logs/towerwood",
       "required": false
     }
   ]

@@ -1,215 +1,215 @@
 {
   "values": [
     {
-      "id": "#tcompat:aspen_planks",
+      "id": "#tcompat:planks/aspen",
       "required": false
     },
     {
-      "id": "#tcompat:baobab_planks",
+      "id": "#tcompat:planks/baobab",
       "required": false
     },
     {
-      "id": "#tcompat:blue_enchanted_planks",
+      "id": "#tcompat:planks/blue_enchanted",
       "required": false
     },
     {
-      "id": "#tcompat:cika_planks",
+      "id": "#tcompat:planks/cika",
       "required": false
     },
     {
-      "id": "#tcompat:cypress_planks",
+      "id": "#tcompat:planks/cypress",
       "required": false
     },
     {
-      "id": "#tcompat:ebony_planks",
+      "id": "#tcompat:planks/ebony",
       "required": false
     },
     {
-      "id": "#tcompat:fir_planks",
+      "id": "#tcompat:planks/fir",
       "required": false
     },
     {
-      "id": "#tcompat:fir_planks",
+      "id": "#tcompat:planks/fir",
       "required": false
     },
     {
-      "id": "#tcompat:florus_planks",
+      "id": "#tcompat:planks/florus",
       "required": false
     },
     {
-      "id": "#tcompat:green_enchanted_planks",
+      "id": "#tcompat:planks/green_enchanted",
       "required": false
     },
     {
-      "id": "#tcompat:holly_planks",
+      "id": "#tcompat:planks/holly",
       "required": false
     },
     {
-      "id": "#tcompat:ironwood_planks",
+      "id": "#tcompat:planks/ironwood",
       "required": false
     },
     {
-      "id": "#tcompat:jacaranda_planks",
+      "id": "#tcompat:planks/jacaranda",
       "required": false
     },
     {
-      "id": "#tcompat:jacaranda_planks",
+      "id": "#tcompat:planks/jacaranda",
       "required": false
     },
     {
-      "id": "#tcompat:mahogany_planks",
+      "id": "#tcompat:planks/mahogany",
       "required": false
     },
     {
-      "id": "#tcompat:mahogany_planks",
+      "id": "#tcompat:planks/mahogany",
       "required": false
     },
     {
-      "id": "#tcompat:maple_planks",
+      "id": "#tcompat:planks/maple",
       "required": false
     },
     {
-      "id": "#tcompat:maple_planks",
+      "id": "#tcompat:planks/maple",
       "required": false
     },
     {
-      "id": "#tcompat:palm_planks",
+      "id": "#tcompat:planks/palm",
       "required": false
     },
     {
-      "id": "#tcompat:palm_planks",
+      "id": "#tcompat:planks/palm",
       "required": false
     },
     {
-      "id": "#tcompat:palo_verde_planks",
+      "id": "#tcompat:planks/palo_verde",
       "required": false
     },
     {
-      "id": "#tcompat:pine_planks",
+      "id": "#tcompat:planks/pine",
       "required": false
     },
     {
-      "id": "#tcompat:pine_planks",
+      "id": "#tcompat:planks/pine",
       "required": false
     },
     {
-      "id": "#tcompat:rainbow_eucalyptus_planks",
+      "id": "#tcompat:planks/rainbow_eucalyptus",
       "required": false
     },
     {
-      "id": "#tcompat:redwood_planks",
+      "id": "#tcompat:planks/redwood",
       "required": false
     },
     {
-      "id": "#tcompat:redwood_planks",
+      "id": "#tcompat:planks/redwood",
       "required": false
     },
     {
-      "id": "#tcompat:sakura_planks",
+      "id": "#tcompat:planks/sakura",
       "required": false
     },
     {
-      "id": "#tcompat:skyris_planks",
+      "id": "#tcompat:planks/skyris",
       "required": false
     },
     {
-      "id": "#tcompat:white_mangrove_planks",
+      "id": "#tcompat:planks/white_mangrove",
       "required": false
     },
     {
-      "id": "#tcompat:willow_planks",
+      "id": "#tcompat:planks/willow",
       "required": false
     },
     {
-      "id": "#tcompat:willow_planks",
+      "id": "#tcompat:planks/willow",
       "required": false
     },
     {
-      "id": "#tcompat:witch_hazel_planks",
+      "id": "#tcompat:planks/witch_hazel",
       "required": false
     },
     {
-      "id": "#tcompat:zelkova_planks",
+      "id": "#tcompat:planks/zelkova",
       "required": false
     },
     {
-      "id": "#tcompat:skyroot_planks",
+      "id": "#tcompat:planks/skyroot",
       "required": false
     },
     {
-      "id": "#tcompat:roseroot_planks",
+      "id": "#tcompat:planks/roseroot",
       "required": false
     },
     {
-      "id": "#tcompat:yagroot_planks",
+      "id": "#tcompat:planks/yagroot",
       "required": false
     },
     {
-      "id": "#tcompat:cruderoot_planks",
+      "id": "#tcompat:planks/cruderoot",
       "required": false
     },
     {
-      "id": "#tcompat:conberry_planks",
+      "id": "#tcompat:planks/conberry",
       "required": false
     },
     {
-      "id": "#tcompat:sunroot_planks",
+      "id": "#tcompat:planks/sunroot",
       "required": false
     },
     {
-      "id": "#tcompat:cloudcap_planks",
+      "id": "#tcompat:planks/cloudcap",
       "required": false
     },
     {
-      "id": "#tcompat:jellyshroom_planks",
+      "id": "#tcompat:planks/jellyshroom",
       "required": false
     },
     {
-      "id": "#tcompat:blightwillow_planks",
+      "id": "#tcompat:planks/blightwillow",
       "required": false
     },
     {
-      "id": "#tcompat:fieldsproot_planks",
+      "id": "#tcompat:planks/fieldsproot",
       "required": false
     },
     {
-      "id": "#tcompat:crystal_planks",
+      "id": "#tcompat:planks/crystal",
       "required": false
     },
     {
-      "id": "#tcompat:glacia_planks",
+      "id": "#tcompat:planks/glacia",
       "required": false
     },
     {
-      "id": "#tcompat:twilight_oak_planks",
+      "id": "#tcompat:planks/twilight_oak",
       "required": false
     },
     {
-      "id": "#tcompat:canopy_planks",
+      "id": "#tcompat:planks/canopy",
       "required": false
     },
     {
-      "id": "#tcompat:mangrove_planks",
+      "id": "#tcompat:planks/mangrove",
       "required": false
     },
     {
-      "id": "#tcompat:darkwood_planks",
+      "id": "#tcompat:planks/darkwood",
       "required": false
     },
     {
-      "id": "#tcompat:timewood_planks",
+      "id": "#tcompat:planks/timewood",
       "required": false
     },
     {
-      "id": "#tcompat:transwood_planks",
+      "id": "#tcompat:planks/transwood",
       "required": false
     },
     {
-      "id": "#tcompat:minewood_planks",
+      "id": "#tcompat:planks/minewood",
       "required": false
     },
     {
-      "id": "#tcompat:sortingwood_planks",
+      "id": "#tcompat:planks/sortingwood",
       "required": false
     },
     {

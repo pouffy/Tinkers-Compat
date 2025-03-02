@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "aether_redux:infused_veridium_hoe"
+    },
+    {
+      "item": "aether_redux:infused_veridium_sword"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_veridium",
+    "unit_size": 10
+  },
+  "temperature": 1125,
+  "time": 99
+}

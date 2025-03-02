@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:cika_planks"
+      "tag": "tcompat:planks/cika"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:cika_planks"
+      "tag": "tcompat:planks/cika"
     }
   ],
   "result": {

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "oreberriesreplanted"
+    }
+  ],
+  "ingredient": {
+    "item": "oreberriesreplanted:gold_oreberry"
+  },
+  "result": {
+    "amount": 25,
+    "tag": "forge:molten_gold"
+  },
+  "temperature": 700,
+  "time": 14
+}

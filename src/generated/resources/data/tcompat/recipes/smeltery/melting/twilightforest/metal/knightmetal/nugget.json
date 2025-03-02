@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:nuggets/knightmetal"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/knightmetal"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_knightmetal"
+  },
+  "temperature": 915,
+  "time": 21
+}

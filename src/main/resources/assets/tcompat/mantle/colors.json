@@ -14,7 +14,8 @@
     "acclimatization":        "#af7ff6",
     "ascension":              "#f195ef",
     "dulling":                "#9ada5b",
-    "ambrogen":               "#e4de73"
+    "ambrogen":               "#e4de73",
+    "ambrofusion":            "#7fbedc"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,

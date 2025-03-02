@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:palo_verde_logs"
+    "tag": "tcompat:logs/palo_verde"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:palo_verde_planks"
+    "tag": "tcompat:planks/palo_verde"
   },
   "material": "tconstruct:wood#palo_verde",
   "needed": 1,

@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:willow_logs"
+    "tag": "tcompat:logs/willow"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:willow_planks"
+    "tag": "tcompat:planks/willow"
   },
   "material": "tconstruct:wood#willow",
   "needed": 1,

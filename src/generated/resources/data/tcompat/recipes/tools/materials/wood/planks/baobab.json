@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:baobab_planks"
+    "tag": "tcompat:planks/baobab"
   },
   "material": "tconstruct:wood#baobab",
   "needed": 1,

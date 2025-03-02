@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:crystal_logs"
+    "tag": "tcompat:logs/crystal"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:crystal_planks"
+    "tag": "tcompat:planks/crystal"
   },
   "material": "tcompat:aether_wood#crystal",
   "needed": 1,

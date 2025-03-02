@@ -1,142 +1,185 @@
 package com.pouffydev.tcompat.modifier.aether;
 
-import com.aetherteam.aether.entity.AetherEntityTypes;
 import com.pouffydev.tcompat.TCompat;
-import com.pouffydev.tcompat.data.TComTags;
-import net.minecraft.nbt.ByteTag;
+import com.pouffydev.tcompat.material.TComMaterialIds;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.util.Lazy;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import slimeknights.tconstruct.TConstruct;
+import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.library.materials.definition.MaterialVariant;
+import slimeknights.tconstruct.library.modifiers.IncrementalModifierEntry;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.behavior.AttributesModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.ToolDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.ModifierRemovalHook;
-import slimeknights.tconstruct.library.modifiers.hook.combat.DamageDealtModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
-import slimeknights.tconstruct.library.modifiers.hook.mining.BlockBreakModifierHook;
-import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
+import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.build.ValidateModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.display.DurabilityDisplayModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
-import slimeknights.tconstruct.library.tools.context.EquipmentContext;
-import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
-import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.tools.modifiers.slotless.TrimModifier;
+import slimeknights.tconstruct.library.tools.nbt.*;
+import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
+import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
+import slimeknights.tconstruct.library.tools.stat.ToolStatId;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-import java.util.UUID;
-import java.util.function.BiConsumer;
-
-public class AmbrofusionModifier extends NoLevelsModifier implements ToolDamageModifierHook, BlockBreakModifierHook, DamageDealtModifierHook, GeneralInteractionModifierHook, AttributesModifierHook, ModifierRemovalHook {
-    public static final ResourceLocation INFUSION_LEVEL = TCompat.getResource("infusion_level");
+public class AmbrofusionModifier extends Modifier implements ToolDamageModifierHook, ModifierRemovalHook, ToolStatsModifierHook, ValidateModifierHook, DurabilityDisplayModifierHook, InventoryTickModifierHook {
+    public static final ResourceLocation shouldAddStatsKey = TCompat.getResource("should_add_stats");
+    public static boolean shouldAddStats = false;
+    /** Stat for the overslime cap, copies the durability global multiplier on build */
+    public static final FloatToolStat AMBROFUSION_STAT = ToolStats.register(new FloatToolStat(new ToolStatId(TCompat.MOD_ID, "ambrofusion"), 0xFFf9ff6a, 0, 0, Short.MAX_VALUE, TinkerTags.Items.DURABILITY) {
+        @Override
+        public Float build(ModifierStatsBuilder parent, Object builderObj) {
+            return super.build(parent, builderObj) * parent.getMultiplier(ToolStats.DURABILITY);
+        }
+    });
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this,
                 ModifierHooks.REMOVE,
+                ModifierHooks.TOOL_STATS,
                 ModifierHooks.TOOL_DAMAGE,
-                ModifierHooks.BLOCK_BREAK,
-                ModifierHooks.DAMAGE_DEALT,
-                ModifierHooks.GENERAL_INTERACT,
-                ModifierHooks.ATTRIBUTES
+                ModifierHooks.VALIDATE,
+                ModifierHooks.DURABILITY_DISPLAY,
+                ModifierHooks.INVENTORY_TICK
         );
     }
 
     @Override
+    public Component getDisplayName(IToolStackView tool, ModifierEntry entry, @javax.annotation.Nullable RegistryAccess access) {
+        return IncrementalModifierEntry.addAmountToName(getDisplayName(entry.getLevel()), getAmbrosium(tool), getAmbrosiumCapacity(tool, entry));
+    }
+
+    @Override
+    public Component getDisplayName(int level) {
+        // display name without the level
+        return super.getDisplayName();
+    }
+
+    @javax.annotation.Nullable
+    @Override
+    public Boolean showDurabilityBar(IToolStackView tool, ModifierEntry modifier) {
+        return tool.getCurrentDurability() < tool.getStats().getInt(ToolStats.DURABILITY) ? true : null;
+    }
+
+    @Override
+    public int getDurabilityWidth(IToolStackView tool, ModifierEntry modifier) {
+        int ambrosium = getAmbrosium(tool);
+        if (ambrosium > 0) {
+            return DurabilityDisplayModifierHook.getWidthFor(tool.getCurrentDurability(), tool.getStats().getInt(ToolStats.DURABILITY));
+        }
+        return 0;
+    }
+
+    @Override
+    public int getDurabilityRGB(IToolStackView tool, ModifierEntry modifier) {
+        if (getAmbrosium(tool) > 0) {
+            // just always display light blue, not much point in color changing really
+            return 0xf9ff6a;
+        }
+        return -1;
+    }
+
+    @Override
+    public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
+        AMBROFUSION_STAT.add(builder, 12);
+        boolean shouldAdd = context.getPersistentData().getBoolean(shouldAddStatsKey);
+        if (shouldAdd) {
+            if (context.hasTag(TinkerTags.Items.MELEE)) {
+                ToolStats.ATTACK_DAMAGE.multiply(builder, 1.5f);
+            }
+            if (context.hasTag(TinkerTags.Items.HARVEST)) {
+                ToolStats.MINING_SPEED.multiply(builder, 1.5f);
+            }
+            if (context.hasTag(TinkerTags.Items.ARMOR)) {
+                ToolStats.ARMOR.add(builder, 1.5f);
+            }
+            if (context.hasTag(TinkerTags.Items.RANGED)) {
+                ToolStats.VELOCITY.multiply(builder, 1.5f);
+            }
+        }
+    }
+
+    @Override
+    public int getPriority() {
+        return 150;
+    }
+
+    @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
-        return tool.getPersistentData().getCopy().getByte(INFUSION_LEVEL.toString()) > 0 ? amount * 4 : amount;
-    }
-
-    @Override
-    public void onDamageDealt(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, LivingEntity target, DamageSource source, float amount, boolean isDirectDamage) {
-        if (isDirectDamage) this.deplete(1, tool);
-    }
-
-    @Override
-    public void afterBlockBreak(IToolStackView tool, ModifierEntry modifier, ToolHarvestContext context) {
-        if (!context.getLiving().level().isClientSide()) {
-            boolean instaBreak = context.getState().getDestroySpeed(context.getWorld(), context.getPos()) <= 0.0F;
-            if (!instaBreak) {
-                int amount = context.canHarvest() ? 1 : 2;
-                this.deplete(amount, tool);
+        int ambrosium = getAmbrosium(tool);
+        if (ambrosium > 0) {
+            if (ambrosium >= amount) {
+                setAmbrosium(tool, modifier, ambrosium - amount);
+                return amount * 4;
             }
+            setAmbrosium(tool, modifier, 0);
+            return amount;
         }
+        return amount;
     }
 
+    protected ResourceLocation getShieldKey() {
+        return getId();
+    }
+
+    public int getAmbrosiumCapacity(IToolStackView tool, ModifierEntry modifier) {
+        return tool.getStats().getInt(AMBROFUSION_STAT);
+    }
+
+    @javax.annotation.Nullable
     @Override
-    public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
-        return infuse(tool, hand, player);
-    }
-
-    void deplete(int amount, IToolStackView tool) {
-        if (tool.getPersistentData().getCopy().getByte(INFUSION_LEVEL.toString()) > amount) {
-            byte infusion = (byte)(tool.getPersistentData().getCopy().getByte(INFUSION_LEVEL.toString()) - amount);
-            tool.getPersistentData().put(INFUSION_LEVEL, ByteTag.valueOf(infusion));
-            return;
-        } else {
-            byte infusion = (byte)0;
-            tool.getPersistentData().put(INFUSION_LEVEL, ByteTag.valueOf(infusion));
+    public Component validate(IToolStackView tool, ModifierEntry modifier) {
+        int cap = getAmbrosiumCapacity(tool, modifier);
+        if (getAmbrosium(tool) > cap) {
+            setAmbrosium(tool.getPersistentData(), cap);
         }
-    }
-
-    InteractionResult infuse(IToolStackView tool, InteractionHand hand, Player player) {
-        InteractionHand ambrosiumHand = hand == InteractionHand.MAIN_HAND ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND;
-        boolean hasAmbrosium = player.getItemInHand(ambrosiumHand).is(TComTags.Items.AMBROSIUM);
-        if (hasAmbrosium) {
-            ItemStack ambrosium = player.getItemInHand(ambrosiumHand);
-            int size = ambrosium.getCount();
-            byte infusion = (byte)(tool.getPersistentData().getCopy().getByte(INFUSION_LEVEL.toString()) + 4);
-            if (size > 1) {
-                tool.getPersistentData().put(INFUSION_LEVEL, ByteTag.valueOf(infusion));
-                ambrosium.shrink(1);
-                return InteractionResult.sidedSuccess(player.level().isClientSide);
-            } else {
-                tool.getPersistentData().put(INFUSION_LEVEL, ByteTag.valueOf(infusion));
-                player.setItemInHand(ambrosiumHand, ItemStack.EMPTY);
-                return InteractionResult.sidedSuccess(player.level().isClientSide);
-            }
-        }
-        return InteractionResult.FAIL;
-    }
-
-    private final Lazy<UUID> uuidDmg = Lazy.of(() -> UUID.nameUUIDFromBytes((getId().toString() + "_attack_damage").getBytes()));
-    private final Lazy<UUID> uuidSpd = Lazy.of(() -> UUID.nameUUIDFromBytes((getId().toString() + "_attack_speed").getBytes()));
-
-    private final Lazy<String> attributeNameDmg = Lazy.of(() -> {
-        ResourceLocation id = getId();
-        return id.getPath() + "." + id.getNamespace() + ".attack_damage";
-    });
-    private final Lazy<String> attributeNameSpd = Lazy.of(() -> {
-        ResourceLocation id = getId();
-        return id.getPath() + "." + id.getNamespace() + ".attack_speed";
-    });
-
-    @Override
-    public void addAttributes(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer) {
-        if (tool.getPersistentData().getCopy().getByte(INFUSION_LEVEL.toString()) > 0) {
-            double dmgBoost = 2.0D;
-            double spdBoost = 0.3D;
-            consumer.accept(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuidDmg.get(), attributeNameDmg.get(), dmgBoost, AttributeModifier.Operation.ADDITION));
-            consumer.accept(Attributes.ATTACK_SPEED, new AttributeModifier(uuidSpd.get(), attributeNameSpd.get(), spdBoost, AttributeModifier.Operation.ADDITION));
-        }
-    }
-
-    @Override
-    public @Nullable Component onRemoved(IToolStackView tool, Modifier modifier) {
-        tool.getPersistentData().remove(INFUSION_LEVEL);
         return null;
     }
+
+    public int getAmbrosium(IToolStackView tool) {
+        return tool.getPersistentData().getInt(getShieldKey());
+    }
+
+    public void setAmbrosium(ModDataNBT persistentData, int amount) {
+        persistentData.putInt(getShieldKey(), Math.max(amount, 0));
+    }
+
+    public void setAmbrosium(IToolStackView tool, ModifierEntry modifier, int amount) {
+        setAmbrosium(tool.getPersistentData(), Math.min(amount, getAmbrosiumCapacity(tool, modifier)));
+    }
+
+    protected void addAmbrosium(IToolStackView tool, ModifierEntry modifier, int amount) {
+        setAmbrosium(tool, modifier, amount + getAmbrosium(tool));
+    }
+
+    public void addAmbrofusion(IToolStackView tool, ModifierEntry entry, int amount) {
+        int veridiumCoverage = 0;
+        for (MaterialVariant material : tool.getMaterials().getList()) {
+            if (material.matchesVariant(TComMaterialIds.veridium)) veridiumCoverage += 1;
+        }
+        addAmbrosium(tool, entry, amount * (1 + veridiumCoverage));
+    }
+
+    @javax.annotation.Nullable
+    @Override
+    public Component onRemoved(IToolStackView tool, Modifier modifier) {
+        // remove all ambrofusion on removal
+        tool.getPersistentData().remove(getShieldKey());
+        return null;
+    }
+
+    @Override
+    public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
+        tool.getPersistentData().putBoolean(shouldAddStatsKey, getAmbrosium(tool) > 0);
+    }
+
+
 }

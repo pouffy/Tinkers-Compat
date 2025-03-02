@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:yagroot_planks"
+      "tag": "tcompat:planks/yagroot"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:yagroot_planks"
+      "tag": "tcompat:planks/yagroot"
     }
   ],
   "result": {

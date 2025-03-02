@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:redwood_planks"
+    "tag": "tcompat:planks/redwood"
   },
   "material": "tconstruct:wood#redwood",
   "needed": 1,

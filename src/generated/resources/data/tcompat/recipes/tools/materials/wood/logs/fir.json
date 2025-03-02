@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:fir_logs"
+    "tag": "tcompat:logs/fir"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:fir_planks"
+    "tag": "tcompat:planks/fir"
   },
   "material": "tconstruct:wood#fir",
   "needed": 1,

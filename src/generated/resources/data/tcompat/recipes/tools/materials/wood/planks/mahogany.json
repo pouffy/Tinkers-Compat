@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:mahogany_planks"
+    "tag": "tcompat:planks/mahogany"
   },
   "material": "tconstruct:wood#mahogany",
   "needed": 1,

@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:clorite"
+    "item": "deep_aether:clorite"
   },
   "material": "tcompat:aether_rock#clorite",
   "needed": 1,

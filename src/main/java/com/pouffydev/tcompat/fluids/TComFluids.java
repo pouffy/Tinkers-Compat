@@ -23,7 +23,6 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -31,7 +30,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import slimeknights.mantle.fluid.UnplaceableFluid;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
-import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.fluids.data.FluidBlockstateModelProvider;
 import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 
@@ -100,16 +98,25 @@ public final class TComFluids extends TCompatModule {
             DispenserBlock.registerBehavior(moltenKnightmetal, dispenseBucket);
             DispenserBlock.registerBehavior(moltenFiery, dispenseBucket);
             DispenserBlock.registerBehavior(fieryEssence, dispenseBucket);
+            DispenserBlock.registerBehavior(moltenZanite, dispenseBucket);
+            DispenserBlock.registerBehavior(moltenSkyjade, dispenseBucket);
+            DispenserBlock.registerBehavior(moltenGravitite, dispenseBucket);
+            DispenserBlock.registerBehavior(moltenStratus, dispenseBucket);
+            DispenserBlock.registerBehavior(moltenVeridium, dispenseBucket);
+            DispenserBlock.registerBehavior(moltenRefinedSentrite, dispenseBucket);
         });
     }
 
-    @SubscribeEvent
-    public static void buildCreativeModeTabs(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTab() == TinkerFluids.tabFluids.get()) {
-            acceptMolten(event, moltenKnightmetal);
-            acceptMolten(event, moltenFiery);
-            acceptMolten(event, fieryEssence);
-        }
+    public static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
+        acceptMolten(output, moltenKnightmetal);
+        acceptMolten(output, moltenFiery);
+        acceptMolten(output, fieryEssence);
+        acceptMolten(output, moltenZanite);
+        acceptMolten(output, moltenSkyjade);
+        acceptMolten(output, moltenGravitite);
+        acceptMolten(output, moltenStratus);
+        acceptMolten(output, moltenVeridium);
+        acceptMolten(output, moltenRefinedSentrite);
     }
 
     /** Accepts the given item if any of the listed ingots are present */

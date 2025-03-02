@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:conberry_planks"
+      "tag": "tcompat:planks/conberry"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:conberry_planks"
+      "tag": "tcompat:planks/conberry"
     }
   ],
   "result": {

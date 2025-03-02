@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:maple_logs"
+    "tag": "tcompat:logs/maple"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:maple_planks"
+    "tag": "tcompat:planks/maple"
   },
   "material": "tconstruct:wood#maple",
   "needed": 1,

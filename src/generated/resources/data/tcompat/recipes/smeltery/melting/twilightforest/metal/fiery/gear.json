@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/fiery"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/fiery"
+  },
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_fiery"
+  },
+  "temperature": 1345,
+  "time": 152
+}

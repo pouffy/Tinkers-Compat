@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:rainbow_eucalyptus_logs"
+    "tag": "tcompat:logs/rainbow_eucalyptus"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:rainbow_eucalyptus_planks"
+    "tag": "tcompat:planks/rainbow_eucalyptus"
   },
   "material": "tconstruct:wood#rainbow_eucalyptus",
   "needed": 1,

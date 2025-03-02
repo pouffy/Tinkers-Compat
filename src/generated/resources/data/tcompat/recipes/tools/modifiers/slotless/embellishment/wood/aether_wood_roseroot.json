@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:roseroot_planks"
+      "tag": "tcompat:planks/roseroot"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:roseroot_planks"
+      "tag": "tcompat:planks/roseroot"
     }
   ],
   "result": {

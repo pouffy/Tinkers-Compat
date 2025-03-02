@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:sunroot_planks"
+      "tag": "tcompat:planks/sunroot"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:sunroot_planks"
+      "tag": "tcompat:planks/sunroot"
     }
   ],
   "result": {

@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:ironwood_logs"
+    "tag": "tcompat:logs/ironwood"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:ironwood_planks"
+    "tag": "tcompat:planks/ironwood"
   },
   "material": "tconstruct:wood#ironwood",
   "needed": 1,

@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:green_enchanted_planks"
+    "tag": "tcompat:planks/green_enchanted"
   },
   "material": "tconstruct:wood#green_enchanted",
   "needed": 1,

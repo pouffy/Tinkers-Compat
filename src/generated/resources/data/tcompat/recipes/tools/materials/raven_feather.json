@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:raven_feathers"
+    "item": "twilightforest:raven_feather"
   },
   "material": "tcompat:raven_feather",
   "needed": 1,

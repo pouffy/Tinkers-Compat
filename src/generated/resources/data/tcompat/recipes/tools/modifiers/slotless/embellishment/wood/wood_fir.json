@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:fir_planks"
+      "tag": "tcompat:planks/fir"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:fir_planks"
+      "tag": "tcompat:planks/fir"
     }
   ],
   "result": {

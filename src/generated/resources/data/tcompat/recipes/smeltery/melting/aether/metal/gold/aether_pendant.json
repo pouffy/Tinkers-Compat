@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "item": "aether:golden_pendant"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_gold"
+  },
+  "temperature": 700,
+  "time": 57
+}

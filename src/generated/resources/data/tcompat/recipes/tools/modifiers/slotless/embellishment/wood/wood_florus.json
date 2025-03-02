@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:florus_planks"
+      "tag": "tcompat:planks/florus"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:florus_planks"
+      "tag": "tcompat:planks/florus"
     }
   ],
   "result": {

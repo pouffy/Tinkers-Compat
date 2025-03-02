@@ -1,9 +1,9 @@
 package com.pouffydev.tcompat.data.material;
 
-import com.pouffydev.tcompat.data.TComTags;
 import com.pouffydev.tcompat.data.builder.TComBaseRecipeProvider;
 import com.pouffydev.tcompat.fluids.TComFluids;
 import com.pouffydev.tcompat.material.TComMaterialIds;
+import com.pouffydev.tcompat.material.AllWoods;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -19,6 +20,7 @@ import slimeknights.tconstruct.library.recipe.FluidValues;
 
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IMaterialRecipeHelper {
     public TComMaterialRecipeProv(PackOutput generator) {
@@ -42,7 +44,6 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
         Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
-        //Consumer<FinishedRecipe> malumConsumer = withCondition(consumer, modLoaded("malum"));
         Consumer<FinishedRecipe> twilightConsumer = withCondition(consumer, modLoaded("twilightforest"));
         List<MaterialVariantId> noPlanks = List.of(TComMaterialIds.paloVerde);
         List<MaterialVariantId> stems = List.of(TComMaterialIds.cloudcap, TComMaterialIds.jellyshroom);
@@ -54,7 +55,7 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
             logVariantRecipe(otbwgConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantRocks) {
-            rockVariantRecipe(otbwgConsumer, materialVariantId);
+            rockVariantRecipe(otbwgConsumer, materialVariantId, "biomeswevegone");
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.aetherVariantWoods) {
             if (!noPlanks.contains(materialVariantId))
@@ -62,7 +63,7 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
             logVariantRecipe(aetherConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.aetherVariantRocks) {
-            rockVariantRecipe(aetherConsumer, materialVariantId);
+            rockVariantRecipe(aetherConsumer, materialVariantId, "aether");
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantWoods) {
             if (!noPlanks.contains(materialVariantId))
@@ -70,7 +71,7 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
             logVariantRecipe(deepAetherConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.deepAetherVariantRocks) {
-            rockVariantRecipe(deepAetherConsumer, materialVariantId);
+            rockVariantRecipe(deepAetherConsumer, materialVariantId, "deep_aether");
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.aetherReduxVariantWoods) {
             if (!noPlanks.contains(materialVariantId))
@@ -81,19 +82,19 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
                 stemVariantRecipe(aetherReduxConsumer, materialVariantId);
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.aetherReduxVariantRocks) {
-            rockVariantRecipe(deepAetherConsumer, materialVariantId);
+            rockVariantRecipe(deepAetherConsumer, materialVariantId, "aether_redux");
         }
         for (MaterialVariantId materialVariantId : TComMaterialIds.tfVariantWoods) {
             if (materialVariantId != TComMaterialIds.towerwood)
                 logVariantRecipe(deepAetherConsumer, materialVariantId);
             planksVariantRecipe(deepAetherConsumer, materialVariantId);
         }
+        Function<String, ResourceLocation> twilightForestId = name -> new ResourceLocation("twilightforest", name);
 
-
-        materialRecipe(twilightConsumer, TComMaterialIds.ravenFeather, Ingredient.of(TComTags.Items.RAVEN_FEATHER),      1, 1, folder + "raven_feather");
-        materialRecipe(twilightConsumer, TComMaterialIds.nagascale, Ingredient.of(TComTags.Items.NAGA_SCALE),      1, 1, folder + "nagascale");
-        materialRecipe(twilightConsumer, TComMaterialIds.steeleaf, Ingredient.of(TComTags.Items.STEELEAF_INGOTS),      1, 1, folder + "steeleaf/ingot");
-        materialRecipe(twilightConsumer, TComMaterialIds.steeleaf, Ingredient.of(TComTags.Items.STEELEAF_BLOCKS),      9, 1, folder + "steeleaf/block");
+        materialRecipe(twilightConsumer, TComMaterialIds.ravenFeather, ItemNameIngredient.from(twilightForestId.apply("raven_feather")),      1, 1, folder + "raven_feather");
+        materialRecipe(twilightConsumer, TComMaterialIds.nagascale, ItemNameIngredient.from(twilightForestId.apply("naga_scale")),      1, 1, folder + "nagascale");
+        materialRecipe(twilightConsumer, TComMaterialIds.steeleaf, ItemNameIngredient.from(twilightForestId.apply("steeleaf_ingot")),      1, 1, folder + "steeleaf/ingot");
+        materialRecipe(twilightConsumer, TComMaterialIds.steeleaf, ItemNameIngredient.from(twilightForestId.apply("steeleaf_block")),      9, 1, folder + "steeleaf/block");
 
     }
 
@@ -117,22 +118,23 @@ public class TComMaterialRecipeProv extends TComBaseRecipeProvider implements IM
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material,      Ingredient.of(TComTags.Items.Woods.plankTag(material.getVariant())),      1, 1, folder + "wood/planks/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material,      Ingredient.of(AllWoods.plankTag(material.getVariant())),      1, 1, folder + "wood/planks/%s".formatted(material.getVariant()));
     }
 
     private void logVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material,      Ingredient.of(TComTags.Items.Woods.logTag(material.getVariant())),      4, 1, ItemOutput.fromTag(TComTags.Items.Woods.plankTag(material.getVariant())),      folder + "wood/logs/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material,      Ingredient.of(AllWoods.logTag(material.getVariant())),      4, 1, ItemOutput.fromTag(AllWoods.plankTag(material.getVariant())),      folder + "wood/logs/%s".formatted(material.getVariant()));
     }
 
     private void stemVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material,      Ingredient.of(TComTags.Items.Woods.stemTag(material.getVariant())),      4, 1, ItemOutput.fromTag(TComTags.Items.Woods.plankTag(material.getVariant())),      folder + "wood/logs/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material,      Ingredient.of(AllWoods.stemTag(material.getVariant())),      4, 1, ItemOutput.fromTag(AllWoods.plankTag(material.getVariant())),      folder + "wood/logs/%s".formatted(material.getVariant()));
     }
 
-    private void rockVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
+    private void rockVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material, String namespace) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material,      Ingredient.of(itemTag("tcompat:%s".formatted(material.getVariant()))),      1, 1, folder + "rock/%s".formatted(material.getVariant()));
+        Function<String, ResourceLocation> namespaceFunction = name -> new ResourceLocation(namespace, name);
+        materialRecipe(consumer, material, ItemNameIngredient.from(namespaceFunction.apply(material.getVariant())), 1, 1, folder + "rock/%s".formatted(material.getVariant()));
 
     }
 

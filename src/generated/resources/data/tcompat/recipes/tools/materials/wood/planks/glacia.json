@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:glacia_planks"
+    "tag": "tcompat:planks/glacia"
   },
   "material": "tcompat:aether_wood#glacia",
   "needed": 1,

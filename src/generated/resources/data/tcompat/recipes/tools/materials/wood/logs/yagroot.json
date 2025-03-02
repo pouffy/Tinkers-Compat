@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:yagroot_logs"
+    "tag": "tcompat:logs/yagroot"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:yagroot_planks"
+    "tag": "tcompat:planks/yagroot"
   },
   "material": "tcompat:aether_wood#yagroot",
   "needed": 1,

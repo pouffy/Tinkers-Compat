@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:green_enchanted_logs"
+    "tag": "tcompat:logs/green_enchanted"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:green_enchanted_planks"
+    "tag": "tcompat:planks/green_enchanted"
   },
   "material": "tconstruct:wood#green_enchanted",
   "needed": 1,

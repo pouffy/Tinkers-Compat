@@ -3,11 +3,14 @@ package com.pouffydev.tcompat.modifier;
 import com.pouffydev.tcompat.TCompat;
 import com.pouffydev.tcompat.TCompatModule;
 import com.pouffydev.tcompat.modifier.aether.*;
+import com.pouffydev.tcompat.modifier.aether.recipe.AmbrofusionModifierRecipe;
 import com.pouffydev.tcompat.modifier.twilightforest.*;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.recipe.helper.LoadableRecipeSerializer;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
-import slimeknights.tconstruct.tools.modifiers.upgrades.armor.LightspeedArmorModifier;
 
 public class TComModifiers extends TCompatModule {
     private static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TCompat.MOD_ID);
@@ -28,9 +31,10 @@ public class TComModifiers extends TCompatModule {
     public static final StaticModifier<DullingModifier> dulling = MODIFIERS.register("dulling", DullingModifier::new);
     public static final StaticModifier<AcclimatizationModifier> acclimatization = MODIFIERS.register("acclimatization", AcclimatizationModifier::new);
     //public static final StaticModifier<SentryflareModifier> sentryflare = MODIFIERS.register("sentryflare", SentryflareModifier::new);
-    //public static final StaticModifier<AmbrofusionModifier> ambrofusion = MODIFIERS.register("ambrofusion", AmbrofusionModifier::new);
+    public static final StaticModifier<AmbrofusionModifier> ambrofusion = MODIFIERS.register("ambrofusion", AmbrofusionModifier::new);
 
 
+    public static final RegistryObject<RecipeSerializer<AmbrofusionModifierRecipe>> ambrofusionSerializer = RECIPE_SERIALIZERS.register("ambrofusion_modifier", () -> LoadableRecipeSerializer.of(AmbrofusionModifierRecipe.LOADER));
 
     public TComModifiers() {
         MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());

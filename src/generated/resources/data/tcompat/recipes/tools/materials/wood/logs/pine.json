@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:pine_logs"
+    "tag": "tcompat:logs/pine"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:pine_planks"
+    "tag": "tcompat:planks/pine"
   },
   "material": "tconstruct:wood#pine",
   "needed": 1,

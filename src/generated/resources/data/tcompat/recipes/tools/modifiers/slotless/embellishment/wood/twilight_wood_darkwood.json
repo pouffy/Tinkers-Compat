@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:darkwood_planks"
+      "tag": "tcompat:planks/darkwood"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:darkwood_planks"
+      "tag": "tcompat:planks/darkwood"
     }
   ],
   "result": {

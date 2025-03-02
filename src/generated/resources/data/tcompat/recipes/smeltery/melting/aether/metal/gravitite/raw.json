@@ -1,0 +1,68 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:raw_materials/gravitite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/zanite"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "byproducts": [
+          {
+            "amount": 100,
+            "tag": "forge:molten_zanite"
+          }
+        ],
+        "ingredient": {
+          "tag": "forge:raw_materials/gravitite"
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 90,
+          "tag": "forge:molten_gravitite"
+        },
+        "temperature": 1275,
+        "time": 111
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "tag": "forge:raw_materials/gravitite"
+        },
+        "rate": "metal",
+        "result": {
+          "amount": 90,
+          "tag": "forge:molten_gravitite"
+        },
+        "temperature": 1275,
+        "time": 111
+      }
+    }
+  ]
+}

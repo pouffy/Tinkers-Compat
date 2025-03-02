@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:darkwood_logs"
+    "tag": "tcompat:logs/darkwood"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:darkwood_planks"
+    "tag": "tcompat:planks/darkwood"
   },
   "material": "tcompat:twilight_wood#darkwood",
   "needed": 1,

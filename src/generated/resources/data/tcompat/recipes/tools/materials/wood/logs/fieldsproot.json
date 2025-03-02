@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:fieldsproot_logs"
+    "tag": "tcompat:logs/fieldsproot"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:fieldsproot_planks"
+    "tag": "tcompat:planks/fieldsproot"
   },
   "material": "tcompat:aether_wood#fieldsproot",
   "needed": 1,

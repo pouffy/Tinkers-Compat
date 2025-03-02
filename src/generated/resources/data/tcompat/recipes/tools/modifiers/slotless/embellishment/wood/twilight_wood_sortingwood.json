@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:sortingwood_planks"
+      "tag": "tcompat:planks/sortingwood"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:sortingwood_planks"
+      "tag": "tcompat:planks/sortingwood"
     }
   ],
   "result": {

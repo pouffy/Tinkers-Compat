@@ -27,12 +27,7 @@ public class TComBlockTagProv extends BlockTagsProvider {
     }
 
     private void addPlanks() {
-        // handle otbwg plank tags
-        for (MaterialVariantId materialVariantId : TComMaterialIds.otbwgVariantWoods) {
-            String woodName = materialVariantId.getVariant();
-            this.tag(TComTags.Blocks.Woods.plankTag(woodName))
-                    .addOptional(new ResourceLocation("biomeswevegone:%s_planks".formatted(woodName)));
-        }
+
     }
 
     private static TagKey<Block> blockTag(String name) {

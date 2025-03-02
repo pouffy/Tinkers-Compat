@@ -1,3 +1,4 @@
 {
-  "tcompat:aether_forged":   "tcompat:gui/modifiers/aether_forged"
+  "tcompat:aether_forged":   "tcompat:gui/modifiers/aether_forged",
+  "tcompat:ambrofusion":   ["aether:item/materials/ambrosium_shard", "tconstruct:gui/modifiers/book"]
 }

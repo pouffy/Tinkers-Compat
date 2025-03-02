@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:ironwood_planks"
+      "tag": "tcompat:planks/ironwood"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:ironwood_planks"
+      "tag": "tcompat:planks/ironwood"
     }
   ],
   "result": {

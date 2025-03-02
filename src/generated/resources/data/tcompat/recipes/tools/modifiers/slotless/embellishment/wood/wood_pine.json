@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:pine_planks"
+      "tag": "tcompat:planks/pine"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:pine_planks"
+      "tag": "tcompat:planks/pine"
     }
   ],
   "result": {

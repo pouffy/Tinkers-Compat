@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": {
+    "item": "aether_redux:sentry_ring"
+  },
+  "result": {
+    "amount": 630,
+    "tag": "forge:molten_refined_sentrite"
+  },
+  "temperature": 1455,
+  "time": 209
+}

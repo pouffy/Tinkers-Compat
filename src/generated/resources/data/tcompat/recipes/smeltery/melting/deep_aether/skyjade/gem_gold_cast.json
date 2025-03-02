@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gem"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "cooling_time": 80,
+  "fluid": {
+    "amount": 100,
+    "tag": "forge:molten_skyjade"
+  },
+  "result": "deep_aether:skyjade"
+}

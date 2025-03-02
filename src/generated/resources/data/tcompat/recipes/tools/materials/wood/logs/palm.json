@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:palm_logs"
+    "tag": "tcompat:logs/palm"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:palm_planks"
+    "tag": "tcompat:planks/palm"
   },
   "material": "tconstruct:wood#palm",
   "needed": 1,

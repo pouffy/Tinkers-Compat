@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:cruderoot_planks"
+    "tag": "tcompat:planks/cruderoot"
   },
   "material": "tcompat:aether_wood#cruderoot",
   "needed": 1,

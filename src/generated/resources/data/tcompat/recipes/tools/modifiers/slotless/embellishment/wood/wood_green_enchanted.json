@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:green_enchanted_planks"
+      "tag": "tcompat:planks/green_enchanted"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:green_enchanted_planks"
+      "tag": "tcompat:planks/green_enchanted"
     }
   ],
   "result": {

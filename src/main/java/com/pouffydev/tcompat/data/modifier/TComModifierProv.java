@@ -9,6 +9,7 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import static slimeknights.tconstruct.library.tools.definition.ModifiableArmorMaterial.ARMOR_SLOTS;
 
@@ -36,7 +37,6 @@ public class TComModifierProv extends AbstractModifierProvider implements ICondi
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TComModifiers.twilit.getId(), modLoaded("twilightforest"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
-
         buildModifier(TComModifiers.ascension.getId(), modLoaded("aether"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TComModifiers.acclimatization.getId(), modLoaded("aether"))

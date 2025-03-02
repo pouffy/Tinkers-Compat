@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:holly_planks"
+      "tag": "tcompat:planks/holly"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:holly_planks"
+      "tag": "tcompat:planks/holly"
     }
   ],
   "result": {

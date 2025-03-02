@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:sakura_planks"
+      "tag": "tcompat:planks/sakura"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:sakura_planks"
+      "tag": "tcompat:planks/sakura"
     }
   ],
   "result": {

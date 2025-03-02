@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:cloudcap_stems"
+    "tag": "tcompat:stems/cloudcap"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:cloudcap_planks"
+    "tag": "tcompat:planks/cloudcap"
   },
   "material": "tcompat:aether_wood#cloudcap",
   "needed": 1,

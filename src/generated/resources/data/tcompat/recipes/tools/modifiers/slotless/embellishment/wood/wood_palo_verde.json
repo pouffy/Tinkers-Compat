@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:palo_verde_planks"
+      "tag": "tcompat:planks/palo_verde"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:palo_verde_planks"
+      "tag": "tcompat:planks/palo_verde"
     }
   ],
   "result": {

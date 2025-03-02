@@ -9,13 +9,13 @@
   ],
   "inputs": [
     {
-      "tag": "tcompat:aspen_planks"
+      "tag": "tcompat:planks/aspen"
     },
     {
       "item": "tconstruct:pattern"
     },
     {
-      "tag": "tcompat:aspen_planks"
+      "tag": "tcompat:planks/aspen"
     }
   ],
   "result": {

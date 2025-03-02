@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:baobab_logs"
+    "tag": "tcompat:logs/baobab"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:baobab_planks"
+    "tag": "tcompat:planks/baobab"
   },
   "material": "tconstruct:wood#baobab",
   "needed": 1,

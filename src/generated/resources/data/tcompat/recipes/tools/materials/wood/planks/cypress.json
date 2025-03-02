@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:cypress_planks"
+    "tag": "tcompat:planks/cypress"
   },
   "material": "tconstruct:wood#cypress",
   "needed": 1,

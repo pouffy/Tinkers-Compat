@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:minewood_logs"
+    "tag": "tcompat:logs/minewood"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:minewood_planks"
+    "tag": "tcompat:planks/minewood"
   },
   "material": "tcompat:twilight_wood#minewood",
   "needed": 1,

@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:palm_planks"
+    "tag": "tcompat:planks/palm"
   },
   "material": "tconstruct:wood#palm",
   "needed": 1,

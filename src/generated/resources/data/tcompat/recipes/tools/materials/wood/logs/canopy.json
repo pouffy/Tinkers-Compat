@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:canopy_logs"
+    "tag": "tcompat:logs/canopy"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:canopy_planks"
+    "tag": "tcompat:planks/canopy"
   },
   "material": "tcompat:twilight_wood#canopy",
   "needed": 1,

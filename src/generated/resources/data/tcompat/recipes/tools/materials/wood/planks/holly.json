@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:holly_planks"
+    "tag": "tcompat:planks/holly"
   },
   "material": "tconstruct:wood#holly",
   "needed": 1,

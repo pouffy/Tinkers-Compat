@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:cika_logs"
+    "tag": "tcompat:logs/cika"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:cika_planks"
+    "tag": "tcompat:planks/cika"
   },
   "material": "tconstruct:wood#cika",
   "needed": 1,

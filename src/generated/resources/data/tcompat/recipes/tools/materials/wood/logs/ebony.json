@@ -7,11 +7,11 @@
     }
   ],
   "ingredient": {
-    "tag": "tcompat:ebony_logs"
+    "tag": "tcompat:logs/ebony"
   },
   "leftover": {
     "count": 1,
-    "tag": "tcompat:ebony_planks"
+    "tag": "tcompat:planks/ebony"
   },
   "material": "tconstruct:wood#ebony",
   "needed": 1,
