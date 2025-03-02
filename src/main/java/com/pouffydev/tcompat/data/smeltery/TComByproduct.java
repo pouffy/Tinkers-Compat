@@ -17,6 +17,7 @@ public enum TComByproduct implements IByproduct {
     SKYJADE(false, TComFluids.moltenSkyjade),
     GRAVITITE(false, TComFluids.moltenGravitite),
     VERIDIUM(false, TComFluids.moltenVeridium),
+    STRATUS(false, TComFluids.moltenStratus),
     ;
 
     private final String name;

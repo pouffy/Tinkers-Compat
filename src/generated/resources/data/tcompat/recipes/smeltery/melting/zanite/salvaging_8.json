@@ -1,5 +1,5 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -11,7 +11,8 @@
   },
   "result": {
     "amount": 800,
-    "tag": "forge:molten_zanite"
+    "tag": "forge:molten_zanite",
+    "unit_size": 25
   },
   "temperature": 1450,
   "time": 235

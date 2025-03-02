@@ -33,6 +33,7 @@ public class TComFluidTagProv extends FluidTagsProvider {
         fluidTag(TComFluids.moltenSkyjade);
         fluidTag(TComFluids.moltenRefinedSentrite);
         fluidTag(TComFluids.moltenVeridium);
+        fluidTag(TComFluids.moltenStratus);
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(
                 // twilight forest metals
                 TComFluids.moltenKnightmetal.getTag(),
@@ -40,6 +41,7 @@ public class TComFluidTagProv extends FluidTagsProvider {
                 // aether materials
                 TComFluids.moltenGravitite.getTag(),
                 TComFluids.moltenVeridium.getTag(),
+                TComFluids.moltenStratus.getTag(),
                 TComFluids.moltenRefinedSentrite.getTag()
         );
         this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(

@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/plate"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/veridium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "cooling_time": 70,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_veridium"
+  },
+  "result": {
+    "tag": "forge:plates/veridium"
+  }
+}

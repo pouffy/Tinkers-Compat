@@ -1,5 +1,5 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -11,8 +11,9 @@
   },
   "result": {
     "amount": 450,
-    "tag": "forge:molten_gravitite"
+    "tag": "forge:molten_gravitite",
+    "unit_size": 10
   },
-  "temperature": 1475,
-  "time": 178
+  "temperature": 1275,
+  "time": 166
 }

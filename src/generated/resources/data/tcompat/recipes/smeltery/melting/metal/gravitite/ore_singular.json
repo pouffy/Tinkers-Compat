@@ -53,8 +53,8 @@
           "amount": 180,
           "tag": "forge:molten_gravitite"
         },
-        "temperature": 1475,
-        "time": 199
+        "temperature": 1275,
+        "time": 186
       }
     },
     {
@@ -84,8 +84,8 @@
           "amount": 180,
           "tag": "forge:molten_gravitite"
         },
-        "temperature": 1475,
-        "time": 199
+        "temperature": 1275,
+        "time": 186
       }
     }
   ]

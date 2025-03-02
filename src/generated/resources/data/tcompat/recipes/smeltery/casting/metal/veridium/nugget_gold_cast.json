@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:nuggets/veridium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "cooling_time": 23,
+  "fluid": {
+    "amount": 10,
+    "tag": "forge:molten_veridium"
+  },
+  "result": {
+    "tag": "forge:nuggets/veridium"
+  }
+}

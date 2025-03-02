@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/plate"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/refined_sentrite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "cooling_time": 79,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_refined_sentrite"
+  },
+  "result": {
+    "tag": "forge:plates/refined_sentrite"
+  }
+}

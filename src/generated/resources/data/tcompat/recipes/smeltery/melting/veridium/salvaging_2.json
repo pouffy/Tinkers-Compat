@@ -1,5 +1,5 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -11,7 +11,8 @@
   },
   "result": {
     "amount": 180,
-    "tag": "forge:molten_veridium"
+    "tag": "forge:molten_veridium",
+    "unit_size": 10
   },
   "temperature": 1125,
   "time": 99

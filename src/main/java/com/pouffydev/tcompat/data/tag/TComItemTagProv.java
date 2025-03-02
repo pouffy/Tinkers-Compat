@@ -46,69 +46,69 @@ public class TComItemTagProv extends ItemTagsProvider {
 
     private void addSalvage() {
         //Zanite
-        this.tag(TComTags.Items.Salvaging.ZANITE_1.tag()).addOptional(new ResourceLocation("aether", "zanite_shovel"));
-        this.tag(TComTags.Items.Salvaging.ZANITE_2.tag()).addOptional(new ResourceLocation("aether", "zanite_sword")).addOptional(new ResourceLocation("aether", "zanite_hoe"));
-        this.tag(TComTags.Items.Salvaging.ZANITE_3.tag()).addOptional(new ResourceLocation("aether", "zanite_axe")).addOptional(new ResourceLocation("aether", "zanite_pickaxe"));
-        this.tag(TComTags.Items.Salvaging.ZANITE_4.tag()).addOptional(new ResourceLocation("aether", "zanite_boots"));
-        this.tag(TComTags.Items.Salvaging.ZANITE_5.tag()).addOptional(new ResourceLocation("aether", "zanite_helmet"));
-        this.tag(TComTags.Items.Salvaging.ZANITE_7.tag()).addOptional(new ResourceLocation("aether", "zanite_leggings"));
-        this.tag(TComTags.Items.Salvaging.ZANITE_8.tag()).addOptional(new ResourceLocation("aether", "zanite_chestplate"));
+        this.tag(TComTags.Items.Salvaging.ZANITE.tag(1)).addOptional(new ResourceLocation("aether", "zanite_shovel"));
+        this.tag(TComTags.Items.Salvaging.ZANITE.tag(2)).addOptional(new ResourceLocation("aether", "zanite_sword")).addOptional(new ResourceLocation("aether", "zanite_hoe"));
+        this.tag(TComTags.Items.Salvaging.ZANITE.tag(3)).addOptional(new ResourceLocation("aether", "zanite_axe")).addOptional(new ResourceLocation("aether", "zanite_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.ZANITE.tag(4)).addOptional(new ResourceLocation("aether", "zanite_boots"));
+        this.tag(TComTags.Items.Salvaging.ZANITE.tag(5)).addOptional(new ResourceLocation("aether", "zanite_helmet"));
+        this.tag(TComTags.Items.Salvaging.ZANITE.tag(7)).addOptional(new ResourceLocation("aether", "zanite_leggings"));
+        this.tag(TComTags.Items.Salvaging.ZANITE.tag(8)).addOptional(new ResourceLocation("aether", "zanite_chestplate"));
         //Gravitite
-        this.tag(TComTags.Items.Salvaging.GRAVITITE_1.tag()).addOptional(new ResourceLocation("aether", "gravitite_shovel"));
-        this.tag(TComTags.Items.Salvaging.GRAVITITE_2.tag()).addOptional(new ResourceLocation("aether", "gravitite_sword")).addOptional(new ResourceLocation("aether", "gravitite_hoe"));
-        this.tag(TComTags.Items.Salvaging.GRAVITITE_3.tag()).addOptional(new ResourceLocation("aether", "gravitite_axe")).addOptional(new ResourceLocation("aether", "gravitite_pickaxe"));
-        this.tag(TComTags.Items.Salvaging.GRAVITITE_4.tag()).addOptional(new ResourceLocation("aether", "gravitite_boots"));
-        this.tag(TComTags.Items.Salvaging.GRAVITITE_5.tag()).addOptional(new ResourceLocation("aether", "gravitite_helmet"));
-        this.tag(TComTags.Items.Salvaging.GRAVITITE_7.tag()).addOptional(new ResourceLocation("aether", "gravitite_leggings"));
-        this.tag(TComTags.Items.Salvaging.GRAVITITE_8.tag()).addOptional(new ResourceLocation("aether", "gravitite_chestplate"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE.tag(1)).addOptional(new ResourceLocation("aether", "gravitite_shovel"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE.tag(2)).addOptional(new ResourceLocation("aether", "gravitite_sword")).addOptional(new ResourceLocation("aether", "gravitite_hoe"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE.tag(3)).addOptional(new ResourceLocation("aether", "gravitite_axe")).addOptional(new ResourceLocation("aether", "gravitite_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE.tag(4)).addOptional(new ResourceLocation("aether", "gravitite_boots"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE.tag(5)).addOptional(new ResourceLocation("aether", "gravitite_helmet"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE.tag(7)).addOptional(new ResourceLocation("aether", "gravitite_leggings"));
+        this.tag(TComTags.Items.Salvaging.GRAVITITE.tag(8)).addOptional(new ResourceLocation("aether", "gravitite_chestplate"));
         //Skyjade
-        this.tag(TComTags.Items.Salvaging.SKYJADE_1.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_shovel"));
-        this.tag(TComTags.Items.Salvaging.SKYJADE_2.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_sword")).addOptional(new ResourceLocation("deep_aether", "skyjade_hoe"));
-        this.tag(TComTags.Items.Salvaging.SKYJADE_3.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_axe")).addOptional(new ResourceLocation("deep_aether", "skyjade_pickaxe"));
-        this.tag(TComTags.Items.Salvaging.SKYJADE_4.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_boots"));
-        this.tag(TComTags.Items.Salvaging.SKYJADE_5.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_helmet"));
-        this.tag(TComTags.Items.Salvaging.SKYJADE_7.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_leggings"));
-        this.tag(TComTags.Items.Salvaging.SKYJADE_8.tag()).addOptional(new ResourceLocation("deep_aether", "skyjade_chestplate"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE.tag(1)).addOptional(new ResourceLocation("deep_aether", "skyjade_shovel"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE.tag(2)).addOptional(new ResourceLocation("deep_aether", "skyjade_sword")).addOptional(new ResourceLocation("deep_aether", "skyjade_hoe"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE.tag(3)).addOptional(new ResourceLocation("deep_aether", "skyjade_axe")).addOptional(new ResourceLocation("deep_aether", "skyjade_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE.tag(4)).addOptional(new ResourceLocation("deep_aether", "skyjade_boots"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE.tag(5)).addOptional(new ResourceLocation("deep_aether", "skyjade_helmet"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE.tag(7)).addOptional(new ResourceLocation("deep_aether", "skyjade_leggings"));
+        this.tag(TComTags.Items.Salvaging.SKYJADE.tag(8)).addOptional(new ResourceLocation("deep_aether", "skyjade_chestplate"));
         //Stratus
-        this.tag(TComTags.Items.Salvaging.STRATUS_1.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_shovel"));
-        this.tag(TComTags.Items.Salvaging.STRATUS_2.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_sword")).addOptional(new ResourceLocation("deep_aether", "stratus_hoe"));
-        this.tag(TComTags.Items.Salvaging.STRATUS_3.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_axe")).addOptional(new ResourceLocation("deep_aether", "stratus_pickaxe"));
-        this.tag(TComTags.Items.Salvaging.STRATUS_4.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_boots"));
-        this.tag(TComTags.Items.Salvaging.STRATUS_5.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_helmet"));
-        this.tag(TComTags.Items.Salvaging.STRATUS_7.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_leggings"));
-        this.tag(TComTags.Items.Salvaging.STRATUS_8.tag()).addOptional(new ResourceLocation("deep_aether", "stratus_chestplate"));
+        this.tag(TComTags.Items.Salvaging.STRATUS.tag(1)).addOptional(new ResourceLocation("deep_aether", "stratus_shovel"));
+        this.tag(TComTags.Items.Salvaging.STRATUS.tag(2)).addOptional(new ResourceLocation("deep_aether", "stratus_sword")).addOptional(new ResourceLocation("deep_aether", "stratus_hoe"));
+        this.tag(TComTags.Items.Salvaging.STRATUS.tag(3)).addOptional(new ResourceLocation("deep_aether", "stratus_axe")).addOptional(new ResourceLocation("deep_aether", "stratus_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.STRATUS.tag(4)).addOptional(new ResourceLocation("deep_aether", "stratus_boots"));
+        this.tag(TComTags.Items.Salvaging.STRATUS.tag(5)).addOptional(new ResourceLocation("deep_aether", "stratus_helmet"));
+        this.tag(TComTags.Items.Salvaging.STRATUS.tag(7)).addOptional(new ResourceLocation("deep_aether", "stratus_leggings"));
+        this.tag(TComTags.Items.Salvaging.STRATUS.tag(8)).addOptional(new ResourceLocation("deep_aether", "stratus_chestplate"));
         //Veridium
-        this.tag(TComTags.Items.Salvaging.VERIDIUM_1.tag()).addOptional(new ResourceLocation("aether_redux", "veridium_shovel")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_shovel"));
-        this.tag(TComTags.Items.Salvaging.VERIDIUM_2.tag()).addOptional(new ResourceLocation("aether_redux", "veridium_sword")).addOptional(new ResourceLocation("aether_redux", "veridium_hoe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_sword")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_hoe"));
-        this.tag(TComTags.Items.Salvaging.VERIDIUM_3.tag()).addOptional(new ResourceLocation("aether_redux", "veridium_axe")).addOptional(new ResourceLocation("aether_redux", "veridium_pickaxe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_axe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.VERIDIUM.tag(1)).addOptional(new ResourceLocation("aether_redux", "veridium_shovel")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_shovel"));
+        this.tag(TComTags.Items.Salvaging.VERIDIUM.tag(2)).addOptional(new ResourceLocation("aether_redux", "veridium_sword")).addOptional(new ResourceLocation("aether_redux", "veridium_hoe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_sword")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_hoe"));
+        this.tag(TComTags.Items.Salvaging.VERIDIUM.tag(3)).addOptional(new ResourceLocation("aether_redux", "veridium_axe")).addOptional(new ResourceLocation("aether_redux", "veridium_pickaxe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_axe")).addOptional(new ResourceLocation("aether_redux", "infused_veridium_pickaxe"));
         //Obsidian
-        this.tag(TComTags.Items.Salvaging.OBSIDIAN_4.tag()).addOptional(new ResourceLocation("aether", "obsidian_boots"));
-        this.tag(TComTags.Items.Salvaging.OBSIDIAN_5.tag()).addOptional(new ResourceLocation("aether", "obsidian_helmet"));
-        this.tag(TComTags.Items.Salvaging.OBSIDIAN_7.tag()).addOptional(new ResourceLocation("aether", "obsidian_leggings"));
-        this.tag(TComTags.Items.Salvaging.OBSIDIAN_8.tag()).addOptional(new ResourceLocation("aether", "obsidian_chestplate"));
+        this.tag(TComTags.Items.Salvaging.OBSIDIAN.tag(4)).addOptional(new ResourceLocation("aether", "obsidian_boots"));
+        this.tag(TComTags.Items.Salvaging.OBSIDIAN.tag(5)).addOptional(new ResourceLocation("aether", "obsidian_helmet"));
+        this.tag(TComTags.Items.Salvaging.OBSIDIAN.tag(7)).addOptional(new ResourceLocation("aether", "obsidian_leggings"));
+        this.tag(TComTags.Items.Salvaging.OBSIDIAN.tag(8)).addOptional(new ResourceLocation("aether", "obsidian_chestplate"));
         //Steeleaf
-        this.tag(TComTags.Items.Salvaging.STEELEAF_1.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_shovel"));
-        this.tag(TComTags.Items.Salvaging.STEELEAF_2.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_sword")).addOptional(new ResourceLocation("twilightforest", "steeleaf_hoe"));
-        this.tag(TComTags.Items.Salvaging.STEELEAF_3.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_axe")).addOptional(new ResourceLocation("twilightforest", "steeleaf_pickaxe"));
-        this.tag(TComTags.Items.Salvaging.STEELEAF_4.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_boots"));
-        this.tag(TComTags.Items.Salvaging.STEELEAF_5.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_helmet"));
-        this.tag(TComTags.Items.Salvaging.STEELEAF_7.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_leggings"));
-        this.tag(TComTags.Items.Salvaging.STEELEAF_8.tag()).addOptional(new ResourceLocation("twilightforest", "steeleaf_chestplate"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF.tag(1)).addOptional(new ResourceLocation("twilightforest", "steeleaf_shovel"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF.tag(2)).addOptional(new ResourceLocation("twilightforest", "steeleaf_sword")).addOptional(new ResourceLocation("twilightforest", "steeleaf_hoe"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF.tag(3)).addOptional(new ResourceLocation("twilightforest", "steeleaf_axe")).addOptional(new ResourceLocation("twilightforest", "steeleaf_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF.tag(4)).addOptional(new ResourceLocation("twilightforest", "steeleaf_boots"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF.tag(5)).addOptional(new ResourceLocation("twilightforest", "steeleaf_helmet"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF.tag(7)).addOptional(new ResourceLocation("twilightforest", "steeleaf_leggings"));
+        this.tag(TComTags.Items.Salvaging.STEELEAF.tag(8)).addOptional(new ResourceLocation("twilightforest", "steeleaf_chestplate"));
         //Knightmetal
-        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_2.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_sword"));
-        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_3.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_axe")).addOptional(new ResourceLocation("twilightforest", "knightmetal_pickaxe"));
-        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_4.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_boots"));
-        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_5.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_helmet"));
-        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_7.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_leggings")).addOptional(new ResourceLocation("twilightforest", "knightmetal_shield"));
-        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_8.tag()).addOptional(new ResourceLocation("twilightforest", "knightmetal_chestplate"));
-        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL_16.tag()).addOptional(new ResourceLocation("twilightforest", "block_and_chain"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL.tag(2)).addOptional(new ResourceLocation("twilightforest", "knightmetal_sword"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL.tag(3)).addOptional(new ResourceLocation("twilightforest", "knightmetal_axe")).addOptional(new ResourceLocation("twilightforest", "knightmetal_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL.tag(4)).addOptional(new ResourceLocation("twilightforest", "knightmetal_boots"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL.tag(5)).addOptional(new ResourceLocation("twilightforest", "knightmetal_helmet"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL.tag(7)).addOptional(new ResourceLocation("twilightforest", "knightmetal_leggings")).addOptional(new ResourceLocation("twilightforest", "knightmetal_shield"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL.tag(8)).addOptional(new ResourceLocation("twilightforest", "knightmetal_chestplate"));
+        this.tag(TComTags.Items.Salvaging.KNIGHTMETAL.tag(16)).addOptional(new ResourceLocation("twilightforest", "block_and_chain"));
         //Fiery
-        this.tag(TComTags.Items.Salvaging.FIERY_2.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_sword"));
-        this.tag(TComTags.Items.Salvaging.FIERY_3.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_pickaxe"));
-        this.tag(TComTags.Items.Salvaging.FIERY_4.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_boots"));
-        this.tag(TComTags.Items.Salvaging.FIERY_5.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_helmet"));
-        this.tag(TComTags.Items.Salvaging.FIERY_7.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_leggings"));
-        this.tag(TComTags.Items.Salvaging.FIERY_8.tag()).addOptional(new ResourceLocation("twilightforest", "fiery_chestplate"));
+        this.tag(TComTags.Items.Salvaging.FIERY.tag(2)).addOptional(new ResourceLocation("twilightforest", "fiery_sword"));
+        this.tag(TComTags.Items.Salvaging.FIERY.tag(3)).addOptional(new ResourceLocation("twilightforest", "fiery_pickaxe"));
+        this.tag(TComTags.Items.Salvaging.FIERY.tag(4)).addOptional(new ResourceLocation("twilightforest", "fiery_boots"));
+        this.tag(TComTags.Items.Salvaging.FIERY.tag(5)).addOptional(new ResourceLocation("twilightforest", "fiery_helmet"));
+        this.tag(TComTags.Items.Salvaging.FIERY.tag(7)).addOptional(new ResourceLocation("twilightforest", "fiery_leggings"));
+        this.tag(TComTags.Items.Salvaging.FIERY.tag(8)).addOptional(new ResourceLocation("twilightforest", "fiery_chestplate"));
     }
 
     private void addForge() {

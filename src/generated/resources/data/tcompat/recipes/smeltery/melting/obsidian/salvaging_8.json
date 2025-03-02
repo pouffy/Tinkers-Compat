@@ -1,5 +1,5 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -11,7 +11,8 @@
   },
   "result": {
     "amount": 8000,
-    "fluid": "tconstruct:molten_obsidian"
+    "fluid": "tconstruct:molten_obsidian",
+    "unit_size": 250
   },
   "temperature": 1000,
   "time": 625

@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gear"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/veridium"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "cooling_time": 140,
+  "fluid": {
+    "amount": 360,
+    "tag": "forge:molten_veridium"
+  },
+  "result": {
+    "tag": "forge:gears/veridium"
+  }
+}

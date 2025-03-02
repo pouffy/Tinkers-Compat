@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/stratus"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/stratus"
+  },
+  "result": {
+    "amount": 30,
+    "tag": "forge:molten_stratus"
+  },
+  "temperature": 1375,
+  "time": 51
+}

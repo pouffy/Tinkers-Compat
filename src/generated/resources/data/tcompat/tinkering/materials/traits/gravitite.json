@@ -3,10 +3,26 @@
     {
       "level": 1,
       "name": "tcompat:aether_forged"
-    },
-    {
-      "level": 1,
-      "name": "tcompat:ascension"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tcompat:orbit"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tcompat:ascension"
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "level": 1,
+        "name": "tcompat:ascension"
+      }
+    ]
+  }
 }

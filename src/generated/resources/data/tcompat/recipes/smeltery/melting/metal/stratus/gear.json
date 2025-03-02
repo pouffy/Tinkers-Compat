@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/stratus"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/stratus"
+  },
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_stratus"
+  },
+  "temperature": 1375,
+  "time": 154
+}

@@ -46,7 +46,8 @@ public final class TComFluids extends TCompatModule {
 
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenZanite = FLUIDS.register("molten_zanite").type(hot("molten_zanite").temperature(1750).lightLevel(13)).block(createBurning(MapColor.COLOR_PURPLE, 13, 10, 6.5f)).bucket().commonTag().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenSkyjade = FLUIDS.register("molten_skyjade").type(hot("molten_skyjade").temperature(1625).lightLevel(13)).block(createBurning(MapColor.COLOR_LIGHT_GREEN, 13, 10, 5f)).bucket().commonTag().flowing();
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenGravitite = FLUIDS.register("molten_gravitite").type(hot("molten_gravitite").density(-2000).temperature(1775).lightLevel(7)).block(createBurning(MapColor.COLOR_MAGENTA, 7, 8, 6f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenGravitite = FLUIDS.register("molten_gravitite").type(hot("molten_gravitite").density(-2000).temperature(1575).lightLevel(7)).block(createBurning(MapColor.COLOR_MAGENTA, 7, 8, 6f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenStratus = FLUIDS.register("molten_stratus").type(hot("molten_stratus").temperature(1675).lightLevel(12)).block(createBurning(MapColor.COLOR_PINK, 12, 8, 6f)).bucket().commonTag().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenVeridium = FLUIDS.register("molten_veridium").type(hot("molten_veridium").temperature(1425).lightLevel(13)).block(createBurning(MapColor.COLOR_BLUE, 13, 10, 5f)).bucket().commonTag().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenRefinedSentrite = FLUIDS.register("molten_refined_sentrite").type(hot("molten_refined_sentrite").temperature(1755).lightLevel(8)).block(createBurning(MapColor.TERRACOTTA_GRAY, 8, 13, 7.5f)).bucket().commonTag().flowing();
 

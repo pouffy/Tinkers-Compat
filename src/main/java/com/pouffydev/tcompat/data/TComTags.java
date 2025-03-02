@@ -16,6 +16,7 @@ import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.materials.definition.MaterialManager;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierManager;
+import slimeknights.tconstruct.library.recipe.FluidValues;
 
 import java.util.*;
 
@@ -299,22 +300,35 @@ public class TComTags {
             }
         }
         public enum Salvaging {
-            ZANITE_1, ZANITE_2, ZANITE_3, ZANITE_4, ZANITE_5, ZANITE_7, ZANITE_8,
-            SKYJADE_1, SKYJADE_2, SKYJADE_3, SKYJADE_4, SKYJADE_5, SKYJADE_7, SKYJADE_8,
-            GRAVITITE_1, GRAVITITE_2, GRAVITITE_3, GRAVITITE_4, GRAVITITE_5, GRAVITITE_7, GRAVITITE_8,
-            STRATUS_1, STRATUS_2, STRATUS_3, STRATUS_4, STRATUS_5, STRATUS_7, STRATUS_8,
-            VERIDIUM_1, VERIDIUM_2, VERIDIUM_3,
-            OBSIDIAN_4, OBSIDIAN_5, OBSIDIAN_7, OBSIDIAN_8,
-            STEELEAF_1, STEELEAF_2, STEELEAF_3, STEELEAF_4, STEELEAF_5, STEELEAF_7, STEELEAF_8,
-            KNIGHTMETAL_2, KNIGHTMETAL_3, KNIGHTMETAL_4, KNIGHTMETAL_5, KNIGHTMETAL_7, KNIGHTMETAL_8, KNIGHTMETAL_16,
-            FIERY_2, FIERY_3, FIERY_4, FIERY_5, FIERY_7, FIERY_8
+            ZANITE(List.of(1,2,3,4,5,7,8), FluidValues.GEM),
+            SKYJADE(List.of(1,2,3,4,5,7,8), FluidValues.GEM),
+            GRAVITITE(List.of(1,2,3,4,5,7,8)),
+            STRATUS(List.of(1,2,3,4,5,7,8)),
+            VERIDIUM(List.of(1,2,3)),
+            OBSIDIAN(List.of(4,5,7,8), FluidValues.GLASS_BLOCK),
+            STEELEAF(List.of(1,2,3,4,5,7,8)),
+            KNIGHTMETAL(List.of(2,3,4,5,7,8,16)),
+            FIERY(List.of(2,3,4,5,7,8))
             ;
+            public final List<Integer> permittedAmounts;
+            public final int singularUnit;
 
-            public TagKey<Item> tag() {
-                List<String> split = Arrays.stream(this.name().toLowerCase().split("_", 5)).toList();
-                String material = split.get(0);
-                int amount = Integer.parseInt(split.get(1));
-                return local("salvaging/" + material + "/" + amount);
+            Salvaging(List<Integer> permittedAmounts) {
+                this.permittedAmounts = permittedAmounts;
+                this.singularUnit = FluidValues.INGOT;
+            }
+            Salvaging(List<Integer> permittedAmounts, int singularUnit) {
+                this.permittedAmounts = permittedAmounts;
+                this.singularUnit = singularUnit;
+            }
+
+            public int fluidValue(int amountToUse) {
+                return singularUnit * amountToUse;
+            }
+
+            public TagKey<Item> tag(int amountToUse) {
+                String material = this.name().toLowerCase();
+                return local("salvaging/" + material + "/" + amountToUse);
             }
         }
         public static TagKey<Item> STEELEAF_INGOTS  = common("ingots/steeleaf");

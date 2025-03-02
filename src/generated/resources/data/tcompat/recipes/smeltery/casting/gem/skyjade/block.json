@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "cooling_time": 239,
+  "fluid": {
+    "amount": 900,
+    "tag": "forge:molten_skyjade"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/skyjade"
+  }
+}

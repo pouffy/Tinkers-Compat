@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/coin"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/fiery"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "cooling_time": 44,
+  "fluid": {
+    "amount": 30,
+    "tag": "forge:molten_fiery"
+  },
+  "result": {
+    "tag": "forge:coins/fiery"
+  }
+}

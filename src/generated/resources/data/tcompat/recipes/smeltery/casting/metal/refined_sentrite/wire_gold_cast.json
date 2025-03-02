@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/wire"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/refined_sentrite"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "cooling_time": 56,
+  "fluid": {
+    "amount": 45,
+    "tag": "forge:molten_refined_sentrite"
+  },
+  "result": {
+    "tag": "forge:wires/refined_sentrite"
+  }
+}

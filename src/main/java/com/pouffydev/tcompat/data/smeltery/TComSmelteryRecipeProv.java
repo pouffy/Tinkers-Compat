@@ -9,16 +9,20 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.mantle.recipe.helper.FluidOutput;
+import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.common.data.BaseRecipeProvider;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.IByproduct;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
 
 import java.util.function.Consumer;
@@ -40,6 +44,33 @@ public class TComSmelteryRecipeProv extends TComBaseRecipeProvider implements IS
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         this.addMeltingRecipes(consumer);
+        this.addCastingRecipes(consumer);
+    }
+
+    private void addCastingRecipes(Consumer<FinishedRecipe> consumer) {
+        String folder = "smeltery/casting/";
+        String metalFolder = folder + "metal/";
+        String gemFolder = folder + "gem/";
+        Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
+        Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
+        Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
+        Consumer<FinishedRecipe> twilightConsumer = withCondition(consumer, modLoaded("twilightforest"));
+
+        metalTagCasting(twilightConsumer, TComFluids.moltenFiery, "fiery", metalFolder, false);
+        metalTagCasting(twilightConsumer, TComFluids.moltenKnightmetal, "knightmetal", metalFolder, false);
+        metalTagCasting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", metalFolder, false);
+        metalTagCasting(deepAetherConsumer, TComFluids.moltenStratus, "stratus", metalFolder, false);
+        metalTagCasting(aetherReduxConsumer, TComFluids.moltenVeridium, "veridium", metalFolder, false);
+        metalTagCasting(aetherReduxConsumer, TComFluids.moltenRefinedSentrite, "refined_sentrite", metalFolder, false);
+        this.castingWithCast(aetherConsumer, TComFluids.moltenZanite, FluidValues.GEM, TinkerSmeltery.gemCast, ItemOutput.fromTag(TComTags.Items.ZANITE_GEMS), gemFolder + "zanite/gem");
+        ItemCastingRecipeBuilder.basinRecipe(ItemOutput.fromTag(TComTags.Items.ZANITE_BLOCKS))
+                .setFluidAndTime(TComFluids.moltenZanite, FluidValues.LARGE_GEM_BLOCK)
+                .save(aetherConsumer, location(gemFolder + "zanite/block"));
+        this.castingWithCast(deepAetherConsumer, TComFluids.moltenSkyjade, FluidValues.GEM, TinkerSmeltery.gemCast, ItemOutput.fromTag(TComTags.Items.SKYJADE_GEMS), gemFolder + "skyjade/gem");
+        ItemCastingRecipeBuilder.basinRecipe(ItemOutput.fromTag(TComTags.Items.SKYJADE_BLOCKS))
+                .setFluidAndTime(TComFluids.moltenSkyjade, FluidValues.LARGE_GEM_BLOCK)
+                .save(deepAetherConsumer, location(gemFolder + "skyjade/block"));
+
     }
 
     private void addMeltingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -72,6 +103,7 @@ public class TComSmelteryRecipeProv extends TComBaseRecipeProvider implements IS
         gemMelting(aetherConsumer, TComFluids.moltenZanite, "zanite", true, 9, folder, true, Byproduct.QUARTZ);
         gemMelting(deepAetherConsumer, TComFluids.moltenSkyjade, "skyjade", true, 9, folder, true, TComByproduct.ZANITE);
         metalMelting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", true, false, metalFolder, true, TComByproduct.ZANITE);
+        metalMelting(aetherConsumer, TComFluids.moltenStratus, "stratus", false, false, metalFolder, true);
         metalMelting(aetherReduxConsumer, TComFluids.moltenVeridium, "veridium", true, false, metalFolder, true, TComByproduct.GRAVITITE);
         metalMelting(aetherReduxConsumer, TComFluids.moltenRefinedSentrite, "refined_sentrite", true, false, metalFolder, true, TComByproduct.VERIDIUM);
 
@@ -84,12 +116,14 @@ public class TComSmelteryRecipeProv extends TComBaseRecipeProvider implements IS
         glovesMelting(aetherConsumer, TComFluids.moltenZanite, FluidValues.GEM * 2, TComTags.Items.Gloves.ZANITE, folder, true, new int[]{FluidValues.GEM_SHARD});
         glovesMelting(deepAetherConsumer, TComFluids.moltenSkyjade, FluidValues.GEM * 2, TComTags.Items.Gloves.SKYJADE, folder, true, new int[]{FluidValues.GEM_SHARD});
         glovesMelting(aetherConsumer, TComFluids.moltenGravitite, FluidValues.INGOT * 2, TComTags.Items.Gloves.GRAVITITE, folder, true, new int[]{FluidValues.NUGGET});
+        glovesMelting(aetherConsumer, TComFluids.moltenStratus, FluidValues.INGOT, TComTags.Items.Gloves.STRATUS, folder, true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, TComFluids.moltenGravitite.result(FluidValues.INGOT * 2));
 
         ringMelting(aetherConsumer, TinkerFluids.moltenIron, FluidValues.INGOT * 4, TComTags.Items.Rings.IRON, folder, true);
         ringMelting(aetherConsumer, TinkerFluids.moltenGold, FluidValues.INGOT * 4, TComTags.Items.Rings.GOLD, folder, true);
         ringMelting(aetherConsumer, TComFluids.moltenZanite, FluidValues.GEM * 4, TComTags.Items.Rings.ZANITE, folder, true);
         ringMelting(deepAetherConsumer, TComFluids.moltenSkyjade, FluidValues.GEM * 4, TComTags.Items.Rings.SKYJADE, folder, true);
         ringMelting(aetherConsumer, TComFluids.moltenGravitite, FluidValues.INGOT * 4, TComTags.Items.Rings.GRAVITITE, folder, true);
+        ringMelting(aetherConsumer, TComFluids.moltenStratus, FluidValues.INGOT, TComTags.Items.Rings.STRATUS, folder, true, TComFluids.moltenGravitite.result(FluidValues.INGOT * 4));
         simpleMelting(aetherReduxConsumer, TComFluids.moltenSkyjade, "skyjade", TComTags.Items.WISDOM_RING, FluidValues.GEM, folder, "ring_of_wisdom");
         simpleMelting(aetherReduxConsumer, TComFluids.moltenRefinedSentrite, "refined_sentrite", TComTags.Items.SENTRY_RING, FluidValues.INGOT * 7, folder, "sentry_ring");
 
@@ -102,38 +136,23 @@ public class TComSmelteryRecipeProv extends TComBaseRecipeProvider implements IS
         simpleMelting(twilightConsumer, TComFluids.moltenKnightmetal, "knightmetal", TComTags.Items.ARMOR_SHARD_CLUSTER, 90, folder, "armor_shard_cluster");
 
         //Zanite
-        simpleMelting(aetherConsumer, TComFluids.moltenZanite, "zanite", TComTags.Items.Salvaging.ZANITE_1.tag(), FluidValues.GEM, folder, "salvaging_1");
-        simpleMelting(aetherConsumer, TComFluids.moltenZanite, "zanite", TComTags.Items.Salvaging.ZANITE_2.tag(), FluidValues.GEM * 2, folder, "salvaging_2");
-        simpleMelting(aetherConsumer, TComFluids.moltenZanite, "zanite", TComTags.Items.Salvaging.ZANITE_3.tag(), FluidValues.GEM * 3, folder, "salvaging_3");
-        simpleMelting(aetherConsumer, TComFluids.moltenZanite, "zanite", TComTags.Items.Salvaging.ZANITE_4.tag(), FluidValues.GEM * 4, folder, "salvaging_4");
-        simpleMelting(aetherConsumer, TComFluids.moltenZanite, "zanite", TComTags.Items.Salvaging.ZANITE_5.tag(), FluidValues.GEM * 5, folder, "salvaging_5");
-        simpleMelting(aetherConsumer, TComFluids.moltenZanite, "zanite", TComTags.Items.Salvaging.ZANITE_7.tag(), FluidValues.GEM * 7, folder, "salvaging_7");
-        simpleMelting(aetherConsumer, TComFluids.moltenZanite, "zanite", TComTags.Items.Salvaging.ZANITE_8.tag(), FluidValues.GEM * 8, folder, "salvaging_8");
+        simpleSalvaging(aetherConsumer, TComFluids.moltenZanite, TComTags.Items.Salvaging.ZANITE, new int[]{FluidValues.GEM_SHARD}, folder);
         //Gravitite
-        simpleMelting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", TComTags.Items.Salvaging.GRAVITITE_1.tag(), FluidValues.INGOT, folder, "salvaging_1");
-        simpleMelting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", TComTags.Items.Salvaging.GRAVITITE_2.tag(), FluidValues.INGOT * 2, folder, "salvaging_2");
-        simpleMelting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", TComTags.Items.Salvaging.GRAVITITE_3.tag(), FluidValues.INGOT * 3, folder, "salvaging_3");
-        simpleMelting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", TComTags.Items.Salvaging.GRAVITITE_4.tag(), FluidValues.INGOT * 4, folder, "salvaging_4");
-        simpleMelting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", TComTags.Items.Salvaging.GRAVITITE_5.tag(), FluidValues.INGOT * 5, folder, "salvaging_5");
-        simpleMelting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", TComTags.Items.Salvaging.GRAVITITE_7.tag(), FluidValues.INGOT * 7, folder, "salvaging_7");
-        simpleMelting(aetherConsumer, TComFluids.moltenGravitite, "gravitite", TComTags.Items.Salvaging.GRAVITITE_8.tag(), FluidValues.INGOT * 8, folder, "salvaging_8");
+        simpleSalvaging(aetherConsumer, TComFluids.moltenGravitite, TComTags.Items.Salvaging.GRAVITITE, new int[]{FluidValues.NUGGET}, folder);
         //Skyjade
-        simpleMelting(deepAetherConsumer, TComFluids.moltenSkyjade, "skyjade", TComTags.Items.Salvaging.SKYJADE_1.tag(), FluidValues.GEM, folder, "salvaging_1");
-        simpleMelting(deepAetherConsumer, TComFluids.moltenSkyjade, "skyjade", TComTags.Items.Salvaging.SKYJADE_2.tag(), FluidValues.GEM * 2, folder, "salvaging_2");
-        simpleMelting(deepAetherConsumer, TComFluids.moltenSkyjade, "skyjade", TComTags.Items.Salvaging.SKYJADE_3.tag(), FluidValues.GEM * 3, folder, "salvaging_3");
-        simpleMelting(deepAetherConsumer, TComFluids.moltenSkyjade, "skyjade", TComTags.Items.Salvaging.SKYJADE_4.tag(), FluidValues.GEM * 4, folder, "salvaging_4");
-        simpleMelting(deepAetherConsumer, TComFluids.moltenSkyjade, "skyjade", TComTags.Items.Salvaging.SKYJADE_5.tag(), FluidValues.GEM * 5, folder, "salvaging_5");
-        simpleMelting(deepAetherConsumer, TComFluids.moltenSkyjade, "skyjade", TComTags.Items.Salvaging.SKYJADE_7.tag(), FluidValues.GEM * 7, folder, "salvaging_7");
-        simpleMelting(deepAetherConsumer, TComFluids.moltenSkyjade, "skyjade", TComTags.Items.Salvaging.SKYJADE_8.tag(), FluidValues.GEM * 8, folder, "salvaging_8");
+        simpleSalvaging(aetherConsumer, TComFluids.moltenSkyjade, TComTags.Items.Salvaging.SKYJADE, new int[]{FluidValues.GEM_SHARD}, folder);
         //Veridium
-        simpleMelting(aetherConsumer, TComFluids.moltenVeridium, "veridium", TComTags.Items.Salvaging.VERIDIUM_1.tag(), FluidValues.INGOT, folder, "salvaging_1");
-        simpleMelting(aetherConsumer, TComFluids.moltenVeridium, "veridium", TComTags.Items.Salvaging.VERIDIUM_2.tag(), FluidValues.INGOT * 2, folder, "salvaging_2");
-        simpleMelting(aetherConsumer, TComFluids.moltenVeridium, "veridium", TComTags.Items.Salvaging.VERIDIUM_3.tag(), FluidValues.INGOT * 3, folder, "salvaging_3");
+        simpleSalvaging(aetherConsumer, TComFluids.moltenVeridium, TComTags.Items.Salvaging.VERIDIUM, new int[]{FluidValues.NUGGET}, folder);
+        //Stratus
+        simpleSalvaging(aetherConsumer, TComFluids.moltenStratus, TComTags.Items.Salvaging.STRATUS, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, folder, TComFluids.moltenGravitite);
         //Obsidian
-        simpleMelting(aetherConsumer, TinkerFluids.moltenObsidian, "obsidian", TComTags.Items.Salvaging.OBSIDIAN_4.tag(), FluidValues.GLASS_BLOCK * 4, folder, "salvaging_4");
-        simpleMelting(aetherConsumer, TinkerFluids.moltenObsidian, "obsidian", TComTags.Items.Salvaging.OBSIDIAN_5.tag(), FluidValues.GLASS_BLOCK * 5, folder, "salvaging_5");
-        simpleMelting(aetherConsumer, TinkerFluids.moltenObsidian, "obsidian", TComTags.Items.Salvaging.OBSIDIAN_7.tag(), FluidValues.GLASS_BLOCK * 7, folder, "salvaging_7");
-        simpleMelting(aetherConsumer, TinkerFluids.moltenObsidian, "obsidian", TComTags.Items.Salvaging.OBSIDIAN_8.tag(), FluidValues.GLASS_BLOCK * 8, folder, "salvaging_8");
+        simpleSalvaging(aetherConsumer, TinkerFluids.moltenObsidian, TComTags.Items.Salvaging.OBSIDIAN, new int[]{FluidValues.GLASS_PANE}, folder);
+        //Fiery
+        simpleSalvaging(aetherConsumer, TComFluids.moltenFiery, TComTags.Items.Salvaging.FIERY, new int[]{FluidValues.NUGGET}, folder);
+        //Knightmetal
+        simpleSalvaging(aetherConsumer, TComFluids.moltenKnightmetal, TComTags.Items.Salvaging.KNIGHTMETAL, new int[]{FluidValues.NUGGET}, folder);
+        //Steeleaf
+        //simpleSalvaging(aetherConsumer, TComFluids.moltenSteeleaf, TComTags.Items.Salvaging.STEELEAF, new int[]{FluidValues.NUGGET}, folder);
     }
 
     private void oreberryMelting(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String name, String folder, boolean isOptional, IByproduct... byproducts) {
@@ -189,5 +208,22 @@ public class TComSmelteryRecipeProv extends TComBaseRecipeProvider implements IS
         String prefix = folder + "/" + name + "/";
         IntFunction<FluidOutput> fluidOut = fluid::result;
         MeltingRecipeBuilder.melting(Ingredient.of(input), fluidOut.apply(outAmount), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(outAmount)).save(consumer, location(prefix + type));
+    }
+
+    private void simpleSalvaging(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, TComTags.Items.Salvaging salvage, int[] damageSizes, String folder) {
+        String prefix = folder + "/" + salvage.name().toLowerCase() + "/";
+        IntFunction<FluidOutput> fluidOut = fluid::result;
+        for (int amount : salvage.permittedAmounts) {
+            MeltingRecipeBuilder.melting(Ingredient.of(salvage.tag(amount)), fluidOut.apply(salvage.fluidValue(amount)), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(salvage.fluidValue(amount))).setDamagable(damageSizes).save(consumer, location(prefix + "salvaging_" + amount));
+        }
+    }
+
+    private void simpleSalvaging(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, TComTags.Items.Salvaging salvage, int[] damageSizes, String folder, FluidObject<?> byproductFluid) {
+        String prefix = folder + "/" + salvage.name().toLowerCase() + "/";
+        IntFunction<FluidOutput> fluidOut = fluid::result;
+        IntFunction<FluidOutput> fluidByOut = byproductFluid::result;
+        for (int amount : salvage.permittedAmounts) {
+            MeltingRecipeBuilder.melting(Ingredient.of(salvage.tag(amount)), fluidOut.apply(salvage.fluidValue(1)), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(salvage.fluidValue(amount))).setDamagable(damageSizes).addByproduct(fluidByOut.apply(salvage.fluidValue(amount))).save(consumer, location(prefix + "salvaging_" + amount));
+        }
     }
 }

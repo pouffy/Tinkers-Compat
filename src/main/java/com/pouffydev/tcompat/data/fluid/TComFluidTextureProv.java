@@ -22,6 +22,7 @@ public class TComFluidTextureProv extends AbstractFluidTextureProvider {
         compatOre(TComFluids.moltenSkyjade);
         compatOre(TComFluids.moltenZanite);
         compatOre(TComFluids.moltenGravitite);
+        compatOre(TComFluids.moltenStratus);
         compatOre(TComFluids.moltenRefinedSentrite);
         compatOre(TComFluids.moltenVeridium);
         root(TComFluids.fieryEssence);

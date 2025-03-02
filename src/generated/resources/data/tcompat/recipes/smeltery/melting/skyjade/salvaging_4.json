@@ -1,9 +1,9 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "conditions": [
     {
       "type": "forge:mod_loaded",
-      "modid": "deep_aether"
+      "modid": "aether"
     }
   ],
   "ingredient": {
@@ -11,7 +11,8 @@
   },
   "result": {
     "amount": 400,
-    "tag": "forge:molten_skyjade"
+    "tag": "forge:molten_skyjade",
+    "unit_size": 25
   },
   "temperature": 1325,
   "time": 159

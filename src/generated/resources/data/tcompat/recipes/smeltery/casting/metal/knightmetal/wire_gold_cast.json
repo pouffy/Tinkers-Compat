@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/wire"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/knightmetal"
+      }
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "cooling_time": 45,
+  "fluid": {
+    "amount": 45,
+    "tag": "forge:molten_knightmetal"
+  },
+  "result": {
+    "tag": "forge:wires/knightmetal"
+  }
+}
