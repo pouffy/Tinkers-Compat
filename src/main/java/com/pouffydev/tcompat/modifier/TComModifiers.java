@@ -26,7 +26,8 @@ public class TComModifiers extends TCompatModule {
 
     public static final StaticModifier<AmbrogenModifier> ambrogen = MODIFIERS.register("ambrogen", AmbrogenModifier::new);
     public static final StaticModifier<AscensionModifier> ascension = MODIFIERS.register("ascension", AscensionModifier::new);
-    public static final StaticModifier<OrbitModifier> orbit = MODIFIERS.register("orbit", OrbitModifier::new);
+    public static final StaticModifier<SuperJumpModifier> superJump = MODIFIERS.register("super_jump", SuperJumpModifier::new);
+    public static final StaticModifier<BlastDeterranceModifier> blastDeterrance = MODIFIERS.register("blast_deterrance", BlastDeterranceModifier::new);
 
     public static final StaticModifier<DullingModifier> dulling = MODIFIERS.register("dulling", DullingModifier::new);
     public static final StaticModifier<AcclimatizationModifier> acclimatization = MODIFIERS.register("acclimatization", AcclimatizationModifier::new);

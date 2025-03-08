@@ -10,6 +10,36 @@
       "melee_attack": 3.5,
       "mining_speed": 5.0,
       "mining_tier": "minecraft:diamond"
+    },
+    "tconstruct:maille": {},
+    "tconstruct:plating_boots": {
+      "armor": 5.2,
+      "durability": 338,
+      "knockback_resistance": 1.0,
+      "toughness": 0.8
+    },
+    "tconstruct:plating_chestplate": {
+      "armor": 8.2,
+      "durability": 416,
+      "knockback_resistance": 1.0,
+      "toughness": 0.8
+    },
+    "tconstruct:plating_helmet": {
+      "armor": 5.2,
+      "durability": 286,
+      "knockback_resistance": 1.0,
+      "toughness": 0.8
+    },
+    "tconstruct:plating_leggings": {
+      "armor": 7.2,
+      "durability": 390,
+      "knockback_resistance": 1.0,
+      "toughness": 0.8
+    },
+    "tconstruct:plating_shield": {
+      "durability": 468,
+      "knockback_resistance": 1.0,
+      "toughness": 0.8
     }
   }
 }

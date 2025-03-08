@@ -6,7 +6,6 @@ import com.pouffydev.tcompat.modifier.TComModifiers;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
-import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
@@ -32,7 +31,11 @@ public class TComMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
 
         addTraits(TComMaterialIds.gravitite, MELEE_HARVEST, TComModifiers.ascension);
         addTraits(TComMaterialIds.gravitite, RANGED, TComModifiers.ascension);
-        addTraits(TComMaterialIds.gravitite, ARMOR, TComModifiers.orbit);
+        addTraits(TComMaterialIds.gravitite, ARMOR, TComModifiers.superJump);
+
+        addTraits(TComMaterialIds.refinedSentrite, MELEE_HARVEST, ModifierIds.blasting);
+        addTraits(TComMaterialIds.refinedSentrite, RANGED, TinkerModifiers.punch);
+        addTraits(TComMaterialIds.refinedSentrite, ARMOR, TComModifiers.blastDeterrance);
 
         addDefaultTraits(TComMaterialIds.twilightWood, TComModifiers.twilit.getId(), TComModifiers.uprooting.getId());
         addDefaultTraits(TComMaterialIds.fiery, TComModifiers.twilit.getId(), TComModifiers.superheat.getId(), TinkerModifiers.autosmelt.getId(), TinkerModifiers.fiery.getId());

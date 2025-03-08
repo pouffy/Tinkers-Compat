@@ -113,6 +113,7 @@ public class TComMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addArmorShieldStats(TComMaterialIds.skyjade, PlatingMaterialStats.builder().durabilityFactor(3).armor(3, 6, 8, 3));
         addArmorShieldStats(TComMaterialIds.gravitite, PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TComMaterialIds.veridium, PlatingMaterialStats.builder().durabilityFactor(19).armor(4, 6, 7, 4).toughness(0.5f), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TComMaterialIds.refinedSentrite, PlatingMaterialStats.builder().durabilityFactor(26).armor(5.2f, 7.2f, 8.2f, 5.2f).knockbackResistance(1).toughness(0.8f), StatlessMaterialStats.MAILLE);
     }
 
     private void addMisc() {

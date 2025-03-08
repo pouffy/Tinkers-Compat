@@ -4,5 +4,25 @@
       "level": 1,
       "name": "tcompat:aether_forged"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tcompat:blast_deterrance"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tconstruct:blasting"
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "level": 1,
+        "name": "tconstruct:punch"
+      }
+    ]
+  }
 }

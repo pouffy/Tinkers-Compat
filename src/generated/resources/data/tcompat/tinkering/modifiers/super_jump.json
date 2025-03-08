@@ -1,0 +1,8 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "aether"
+  },
+  "level_display": "tconstruct:default",
+  "tooltip_display": "always"
+}
