@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/zanite"
+  },
+  "result": {
+    "amount": 900,
+    "tag": "forge:molten_zanite"
+  },
+  "temperature": 1450,
+  "time": 237
+}

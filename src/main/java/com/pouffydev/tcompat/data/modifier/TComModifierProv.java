@@ -4,11 +4,18 @@ import com.pouffydev.tcompat.modifier.TComModifierIds;
 import com.pouffydev.tcompat.modifier.TComModifiers;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import slimeknights.mantle.data.predicate.IJsonPredicate;
+import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
-import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
+import slimeknights.tconstruct.library.json.predicate.tool.HasModifierPredicate;
+import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
+import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
+import slimeknights.tconstruct.library.modifiers.modules.technical.ArmorStatModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
+import slimeknights.tconstruct.library.tools.capability.TinkerDataKeys;
+import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import static slimeknights.tconstruct.library.tools.definition.ModifiableArmorMaterial.ARMOR_SLOTS;
@@ -46,13 +53,16 @@ public class TComModifierProv extends AbstractModifierProvider implements ICondi
         buildModifier(TComModifiers.ambrogen.getId(), modLoaded("aether"))
                 .levelDisplay(ModifierLevelDisplay.DEFAULT);
         buildModifier(TComModifiers.superJump.getId(), modLoaded("aether"))
-                .levelDisplay(ModifierLevelDisplay.DEFAULT);
-        buildModifier(TComModifiers.blastDeterrance.getId(), modLoaded("aether"))
-                .levelDisplay(ModifierLevelDisplay.DEFAULT);
+                .levelDisplay(ModifierLevelDisplay.DEFAULT)
+                .addModule(ArmorStatModule.builder(TinkerDataKeys.JUMP_BOOST).eachLevel(0.5f));
+        //buildModifier(TComModifiers.blastDeterrance.getId(), modLoaded("aether"))
+        //        .levelDisplay(ModifierLevelDisplay.DEFAULT);
         buildModifier(TComModifiers.dulling.getId(), modLoaded("deep_aether"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         //buildModifier(TComModifiers.sentryflare.getId(), modLoaded("aether_redux"))
         //        .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
+
     }
 
     @Override

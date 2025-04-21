@@ -35,7 +35,7 @@ public class TComMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
 
         addTraits(TComMaterialIds.refinedSentrite, MELEE_HARVEST, ModifierIds.blasting);
         addTraits(TComMaterialIds.refinedSentrite, RANGED, TinkerModifiers.punch);
-        addTraits(TComMaterialIds.refinedSentrite, ARMOR, TComModifiers.blastDeterrance);
+        addTraits(TComMaterialIds.refinedSentrite, ARMOR, ModifierIds.blastProtection);
 
         addDefaultTraits(TComMaterialIds.twilightWood, TComModifiers.twilit.getId(), TComModifiers.uprooting.getId());
         addDefaultTraits(TComMaterialIds.fiery, TComModifiers.twilit.getId(), TComModifiers.superheat.getId(), TinkerModifiers.autosmelt.getId(), TinkerModifiers.fiery.getId());
