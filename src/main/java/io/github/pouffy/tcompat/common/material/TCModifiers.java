@@ -5,6 +5,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 
 public class TCModifiers {
     public static final ModifierId aetherForged = id("aether_forged");
+    public static final ModifierId blighted = id("blighted");
 
     private TCModifiers() {}
 

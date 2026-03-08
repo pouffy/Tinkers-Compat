@@ -57,6 +57,7 @@
   "material.tcompat.skyjade": "Skyjade",
   "material.tcompat.veridium": "Veridium",
   "material.tcompat.refined_sentrite": "Refined Sentrite",
+  "material.tcompat.blightbunny_fang": "Blightbunny Fang",
 
   "material.tcompat.alchemical_calx": "Alchemical Calx",
   "material.tcompat.spirit_fabric": "Spirit Fabric",
@@ -96,6 +97,9 @@
   "modifier.tcompat.ascension": "Ascension",
   "modifier.tcompat.ascension.flavor": "Up You Go!",
   "modifier.tcompat.ascension.description": "Interacting with a block will cause it to ascend to a higher plane.",
+  "modifier.tcompat.blighted": "Blighted",
+  "modifier.tcompat.blighted.flavor": "Intoxicating",
+  "modifier.tcompat.blighted.description": "Hitting targets inflicts them with Inebriation",
   "modifier.tcompat.ambrofusion": "Ambrofusion",
   "modifier.tcompat.ambrofusion.flavor": "Fuel For Thought",
   "modifier.tcompat.ambrofusion.description": "Tool can have it's stats buffed with Ambrosium but durability depletes faster.",

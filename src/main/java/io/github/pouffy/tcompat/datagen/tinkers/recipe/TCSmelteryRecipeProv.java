@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
+import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
@@ -9,13 +10,17 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.common.crafting.conditions.NotCondition;
+import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -51,9 +56,10 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         Function<String, String> gemFolder = type -> aetherFolderFunction.apply("smeltery/" + type + "/gem/%s/");
         Function<String, String> miscFolder = type -> aetherFolderFunction.apply("smeltery/" + type + "/misc/%s/");
         //Generic Melting
-        gem(aetherConsumer, AetherInit.moltenZanite, aether).largeGem().ore(TCByproduct.QUARTZ);
-        metal(aetherConsumer, AetherInit.moltenGravitite, aether).metal().ore(TCByproduct.ZANITE).rawOre();
+        gem(aetherConsumer, AetherInit.moltenZanite, aether).largeGem(true).ore(TCByproduct.QUARTZ).optional();
+        metal(aetherConsumer, AetherInit.moltenGravitite, aether).metal(true).ore(TCByproduct.ZANITE).rawOre().optional();
         //Gloves
+        glovesMelting(aetherConsumer, TinkerFluids.moltenIron, (FluidValues.NUGGET * 6) * 2, "chainmail", ItemNameIngredient.from(aetherId.apply("chainmail_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET}, TinkerFluids.moltenSteel.result((FluidValues.NUGGET * 3) * 2));
         glovesMelting(aetherConsumer, TinkerFluids.moltenIron, FluidValues.INGOT * 2, "iron", ItemNameIngredient.from(aetherId.apply("iron_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET});
         glovesMelting(aetherConsumer, TinkerFluids.moltenGold, FluidValues.INGOT * 2, "gold", ItemNameIngredient.from(aetherId.apply("golden_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET});
         glovesMelting(aetherConsumer, TinkerFluids.moltenDiamond, FluidValues.GEM * 2, "diamond", ItemNameIngredient.from(aetherId.apply("diamond_gloves")), gemFolder.apply("melting"), true, new int[]{FluidValues.GEM_SHARD});
@@ -88,8 +94,8 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         Function<String, String> miscFolder = type -> deepAetherFolderFunction.apply("smeltery/" + type + "/misc/%s/");
 
         //Generic Melting
-        gem(deepAetherConsumer, DeepAetherInit.moltenSkyjade, deepAether).largeGem().ore(TCByproduct.QUARTZ);
-        metal(deepAetherConsumer, DeepAetherInit.moltenStratus, deepAether).metal();
+        gem(deepAetherConsumer, DeepAetherInit.moltenSkyjade, deepAether).largeGem(true).ore(TCByproduct.QUARTZ).optional();
+        metal(deepAetherConsumer, DeepAetherInit.moltenStratus, deepAether).metal(true).optional();
         //Gloves
         glovesMelting(deepAetherConsumer, DeepAetherInit.moltenSkyjade, FluidValues.GEM * 2, "skyjade", ItemNameIngredient.from(deepAetherId.apply("skyjade_gloves")), gemFolder.apply("melting"), true, new int[]{FluidValues.GEM_SHARD});
         glovesMelting(deepAetherConsumer, DeepAetherInit.moltenStratus, FluidValues.INGOT, "stratus", ItemNameIngredient.from(deepAetherId.apply("stratus_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, AetherInit.moltenGravitite.result(FluidValues.INGOT * 2));
@@ -112,8 +118,8 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         Function<String, String> gemFolder = type -> aetherReduxFolderFunction.apply("smeltery/" + type + "/gem/%s/");
         Function<String, String> miscFolder = type -> aetherReduxFolderFunction.apply("smeltery/" + type + "/misc/%s/");
         //Generic Melting
-        metal(aetherReduxConsumer, AetherReduxInit.moltenVeridium, aetherRedux).metal().ore(TCByproduct.GRAVITITE).rawOre();
-        metal(aetherReduxConsumer, AetherReduxInit.moltenRefinedSentrite, aetherRedux).metal().ore(TCByproduct.VERIDIUM);
+        metal(aetherReduxConsumer, AetherReduxInit.moltenVeridium, aetherRedux).metal(true).ore(TCByproduct.GRAVITITE).rawOre().optional();
+        metal(aetherReduxConsumer, AetherReduxInit.moltenRefinedSentrite, aetherRedux).metal(true).ore(TCByproduct.VERIDIUM).optional();
         //Rings
         simpleMelting(aetherReduxConsumer, DeepAetherInit.moltenSkyjade, FluidValues.GEM, "skyjade", ItemNameIngredient.from(aetherReduxId.apply("ring_of_wisdom")), gemFolder.apply("melting"), "ring_of_wisdom");
         simpleMelting(aetherReduxConsumer, AetherReduxInit.moltenRefinedSentrite, FluidValues.INGOT * 7, "refined_sentrite", ItemNameIngredient.from(aetherReduxId.apply("sentry_ring")), metalFolder.apply("melting"), "sentry_ring");
@@ -127,11 +133,11 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         simpleSalvaging(aetherReduxConsumer, aetherReduxId, AetherReduxInit.moltenVeridium, FluidValues.INGOT, "veridium/infused", "infused_veridium", SalvageType.SHOVEL, new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
     }
 
-    public SmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {
+    public TCSmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {
         return molten(consumer, fluid).castingFolder("smeltery/casting/metal/" + modId).meltingFolder("smeltery/melting/metal/" + modId);
     }
 
-    public SmelteryRecipeBuilder gem(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {
+    public TCSmelteryRecipeBuilder gem(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {
         return molten(consumer, fluid).castingFolder("smeltery/casting/gem/" + modId).meltingFolder("smeltery/melting/gem/" + modId);
     }
 }

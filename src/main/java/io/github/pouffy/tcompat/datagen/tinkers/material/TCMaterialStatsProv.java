@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.common.material.TCMaterials;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.*;
@@ -17,6 +18,7 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
     protected void addMaterialStats() {
         addMeleeHarvest();
         addRanged();
+        addAmmo();
         addArmor();
         addMisc();
     }
@@ -57,6 +59,17 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.hellbark,
                 new LimbMaterialStats(60, 0, 0, 0),
                 new GripMaterialStats(0f, 0, 0));
+    }
+
+    private void addAmmo() {
+        addMaterialStats(TCMaterials.aetherWood, StatlessMaterialStats.ARROW_SHAFT);
+        addMaterialStats(TCMaterials.hellbark, StatlessMaterialStats.ARROW_SHAFT);
+
+        addMaterialStats(TCMaterials.skyjade, StatlessMaterialStats.ARROW_HEAD);
+        addMaterialStats(TCMaterials.zanite, StatlessMaterialStats.ARROW_HEAD);
+        addMaterialStats(TCMaterials.blightbunnyFang, StatlessMaterialStats.ARROW_HEAD);
+
+        addMaterialStats(TCMaterials.zanite, StatlessMaterialStats.FLETCHING);
     }
 
     private void addArmor() {

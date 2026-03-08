@@ -6,6 +6,10 @@
   "cast_consumed": true,
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/skyjade"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "deep_aether"
     }

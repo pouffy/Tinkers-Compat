@@ -27,6 +27,7 @@ public class TCMaterials {
     public static final MaterialId gravitite = id("gravitite");
     public static final MaterialId veridium = id("veridium");
     public static final MaterialId refinedSentrite = id("refined_sentrite");
+    public static final MaterialId blightbunnyFang = id("blightbunny_fang");
     public static final MaterialId hellbark = id("hellbark");
     public static final MaterialId brass = id("brass");
     public static final MaterialId zinc = id("zinc");

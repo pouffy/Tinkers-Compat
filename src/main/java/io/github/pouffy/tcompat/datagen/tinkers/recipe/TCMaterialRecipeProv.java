@@ -1,5 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
+import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
@@ -13,12 +15,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.Tags;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -89,6 +93,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements IMater
         }
         planksRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
         logRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
+
+        materialRecipe(aetherReduxConsumer, TCMaterials.blightbunnyFang, ItemNameIngredient.from(TCompat.getResource("aether_redux:blightbunny_fang")), 1, 1, folder + "blightbunny_fang");
+        materialRecipe(aetherConsumer, TCMaterials.zanite, Ingredient.of(TCTags.Items.ZANITE_GEMS), 1, 1, folder + "zanite");
+        materialRecipe(deepAetherConsumer, TCMaterials.skyjade, Ingredient.of(TCTags.Items.SKYJADE_GEMS), 1, 1, folder + "skyjade");
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {

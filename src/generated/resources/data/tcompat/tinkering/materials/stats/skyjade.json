@@ -1,5 +1,6 @@
 {
   "stats": {
+    "tconstruct:arrow_head": {},
     "tconstruct:head": {
       "durability": 150,
       "melee_attack": 2.0,

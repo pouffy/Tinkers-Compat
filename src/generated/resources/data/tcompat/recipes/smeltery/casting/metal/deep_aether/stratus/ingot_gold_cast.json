@@ -5,6 +5,10 @@
   },
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/stratus"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "deep_aether"
     }

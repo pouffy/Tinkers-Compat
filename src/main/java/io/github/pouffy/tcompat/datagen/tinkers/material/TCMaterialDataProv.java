@@ -37,6 +37,7 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
 
         addMaterial(TCMaterials.veridium, 3, ORDER_HARVEST, false, false, aetherRedux);
         addMaterial(TCMaterials.refinedSentrite, 4, ORDER_HARVEST, false, false, aetherRedux);
+        addMaterial(TCMaterials.blightbunnyFang, 2, ORDER_RANGED, true, false, aetherRedux);
 
         addMaterial(TCMaterials.hellbark, 1, ORDER_HARVEST, true, false, bop);
 

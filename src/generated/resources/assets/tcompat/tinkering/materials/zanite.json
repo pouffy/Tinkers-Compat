@@ -12,7 +12,9 @@
       "tconstruct:plating_leggings",
       "tconstruct:plating_boots",
       "tconstruct:plating_shield",
-      "tconstruct:head"
+      "tconstruct:head",
+      "tconstruct:arrow_head",
+      "tconstruct:fletching"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

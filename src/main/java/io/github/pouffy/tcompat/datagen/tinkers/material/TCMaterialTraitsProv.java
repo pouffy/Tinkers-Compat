@@ -10,7 +10,10 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvide
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+
+import static slimeknights.tconstruct.library.materials.MaterialRegistry.AMMO;
 
 public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
     public TCMaterialTraitsProv(PackOutput packOutput, AbstractMaterialDataProvider materials) {
@@ -25,13 +28,18 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
     @Override
     protected void addMaterialTraits() {
         addDefaultTraits(TCMaterials.aetherWood, TCModifiers.aetherForged, ModifierIds.cultivated);
+        addTraits(TCMaterials.aetherWood, AMMO, ModifierIds.economical);
         addDefaultTraits(TCMaterials.aetherRock, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.ambrogen, 1), new ModifierEntry(ModifierIds.stonebound, 1));
         addDefaultTraits(TCMaterials.zanite, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.acclimatization, 1));
+        addTraits(TCMaterials.zanite, AMMO, ModifierIds.crystalbound);
         addDefaultTraits(TCMaterials.gravitite, TCModifiers.aetherForged);
         addTraits(TCMaterials.gravitite, HeadMaterialStats.ID, AetherInit.ascension.getId(), TCModifiers.aetherForged);
         addDefaultTraits(TCMaterials.skyjade, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(DeepAetherInit.dulling, 1));
+        addTraits(TCMaterials.skyjade, AMMO, ModifierIds.punch);
         addDefaultTraits(TCMaterials.veridium, TCModifiers.aetherForged, AetherReduxInit.ambrofusion.getId());
         addDefaultTraits(TCMaterials.refinedSentrite, new ModifierEntry(TCModifiers.aetherForged, 1));
         addDefaultTraits(TCMaterials.hellbark, ModifierIds.fiery);
+        addTraits(TCMaterials.hellbark, AMMO, ModifierIds.spectral);
+        addDefaultTraits(TCMaterials.blightbunnyFang, AetherReduxInit.blighted);
     }
 }

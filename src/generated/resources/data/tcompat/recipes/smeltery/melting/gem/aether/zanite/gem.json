@@ -2,6 +2,10 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/zanite"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "aether"
     }

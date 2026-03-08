@@ -3,9 +3,13 @@ package io.github.pouffy.tcompat.compat.aether;
 import io.github.pouffy.tcompat.TCompat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
+import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -18,20 +22,23 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.BlockInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class AscensionModifier extends NoLevelsModifier implements BlockInteractionModifierHook {
+public class AscensionModifier extends NoLevelsModifier implements BlockInteractionModifierHook, MeleeHitModifierHook {
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.BLOCK_INTERACT);
+        hookBuilder.addHook(this, ModifierHooks.BLOCK_INTERACT, ModifierHooks.MELEE_HIT);
     }
 
     @Override
@@ -58,6 +65,19 @@ public class AscensionModifier extends NoLevelsModifier implements BlockInteract
             }
         }
         return InteractionResult.PASS;
+    }
+
+    @Override
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+        if (tool.hasTag(TinkerTags.Items.MELEE_WEAPON)) {
+            var target = context.getTarget();
+            if (!target.getType().is(TagKey.create(Registries.ENTITY_TYPE, TCompat.getResource("aether:unlaunchable"))) && (target.onGround() || target.isInFluidType())) {
+                target.push(0.0, 1.0, 0.0);
+                if (target instanceof ServerPlayer serverPlayer) {
+                    serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
+                }
+            }
+        }
     }
 
     public static boolean isFree(BlockState state) {
