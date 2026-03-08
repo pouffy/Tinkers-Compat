@@ -1,4 +1,5 @@
 tasks.register('slimJar', Jar) {
+    dependsOn("classes")
     archiveClassifier = "dev-slim"
     from sourceSets.main.output
 }
@@ -13,18 +14,11 @@ java {
     artifacts.archives(reobfSlimJar)
     withSourcesJar()
 }
-// Use delombok'd files for sources
-sourcesJar {
-    exclude {
-        sourceSets.main.allSource.contains it.file
-    }
-    from delombok
-}
 
 jar.archiveClassifier = "dev"
 
 base {
-    archivesName = "${project.name}-${libs.versions.minecraft.get()}"
+    archivesName = "${project.name}-${minecraft_version}"
 }
 
 afterEvaluate {

@@ -3,10 +3,6 @@
     {
       "id": "aether_redux:gravitite_ingot",
       "required": false
-    },
-    {
-      "id": "aether:enchanted_gravitite",
-      "required": false
     }
   ]
 }

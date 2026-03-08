@@ -1,0 +1,267 @@
+{
+  "main": {
+    "id": "87bdbf098ae923e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "a74a1fdc9380e6c1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e51972ba3f65364b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Materials/Aether Wood.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Aether Wood"
+            }
+          },
+          {
+            "id": "9d8056657d8cc299",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Materials/Aether Rock.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Aether Rock"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "9fa596a2aa57d07a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "082e446c8184edd6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Modifiers/Ambrogen.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ambrogen"
+            }
+          },
+          {
+            "id": "4c3b05e23bcaa4aa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mods/Oh, The Biomes We've Gone.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Oh, The Biomes We've Gone"
+            }
+          },
+          {
+            "id": "1021dd7118c10d6c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Materials/Wood.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Wood"
+            }
+          },
+          {
+            "id": "15905264d6457554",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "70da784d03cca717",
+    "type": "split",
+    "children": [
+      {
+        "id": "aacb0c56edff5b85",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "435c092eccb4bd1f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "2f5722b80a216367",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "864f763bd9be035d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6ad4a5f074bb1ecd",
+    "type": "split",
+    "children": [
+      {
+        "id": "795b3d5abbaece8c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2d6c66d66b7ff1f1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Materials/Wood.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Wood"
+            }
+          },
+          {
+            "id": "a660d5eafeea64ba",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Materials/Wood.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Wood"
+            }
+          },
+          {
+            "id": "5b12facb542a5fdb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "9e0ee42b7603ae9c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Materials/Wood.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Wood"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "15905264d6457554",
+  "lastOpenFiles": [
+    "Materials/Aether Rock.md",
+    "Materials/Wood.md",
+    "Mods/Oh, The Biomes We've Gone.md",
+    "Modifiers/Ambrogen.md",
+    "Materials/Aether Wood.md",
+    "Modifiers/Aether Forged.md",
+    "Modifiers",
+    "Mods/Aether Redux.md",
+    "Mods/Deep Aether.md",
+    "Sub-Material/template.md",
+    "Sub-Material",
+    "Mods/The Aether.md",
+    "Materials/Aether",
+    "Welcome.md",
+    "Materials",
+    "Mods"
+  ]
+}

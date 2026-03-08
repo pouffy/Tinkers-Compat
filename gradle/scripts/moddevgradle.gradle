@@ -8,11 +8,11 @@ mixin {
 
 legacyForge {
     // Specify Forge version
-    version = libs.versions.minecraftForge.get()
+    version = mcforge_version
 
     parchment {
-        minecraftVersion = libs.versions.minecraft.get()
-        mappingsVersion = libs.versions.parchment.get()
+        minecraftVersion = minecraft_version
+        mappingsVersion = "2023.09.03"
     }
 
     accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')

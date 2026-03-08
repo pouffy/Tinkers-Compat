@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/stratus"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_stratus"
+  },
+  "temperature": 1375,
+  "time": 26
+}
