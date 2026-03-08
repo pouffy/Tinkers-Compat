@@ -5,6 +5,10 @@
   },
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/gravitite"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "aether"
     }

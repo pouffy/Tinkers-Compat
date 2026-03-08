@@ -28,13 +28,6 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
-modId = "ldlib"
-mandatory = true
-embedded = true
-versionRange = "[${ldlib_version},)"
-ordering = "AFTER"
-side = "BOTH"
-[[dependencies.${mod_id}]]
 modId = "tconstruct"
 mandatory = true
 embedded = true

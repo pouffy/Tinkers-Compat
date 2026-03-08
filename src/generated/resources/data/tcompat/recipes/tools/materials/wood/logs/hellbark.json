@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/hellbark"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/hellbark"
+  },
+  "material": "tcompat:hellbark",
+  "needed": 1,
+  "value": 4
+}

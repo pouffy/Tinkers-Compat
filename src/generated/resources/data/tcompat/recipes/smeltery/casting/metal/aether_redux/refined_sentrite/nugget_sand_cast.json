@@ -6,6 +6,10 @@
   "cast_consumed": true,
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/refined_sentrite"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "aether_redux"
     }

@@ -6,6 +6,10 @@
   "cast_consumed": true,
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/veridium"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "aether_redux"
     }

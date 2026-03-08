@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/zanite"
+  },
+  "material": "tcompat:zanite",
+  "needed": 1,
+  "value": 1
+}

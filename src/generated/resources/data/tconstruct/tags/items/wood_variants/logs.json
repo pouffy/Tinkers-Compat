@@ -133,6 +133,10 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/hellbark",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/skyroot",
       "required": false
     },
@@ -178,42 +182,6 @@
     },
     {
       "id": "#tcompat:logs/glacia",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/twilight_oak",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/canopy",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/mangrove",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/darkwood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/timewood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/transwood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/minewood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/sortingwood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/towerwood",
       "required": false
     }
   ]

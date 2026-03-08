@@ -133,6 +133,10 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/hellbark",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/skyroot",
       "required": false
     },
@@ -178,42 +182,6 @@
     },
     {
       "id": "#tcompat:planks/glacia",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/twilight_oak",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/canopy",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/mangrove",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/darkwood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/timewood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/transwood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/minewood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/sortingwood",
-      "required": false
-    },
-    {
-      "id": "#twilightforest:towerwood",
       "required": false
     }
   ]

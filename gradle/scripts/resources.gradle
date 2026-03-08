@@ -30,19 +30,16 @@ tasks.matching { it.name.startsWith('prepare') }.configureEach {
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
-    var forgeVers = libs.versions.forge.get().split("\\.")[0]
+    var forgeVers = forge_version.split("\\.")[0]
     var replaceProperties = [
             version             : version_toml,
             mod_id              : mod_id,
-            minecraft_version   : libs.versions.minecraft.get(),
+            minecraft_version   : minecraft_version,
             loader_version      : forgeVers,
             forge_version       : forgeVers, // only specify major version of forge
-            //configuration_version: forge.versions.configuration.get(),
-            //kjs_version         : forge.versions.kubejs.get().split("\\.")[0], // only specify major version of kjs
-            tconstruct_version  : forge.versions.tconstruct.get(),
-            ldlib_version       : forge.versions.ldlib.get(),
-            jei_version         : forge.versions.jei.get(),
-            emi_version         : forge.versions.emi.get(),
+            tconstruct_version  : tconstruct_version,
+            jei_version         : "15.20.0.105",
+            emi_version         : "1.1.13+1.20.1",
             mod_license         : mod_license,
             mod_name            : mod_name,
             mod_description     : mod_description,

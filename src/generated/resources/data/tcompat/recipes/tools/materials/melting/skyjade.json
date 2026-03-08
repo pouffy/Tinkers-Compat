@@ -3,7 +3,7 @@
   "conditions": [
     {
       "type": "forge:mod_loaded",
-      "modid": "aether"
+      "modid": "deep_aether"
     }
   ],
   "input": "tcompat:skyjade",

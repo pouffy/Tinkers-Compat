@@ -6,22 +6,14 @@
     }
   ],
   "perStat": {
-    "tconstruct:armor": [
-      {
-        "level": 1,
-        "name": "tcompat:super_jump"
-      }
-    ],
-    "tconstruct:melee_harvest": [
+    "tconstruct:head": [
       {
         "level": 1,
         "name": "tcompat:ascension"
-      }
-    ],
-    "tconstruct:ranged": [
+      },
       {
         "level": 1,
-        "name": "tcompat:ascension"
+        "name": "tcompat:aether_forged"
       }
     ]
   }

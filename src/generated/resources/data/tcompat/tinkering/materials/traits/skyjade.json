@@ -8,5 +8,13 @@
       "level": 1,
       "name": "tcompat:dulling"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:ammo": [
+      {
+        "level": 1,
+        "name": "tconstruct:punch"
+      }
+    ]
+  }
 }

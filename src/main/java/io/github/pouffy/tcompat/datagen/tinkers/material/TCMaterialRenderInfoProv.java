@@ -1,0 +1,36 @@
+package io.github.pouffy.tcompat.datagen.tinkers.material;
+
+import io.github.pouffy.tcompat.common.material.TCMaterials;
+import net.minecraft.data.PackOutput;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.Nullable;
+import slimeknights.tconstruct.library.client.data.material.AbstractMaterialRenderInfoProvider;
+import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
+import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+
+public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider {
+    public TCMaterialRenderInfoProv(PackOutput packOutput, @Nullable AbstractMaterialSpriteProvider materialSprites, @Nullable ExistingFileHelper existingFileHelper) {
+        super(packOutput, materialSprites, existingFileHelper);
+    }
+
+    @Override
+    protected void addMaterialRenderInfo() {
+        buildRenderInfo(TCMaterials.aetherWood).color(0x5C5B41).fallbacks("wood", "stick", "primitive");
+        redirect(TCMaterials.aetherRock, TCMaterials.holystone);
+        for (MaterialVariantId materialId : TCMaterials.allVariants) {
+            buildRenderInfo(materialId);
+        }
+        buildRenderInfo(TCMaterials.zanite).fallbacks("gem");
+        buildRenderInfo(TCMaterials.gravitite).fallbacks("metal");
+        buildRenderInfo(TCMaterials.skyjade).fallbacks("gem");
+        buildRenderInfo(TCMaterials.veridium).fallbacks("metal");
+        buildRenderInfo(TCMaterials.refinedSentrite).fallbacks("metal");
+        buildRenderInfo(TCMaterials.hellbark).color(0x332929).fallbacks("wood", "stick", "primitive");
+        buildRenderInfo(TCMaterials.blightbunnyFang).color(0xc1d3d8).fallbacks("bone", "metal");
+    }
+
+    @Override
+    public String getName() {
+        return "Tinker's Compatability Material Render Info";
+    }
+}
