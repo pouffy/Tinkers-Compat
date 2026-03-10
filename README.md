@@ -49,3 +49,20 @@
 - Veridium Material
 - Blightbunny Fang Material
 - Smeltery Melting Recipes
+
+## Planned
+
+### [Species](https://modrinth.com/mod/species)
+- Birt combat Modifier
+- Kinetic shield/chestplate Modifier
+- Swapping ranged Modifier
+
+### [Quark](https://modrinth.com/mod/quark)
+- **Wood** Material Variants
+- **Rock** Material Variants
+
+### [Ad Astra](https://modrinth.com/mod/ad-astra)
+- **Desh** Material
+- **Calorite** Material
+- **Ostrum** Material
+- **Etrium** Material
