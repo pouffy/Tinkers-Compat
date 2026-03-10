@@ -90,7 +90,7 @@ public class AmbrofusionModifier extends Modifier implements ToolDamageModifierH
 
     @Override
     public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
-        AMBROFUSION_STAT.add(builder, 12);
+        AMBROFUSION_STAT.add(builder, 30);
         boolean shouldAdd = context.getPersistentData().getBoolean(shouldAddStatsKey);
         if (shouldAdd) {
             if (context.hasTag(TinkerTags.Items.MELEE)) {
