@@ -129,5 +129,7 @@
   "tcompat.totemic_rune.aethers_charm": "the Aether",
   "tcompat.totemic_rune.anglers_lure": "the Seas",
   "tcompat.totemic_rune.earthen_might": "the Arena",
-  "tcompat.totemic_rune.ifrits_embrace": "the Hells"
+  "tcompat.totemic_rune.ifrits_embrace": "the Hells",
+
+  "recipe.tconstruct.ambrofusion.at_capacity": "Tool has no more space for ambrosium"
 }
