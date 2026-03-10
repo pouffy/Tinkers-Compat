@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/valkyrum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "cooling_time": 223,
+  "fluid": {
+    "amount": 810,
+    "tag": "forge:molten_valkyrum"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/valkyrum"
+  }
+}

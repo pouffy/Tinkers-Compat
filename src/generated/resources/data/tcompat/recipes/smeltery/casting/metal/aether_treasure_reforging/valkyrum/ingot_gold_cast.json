@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/valkyrum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "cooling_time": 74,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_valkyrum"
+  },
+  "result": {
+    "tag": "forge:ingots/valkyrum"
+  }
+}

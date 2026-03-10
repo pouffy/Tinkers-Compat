@@ -23,6 +23,7 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         ICondition aether = new ModLoadedCondition("aether");
         ICondition deepAether = new ModLoadedCondition("deep_aether");
         ICondition aetherRedux = new ModLoadedCondition("aether_redux");
+        ICondition aetherTreasure = new ModLoadedCondition("aether_treasure_reforging");
         ICondition bop = new ModLoadedCondition("biomesoplenty");
 
         ICondition brass = tagFull("forge", "ingots/brass");
@@ -40,6 +41,10 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.blightbunnyFang, 2, ORDER_RANGED, true, false, aetherRedux);
 
         addMaterial(TCMaterials.hellbark, 1, ORDER_HARVEST, true, false, bop);
+
+        addMaterial(TCMaterials.pyral, 1, ORDER_SPECIAL, false, false, aetherTreasure);
+        addMaterial(TCMaterials.valkyrum, 1, ORDER_SPECIAL, false, false, aetherTreasure);
+        addMaterial(TCMaterials.neptune, 2, ORDER_SPECIAL, true, false, aetherTreasure);
 
         //addMaterial(TCMaterials.zinc, 2, ORDER_HARVEST, false, false, zinc);
         //addMaterial(TCMaterials.brass, 2, ORDER_HARVEST, false, false, brass);

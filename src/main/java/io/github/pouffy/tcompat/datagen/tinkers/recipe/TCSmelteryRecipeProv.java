@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -43,6 +44,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         aether(consumer, folder);
         deepAether(consumer, folder);
         aetherRedux(consumer, folder);
+        aetherTreasure(consumer, folder);
     }
 
     private void aether(Consumer<FinishedRecipe> consumer, String folder) {
@@ -131,6 +133,34 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         simpleSalvaging(aetherReduxConsumer, aetherReduxId, AetherReduxInit.moltenVeridium, FluidValues.INGOT, "veridium/infused", "infused_veridium", SalvageType.AXES, new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
         simpleSalvaging(aetherReduxConsumer, aetherReduxId, AetherReduxInit.moltenVeridium, FluidValues.INGOT, "veridium/infused", "infused_veridium", SalvageType.WEAPON, new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
         simpleSalvaging(aetherReduxConsumer, aetherReduxId, AetherReduxInit.moltenVeridium, FluidValues.INGOT, "veridium/infused", "infused_veridium", SalvageType.SHOVEL, new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
+    }
+
+    private void aetherTreasure(Consumer<FinishedRecipe> consumer, String folder) {
+        String aetherTreasure = "aether_treasure_reforging";
+        Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
+        Function<String, ResourceLocation> aetherReduxId = name -> getResource("aether_redux", name);
+        Function<String, ResourceLocation> aetherTreasureId = name -> getResource(aetherTreasure, name);
+        Function<String, TagKey<Item>> aetherTreasureTag = name -> TagKey.create(Registries.ITEM, getResource(aetherTreasure, name));
+        Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, new ModLoadedCondition(aetherTreasure));
+
+        Function<String, String> aetherTreasureFolderFunction = name -> name.formatted(aetherTreasure);
+        Function<String, String> metalFolder = type -> aetherTreasureFolderFunction.apply("smeltery/" + type + "/metal/%s/");
+
+        metal(aetherTreasureConsumer, AetherTRInit.moltenValkyrum, aetherTreasure).metal(true).optional();
+        metal(aetherTreasureConsumer, AetherTRInit.moltenPyral, aetherTreasure).metal(true).optional();
+        //Misc Items
+        simpleMelting(withCondition(aetherTreasureConsumer, new ModLoadedCondition("aether_redux")), AetherTRInit.moltenValkyrum, FluidValues.INGOT, "valkyrie", ItemNameIngredient.from(aetherReduxId.apply("grand_victory_medal")), metalFolder.apply("melting"), "grand_victory_medal");
+        simpleMelting(aetherTreasureConsumer, AetherTRInit.moltenValkyrum, FluidValues.INGOT * 3, "valkyrie", ItemNameIngredient.from(aetherId.apply("valkyrie_cape")), metalFolder.apply("melting"), "valkyrie_cape");
+        simpleMelting(aetherTreasureConsumer, AetherTRInit.moltenNeptune, FluidValues.INGOT, "neptune", ItemNameIngredient.from(aetherTreasureId.apply("neptune_mesh")), metalFolder.apply("melting"), "neptune_mesh");
+        simpleMelting(aetherTreasureConsumer, AetherTRInit.moltenPyral, FluidValues.INGOT * 3, "pyral", ItemNameIngredient.from(aetherId.apply("phoenix_bow")), metalFolder.apply("melting"), "phoenix_bow");
+        //Gloves
+        glovesMelting(aetherTreasureConsumer, AetherTRInit.moltenValkyrum, FluidValues.INGOT, "valkyrie", ItemNameIngredient.from(aetherId.apply("valkyrie_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, AetherInit.moltenGravitite.result(FluidValues.INGOT * 2));
+        glovesMelting(aetherTreasureConsumer, AetherTRInit.moltenPyral, FluidValues.INGOT, "pyral", ItemNameIngredient.from(aetherId.apply("phoenix_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, AetherInit.moltenGravitite.result(FluidValues.INGOT * 2));
+        glovesMelting(aetherTreasureConsumer, AetherTRInit.moltenNeptune, FluidValues.INGOT, "neptune", ItemNameIngredient.from(aetherId.apply("neptune_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, AetherInit.moltenZanite.result(FluidValues.INGOT * 2));
+        //Salvaging
+        salvageAll(aetherTreasureConsumer, aetherId, AetherTRInit.moltenValkyrum, AetherInit.moltenGravitite, FluidValues.INGOT, "valkyrie", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+        salvageArmor(aetherTreasureConsumer, aetherId, AetherTRInit.moltenPyral, AetherInit.moltenGravitite, FluidValues.INGOT, "phoenix", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+        salvageArmor(aetherTreasureConsumer, aetherId, AetherTRInit.moltenNeptune, AetherInit.moltenZanite, FluidValues.INGOT, "neptune", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
     }
 
     public TCSmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {

@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCWoods;
@@ -53,6 +54,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements IMater
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
         Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
+        Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
         List<MaterialVariantId> noPlanks = List.of(TCMaterials.paloVerde);
         List<MaterialVariantId> stems = List.of(TCMaterials.cloudcap, TCMaterials.jellyshroom);
 
@@ -97,6 +99,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements IMater
         materialRecipe(aetherReduxConsumer, TCMaterials.blightbunnyFang, ItemNameIngredient.from(TCompat.getResource("aether_redux:blightbunny_fang")), 1, 1, folder + "blightbunny_fang");
         materialRecipe(aetherConsumer, TCMaterials.zanite, Ingredient.of(TCTags.Items.ZANITE_GEMS), 1, 1, folder + "zanite");
         materialRecipe(deepAetherConsumer, TCMaterials.skyjade, Ingredient.of(TCTags.Items.SKYJADE_GEMS), 1, 1, folder + "skyjade");
+
+        materialComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, AetherTRInit.moltenValkyrum, 90, folder + "valkyrum");
+        materialComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, AetherTRInit.moltenPyral, 90, folder + "pyral");
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
@@ -107,7 +112,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements IMater
 
         materialMeltingCasting(aetherConsumer, TCMaterials.zanite, AetherInit.moltenZanite, FluidValues.GEM, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, AetherInit.moltenGravitite, folder);
-        materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, DeepAetherInit.moltenSkyjade, FluidValues.GEM, folder);
+        materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, DeepAetherInit.moltenSkyjade, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, AetherReduxInit.moltenVeridium, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, AetherReduxInit.moltenRefinedSentrite, folder);
     }

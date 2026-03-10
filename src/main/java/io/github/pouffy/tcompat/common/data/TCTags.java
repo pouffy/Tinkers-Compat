@@ -107,6 +107,10 @@ public class TCTags {
         public static TagKey<Item> REFINED_SENTRITE_ORES  = common("ores/refined_sentrite");
         public static TagKey<Item> STRATUS_INGOTS  = common("ingots/stratus");
         public static TagKey<Item> STRATUS_BLOCKS  = common("storage_blocks/stratus");
+        public static TagKey<Item> PYRAL_INGOTS  = common("ingots/pyral");
+        public static TagKey<Item> PYRAL_BLOCKS  = common("storage_blocks/pyral");
+        public static TagKey<Item> VALKYRUM_INGOTS  = common("ingots/valkyrum");
+        public static TagKey<Item> VALKYRUM_BLOCKS  = common("storage_blocks/valkyrum");
 
         public static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));

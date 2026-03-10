@@ -15,7 +15,9 @@
     "ascension":              "#f195ef",
     "dulling":                "#9ada5b",
     "ambrogen":               "#e4de73",
-    "ambrofusion":            "#7fbedc"
+    "ambrofusion":            "#7fbedc",
+    "phoenix_touched":        "#d86a0b",
+    "blighted":               "#8058f6"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,
@@ -68,6 +70,13 @@
     "skyjade":                "#8cb955",
     "gravitite":              "#da67d0",
     "veridium":               "#5a90bd",
-    "refined_sentrite":       "#747477"
+    "refined_sentrite":       "#747477",
+    "blightbunny_fang":       "#a1b5be",
+
+    "hellbark":               "#382d2d",
+
+    "pyral":                  "#ffb326",
+    "valkyrum":               "#c3d1d1",
+    "neptune":                "#3559c6"
   }
 }

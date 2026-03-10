@@ -29,6 +29,11 @@ public class TCMaterials {
     public static final MaterialId refinedSentrite = id("refined_sentrite");
     public static final MaterialId blightbunnyFang = id("blightbunny_fang");
     public static final MaterialId hellbark = id("hellbark");
+
+    public static final MaterialId pyral = id("pyral");
+    public static final MaterialId valkyrum = id("valkyrum");
+    public static final MaterialId neptune = id("neptune");
+
     public static final MaterialId brass = id("brass");
     public static final MaterialId zinc = id("zinc");
 

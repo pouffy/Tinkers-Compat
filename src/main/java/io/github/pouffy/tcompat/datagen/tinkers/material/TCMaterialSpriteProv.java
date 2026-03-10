@@ -22,7 +22,7 @@ import java.util.Collection;
 import java.util.List;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
-import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.WOOD;
+import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.*;
 
 public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
     @Override
@@ -98,6 +98,12 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildGeneric(TCMaterials.gravitite, 0xFF390c35, 0xFF5c1256, 0xFFb643a0, 0xFFda67d0, 0xFFf195ef, 0xFFffcbfd, addStats(), "metal").armor().ranged().meleeHarvest();
         buildGeneric(TCMaterials.veridium, 0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb, addStats(), "metal").armor().meleeHarvest();
         buildGeneric(TCMaterials.refinedSentrite, 0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1, addStats(GripMaterialStats.ID, HeadMaterialStats.ID), "metal");
+
+        buildGeneric(TCMaterials.pyral, 0xFF6b130b, 0xFFb7420c, 0xFFd86a0b, 0xFFffb326, 0xFFfeda87, 0xFFffeec5, addStats(), "metal").armor().ranged();
+        buildMaterial(TCMaterials.valkyrum)
+                .armor().meleeHarvest()
+                .transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0));
+        buildGeneric(TCMaterials.neptune, 0xFF111b42, 0xFF1a2a66, 0xFF29439c, 0xFF3559c6, 0xFF3e6fd8, 0xFF7cbbff, addStats(), "metal").maille();
     }
 
     public static ISpriteTransformer transformerFromSprite(ResourceLocation texture, int frames, int highlightColor) {

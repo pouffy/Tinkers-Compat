@@ -50,6 +50,7 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.refinedSentrite,
                 new HeadMaterialStats(1126, 5f, DIAMOND, 3.5f));
+        addMaterialStats(TCMaterials.valkyrum, new HeadMaterialStats(1562, 4f, DIAMOND, 3f));
     }
 
     private void addRanged() {
@@ -59,6 +60,9 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.hellbark,
                 new LimbMaterialStats(60, 0, 0, 0),
                 new GripMaterialStats(0f, 0, 0));
+        addMaterialStats(TCMaterials.pyral,
+                new LimbMaterialStats(80, -0.1f, 0.3f, -0.15f),
+                new GripMaterialStats(-0.2f, -0.35f, 0));
     }
 
     private void addAmmo() {
@@ -80,6 +84,9 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addArmorShieldStats(TCMaterials.gravitite, PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.veridium, PlatingMaterialStats.builder().durabilityFactor(19).armor(4, 6, 7, 4).toughness(0.5f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.refinedSentrite, PlatingMaterialStats.builder().durabilityFactor(26).armor(5.2f, 7.2f, 8.2f, 5.2f).knockbackResistance(1).toughness(0.8f), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TCMaterials.pyral, PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TCMaterials.valkyrum, PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE);
+        addMaterialStats(TCMaterials.neptune, StatlessMaterialStats.MAILLE);
     }
 
     private void addMisc() {

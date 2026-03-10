@@ -27,6 +27,9 @@
   "material.tconstruct.wood.zelkova": "Zelkova Wood",
 
   "material.tcompat.hellbark": "Hellbark",
+  "material.tcompat.valkyrum": "Valkyrum",
+  "material.tcompat.neptune": "Neptune",
+  "material.tcompat.pyral": "Pyral",
 
   "material.tcompat.aether_wood": "Skyroot",
   "material.tcompat.aether_wood.skyroot": "Skyroot",
@@ -76,6 +79,9 @@
   "fluid.tcompat.molten_veridium": "Molten Veridium",
   "fluid.tcompat.molten_refined_sentrite": "Molten Refined Sentrite",
   "fluid.tcompat.molten_stratus": "Molten Stratus",
+  "block.tcompat.molten_valkyrum_fluid": "Molten Valkyrum",
+  "block.tcompat.molten_neptune_fluid": "Molten Neptune",
+  "block.tcompat.molten_pyral_fluid": "Molten Pyral",
 
   "item.tcompat.molten_zanite_bucket": "Molten Zanite Bucket",
   "item.tcompat.molten_skyjade_bucket": "Molten Skyjade Bucket",
@@ -83,6 +89,10 @@
   "item.tcompat.molten_veridium_bucket": "Molten Veridium Bucket",
   "item.tcompat.molten_refined_sentrite_bucket": "Molten Refined Sentrite Bucket",
   "item.tcompat.molten_stratus_bucket": "Molten Stratus Bucket",
+  "item.tcompat.molten_valkyrum_bucket": "Molten Valkyrum Bucket",
+  "item.tcompat.molten_neptune_bucket": "Molten Neptune Bucket",
+  "item.tcompat.molten_pyral_bucket": "Molten Pyral Bucket",
+
 
   "_comment": "Tooltips",
 
@@ -90,7 +100,8 @@
   "modifier.tcompat.aether_forged": "Aether Forged",
   "modifier.tcompat.aether_forged.flavor": "Heavenly!",
   "modifier.tcompat.aether_forged.description": "Allows your tool to use it's full mining speed in The Aether",
-
+  "modifier.tcompat.phoenix_touched": "Phoenix Touched",
+  "modifier.tcompat.phoenix_touched.description": "Your bow will fire Phoenix arrows.",
   "modifier.tcompat.ambrogen": "Ambrogen",
   "modifier.tcompat.ambrogen.flavor": "Snack Generator",
   "modifier.tcompat.ambrogen.description": "Small chance to dislodge Ambrosium from broken blocks.",

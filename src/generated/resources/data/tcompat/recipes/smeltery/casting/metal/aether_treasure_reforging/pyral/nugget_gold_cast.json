@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/pyral"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "cooling_time": 27,
+  "fluid": {
+    "amount": 10,
+    "tag": "forge:molten_pyral"
+  },
+  "result": {
+    "tag": "forge:nuggets/pyral"
+  }
+}

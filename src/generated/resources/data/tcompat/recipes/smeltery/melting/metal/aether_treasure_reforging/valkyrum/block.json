@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/valkyrum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/valkyrum"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_valkyrum"
+  },
+  "temperature": 1275,
+  "time": 223
+}

@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.common.util;
 
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,12 +18,14 @@ public class CompatHelper {
     private static Map<String, Consumer<IEventBus>> compatInitializers = Map.of(
             "aether", AetherInit::init,
             "aether_redux", AetherReduxInit::init,
-            "deep_aether", DeepAetherInit::init
+            "deep_aether", DeepAetherInit::init,
+            "aether_treasure_reforging", AetherTRInit::init
     );
     private static Map<String, Consumer<IEventBus>> compatEvents = Map.of(
             "aether", (bus) -> bus.register(new AetherInit()),
             "aether_redux", (bus) -> bus.register(new AetherReduxInit()),
-            "deep_aether", (bus) -> bus.register(new DeepAetherInit())
+            "deep_aether", (bus) -> bus.register(new DeepAetherInit()),
+            "aether_treasure_reforging", (bus) -> bus.register(new AetherTRInit())
     );
 
     public static void init(IEventBus eventBus) {

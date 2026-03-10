@@ -6,6 +6,8 @@
   "refmap": "tcompat.refmap.json",
   "plugin": "io.github.pouffy.tcompat.mixin.TCompatMixinPlugin",
   "mixins": [
+    "AbstractArrowMixin",
+    "ProjectileMixin",
     "TinkerFluidTabMixin",
     "aether.AbilityHooksMixin"
   ],
