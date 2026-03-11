@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -19,7 +20,8 @@ public class CompatHelper {
             "aether", AetherInit::init,
             "aether_redux", AetherReduxInit::init,
             "deep_aether", DeepAetherInit::init,
-            "aether_treasure_reforging", AetherTRInit::init
+            "aether_treasure_reforging", AetherTRInit::init,
+            "species", SpeciesInit::init
     );
     private static Map<String, Consumer<IEventBus>> compatEvents = Map.of(
             "aether", (bus) -> bus.register(new AetherInit()),

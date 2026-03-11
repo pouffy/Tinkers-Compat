@@ -17,7 +17,12 @@
     "ambrogen":               "#e4de73",
     "ambrofusion":            "#7fbedc",
     "phoenix_touched":        "#d86a0b",
-    "blighted":               "#8058f6"
+    "blighted":               "#8058f6",
+    "escarstay":              "#7178c2",
+    "ricoshield":             "#59002b",
+    "wicked":                 "#ffa342",
+    "swapping":               "#e72a8b",
+    "birt":                   "#3ac2d4"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,
@@ -72,8 +77,10 @@
     "veridium":               "#5a90bd",
     "refined_sentrite":       "#747477",
     "blightbunny_fang":       "#a1b5be",
+    "mykapod_shell":          "#5e65a5",
 
     "hellbark":               "#382d2d",
+    "wicked_wax":             "#b20e7b",
 
     "pyral":                  "#ffb326",
     "valkyrum":               "#c3d1d1",

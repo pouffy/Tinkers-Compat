@@ -10,6 +10,7 @@ import java.util.List;
 
 public class TCMaterials {
     public static final List<MaterialVariantId> allVariants = new ArrayList<>();
+    public static final List<MaterialVariantId> variantRocks = new ArrayList<>();
     public static final List<MaterialVariantId> aetherVariantWoods = new ArrayList<>();
     public static final List<MaterialVariantId> aetherVariantRocks = new ArrayList<>();
     public static final List<MaterialVariantId> deepAetherVariantWoods = new ArrayList<>();
@@ -19,7 +20,7 @@ public class TCMaterials {
     public static final List<MaterialVariantId> otbwgVariantWoods = new ArrayList<>();
     public static final List<MaterialVariantId> otbwgVariantRocks = new ArrayList<>();
 
-    // Base Materials
+    // Metals & Gems
     public static final MaterialId aetherWood = id("aether_wood");
     public static final MaterialId aetherRock = id("aether_rock");
     public static final MaterialId zanite = id("zanite");
@@ -27,13 +28,19 @@ public class TCMaterials {
     public static final MaterialId gravitite = id("gravitite");
     public static final MaterialId veridium = id("veridium");
     public static final MaterialId refinedSentrite = id("refined_sentrite");
-    public static final MaterialId blightbunnyFang = id("blightbunny_fang");
-    public static final MaterialId hellbark = id("hellbark");
-
     public static final MaterialId pyral = id("pyral");
     public static final MaterialId valkyrum = id("valkyrum");
     public static final MaterialId neptune = id("neptune");
 
+    // Special Craftable Materials
+    public static final MaterialId blightbunnyFang = id("blightbunny_fang");
+    public static final MaterialId mykapodShell = id("mykapod_shell");
+    public static final MaterialId wickedWax = id("wicked_wax");
+
+    // Unique Woods
+    public static final MaterialId hellbark = id("hellbark");
+
+    // Implement Later (Maybe?)
     public static final MaterialId brass = id("brass");
     public static final MaterialId zinc = id("zinc");
 
@@ -86,10 +93,10 @@ public class TCMaterials {
             zelkova = woodVariant("zelkova", otbwgVariantWoods),
             //OTBWG Rock
             redRock = rockVariant("red_rock", otbwgVariantRocks),
-            dacite = rockVariant("dacite", otbwgVariantRocks)
-
-
-                    ;
+            dacite = rockVariant("dacite", otbwgVariantRocks),
+            //Vanilla Materials
+            dripstone = rockVariant("dripstone", variantRocks)
+            ;
 
     private static MaterialVariantId woodVariant(String name, List<MaterialVariantId> list) {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.wood, name);

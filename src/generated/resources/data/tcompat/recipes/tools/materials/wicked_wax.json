@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "species"
+    }
+  ],
+  "ingredient": {
+    "item": "species:wicked_wax"
+  },
+  "material": "tcompat:wicked_wax",
+  "needed": 1,
+  "value": 1
+}

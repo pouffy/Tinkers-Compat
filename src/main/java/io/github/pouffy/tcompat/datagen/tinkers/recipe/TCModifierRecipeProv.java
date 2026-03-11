@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipeBuilder;
+import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -13,6 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -20,6 +22,7 @@ import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipe;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipeBuilder;
+import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.tables.TinkerTables;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 
@@ -50,16 +53,42 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         String abilitySalvage = "tools/modifiers/salvage/ability/";
         String slotlessFolder = "tools/modifiers/slotless/";
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
+        Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
 
-        ModifierRecipeBuilder.modifier(TCModifiers.aetherForged)
-                .setTools(TinkerTags.Items.HARVEST)
-                .addInput(TCTags.Items.ZANITE_BLOCKS)
-                .addInput(itemTag("aether:golden_oak_logs"))
-                .addInput(TCTags.Items.ZANITE_BLOCKS)
-                .addInput(Items.GLOWSTONE)
-                .addInput(Items.GLOWSTONE)
+        Function<String, ResourceLocation> speciesId = name -> getResource("species", name);
+
+        ModifierRecipeBuilder.modifier(SpeciesInit.ricoshield)
+                .setTools(TinkerTags.Items.SHIELDS)
+                .addInput(ItemNameIngredient.from(speciesId.apply("broken_links")))
+                .addInput(ItemNameIngredient.from(speciesId.apply("kinetic_core")))
+                .addInput(ItemNameIngredient.from(speciesId.apply("broken_links")))
+                .addInput(ItemNameIngredient.from(speciesId.apply("broken_links")))
+                .addInput(ItemNameIngredient.from(speciesId.apply("broken_links")))
                 .setMaxLevel(1).checkTraitLevel()
-                .save(aetherConsumer, prefix(TCModifiers.aetherForged, abilityFolder));
+                .setSlots(SlotType.DEFENSE, 1)
+                .save(speciesConsumer, prefix(SpeciesInit.ricoshield, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(SpeciesInit.swapping)
+                .setTools(TinkerTags.Items.RANGED)
+                .addInput(ItemNameIngredient.from(speciesId.apply("wicked_swapper")))
+                .addInput(Items.ENDER_PEARL)
+                .addInput(ItemNameIngredient.from(speciesId.apply("wicked_swapper")))
+                .addInput(ItemNameIngredient.from(speciesId.apply("wicked_wax")))
+                .addInput(ItemNameIngredient.from(speciesId.apply("wicked_wax")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .save(speciesConsumer, prefix(SpeciesInit.swapping, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(SpeciesInit.birt)
+                .setTools(TinkerTags.Items.MELEE_WEAPON)
+                .addInput(ItemNameIngredient.from(speciesId.apply("birt_egg")))
+                .addInput(Items.REDSTONE)
+                .addInput(ItemNameIngredient.from(speciesId.apply("birt_egg")))
+                .addInput(Tags.Items.INGOTS_IRON)
+                .addInput(Tags.Items.INGOTS_IRON)
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .save(speciesConsumer, prefix(SpeciesInit.birt, abilityFolder));
 
         Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
@@ -73,6 +102,16 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Consumer<FinishedRecipe> otbwgConsumer = withCondition(consumer, modLoaded("biomeswevegone"));
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
+
+        ModifierRecipeBuilder.modifier(TCModifiers.aetherForged)
+                .setTools(TinkerTags.Items.HARVEST)
+                .addInput(TCTags.Items.ZANITE_BLOCKS)
+                .addInput(itemTag("aether:golden_oak_logs"))
+                .addInput(TCTags.Items.ZANITE_BLOCKS)
+                .addInput(Items.GLOWSTONE)
+                .addInput(Items.GLOWSTONE)
+                .setMaxLevel(1).checkTraitLevel()
+                .save(aetherConsumer, prefix(TCModifiers.aetherForged, folder));
 
         for (MaterialVariantId materialVariantId : TCMaterials.otbwgVariantWoods) {
             woodTexture(otbwgConsumer, materialVariantId);

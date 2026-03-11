@@ -79,6 +79,7 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
     private void addArmor() {
         addMaterialStats(TCMaterials.aetherWood, StatlessMaterialStats.SHIELD_CORE);
         addMaterialStats(TCMaterials.hellbark, StatlessMaterialStats.SHIELD_CORE);
+        addMaterialStats(TCMaterials.mykapodShell, StatlessMaterialStats.SHIELD_CORE);
         addArmorShieldStats(TCMaterials.zanite, PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2));
         addArmorShieldStats(TCMaterials.skyjade, PlatingMaterialStats.builder().durabilityFactor(3).armor(3, 6, 8, 3));
         addArmorShieldStats(TCMaterials.gravitite, PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE);
@@ -90,7 +91,7 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
     }
 
     private void addMisc() {
-
+        addMaterialStats(TCMaterials.wickedWax, StatlessMaterialStats.BINDING);
     }
 
     @Override

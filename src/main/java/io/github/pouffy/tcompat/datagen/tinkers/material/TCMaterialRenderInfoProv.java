@@ -27,9 +27,11 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
         buildRenderInfo(TCMaterials.refinedSentrite).fallbacks("metal");
         buildRenderInfo(TCMaterials.hellbark).color(0x332929).fallbacks("wood", "stick", "primitive");
         buildRenderInfo(TCMaterials.blightbunnyFang).color(0xc1d3d8).fallbacks("bone", "metal");
+        buildRenderInfo(TCMaterials.mykapodShell).color(0x5e65a5).fallbacks("bone", "metal");
         buildRenderInfo(TCMaterials.pyral).fallbacks("metal");
         buildRenderInfo(TCMaterials.valkyrum).fallbacks("metal");
         buildRenderInfo(TCMaterials.neptune).fallbacks("metal");
+        buildRenderInfo(TCMaterials.wickedWax).color(0xf93985).fallbacks("bone", "metal");
     }
 
     @Override

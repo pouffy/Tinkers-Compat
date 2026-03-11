@@ -1,15 +1,15 @@
 {
   "stats": {
     "tconstruct:grip": {
-      "accuracy": 0.35,
-      "durability": 1.2,
+      "accuracy": -0.35,
+      "durability": -0.2,
       "melee_damage": 0.0
     },
     "tconstruct:limb": {
-      "accuracy": 0.85,
-      "draw_speed": 1.1,
+      "accuracy": -0.15,
+      "draw_speed": -0.1,
       "durability": 80,
-      "velocity": 0.9
+      "velocity": 0.3
     },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {

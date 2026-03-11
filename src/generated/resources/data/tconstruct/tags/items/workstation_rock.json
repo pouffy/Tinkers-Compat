@@ -27,6 +27,10 @@
     {
       "id": "aether_redux:driftshale",
       "required": false
+    },
+    {
+      "id": "dripstone_block:minecraft",
+      "required": false
     }
   ]
 }

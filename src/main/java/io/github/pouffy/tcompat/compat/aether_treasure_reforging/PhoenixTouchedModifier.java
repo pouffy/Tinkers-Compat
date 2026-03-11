@@ -12,9 +12,7 @@ import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileLaunchMod
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
-import slimeknights.tconstruct.tools.data.ModifierIds;
 
-//TODO: Test & Fix this with bows
 public class PhoenixTouchedModifier extends Modifier implements ProjectileLaunchModifierHook {
 
     @Override
@@ -25,16 +23,13 @@ public class PhoenixTouchedModifier extends Modifier implements ProjectileLaunch
 
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        touch(tool, projectile);
+        touch(modifier, projectile);
     }
 
-    private void touch(IToolStackView tool, Projectile projectile) {
+    private void touch(ModifierEntry modifier, Projectile projectile) {
         PhoenixTouched.get(projectile).ifPresent(phoenixProjectile -> {
             phoenixProjectile.setPhoenixProjectile(true);
-            int defaultTime = 20;
-            if (tool.getModifierLevel(ModifierIds.fiery) > 0) {
-                defaultTime = 40;
-            }
+            int defaultTime = 20 * modifier.getLevel();
             phoenixProjectile.setFireTime(defaultTime);
         });
     }

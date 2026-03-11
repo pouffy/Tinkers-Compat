@@ -102,6 +102,7 @@ public class TCItemTagProv extends ItemTagsProvider {
             }
         }
         this.tag(TinkerTags.Items.PLANKLIKE).addOptionalTag(itemTag("aether:planks_crafting"));
+        this.tag(TinkerTags.Items.WORKSTATION_ROCK).addOptional(getResource("dripstone_block", "minecraft"));
     }
 
     private void rockTagging(String rockName, String namespace) {
