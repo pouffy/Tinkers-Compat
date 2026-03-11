@@ -1,0 +1,36 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "species"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "species:wicked_swapper"
+    },
+    {
+      "item": "minecraft:ender_pearl"
+    },
+    {
+      "item": "species:wicked_swapper"
+    },
+    {
+      "item": "species:wicked_wax"
+    },
+    {
+      "item": "species:wicked_wax"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:swapping",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/ranged"
+  }
+}

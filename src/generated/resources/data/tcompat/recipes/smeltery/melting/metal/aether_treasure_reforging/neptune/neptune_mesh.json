@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "item": "aether_treasure_reforging:neptune_mesh"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_neptune"
+  },
+  "temperature": 1275,
+  "time": 74
+}

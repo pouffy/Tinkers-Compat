@@ -6,6 +6,9 @@
     "tcompat:gravitite",
     "tcompat:skyjade",
     "tcompat:veridium",
-    "tcompat:refined_sentrite"
+    "tcompat:refined_sentrite",
+    "tcompat:pyral",
+    "tcompat:valkyrum",
+    "tcompat:neptune"
   ]
 }

@@ -62,6 +62,10 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.REFINED_SENTRITE_ORES).addOptional(getResource("aether_redux", "sentrite"));
         this.tag(TCTags.Items.STRATUS_BLOCKS).addOptional(getResource("deep_aether", "stratus_block"));
         this.tag(TCTags.Items.STRATUS_INGOTS).addOptional(getResource("deep_aether", "stratus_ingot"));
+        this.tag(TCTags.Items.PYRAL_INGOTS).addOptional(getResource("aether_treasure_reforging", "pyral_ingot"));
+        this.tag(TCTags.Items.PYRAL_BLOCKS).addOptional(getResource("aether_treasure_reforging", "pyral_block"));
+        this.tag(TCTags.Items.VALKYRUM_INGOTS).addOptional(getResource("aether_treasure_reforging", "valkyrum_ingot"));
+        this.tag(TCTags.Items.VALKYRUM_BLOCKS).addOptional(getResource("aether_treasure_reforging", "valkyrum_block"));
     }
 
     private void addMetals() {
@@ -98,6 +102,7 @@ public class TCItemTagProv extends ItemTagsProvider {
             }
         }
         this.tag(TinkerTags.Items.PLANKLIKE).addOptionalTag(itemTag("aether:planks_crafting"));
+        this.tag(TinkerTags.Items.WORKSTATION_ROCK).addOptional(getResource("dripstone_block", "minecraft"));
     }
 
     private void rockTagging(String rockName, String namespace) {

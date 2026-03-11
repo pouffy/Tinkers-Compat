@@ -2,18 +2,22 @@ package io.github.pouffy.tcompat.datagen.tinkers.material;
 
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
-import static slimeknights.tconstruct.library.materials.MaterialRegistry.AMMO;
+import static slimeknights.tconstruct.library.materials.MaterialRegistry.*;
 
 public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
     public TCMaterialTraitsProv(PackOutput packOutput, AbstractMaterialDataProvider materials) {
@@ -41,5 +45,14 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TCMaterials.hellbark, ModifierIds.fiery);
         addTraits(TCMaterials.hellbark, AMMO, ModifierIds.spectral);
         addDefaultTraits(TCMaterials.blightbunnyFang, AetherReduxInit.blighted);
+        addDefaultTraits(TCMaterials.pyral, TCModifiers.aetherForged);
+        addTraits(TCMaterials.pyral, ARMOR, ModifierIds.fireProtection);
+        addTraits(TCMaterials.pyral, RANGED, AetherTRInit.phoenixTouched);
+        addDefaultTraits(TCMaterials.valkyrum, TCModifiers.aetherForged);
+        addTraits(TCMaterials.valkyrum, MELEE_HARVEST, ModifierIds.reach);
+        addTraits(TCMaterials.valkyrum, ARMOR, ModifierIds.doubleJump);
+        addTraits(TCMaterials.neptune, ARMOR, ModifierIds.depthStrider);
+        addTraits(TCMaterials.mykapodShell, StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay);
+        addDefaultTraits(TCMaterials.wickedWax, SpeciesInit.wicked);
     }
 }

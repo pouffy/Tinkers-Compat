@@ -1,0 +1,10 @@
+{
+  "perStat": {
+    "tconstruct:shield_core": [
+      {
+        "level": 1,
+        "name": "tcompat:escarstay"
+      }
+    ]
+  }
+}

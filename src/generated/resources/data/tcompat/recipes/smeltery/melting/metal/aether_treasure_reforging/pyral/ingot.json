@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/pyral"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/pyral"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_pyral"
+  },
+  "temperature": 1550,
+  "time": 82
+}

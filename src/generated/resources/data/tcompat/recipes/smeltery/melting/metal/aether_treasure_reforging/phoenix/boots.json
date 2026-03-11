@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "byproducts": [
+    {
+      "amount": 360,
+      "tag": "forge:molten_gravitite",
+      "unit_size": 10
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "item": "aether:phoenix_boots"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_pyral",
+    "unit_size": 10
+  },
+  "temperature": 1550,
+  "time": 163
+}

@@ -27,6 +27,9 @@
   "material.tconstruct.wood.zelkova": "Zelkova Wood",
 
   "material.tcompat.hellbark": "Hellbark",
+  "material.tcompat.valkyrum": "Valkyrum",
+  "material.tcompat.neptune": "Neptune",
+  "material.tcompat.pyral": "Phoenix",
 
   "material.tcompat.aether_wood": "Skyroot",
   "material.tcompat.aether_wood.skyroot": "Skyroot",
@@ -44,6 +47,7 @@
 
   "material.tconstruct.rock.red_rock": "Red Rock",
   "material.tconstruct.rock.dacite": "Dacite",
+  "material.tconstruct.rock.dripstone": "Dripstone",
 
   "material.tcompat.aether_rock": "Holystone",
   "material.tcompat.aether_rock.holystone": "Holystone",
@@ -57,7 +61,11 @@
   "material.tcompat.skyjade": "Skyjade",
   "material.tcompat.veridium": "Veridium",
   "material.tcompat.refined_sentrite": "Refined Sentrite",
+
   "material.tcompat.blightbunny_fang": "Blightbunny Fang",
+  "material.tcompat.mykapod_shell": "Mykapod Shell",
+
+  "material.tcompat.wicked_wax": "Wicked Wax",
 
   "material.tcompat.alchemical_calx": "Alchemical Calx",
   "material.tcompat.spirit_fabric": "Spirit Fabric",
@@ -70,12 +78,19 @@
   "block.tcompat.molten_veridium_fluid": "Molten Veridium",
   "block.tcompat.molten_refined_sentrite_fluid": "Molten Refined Sentrite",
   "block.tcompat.molten_stratus_fluid": "Molten Stratus",
+  "block.tcompat.molten_valkyrum_fluid": "Molten Valkyrum",
+  "block.tcompat.molten_neptune_fluid": "Molten Neptune",
+  "block.tcompat.molten_pyral_fluid": "Molten Pyral",
   "fluid.tcompat.molten_zanite": "Molten Zanite",
   "fluid.tcompat.molten_skyjade": "Molten Skyjade",
   "fluid.tcompat.molten_gravitite": "Molten Gravitite",
   "fluid.tcompat.molten_veridium": "Molten Veridium",
   "fluid.tcompat.molten_refined_sentrite": "Molten Refined Sentrite",
   "fluid.tcompat.molten_stratus": "Molten Stratus",
+  "fluid.tcompat.molten_valkyrum": "Molten Valkyrum",
+  "fluid.tcompat.molten_neptune": "Molten Neptune",
+  "fluid.tcompat.molten_pyral": "Molten Pyral",
+
 
   "item.tcompat.molten_zanite_bucket": "Molten Zanite Bucket",
   "item.tcompat.molten_skyjade_bucket": "Molten Skyjade Bucket",
@@ -83,14 +98,23 @@
   "item.tcompat.molten_veridium_bucket": "Molten Veridium Bucket",
   "item.tcompat.molten_refined_sentrite_bucket": "Molten Refined Sentrite Bucket",
   "item.tcompat.molten_stratus_bucket": "Molten Stratus Bucket",
+  "item.tcompat.molten_valkyrum_bucket": "Molten Valkyrum Bucket",
+  "item.tcompat.molten_neptune_bucket": "Molten Neptune Bucket",
+  "item.tcompat.molten_pyral_bucket": "Molten Pyral Bucket",
+
 
   "_comment": "Tooltips",
+  "modifier.tcompat.kinetic.tooltip.damage": "Stored Damage: %s / 40",
 
   "_comment": "Modifiers",
+  "modifier.tcompat.escarstay": "Escarstay",
+  "modifier.tcompat.escarstay.flavor": "Tough as Snails",
+  "modifier.tcompat.escarstay.description": "Large flat increase in knockback resistance.",
   "modifier.tcompat.aether_forged": "Aether Forged",
   "modifier.tcompat.aether_forged.flavor": "Heavenly!",
-  "modifier.tcompat.aether_forged.description": "Allows your tool to use it's full mining speed in The Aether",
-
+  "modifier.tcompat.aether_forged.description": "Allows your tool to use it's full mining speed in The Aether.",
+  "modifier.tcompat.phoenix_touched": "Phoenix Touched",
+  "modifier.tcompat.phoenix_touched.description": "Your bow will fire Phoenix arrows.",
   "modifier.tcompat.ambrogen": "Ambrogen",
   "modifier.tcompat.ambrogen.flavor": "Snack Generator",
   "modifier.tcompat.ambrogen.description": "Small chance to dislodge Ambrosium from broken blocks.",
@@ -109,6 +133,19 @@
   "modifier.tcompat.acclimatization": "Acclimatization",
   "modifier.tcompat.acclimatization.flavor": "In For a Promotion",
   "modifier.tcompat.acclimatization.description": "Gradually becomes more effective.",
+
+  "modifier.tcompat.ricoshield": "Ricoshield",
+  "modifier.tcompat.ricoshield.flavor": "It's gonna blow!",
+  "modifier.tcompat.ricoshield.description": "Lower your shield to release a burst of absorbed damage.",
+  "modifier.tcompat.wicked": "Wicked",
+  "modifier.tcompat.wicked.flavor": "Look to the western sky",
+  "modifier.tcompat.wicked.description": "Inflict targets with a stacking Combustion effect.",
+  "modifier.tcompat.swapping": "Swapping",
+  "modifier.tcompat.swapping.flavor": "Take their place",
+  "modifier.tcompat.swapping.description": "Struck targets will switch places with the shooter.",
+  "modifier.tcompat.birt": "Birt",
+  "modifier.tcompat.birt.flavor": "Birt",
+  "modifier.tcompat.birt.description": "Birt",
 
   "modifier.tcompat.magic_proficiency": "Magic Proficiency",
   "modifier.tcompat.magic_proficiency.flavor": "Alakazowch",

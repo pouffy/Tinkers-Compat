@@ -22,7 +22,7 @@ import java.util.Collection;
 import java.util.List;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
-import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.WOOD;
+import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.*;
 
 public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
     @Override
@@ -62,10 +62,17 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildPlanks(TCMaterials.witchHazel, 0xFF183A26, 0xFF1D442D, 0xFF214F34, 0xFF225337, 0xFF286240, 0xFF31774D, 0xFF3B8C5B);
         buildPlanks(TCMaterials.zelkova, 0xFF4F2713, 0xFF592F17, 0xFF66351A, 0xFF824A23, 0xFF96582F, 0xFFAB6336, 0xFFBF6D36);
         buildPlanks(TCMaterials.hellbark, 0xFF20191a, 0xFF281e1f, 0xFF2f2425, 0xFF332929, 0xFF382d2d, 0xFF3b3031, 0xFF3e3233).arrowShaft();
+        buildMaterial(TCMaterials.wickedWax)
+                .statType(StatlessMaterialStats.BINDING.getIdentifier()).fallbacks("bone", "metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF750d83).addARGB(102, 0xFFb20e7b).addARGB(140, 0xFFf93985).addARGB(178, 0xFFff5e3e).addARGB(216, 0xFFffa342).addARGB(255, 0xFFfde46d).build());
         buildMaterial(TCMaterials.blightbunnyFang)
                 .arrowHead()
                 .fallbacks("bone", "metal")
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF5a6972).addARGB(102, 0xFF6e7e88).addARGB(140, 0xFF7f919b).addARGB(178, 0xFFa1b5be).addARGB(216, 0xFFc1d3d8).addARGB(255, 0xFFdeeef2).build());
+        buildMaterial(TCMaterials.mykapodShell)
+                .shieldCore()
+                .fallbacks("bone", "metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF2c2e5b).addARGB(102, 0xFF3a3d6f).addARGB(140, 0xFF4b5187).addARGB(178, 0xFF5e65a5).addARGB(216, 0xFF7178c2).addARGB(255, 0xFF8f92d8).build());
         buildMaterial(TCMaterials.aetherWood)
                 .meleeHarvest().ranged().shieldCore().arrowShaft()
                 .fallbacks("wood", "stick", "primitive")
@@ -87,6 +94,8 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildRock(TCMaterials.redRock, 0xFF7F4026, 0xFF904727, 0xFF95522F, 0xFFA95936, 0xFFAD633E, 0xFFB36D44);
         buildRock(TCMaterials.dacite, 0xFF663E2F, 0xFF6D4536, 0xFF7F5646, 0xFF926251, 0xFF9F6B58, 0xFFA97764);
 
+        buildRock(TCMaterials.dripstone, 0xFF543d3a, 0xFF634a47, 0xFF735450, 0xFF836356, 0xFF927965, 0xFFa08d71);
+
         buildRock(TCMaterials.holystone, 0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2);
         buildRock(TCMaterials.aseterite, 0xFF746772, 0xFF7F717D, 0xFF897A87, 0xFF938595, 0xFFA296A1, 0xFFB9ADB8);
         buildRock(TCMaterials.clorite, 0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
@@ -98,6 +107,12 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildGeneric(TCMaterials.gravitite, 0xFF390c35, 0xFF5c1256, 0xFFb643a0, 0xFFda67d0, 0xFFf195ef, 0xFFffcbfd, addStats(), "metal").armor().ranged().meleeHarvest();
         buildGeneric(TCMaterials.veridium, 0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb, addStats(), "metal").armor().meleeHarvest();
         buildGeneric(TCMaterials.refinedSentrite, 0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1, addStats(GripMaterialStats.ID, HeadMaterialStats.ID), "metal");
+
+        buildGeneric(TCMaterials.pyral, 0xFF6b130b, 0xFFb7420c, 0xFFd86a0b, 0xFFffb326, 0xFFfeda87, 0xFFffeec5, addStats(), "metal").armor().ranged();
+        buildMaterial(TCMaterials.valkyrum)
+                .armor().meleeHarvest()
+                .transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0));
+        buildGeneric(TCMaterials.neptune, 0xFF111b42, 0xFF1a2a66, 0xFF29439c, 0xFF3559c6, 0xFF3e6fd8, 0xFF7cbbff, addStats(), "metal").maille();
     }
 
     public static ISpriteTransformer transformerFromSprite(ResourceLocation texture, int frames, int highlightColor) {

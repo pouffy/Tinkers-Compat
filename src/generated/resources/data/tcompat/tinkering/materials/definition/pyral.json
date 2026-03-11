@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "aether_treasure_reforging"
+  },
+  "craftable": false,
+  "hidden": false,
+  "sortOrder": 3,
+  "tier": 1
+}

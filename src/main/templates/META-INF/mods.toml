@@ -1,6 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[${forge_version},)"
 issueTrackerURL = "${mod_issue_tracker}"
+updateJSONURL = "https://api.modrinth.com/updates/tinkers-compatibility/forge_updates.json"
 license = "${mod_license}"
 
 [[mods]]

@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "byproducts": [
+    {
+      "amount": 720,
+      "tag": "forge:molten_gravitite",
+      "unit_size": 10
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "item": "aether:valkyrie_chestplate"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_valkyrum",
+    "unit_size": 10
+  },
+  "temperature": 1275,
+  "time": 210
+}

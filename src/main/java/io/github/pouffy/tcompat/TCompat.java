@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat;
 
 import com.mojang.logging.LogUtils;
+import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.datagen.TCDataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -23,12 +24,14 @@ public class TCompat {
     public TCompat() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        modEventBus.addListener(this::commonSetup);
         CompatHelper.init(modEventBus);
 
         modEventBus.addListener(EventPriority.LOWEST, TCDataGenerator::gatherData);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        TCompatNetworking.register();
         LOGGER.info("HELLO FROM COMMON SETUP");
     }
 

@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCWoods;
@@ -53,6 +54,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements IMater
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
         Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
+        Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
+        Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
         List<MaterialVariantId> noPlanks = List.of(TCMaterials.paloVerde);
         List<MaterialVariantId> stems = List.of(TCMaterials.cloudcap, TCMaterials.jellyshroom);
 
@@ -93,10 +96,17 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements IMater
         }
         planksRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
         logRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
+        materialRecipe(consumer, TCMaterials.dripstone, ItemNameIngredient.from(getResource("minecraft:dripstone_block")), 4, 1, folder + "rock/%s".formatted("dripstone"));
+        materialRecipe(consumer, TCMaterials.dripstone, ItemNameIngredient.from(getResource("minecraft:pointed_dripstone")), 1, 1, folder + "rock/%s".formatted("pointed_dripstone"));
 
         materialRecipe(aetherReduxConsumer, TCMaterials.blightbunnyFang, ItemNameIngredient.from(TCompat.getResource("aether_redux:blightbunny_fang")), 1, 1, folder + "blightbunny_fang");
+        materialRecipe(aetherReduxConsumer, TCMaterials.mykapodShell, ItemNameIngredient.from(TCompat.getResource("aether_redux:mykapod_shell_chunk")), 1, 1, folder + "mykapod_shell_chunk");
+
         materialRecipe(aetherConsumer, TCMaterials.zanite, Ingredient.of(TCTags.Items.ZANITE_GEMS), 1, 1, folder + "zanite");
         materialRecipe(deepAetherConsumer, TCMaterials.skyjade, Ingredient.of(TCTags.Items.SKYJADE_GEMS), 1, 1, folder + "skyjade");
+
+        materialRecipe(speciesConsumer, TCMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
+
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
@@ -104,12 +114,16 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements IMater
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
+        Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
 
         materialMeltingCasting(aetherConsumer, TCMaterials.zanite, AetherInit.moltenZanite, FluidValues.GEM, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, AetherInit.moltenGravitite, folder);
-        materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, DeepAetherInit.moltenSkyjade, FluidValues.GEM, folder);
+        materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, DeepAetherInit.moltenSkyjade, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, AetherReduxInit.moltenVeridium, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, AetherReduxInit.moltenRefinedSentrite, folder);
+
+        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, AetherTRInit.moltenValkyrum, FluidValues.INGOT, folder + "valkyrum");
+        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, AetherTRInit.moltenPyral, FluidValues.INGOT, folder + "pyral");
     }
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {

@@ -8,8 +8,11 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
+import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import slimeknights.tconstruct.tools.modules.armor.KnockbackCounterModule;
 
 import static slimeknights.tconstruct.library.tools.definition.ModifiableArmorMaterial.ARMOR_SLOTS;
 
@@ -35,6 +38,9 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(DeepAetherInit.dulling.getId(), modLoaded("deep_aether"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TCModifiers.blighted, modLoaded("aether_redux"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.escarstay, modLoaded("aether_redux"))
+                .addModule(StatBoostModule.add(ToolStats.KNOCKBACK_RESISTANCE).flat(2))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 

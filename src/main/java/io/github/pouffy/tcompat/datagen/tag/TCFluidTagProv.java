@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.datagen.tag;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -31,11 +32,17 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(DeepAetherInit.moltenStratus);
         fluidTag(AetherReduxInit.moltenRefinedSentrite);
         fluidTag(AetherReduxInit.moltenVeridium);
+        fluidTag(AetherTRInit.moltenValkyrum);
+        fluidTag(AetherTRInit.moltenPyral);
+        fluidTag(AetherTRInit.moltenNeptune);
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(
                 AetherInit.moltenGravitite.getTag(),
                 DeepAetherInit.moltenStratus.getTag(),
                 AetherReduxInit.moltenVeridium.getTag(),
-                AetherReduxInit.moltenRefinedSentrite.getTag()
+                AetherReduxInit.moltenRefinedSentrite.getTag(),
+                AetherTRInit.moltenValkyrum.getTag(),
+                AetherTRInit.moltenPyral.getTag(),
+                AetherTRInit.moltenNeptune.getTag()
         );
         this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
                 AetherInit.moltenZanite.getTag(),

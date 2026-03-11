@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/ingot"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/pyral"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "cooling_time": 82,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_pyral"
+  },
+  "result": {
+    "tag": "forge:ingots/pyral"
+  }
+}

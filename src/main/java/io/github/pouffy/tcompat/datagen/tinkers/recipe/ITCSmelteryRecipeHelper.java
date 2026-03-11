@@ -378,6 +378,13 @@ public interface ITCSmelteryRecipeHelper extends ICastCreationHelper {
         simpleSalvaging(consumer, idFunc, fluid, singularUnit, name, SalvageType.BOOTS, damageSizes, folder);
     }
 
+    default void salvageArmor(Consumer<FinishedRecipe> consumer, Function<String, ResourceLocation> idFunc, FluidObject<?> fluid, FluidObject<?> byproductFluid, int singularUnit, String name, int[] damageSizes, String folder) {
+        simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, SalvageType.HELMET, damageSizes, folder);
+        simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, SalvageType.CHESTPLATE, damageSizes, folder);
+        simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, SalvageType.LEGGINGS, damageSizes, folder);
+        simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, SalvageType.BOOTS, damageSizes, folder);
+    }
+
     enum SalvageType {
         HELMET(5),
         CHESTPLATE(8),
