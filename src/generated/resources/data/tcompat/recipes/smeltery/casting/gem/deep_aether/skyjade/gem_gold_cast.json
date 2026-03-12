@@ -13,9 +13,9 @@
       "modid": "deep_aether"
     }
   ],
-  "cooling_time": 80,
+  "cooling_time": 76,
   "fluid": {
-    "amount": 100,
+    "amount": 90,
     "tag": "forge:molten_skyjade"
   },
   "result": {

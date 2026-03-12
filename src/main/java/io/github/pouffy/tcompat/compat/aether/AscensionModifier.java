@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.aether;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -61,9 +62,11 @@ public class AscensionModifier extends NoLevelsModifier implements BlockInteract
                 if (level.getBlockEntity(blockPos) == null && blockState.getDestroySpeed(level, blockPos) >= 0.0F && !blockState.hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF) && !blockState.is(BlockTags.create(TCompat.getResource("aether:gravitite_ability_blacklist")))) {
                     if (!level.isClientSide()) {
                         Entity entity = createEntity(level, blockPos, blockState);
-                        level.addFreshEntity(entity);
-                        level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
-                        itemStack.hurtAndBreak(4, player, (p) -> p.broadcastBreakEvent(hand));
+                        if (entity != null) {
+                            level.addFreshEntity(entity);
+                            level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
+                            itemStack.hurtAndBreak(4, player, (p) -> p.broadcastBreakEvent(hand));
+                        }
                     } else {
                         player.swing(hand);
                     }
@@ -92,23 +95,27 @@ public class AscensionModifier extends NoLevelsModifier implements BlockInteract
     }
 
     public static Entity createEntity(Level level, BlockPos pos, BlockState blockState) {
-        var type = BuiltInRegistries.ENTITY_TYPE.get(TCompat.getResource("aether:floating_block")).builtInRegistryHolder();
-        CompoundTag compoundtag = new CompoundTag();
-        compoundtag.putString("id", type.key().location().toString());
-        compoundtag.put("BlockState", NbtUtils.writeBlockState(blockState));
-        compoundtag.putBoolean("Natural", false);
-        if (blockState.is(BlockTags.ANVIL)) {
-            compoundtag.putBoolean("HurtEntities", true);
-            compoundtag.putFloat("FallHurtAmount", 2.0F);
-            compoundtag.putInt("FallHurtMax", 40);
+        var floatingBlock = ObjectRetriever.getEntity("aether:floating_block");
+        if (floatingBlock.isPresent()) {
+            var type = floatingBlock.get().builtInRegistryHolder();
+            CompoundTag compoundtag = new CompoundTag();
+            compoundtag.putString("id", type.key().location().toString());
+            compoundtag.put("BlockState", NbtUtils.writeBlockState(blockState));
+            compoundtag.putBoolean("Natural", false);
+            if (blockState.is(BlockTags.ANVIL)) {
+                compoundtag.putBoolean("HurtEntities", true);
+                compoundtag.putFloat("FallHurtAmount", 2.0F);
+                compoundtag.putInt("FallHurtMax", 40);
+            }
+            Entity entity = EntityType.loadEntityRecursive(compoundtag, level, (e) -> {
+                e.moveTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, e.getYRot(), e.getXRot());
+                return e;
+            });
+            entity.blocksBuilding = true;
+            entity.setPos(entity.getX(), entity.getY() + (double) ((1.0F - entity.getBbHeight()) / 2.0F), entity.getZ());
+            entity.setDeltaMovement(Vec3.ZERO);
+            return entity;
         }
-        Entity entity = EntityType.loadEntityRecursive(compoundtag, level, (e) -> {
-            e.moveTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, e.getYRot(), e.getXRot());
-            return e;
-        });
-        entity.blocksBuilding = true;
-        entity.setPos(entity.getX(), entity.getY() + (double) ((1.0F - entity.getBbHeight()) / 2.0F), entity.getZ());
-        entity.setDeltaMovement(Vec3.ZERO);
-        return entity;
+        return null;
     }
 }

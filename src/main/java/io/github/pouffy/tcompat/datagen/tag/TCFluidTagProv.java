@@ -42,12 +42,14 @@ public class TCFluidTagProv extends FluidTagsProvider {
                 AetherReduxInit.moltenRefinedSentrite.getTag(),
                 AetherTRInit.moltenValkyrum.getTag(),
                 AetherTRInit.moltenPyral.getTag(),
-                AetherTRInit.moltenNeptune.getTag()
+                AetherTRInit.moltenNeptune.getTag(),
+                // Yes, these *are* gems... But they behave like ingots so they will have to have the values of ingots
+                DeepAetherInit.moltenSkyjade.getTag(),
+                AetherInit.moltenZanite.getTag()
         );
-        this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
-                AetherInit.moltenZanite.getTag(),
-                DeepAetherInit.moltenSkyjade.getTag()
-        );
+        //this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
+        //        AetherInit.moltenZanite.getTag()
+        //);
     }
 
     @Override

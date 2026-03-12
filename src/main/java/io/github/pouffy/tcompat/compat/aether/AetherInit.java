@@ -24,7 +24,7 @@ public class AetherInit extends CompatInitializer {
     public static final StaticModifier<AmbrogenModifier> ambrogen = AETHER_M.register("ambrogen", AmbrogenModifier::new);
     public static final StaticModifier<AscensionModifier> ascension = AETHER_M.register("ascension", AscensionModifier::new);
 
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenZanite = AETHER_F.register("molten_zanite").type(hot("molten_zanite").temperature(1750).lightLevel(13)).block(createBurning(MapColor.COLOR_PURPLE, 13, 10, 6.5f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenZanite = AETHER_F.register("molten_zanite").type(hot("molten_zanite").temperature(1250).lightLevel(13)).block(createBurning(MapColor.COLOR_PURPLE, 13, 10, 6.5f)).bucket().commonTag().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenGravitite = AETHER_F.register("molten_gravitite").type(hot("molten_gravitite").density(-2000).temperature(1575).lightLevel(7)).block(createBurning(MapColor.COLOR_MAGENTA, 7, 8, 6f)).bucket().commonTag().flowing();
 
     @SubscribeEvent

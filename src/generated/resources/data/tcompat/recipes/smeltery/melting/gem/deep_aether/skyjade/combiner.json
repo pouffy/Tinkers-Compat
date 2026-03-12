@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "item": "deep_aether:combiner"
+  },
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_skyjade"
+  },
+  "temperature": 1325,
+  "time": 131
+}

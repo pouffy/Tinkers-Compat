@@ -10,9 +10,9 @@
     "item": "aether:zanite_pendant"
   },
   "result": {
-    "amount": 100,
+    "amount": 90,
     "tag": "forge:molten_zanite"
   },
-  "temperature": 1450,
-  "time": 83
+  "temperature": 950,
+  "time": 65
 }

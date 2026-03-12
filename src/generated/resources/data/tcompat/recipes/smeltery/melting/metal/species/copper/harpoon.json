@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 40,
+      "tag": "forge:molten_iron"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "species"
+    }
+  ],
+  "ingredient": {
+    "item": "species:harpoon"
+  },
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_copper"
+  },
+  "temperature": 500,
+  "time": 71
+}

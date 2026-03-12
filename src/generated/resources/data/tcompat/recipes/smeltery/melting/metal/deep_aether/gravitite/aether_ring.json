@@ -3,11 +3,11 @@
   "conditions": [
     {
       "type": "forge:mod_loaded",
-      "modid": "aether"
+      "modid": "deep_aether"
     }
   ],
   "ingredient": {
-    "item": "aether:gravitite_ring"
+    "item": "deep_aether:gravitite_ring"
   },
   "result": {
     "amount": 360,

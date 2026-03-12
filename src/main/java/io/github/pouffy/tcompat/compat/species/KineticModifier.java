@@ -1,10 +1,9 @@
 package io.github.pouffy.tcompat.compat.species;
 
 import io.github.pouffy.tcompat.TCompat;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -66,10 +65,9 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
                 player.disableShield(true);
             }
             data.putFloat(STORED_DAMAGE, Math.min(data.getFloat(STORED_DAMAGE) + amount, 40));
-            SoundEvent absorb = BuiltInRegistries.SOUND_EVENT.get(TCompat.getResource("species:item.ricoshield.absorb"));
-            if (absorb != null) {
-                self.level().playSound(null, self.blockPosition(), absorb, SoundSource.PLAYERS, 1F, data.getFloat(STORED_DAMAGE) * 0.05F);
-            }
+            ObjectRetriever.getSound("species:item.ricoshield.absorb").ifPresent(sound -> {
+                self.level().playSound(null, self.blockPosition(), sound, SoundSource.PLAYERS, 1F, data.getFloat(STORED_DAMAGE) * 0.05F);
+            });
         }
     }
 
@@ -80,10 +78,9 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
             serverLevel.sendParticles(SpeciesInit.SMALL_KINETIC_ENERGY.get(), player.position().x, player.position().y + 0.01, player.position().z, 1, 0.0F, 0.0F, 0.0F, 0.5F);
         }
 
-        SoundEvent attack = BuiltInRegistries.SOUND_EVENT.get(TCompat.getResource("species:item.ricoshield.attack"));
-        if (attack != null) {
-            level.playSound(player, player.blockPosition(), attack, SoundSource.PLAYERS, 1.0F, 1.0F);
-        }
+        ObjectRetriever.getSound("species:item.ricoshield.attack").ifPresent(sound -> {
+            level.playSound(player, player.blockPosition(), sound, SoundSource.PLAYERS, 1.0F, 1.0F);
+        });
 
         for(LivingEntity target : list) {
             if (target != player) {
@@ -112,7 +109,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
                 }
 
                 amount *= scalingFactor;
-                var damage = player.damageSources().source(ResourceKey.create(Registries.DAMAGE_TYPE, TCompat.getResource("species:kinetic")), target, player);
+                var damage = player.damageSources().source(CompatHelper.damageKey("species:kinetic"), target, player);
                 target.hurt(damage, amount);
                 player.doHurtTarget(target);
             }

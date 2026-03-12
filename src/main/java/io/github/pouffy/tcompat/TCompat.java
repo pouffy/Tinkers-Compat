@@ -41,9 +41,11 @@ public class TCompat {
         }
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
+
     public static ResourceLocation getResource(String namespace, String name) {
         return ResourceLocation.fromNamespaceAndPath(namespace, name);
     }
+
     public static String makeDescriptionId(String type, String name) {
         return type + "." + MOD_ID + "." + name;
     }

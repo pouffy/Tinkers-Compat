@@ -10,10 +10,10 @@
     "item": "deep_aether:skyjade_boots"
   },
   "result": {
-    "amount": 400,
+    "amount": 360,
     "tag": "forge:molten_skyjade",
     "unit_size": 25
   },
   "temperature": 1325,
-  "time": 159
+  "time": 151
 }

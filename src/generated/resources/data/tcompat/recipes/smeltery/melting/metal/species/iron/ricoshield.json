@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "tag": "forge:molten_copper"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "species"
+    }
+  ],
+  "ingredient": {
+    "item": "species:ricoshield"
+  },
+  "result": {
+    "amount": 365,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 121
+}

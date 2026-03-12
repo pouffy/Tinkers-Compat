@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "species"
+    }
+  ],
+  "ingredient": {
+    "item": "species:chaindelier"
+  },
+  "result": {
+    "amount": 275,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 105
+}

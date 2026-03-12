@@ -1,19 +1,15 @@
 package io.github.pouffy.tcompat.compat.species;
 
-import com.ninni.species.registry.SpeciesSoundEvents;
-import com.ninni.species.server.item.WickedSwapperItem;
-import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.Vec3;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -66,11 +62,15 @@ public class SwappingModifier extends Modifier implements ProjectileHitModifierH
             double targetZ = target.getZ();
             target.teleportTo(owner.getX(), owner.getY(), owner.getZ());
             owner.teleportTo(targetX, targetY, targetZ);
-            SoundEvent teleport = BuiltInRegistries.SOUND_EVENT.get(TCompat.getResource("species:item.wicked_swapper.teleport"));
-            if (teleport != null) {
-                level.playSound(null, owner.getX(), owner.getY(), owner.getZ(), teleport, projectile.getSoundSource(), 1.0F, 1.0F);
-                level.playSound(null, targetX, targetY, targetZ, teleport, projectile.getSoundSource(), 1.0F, 1.0F);
+
+            if (level.random.nextInt(10) == 0) {
+                combust(target);
             }
+
+            ObjectRetriever.getSound("species:item.wicked_swapper.teleport").ifPresent(sound -> {
+                level.playSound(null, owner.getX(), owner.getY(), owner.getZ(), sound, projectile.getSoundSource(), 1.0F, 1.0F);
+                level.playSound(null, targetX, targetY, targetZ, sound, projectile.getSoundSource(), 1.0F, 1.0F);
+            });
 
             for(int i = 0; i < 5; ++i) {
                 level.addParticle(ParticleTypes.PORTAL, owner.getX(), owner.getY() + (double)1.0F, owner.getZ(), (double)0.5F - level.random.nextDouble(), (double)0.5F - level.random.nextDouble(), (double)0.5F - level.random.nextDouble());
@@ -79,5 +79,16 @@ public class SwappingModifier extends Modifier implements ProjectileHitModifierH
                 level.addParticle(ParticleTypes.EXPLOSION, targetX, targetY + (double)1.0F, targetZ, (double)0.5F - level.random.nextDouble(), (double)0.5F - level.random.nextDouble(), (double)0.5F - level.random.nextDouble());
             }
         }
+    }
+
+    private void combust(LivingEntity target) {
+        ObjectRetriever.getEffect("species:combustion").ifPresent(effect -> {
+            if (target != null) {
+                int amplifier = 0;
+                if (target.hasEffect(effect)) amplifier = target.getEffect(effect).getAmplifier() + 1;
+                if (target.level().getDifficulty() == Difficulty.HARD) amplifier += 1;
+                target.addEffect(new MobEffectInstance(effect, 600, amplifier));
+            }
+        });
     }
 }

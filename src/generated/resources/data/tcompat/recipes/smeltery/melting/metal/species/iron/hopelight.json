@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 500,
+      "fluid": "tconstruct:molten_glass"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "species"
+    }
+  ],
+  "ingredient": {
+    "item": "species:hopelight"
+  },
+  "result": {
+    "amount": 110,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 66
+}

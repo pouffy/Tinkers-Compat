@@ -35,7 +35,14 @@ public class TCItemTagProv extends ItemTagsProvider {
     }
 
     private void addMisc() {
-
+        this.tag(TCTags.Items.SENTRITE_STONE_BLOCKS)
+                .addOptional(getResource("aether_redux", "sentrite"))
+                .addOptional(getResource("aether_redux", "sentrite_wall"))
+                .addOptional(getResource("aether_redux", "sentrite_bricks"))
+                .addOptional(getResource("aether_redux", "sentrite_brick_wall"));
+        this.tag(TCTags.Items.SENTRITE_STONE_SLABS)
+                .addOptional(getResource("aether_redux", "sentrite_slab"))
+                .addOptional(getResource("aether_redux", "sentrite_brick_slab"));
     }
 
     private void addForge() {
@@ -43,6 +50,7 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.ZANITE_BLOCKS).addOptional(getResource("aether", "zanite_block"));
         this.tag(TCTags.Items.ZANITE_ORES).addOptional(getResource("aether", "zanite_ore"));
         this.tag(TCTags.Items.SKYJADE_GEMS).addOptional(getResource("deep_aether", "skyjade"));
+        this.tag(TCTags.Items.SKYJADE_NUGGETS).addOptional(getResource("deep_aether", "skyjade_nugget"));
         this.tag(TCTags.Items.SKYJADE_BLOCKS).addOptional(getResource("deep_aether", "skyjade_block"));
         this.tag(TCTags.Items.SKYJADE_ORES).addOptional(getResource("deep_aether", "skyjade_ore"));
         this.tag(TCTags.Items.GRAVITITE_INGOTS).addOptional(getResource("aether_redux", "gravitite_ingot"));

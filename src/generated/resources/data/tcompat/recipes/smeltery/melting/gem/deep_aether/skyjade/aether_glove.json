@@ -10,10 +10,10 @@
     "item": "deep_aether:skyjade_gloves"
   },
   "result": {
-    "amount": 200,
+    "amount": 180,
     "tag": "forge:molten_skyjade",
     "unit_size": 25
   },
   "temperature": 1325,
-  "time": 113
+  "time": 107
 }
