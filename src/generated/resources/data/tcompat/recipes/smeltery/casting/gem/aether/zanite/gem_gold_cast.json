@@ -13,9 +13,9 @@
       "modid": "aether"
     }
   ],
-  "cooling_time": 83,
+  "cooling_time": 65,
   "fluid": {
-    "amount": 100,
+    "amount": 90,
     "tag": "forge:molten_zanite"
   },
   "result": {

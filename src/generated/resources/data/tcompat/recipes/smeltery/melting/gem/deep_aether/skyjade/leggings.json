@@ -10,10 +10,10 @@
     "item": "deep_aether:skyjade_leggings"
   },
   "result": {
-    "amount": 700,
+    "amount": 630,
     "tag": "forge:molten_skyjade",
     "unit_size": 25
   },
   "temperature": 1325,
-  "time": 211
+  "time": 200
 }

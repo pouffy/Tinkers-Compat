@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "aether_redux:sentrite_slab",
+      "required": false
+    },
+    {
+      "id": "aether_redux:sentrite_brick_slab",
+      "required": false
+    }
+  ]
+}

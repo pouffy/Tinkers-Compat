@@ -15,10 +15,10 @@
     }
   ],
   "result": {
-    "amount": 300,
+    "amount": 270,
     "tag": "forge:molten_skyjade",
     "unit_size": 25
   },
   "temperature": 1325,
-  "time": 138
+  "time": 131
 }

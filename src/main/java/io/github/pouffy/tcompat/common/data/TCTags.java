@@ -88,6 +88,7 @@ public class TCTags {
         public static TagKey<Item> ZANITE_BLOCKS  = common("storage_blocks/zanite");
         public static TagKey<Item> ZANITE_ORES  = common("ores/zanite");
         public static TagKey<Item> SKYJADE_GEMS  = common("gems/skyjade");
+        public static TagKey<Item> SKYJADE_NUGGETS  = common("nuggets/skyjade");
         public static TagKey<Item> SKYJADE_BLOCKS  = common("storage_blocks/skyjade");
         public static TagKey<Item> SKYJADE_ORES  = common("ores/skyjade");
         public static TagKey<Item> GRAVITITE_INGOTS  = common("ingots/gravitite");
@@ -111,6 +112,8 @@ public class TCTags {
         public static TagKey<Item> PYRAL_BLOCKS  = common("storage_blocks/pyral");
         public static TagKey<Item> VALKYRUM_INGOTS  = common("ingots/valkyrum");
         public static TagKey<Item> VALKYRUM_BLOCKS  = common("storage_blocks/valkyrum");
+        public static TagKey<Item> SENTRITE_STONE_BLOCKS = local("sentrite/stone_blocks");
+        public static TagKey<Item> SENTRITE_STONE_SLABS = local("sentrite/stone_slabs");
 
         public static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));

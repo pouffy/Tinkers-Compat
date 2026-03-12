@@ -1,9 +1,8 @@
 package io.github.pouffy.tcompat.compat.species;
 
-import io.github.pouffy.tcompat.TCompat;
-import net.minecraft.core.registries.BuiltInRegistries;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -32,10 +31,9 @@ public class BirtModifier extends Modifier implements MeleeHitModifierHook {
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
         if (target != null && context.isFullyCharged() && target.isAlive()) {
-            var birt = BuiltInRegistries.MOB_EFFECT.get(TCompat.getResource("species:birtd"));
-            if (birt != null) {
-                target.addEffect(new MobEffectInstance(birt, 300));
-            }
+            ObjectRetriever.getEffect("species:birtd").ifPresent(effect -> {
+                target.addEffect(new MobEffectInstance(effect, 300));
+            });
         }
     }
 }

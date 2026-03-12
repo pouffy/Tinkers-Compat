@@ -10,10 +10,10 @@
     "item": "aether:zanite_gloves"
   },
   "result": {
-    "amount": 200,
+    "amount": 180,
     "tag": "forge:molten_zanite",
     "unit_size": 25
   },
-  "temperature": 1450,
-  "time": 118
+  "temperature": 950,
+  "time": 92
 }

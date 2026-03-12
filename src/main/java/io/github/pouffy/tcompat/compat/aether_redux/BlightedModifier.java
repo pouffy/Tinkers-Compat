@@ -1,6 +1,8 @@
 package io.github.pouffy.tcompat.compat.aether_redux;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -18,7 +20,6 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
 
-@SuppressWarnings("deprecation")
 public class BlightedModifier extends Modifier implements ProjectileHitModifierHook {
 
     @Override
@@ -35,10 +36,11 @@ public class BlightedModifier extends Modifier implements ProjectileHitModifierH
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
         if (notBlocked) {
-            var inebriation = BuiltInRegistries.MOB_EFFECT.get(TCompat.getResource("aether:inebriation"));
-            if (inebriation != null && target != null) {
-                target.addEffect(new MobEffectInstance(inebriation, 300));
-            }
+            ObjectRetriever.getEffect("aether:inebriation").ifPresent(effect -> {
+                if (target != null) {
+                    target.addEffect(new MobEffectInstance(effect, 300));
+                }
+            });
         }
         return false;
     }

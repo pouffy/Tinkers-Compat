@@ -10,10 +10,10 @@
     "item": "deep_aether:skyjade_shovel"
   },
   "result": {
-    "amount": 100,
+    "amount": 90,
     "tag": "forge:molten_skyjade",
     "unit_size": 25
   },
   "temperature": 1325,
-  "time": 80
+  "time": 76
 }

@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.compat.species;
 
-import io.github.pouffy.tcompat.TCompat;
-import net.minecraft.core.registries.BuiltInRegistries;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -38,13 +38,14 @@ public class WickedModifier extends Modifier implements ProjectileHitModifierHoo
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
         if (notBlocked) {
-            var combustion = BuiltInRegistries.MOB_EFFECT.get(TCompat.getResource("species:combustion"));
-            if (combustion != null && target != null) {
-                int amplifier = 0;
-                if (target.hasEffect(combustion)) amplifier = target.getEffect(combustion).getAmplifier() + 1;
-                if (projectile.level().getDifficulty() == Difficulty.HARD) amplifier += 1;
-                target.addEffect(new MobEffectInstance(combustion, 600, amplifier));
-            }
+            ObjectRetriever.getEffect("species:combustion").ifPresent(effect -> {
+                if (target != null) {
+                    int amplifier = 0;
+                    if (target.hasEffect(effect)) amplifier = target.getEffect(effect).getAmplifier() + 1;
+                    if (target.level().getDifficulty() == Difficulty.HARD) amplifier += 1;
+                    target.addEffect(new MobEffectInstance(effect, 600, amplifier));
+                }
+            });
         }
         return false;
     }
@@ -53,13 +54,12 @@ public class WickedModifier extends Modifier implements ProjectileHitModifierHoo
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
         if (target != null && context.isFullyCharged() && target.isAlive()) {
-            var combustion = BuiltInRegistries.MOB_EFFECT.get(TCompat.getResource("species:combustion"));
-            if (combustion != null) {
+            ObjectRetriever.getEffect("species:combustion").ifPresent(effect -> {
                 int amplifier = 0;
-                if (target.hasEffect(combustion)) amplifier = target.getEffect(combustion).getAmplifier() + 1;
+                if (target.hasEffect(effect)) amplifier = target.getEffect(effect).getAmplifier() + 1;
                 if (target.level().getDifficulty() == Difficulty.HARD) amplifier += 1;
-                target.addEffect(new MobEffectInstance(combustion, 600, amplifier));
-            }
+                target.addEffect(new MobEffectInstance(effect, 600, amplifier));
+            });
         }
     }
 }
