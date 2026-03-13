@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "aether:music_disc_high",
+      "required": false
+    },
+    {
+      "id": "aether:blue_aercloud",
+      "required": false
+    },
+    {
+      "id": "aether:crystal_leaves",
+      "required": false
+    }
+  ]
+}

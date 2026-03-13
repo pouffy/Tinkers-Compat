@@ -2,14 +2,18 @@
   "type": "tconstruct:material",
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/skyjade"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "deep_aether"
     }
   ],
   "ingredient": {
-    "tag": "forge:gems/skyjade"
+    "tag": "forge:nuggets/skyjade"
   },
   "material": "tcompat:skyjade",
-  "needed": 1,
+  "needed": 9,
   "value": 1
 }

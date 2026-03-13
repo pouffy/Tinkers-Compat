@@ -11,6 +11,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
@@ -43,6 +44,10 @@ public class ObjectRetriever {
 
     public static Optional<EntityType<?>> getEntity(String id) {
         return get(BuiltInRegistries.ENTITY_TYPE, id);
+    }
+
+    public static Optional<RecipeType<?>> getRecipe(String id) {
+        return get(BuiltInRegistries.RECIPE_TYPE, id);
     }
 
     // Resource Keys

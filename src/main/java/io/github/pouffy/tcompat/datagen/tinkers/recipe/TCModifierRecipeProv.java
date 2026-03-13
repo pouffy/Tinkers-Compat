@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCWoods;
+import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipeBuilder;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.core.registries.Registries;
@@ -14,7 +15,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.CompoundIngredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -56,6 +59,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
 
         Function<String, ResourceLocation> speciesId = name -> getResource("species", name);
+        Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
 
         ModifierRecipeBuilder.modifier(SpeciesInit.ricoshield)
                 .setTools(TinkerTags.Items.SHIELDS)
@@ -90,7 +94,28 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setSlots(SlotType.ABILITY, 1)
                 .save(speciesConsumer, prefix(SpeciesInit.birt, abilityFolder));
 
-        Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
+        ModifierRecipeBuilder.modifier(AetherInit.autochant)
+                .setTools(ingredientFromTags(TinkerTags.Items.HARVEST, TinkerTags.Items.FISHING_RODS))
+                .addInput(TCTags.Items.AUTOCHANT_LEFT)
+                .addInput(ItemNameIngredient.from(aetherId.apply("altar")))
+                .addInput(TCTags.Items.AUTOCHANT_RIGHT)
+                .addInput(ItemNameIngredient.from(aetherId.apply("ambrosium_block")))
+                .addInput(ItemNameIngredient.from(aetherId.apply("ambrosium_block")))
+                .setMaxLevel(1).setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(consumer, prefix(AetherInit.autochant, abilitySalvage))
+                .save(aetherConsumer, prefix(AetherInit.autochant, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(AetherInit.autofreeze)
+                .setTools(ingredientFromTags(TinkerTags.Items.HARVEST, TinkerTags.Items.FISHING_RODS))
+                .addInput(TCTags.Items.AUTOFREEZE_LEFT)
+                .addInput(ItemNameIngredient.from(aetherId.apply("freezer")))
+                .addInput(TCTags.Items.AUTOFREEZE_RIGHT)
+                .addInput(ItemNameIngredient.from(aetherId.apply("icestone")))
+                .addInput(ItemNameIngredient.from(aetherId.apply("icestone")))
+                .setMaxLevel(1).setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(consumer, prefix(AetherInit.autofreeze, abilitySalvage))
+                .save(aetherConsumer, prefix(AetherInit.autofreeze, abilityFolder));
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(consumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)
@@ -147,5 +172,14 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
 
     private static TagKey<Item> itemTag(String name) {
         return TagKey.create(Registries.ITEM, ResourceLocation.parse(name));
+    }
+
+    @SafeVarargs
+    private static Ingredient ingredientFromTags(TagKey<Item>... tags) {
+        Ingredient[] tagIngredients = new Ingredient[tags.length];
+        for (int i = 0; i < tags.length; i++) {
+            tagIngredients[i] = Ingredient.of(tags[i]);
+        }
+        return CompoundIngredient.of(tagIngredients);
     }
 }

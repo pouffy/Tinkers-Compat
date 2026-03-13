@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "aether:music_disc_chinchilla",
+      "required": false
+    },
+    {
+      "id": "aether:cold_aercloud",
+      "required": false
+    },
+    {
+      "id": "aether:skyroot_leaves",
+      "required": false
+    }
+  ]
+}

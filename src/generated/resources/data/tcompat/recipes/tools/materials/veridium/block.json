@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/veridium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/veridium"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/veridium"
+  },
+  "material": "tcompat:veridium",
+  "needed": 1,
+  "value": 9
+}

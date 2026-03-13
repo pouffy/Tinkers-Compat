@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "aether:holystone",
+      "required": false
+    },
+    {
+      "id": "aether:mossy_holystone",
+      "required": false
+    },
+    {
+      "id": "aether:cold_aercloud",
+      "required": false
+    },
+    {
+      "id": "aether:quicksoil",
+      "required": false
+    },
+    {
+      "id": "deep_aether:raw_clorite",
+      "required": false
+    },
+    {
+      "id": "aether_redux:divinite",
+      "required": false
+    }
+  ]
+}

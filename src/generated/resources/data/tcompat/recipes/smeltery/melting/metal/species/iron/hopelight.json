@@ -16,9 +16,9 @@
     "item": "species:hopelight"
   },
   "result": {
-    "amount": 110,
+    "amount": 220,
     "tag": "forge:molten_iron"
   },
   "temperature": 800,
-  "time": 66
+  "time": 94
 }

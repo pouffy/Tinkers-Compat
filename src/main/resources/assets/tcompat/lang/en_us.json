@@ -134,6 +134,12 @@
   "modifier.tcompat.acclimatization": "Acclimatization",
   "modifier.tcompat.acclimatization.flavor": "In For a Promotion",
   "modifier.tcompat.acclimatization.description": "Gradually becomes more effective.",
+  "modifier.tcompat.autochant": "Autochant",
+  "modifier.tcompat.autochant.flavor": "Where's the book?",
+  "modifier.tcompat.autochant.description": "Tool automatically enchants all drops.",
+  "modifier.tcompat.autofreeze": "Autofreeze",
+  "modifier.tcompat.autofreeze.flavor": "Freeze!",
+  "modifier.tcompat.autofreeze.description": "Tool automatically freezes all drops.",
 
   "modifier.tcompat.ricoshield": "Ricoshield",
   "modifier.tcompat.ricoshield.flavor": "It's gonna blow!",

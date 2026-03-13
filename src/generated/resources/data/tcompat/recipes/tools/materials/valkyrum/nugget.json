@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/valkyrum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/valkyrum"
+  },
+  "material": "tcompat:valkyrum",
+  "needed": 9,
+  "value": 1
+}

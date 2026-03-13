@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "aether:healing_stone",
+      "required": false
+    },
+    {
+      "id": "aether_redux:gilded_holystone",
+      "required": false
+    },
+    {
+      "id": "aether:golden_aercloud",
+      "required": false
+    },
+    {
+      "id": "aether:quicksoil_glass",
+      "required": false
+    },
+    {
+      "id": "deep_aether:clorite",
+      "required": false
+    },
+    {
+      "id": "minecraft:glowstone",
+      "required": false
+    }
+  ]
+}

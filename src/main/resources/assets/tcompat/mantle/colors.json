@@ -22,7 +22,9 @@
     "ricoshield":             "#59002b",
     "wicked":                 "#ffa342",
     "swapping":               "#e72a8b",
-    "birt":                   "#3ac2d4"
+    "birt":                   "#3ac2d4",
+    "autochant":              "#e5eb62",
+    "autofreeze":             "#c6e1e1"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,

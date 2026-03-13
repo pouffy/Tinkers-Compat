@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/pyral"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/pyral"
+  },
+  "material": "tcompat:pyral",
+  "needed": 9,
+  "value": 1
+}

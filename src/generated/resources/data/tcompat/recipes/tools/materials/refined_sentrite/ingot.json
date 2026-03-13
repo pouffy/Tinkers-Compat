@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/refined_sentrite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_redux"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/refined_sentrite"
+  },
+  "material": "tcompat:refined_sentrite",
+  "needed": 1,
+  "value": 1
+}

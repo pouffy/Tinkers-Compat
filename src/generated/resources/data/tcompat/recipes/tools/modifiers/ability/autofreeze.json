@@ -1,0 +1,40 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:recipe/autofreeze/left"
+    },
+    {
+      "item": "aether:freezer"
+    },
+    {
+      "tag": "tcompat:recipe/autofreeze/right"
+    },
+    {
+      "item": "aether:icestone"
+    },
+    {
+      "item": "aether:icestone"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:autofreeze",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/harvest"
+    },
+    {
+      "tag": "tconstruct:modifiable/fishing_rods"
+    }
+  ]
+}

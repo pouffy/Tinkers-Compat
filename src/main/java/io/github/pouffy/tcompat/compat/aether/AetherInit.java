@@ -20,10 +20,16 @@ public class AetherInit extends CompatInitializer {
     public static final ModifierDeferredRegister AETHER_M = ModifierDeferredRegister.create(TCompat.MOD_ID);
     public static final FluidDeferredRegister AETHER_F = new FluidDeferredRegister(TCompat.MOD_ID);
 
+    //Traits
     public static final StaticModifier<AcclimatizationModifier> acclimatization = AETHER_M.register("acclimatization", AcclimatizationModifier::new);
     public static final StaticModifier<AmbrogenModifier> ambrogen = AETHER_M.register("ambrogen", AmbrogenModifier::new);
     public static final StaticModifier<AscensionModifier> ascension = AETHER_M.register("ascension", AscensionModifier::new);
 
+    //Craftable Modifiers
+    public static final StaticModifier<AutochantModifier> autochant = AETHER_M.register("autochant", AutochantModifier::new);
+    public static final StaticModifier<AutofreezeModifier> autofreeze = AETHER_M.register("autofreeze", AutofreezeModifier::new);
+
+    //Molten Fluids
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenZanite = AETHER_F.register("molten_zanite").type(hot("molten_zanite").temperature(1250).lightLevel(13)).block(createBurning(MapColor.COLOR_PURPLE, 13, 10, 6.5f)).bucket().commonTag().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenGravitite = AETHER_F.register("molten_gravitite").type(hot("molten_gravitite").density(-2000).temperature(1575).lightLevel(7)).block(createBurning(MapColor.COLOR_MAGENTA, 7, 8, 6f)).bucket().commonTag().flowing();
 

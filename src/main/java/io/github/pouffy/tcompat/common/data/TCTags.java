@@ -115,6 +115,11 @@ public class TCTags {
         public static TagKey<Item> SENTRITE_STONE_BLOCKS = local("sentrite/stone_blocks");
         public static TagKey<Item> SENTRITE_STONE_SLABS = local("sentrite/stone_slabs");
 
+        public static TagKey<Item> AUTOCHANT_LEFT = local("recipe/autochant/left");
+        public static TagKey<Item> AUTOCHANT_RIGHT = local("recipe/autochant/right");
+        public static TagKey<Item> AUTOFREEZE_LEFT = local("recipe/autofreeze/left");
+        public static TagKey<Item> AUTOFREEZE_RIGHT = local("recipe/autofreeze/right");
+
         public static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));
         }

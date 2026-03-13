@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/gravitite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/gravitite"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/gravitite"
+  },
+  "material": "tcompat:gravitite",
+  "needed": 1,
+  "value": 9
+}

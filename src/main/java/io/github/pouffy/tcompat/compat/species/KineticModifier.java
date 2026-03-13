@@ -30,6 +30,7 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
@@ -60,11 +61,12 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity self = context.getEntity();
         var data = tool.getPersistentData();
+        int max = tool.getStats().getInt(ToolStats.BLOCK_AMOUNT) / 2;
         if (amount > 0.0F && self.isDamageSourceBlocked(source)) {
-            if (self instanceof Player player && amount > 40) {
+            if (self instanceof Player player && amount > max) {
                 player.disableShield(true);
             }
-            data.putFloat(STORED_DAMAGE, Math.min(data.getFloat(STORED_DAMAGE) + amount, 40));
+            data.putFloat(STORED_DAMAGE, Math.min(data.getFloat(STORED_DAMAGE) + amount, max));
             ObjectRetriever.getSound("species:item.ricoshield.absorb").ifPresent(sound -> {
                 self.level().playSound(null, self.blockPosition(), sound, SoundSource.PLAYERS, 1F, data.getFloat(STORED_DAMAGE) * 0.05F);
             });

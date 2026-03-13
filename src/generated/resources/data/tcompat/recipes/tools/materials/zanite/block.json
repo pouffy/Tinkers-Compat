@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/zanite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/zanite"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:gems/zanite"
+  },
+  "material": "tcompat:zanite",
+  "needed": 1,
+  "value": 9
+}

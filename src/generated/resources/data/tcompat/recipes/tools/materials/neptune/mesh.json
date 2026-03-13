@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "species"
+    }
+  ],
+  "ingredient": {
+    "item": "aether_treasure_reforging:neptune_mesh"
+  },
+  "material": "tcompat:neptune",
+  "needed": 1,
+  "value": 1
+}

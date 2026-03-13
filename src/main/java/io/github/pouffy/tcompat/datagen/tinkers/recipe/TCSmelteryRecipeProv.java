@@ -213,7 +213,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         Function<String, String> gemFolder = type -> speciesFolderFunction.apply("smeltery/" + type + "/gem/%s/");
         Function<String, String> miscFolder = type -> speciesFolderFunction.apply("smeltery/" + type + "/misc/%s/");
 
-        int brokenLinks = 55;
+        int brokenLinks = 110;
 
         simpleMelting(speciesConsumer, TinkerFluids.moltenIron, brokenLinks, "iron", ItemNameIngredient.from(speciesId.apply("broken_links")), metalFolder.apply("melting"), "broken_links");
         simpleMelting(speciesConsumer, TinkerFluids.moltenIron, 110 + (brokenLinks * 3), "iron", ItemNameIngredient.from(speciesId.apply("chaindelier")), metalFolder.apply("melting"), "chaindelier");

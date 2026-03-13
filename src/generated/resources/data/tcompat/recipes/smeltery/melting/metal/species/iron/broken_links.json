@@ -10,9 +10,9 @@
     "item": "species:broken_links"
   },
   "result": {
-    "amount": 55,
+    "amount": 110,
     "tag": "forge:molten_iron"
   },
   "temperature": 800,
-  "time": 47
+  "time": 66
 }

@@ -43,6 +43,29 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.SENTRITE_STONE_SLABS)
                 .addOptional(getResource("aether_redux", "sentrite_slab"))
                 .addOptional(getResource("aether_redux", "sentrite_brick_slab"));
+
+        this.tag(TCTags.Items.AUTOCHANT_LEFT)
+                .addOptional(getResource("aether", "holystone"))
+                .addOptional(getResource("aether", "mossy_holystone"))
+                .addOptional(getResource("aether", "cold_aercloud"))
+                .addOptional(getResource("aether", "quicksoil"))
+                .addOptional(getResource("deep_aether", "raw_clorite"))
+                .addOptional(getResource("aether_redux", "divinite"));
+        this.tag(TCTags.Items.AUTOCHANT_RIGHT)
+                .addOptional(getResource("aether", "healing_stone"))
+                .addOptional(getResource("aether_redux", "gilded_holystone"))
+                .addOptional(getResource("aether", "golden_aercloud"))
+                .addOptional(getResource("aether", "quicksoil_glass"))
+                .addOptional(getResource("deep_aether", "clorite"))
+                .addOptional(getResource("minecraft", "glowstone"));
+        this.tag(TCTags.Items.AUTOFREEZE_LEFT)
+                .addOptional(getResource("aether", "music_disc_chinchilla"))
+                .addOptional(getResource("aether", "cold_aercloud"))
+                .addOptional(getResource("aether", "skyroot_leaves"));
+        this.tag(TCTags.Items.AUTOFREEZE_RIGHT)
+                .addOptional(getResource("aether", "music_disc_high"))
+                .addOptional(getResource("aether", "blue_aercloud"))
+                .addOptional(getResource("aether", "crystal_leaves"));
     }
 
     private void addForge() {

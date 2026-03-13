@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/valkyrum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/valkyrum"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/valkyrum"
+  },
+  "material": "tcompat:valkyrum",
+  "needed": 1,
+  "value": 9
+}

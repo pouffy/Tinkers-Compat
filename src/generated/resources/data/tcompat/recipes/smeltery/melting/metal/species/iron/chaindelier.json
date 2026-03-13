@@ -10,9 +10,9 @@
     "item": "species:chaindelier"
   },
   "result": {
-    "amount": 275,
+    "amount": 440,
     "tag": "forge:molten_iron"
   },
   "temperature": 800,
-  "time": 105
+  "time": 133
 }

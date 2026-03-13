@@ -16,9 +16,9 @@
     "item": "species:ricoshield"
   },
   "result": {
-    "amount": 365,
+    "amount": 640,
     "tag": "forge:molten_iron"
   },
   "temperature": 800,
-  "time": 121
+  "time": 160
 }

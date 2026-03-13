@@ -1,4 +1,9 @@
 {
   "tcompat:aether_forged":   "tcompat:gui/modifiers/aether_forged",
-  "tcompat:ambrofusion":   ["aether:item/materials/ambrosium_shard", "tconstruct:gui/modifiers/book"]
+  "tcompat:ambrofusion":   ["aether:item/materials/ambrosium_shard", "tconstruct:gui/modifiers/book"],
+  "tcompat:autochant":   "tcompat:gui/modifiers/autochant",
+  "tcompat:autofreeze":   "tcompat:gui/modifiers/autofreeze",
+  "tcompat:ricoshield":   "tcompat:gui/modifiers/ricoshield",
+  "tcompat:swapping":   "tcompat:gui/modifiers/swapping",
+  "tcompat:birt":   "tcompat:gui/modifiers/birt"
 }
