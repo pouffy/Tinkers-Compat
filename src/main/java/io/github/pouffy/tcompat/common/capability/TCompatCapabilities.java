@@ -1,7 +1,6 @@
 package io.github.pouffy.tcompat.common.capability;
 
 
-import com.aetherteam.nitrogen.capability.CapabilityProvider;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouchedCapability;
