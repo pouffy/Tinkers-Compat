@@ -50,19 +50,49 @@
 - Blightbunny Fang Material
 - Smeltery Melting Recipes
 
-## Planned
+### [Aether Treasure Reforging](https://modrinth.com/mod/aether-treasure-reforging)
+- Phoenix Material
+- Valkyrum Material
+- Neptune Material
+- Phoenix Touched Trait
 
 ### [Species](https://modrinth.com/mod/species)
-- Birt combat Modifier
-- Kinetic shield/chestplate Modifier
-- Swapping ranged Modifier
+- Wicked Wax Binding Material
+- Wicked Trait
+- Ricoshield Modifier
+- Birt Modifier
+- Swapping Modifier
+
+## Planned
 
 ### [Quark](https://modrinth.com/mod/quark)
 - **Wood** Material Variants
 - **Rock** Material Variants
 
 ### [Ad Astra](https://modrinth.com/mod/ad-astra)
-- **Desh** Material
-- **Calorite** Material
-- **Ostrum** Material
-- **Etrium** Material
+- **Wood** Material Variants
+- **Rock** Material Variants
+- **Desh Material
+- Calorite Material
+- Ostrum Material
+- Etrium Material
+
+### [Regions Unexplored](https://modrinth.com/mod/regions-unexplored)
+- **Wood** Material Variants
+- **Rock** Material Variants
+
+### [BetterNether](https://modrinth.com/mod/betternether-forge)
+- **Wood** Material Variants
+- Cincinnasite Material
+- Nether Ruby Material
+
+### [BetterEnd](https://modrinth.com/mod/betterend-forge)
+- **End Stone** Material Variants
+- **Wood** Material Variants
+- Aternium Material
+- Thallasium Material
+- Terminite Material
+
+
+
+
