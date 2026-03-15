@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "aether:holystone",
+      "required": false
+    },
+    {
+      "id": "#aether:holystone_rocks",
+      "required": false
+    }
+  ]
+}

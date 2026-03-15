@@ -2,7 +2,7 @@ package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerTags;
-import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -104,18 +103,6 @@ public class TCItemTagProv extends ItemTagsProvider {
     }
 
     private void addPlanks() {
-        for (MaterialVariantId materialVariantId : TCMaterials.otbwgVariantRocks) {
-            rockTagging(materialVariantId.getVariant(), "biomeswevegone");
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.aetherVariantRocks) {
-            rockTagging(materialVariantId.getVariant(), "aether");
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.deepAetherVariantRocks) {
-            rockTagging(materialVariantId.getVariant(), "deep_aether");
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.aetherReduxVariantRocks) {
-            rockTagging(materialVariantId.getVariant(), "aether_redux");
-        }
         for (TCWoods wood : TCWoods.values()) {
             String woodName = wood.name;
             for (String namespace : wood.getNamespaces()) {
@@ -123,7 +110,6 @@ public class TCItemTagProv extends ItemTagsProvider {
                     ResourceLocation plankId = wood.getSpecialPlankId(namespace) != null ? wood.getSpecialPlankId(namespace) : getResource(namespace, "%s_planks".formatted(woodName));
                     this.tag(wood.plankTag()).addOptional(plankId);
                 }
-
                 this.tag(TinkerTags.Items.VARIANT_PLANKS)
                         .addOptionalTag(wood.plankTag());
                 this.tag(wood.logTag())
@@ -132,13 +118,20 @@ public class TCItemTagProv extends ItemTagsProvider {
                         .addOptionalTag(wood.logTag());
             }
         }
+        for (TCRocks rock : TCRocks.values()) {
+            String rockName = rock.name;
+            for (String namespace : rock.getNamespaces()) {
+                if (!rock.hasRockRedirect()) {
+                    ResourceLocation plankId = rock.getSpecialRockId(namespace) != null ? rock.getSpecialRockId(namespace) : getResource(namespace, "%s".formatted(rockName));
+                    this.tag(rock.rockTag()).addOptional(plankId);
+                }
+                this.tag(rock.rockTag())
+                        .addOptionalTag(rock.externalRockTag(namespace));
+                this.tag(TinkerTags.Items.WORKSTATION_ROCK)
+                        .addOptional(getResource(namespace, rockName));
+            }
+        }
         this.tag(TinkerTags.Items.PLANKLIKE).addOptionalTag(itemTag("aether:planks_crafting"));
-        this.tag(TinkerTags.Items.WORKSTATION_ROCK).addOptional(getResource("dripstone_block", "minecraft"));
-    }
-
-    private void rockTagging(String rockName, String namespace) {
-        this.tag(TinkerTags.Items.WORKSTATION_ROCK)
-                .addOptional(getResource(namespace, rockName));
     }
 
     private static TagKey<Item> itemTag(String name) {

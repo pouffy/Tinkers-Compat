@@ -7,6 +7,10 @@
     {
       "id": "#biomesoplenty:willow_logs",
       "required": false
+    },
+    {
+      "id": "#regions_unexplored:willow_logs",
+      "required": false
     }
   ]
 }

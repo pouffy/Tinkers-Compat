@@ -3,6 +3,10 @@
     {
       "id": "biomeswevegone:baobab_planks",
       "required": false
+    },
+    {
+      "id": "regions_unexplored:baobab_planks",
+      "required": false
     }
   ]
 }

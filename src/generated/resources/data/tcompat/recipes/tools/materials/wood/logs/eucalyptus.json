@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/eucalyptus"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/eucalyptus"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/eucalyptus"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/eucalyptus"
+  },
+  "material": "tconstruct:wood#eucalyptus",
+  "needed": 1,
+  "value": 4
+}

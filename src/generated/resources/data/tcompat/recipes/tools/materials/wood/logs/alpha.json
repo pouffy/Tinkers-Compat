@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/alpha"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/alpha"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/alpha"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/alpha"
+  },
+  "material": "tconstruct:wood#alpha",
+  "needed": 1,
+  "value": 4
+}

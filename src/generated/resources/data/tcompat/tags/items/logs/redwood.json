@@ -7,6 +7,10 @@
     {
       "id": "#biomesoplenty:redwood_logs",
       "required": false
+    },
+    {
+      "id": "#regions_unexplored:redwood_logs",
+      "required": false
     }
   ]
 }

@@ -2,12 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "aether"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/holystone"
+        }
+      ]
     }
   ],
   "ingredient": {
-    "item": "aether:holystone"
+    "tag": "tcompat:rocks/holystone"
   },
   "material": "tcompat:aether_rock#holystone",
   "needed": 1,

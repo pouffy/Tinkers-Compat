@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "aether_redux:driftshale",
+      "required": false
+    },
+    {
+      "id": "#aether_redux:driftshale_rocks",
+      "required": false
+    }
+  ]
+}

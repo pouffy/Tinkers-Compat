@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/kapok"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/kapok"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/kapok"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/kapok"
+  },
+  "material": "tconstruct:wood#kapok",
+  "needed": 1,
+  "value": 4
+}

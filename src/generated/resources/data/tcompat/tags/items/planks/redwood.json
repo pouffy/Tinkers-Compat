@@ -7,6 +7,10 @@
     {
       "id": "biomesoplenty:redwood_planks",
       "required": false
+    },
+    {
+      "id": "regions_unexplored:redwood_planks",
+      "required": false
     }
   ]
 }

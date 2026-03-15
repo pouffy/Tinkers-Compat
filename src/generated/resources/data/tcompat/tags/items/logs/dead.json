@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#biomesoplenty:dead_logs",
+      "required": false
+    },
+    {
+      "id": "#regions_unexplored:dead_logs",
+      "required": false
+    }
+  ]
+}

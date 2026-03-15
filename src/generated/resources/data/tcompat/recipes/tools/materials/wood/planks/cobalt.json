@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/cobalt"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/cobalt"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/cobalt"
+  },
+  "material": "tconstruct:wood#cobalt",
+  "needed": 1,
+  "value": 1
+}

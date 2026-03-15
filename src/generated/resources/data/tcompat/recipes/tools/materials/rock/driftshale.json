@@ -2,12 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "deep_aether"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether_redux"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/driftshale"
+        }
+      ]
     }
   ],
   "ingredient": {
-    "item": "aether_redux:driftshale"
+    "tag": "tcompat:rocks/driftshale"
   },
   "material": "tcompat:aether_rock#driftshale",
   "needed": 1,

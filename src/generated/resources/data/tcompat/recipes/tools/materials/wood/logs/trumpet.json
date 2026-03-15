@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/blossom"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/blossom"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/blossom"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/trumpet"
+  },
+  "material": "tconstruct:wood#trumpet",
+  "needed": 1,
+  "value": 4
+}

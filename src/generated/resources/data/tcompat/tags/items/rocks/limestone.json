@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "quark:limestone",
+      "required": false
+    },
+    {
+      "id": "#quark:limestone_rocks",
+      "required": false
+    },
+    {
+      "id": "create:limestone",
+      "required": false
+    },
+    {
+      "id": "#create:limestone_rocks",
+      "required": false
+    }
+  ]
+}

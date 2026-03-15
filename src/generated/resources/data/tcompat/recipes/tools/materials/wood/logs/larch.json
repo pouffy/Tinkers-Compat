@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/larch"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/larch"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/larch"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/larch"
+  },
+  "material": "tconstruct:wood#larch",
+  "needed": 1,
+  "value": 4
+}

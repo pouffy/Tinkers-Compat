@@ -2,8 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "deep_aether"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deep_aether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/roseroot"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/roseroot"
+        }
+      ]
     }
   ],
   "ingredient": {

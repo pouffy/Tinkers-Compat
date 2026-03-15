@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "quark:jasper",
+      "required": false
+    },
+    {
+      "id": "#quark:jasper_rocks",
+      "required": false
+    }
+  ]
+}

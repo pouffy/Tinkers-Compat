@@ -7,6 +7,10 @@
     {
       "id": "#biomesoplenty:palm_logs",
       "required": false
+    },
+    {
+      "id": "#regions_unexplored:palm_logs",
+      "required": false
     }
   ]
 }

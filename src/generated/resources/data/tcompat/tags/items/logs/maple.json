@@ -7,6 +7,10 @@
     {
       "id": "#biomesoplenty:maple_logs",
       "required": false
+    },
+    {
+      "id": "#regions_unexplored:maple_logs",
+      "required": false
     }
   ]
 }

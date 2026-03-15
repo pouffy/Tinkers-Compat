@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "deep_aether:clorite",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:clorite_rocks",
+      "required": false
+    }
+  ]
+}

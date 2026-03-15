@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "biomeswevegone:red_rock",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:red_rock_rocks",
+      "required": false
+    }
+  ]
+}

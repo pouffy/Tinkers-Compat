@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/socotra"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/socotra"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/socotra"
+  },
+  "material": "tconstruct:wood#socotra",
+  "needed": 1,
+  "value": 1
+}

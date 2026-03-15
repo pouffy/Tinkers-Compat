@@ -2,12 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "deep_aether"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deep_aether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/aseterite"
+        }
+      ]
     }
   ],
   "ingredient": {
-    "item": "deep_aether:aseterite"
+    "tag": "tcompat:rocks/aseterite"
   },
   "material": "tcompat:aether_rock#aseterite",
   "needed": 1,

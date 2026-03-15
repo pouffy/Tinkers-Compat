@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/magnolia"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/magnolia"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/magnolia"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/magnolia"
+  },
+  "material": "tconstruct:wood#magnolia",
+  "needed": 1,
+  "value": 4
+}

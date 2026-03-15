@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "minecraft:dripstone_block",
+      "required": false
+    },
+    {
+      "id": "#minecraft:dripstone_rocks",
+      "required": false
+    }
+  ]
+}

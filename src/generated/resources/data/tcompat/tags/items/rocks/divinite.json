@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "aether_redux:divinite",
+      "required": false
+    },
+    {
+      "id": "#aether_redux:divinite_rocks",
+      "required": false
+    }
+  ]
+}

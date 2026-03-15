@@ -3,6 +3,10 @@
     {
       "id": "#biomeswevegone:baobab_logs",
       "required": false
+    },
+    {
+      "id": "#regions_unexplored:baobab_logs",
+      "required": false
     }
   ]
 }

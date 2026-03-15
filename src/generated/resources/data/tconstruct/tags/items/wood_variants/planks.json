@@ -1,6 +1,10 @@
 {
   "values": [
     {
+      "id": "#tcompat:planks/alpha",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/aspen",
       "required": false
     },
@@ -9,7 +13,23 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/baobab",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/blackwood",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/blue_bioshroom",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/blue_enchanted",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/brimwood",
       "required": false
     },
     {
@@ -17,11 +37,31 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/cobalt",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/cypress",
       "required": false
     },
     {
+      "id": "#tcompat:planks/cypress",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/dead",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/dead",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/ebony",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/eucalyptus",
       "required": false
     },
     {
@@ -34,6 +74,10 @@
     },
     {
       "id": "#tcompat:planks/florus",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/green_bioshroom",
       "required": false
     },
     {
@@ -57,6 +101,22 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/joshua",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/kapok",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/larch",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/magnolia",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/mahogany",
       "required": false
     },
@@ -70,6 +130,18 @@
     },
     {
       "id": "#tcompat:planks/maple",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/maple",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/mauve",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/palm",
       "required": false
     },
     {
@@ -93,6 +165,10 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/pink_bioshroom",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/rainbow_eucalyptus",
       "required": false
     },
@@ -105,7 +181,15 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/redwood",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/sakura",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/socotra",
       "required": false
     },
     {
@@ -125,7 +209,15 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/willow",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/witch_hazel",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/yellow_bioshroom",
       "required": false
     },
     {
@@ -134,6 +226,18 @@
     },
     {
       "id": "#tcompat:planks/hellbark",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/ancient",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/azalea",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/blossom",
       "required": false
     },
     {

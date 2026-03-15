@@ -45,7 +45,7 @@
     "wood.palm":              "#877E68",
     "wood.palo_verde":        "#E0CFA5",
     "wood.pine":              "#998E70",
-    "wood.rainbow_eucalyptus": "#7F4D39",
+    "wood.rainbow_eucalyptus":"#7F4D39",
     "wood.redwood":           "#974949",
     "wood.sakura":            "#742941",
     "wood.skyris":            "#6798AE",
@@ -53,10 +53,17 @@
     "wood.willow":            "#515C38",
     "wood.witch_hazel":       "#225337",
     "wood.zelkova":           "#824A23",
+    "wood.ashen":             "#eadbe4",
+    "wood.azalea":            "#99a654",
+    "wood.trumpet":           "#4e271c",
 
     "__tier_1_rock__": null,
     "rock.red_rock":          "#904727",
-    "rock.dacite":            "#6D4536"
+    "rock.dacite":            "#6D4536",
+    "rock.limestone":         "#78705a",
+    "rock.jasper":            "#5d2f2c",
+    "rock.shale":             "#4b5a5d",
+    "rock.permafrost":        "#90aada"
   },
   "material.tcompat": {
     "__aether__": null,

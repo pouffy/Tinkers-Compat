@@ -2,8 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "aether_redux"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether_redux"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/fieldsproot"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/fieldsproot"
+        }
+      ]
     }
   ],
   "ingredient": {

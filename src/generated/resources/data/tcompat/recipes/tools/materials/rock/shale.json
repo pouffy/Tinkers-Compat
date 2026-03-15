@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/shale"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:rocks/shale"
+  },
+  "material": "tconstruct:rock#shale",
+  "needed": 1,
+  "value": 1
+}

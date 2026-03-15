@@ -1,6 +1,10 @@
 {
   "values": [
     {
+      "id": "#tcompat:logs/alpha",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/aspen",
       "required": false
     },
@@ -9,7 +13,23 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/baobab",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/blackwood",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/blue_bioshroom",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/blue_enchanted",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/brimwood",
       "required": false
     },
     {
@@ -17,11 +37,31 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/cobalt",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/cypress",
       "required": false
     },
     {
+      "id": "#tcompat:logs/cypress",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/dead",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/dead",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/ebony",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/eucalyptus",
       "required": false
     },
     {
@@ -34,6 +74,10 @@
     },
     {
       "id": "#tcompat:logs/florus",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/green_bioshroom",
       "required": false
     },
     {
@@ -57,6 +101,22 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/joshua",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/kapok",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/larch",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/magnolia",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/mahogany",
       "required": false
     },
@@ -70,6 +130,18 @@
     },
     {
       "id": "#tcompat:logs/maple",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/maple",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/mauve",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/palm",
       "required": false
     },
     {
@@ -93,6 +165,10 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/pink_bioshroom",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/rainbow_eucalyptus",
       "required": false
     },
@@ -105,7 +181,15 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/redwood",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/sakura",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/socotra",
       "required": false
     },
     {
@@ -125,7 +209,15 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/willow",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/witch_hazel",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/yellow_bioshroom",
       "required": false
     },
     {
@@ -134,6 +226,18 @@
     },
     {
       "id": "#tcompat:logs/hellbark",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/ancient",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/azalea",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/blossom",
       "required": false
     },
     {

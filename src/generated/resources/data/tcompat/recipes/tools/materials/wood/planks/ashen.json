@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/ancient"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/ancient"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/ancient"
+  },
+  "material": "tconstruct:wood#ashen",
+  "needed": 1,
+  "value": 1
+}

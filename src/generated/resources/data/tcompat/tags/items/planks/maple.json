@@ -7,6 +7,10 @@
     {
       "id": "biomesoplenty:maple_planks",
       "required": false
+    },
+    {
+      "id": "regions_unexplored:maple_planks",
+      "required": false
     }
   ]
 }

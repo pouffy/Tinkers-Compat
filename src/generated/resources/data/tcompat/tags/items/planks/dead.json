@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:dead_planks",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:dead_planks",
+      "required": false
+    }
+  ]
+}

@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
+import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
@@ -60,46 +61,20 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
         List<MaterialVariantId> noPlanks = List.of(TCMaterials.paloVerde);
-        List<MaterialVariantId> stems = List.of(TCMaterials.cloudcap, TCMaterials.jellyshroom);
 
-        for (MaterialVariantId materialVariantId : TCMaterials.otbwgVariantWoods) {
+        // Streamline variant recipes
+        TCMaterials.woodVariants.forEach((materialVariantId, woodType) -> {
             if (!noPlanks.contains(materialVariantId))
-                planksVariantRecipe(otbwgConsumer, materialVariantId);
-            logVariantRecipe(otbwgConsumer, materialVariantId);
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.otbwgVariantRocks) {
-            rockVariantRecipe(otbwgConsumer, materialVariantId, "biomeswevegone");
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.aetherVariantWoods) {
-            if (!noPlanks.contains(materialVariantId))
-                planksVariantRecipe(aetherConsumer, materialVariantId);
-            logVariantRecipe(aetherConsumer, materialVariantId);
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.aetherVariantRocks) {
-            rockVariantRecipe(aetherConsumer, materialVariantId, "aether");
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.deepAetherVariantWoods) {
-            if (!noPlanks.contains(materialVariantId))
-                planksVariantRecipe(deepAetherConsumer, materialVariantId);
-            logVariantRecipe(deepAetherConsumer, materialVariantId);
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.deepAetherVariantRocks) {
-            rockVariantRecipe(deepAetherConsumer, materialVariantId, "deep_aether");
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.aetherReduxVariantWoods) {
-            if (!noPlanks.contains(materialVariantId))
-                planksVariantRecipe(aetherReduxConsumer, materialVariantId);
-            if (!stems.contains(materialVariantId))
-                logVariantRecipe(aetherReduxConsumer, materialVariantId);
-            else
-                stemVariantRecipe(aetherReduxConsumer, materialVariantId);
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.aetherReduxVariantRocks) {
-            rockVariantRecipe(deepAetherConsumer, materialVariantId, "aether_redux");
-        }
+                planksVariantRecipe(woodType.makeConsumer(consumer), woodType, materialVariantId);
+            logVariantRecipe(woodType.makeConsumer(consumer), woodType, materialVariantId);
+        });
+
+        TCMaterials.rockVariants.forEach((materialVariantId, rockType) -> {
+            rockVariantRecipe(rockType.makeConsumer(consumer), rockType, materialVariantId);
+        });
+
         planksRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
         logRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
-        materialRecipe(consumer, TCMaterials.dripstone, ItemNameIngredient.from(getResource("minecraft:dripstone_block")), 4, 1, folder + "rock/%s".formatted("dripstone"));
         materialRecipe(consumer, TCMaterials.dripstone, ItemNameIngredient.from(getResource("minecraft:pointed_dripstone")), 1, 1, folder + "rock/%s".formatted("pointed_dripstone"));
 
         materialRecipe(aetherConsumer, TCMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
@@ -139,25 +114,19 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, AetherTRInit.moltenPyral, FluidValues.INGOT, folder);
     }
 
-    private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
+    private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(TCWoods.plankTag(material.getVariant())), 1, 1, folder + "wood/planks/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material, Ingredient.of(woodType.plankTag()), 1, 1, folder + "wood/planks/%s".formatted(material.getVariant()));
     }
 
-    private void logVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
+    private void logVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(TCWoods.logTag(material.getVariant())), 4, 1, ItemOutput.fromTag(TCWoods.plankTag(material.getVariant())), folder + "wood/logs/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material, Ingredient.of(woodType.logTag()), 4, 1, ItemOutput.fromTag(TCWoods.plankTag(material.getVariant())), folder + "wood/logs/%s".formatted(material.getVariant()));
     }
 
-    private void stemVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
+    private void rockVariantRecipe(Consumer<FinishedRecipe> consumer, TCRocks rockType, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(TCWoods.stemTag(material.getVariant())), 4, 1, ItemOutput.fromTag(TCWoods.plankTag(material.getVariant())), folder + "wood/logs/%s".formatted(material.getVariant()));
-    }
-
-    private void rockVariantRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material, String namespace) {
-        String folder = "tools/materials/";
-        Function<String, ResourceLocation> namespaceFunction = name -> getResource(namespace, name);
-        materialRecipe(consumer, material, ItemNameIngredient.from(namespaceFunction.apply(material.getVariant())), 1, 1, folder + "rock/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material, Ingredient.of(rockType.rockTag()), 1, 1, folder + "rock/%s".formatted(material.getVariant()));
     }
 
     private void planksRecipe(Consumer<FinishedRecipe> consumer, TCWoods wood, MaterialId material) {

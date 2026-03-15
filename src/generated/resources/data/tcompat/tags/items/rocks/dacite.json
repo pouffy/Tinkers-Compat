@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "biomeswevegone:dacite",
+      "required": false
+    },
+    {
+      "id": "#biomeswevegone:dacite_rocks",
+      "required": false
+    }
+  ]
+}

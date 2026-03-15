@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:chalk",
+      "required": false
+    },
+    {
+      "id": "#regions_unexplored:chalk_rocks",
+      "required": false
+    }
+  ]
+}

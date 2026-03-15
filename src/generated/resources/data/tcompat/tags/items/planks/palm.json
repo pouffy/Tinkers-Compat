@@ -7,6 +7,10 @@
     {
       "id": "biomesoplenty:palm_planks",
       "required": false
+    },
+    {
+      "id": "regions_unexplored:palm_planks",
+      "required": false
     }
   ]
 }

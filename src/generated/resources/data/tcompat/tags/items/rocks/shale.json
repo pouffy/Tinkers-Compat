@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "quark:shale",
+      "required": false
+    },
+    {
+      "id": "#quark:shale_rocks",
+      "required": false
+    }
+  ]
+}

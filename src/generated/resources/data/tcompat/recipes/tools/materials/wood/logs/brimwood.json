@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/brimwood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/brimwood"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/brimwood"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/brimwood"
+  },
+  "material": "tconstruct:wood#brimwood",
+  "needed": 1,
+  "value": 4
+}

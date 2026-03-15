@@ -124,9 +124,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
 
     private void addTextureRecipes(Consumer<FinishedRecipe> consumer) {
         String folder = "tools/modifiers/slotless/";
-        Consumer<FinishedRecipe> otbwgConsumer = withCondition(consumer, modLoaded("biomeswevegone"));
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
-        Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
 
         ModifierRecipeBuilder.modifier(TCModifiers.aetherForged)
                 .setTools(TinkerTags.Items.HARVEST)
@@ -138,20 +136,14 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setMaxLevel(1).checkTraitLevel()
                 .save(aetherConsumer, prefix(TCModifiers.aetherForged, folder));
 
-        for (MaterialVariantId materialVariantId : TCMaterials.otbwgVariantWoods) {
-            woodTexture(otbwgConsumer, materialVariantId);
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.aetherVariantWoods) {
-            woodTexture(aetherConsumer, materialVariantId);
-        }
-        for (MaterialVariantId materialVariantId : TCMaterials.deepAetherVariantWoods) {
-            woodTexture(deepAetherConsumer, materialVariantId);
-        }
+        TCMaterials.woodVariants.forEach((materialVariantId, woodType) -> {
+            woodTexture(woodType.makeConsumer(consumer), woodType, materialVariantId);
+        });
     }
 
-    private void woodTexture(Consumer<FinishedRecipe> consumer, MaterialVariantId material) {
+    private void woodTexture(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {
         String folder = "tools/modifiers/slotless/";
-        woodTexture(consumer, material, TCWoods.plankTag(material.getVariant()), folder);
+        woodTexture(consumer, material, woodType.plankTag(), folder);
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, MaterialVariantId material, TagKey<Item> planks, String folder) {

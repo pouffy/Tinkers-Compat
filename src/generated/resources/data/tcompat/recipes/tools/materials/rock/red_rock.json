@@ -2,12 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "biomeswevegone"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/red_rock"
+        }
+      ]
     }
   ],
   "ingredient": {
-    "item": "biomeswevegone:red_rock"
+    "tag": "tcompat:rocks/red_rock"
   },
   "material": "tconstruct:rock#red_rock",
   "needed": 1,

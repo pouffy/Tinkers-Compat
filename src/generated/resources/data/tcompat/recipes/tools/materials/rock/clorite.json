@@ -2,12 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "deep_aether"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deep_aether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/clorite"
+        }
+      ]
     }
   ],
   "ingredient": {
-    "item": "deep_aether:clorite"
+    "tag": "tcompat:rocks/clorite"
   },
   "material": "tcompat:aether_rock#clorite",
   "needed": 1,

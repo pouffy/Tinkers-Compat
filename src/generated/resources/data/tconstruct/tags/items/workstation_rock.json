@@ -9,6 +9,38 @@
       "required": false
     },
     {
+      "id": "regions_unexplored:chalk",
+      "required": false
+    },
+    {
+      "id": "quark:limestone",
+      "required": false
+    },
+    {
+      "id": "create:limestone",
+      "required": false
+    },
+    {
+      "id": "quark:jasper",
+      "required": false
+    },
+    {
+      "id": "quark:shale",
+      "required": false
+    },
+    {
+      "id": "quark:permafrost",
+      "required": false
+    },
+    {
+      "id": "ad_astra:permafrost",
+      "required": false
+    },
+    {
+      "id": "minecraft:dripstone",
+      "required": false
+    },
+    {
       "id": "aether:holystone",
       "required": false
     },
@@ -26,10 +58,6 @@
     },
     {
       "id": "aether_redux:driftshale",
-      "required": false
-    },
-    {
-      "id": "dripstone_block:minecraft",
       "required": false
     }
   ]

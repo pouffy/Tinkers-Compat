@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/blue_bioshroom"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/blue_bioshroom"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/blue_bioshroom"
+  },
+  "material": "tconstruct:wood#blue_bioshroom",
+  "needed": 1,
+  "value": 1
+}

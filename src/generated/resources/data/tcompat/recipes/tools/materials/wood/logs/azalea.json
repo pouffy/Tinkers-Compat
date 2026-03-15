@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/azalea"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/azalea"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/azalea"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/azalea"
+  },
+  "material": "tconstruct:wood#azalea",
+  "needed": 1,
+  "value": 4
+}

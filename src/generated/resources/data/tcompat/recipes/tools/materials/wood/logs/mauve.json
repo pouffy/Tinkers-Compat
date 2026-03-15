@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/mauve"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/mauve"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/mauve"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/mauve"
+  },
+  "material": "tconstruct:wood#mauve",
+  "needed": 1,
+  "value": 4
+}

@@ -7,6 +7,10 @@
     {
       "id": "biomesoplenty:willow_planks",
       "required": false
+    },
+    {
+      "id": "regions_unexplored:willow_planks",
+      "required": false
     }
   ]
 }

@@ -2,8 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "biomeswevegone"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/cika"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/cika"
+        }
+      ]
     }
   ],
   "ingredient": {

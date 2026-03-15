@@ -2,12 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "deep_aether"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether_redux"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/divinite"
+        }
+      ]
     }
   ],
   "ingredient": {
-    "item": "aether_redux:divinite"
+    "tag": "tcompat:rocks/divinite"
   },
   "material": "tcompat:aether_rock#divinite",
   "needed": 1,

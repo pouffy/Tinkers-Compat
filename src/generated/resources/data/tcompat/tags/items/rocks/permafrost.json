@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "quark:permafrost",
+      "required": false
+    },
+    {
+      "id": "#quark:permafrost_rocks",
+      "required": false
+    },
+    {
+      "id": "ad_astra:permafrost",
+      "required": false
+    },
+    {
+      "id": "#ad_astra:permafrost_rocks",
+      "required": false
+    }
+  ]
+}

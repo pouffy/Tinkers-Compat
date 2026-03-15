@@ -3,6 +3,10 @@
     {
       "id": "biomeswevegone:cypress_planks",
       "required": false
+    },
+    {
+      "id": "regions_unexplored:cypress_planks",
+      "required": false
     }
   ]
 }

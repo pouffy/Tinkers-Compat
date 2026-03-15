@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "deep_aether:aseterite",
+      "required": false
+    },
+    {
+      "id": "#deep_aether:aseterite_rocks",
+      "required": false
+    }
+  ]
+}

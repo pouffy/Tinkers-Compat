@@ -3,6 +3,10 @@
     {
       "id": "#biomeswevegone:cypress_logs",
       "required": false
+    },
+    {
+      "id": "#regions_unexplored:cypress_logs",
+      "required": false
     }
   ]
 }
