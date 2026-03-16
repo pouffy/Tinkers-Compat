@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 3000,
+      "fluid": "tconstruct:molten_glass"
+    },
+    {
+      "amount": 100,
+      "fluid": "tconstruct:molten_diamond"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "item": "ad_astra:photovoltaic_etrium_cell"
+  },
+  "result": {
+    "amount": 180,
+    "fluid": "tcompat:molten_desh"
+  },
+  "temperature": 1075,
+  "time": 97
+}

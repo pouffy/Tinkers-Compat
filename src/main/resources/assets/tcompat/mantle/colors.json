@@ -24,7 +24,8 @@
     "swapping":               "#e72a8b",
     "birt":                   "#3ac2d4",
     "autochant":              "#e5eb62",
-    "autofreeze":             "#c6e1e1"
+    "autofreeze":             "#c6e1e1",
+    "oxygenated":             "#a9b4ed"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,

@@ -11,10 +11,7 @@ import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
-import slimeknights.tconstruct.tools.stats.GripMaterialStats;
-import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
-import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
-import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
+import slimeknights.tconstruct.tools.stats.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -137,6 +134,10 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildGeneric(TCMaterials.refinedSentrite,   0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1, addStats(GripMaterialStats.ID, HeadMaterialStats.ID), "metal");
 
         buildGeneric(TCMaterials.pyral,             0xFF6b130b, 0xFFb7420c, 0xFFd86a0b, 0xFFffb326, 0xFFfeda87, 0xFFffeec5, addStats(), "metal").armor().ranged();
+
+        buildGeneric(TCMaterials.calorite,             0xFF470d2f, 0xFF6a1534, 0xFF9e1f3f, 0xFFb83145, 0xFFcb4e4f, 0xFFdf6d5c, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.desh,             0xFF7a3045, 0xFF9e4539, 0xFFb25b3d, 0xFFc77142, 0xFFd68d4d, 0xFFe9ba5d, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.ostrum,             0xFF42313d, 0xFF553e4b, 0xFF775360, 0xFF925e64, 0xFFa86c73, 0xFFbf7a82, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
         buildMaterial(TCMaterials.valkyrum)
                 .armor().meleeHarvest()
                 .transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0));

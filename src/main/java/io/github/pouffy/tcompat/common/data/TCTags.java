@@ -137,6 +137,12 @@ public class TCTags {
         private static void init() {
         }
 
+        public static TagKey<Fluid> OXYGEN  = common("oxygen");
+
+        private static TagKey<Fluid> common(String name) {
+            return TagKey.create(Registries.FLUID, commonResource(name));
+        }
+
         private static TagKey<Fluid> local(String name) {
             return TagKey.create(Registries.FLUID, getResource(name));
         }

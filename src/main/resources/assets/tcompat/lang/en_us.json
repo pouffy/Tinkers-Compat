@@ -84,6 +84,10 @@
   "material.tcompat.neptune": "Neptune",
   "material.tcompat.pyral": "Phoenix",
 
+  "material.tcompat.desh": "Desh",
+  "material.tcompat.calorite": "Calorite",
+  "material.tcompat.ostrum": "Ostrum",
+
   "material.tcompat.hellbark": "Hellbark",
 
   "material.tcompat.blightbunny_fang": "Blightbunny Fang",
@@ -105,6 +109,9 @@
   "block.tcompat.molten_valkyrum_fluid": "Molten Valkyrum",
   "block.tcompat.molten_neptune_fluid": "Molten Neptune",
   "block.tcompat.molten_pyral_fluid": "Molten Pyral",
+  "block.tcompat.molten_desh_fluid": "Molten Desh",
+  "block.tcompat.molten_calorite_fluid": "Molten Calorite",
+  "block.tcompat.molten_ostrum_fluid": "Molten Ostrum",
   "fluid.tcompat.molten_zanite": "Molten Zanite",
   "fluid.tcompat.molten_skyjade": "Molten Skyjade",
   "fluid.tcompat.molten_gravitite": "Molten Gravitite",
@@ -114,7 +121,9 @@
   "fluid.tcompat.molten_valkyrum": "Molten Valkyrum",
   "fluid.tcompat.molten_neptune": "Molten Neptune",
   "fluid.tcompat.molten_pyral": "Molten Pyral",
-
+  "fluid.tcompat.molten_desh": "Molten Desh",
+  "fluid.tcompat.molten_calorite": "Molten Calorite",
+  "fluid.tcompat.molten_ostrum": "Molten Ostrum",
 
   "item.tcompat.molten_zanite_bucket": "Molten Zanite Bucket",
   "item.tcompat.molten_skyjade_bucket": "Molten Skyjade Bucket",
@@ -125,6 +134,9 @@
   "item.tcompat.molten_valkyrum_bucket": "Molten Valkyrum Bucket",
   "item.tcompat.molten_neptune_bucket": "Molten Neptune Bucket",
   "item.tcompat.molten_pyral_bucket": "Molten Pyral Bucket",
+  "item.tcompat.molten_desh_bucket": "Molten Desh Bucket",
+  "item.tcompat.molten_calorite_bucket": "Molten Calorite Bucket",
+  "item.tcompat.molten_ostrum_bucket": "Molten Ostrum Bucket",
 
 
   "_comment": "Tooltips",
@@ -177,6 +189,10 @@
   "modifier.tcompat.birt": "Birt",
   "modifier.tcompat.birt.flavor": "Birt",
   "modifier.tcompat.birt.description": "Birt",
+
+  "modifier.tcompat.oxygenated": "Oxygenated",
+  "modifier.tcompat.oxygenated.flavor": "Breathe in...",
+  "modifier.tcompat.oxygenated.description": "Using the tool replenishes air by consuming Oxygen.",
 
   "modifier.tcompat.magic_proficiency": "Magic Proficiency",
   "modifier.tcompat.magic_proficiency.flavor": "Alakazowch",

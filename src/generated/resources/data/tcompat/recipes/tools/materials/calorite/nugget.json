@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/calorite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/calorite"
+  },
+  "material": "tcompat:calorite",
+  "needed": 9,
+  "value": 1
+}

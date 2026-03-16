@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "ad_astra"
+  },
+  "craftable": false,
+  "hidden": false,
+  "sortOrder": 3,
+  "tier": 2
+}

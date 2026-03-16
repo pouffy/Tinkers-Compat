@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCRocks;
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
@@ -60,6 +61,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
         Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
+        Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
         List<MaterialVariantId> noPlanks = List.of(TCMaterials.paloVerde);
 
         // Streamline variant recipes
@@ -92,7 +94,11 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
 
         metalMaterialRecipe(aetherTreasureConsumer, TCMaterials.pyral, folder, "pyral", true);
         metalMaterialRecipe(aetherTreasureConsumer, TCMaterials.valkyrum, folder, "valkyrum", true);
-        materialRecipe(speciesConsumer, TCMaterials.neptune, ItemNameIngredient.from(TCompat.getResource("aether_treasure_reforging:neptune_mesh")), 1, 1, folder + "neptune/mesh");
+        materialRecipe(aetherTreasureConsumer, TCMaterials.neptune, ItemNameIngredient.from(TCompat.getResource("aether_treasure_reforging:neptune_mesh")), 1, 1, folder + "neptune/mesh");
+
+        metalMaterialRecipe(adAstraConsumer, TCMaterials.desh, folder, "desh", true);
+        metalMaterialRecipe(adAstraConsumer, TCMaterials.calorite, folder, "calorite", true);
+        metalMaterialRecipe(adAstraConsumer, TCMaterials.ostrum, folder, "ostrum", true);
 
         materialRecipe(speciesConsumer, TCMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
     }
@@ -103,12 +109,17 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> aetherReduxConsumer = withCondition(consumer, modLoaded("aether_redux"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
         Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
+        Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
 
         materialMeltingCasting(aetherConsumer, TCMaterials.zanite, AetherInit.moltenZanite, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, AetherInit.moltenGravitite, folder);
         materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, DeepAetherInit.moltenSkyjade, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, AetherReduxInit.moltenVeridium, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, AetherReduxInit.moltenRefinedSentrite, folder);
+
+        materialMeltingCasting(adAstraConsumer, TCMaterials.desh, AdAstraInit.moltenDesh, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, TCMaterials.calorite, AdAstraInit.moltenCalorite, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, TCMaterials.ostrum, AdAstraInit.moltenOstrum, FluidValues.INGOT, folder);
 
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, AetherTRInit.moltenValkyrum, FluidValues.INGOT, folder);
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, AetherTRInit.moltenPyral, FluidValues.INGOT, folder);

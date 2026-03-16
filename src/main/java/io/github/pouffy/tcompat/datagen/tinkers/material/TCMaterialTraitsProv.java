@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
@@ -14,6 +15,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
+import slimeknights.tconstruct.tools.modifiers.EnergyHandlerModifier;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
@@ -54,5 +56,8 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addTraits(TCMaterials.neptune, ARMOR, ModifierIds.depthStrider);
         addTraits(TCMaterials.mykapodShell, StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay);
         addDefaultTraits(TCMaterials.wickedWax, SpeciesInit.wicked);
+        addDefaultTraits(TCMaterials.desh, AdAstraInit.oxygenated);
+        addDefaultTraits(TCMaterials.calorite, AdAstraInit.oxygenated);
+        addDefaultTraits(TCMaterials.ostrum, AdAstraInit.oxygenated);
     }
 }

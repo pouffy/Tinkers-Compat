@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/desh"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/desh"
+  },
+  "material": "tcompat:desh",
+  "needed": 1,
+  "value": 1
+}

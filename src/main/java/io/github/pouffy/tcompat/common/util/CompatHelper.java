@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common.util;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
@@ -31,13 +32,15 @@ public class CompatHelper {
             "aether_redux", AetherReduxInit::init,
             "deep_aether", DeepAetherInit::init,
             "aether_treasure_reforging", AetherTRInit::init,
-            "species", SpeciesInit::init
+            "species", SpeciesInit::init,
+            "ad_astra", AdAstraInit::init
     );
     private static Map<String, Consumer<IEventBus>> compatEvents = Map.of(
             "aether", (bus) -> bus.register(new AetherInit()),
             "aether_redux", (bus) -> bus.register(new AetherReduxInit()),
             "deep_aether", (bus) -> bus.register(new DeepAetherInit()),
-            "aether_treasure_reforging", (bus) -> bus.register(new AetherTRInit())
+            "aether_treasure_reforging", (bus) -> bus.register(new AetherTRInit()),
+            "ad_astra", (bus) -> bus.register(new AdAstraInit())
     );
 
     public static void init(IEventBus eventBus) {

@@ -28,6 +28,9 @@ public class TCMaterials {
     public static final MaterialId valkyrum = id("valkyrum");
     public static final MaterialId neptune = id("neptune");
 
+    public static final MaterialId calorite = id("calorite");
+    public static final MaterialId desh = id("desh");
+    public static final MaterialId ostrum = id("ostrum");
     // Special Craftable Materials
     public static final MaterialId blightbunnyFang = id("blightbunny_fang");
     public static final MaterialId mykapodShell = id("mykapod_shell");

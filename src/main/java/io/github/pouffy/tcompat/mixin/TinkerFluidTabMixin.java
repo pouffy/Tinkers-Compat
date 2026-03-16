@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.mixin;
 
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
@@ -22,7 +23,8 @@ public class TinkerFluidTabMixin {
             "aether", AetherInit::addTabItems,
             "aether_redux", AetherReduxInit::addTabItems,
             "deep_aether", DeepAetherInit::addTabItems,
-            "aether_treasure_reforging", AetherTRInit::addTabItems
+            "aether_treasure_reforging", AetherTRInit::addTabItems,
+            "ad_astra", AdAstraInit::addTabItems
     );
 
     @Inject(method = "addTabItems(Lnet/minecraft/world/item/CreativeModeTab$ItemDisplayParameters;Lnet/minecraft/world/item/CreativeModeTab$Output;)V", at = @At("TAIL"), remap = false)

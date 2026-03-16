@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.fluid;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
@@ -29,6 +30,9 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
         compatOre(AetherTRInit.moltenPyral);
         compatOre(AetherTRInit.moltenNeptune);
         compatOre(AetherTRInit.moltenValkyrum);
+        compatOre(AdAstraInit.moltenDesh);
+        compatOre(AdAstraInit.moltenCalorite);
+        compatOre(AdAstraInit.moltenOstrum);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {

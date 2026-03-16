@@ -3,7 +3,7 @@
   "conditions": [
     {
       "type": "forge:mod_loaded",
-      "modid": "species"
+      "modid": "aether_treasure_reforging"
     }
   ],
   "ingredient": {

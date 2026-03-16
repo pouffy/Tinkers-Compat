@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
@@ -35,17 +36,26 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(AetherTRInit.moltenValkyrum);
         fluidTag(AetherTRInit.moltenPyral);
         fluidTag(AetherTRInit.moltenNeptune);
+        fluidTag(AdAstraInit.moltenDesh);
+        fluidTag(AdAstraInit.moltenCalorite);
+        fluidTag(AdAstraInit.moltenOstrum);
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(
+                //Aether
                 AetherInit.moltenGravitite.getTag(),
                 DeepAetherInit.moltenStratus.getTag(),
                 AetherReduxInit.moltenVeridium.getTag(),
                 AetherReduxInit.moltenRefinedSentrite.getTag(),
+                //Treasure Reforging
                 AetherTRInit.moltenValkyrum.getTag(),
                 AetherTRInit.moltenPyral.getTag(),
                 AetherTRInit.moltenNeptune.getTag(),
                 // Yes, these *are* gems... But they behave like ingots so they will have to have the values of ingots
                 DeepAetherInit.moltenSkyjade.getTag(),
-                AetherInit.moltenZanite.getTag()
+                AetherInit.moltenZanite.getTag(),
+                //Ad Astra
+                AdAstraInit.moltenDesh.getTag(),
+                AdAstraInit.moltenCalorite.getTag(),
+                AdAstraInit.moltenOstrum.getTag()
         );
         //this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
         //        AetherInit.moltenZanite.getTag()

@@ -26,6 +26,7 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         ICondition aetherTreasure = new ModLoadedCondition("aether_treasure_reforging");
         ICondition bop = new ModLoadedCondition("biomesoplenty");
         ICondition species = new ModLoadedCondition("species");
+        ICondition adAstra = new ModLoadedCondition("ad_astra");
 
         ICondition brass = tagFull("forge", "ingots/brass");
         ICondition zinc = tagFull("forge", "ingots/zinc");
@@ -48,6 +49,10 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.pyral, 1, ORDER_SPECIAL, false, false, aetherTreasure);
         addMaterial(TCMaterials.valkyrum, 1, ORDER_SPECIAL, false, false, aetherTreasure);
         addMaterial(TCMaterials.neptune, 2, ORDER_SPECIAL, true, false, aetherTreasure);
+
+        addMaterial(TCMaterials.desh, 2, ORDER_SPECIAL, false, false, adAstra);
+        addMaterial(TCMaterials.calorite, 2, ORDER_SPECIAL, false, false, adAstra);
+        addMaterial(TCMaterials.ostrum, 2, ORDER_SPECIAL, false, false, adAstra);
 
         //addMaterial(TCMaterials.zinc, 2, ORDER_HARVEST, false, false, zinc);
         //addMaterial(TCMaterials.brass, 2, ORDER_HARVEST, false, false, brass);

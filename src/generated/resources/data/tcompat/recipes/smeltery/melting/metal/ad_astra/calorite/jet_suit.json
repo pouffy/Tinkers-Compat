@@ -1,0 +1,48 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 450,
+      "fluid": "tcompat:molten_desh"
+    },
+    {
+      "amount": 450,
+      "fluid": "tcompat:molten_ostrum"
+    },
+    {
+      "amount": 600,
+      "fluid": "tconstruct:molten_diamond"
+    },
+    {
+      "amount": 90,
+      "fluid": "tconstruct:molten_netherite"
+    },
+    {
+      "amount": 90,
+      "fluid": "minecraft:empty"
+    },
+    {
+      "amount": 720,
+      "fluid": "tconstruct:molten_steel"
+    },
+    {
+      "amount": 1620,
+      "fluid": "tconstruct:molten_iron"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "item": "ad_astra:jet_suit"
+  },
+  "result": {
+    "amount": 1530,
+    "fluid": "tcompat:molten_calorite"
+  },
+  "temperature": 1275,
+  "time": 306
+}
