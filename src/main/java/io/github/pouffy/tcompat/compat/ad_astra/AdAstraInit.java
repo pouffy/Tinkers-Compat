@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.ad_astra;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.material.MapColor;
@@ -45,5 +46,15 @@ public class AdAstraInit extends CompatInitializer {
     public static void init(IEventBus eventBus) {
         ASTRA_M.register(eventBus);
         ASTRA_F.register(eventBus);
+    }
+
+    public static ResourceLocation moltenDesh() {
+        return TCompat.getResource("molten_desh");
+    }
+    public static ResourceLocation moltenCalorite() {
+        return TCompat.getResource("molten_calorite");
+    }
+    public static ResourceLocation moltenOstrum() {
+        return TCompat.getResource("molten_ostrum");
     }
 }

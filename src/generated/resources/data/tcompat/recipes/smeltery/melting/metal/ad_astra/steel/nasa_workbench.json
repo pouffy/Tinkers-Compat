@@ -3,7 +3,7 @@
   "byproducts": [
     {
       "amount": 90,
-      "fluid": "minecraft:empty"
+      "fluid": "tconstruct:molten_iron"
     }
   ],
   "conditions": [

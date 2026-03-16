@@ -2,12 +2,12 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 450,
-      "fluid": "tcompat:molten_desh"
-    },
-    {
       "amount": 1305,
       "fluid": "tconstruct:molten_steel"
+    },
+    {
+      "amount": 450,
+      "fluid": "tcompat:molten_desh"
     }
   ],
   "conditions": [

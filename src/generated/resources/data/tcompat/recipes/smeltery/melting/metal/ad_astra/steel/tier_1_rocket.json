@@ -3,11 +3,7 @@
   "byproducts": [
     {
       "amount": 270,
-      "fluid": "minecraft:empty"
-    },
-    {
-      "amount": 810,
-      "fluid": "tconstruct:molten_iron"
+      "fluid": "tconstruct:molten_copper"
     }
   ],
   "conditions": [
@@ -20,9 +16,9 @@
     "item": "ad_astra:tier_1_rocket"
   },
   "result": {
-    "amount": 7965,
+    "amount": 6525,
     "fluid": "tconstruct:molten_steel"
   },
   "temperature": 950,
-  "time": 610
+  "time": 552
 }

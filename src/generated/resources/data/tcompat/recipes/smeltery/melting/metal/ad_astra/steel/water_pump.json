@@ -2,12 +2,12 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 450,
-      "fluid": "minecraft:empty"
+      "amount": 855,
+      "fluid": "tconstruct:molten_iron"
     },
     {
-      "amount": 405,
-      "fluid": "tconstruct:molten_iron"
+      "amount": 270,
+      "fluid": "tcompat:molten_desh"
     }
   ],
   "conditions": [

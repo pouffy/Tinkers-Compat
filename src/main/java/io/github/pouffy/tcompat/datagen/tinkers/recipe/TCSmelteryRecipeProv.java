@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.common.data.TCTags;
+import io.github.pouffy.tcompat.common.material.TCMeltingInfo;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
@@ -16,11 +17,13 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.checkerframework.checker.units.qual.C;
 import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.helper.FluidOutput;
+import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
@@ -98,6 +101,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         salvageAll(aetherConsumer, aetherId, AetherInit.moltenGravitite, FluidValues.INGOT, "gravitite", new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
         salvageArmor(aetherConsumer, aetherId, TinkerFluids.moltenObsidian, FluidValues.GLASS_BLOCK, "obsidian", new int[]{FluidValues.GLASS_PANE}, miscFolder.apply("melting"));
     }
+
 
     private void deepAether(Consumer<FinishedRecipe> consumer, String folder) {
         String deepAether = "deep_aether";
@@ -254,242 +258,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         int plating = 7;
         int rod = 45;
 
-        //Used for infos
-        MeltingInfo netheriteHelmet = MeltingInfo.create(getResource("minecraft:netherite_helmet"))
-                .result(TinkerFluids.moltenNetherite, FluidValues.INGOT)
-                .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.GEM * 5));
-        MeltingInfo netheriteChestplate = MeltingInfo.create(getResource("minecraft:netherite_chestplate"))
-                .result(TinkerFluids.moltenNetherite, FluidValues.INGOT)
-                .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.GEM * 8));
-        MeltingInfo netheriteLeggings = MeltingInfo.create(getResource("minecraft:netherite_leggings"))
-                .result(TinkerFluids.moltenNetherite, FluidValues.INGOT)
-                .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.GEM * 7));
-        MeltingInfo netheriteBoots = MeltingInfo.create(getResource("minecraft:netherite_boots"))
-                .result(TinkerFluids.moltenNetherite, FluidValues.INGOT)
-                .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.GEM * 4));
-
-        //Parts
-        MeltingInfo rocketFin = MeltingInfo.create(adAstraId.apply("rocket_fin"))
-                .result(TinkerFluids.moltenSteel, 135)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo engineFrame = MeltingInfo.create(adAstraId.apply("engine_frame"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT + (rod * 8))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo fan = MeltingInfo.create(adAstraId.apply("fan"))
-                .result(TinkerFluids.moltenSteel, (FluidValues.INGOT * 4) + rod)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo noseCone = MeltingInfo.create(adAstraId.apply("rocket_nose_cone"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 4)
-                .byproduct(TinkerFluids.moltenCopper.result(FluidValues.INGOT * 3))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo oxygenGear = MeltingInfo.create(adAstraId.apply("oxygen_gear"))
-                .result(TinkerFluids.moltenSteel, (FluidValues.INGOT * 4) + (rod * 3))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo wheel = MeltingInfo.create(adAstraId.apply("wheel"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo gasTank = MeltingInfo.create(adAstraId.apply("gas_tank"))
-                .result(TinkerFluids.moltenIron, (FluidValues.INGOT * 4) + rod)
-                .save(adAstraConsumer, "iron");
-        MeltingInfo largeGasTank = MeltingInfo.create(adAstraId.apply("large_gas_tank"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 4)
-                .component(gasTank.withAmount(2))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo etrionicCapacitor = MeltingInfo.create(adAstraId.apply("etrionic_capacitor"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 4)
-                .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.GEM * 3))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo steelEngine = MeltingInfo.create(adAstraId.apply("steel_engine"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 5)
-                .components(engineFrame, fan)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo deshEngine = MeltingInfo.create(adAstraId.apply("desh_engine"))
-                .result(AdAstraInit.moltenDesh, FluidValues.INGOT * 5)
-                .component(steelEngine)
-                .save(adAstraConsumer, "desh");
-        MeltingInfo ostrumEngine = MeltingInfo.create(adAstraId.apply("ostrum_engine"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.INGOT * 5)
-                .component(deshEngine)
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo caloriteEngine = MeltingInfo.create(adAstraId.apply("calorite_engine"))
-                .result(AdAstraInit.moltenCalorite, FluidValues.INGOT * 5)
-                .component(ostrumEngine)
-                .save(adAstraConsumer, "calorite");
-        MeltingInfo steelTank = MeltingInfo.create(adAstraId.apply("steel_tank"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 5)
-                .component(gasTank)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo deshTank = MeltingInfo.create(adAstraId.apply("desh_tank"))
-                .result(AdAstraInit.moltenDesh, FluidValues.INGOT * 5)
-                .byproduct(TinkerFluids.moltenSteel.result(rod))
-                .component(steelTank)
-                .save(adAstraConsumer, "desh");
-        MeltingInfo ostrumTank = MeltingInfo.create(adAstraId.apply("ostrum_tank"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.INGOT * 5)
-                .byproduct(TinkerFluids.moltenSteel.result(rod))
-                .component(deshTank)
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo caloriteTank = MeltingInfo.create(adAstraId.apply("calorite_tank"))
-                .result(AdAstraInit.moltenCalorite, FluidValues.INGOT * 5)
-                .byproduct(TinkerFluids.moltenSteel.result(rod))
-                .component(ostrumTank)
-                .save(adAstraConsumer, "calorite");
-        MeltingInfo photovoltaicEtriumCell =  MeltingInfo.create(adAstraId.apply("photovoltaic_etrium_cell"))
-                .result(AdAstraInit.moltenDesh, FluidValues.INGOT * 2)
-                .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.GEM), TinkerFluids.moltenGlass.result(FluidValues.GLASS_BLOCK * 3))
-                .save(adAstraConsumer, "desh");
-
-        //Equipment
-        MeltingInfo zipGun = MeltingInfo.create(adAstraId.apply("zip_gun"))
-                .result(TinkerFluids.moltenSteel, (FluidValues.INGOT * 2) + rod)
-                .component(gasTank)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo ti69 = MeltingInfo.create(adAstraId.apply("ti_69"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 5)
-                .byproduct(TinkerFluids.moltenGlass.result(FluidValues.GLASS_PANE * 3))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo wrench = MeltingInfo.create(adAstraId.apply("wrench"))
-                .result(TinkerFluids.moltenIron, (FluidValues.INGOT * 2) + (rod * 2))
-                .save(adAstraConsumer, "iron");
-        MeltingInfo spaceHelmet = MeltingInfo.create(adAstraId.apply("space_helmet"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 5)
-                .byproduct(TinkerFluids.moltenGlass.result(FluidValues.GLASS_PANE))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo spaceSuit = MeltingInfo.create(adAstraId.apply("space_suit"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 4)
-                .components(oxygenGear, gasTank.withAmount(2))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo spacePants = MeltingInfo.create(adAstraId.apply("space_pants"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 5)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo spaceBoots = MeltingInfo.create(adAstraId.apply("space_boots"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 2)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo netheriteSpaceHelmet = MeltingInfo.create(adAstraId.apply("netherite_space_helmet"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.INGOT * 4)
-                .byproduct(TinkerFluids.moltenGlass.result(FluidValues.GLASS_BLOCK))
-                .component(netheriteHelmet)
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo netheriteSpaceSuit = MeltingInfo.create(adAstraId.apply("netherite_space_suit"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.INGOT * 4)
-                .components(netheriteChestplate, oxygenGear, largeGasTank.withAmount(2))
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo netheriteSpacePants = MeltingInfo.create(adAstraId.apply("netherite_space_pants"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.INGOT * 4)
-                .byproduct(AdAstraInit.moltenDesh.result(FluidValues.INGOT * 2))
-                .component(netheriteLeggings)
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo netheriteSpaceBoots = MeltingInfo.create(adAstraId.apply("netherite_space_boots"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.INGOT * 2)
-                .byproduct(AdAstraInit.moltenDesh.result(FluidValues.INGOT * 2))
-                .component(netheriteBoots)
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo jetSuitHelmet = MeltingInfo.create(adAstraId.apply("jet_suit_helmet"))
-                .result(AdAstraInit.moltenCalorite, FluidValues.INGOT * 4)
-                .byproduct(TinkerFluids.moltenAmethyst.result(FluidValues.GEM * 2), TinkerFluids.moltenGlass.result(FluidValues.GLASS_PANE * 2))
-                .component(netheriteSpaceHelmet)
-                .save(adAstraConsumer, "calorite");
-        MeltingInfo jetSuit = MeltingInfo.create(adAstraId.apply("jet_suit"))
-                .result(AdAstraInit.moltenCalorite, FluidValues.INGOT * 2)
-                .components(caloriteTank.withAmount(2), netheriteSpaceSuit, caloriteEngine, etrionicCapacitor.withAmount(2))
-                .save(adAstraConsumer, "calorite");
-        MeltingInfo jetSuitPants = MeltingInfo.create(adAstraId.apply("jet_suit_pants"))
-                .result(AdAstraInit.moltenCalorite, (FluidValues.INGOT * 4) + (FluidValues.METAL_BLOCK * 2))
-                .component(netheriteSpacePants)
-                .save(adAstraConsumer, "calorite");
-        MeltingInfo jetSuitBoots = MeltingInfo.create(adAstraId.apply("jet_suit_boots"))
-                .result(AdAstraInit.moltenCalorite, (FluidValues.INGOT * 2) + (FluidValues.METAL_BLOCK * 2))
-                .component(netheriteSpaceBoots)
-                .save(adAstraConsumer, "calorite");
-
-        //Machines
-        MeltingInfo launchPad = MeltingInfo.create(adAstraId.apply("launch_pad"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 7)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo radio = MeltingInfo.create(adAstraId.apply("radio"))
-                .result(TinkerFluids.moltenSteel, (FluidValues.INGOT * 6) + rod)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo coalGenerator = MeltingInfo.create(adAstraId.apply("coal_generator"))
-                .result(TinkerFluids.moltenIron, FluidValues.INGOT * 6)
-                .save(adAstraConsumer, "iron");
-        MeltingInfo compressor = MeltingInfo.create(adAstraId.apply("compressor"))
-                .result(TinkerFluids.moltenIron, FluidValues.INGOT * 8)
-                .save(adAstraConsumer, "iron");
-        MeltingInfo electronicBlastFurnace = MeltingInfo.create(adAstraId.apply("electronic_blast_furnace"))
-                .result(TinkerFluids.moltenIron, FluidValues.INGOT * 11)
-                .save(adAstraConsumer, "iron");
-        MeltingInfo nasaWorkbench = MeltingInfo.create(adAstraId.apply("nasa_workbench"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 12)
-                .byproduct(TinkerFluids.moltenIron.result(rod * 2))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo fuelRefinery = MeltingInfo.create(adAstraId.apply("fuel_refinery"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 6)
-                .byproduct(TinkerFluids.moltenIron.result(FluidValues.INGOT * 6))
-                .save(adAstraConsumer, "steel");
-        MeltingInfo oxygenLoader = MeltingInfo.create(adAstraId.apply("oxygen_loader"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 4)
-                .byproduct(TinkerFluids.moltenCopper.result(FluidValues.INGOT * 3))
-                .components(gasTank.withAmount(2), fan)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo solarPanel = MeltingInfo.create(adAstraId.apply("solar_panel"))
-                .result(AdAstraInit.moltenDesh, FluidValues.INGOT * 4)
-                .byproduct(TinkerFluids.moltenSteel.result(FluidValues.INGOT * 2))
-                .components(photovoltaicEtriumCell.withAmount(3))
-                .save(adAstraConsumer, "desh");
-        MeltingInfo waterPump = MeltingInfo.create(adAstraId.apply("water_pump"))
-                .result(TinkerFluids.moltenSteel, FluidValues.INGOT * 4)
-                .byproduct(AdAstraInit.moltenDesh.result(FluidValues.INGOT * 3))
-                .byproduct(TinkerFluids.moltenIron.result(FluidValues.INGOT * 5))
-                .components(gasTank)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo oxygenDistributor = MeltingInfo.create(adAstraId.apply("oxygen_distributor"))
-                .result(TinkerFluids.moltenSteel, (FluidValues.INGOT * 16) + (rod * 4))
-                .byproduct(AdAstraInit.moltenDesh.result(FluidValues.INGOT * 2))
-                .components(largeGasTank, oxygenLoader, oxygenGear)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo gravityNormalizer = MeltingInfo.create(adAstraId.apply("gravity_normalizer"))
-                .result(TinkerFluids.moltenDiamond, FluidValues.LARGE_GEM_BLOCK)
-                .byproduct(AdAstraInit.moltenDesh.result(FluidValues.INGOT * 3))
-                .components(etrionicCapacitor.withAmount(2))
-                .save(adAstraConsumer, "diamond", "gem");
-        MeltingInfo energizer = MeltingInfo.create(adAstraId.apply("energizer"))
-                .result(AdAstraInit.moltenOstrum,  FluidValues.INGOT * 22)
-                .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.LARGE_GEM_BLOCK))
-                .component(etrionicCapacitor.withAmount(2))
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo cryoFreezer = MeltingInfo.create(adAstraId.apply("cryo_freezer"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.INGOT * 6)
-                .byproduct(FluidOutput.fromFluid(Fluids.WATER, FluidValues.GLASS_BLOCK * 162))
-                .component(largeGasTank)
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo oxygenSensor = MeltingInfo.create(adAstraId.apply("oxygen_sensor"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.INGOT * 7)
-                .component(fan)
-                .save(adAstraConsumer, "ostrum");
-
-        //Vehicles
-        MeltingInfo rover = MeltingInfo.create(adAstraId.apply("tier_1_rover"))
-                .result(AdAstraInit.moltenDesh, FluidValues.INGOT * 10)
-                .byproduct(TinkerFluids.moltenSteel.result(rod))
-                .components(wheel.withAmount(2), deshEngine, radio, largeGasTank)
-                .save(adAstraConsumer, "desh");
-        MeltingInfo rocket1 = MeltingInfo.create(adAstraId.apply("tier_1_rocket"))
-                .result(TinkerFluids.moltenSteel, FluidValues.METAL_BLOCK * 6)
-                .components(noseCone, rocketFin.withAmount(4), steelTank.withAmount(2), steelEngine)
-                .save(adAstraConsumer, "steel");
-        MeltingInfo rocket2 = MeltingInfo.create(adAstraId.apply("tier_2_rocket"))
-                .result(AdAstraInit.moltenDesh, FluidValues.METAL_BLOCK * 6)
-                .components(noseCone, rocketFin.withAmount(4), deshTank.withAmount(2), deshEngine)
-                .save(adAstraConsumer, "desh");
-        MeltingInfo rocket3 = MeltingInfo.create(adAstraId.apply("tier_3_rocket"))
-                .result(AdAstraInit.moltenOstrum, FluidValues.METAL_BLOCK * 6)
-                .components(noseCone, rocketFin.withAmount(4), ostrumTank.withAmount(2), ostrumEngine)
-                .save(adAstraConsumer, "ostrum");
-        MeltingInfo rocket4 = MeltingInfo.create(adAstraId.apply("tier_4_rocket"))
-                .result(AdAstraInit.moltenCalorite, FluidValues.METAL_BLOCK * 6)
-                .components(noseCone, rocketFin.withAmount(4), caloriteTank.withAmount(2), caloriteEngine)
-                .save(adAstraConsumer, "calorite");
-
+        TCMeltingInfo.AdAstra.adAstraGroup.saveAll(consumer);
         //Deco
         simpleMelting(adAstraConsumer, TinkerFluids.moltenSteel, rod * 3, "steel", Ingredient.of(adAstraTag.apply("flags")), metalFolder.apply("melting"), "space_flags");
     }
