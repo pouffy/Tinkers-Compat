@@ -107,6 +107,9 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildPlanks(TCMaterials.pinkBioshroom,      0xFF832f74, 0xFF8f357f, 0xFFa13e92, 0xFFb64ba9, 0xFFc558ba, 0xFFd773d1, 0xFFdd8dd9);
         buildPlanks(TCMaterials.socotra,            0xFF723117, 0xFF854e2a, 0xFF946539, 0xFF9e7344, 0xFFa8824f, 0xFFaf8b56, 0xFFb4915c);
         buildPlanks(TCMaterials.yellowBioshroom,    0xFF887e2b, 0xFF948930, 0xFFa79839, 0xFFbca945, 0xFFcbb552, 0xFFddc46e, 0xFFe2cd89);
+        buildPlanks(TCMaterials.aeronos,            0xFF3b3145, 0xFF453e57, 0xFF4f4966, 0xFF55536f, 0xFF5d5c7a, 0xFF646e82, 0xFF677d87);
+        buildPlanks(TCMaterials.strophar,           0xFF6b5e5b, 0xFF776b65, 0xFF8a7d72, 0xFF968c7d, 0xFFa09986, 0xFFaea893, 0xFFccc2a7);
+        buildPlanks(TCMaterials.glacian,            0xFF8c5b7d, 0xFF99688b, 0xFFae7e96, 0xFFb6859e, 0xFFb9889b, 0xFFc08ea0, 0xFFc59fa8);
 
         // Rock
         buildRock(TCMaterials.redRock,              0xFF7F4026, 0xFF904727, 0xFF95522F, 0xFFA95936, 0xFFAD633E, 0xFFB36D44);
@@ -126,6 +129,13 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildRock(TCMaterials.clorite,              0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
         buildRock(TCMaterials.divinite,             0xFF8B7149, 0xFF987E55, 0xFFAA8F65, 0xFFBAA170, 0xFFCDB285, 0xFFD8C699);
         buildRock(TCMaterials.driftshale,           0xFFAA9A5D, 0xFFBEB06C, 0xFFCEC277, 0xFFD9CE81, 0xFFDFDA95, 0xFFE3E2A8);
+
+        buildRock(TCMaterials.moonStone,            0xFF353e43, 0xFF3f474c, 0xFF424c4e, 0xFF4a5253, 0xFF4f5c5d, 0xFF506869);
+        buildRock(TCMaterials.conglomerate,         0xFF885e5e, 0xFF936464, 0xFF936c65, 0xFFa47569, 0xFFa97b6f, 0xFFba897a);
+        buildRock(TCMaterials.marsStone,            0xFFbf6f50, 0xFFc17a51, 0xFFc87e53, 0xFFc98555, 0xFFd08957, 0xFFcd9360);
+        buildRock(TCMaterials.venusStone,           0xFFb3763e, 0xFFb88143, 0xFFc28d4f, 0xFFc99b5a, 0xFFd5a664, 0xFFdfb271);
+        buildRock(TCMaterials.mercuryStone,         0xFF4a263b, 0xFF4d2a3c, 0xFF55313f, 0xFF603948, 0xFF723e49, 0xFF844751);
+        buildRock(TCMaterials.glacioStone,          0xFF7c73a9, 0xFF877cad, 0xFF9185b6, 0xFF9897bf, 0xFFa5a6ca, 0xFFb4b8d2);
 
         buildGeneric(TCMaterials.zanite,            0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff, plating(HeadMaterialStats.ID), "gem", "metal").arrowHead().fletching();
         buildGeneric(TCMaterials.skyjade,           0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397, plating(HeadMaterialStats.ID), "gem", "metal").arrowHead();

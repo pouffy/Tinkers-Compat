@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "item": "ad_astra:ostrum_plating_pressure_plate"
+  },
+  "result": {
+    "amount": 24,
+    "tag": "forge:molten_ostrum"
+  },
+  "temperature": 1485,
+  "time": 41
+}

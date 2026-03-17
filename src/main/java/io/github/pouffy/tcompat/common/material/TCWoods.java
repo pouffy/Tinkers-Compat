@@ -4,11 +4,13 @@ import io.github.pouffy.tcompat.common.util.WoodVariantBuilder;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.predicates.AnyOfCondition;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.OrCondition;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ConsumerWrapperBuilder;
 
@@ -24,7 +26,7 @@ import static io.github.pouffy.tcompat.common.data.TCTags.Items.named;
  * A special container for all compatible wood variants.
  */
 
-public enum TCWoods {
+public enum TCWoods implements StringRepresentable {
     // Overworld Biome Mods
     ALPHA(builder("regions_unexplored")),
     ASPEN(builder("biomeswevegone")),
@@ -70,9 +72,9 @@ public enum TCWoods {
     HELLBARK(builder("biomesoplenty")),
 
     // Quark
-    ANCIENT(builder("quark")),
+    ANCIENT(builder("quark").alias("ashen")),
     AZALEA(builder("quark")),
-    BLOSSOM(builder("quark")),
+    BLOSSOM(builder("quark").alias("trumpet")),
 
     // Aether
     SKYROOT(builder("aether")),
@@ -87,6 +89,11 @@ public enum TCWoods {
     FIELDSPROOT(builder("aether_redux")),
     CRYSTAL(builder("aether_redux")),
     GLACIA(builder("aether_redux")),
+
+    // Ad Astra
+    AERONOS(builder("ad_astra").logType("caps")),
+    STROPHAR(builder("ad_astra").logType("caps")),
+    GLACIAN(builder("ad_astra")),
     ;
 
     public final String name;
@@ -132,16 +139,17 @@ public enum TCWoods {
     }
 
     public TagKey<Item> externalLogTag(String namespace) {
-        String suffix = this.builder.stem ? "_stems" : "_logs";
-        return Objects.requireNonNullElseGet(getSpecialLogTag(namespace), () -> named(namespace, this.name().toLowerCase() + suffix));
+        return Objects.requireNonNullElseGet(getSpecialLogTag(namespace), () -> named(namespace, this.name().toLowerCase() + "_" + this.builder.logType));
     }
+
     public TagKey<Item> plankTag() {
         return Objects.requireNonNullElseGet(this.builder.redirectPlankTag, () -> local("planks/" + this.name().toLowerCase()));
     }
+
     public TagKey<Item> logTag() {
-        String prefix = this.builder.stem ? "stems/" : "logs/";
-        return local(prefix + this.name().toLowerCase());
+        return local(this.builder.logType + "/" + this.name().toLowerCase());
     }
+
     public static TagKey<Item> plankTag(String name) {
         for (TCWoods wood : values()) {
             if (wood.name().toLowerCase().equals(name)) {
@@ -158,6 +166,7 @@ public enum TCWoods {
         }
         return local("logs/" + name);
     }
+
     public static TagKey<Item> stemTag(String name) {
         return local("stems/" + name);
     }
@@ -168,5 +177,14 @@ public enum TCWoods {
             builder.addCondition(condition);
         }
         return builder.build(consumer);
+    }
+
+    //Used for providing an ID to the variant
+    @Override
+    public @NotNull String getSerializedName() {
+        if (!this.builder.alias.isEmpty()) {
+            return this.builder.alias;
+        }
+        return this.name().toLowerCase();
     }
 }

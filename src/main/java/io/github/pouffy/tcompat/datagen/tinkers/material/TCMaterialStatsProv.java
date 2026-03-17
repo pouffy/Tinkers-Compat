@@ -102,8 +102,8 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.aetherWood, StatlessMaterialStats.SHIELD_CORE);
         addMaterialStats(TCMaterials.hellbark, StatlessMaterialStats.SHIELD_CORE);
         addMaterialStats(TCMaterials.mykapodShell, StatlessMaterialStats.SHIELD_CORE);
-        addArmorShieldStats(TCMaterials.zanite, PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2));
-        addArmorShieldStats(TCMaterials.skyjade, PlatingMaterialStats.builder().durabilityFactor(3).armor(3, 6, 8, 3));
+        addArmorShieldStats(TCMaterials.zanite, PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TCMaterials.skyjade, PlatingMaterialStats.builder().durabilityFactor(3).armor(3, 6, 8, 3), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.gravitite, PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.veridium, PlatingMaterialStats.builder().durabilityFactor(19).armor(4, 6, 7, 4).toughness(0.5f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.refinedSentrite, PlatingMaterialStats.builder().durabilityFactor(26).armor(5.2f, 7.2f, 8.2f, 5.2f).knockbackResistance(1).toughness(0.8f), StatlessMaterialStats.MAILLE);

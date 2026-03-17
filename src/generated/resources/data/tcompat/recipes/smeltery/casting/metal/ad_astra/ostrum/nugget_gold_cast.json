@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/ostrum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "cooling_time": 27,
+  "fluid": {
+    "amount": 10,
+    "tag": "forge:molten_ostrum"
+  },
+  "result": {
+    "tag": "forge:nuggets/ostrum"
+  }
+}

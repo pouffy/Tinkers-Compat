@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ad_astra"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/glacian"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/glacian"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/glacian"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/glacian"
+  },
+  "material": "tconstruct:wood#glacian",
+  "needed": 1,
+  "value": 4
+}

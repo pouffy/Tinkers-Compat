@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/desh"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/desh"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_desh"
+  },
+  "temperature": 1075,
+  "time": 69
+}

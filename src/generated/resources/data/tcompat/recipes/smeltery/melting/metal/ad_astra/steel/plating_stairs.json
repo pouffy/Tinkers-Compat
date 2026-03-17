@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "item": "ad_astra:steel_plating_stairs"
+  },
+  "result": {
+    "amount": 18,
+    "tag": "forge:molten_steel"
+  },
+  "temperature": 950,
+  "time": 29
+}

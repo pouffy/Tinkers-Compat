@@ -43,6 +43,9 @@
   "material.tconstruct.wood.pink_bioshroom": "Pink Bioshroom Wood",
   "material.tconstruct.wood.socotra": "Socotra Wood",
   "material.tconstruct.wood.yellow_bioshroom": "Yellow Bioshroom Wood",
+  "material.tconstruct.wood.aeronos": "Aeronos Wood",
+  "material.tconstruct.wood.strophar": "Strophar Wood",
+  "material.tconstruct.wood.glacian": "Glacian Wood",
 
 
   "material.tcompat.aether_wood": "Skyroot",
@@ -67,6 +70,12 @@
   "material.tconstruct.rock.shale": "Shale",
   "material.tconstruct.rock.permafrost": "Permafrost",
   "material.tconstruct.rock.chalk": "Chalk",
+  "material.tconstruct.rock.moon_stone": "Moon Stone",
+  "material.tconstruct.rock.conglomerate": "Conglomerate",
+  "material.tconstruct.rock.mars_stone": "Mars Stone",
+  "material.tconstruct.rock.venus_stone": "Venus Stone",
+  "material.tconstruct.rock.mercury_stone": "Mercury Stone",
+  "material.tconstruct.rock.glacio_stone": "Glacio Stone",
 
   "material.tcompat.aether_rock": "Holystone",
   "material.tcompat.aether_rock.holystone": "Holystone",

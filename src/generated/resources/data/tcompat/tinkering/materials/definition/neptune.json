@@ -3,7 +3,7 @@
     "type": "forge:mod_loaded",
     "modid": "aether_treasure_reforging"
   },
-  "craftable": true,
+  "craftable": false,
   "hidden": false,
   "sortOrder": 3,
   "tier": 2

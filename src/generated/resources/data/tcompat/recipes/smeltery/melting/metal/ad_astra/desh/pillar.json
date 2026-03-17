@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "item": "ad_astra:desh_pillar"
+  },
+  "result": {
+    "amount": 12,
+    "tag": "forge:molten_desh"
+  },
+  "temperature": 1075,
+  "time": 25
+}

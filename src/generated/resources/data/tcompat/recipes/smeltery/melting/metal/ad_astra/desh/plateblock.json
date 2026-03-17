@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 1,
+      "tag": "forge:molten_steel"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "item": "ad_astra:desh_plateblock"
+  },
+  "result": {
+    "amount": 11,
+    "tag": "forge:molten_desh"
+  },
+  "temperature": 1075,
+  "time": 24
+}

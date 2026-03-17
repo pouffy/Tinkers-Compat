@@ -57,6 +57,9 @@
     "wood.ashen":             "#eadbe4",
     "wood.azalea":            "#99a654",
     "wood.trumpet":           "#4e271c",
+    "wood.aeronos":           "#55536f",
+    "wood.strophar":          "#968c7d",
+    "wood.glacian":           "#b6859e",
 
     "__tier_1_rock__": null,
     "rock.red_rock":          "#904727",
@@ -64,7 +67,13 @@
     "rock.limestone":         "#78705a",
     "rock.jasper":            "#5d2f2c",
     "rock.shale":             "#4b5a5d",
-    "rock.permafrost":        "#90aada"
+    "rock.permafrost":        "#90aada",
+    "rock.moon_stone":        "#3f474c",
+    "rock.conglomerate":      "#936464",
+    "rock.mars_stone":        "#c17a51",
+    "rock.venus_stone":       "#b88143",
+    "rock.mercury_stone":     "#4d2a3c",
+    "rock.glacio_stone":      "#877cad"
   },
   "material.tcompat": {
     "__aether__": null,

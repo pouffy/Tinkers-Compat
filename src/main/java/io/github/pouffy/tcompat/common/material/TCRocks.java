@@ -4,10 +4,12 @@ import io.github.pouffy.tcompat.common.util.RockVariantBuilder;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.OrCondition;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ConsumerWrapperBuilder;
 
@@ -19,7 +21,7 @@ import java.util.function.Consumer;
 import static io.github.pouffy.tcompat.common.data.TCTags.Items.local;
 import static io.github.pouffy.tcompat.common.data.TCTags.Items.named;
 
-public enum TCRocks {
+public enum TCRocks implements StringRepresentable {
     // Overworld Biome Mods
     RED_ROCK(builder("biomeswevegone")),
     DACITE(builder("biomeswevegone")),
@@ -40,6 +42,14 @@ public enum TCRocks {
     CLORITE(builder("deep_aether")),
     DIVINITE(builder("aether_redux")),
     DRIFTSHALE(builder("aether_redux")),
+
+    // Ad Astra
+    MOON_STONE(builder("ad_astra")),
+    CONGLOMERATE(builder("ad_astra")),
+    MARS_STONE(builder("ad_astra")),
+    VENUS_STONE(builder("ad_astra")),
+    MERCURY_STONE(builder("ad_astra")),
+    GLACIO_STONE(builder("ad_astra")),
     ;
 
     public final String name;
@@ -103,5 +113,10 @@ public enum TCRocks {
             builder.addCondition(condition);
         }
         return builder.build(consumer);
+    }
+
+    @Override
+    public @NotNull String getSerializedName() {
+        return this.name().toLowerCase();
     }
 }

@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ad_astra"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:caps/strophar"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/strophar"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:caps/strophar"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/strophar"
+  },
+  "material": "tconstruct:wood#strophar",
+  "needed": 1,
+  "value": 4
+}

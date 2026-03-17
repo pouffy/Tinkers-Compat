@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "ad_astra:venus_stone",
+      "required": false
+    },
+    {
+      "id": "#ad_astra:venus_stone_rocks",
+      "required": false
+    }
+  ]
+}

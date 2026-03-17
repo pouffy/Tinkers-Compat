@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ad_astra"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:caps/aeronos"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/aeronos"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/aeronos"
+  },
+  "material": "tconstruct:wood#aeronos",
+  "needed": 1,
+  "value": 1
+}

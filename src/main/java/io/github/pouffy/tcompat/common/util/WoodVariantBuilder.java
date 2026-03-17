@@ -10,6 +10,8 @@ import static io.github.pouffy.tcompat.common.data.TCTags.Items.named;
 
 public class WoodVariantBuilder {
     public boolean stem = false;
+    public String logType = "logs";
+    public String alias = "";
     public List<String> namespaces = List.of();
     public Map<String, TagKey<Item>> specialLogTag = new HashMap<>();
     public TagKey<Item> redirectPlankTag = null;
@@ -22,7 +24,18 @@ public class WoodVariantBuilder {
     }
 
     public WoodVariantBuilder stem() {
+        this.logType = "stems";
         this.stem = true;
+        return this;
+    }
+
+    public WoodVariantBuilder logType(String type) {
+        this.logType = type;
+        return this;
+    }
+
+    public WoodVariantBuilder alias(String alias) {
+        this.alias = alias;
         return this;
     }
 

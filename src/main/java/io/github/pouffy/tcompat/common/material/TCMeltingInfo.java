@@ -159,7 +159,7 @@ public class TCMeltingInfo {
                 .setResult(TinkerFluids.moltenIron, FluidValues.INGOT * 6));
         public static final MeltingInfo compressor = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("compressor"))
                 .setResult(TinkerFluids.moltenIron, FluidValues.INGOT * 8));
-        public static final MeltingInfo electronicBlastFurnace = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("electronic_blast_furnace"))
+        public static final MeltingInfo etrionicBlastFurnace = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("etrionic_blast_furnace"))
                 .setResult(TinkerFluids.moltenIron, FluidValues.INGOT * 11));
         public static final MeltingInfo nasaWorkbench = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("nasa_workbench"))
                 .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 12)

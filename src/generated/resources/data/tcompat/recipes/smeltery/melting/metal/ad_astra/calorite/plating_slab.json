@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "item": "ad_astra:calorite_plating_slab"
+  },
+  "result": {
+    "amount": 6,
+    "tag": "forge:molten_calorite"
+  },
+  "temperature": 1275,
+  "time": 19
+}

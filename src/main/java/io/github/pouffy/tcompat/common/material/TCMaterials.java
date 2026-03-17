@@ -47,117 +47,121 @@ public class TCMaterials {
     public static final MaterialVariantId
         // Wood
             // Aether
-            skyroot = aetherWoodVariant("skyroot", TCWoods.SKYROOT),
-            roseroot = aetherWoodVariant("roseroot", TCWoods.ROSEROOT),
-            yagroot = aetherWoodVariant("yagroot", TCWoods.YAGROOT),
-            cruderoot = aetherWoodVariant("cruderoot", TCWoods.CRUDEROOT),
-            conberry = aetherWoodVariant("conberry", TCWoods.CONBERRY),
-            sunroot = aetherWoodVariant("sunroot", TCWoods.SUNROOT),
-            blightwillow = aetherWoodVariant("blightwillow", TCWoods.BLIGHTWILLOW),
-            fieldsproot = aetherWoodVariant("fieldsproot", TCWoods.FIELDSPROOT),
-            cloudcap = aetherWoodVariant("cloudcap", TCWoods.CLOUDCAP),
-            jellyshroom = aetherWoodVariant("jellyshroom", TCWoods.JELLYSHROOM),
-            crystal = aetherWoodVariant("crystal", TCWoods.CRYSTAL),
-            glacia = aetherWoodVariant("glacia", TCWoods.GLACIA),
+            skyroot = aetherWoodVariant(TCWoods.SKYROOT),
+            roseroot = aetherWoodVariant(TCWoods.ROSEROOT),
+            yagroot = aetherWoodVariant(TCWoods.YAGROOT),
+            cruderoot = aetherWoodVariant(TCWoods.CRUDEROOT),
+            conberry = aetherWoodVariant(TCWoods.CONBERRY),
+            sunroot = aetherWoodVariant(TCWoods.SUNROOT),
+            blightwillow = aetherWoodVariant(TCWoods.BLIGHTWILLOW),
+            fieldsproot = aetherWoodVariant(TCWoods.FIELDSPROOT),
+            cloudcap = aetherWoodVariant(TCWoods.CLOUDCAP),
+            jellyshroom = aetherWoodVariant(TCWoods.JELLYSHROOM),
+            crystal = aetherWoodVariant(TCWoods.CRYSTAL),
+            glacia = aetherWoodVariant(TCWoods.GLACIA),
+            // Ad Astra
+            aeronos = woodVariant(TCWoods.AERONOS),
+            strophar = woodVariant(TCWoods.STROPHAR),
+            glacian = woodVariant(TCWoods.GLACIAN),
             // OTBWG
-            aspen = woodVariant("aspen", TCWoods.ASPEN),
-            baobab = woodVariant("baobab", TCWoods.BAOBAB),
-            blueEnchanted = woodVariant("blue_enchanted", TCWoods.BLUE_ENCHANTED),
-            cika = woodVariant("cika", TCWoods.CIKA),
-            cypress = woodVariant("cypress", TCWoods.CYPRESS),
-            ebony = woodVariant("ebony", TCWoods.EBONY),
-            fir = woodVariant("fir", TCWoods.FIR),
-            florus = woodVariant("florus", TCWoods.FLORUS),
-            greenEnchanted = woodVariant("green_enchanted", TCWoods.GREEN_ENCHANTED),
-            holly = woodVariant("holly", TCWoods.HOLLY),
-            ironwood = woodVariant("ironwood", TCWoods.IRONWOOD),
-            jacaranda = woodVariant("jacaranda", TCWoods.JACARANDA),
-            mahogany = woodVariant("mahogany", TCWoods.MAHOGANY),
-            maple = woodVariant("maple", TCWoods.MAPLE),
-            palm = woodVariant("palm", TCWoods.PALM),
-            paloVerde = woodVariant("palo_verde", TCWoods.PALO_VERDE),
-            pine = woodVariant("pine", TCWoods.PINE),
-            rainbowEucalyptus = woodVariant("rainbow_eucalyptus", TCWoods.RAINBOW_EUCALYPTUS),
-            redwood = woodVariant("redwood", TCWoods.REDWOOD),
-            sakura = woodVariant("sakura", TCWoods.SAKURA),
-            skyris = woodVariant("skyris", TCWoods.SKYRIS),
-            whiteMangrove = woodVariant("white_mangrove", TCWoods.WHITE_MANGROVE),
-            willow = woodVariant("willow", TCWoods.WILLOW),
-            witchHazel = woodVariant("witch_hazel", TCWoods.WITCH_HAZEL),
-            zelkova = woodVariant("zelkova", TCWoods.ZELKOVA),
+            aspen = woodVariant(TCWoods.ASPEN),
+            baobab = woodVariant(TCWoods.BAOBAB),
+            blueEnchanted = woodVariant(TCWoods.BLUE_ENCHANTED),
+            cika = woodVariant(TCWoods.CIKA),
+            cypress = woodVariant(TCWoods.CYPRESS),
+            ebony = woodVariant(TCWoods.EBONY),
+            fir = woodVariant(TCWoods.FIR),
+            florus = woodVariant(TCWoods.FLORUS),
+            greenEnchanted = woodVariant(TCWoods.GREEN_ENCHANTED),
+            holly = woodVariant(TCWoods.HOLLY),
+            ironwood = woodVariant(TCWoods.IRONWOOD),
+            jacaranda = woodVariant(TCWoods.JACARANDA),
+            mahogany = woodVariant(TCWoods.MAHOGANY),
+            maple = woodVariant(TCWoods.MAPLE),
+            palm = woodVariant(TCWoods.PALM),
+            paloVerde = woodVariant(TCWoods.PALO_VERDE),
+            pine = woodVariant(TCWoods.PINE),
+            rainbowEucalyptus = woodVariant(TCWoods.RAINBOW_EUCALYPTUS),
+            redwood = woodVariant(TCWoods.REDWOOD),
+            sakura = woodVariant(TCWoods.SAKURA),
+            skyris = woodVariant(TCWoods.SKYRIS),
+            whiteMangrove = woodVariant(TCWoods.WHITE_MANGROVE),
+            willow = woodVariant(TCWoods.WILLOW),
+            witchHazel = woodVariant(TCWoods.WITCH_HAZEL),
+            zelkova = woodVariant(TCWoods.ZELKOVA),
 
             // Regions Unexplored
-            alpha = woodVariant("alpha", TCWoods.ALPHA),
-            blackwood = woodVariant("blackwood", TCWoods.BLACKWOOD),
-            blueBioshroom = woodVariant("blue_bioshroom", TCWoods.BLUE_BIOSHROOM),
-            brimwood = woodVariant("brimwood", TCWoods.BRIMWOOD),
-            cobalt = woodVariant("cobalt", TCWoods.COBALT),
-            eucalyptus = woodVariant("eucalyptus", TCWoods.EUCALYPTUS),
-            greenBioshroom = woodVariant("green_bioshroom", TCWoods.GREEN_BIOSHROOM),
-            joshua = woodVariant("joshua", TCWoods.JOSHUA),
-            kapok = woodVariant("kapok", TCWoods.KAPOK),
-            larch = woodVariant("larch", TCWoods.LARCH),
-            magnolia = woodVariant("magnolia", TCWoods.MAGNOLIA),
-            mauve = woodVariant("mauve", TCWoods.MAUVE),
-            pinkBioshroom = woodVariant("pink_bioshroom", TCWoods.PINK_BIOSHROOM),
-            socotra = woodVariant("socotra", TCWoods.SOCOTRA),
-            yellowBioshroom = woodVariant("yellow_bioshroom", TCWoods.YELLOW_BIOSHROOM),
+            alpha = woodVariant(TCWoods.ALPHA),
+            blackwood = woodVariant(TCWoods.BLACKWOOD),
+            blueBioshroom = woodVariant(TCWoods.BLUE_BIOSHROOM),
+            brimwood = woodVariant(TCWoods.BRIMWOOD),
+            cobalt = woodVariant(TCWoods.COBALT),
+            eucalyptus = woodVariant(TCWoods.EUCALYPTUS),
+            greenBioshroom = woodVariant(TCWoods.GREEN_BIOSHROOM),
+            joshua = woodVariant(TCWoods.JOSHUA),
+            kapok = woodVariant(TCWoods.KAPOK),
+            larch = woodVariant(TCWoods.LARCH),
+            magnolia = woodVariant(TCWoods.MAGNOLIA),
+            mauve = woodVariant(TCWoods.MAUVE),
+            pinkBioshroom = woodVariant(TCWoods.PINK_BIOSHROOM),
+            socotra = woodVariant(TCWoods.SOCOTRA),
+            yellowBioshroom = woodVariant(TCWoods.YELLOW_BIOSHROOM),
             // Quark
-            ashen = woodVariant("ashen", TCWoods.ANCIENT),
-            azalea = woodVariant("azalea", TCWoods.AZALEA),
-            trumpet = woodVariant("trumpet", TCWoods.BLOSSOM),
+            ashen = woodVariant(TCWoods.ANCIENT),
+            azalea = woodVariant(TCWoods.AZALEA),
+            trumpet = woodVariant(TCWoods.BLOSSOM),
 
         // Rocks
             // Aether
-            holystone = aetherRockVariant("holystone", TCRocks.HOLYSTONE),
-            aseterite = aetherRockVariant("aseterite", TCRocks.ASETERITE),
-            clorite = aetherRockVariant("clorite", TCRocks.CLORITE),
-            divinite = aetherRockVariant("divinite", TCRocks.DIVINITE),
-            driftshale = aetherRockVariant("driftshale", TCRocks.DRIFTSHALE),
+            holystone = aetherRockVariant(TCRocks.HOLYSTONE),
+            aseterite = aetherRockVariant(TCRocks.ASETERITE),
+            clorite = aetherRockVariant(TCRocks.CLORITE),
+            divinite = aetherRockVariant(TCRocks.DIVINITE),
+            driftshale = aetherRockVariant(TCRocks.DRIFTSHALE),
+            // Ad Astra
+            moonStone = rockVariant(TCRocks.MOON_STONE),
+            conglomerate = rockVariant(TCRocks.CONGLOMERATE),
+            marsStone = rockVariant(TCRocks.MARS_STONE),
+            venusStone = rockVariant(TCRocks.VENUS_STONE),
+            mercuryStone = rockVariant(TCRocks.MERCURY_STONE),
+            glacioStone = rockVariant(TCRocks.GLACIO_STONE),
             // OTBWG
-            redRock = rockVariant("red_rock", TCRocks.RED_ROCK),
-            dacite = rockVariant("dacite", TCRocks.DACITE),
+            redRock = rockVariant(TCRocks.RED_ROCK),
+            dacite = rockVariant(TCRocks.DACITE),
             // Regions Unexplored
-            chalk = rockVariant("chalk", TCRocks.CHALK),
+            chalk = rockVariant(TCRocks.CHALK),
             // Quark
-            limestone = rockVariant("limestone", TCRocks.LIMESTONE),
-            jasper = rockVariant("jasper", TCRocks.JASPER),
-            shale = rockVariant("shale", TCRocks.SHALE),
-            permafrost = rockVariant("permafrost", TCRocks.PERMAFROST),
+            limestone = rockVariant(TCRocks.LIMESTONE),
+            jasper = rockVariant(TCRocks.JASPER),
+            shale = rockVariant(TCRocks.SHALE),
+            permafrost = rockVariant(TCRocks.PERMAFROST),
             // Vanilla
-            dripstone = rockVariant("dripstone", TCRocks.DRIPSTONE)
+            dripstone = rockVariant(TCRocks.DRIPSTONE)
             ;
 
-    private static MaterialVariantId woodVariant(String name, TCWoods woodType) {
-        MaterialVariantId id = MaterialVariantId.create(MaterialIds.wood, name);
+    private static MaterialVariantId woodVariant(TCWoods woodType) {
+        MaterialVariantId id = MaterialVariantId.create(MaterialIds.wood, woodType.getSerializedName());
         woodVariants.put(id, woodType);
         allVariants.add(id);
         return id;
     }
 
-    private static MaterialVariantId aetherWoodVariant(String name, TCWoods woodType) {
-        MaterialVariantId id = MaterialVariantId.create(aetherWood, name);
+    private static MaterialVariantId aetherWoodVariant(TCWoods woodType) {
+        MaterialVariantId id = MaterialVariantId.create(aetherWood, woodType.getSerializedName());
         woodVariants.put(id, woodType);
         allVariants.add(id);
         return id;
     }
 
-    private static MaterialVariantId rockVariant(String name, TCRocks rockType) {
-        MaterialVariantId id = MaterialVariantId.create(MaterialIds.rock, name);
+    private static MaterialVariantId rockVariant(TCRocks rockType) {
+        MaterialVariantId id = MaterialVariantId.create(MaterialIds.rock, rockType.getSerializedName());
         rockVariants.put(id, rockType);
         allVariants.add(id);
         return id;
     }
 
-    private static MaterialVariantId aetherRockVariant(String name, List<MaterialVariantId> list) {
-        MaterialVariantId id = MaterialVariantId.create(aetherRock, name);
-        list.add(id);
-        allVariants.add(id);
-        return id;
-    }
-
-    private static MaterialVariantId aetherRockVariant(String name, TCRocks rockType) {
-        MaterialVariantId id = MaterialVariantId.create(aetherRock, name);
+    private static MaterialVariantId aetherRockVariant(TCRocks rockType) {
+        MaterialVariantId id = MaterialVariantId.create(aetherRock, rockType.getSerializedName());
         rockVariants.put(id, rockType);
         allVariants.add(id);
         return id;

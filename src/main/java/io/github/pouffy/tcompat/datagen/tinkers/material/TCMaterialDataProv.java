@@ -48,7 +48,7 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
 
         addMaterial(TCMaterials.pyral, 1, ORDER_SPECIAL, false, false, aetherTreasure);
         addMaterial(TCMaterials.valkyrum, 1, ORDER_SPECIAL, false, false, aetherTreasure);
-        addMaterial(TCMaterials.neptune, 2, ORDER_SPECIAL, true, false, aetherTreasure);
+        addMaterial(TCMaterials.neptune, 2, ORDER_SPECIAL, false, false, aetherTreasure);
 
         addMaterial(TCMaterials.desh, 2, ORDER_SPECIAL, false, false, adAstra);
         addMaterial(TCMaterials.calorite, 2, ORDER_SPECIAL, false, false, adAstra);

@@ -120,6 +120,10 @@ public class TCTags {
         public static TagKey<Item> AUTOFREEZE_LEFT = local("recipe/autofreeze/left");
         public static TagKey<Item> AUTOFREEZE_RIGHT = local("recipe/autofreeze/right");
 
+        public static TagKey<Item> DESH_ORE = common("ores/desh");
+        public static TagKey<Item> OSTRUM_ORE = common("ores/ostrum");
+        public static TagKey<Item> CALORITE_ORE = common("ores/calorite");
+
         public static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));
         }

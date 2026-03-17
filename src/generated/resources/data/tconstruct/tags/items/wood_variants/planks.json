@@ -287,6 +287,18 @@
     {
       "id": "#tcompat:planks/glacia",
       "required": false
+    },
+    {
+      "id": "#tcompat:planks/aeronos",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/strophar",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/glacian",
+      "required": false
     }
   ]
 }

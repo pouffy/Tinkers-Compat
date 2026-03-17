@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "ad_astra:conglomerate",
+      "required": false
+    },
+    {
+      "id": "#ad_astra:conglomerate_rocks",
+      "required": false
+    }
+  ]
+}

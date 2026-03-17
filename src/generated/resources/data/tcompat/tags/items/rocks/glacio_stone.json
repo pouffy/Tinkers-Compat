@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "ad_astra:glacio_stone",
+      "required": false
+    },
+    {
+      "id": "#ad_astra:glacio_stone_rocks",
+      "required": false
+    }
+  ]
+}

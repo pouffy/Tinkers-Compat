@@ -7,6 +7,7 @@
       "mining_speed": 10.0,
       "mining_tier": "minecraft:iron"
     },
+    "tconstruct:maille": {},
     "tconstruct:plating_boots": {
       "armor": 3.0,
       "durability": 39

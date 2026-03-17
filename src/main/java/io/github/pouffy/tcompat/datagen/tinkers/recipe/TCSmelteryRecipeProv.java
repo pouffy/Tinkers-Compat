@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
+import com.google.common.collect.Maps;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCMeltingInfo;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
@@ -22,15 +23,20 @@ import org.checkerframework.checker.units.qual.C;
 import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
+import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.mantle.recipe.helper.FluidOutput;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -205,6 +211,10 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         salvageArmor(aetherTreasureConsumer, aetherId, AetherTRInit.moltenPyral, AetherInit.moltenGravitite, FluidValues.INGOT, "phoenix", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
         salvageArmor(aetherTreasureConsumer, aetherId, AetherTRInit.moltenNeptune, AetherInit.moltenZanite, FluidValues.INGOT, "neptune", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
 
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(aetherTreasureId.apply("neptune_mesh")))
+                .setFluidAndTime(AetherTRInit.moltenNeptune, FluidValues.INGOT)
+                .save(consumer, location(metalFolder.apply("melting") + "neptune_mesh"));
+
         for (String type : new String[]{"valkyrie", "neptune", "phoenix"}) {
             String template = type + "_upgrade_smithing_template";
             simpleMelting(aetherTreasureConsumer, AetherInit.moltenGravitite, FluidValues.INGOT * 7, type, ItemNameIngredient.from(aetherTreasureId.apply(template)), metalFolder.apply("melting"), template);
@@ -257,6 +267,78 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
 
         int plating = 7;
         int rod = 45;
+
+        Map<String, FluidObject<?>> decorativeMetals = Map.of(
+                "iron", TinkerFluids.moltenIron,
+                "steel", TinkerFluids.moltenSteel,
+                "desh", AdAstraInit.moltenDesh,
+                "ostrum", AdAstraInit.moltenOstrum,
+                "calorite", AdAstraInit.moltenCalorite
+        );
+
+        decorativeMetals.forEach((name, fluid) -> {
+            simpleMelting(adAstraConsumer, fluid, 12, name, ItemNameIngredient.from(adAstraId.apply(name + "_factory_block")), metalFolder.apply("melting"), "factory_block");
+            simpleMelting(fluid, 4, ItemNameIngredient.from(adAstraId.apply("encased_" + name + "_block")))
+                    .addByproduct(TinkerFluids.moltenSteel.result(8))
+                    .save(adAstraConsumer, location(metalFolder.apply("melting") + "/" + name + "/encased_block"));
+            if (!List.of("iron", "steel").contains(name)) {
+                simpleMelting(fluid, 11, ItemNameIngredient.from(adAstraId.apply(name + "_plateblock")))
+                        .addByproduct(TinkerFluids.moltenSteel.result(1))
+                        .save(adAstraConsumer, location(metalFolder.apply("melting") + "/" + name + "/plateblock"));
+            } else simpleMelting(adAstraConsumer, fluid, 12, name, ItemNameIngredient.from(adAstraId.apply(name + "_plateblock")), metalFolder.apply("melting"), "plateblock");
+            simpleMelting(adAstraConsumer, fluid, 12, name, ItemNameIngredient.from(adAstraId.apply(name + "_panel")), metalFolder.apply("melting"), "panel");
+            simpleMelting(adAstraConsumer, fluid, 12, name, ItemNameIngredient.from(adAstraId.apply(name + "_plating")), metalFolder.apply("melting"), "plating");
+            simpleMelting(adAstraConsumer, fluid, 18, name, ItemNameIngredient.from(adAstraId.apply(name + "_plating_stairs")), metalFolder.apply("melting"), "plating_stairs");
+            simpleMelting(adAstraConsumer, fluid, 6, name, ItemNameIngredient.from(adAstraId.apply(name + "_plating_slab")), metalFolder.apply("melting"), "plating_slab");
+            simpleMelting(adAstraConsumer, fluid, 12, name, ItemNameIngredient.from(adAstraId.apply(name + "_pillar")), metalFolder.apply("melting"), "pillar");
+            simpleMelting(adAstraConsumer, fluid, 12, name, ItemNameIngredient.from(adAstraId.apply("glowing_" + name + "_pillar")), metalFolder.apply("melting"), "glowing_pillar");
+            simpleMelting(adAstraConsumer, fluid, 12, name, ItemNameIngredient.from(adAstraId.apply(name + "_plating_button")), metalFolder.apply("melting"), "plating_button");
+            simpleMelting(adAstraConsumer, fluid, 24, name, ItemNameIngredient.from(adAstraId.apply(name + "_plating_pressure_plate")), metalFolder.apply("melting"), "plating_pressure_plate");
+            if (!Objects.equals(name, "iron")) {
+                simpleMelting(fluid, FluidValues.INGOT * 15, ItemNameIngredient.from(adAstraId.apply(name + "_sliding_door")))
+                        .addByproduct(TinkerFluids.moltenGlass.result(FluidValues.GLASS_PANE * 2))
+                        .save(adAstraConsumer, location(metalFolder.apply("melting") + "/" + name + "/sliding_door"));
+            } else {
+                simpleMelting(fluid, 12 * 6, ItemNameIngredient.from(adAstraId.apply(name + "_sliding_door")))
+                        .addByproduct(TinkerFluids.moltenGlass.result(FluidValues.GLASS_PANE * 2))
+                        .addByproduct(TinkerFluids.moltenSteel.result(FluidValues.METAL_BLOCK))
+                        .save(adAstraConsumer, location(metalFolder.apply("melting") + "/" + name + "/sliding_door"));
+            }
+        });
+        simpleMelting(adAstraConsumer, TinkerFluids.moltenSteel, FluidValues.INGOT * 25, "steel", ItemNameIngredient.from(adAstraId.apply("airlock")), metalFolder.apply("melting"), "airlock");
+        simpleMelting(adAstraConsumer, TinkerFluids.moltenSteel, FluidValues.INGOT * 2, "steel", ItemNameIngredient.from(adAstraId.apply("steel_door")), metalFolder.apply("melting"), "door");
+        simpleMelting(TinkerFluids.moltenSteel, FluidValues.INGOT * 11, ItemNameIngredient.from(adAstraId.apply("reinforced_door")))
+                .addByproduct(TinkerFluids.moltenGlass.result(FluidValues.GLASS_BLOCK * 2))
+                .addByproduct(TinkerFluids.moltenObsidian.result(FluidValues.GLASS_BLOCK * 4))
+                .save(adAstraConsumer, location(metalFolder.apply("melting") + "/steel/reinforced_door"));
+        simpleMelting(adAstraConsumer, TinkerFluids.moltenSteel, FluidValues.INGOT * 3, "steel", ItemNameIngredient.from(adAstraId.apply("steel_trapdoor")), metalFolder.apply("melting"), "trapdoor");
+        simpleMelting(adAstraConsumer, TinkerFluids.moltenIron, 12, "iron", ItemNameIngredient.from(adAstraId.apply("marked_iron_pillar")), metalFolder.apply("melting"), "marked_pillar");
+        simpleMelting(adAstraConsumer, TinkerFluids.moltenSteel, 112, "steel", ItemNameIngredient.from(adAstraId.apply("vent")), metalFolder.apply("melting"), "vent");
+
+        simpleMelting(AdAstraInit.moltenDesh, 32, ItemNameIngredient.from(adAstraId.apply("desh_fluid_pipe")))
+                .addByproduct(TinkerFluids.moltenGlass.result(185))
+                .save(adAstraConsumer, location(metalFolder.apply("melting") + "/desh/fluid_pipe"));
+        simpleMelting(AdAstraInit.moltenOstrum, 32, ItemNameIngredient.from(adAstraId.apply("ostrum_fluid_pipe")))
+                .addByproduct(TinkerFluids.moltenGlass.result(185))
+                .save(adAstraConsumer, location(metalFolder.apply("melting") + "/ostrum/fluid_pipe"));
+        simpleMelting(TinkerFluids.moltenSteel, 32, ItemNameIngredient.from(adAstraId.apply("steel_cable")))
+                .addByproduct(TinkerFluids.moltenCopper.result(16))
+                .save(adAstraConsumer, location(metalFolder.apply("melting") + "/steel/cable"));
+        simpleMelting(AdAstraInit.moltenDesh, 32, ItemNameIngredient.from(adAstraId.apply("desh_cable")))
+                .addByproduct(TinkerFluids.moltenCopper.result(16))
+                .save(adAstraConsumer, location(metalFolder.apply("melting") + "/desh/cable"));
+
+        simpleMelting(TinkerFluids.moltenSteel, 196, ItemNameIngredient.from(adAstraId.apply("cable_duct")))
+                .addByproduct(TinkerFluids.moltenCopper.result(188))
+                .save(adAstraConsumer, location(metalFolder.apply("melting") + "/steel/cable_duct"));
+        simpleMelting(AdAstraInit.moltenDesh, 196, ItemNameIngredient.from(adAstraId.apply("fluid_pipe_duct")))
+                .addByproduct(TinkerFluids.moltenCopper.result(FluidValues.INGOT * 2))
+                .addByproduct(TinkerFluids.moltenGlass.result(92))
+                .save(adAstraConsumer, location(metalFolder.apply("melting") + "/desh/fluid_pipe_duct"));
+
+        metal(adAstraConsumer, AdAstraInit.moltenDesh, adAstra).metal(true).optional();
+        metal(adAstraConsumer, AdAstraInit.moltenOstrum, adAstra).metal(true).optional();
+        metal(adAstraConsumer, AdAstraInit.moltenCalorite, adAstra).metal(true).optional();
 
         TCMeltingInfo.AdAstra.adAstraGroup.saveAll(consumer);
         //Deco

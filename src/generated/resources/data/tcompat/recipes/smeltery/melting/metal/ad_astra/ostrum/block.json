@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/ostrum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/ostrum"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_ostrum"
+  },
+  "temperature": 1485,
+  "time": 240
+}
