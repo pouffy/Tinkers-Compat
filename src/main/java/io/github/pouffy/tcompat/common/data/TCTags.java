@@ -44,6 +44,10 @@ public class TCTags {
         private static void init() {
         }
 
+        public static TagKey<Block> END_STONE = common("end_stones");
+
+        public static TagKey<Block> VOID_TOUCHED_EFFICIENT = local("void_touched_efficient");
+
         public enum Woods {
             //BWG, BOP, TC
             ASPEN, BAOBAB, BLUE_ENCHANTED, CIKA, CYPRESS,

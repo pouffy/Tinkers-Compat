@@ -94,14 +94,26 @@ public enum TCWoods implements StringRepresentable {
     AERONOS(builder("ad_astra").logType("caps")),
     STROPHAR(builder("ad_astra").logType("caps")),
     GLACIAN(builder("ad_astra")),
+
+    // Betterend
+    MOSSY_GLOWSHROOM(builder("betterend")),
+    PYTHADENDRON(builder("betterend")),
+    END_LOTUS(builder("betterend")),
+    LACUGROVE(builder("betterend")),
+    DRAGON_TREE(builder("betterend")),
+    TENANEA(builder("betterend")),
+    HELIX_TREE(builder("betterend")),
+    UMBRELLA_TREE(builder("betterend")),
+    END_JELLYSHROOM(builder("betterend").specialLogTag("betterend", "jellyshroom_logs").alias("jellyshroom")),
+    LUCERNIA(builder("betterend")),
     ;
 
     public final String name;
     public final WoodVariantBuilder builder;
 
     TCWoods(WoodVariantBuilder builder) {
-        this.name = this.name().toLowerCase();
         this.builder = builder;
+        this.name = this.name().toLowerCase();
     }
 
     public boolean isStem() {

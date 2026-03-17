@@ -299,6 +299,46 @@
     {
       "id": "#tcompat:logs/glacian",
       "required": false
+    },
+    {
+      "id": "#tcompat:logs/mossy_glowshroom",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/pythadendron",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/end_lotus",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/lacugrove",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/dragon_tree",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/tenanea",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/helix_tree",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/umbrella_tree",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/end_jellyshroom",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/lucernia",
+      "required": false
     }
   ]
 }

@@ -299,6 +299,46 @@
     {
       "id": "#tcompat:planks/glacian",
       "required": false
+    },
+    {
+      "id": "#tcompat:planks/mossy_glowshroom",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/pythadendron",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/end_lotus",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/lacugrove",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/dragon_tree",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/tenanea",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/helix_tree",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/umbrella_tree",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/end_jellyshroom",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/lucernia",
+      "required": false
     }
   ]
 }

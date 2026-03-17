@@ -4,7 +4,10 @@ package io.github.pouffy.tcompat.common.capability;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouchedCapability;
+import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
+import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouchedCapability;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -17,6 +20,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = TCompat.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TCompatCapabilities {
     public static final Capability<PhoenixTouched> PHOENIX_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
+    public static final Capability<VoidTouched> VOID_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
 
     @SubscribeEvent
     public static void register(RegisterCapabilitiesEvent event) {
@@ -29,6 +33,9 @@ public class TCompatCapabilities {
         public static void attachEntityCapabilities(AttachCapabilitiesEvent<Entity> event) {
             if (event.getObject() instanceof Projectile projectile) {
                 event.addCapability(TCompat.getResource("phoenix_touched"), new CapabilityProvider(TCompatCapabilities.PHOENIX_TOUCHED_CAPABILITY, new PhoenixTouchedCapability(projectile)));
+            }
+            if (event.getObject() instanceof LivingEntity livingEntity) {
+                event.addCapability(TCompat.getResource("void_touched"), new CapabilityProvider(TCompatCapabilities.VOID_TOUCHED_CAPABILITY, new VoidTouchedCapability(livingEntity)));
             }
         }
     }

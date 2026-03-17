@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "betterend:flavolite",
+      "required": false
+    },
+    {
+      "id": "#betterend:flavolite_rocks",
+      "required": false
+    }
+  ]
+}

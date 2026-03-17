@@ -54,15 +54,27 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.valkyrum, new HeadMaterialStats(1562, 4f, DIAMOND, 3f));
         addMaterialStats(TCMaterials.desh,
                 new HeadMaterialStats(940, 4f, DIAMOND, 2.6f),
-                HandleMaterialStats.multipliers().durability(0.65f).miningSpeed(-0.15f).attackDamage(0.75f).build(),
-                StatlessMaterialStats.BINDING);
-        addMaterialStats(TCMaterials.calorite,
-                new HeadMaterialStats(1250, 5f, DIAMOND, 3.8f),
-                HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.05f).attackDamage(1.05f).build(),
+                HandleMaterialStats.multipliers().durability(1.15f).miningSpeed(1.15f).attackDamage(0.95f).build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.ostrum,
+                new HeadMaterialStats(1250, 5f, DIAMOND, 3.8f),
+                HandleMaterialStats.multipliers().durability(0.7f).miningSpeed(1.05f).attackDamage(1.05f).build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.calorite,
                 new HeadMaterialStats(1840, 6f, NETHERITE, 4.5f),
-                HandleMaterialStats.multipliers().durability(0.85f).miningSpeed(0.25f).attackDamage(1.5f).attackSpeed(-0.2f).build(),
+                HandleMaterialStats.multipliers().durability(0.85f).miningSpeed(1.25f).attackDamage(1.15f).build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.thallasium,
+                new HeadMaterialStats(321, 7f, IRON, 2.5f),
+                HandleMaterialStats.multipliers().attackDamage(1.10f).build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.terminite,
+                new HeadMaterialStats(1231, 8.5f, DIAMOND, 3.0f),
+                HandleMaterialStats.multipliers().durability(1.20f).build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.aeternium,
+                new HeadMaterialStats(2197, 10.0f, NETHERITE, 4.0f),
+                HandleMaterialStats.multipliers().attackSpeed(0.8f).build(),
                 StatlessMaterialStats.BINDING);
     }
 
@@ -78,13 +90,22 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
                 new GripMaterialStats(-0.2f, -0.35f, 0));
         addMaterialStats(TCMaterials.desh,
                 new LimbMaterialStats(940, 0.15f, 0.09f, 0.03f),
-                new GripMaterialStats(0.65f, 0.06f, 2.6f));
-        addMaterialStats(TCMaterials.calorite,
-                new LimbMaterialStats(1250, 0.1f, 0.13f, -0.05f),
-                new GripMaterialStats(1.05f, 0.35f, 3.8f));
+                new GripMaterialStats(-0.15f, 0.06f, 2.6f));
         addMaterialStats(TCMaterials.ostrum,
+                new LimbMaterialStats(1250, 0.1f, 0.13f, -0.05f),
+                new GripMaterialStats(0.05f, 0.35f, 3.8f));
+        addMaterialStats(TCMaterials.calorite,
                 new LimbMaterialStats(1840, 0.1f, 0.2f, 0.05f),
-                new GripMaterialStats(0.85f, -0.1f, 4.5f));
+                new GripMaterialStats(0f, -0.1f, 4.5f));
+        addMaterialStats(TCMaterials.thallasium,
+                new LimbMaterialStats(321, -0.1f, 0.25f, 0),
+                new GripMaterialStats(0.15f, 0f, 1.1f));
+        addMaterialStats(TCMaterials.terminite,
+                new LimbMaterialStats(1231, -0.2f, 0f, 0.05f),
+                new GripMaterialStats(0.2f, -0.1f, 1.1f));
+        addMaterialStats(TCMaterials.aeternium,
+                new LimbMaterialStats(2197, 0f, -0.05f, 0.1f),
+                new GripMaterialStats(0f, 0.1f, 1.1f));
     }
 
     private void addAmmo() {
@@ -113,6 +134,10 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addArmorShieldStats(TCMaterials.desh, PlatingMaterialStats.builder().durabilityFactor(35).armor(4, 9, 7, 4).toughness(2f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.calorite, PlatingMaterialStats.builder().durabilityFactor(36).armor(4, 9, 7, 4).toughness(2.5f).knockbackResistance(0.1f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.ostrum, PlatingMaterialStats.builder().durabilityFactor(37).armor(4, 9, 7, 4).toughness(3f).knockbackResistance(0.1f), StatlessMaterialStats.MAILLE);
+
+        addArmorShieldStats(TCMaterials.thallasium, PlatingMaterialStats.builder().durabilityFactor(15).armor(1, 4, 5, 2), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TCMaterials.terminite, PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 7, 3).toughness(1f).knockbackResistance(0.05f), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TCMaterials.aeternium, PlatingMaterialStats.builder().durabilityFactor(40).armor(4, 7, 9, 4).toughness(3.5f).knockbackResistance(0.2f), StatlessMaterialStats.MAILLE);
     }
 
     private void addMisc() {

@@ -25,7 +25,8 @@
     "birt":                   "#3ac2d4",
     "autochant":              "#e5eb62",
     "autofreeze":             "#c6e1e1",
-    "oxygenated":             "#a9b4ed"
+    "oxygenated":             "#a9b4ed",
+    "void_touched":           "#740696"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,
@@ -73,7 +74,15 @@
     "rock.mars_stone":        "#c17a51",
     "rock.venus_stone":       "#b88143",
     "rock.mercury_stone":     "#4d2a3c",
-    "rock.glacio_stone":      "#877cad"
+    "rock.glacio_stone":      "#877cad",
+
+    "whitestone.flavolite":         "#d4bb8b",
+    "whitestone.violecite":         "#211a26",
+    "whitestone.sulphuric_rock":    "#413231",
+    "whitestone.virid_jadestone":   "#1f4537",
+    "whitestone.azure_jadestone":   "#2b5a5e",
+    "whitestone.sandy_jadestone":   "#737d3c",
+    "whitestone.umbralith":         "#0c0816"
   },
   "material.tcompat": {
     "__aether__": null,

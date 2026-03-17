@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "betterend:sulphuric_rock",
+      "required": false
+    },
+    {
+      "id": "#betterend:sulphuric_rock_rocks",
+      "required": false
+    }
+  ]
+}

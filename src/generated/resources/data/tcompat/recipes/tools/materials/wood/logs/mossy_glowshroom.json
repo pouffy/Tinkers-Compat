@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/mossy_glowshroom"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/mossy_glowshroom"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/mossy_glowshroom"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/mossy_glowshroom"
+  },
+  "material": "tconstruct:wood#mossy_glowshroom",
+  "needed": 1,
+  "value": 4
+}

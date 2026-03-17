@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/end_lotus"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/end_lotus"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:planks/end_lotus"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "tcompat:planks/end_lotus"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#end_lotus"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

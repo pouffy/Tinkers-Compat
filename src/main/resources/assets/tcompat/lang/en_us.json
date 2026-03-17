@@ -46,6 +46,17 @@
   "material.tconstruct.wood.aeronos": "Aeronos Wood",
   "material.tconstruct.wood.strophar": "Strophar Wood",
   "material.tconstruct.wood.glacian": "Glacian Wood",
+  "material.tconstruct.wood.mossy_glowshroom": "Mossy Glowshroom Wood",
+  "material.tconstruct.wood.pythadendron": "Pythadendron Wood",
+  "material.tconstruct.wood.end_lotus": "End Lotus Wood",
+  "material.tconstruct.wood.lacugrove": "Lacugrove Wood",
+  "material.tconstruct.wood.dragon_tree": "Dragon Tree Wood",
+  "material.tconstruct.wood.tenanea": "Tenanea Wood",
+  "material.tconstruct.wood.helix_tree": "Helix Tree Wood",
+  "material.tconstruct.wood.umbrella_tree": "Umbrella Tree Wood",
+  "material.tconstruct.wood.jellyshroom": "Jellyshroom Wood",
+  "material.tconstruct.wood.lucernia": "Lucernia Wood",
+
 
 
   "material.tcompat.aether_wood": "Skyroot",
@@ -77,6 +88,14 @@
   "material.tconstruct.rock.mercury_stone": "Mercury Stone",
   "material.tconstruct.rock.glacio_stone": "Glacio Stone",
 
+  "material.tconstruct.whitestone.flavolite": "Flavolite",
+  "material.tconstruct.whitestone.violecite": "Violecite",
+  "material.tconstruct.whitestone.sulphuric_rock": "Sulphuric Rock",
+  "material.tconstruct.whitestone.virid_jadestone": "Virid Jadestone",
+  "material.tconstruct.whitestone.azure_jadestone": "Azure Jadestone",
+  "material.tconstruct.whitestone.sandy_jadestone": "Sandy Jadestone",
+  "material.tconstruct.whitestone.umbralith": "Umbralith",
+
   "material.tcompat.aether_rock": "Holystone",
   "material.tcompat.aether_rock.holystone": "Holystone",
   "material.tcompat.aether_rock.aseterite": "Aseterite",
@@ -96,6 +115,10 @@
   "material.tcompat.desh": "Desh",
   "material.tcompat.calorite": "Calorite",
   "material.tcompat.ostrum": "Ostrum",
+
+  "material.tcompat.thallasium": "Thallasium",
+  "material.tcompat.terminite": "Terminite",
+  "material.tcompat.aeternium": "Aeternium",
 
   "material.tcompat.hellbark": "Hellbark",
 
@@ -121,6 +144,9 @@
   "block.tcompat.molten_desh_fluid": "Molten Desh",
   "block.tcompat.molten_calorite_fluid": "Molten Calorite",
   "block.tcompat.molten_ostrum_fluid": "Molten Ostrum",
+  "block.tcompat.molten_thallasium_fluid": "Molten Thallasium",
+  "block.tcompat.molten_terminite_fluid": "Molten Terminite",
+  "block.tcompat.molten_aeternium_fluid": "Molten Aeternium",
   "fluid.tcompat.molten_zanite": "Molten Zanite",
   "fluid.tcompat.molten_skyjade": "Molten Skyjade",
   "fluid.tcompat.molten_gravitite": "Molten Gravitite",
@@ -133,6 +159,9 @@
   "fluid.tcompat.molten_desh": "Molten Desh",
   "fluid.tcompat.molten_calorite": "Molten Calorite",
   "fluid.tcompat.molten_ostrum": "Molten Ostrum",
+  "fluid.tcompat.molten_thallasium": "Molten Thallasium",
+  "fluid.tcompat.molten_terminite": "Molten Terminite",
+  "fluid.tcompat.molten_aeternium": "Molten Aeternium",
 
   "item.tcompat.molten_zanite_bucket": "Molten Zanite Bucket",
   "item.tcompat.molten_skyjade_bucket": "Molten Skyjade Bucket",
@@ -146,6 +175,9 @@
   "item.tcompat.molten_desh_bucket": "Molten Desh Bucket",
   "item.tcompat.molten_calorite_bucket": "Molten Calorite Bucket",
   "item.tcompat.molten_ostrum_bucket": "Molten Ostrum Bucket",
+  "item.tcompat.molten_thallasium_bucket": "Molten Thallasium Bucket",
+  "item.tcompat.molten_terminite_bucket": "Molten Terminite Bucket",
+  "item.tcompat.molten_aeternium_bucket": "Molten Aeternium Bucket",
 
 
   "_comment": "Tooltips",
@@ -203,6 +235,10 @@
   "modifier.tcompat.oxygenated.flavor": "Breathe in...",
   "modifier.tcompat.oxygenated.description": "Using the tool replenishes air by consuming Oxygen.",
 
+  "modifier.tcompat.void_touched": "Void Touched",
+  "modifier.tcompat.void_touched.flavor": "All Consuming",
+  "modifier.tcompat.void_touched.description": "Increased efficiency against end stone blocks.\nApplies a stacking damage multiplier to targets.",
+
   "modifier.tcompat.magic_proficiency": "Magic Proficiency",
   "modifier.tcompat.magic_proficiency.flavor": "Alakazowch",
   "modifier.tcompat.magic_proficiency.description": "Increased Magic damage.",
@@ -224,5 +260,8 @@
   "tcompat.totemic_rune.earthen_might": "the Arena",
   "tcompat.totemic_rune.ifrits_embrace": "the Hells",
 
-  "recipe.tconstruct.ambrofusion.at_capacity": "Tool has no more space for ambrosium"
+  "recipe.tconstruct.ambrofusion.at_capacity": "Tool has no more space for ambrosium",
+
+  "subtitles.tcompat.void_touched.activate": "Void appears",
+  "subtitles.tcompat.void_touched.deactivate": "Void dissipates"
 }

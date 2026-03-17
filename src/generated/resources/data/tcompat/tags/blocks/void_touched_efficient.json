@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "#forge:end_stones",
+      "required": false
+    },
+    {
+      "id": "#tconstruct:enderbark/roots",
+      "required": false
+    },
+    {
+      "id": "#tconstruct:slime_spawn/ender",
+      "required": false
+    },
+    {
+      "id": "#tconstruct:enderbark_logs",
+      "required": false
+    },
+    {
+      "id": "#c:end_stones",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:unmapped_end_stone",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:null_end_stone",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:algal_end_stone",
+      "required": false
+    }
+  ]
+}

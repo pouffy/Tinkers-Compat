@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.data.TCTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -10,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.tconstruct.common.TinkerTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -26,7 +28,15 @@ public class TCBlockTagProv extends BlockTagsProvider {
     }
 
     private void addPlanks() {
-
+        this.tag(TCTags.Blocks.VOID_TOUCHED_EFFICIENT)
+                .addOptionalTag(TCTags.Blocks.END_STONE)
+                .addOptionalTag(TinkerTags.Blocks.ENDERBARK_ROOTS)
+                .addOptionalTag(TinkerTags.Blocks.ENDER_SLIME_SPAWN)
+                .addOptionalTag(TCompat.getResource("tconstruct:enderbark_logs"))
+                .addOptionalTag(TCompat.getResource("c:end_stones"))
+                .addOptional(TCompat.getResource("biomesoplenty:unmapped_end_stone"))
+                .addOptional(TCompat.getResource("biomesoplenty:null_end_stone"))
+                .addOptional(TCompat.getResource("biomesoplenty:algal_end_stone"));
     }
 
     private static TagKey<Block> blockTag(String name) {

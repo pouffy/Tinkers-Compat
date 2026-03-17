@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
+import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
@@ -12,10 +13,7 @@ import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
-import slimeknights.tconstruct.tools.data.material.MaterialIds;
-import slimeknights.tconstruct.tools.modifiers.EnergyHandlerModifier;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
@@ -59,5 +57,8 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TCMaterials.desh, AdAstraInit.oxygenated);
         addDefaultTraits(TCMaterials.calorite, AdAstraInit.oxygenated);
         addDefaultTraits(TCMaterials.ostrum, AdAstraInit.oxygenated);
+        addDefaultTraits(TCMaterials.thallasium, BetterendInit.voidTouched);
+        addDefaultTraits(TCMaterials.terminite, BetterendInit.voidTouched);
+        addDefaultTraits(TCMaterials.aeternium, BetterendInit.voidTouched);
     }
 }

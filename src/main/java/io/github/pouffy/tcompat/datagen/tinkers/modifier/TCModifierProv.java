@@ -1,16 +1,31 @@
 package io.github.pouffy.tcompat.datagen.tinkers.modifier;
 
+import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import slimeknights.mantle.data.predicate.block.BlockPredicate;
+import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
+import slimeknights.mantle.data.predicate.damage.DamageTypePredicate;
+import slimeknights.mantle.data.predicate.item.ItemPredicate;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
+import slimeknights.tconstruct.library.json.predicate.TinkerPredicate;
+import slimeknights.tconstruct.library.json.predicate.modifier.SlotTypeModifierPredicate;
+import slimeknights.tconstruct.library.modifiers.modules.armor.BlockDamageSourceModule;
+import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
+import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
+import slimeknights.tconstruct.library.modifiers.modules.util.ModifierCondition;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
+import slimeknights.tconstruct.library.tools.definition.module.build.ToolSlotsModule;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.modules.armor.KnockbackCounterModule;
 

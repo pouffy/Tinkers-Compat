@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether_redux"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:stems/jellyshroom"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/jellyshroom"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:stems/jellyshroom"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/jellyshroom"
+  },
+  "material": "tcompat:aether_wood#jellyshroom",
+  "needed": 1,
+  "value": 4
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "betterend:virid_jadestone",
+      "required": false
+    },
+    {
+      "id": "#betterend:virid_jadestone_rocks",
+      "required": false
+    }
+  ]
+}

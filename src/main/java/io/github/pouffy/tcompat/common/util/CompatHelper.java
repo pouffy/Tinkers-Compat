@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
+import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.core.Registry;
@@ -27,20 +28,22 @@ import java.util.function.Consumer;
 
 public class CompatHelper {
 
-    private static Map<String, Consumer<IEventBus>> compatInitializers = Map.of(
+    private static final Map<String, Consumer<IEventBus>> compatInitializers = Map.of(
             "aether", AetherInit::init,
             "aether_redux", AetherReduxInit::init,
             "deep_aether", DeepAetherInit::init,
             "aether_treasure_reforging", AetherTRInit::init,
             "species", SpeciesInit::init,
-            "ad_astra", AdAstraInit::init
+            "ad_astra", AdAstraInit::init,
+            "betterend", BetterendInit::init
     );
-    private static Map<String, Consumer<IEventBus>> compatEvents = Map.of(
+    private static final Map<String, Consumer<IEventBus>> compatEvents = Map.of(
             "aether", (bus) -> bus.register(new AetherInit()),
             "aether_redux", (bus) -> bus.register(new AetherReduxInit()),
             "deep_aether", (bus) -> bus.register(new DeepAetherInit()),
             "aether_treasure_reforging", (bus) -> bus.register(new AetherTRInit()),
-            "ad_astra", (bus) -> bus.register(new AdAstraInit())
+            "ad_astra", (bus) -> bus.register(new AdAstraInit()),
+            "betterend", (bus) -> bus.register(new BetterendInit())
     );
 
     public static void init(IEventBus eventBus) {

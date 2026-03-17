@@ -19,6 +19,7 @@ public class TCompatNetworking {
 
     public static synchronized void register() {
         register(PhoenixProjectileSyncPacket.class, PhoenixProjectileSyncPacket::decode);
+        register(VoidTouchedSyncPacket.class, VoidTouchedSyncPacket::decode);
     }
 
     private static <MSG extends BasePacket> void register(final Class<MSG> packet, Function<FriendlyByteBuf, MSG> decoder) {

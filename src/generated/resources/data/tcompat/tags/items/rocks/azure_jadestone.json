@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "betterend:azure_jadestone",
+      "required": false
+    },
+    {
+      "id": "#betterend:azure_jadestone_rocks",
+      "required": false
+    }
+  ]
+}

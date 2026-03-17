@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/pythadendron"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/pythadendron"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/pythadendron"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/pythadendron"
+  },
+  "material": "tconstruct:wood#pythadendron",
+  "needed": 1,
+  "value": 4
+}

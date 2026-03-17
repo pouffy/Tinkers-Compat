@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/lacugrove"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/lacugrove"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:planks/lacugrove"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "tcompat:planks/lacugrove"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#lacugrove"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

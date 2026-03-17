@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/virid_jadestone"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:rocks/virid_jadestone"
+  },
+  "material": "tconstruct:whitestone#virid_jadestone",
+  "needed": 1,
+  "value": 1
+}

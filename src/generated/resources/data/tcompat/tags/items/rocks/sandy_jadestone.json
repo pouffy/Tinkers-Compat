@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "betterend:sandy_jadestone",
+      "required": false
+    },
+    {
+      "id": "#betterend:sandy_jadestone_rocks",
+      "required": false
+    }
+  ]
+}

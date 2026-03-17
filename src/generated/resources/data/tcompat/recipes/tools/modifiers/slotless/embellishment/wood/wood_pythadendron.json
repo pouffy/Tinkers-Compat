@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/pythadendron"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/pythadendron"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:planks/pythadendron"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "tcompat:planks/pythadendron"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#pythadendron"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "betterend:umbralith",
+      "required": false
+    },
+    {
+      "id": "#betterend:umbralith_rocks",
+      "required": false
+    }
+  ]
+}

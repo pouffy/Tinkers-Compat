@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
+import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -39,6 +40,9 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(AdAstraInit.moltenDesh);
         fluidTag(AdAstraInit.moltenCalorite);
         fluidTag(AdAstraInit.moltenOstrum);
+        fluidTag(BetterendInit.moltenTerminite);
+        fluidTag(BetterendInit.moltenThallasium);
+        fluidTag(BetterendInit.moltenAeternium);
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(
                 //Aether
                 AetherInit.moltenGravitite.getTag(),
@@ -55,7 +59,11 @@ public class TCFluidTagProv extends FluidTagsProvider {
                 //Ad Astra
                 AdAstraInit.moltenDesh.getTag(),
                 AdAstraInit.moltenCalorite.getTag(),
-                AdAstraInit.moltenOstrum.getTag()
+                AdAstraInit.moltenOstrum.getTag(),
+                //Betterend
+                BetterendInit.moltenTerminite.getTag(),
+                BetterendInit.moltenThallasium.getTag(),
+                BetterendInit.moltenAeternium.getTag()
         );
         //this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
         //        AetherInit.moltenZanite.getTag()

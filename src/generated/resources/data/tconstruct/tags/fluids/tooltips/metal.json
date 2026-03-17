@@ -11,6 +11,9 @@
     "#forge:molten_zanite",
     "#forge:molten_desh",
     "#forge:molten_calorite",
-    "#forge:molten_ostrum"
+    "#forge:molten_ostrum",
+    "#forge:molten_terminite",
+    "#forge:molten_thallasium",
+    "#forge:molten_aeternium"
   ]
 }

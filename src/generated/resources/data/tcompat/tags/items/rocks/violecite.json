@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "betterend:violecite",
+      "required": false
+    },
+    {
+      "id": "#betterend:violecite_rocks",
+      "required": false
+    }
+  ]
+}

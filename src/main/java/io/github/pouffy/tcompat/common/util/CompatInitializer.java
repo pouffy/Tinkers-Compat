@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.registration.object.FluidObject;
 
 import java.util.Optional;
@@ -40,7 +41,7 @@ public class CompatInitializer {
         private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
 
         @Override
-        public ItemStack execute(BlockSource source, ItemStack stack) {
+        public @NotNull ItemStack execute(BlockSource source, ItemStack stack) {
             DispensibleContainerItem container = (DispensibleContainerItem)stack.getItem();
             BlockPos blockpos = source.getPos().relative(source.getBlockState().getValue(DispenserBlock.FACING));
             Level level = source.getLevel();

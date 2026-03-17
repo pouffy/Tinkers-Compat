@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/dragon_tree"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/dragon_tree"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/dragon_tree"
+  },
+  "material": "tconstruct:wood#dragon_tree",
+  "needed": 1,
+  "value": 1
+}

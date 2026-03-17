@@ -6,27 +6,27 @@
       "values": [
         {
           "type": "forge:mod_loaded",
-          "modid": "aether_redux"
+          "modid": "betterend"
         },
         {
           "type": "mantle:tag_filled",
-          "tag": "tcompat:stems/jellyshroom"
+          "tag": "tcompat:logs/end_jellyshroom"
         },
         {
           "type": "mantle:tag_filled",
-          "tag": "tcompat:planks/jellyshroom"
+          "tag": "tcompat:planks/end_jellyshroom"
         }
       ]
     }
   ],
   "ingredient": {
-    "tag": "tcompat:stems/jellyshroom"
+    "tag": "tcompat:logs/end_jellyshroom"
   },
   "leftover": {
     "count": 1,
     "tag": "tcompat:planks/jellyshroom"
   },
-  "material": "tcompat:aether_wood#jellyshroom",
+  "material": "tconstruct:wood#jellyshroom",
   "needed": 1,
   "value": 4
 }

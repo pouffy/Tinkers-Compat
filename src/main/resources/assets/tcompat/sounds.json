@@ -1,0 +1,21 @@
+{
+  "void_touched.activate": {
+    "sounds": [
+      "tcompat:void_touched_activate_0",
+      "tcompat:void_touched_activate_1",
+      "tcompat:void_touched_activate_2",
+      "tcompat:void_touched_activate_3",
+      "tcompat:void_touched_activate_4"
+    ],
+    "subtitle": "subtitles.tcompat.void_touched.activate"
+  },
+  "void_touched.deactivate": {
+    "sounds": [
+      "tcompat:void_touched_deactivate_0",
+      "tcompat:void_touched_deactivate_1",
+      "tcompat:void_touched_deactivate_2",
+      "tcompat:void_touched_deactivate_3"
+    ],
+    "subtitle": "subtitles.tcompat.void_touched.deactivate"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/end_lotus"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/end_lotus"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/end_lotus"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/end_lotus"
+  },
+  "material": "tconstruct:wood#end_lotus",
+  "needed": 1,
+  "value": 4
+}

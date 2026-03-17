@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/lucernia"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/lucernia"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:planks/lucernia"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "tcompat:planks/lucernia"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#lucernia"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

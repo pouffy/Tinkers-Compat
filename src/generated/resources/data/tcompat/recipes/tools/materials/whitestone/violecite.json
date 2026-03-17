@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/violecite"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:rocks/violecite"
+  },
+  "material": "tconstruct:whitestone#violecite",
+  "needed": 1,
+  "value": 1
+}

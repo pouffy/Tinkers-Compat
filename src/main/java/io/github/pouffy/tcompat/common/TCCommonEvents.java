@@ -2,16 +2,21 @@ package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
+import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.module.AutosmeltModule;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegisterEvent;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 @Mod.EventBusSubscriber(modid = TCompat.MOD_ID)
 public class TCCommonEvents {
@@ -28,6 +33,30 @@ public class TCCommonEvents {
         }
     }
 
+    @SubscribeEvent
+    static void livingTick(LivingEvent.LivingTickEvent event) {
+        var entity = event.getEntity();
+        VoidTouched.get(entity).ifPresent(voidTouched -> {
+            if (voidTouched.isVoided()) {
+                voidTouched.tick();
+            }
+        });
+    }
+
+    @SubscribeEvent
+    static void hurt(LivingHurtEvent event) {
+        var entity = event.getEntity();
+        AtomicReference<Float> amount = new AtomicReference<>(event.getAmount());
+        VoidTouched.get(entity).ifPresent(voidTouched -> {
+            if (voidTouched.isVoided()) {
+                float multiplier = ((voidTouched.getAmplifier()) * 0.05f);
+                amount.updateAndGet(v -> v + (v * multiplier));
+            }
+        });
+        if (amount.get() != event.getAmount()) {
+            event.setAmount(amount.get());
+        }
+    }
     //ModifierModule.LOADER.register(getResource("autosmelt"), AutosmeltModule.LOADER);
 
     @SubscribeEvent

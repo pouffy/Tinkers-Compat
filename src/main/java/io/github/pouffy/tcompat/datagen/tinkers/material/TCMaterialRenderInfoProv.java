@@ -35,6 +35,9 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
         buildRenderInfo(TCMaterials.desh).color(0xc77142).fallbacks("metal");
         buildRenderInfo(TCMaterials.calorite).color(0xb83145).fallbacks("metal");
         buildRenderInfo(TCMaterials.ostrum).color(0x925e64).fallbacks("metal");
+        buildRenderInfo(TCMaterials.thallasium).color(0x7ad0d3).fallbacks("metal");
+        buildRenderInfo(TCMaterials.terminite).color(0x71f3e8).fallbacks("metal");
+        buildRenderInfo(TCMaterials.aeternium).color(0x6d8883).fallbacks("metal");
     }
 
     @Override

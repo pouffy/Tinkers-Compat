@@ -31,6 +31,10 @@ public class TCMaterials {
     public static final MaterialId calorite = id("calorite");
     public static final MaterialId desh = id("desh");
     public static final MaterialId ostrum = id("ostrum");
+
+    public static final MaterialId thallasium = id("thallasium");
+    public static final MaterialId terminite = id("terminite");
+    public static final MaterialId aeternium = id("aeternium");
     // Special Craftable Materials
     public static final MaterialId blightbunnyFang = id("blightbunny_fang");
     public static final MaterialId mykapodShell = id("mykapod_shell");
@@ -110,6 +114,17 @@ public class TCMaterials {
             ashen = woodVariant(TCWoods.ANCIENT),
             azalea = woodVariant(TCWoods.AZALEA),
             trumpet = woodVariant(TCWoods.BLOSSOM),
+            //Betterend
+            mossyGlowshroom = woodVariant(TCWoods.MOSSY_GLOWSHROOM),
+            pythadendron = woodVariant(TCWoods.PYTHADENDRON),
+            endLotus = woodVariant(TCWoods.END_LOTUS),
+            lacugrove = woodVariant(TCWoods.LACUGROVE),
+            dragonTree = woodVariant(TCWoods.DRAGON_TREE),
+            tenanea = woodVariant(TCWoods.TENANEA),
+            helixTree = woodVariant(TCWoods.HELIX_TREE),
+            umbrellaTree = woodVariant(TCWoods.UMBRELLA_TREE),
+            endJellyshroom = woodVariant(TCWoods.END_JELLYSHROOM),
+            lucernia = woodVariant(TCWoods.LUCERNIA),
 
         // Rocks
             // Aether
@@ -135,6 +150,14 @@ public class TCMaterials {
             jasper = rockVariant(TCRocks.JASPER),
             shale = rockVariant(TCRocks.SHALE),
             permafrost = rockVariant(TCRocks.PERMAFROST),
+            //Betterend
+            flavolite = endStoneVariant(TCRocks.FLAVOLITE),
+            violecite = endStoneVariant(TCRocks.VIOLECITE),
+            sulphuricRock = endStoneVariant(TCRocks.SULPHURIC_ROCK),
+            viridJadestone = endStoneVariant(TCRocks.VIRID_JADESTONE),
+            azureJadestone = endStoneVariant(TCRocks.AZURE_JADESTONE),
+            sandyJadestone = endStoneVariant(TCRocks.SANDY_JADESTONE),
+            umbralith = endStoneVariant(TCRocks.UMBRALITH),
             // Vanilla
             dripstone = rockVariant(TCRocks.DRIPSTONE)
             ;
@@ -162,6 +185,13 @@ public class TCMaterials {
 
     private static MaterialVariantId aetherRockVariant(TCRocks rockType) {
         MaterialVariantId id = MaterialVariantId.create(aetherRock, rockType.getSerializedName());
+        rockVariants.put(id, rockType);
+        allVariants.add(id);
+        return id;
+    }
+
+    private static MaterialVariantId endStoneVariant(TCRocks rockType) {
+        MaterialVariantId id = MaterialVariantId.create(MaterialIds.whitestone, rockType.getSerializedName());
         rockVariants.put(id, rockType);
         allVariants.add(id);
         return id;

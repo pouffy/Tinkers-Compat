@@ -27,6 +27,7 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         ICondition bop = new ModLoadedCondition("biomesoplenty");
         ICondition species = new ModLoadedCondition("species");
         ICondition adAstra = new ModLoadedCondition("ad_astra");
+        ICondition betterend = new ModLoadedCondition("betterend");
 
         ICondition brass = tagFull("forge", "ingots/brass");
         ICondition zinc = tagFull("forge", "ingots/zinc");
@@ -53,6 +54,10 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.desh, 2, ORDER_SPECIAL, false, false, adAstra);
         addMaterial(TCMaterials.calorite, 2, ORDER_SPECIAL, false, false, adAstra);
         addMaterial(TCMaterials.ostrum, 2, ORDER_SPECIAL, false, false, adAstra);
+
+        addMaterial(TCMaterials.thallasium, 2, ORDER_SPECIAL, false, false, betterend);
+        addMaterial(TCMaterials.terminite, 2, ORDER_SPECIAL, false, false, betterend);
+        addMaterial(TCMaterials.aeternium, 2, ORDER_SPECIAL, false, false, betterend);
 
         //addMaterial(TCMaterials.zinc, 2, ORDER_HARVEST, false, false, zinc);
         //addMaterial(TCMaterials.brass, 2, ORDER_HARVEST, false, false, brass);

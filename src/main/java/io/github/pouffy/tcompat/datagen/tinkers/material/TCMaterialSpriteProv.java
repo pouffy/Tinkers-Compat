@@ -111,6 +111,18 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildPlanks(TCMaterials.strophar,           0xFF6b5e5b, 0xFF776b65, 0xFF8a7d72, 0xFF968c7d, 0xFFa09986, 0xFFaea893, 0xFFccc2a7);
         buildPlanks(TCMaterials.glacian,            0xFF8c5b7d, 0xFF99688b, 0xFFae7e96, 0xFFb6859e, 0xFFb9889b, 0xFFc08ea0, 0xFFc59fa8);
 
+        buildPlanks(TCMaterials.mossyGlowshroom,    0xFF015847, 0xFF016b57, 0xFF01856c, 0xFF01937b, 0xFF01a38b, 0xFF01ab94, 0xFF02b7a1);
+        buildPlanks(TCMaterials.pythadendron,       0xFF3e193e, 0xFF441b44, 0xFF532253, 0xFF622862, 0xFF702f70, 0xFF783378, 0xFF873c87);
+        buildPlanks(TCMaterials.endLotus,           0xFF4cadcc, 0xFF55b6d4, 0xFF62bfdd, 0xFF7ccce4, 0xFF82d2eb, 0xFF88d8f0, 0xFF97e0f3);
+        buildPlanks(TCMaterials.lacugrove,          0xFFb3aa77, 0xFFbeb784, 0xFFccc792, 0xFFd9d99e, 0xFFe4e9a8, 0xFFe9f0ae, 0xFFf0f8b8);
+        buildPlanks(TCMaterials.dragonTree,         0xFF191123, 0xFF1c1227, 0xFF241833, 0xFF2a1d3c, 0xFF312143, 0xFF38264c, 0xFF433059);
+        buildPlanks(TCMaterials.tenanea,            0xFF67335a, 0xFF7a3e6c, 0xFF934c82, 0xFFa15692, 0xFFad5f9f, 0xFFb363a4, 0xFFbf6fb2);
+        buildPlanks(TCMaterials.helixTree,          0xFF9e531d, 0xFFa75c1c, 0xFFb3681c, 0xFFbb701c, 0xFFc1761c, 0xFFcb8021, 0xFFd2872a);
+        buildPlanks(TCMaterials.umbrellaTree,       0xFF01464d, 0xFF024f58, 0xFF025861, 0xFF025c66, 0xFF02656c, 0xFF026e71, 0xFF037a78);
+        buildPlanks(TCMaterials.endJellyshroom,     0xFF4b6d77, 0xFF567a84, 0xFF608590, 0xFF70949e, 0xFF80a1a9, 0xFF88a8af, 0xFF91b0b7);
+        buildPlanks(TCMaterials.lucernia,           0xFF842b2d, 0xFF9d373a, 0xFFae4140, 0xFFbe4e4b, 0xFFc95651, 0xFFd46b60, 0xFFe08270);
+
+
         // Rock
         buildRock(TCMaterials.redRock,              0xFF7F4026, 0xFF904727, 0xFF95522F, 0xFFA95936, 0xFFAD633E, 0xFFB36D44);
         buildRock(TCMaterials.dacite,               0xFF663E2F, 0xFF6D4536, 0xFF7F5646, 0xFF926251, 0xFF9F6B58, 0xFFA97764);
@@ -137,6 +149,15 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildRock(TCMaterials.mercuryStone,         0xFF4a263b, 0xFF4d2a3c, 0xFF55313f, 0xFF603948, 0xFF723e49, 0xFF844751);
         buildRock(TCMaterials.glacioStone,          0xFF7c73a9, 0xFF877cad, 0xFF9185b6, 0xFF9897bf, 0xFFa5a6ca, 0xFFb4b8d2);
 
+        buildRock(TCMaterials.flavolite,            0xFFc9b07d, 0xFFd4bb8b, 0xFFdbc293, 0xFFe3ca9b, 0xFFead2a3, 0xFFf0dbb1);
+        buildRock(TCMaterials.violecite,            0xFF1a131e, 0xFF211a26, 0xFF29202f, 0xFF352a3c, 0xFF403348, 0xFF483b51);
+        buildRock(TCMaterials.sulphuricRock,        0xFF3d2e2d, 0xFF413231, 0xFF493a39, 0xFF544241, 0xFF604d4c, 0xFF775e5d);
+        buildRock(TCMaterials.viridJadestone,       0xFF193d30, 0xFF1f4537, 0xFF244b3d, 0xFF295042, 0xFF305f4e, 0xFF356f5a);
+        buildRock(TCMaterials.azureJadestone,       0xFF214f54, 0xFF2b5a5e, 0xFF316361, 0xFF396a66, 0xFF40786c, 0xFF458576);
+        buildRock(TCMaterials.sandyJadestone,       0xFF697335, 0xFF737d3c, 0xFF7b8648, 0xFF829653, 0xFF8fa45a, 0xFF95b264);
+        buildRock(TCMaterials.umbralith,            0xFF07040d, 0xFF0c0816, 0xFF110f23, 0xFF282d41, 0xFF303c4d, 0xFF40535f);
+
+
         buildGeneric(TCMaterials.zanite,            0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff, plating(HeadMaterialStats.ID), "gem", "metal").arrowHead().fletching();
         buildGeneric(TCMaterials.skyjade,           0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397, plating(HeadMaterialStats.ID), "gem", "metal").arrowHead();
         buildGeneric(TCMaterials.gravitite,         0xFF390c35, 0xFF5c1256, 0xFFb643a0, 0xFFda67d0, 0xFFf195ef, 0xFFffcbfd, addStats(), "metal").armor().ranged().meleeHarvest();
@@ -145,9 +166,13 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
 
         buildGeneric(TCMaterials.pyral,             0xFF6b130b, 0xFFb7420c, 0xFFd86a0b, 0xFFffb326, 0xFFfeda87, 0xFFffeec5, addStats(), "metal").armor().ranged();
 
-        buildGeneric(TCMaterials.calorite,             0xFF470d2f, 0xFF6a1534, 0xFF9e1f3f, 0xFFb83145, 0xFFcb4e4f, 0xFFdf6d5c, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
-        buildGeneric(TCMaterials.desh,             0xFF7a3045, 0xFF9e4539, 0xFFb25b3d, 0xFFc77142, 0xFFd68d4d, 0xFFe9ba5d, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
-        buildGeneric(TCMaterials.ostrum,             0xFF42313d, 0xFF553e4b, 0xFF775360, 0xFF925e64, 0xFFa86c73, 0xFFbf7a82, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.calorite,          0xFF470d2f, 0xFF6a1534, 0xFF9e1f3f, 0xFFb83145, 0xFFcb4e4f, 0xFFdf6d5c, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.desh,              0xFF7a3045, 0xFF9e4539, 0xFFb25b3d, 0xFFc77142, 0xFFd68d4d, 0xFFe9ba5d, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.ostrum,            0xFF42313d, 0xFF553e4b, 0xFF775360, 0xFF925e64, 0xFFa86c73, 0xFFbf7a82, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+
+        buildGeneric(TCMaterials.thallasium,        0xFF378099, 0xFF449aaf, 0xFF54b0bf, 0xFF7ad0d3, 0xFFa4e8da, 0xFFcff9e2, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.terminite,         0xFF01625b, 0xFF00a094, 0xFF46d5ca, 0xFF71f3e8, 0xFFa1f8f0, 0xFFebfefc, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.aeternium,         0xFF075a52, 0xFF34746e, 0xFF657a7a, 0xFF6d8883, 0xFF95a5a5, 0xFFc6cdcd, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
         buildMaterial(TCMaterials.valkyrum)
                 .armor().meleeHarvest()
                 .transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0));

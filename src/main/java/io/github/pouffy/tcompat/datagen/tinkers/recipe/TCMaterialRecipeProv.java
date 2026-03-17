@@ -128,38 +128,38 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(woodType.plankTag()), 1, 1, folder + "wood/planks/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material, Ingredient.of(woodType.plankTag()), 1, 1, folder + material.getId().getPath() + "/planks/%s".formatted(material.getVariant()));
     }
 
     private void logVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(woodType.logTag()), 4, 1, ItemOutput.fromTag(TCWoods.plankTag(material.getVariant())), folder + "wood/logs/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material, Ingredient.of(woodType.logTag()), 4, 1, ItemOutput.fromTag(TCWoods.plankTag(material.getVariant())), folder + material.getId().getPath() + "/logs/%s".formatted(material.getVariant()));
     }
 
     private void rockVariantRecipe(Consumer<FinishedRecipe> consumer, TCRocks rockType, MaterialVariantId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(rockType.rockTag()), 1, 1, folder + "rock/%s".formatted(material.getVariant()));
+        materialRecipe(consumer, material, Ingredient.of(rockType.rockTag()), 1, 1, folder + material.getId().getPath() + "/%s".formatted(material.getVariant()));
     }
 
     private void planksRecipe(Consumer<FinishedRecipe> consumer, TCWoods wood, MaterialId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(wood.plankTag()), 1, 1, folder + "wood/planks/%s".formatted(material.getPath()));
+        materialRecipe(consumer, material, Ingredient.of(wood.plankTag()), 1, 1, folder + material.getId().getPath() + "/planks/%s".formatted(material.getPath()));
     }
 
     private void logRecipe(Consumer<FinishedRecipe> consumer, TCWoods wood, MaterialId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(wood.logTag()), 4, 1, ItemOutput.fromTag(wood.plankTag()), folder + "wood/logs/%s".formatted(material.getPath()));
+        materialRecipe(consumer, material, Ingredient.of(wood.logTag()), 4, 1, ItemOutput.fromTag(wood.plankTag()), folder + material.getId().getPath() + "/logs/%s".formatted(material.getPath()));
     }
 
     private void stemRecipe(Consumer<FinishedRecipe> consumer, TCWoods wood, MaterialId material) {
         String folder = "tools/materials/";
-        materialRecipe(consumer, material, Ingredient.of(wood.logTag()), 4, 1, ItemOutput.fromTag(wood.plankTag()), folder + "wood/logs/%s".formatted(material.getPath()));
+        materialRecipe(consumer, material, Ingredient.of(wood.logTag()), 4, 1, ItemOutput.fromTag(wood.plankTag()), folder + material.getId().getPath() + "/logs/%s".formatted(material.getPath()));
     }
 
     private void rockRecipe(Consumer<FinishedRecipe> consumer, MaterialId material, String namespace) {
         String folder = "tools/materials/";
         Function<String, ResourceLocation> namespaceFunction = name -> getResource(namespace, name);
-        materialRecipe(consumer, material, ItemNameIngredient.from(namespaceFunction.apply(material.getPath())), 1, 1, folder + "rock/%s".formatted(material.getPath()));
+        materialRecipe(consumer, material, ItemNameIngredient.from(namespaceFunction.apply(material.getPath())), 1, 1, folder + material.getId().getPath() + "/%s".formatted(material.getPath()));
     }
 
     private static ResourceKey<Item> itemKey(String name) {

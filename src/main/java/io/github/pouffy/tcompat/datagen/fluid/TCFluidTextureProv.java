@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
+import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import net.minecraft.data.PackOutput;
 import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
@@ -33,6 +34,9 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
         compatOre(AdAstraInit.moltenDesh);
         compatOre(AdAstraInit.moltenCalorite);
         compatOre(AdAstraInit.moltenOstrum);
+        compatOre(BetterendInit.moltenThallasium);
+        compatOre(BetterendInit.moltenTerminite);
+        compatOre(BetterendInit.moltenAeternium);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {

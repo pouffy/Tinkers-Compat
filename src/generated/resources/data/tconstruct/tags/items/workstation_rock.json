@@ -83,6 +83,34 @@
     {
       "id": "ad_astra:glacio_stone",
       "required": false
+    },
+    {
+      "id": "betterend:flavolite",
+      "required": false
+    },
+    {
+      "id": "betterend:violecite",
+      "required": false
+    },
+    {
+      "id": "betterend:sulphuric_rock",
+      "required": false
+    },
+    {
+      "id": "betterend:virid_jadestone",
+      "required": false
+    },
+    {
+      "id": "betterend:azure_jadestone",
+      "required": false
+    },
+    {
+      "id": "betterend:sandy_jadestone",
+      "required": false
+    },
+    {
+      "id": "betterend:umbralith",
+      "required": false
     }
   ]
 }

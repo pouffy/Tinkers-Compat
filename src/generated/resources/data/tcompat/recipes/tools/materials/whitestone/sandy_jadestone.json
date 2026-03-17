@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/sandy_jadestone"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:rocks/sandy_jadestone"
+  },
+  "material": "tconstruct:whitestone#sandy_jadestone",
+  "needed": 1,
+  "value": 1
+}

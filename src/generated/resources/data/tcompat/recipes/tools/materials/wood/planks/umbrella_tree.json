@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/umbrella_tree"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/umbrella_tree"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/umbrella_tree"
+  },
+  "material": "tconstruct:wood#umbrella_tree",
+  "needed": 1,
+  "value": 1
+}

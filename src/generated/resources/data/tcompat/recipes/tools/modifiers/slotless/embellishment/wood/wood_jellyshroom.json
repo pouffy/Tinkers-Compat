@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/end_jellyshroom"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/end_jellyshroom"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:planks/end_jellyshroom"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "tcompat:planks/end_jellyshroom"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#jellyshroom"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

@@ -50,6 +50,15 @@ public enum TCRocks implements StringRepresentable {
     VENUS_STONE(builder("ad_astra")),
     MERCURY_STONE(builder("ad_astra")),
     GLACIO_STONE(builder("ad_astra")),
+
+    // Betterend
+    FLAVOLITE(builder("betterend")),
+    VIOLECITE(builder("betterend")),
+    SULPHURIC_ROCK(builder("betterend")),
+    VIRID_JADESTONE(builder("betterend")),
+    AZURE_JADESTONE(builder("betterend")),
+    SANDY_JADESTONE(builder("betterend")),
+    UMBRALITH(builder("betterend")),
     ;
 
     public final String name;
