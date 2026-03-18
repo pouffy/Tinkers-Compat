@@ -22,7 +22,6 @@ import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 import static slimeknights.mantle.block.fluid.BurningLiquidBlock.createBurning;
 
-//TODO: Fluid Textures & Recipes
 public class BetterendInit extends CompatInitializer {
     public static final ModifierDeferredRegister BE_M = ModifierDeferredRegister.create(TCompat.MOD_ID);
     public static final FluidDeferredRegister BE_F = new FluidDeferredRegister(TCompat.MOD_ID);
