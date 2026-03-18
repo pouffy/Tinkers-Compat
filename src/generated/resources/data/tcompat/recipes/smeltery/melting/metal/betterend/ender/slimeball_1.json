@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:ender_ore"
+    },
+    {
+      "item": "betterend:ender_shard"
+    },
+    {
+      "item": "betterend:ender_dust"
+    }
+  ],
+  "result": {
+    "amount": 250,
+    "tag": "forge:ender"
+  },
+  "temperature": 477,
+  "time": 82
+}

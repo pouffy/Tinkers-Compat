@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:thallasium_pickaxe_head"
+    },
+    {
+      "item": "betterend:thallasium_axe_head"
+    },
+    {
+      "item": "betterend:thallasium_pickaxe"
+    },
+    {
+      "item": "betterend:thallasium_axe"
+    }
+  ],
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_thallasium"
+  },
+  "temperature": 875,
+  "time": 108
+}

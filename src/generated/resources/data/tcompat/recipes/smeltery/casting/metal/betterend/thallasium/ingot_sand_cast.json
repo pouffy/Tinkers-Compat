@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/ingot"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/thallasium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "cooling_time": 63,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_thallasium"
+  },
+  "result": {
+    "tag": "forge:ingots/thallasium"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "byproducts": [
+    {
+      "amount": 630,
+      "tag": "forge:molten_terminite",
+      "unit_size": 10
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:aeternium_leggings"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_aeternium",
+    "unit_size": 10
+  },
+  "temperature": 1160,
+  "time": 188
+}

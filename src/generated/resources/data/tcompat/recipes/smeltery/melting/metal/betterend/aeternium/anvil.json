@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 2790,
+      "tag": "forge:molten_terminite"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:aeternium_anvil"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_aeternium"
+  },
+  "temperature": 1160,
+  "time": 71
+}

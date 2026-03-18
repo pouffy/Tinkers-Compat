@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/terminite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/terminite"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_terminite"
+  },
+  "temperature": 930,
+  "time": 21
+}

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:thallasium_chain"
+  },
+  "result": {
+    "amount": 110,
+    "tag": "forge:molten_thallasium"
+  },
+  "temperature": 875,
+  "time": 69
+}

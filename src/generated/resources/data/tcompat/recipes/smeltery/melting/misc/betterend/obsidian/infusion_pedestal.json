@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 750,
+      "tag": "forge:ender"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:infusion_pedestal"
+  },
+  "result": {
+    "amount": 2000,
+    "fluid": "tconstruct:molten_obsidian"
+  },
+  "temperature": 1000,
+  "time": 313
+}

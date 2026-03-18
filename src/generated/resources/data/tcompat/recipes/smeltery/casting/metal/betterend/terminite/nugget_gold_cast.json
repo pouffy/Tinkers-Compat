@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/terminite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "cooling_time": 21,
+  "fluid": {
+    "amount": 10,
+    "tag": "forge:molten_terminite"
+  },
+  "result": {
+    "tag": "forge:nuggets/terminite"
+  }
+}

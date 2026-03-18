@@ -10,6 +10,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -65,6 +66,18 @@ public class TCItemTagProv extends ItemTagsProvider {
                 .addOptional(getResource("aether", "music_disc_high"))
                 .addOptional(getResource("aether", "blue_aercloud"))
                 .addOptional(getResource("aether", "crystal_leaves"));
+
+        var thallasiumLanterns = this.tag(TCTags.Items.THALLASIUM_BULB_LANTERNS).addOptional(getResource("betterend", "thallasium_bulb_lantern"));
+        var terminiteLanterns = this.tag(TCTags.Items.TERMINITE_BULB_LANTERNS).addOptional(getResource("betterend", "terminite_bulb_lantern"));
+        var ironLanterns = this.tag(TCTags.Items.IRON_BULB_LANTERNS).addOptional(getResource("betterend", "iron_bulb_lantern"));
+        for (DyeColor color : DyeColor.values()) {
+            String thallasium = "thallasium_bulb_lantern_" + color.getSerializedName();
+            String terminite = "terminite_bulb_lantern_" + color.getSerializedName();
+            String iron = "iron_bulb_lantern_" + color.getSerializedName();
+            thallasiumLanterns.addOptional(getResource("betterend", thallasium));
+            terminiteLanterns.addOptional(getResource("betterend", terminite));
+            ironLanterns.addOptional(getResource("betterend", iron));
+        }
     }
 
     private void addForge() {
@@ -96,6 +109,19 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.PYRAL_BLOCKS).addOptional(getResource("aether_treasure_reforging", "pyral_block"));
         this.tag(TCTags.Items.VALKYRUM_INGOTS).addOptional(getResource("aether_treasure_reforging", "valkyrum_ingot"));
         this.tag(TCTags.Items.VALKYRUM_BLOCKS).addOptional(getResource("aether_treasure_reforging", "valkyrum_block"));
+        this.tag(TCTags.Items.THALLASIUM_INGOTS).addOptional(getResource("betterend", "thallasium_ingot"));
+        this.tag(TCTags.Items.THALLASIUM_PLATES).addOptional(getResource("betterend", "thallasium_forged_plate"));
+        this.tag(TCTags.Items.THALLASIUM_NUGGETS).addOptional(getResource("betterend", "thallasium_nugget"));
+        this.tag(TCTags.Items.THALLASIUM_BLOCKS).addOptional(getResource("betterend", "thallasium_block"));
+        this.tag(TCTags.Items.THALLASIUM_ORES).addOptional(getResource("betterend", "thallasium_ore"));
+        this.tag(TCTags.Items.RAW_THALLASIUM).addOptional(getResource("betterend", "thallasium_raw"));
+        this.tag(TCTags.Items.TERMINITE_INGOTS).addOptional(getResource("betterend", "terminite_ingot"));
+        this.tag(TCTags.Items.TERMINITE_PLATES).addOptional(getResource("betterend", "terminite_forged_plate"));
+        this.tag(TCTags.Items.TERMINITE_NUGGETS).addOptional(getResource("betterend", "terminite_nugget"));
+        this.tag(TCTags.Items.TERMINITE_BLOCKS).addOptional(getResource("betterend", "terminite_block"));
+        this.tag(TCTags.Items.AETERNIUM_INGOTS).addOptional(getResource("betterend", "aeternium_ingot"));
+        this.tag(TCTags.Items.AETERNIUM_PLATES).addOptional(getResource("betterend", "aeternium_forged_plate"));
+        this.tag(TCTags.Items.AETERNIUM_BLOCKS).addOptional(getResource("betterend", "aeternium_block"));
     }
 
     private void addMetals() {

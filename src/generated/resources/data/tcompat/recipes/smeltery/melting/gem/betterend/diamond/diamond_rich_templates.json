@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:leather_handle_attachment_smithing_template"
+    },
+    {
+      "item": "betterend:aeternium_upgrade_smithing_template"
+    },
+    {
+      "item": "betterend:netherite_upgrade_smithing_template"
+    }
+  ],
+  "result": {
+    "amount": 700,
+    "fluid": "tconstruct:molten_diamond"
+  },
+  "temperature": 1450,
+  "time": 220
+}

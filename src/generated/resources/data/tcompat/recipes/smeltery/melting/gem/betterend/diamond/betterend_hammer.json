@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:diamond_hammer"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "tconstruct:molten_diamond",
+    "unit_size": 25
+  },
+  "temperature": 1450,
+  "time": 166
+}

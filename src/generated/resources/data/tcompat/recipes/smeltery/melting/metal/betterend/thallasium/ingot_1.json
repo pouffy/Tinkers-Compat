@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:thallasium_shovel_head"
+    },
+    {
+      "item": "betterend:thallasium_shovel"
+    },
+    {
+      "item": "betterend:thallasium_sword_blade"
+    },
+    {
+      "item": "betterend:thallasium_sword_handle"
+    },
+    {
+      "item": "betterend:thallasium_upgrade_smithing_template"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_terminite"
+  },
+  "temperature": 930,
+  "time": 91
+}

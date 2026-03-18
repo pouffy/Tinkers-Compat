@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/thallasium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/thallasium"
+  },
+  "material": "tcompat:thallasium",
+  "needed": 9,
+  "value": 1
+}

@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:terminite_leggings"
+  },
+  "result": {
+    "amount": 630,
+    "tag": "forge:molten_terminite",
+    "unit_size": 10
+  },
+  "temperature": 930,
+  "time": 170
+}

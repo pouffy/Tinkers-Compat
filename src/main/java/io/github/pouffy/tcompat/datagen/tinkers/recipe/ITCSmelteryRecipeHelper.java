@@ -300,6 +300,17 @@ public interface ITCSmelteryRecipeHelper extends ICastCreationHelper {
                 .save(wrapped, location(folder + name + "/block"));
     }
 
+    default void hammerMelting(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, int fluidValue, String name, Ingredient input, String folder, boolean isOptional, int[] damageSizes, FluidOutput... byproducts) {
+        String directory = folder + "/" + name + "/betterend_hammer";
+
+        MeltingRecipeBuilder builder = MeltingRecipeBuilder.melting(input, fluid, fluidValue)
+                .setDamagable(damageSizes);
+        for (FluidOutput output : byproducts) {
+            builder.addByproduct(output);
+        }
+        builder.save(consumer, location(directory));
+    }
+
     default void glovesMelting(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, int fluidValue, String name, Ingredient input, String folder, boolean isOptional, int[] damageSizes, FluidOutput... byproducts) {
         String directory = folder + "/" + name + "/aether_glove";
 

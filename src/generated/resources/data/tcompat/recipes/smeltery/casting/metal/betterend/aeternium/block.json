@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/aeternium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "cooling_time": 213,
+  "fluid": {
+    "amount": 810,
+    "tag": "forge:molten_aeternium"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/aeternium"
+  }
+}

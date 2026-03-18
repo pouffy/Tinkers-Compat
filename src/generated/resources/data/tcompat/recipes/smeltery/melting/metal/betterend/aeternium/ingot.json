@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/aeternium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/aeternium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_aeternium"
+  },
+  "temperature": 1160,
+  "time": 71
+}

@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:thallasium_plate"
+    },
+    {
+      "item": "betterend:thallasium_door"
+    },
+    {
+      "item": "betterend:thallasium_chandelier"
+    },
+    {
+      "item": "betterend:thallasium_hoe_head"
+    },
+    {
+      "item": "betterend:thallasium_sword"
+    },
+    {
+      "item": "betterend:thallasium_hoe"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_thallasium"
+  },
+  "temperature": 875,
+  "time": 88
+}

@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/thallasium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/thallasium"
+  },
+  "material": "tcompat:thallasium",
+  "needed": 1,
+  "value": 1
+}

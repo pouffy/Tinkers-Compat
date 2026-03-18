@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:alloy",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "inputs": [
+    {
+      "amount": 90,
+      "tag": "forge:molten_iron"
+    },
+    {
+      "amount": 250,
+      "tag": "forge:ender"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_terminite"
+  },
+  "temperature": 930
+}

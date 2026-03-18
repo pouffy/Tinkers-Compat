@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:terminite_upgrade_smithing_template"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_terminite"
+  },
+  "temperature": 930,
+  "time": 64
+}

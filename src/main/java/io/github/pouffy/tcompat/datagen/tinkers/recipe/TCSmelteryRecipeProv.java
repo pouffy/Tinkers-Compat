@@ -7,6 +7,7 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
+import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -30,10 +31,12 @@ import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -61,6 +64,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         aetherTreasure(consumer, folder);
         species(consumer, folder);
         adAstra(consumer, folder);
+        betterEnd(consumer, folder);
     }
 
     private void aether(Consumer<FinishedRecipe> consumer, String folder) {
@@ -213,7 +217,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(aetherTreasureId.apply("neptune_mesh")))
                 .setFluidAndTime(AetherTRInit.moltenNeptune, FluidValues.INGOT)
-                .save(consumer, location(metalFolder.apply("melting") + "neptune_mesh"));
+                .save(consumer, location(metalFolder.apply("casting") + "neptune/mesh"));
 
         for (String type : new String[]{"valkyrie", "neptune", "phoenix"}) {
             String template = type + "_upgrade_smithing_template";
@@ -343,6 +347,160 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         TCMeltingInfo.AdAstra.adAstraGroup.saveAll(consumer);
         //Deco
         simpleMelting(adAstraConsumer, TinkerFluids.moltenSteel, rod * 3, "steel", Ingredient.of(adAstraTag.apply("flags")), metalFolder.apply("melting"), "space_flags");
+    }
+
+    private void betterEnd(Consumer<FinishedRecipe> consumer, String folder) {
+        String betterEnd = "betterend";
+        Function<String, ResourceLocation> betterEndId = name -> getResource(betterEnd, name);
+        Function<String, TagKey<Item>> betterEndTag = name -> TagKey.create(Registries.ITEM, getResource(betterEnd, name));
+        Consumer<FinishedRecipe> betterEndConsumer = withCondition(consumer, new ModLoadedCondition(betterEnd));
+
+        Function<String, String> betterEndFolderFunction = name -> name.formatted(betterEnd);
+        Function<String, String> alloyFolder = type -> betterEndFolderFunction.apply("smeltery/alloys/%s/" + type);
+        Function<String, String> metalFolder = type -> betterEndFolderFunction.apply("smeltery/" + type + "/metal/%s/");
+        Function<String, String> gemFolder = type -> betterEndFolderFunction.apply("smeltery/" + type + "/gem/%s/");
+        Function<String, String> miscFolder = type -> betterEndFolderFunction.apply("smeltery/" + type + "/misc/%s/");
+
+        metal(betterEndConsumer, BetterendInit.moltenThallasium, betterEnd).metal(true).plate().optional();
+        metal(betterEndConsumer, BetterendInit.moltenTerminite, betterEnd).metal(true).plate().optional();
+        metal(betterEndConsumer, BetterendInit.moltenAeternium, betterEnd).metal(true).plate().optional();
+
+        AlloyRecipeBuilder.alloy(BetterendInit.moltenTerminite, FluidValues.INGOT)
+                .addInput(TinkerFluids.moltenIron.ingredient(FluidValues.INGOT))
+                .addInput(TinkerFluids.moltenEnder.ingredient(FluidValues.SLIMEBALL))
+                .save(betterEndConsumer, location(alloyFolder.apply("molten_terminite")));
+
+        AlloyRecipeBuilder.alloy(BetterendInit.moltenAeternium, FluidValues.INGOT)
+                .addInput(BetterendInit.moltenTerminite.ingredient(FluidValues.INGOT))
+                .addInput(TinkerFluids.moltenNetherite.ingredient(FluidValues.INGOT))
+                .save(betterEndConsumer, location(alloyFolder.apply("molten_aeternium")));
+
+        Function<List<String>, Ingredient> listedInput = inputs -> {
+            List<ResourceLocation> list = new ArrayList<>();
+            for (String s : inputs) {
+                list.add(betterEndId.apply(s));
+            }
+            return ItemNameIngredient.from(list);
+        };
+
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.METAL_BLOCK, "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_tile")), metalFolder.apply("melting"), "tile");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.METAL_BLOCK, "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_hammer")), metalFolder.apply("melting"), "hammer");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, 1215, "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_stairs")), metalFolder.apply("melting"), "stairs");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.METAL_BLOCK / 2, "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_slab")), metalFolder.apply("melting"), "slab");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.INGOT * 4, "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_trapdoor")), metalFolder.apply("melting"), "trapdoor");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.NUGGET * 3, "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_bars")), metalFolder.apply("melting"), "bars");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, (FluidValues.NUGGET * 2) + FluidValues.INGOT, "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_chain")), metalFolder.apply("melting"), "chain");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, (FluidValues.NUGGET * 2) + (FluidValues.INGOT * 2), "thallasium", Ingredient.of(TCTags.Items.THALLASIUM_BULB_LANTERNS), metalFolder.apply("melting"), "bulb_lantern");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.INGOT * 2, "thallasium", listedInput.apply(List.of(
+                "thallasium_shovel_head",
+                "thallasium_shovel",
+                "thallasium_sword_blade",
+                "thallasium_sword_handle",
+                "thallasium_upgrade_smithing_template"
+        )), metalFolder.apply("melting"), "ingot_1");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.INGOT * 2, "thallasium", listedInput.apply(List.of(
+                "thallasium_plate",
+                "thallasium_door",
+                "thallasium_chandelier",
+                "thallasium_hoe_head",
+                "thallasium_sword",
+                "thallasium_hoe"
+        )), metalFolder.apply("melting"), "ingot_2");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.INGOT * 3, "thallasium", listedInput.apply(List.of(
+                "thallasium_pickaxe_head",
+                "thallasium_axe_head",
+                "thallasium_pickaxe",
+                "thallasium_axe"
+        )), metalFolder.apply("melting"), "ingot_3");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, (FluidValues.METAL_BLOCK * 3) + (FluidValues.INGOT * 4), "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_anvil")), metalFolder.apply("melting"), "anvil");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.INGOT * 4, "thallasium", ItemNameIngredient.from(betterEndId.apply("end_stone_smelter")), metalFolder.apply("melting"), "end_stone_smelter");
+
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.METAL_BLOCK, "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_tile")), metalFolder.apply("melting"), "tile");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.METAL_BLOCK, "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_hammer")), metalFolder.apply("melting"), "hammer");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, 1215, "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_stairs")), metalFolder.apply("melting"), "stairs");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.METAL_BLOCK / 2, "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_slab")), metalFolder.apply("melting"), "slab");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.INGOT * 4, "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_trapdoor")), metalFolder.apply("melting"), "trapdoor");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.NUGGET * 3, "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_bars")), metalFolder.apply("melting"), "bars");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, (FluidValues.NUGGET * 2) + FluidValues.INGOT, "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_chain")), metalFolder.apply("melting"), "chain");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, (FluidValues.NUGGET * 2) + (FluidValues.INGOT * 2), "terminite", Ingredient.of(TCTags.Items.TERMINITE_BULB_LANTERNS), metalFolder.apply("melting"), "bulb_lantern");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.INGOT * 2, "terminite", listedInput.apply(List.of(
+                "terminite_shovel_head",
+                "terminite_shovel",
+                "terminite_sword_blade",
+                "terminite_sword_handle",
+                "aeternium_sword_handle",
+                "terminite_upgrade_smithing_template"
+        )), metalFolder.apply("melting"), "ingot_1");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.INGOT * 2, "terminite", listedInput.apply(List.of(
+                "terminite_plate",
+                "terminite_door",
+                "terminite_chandelier",
+                "terminite_hoe_head",
+                "terminite_sword",
+                "terminite_hoe"
+        )), metalFolder.apply("melting"), "ingot_2");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.INGOT * 3, "terminite", listedInput.apply(List.of(
+                "terminite_pickaxe_head",
+                "terminite_axe_head",
+                "terminite_pickaxe",
+                "terminite_axe"
+        )), metalFolder.apply("melting"), "ingot_3");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, (FluidValues.METAL_BLOCK * 3) + (FluidValues.INGOT * 4), "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_anvil")), metalFolder.apply("melting"), "anvil");
+
+        simpleMelting(betterEndConsumer, TinkerFluids.moltenEnder, FluidValues.SLIME_CONGEALED, "ender", ItemNameIngredient.from(betterEndId.apply("ender_block")), metalFolder.apply("melting"), "block");
+        simpleMelting(betterEndConsumer, TinkerFluids.moltenIron, (FluidValues.NUGGET * 2) + (FluidValues.INGOT * 2), "iron", Ingredient.of(TCTags.Items.IRON_BULB_LANTERNS), metalFolder.apply("melting"), "bulb_lantern");
+        simpleMelting(betterEndConsumer, TinkerFluids.moltenIron, FluidValues.INGOT * 2, "iron", ItemNameIngredient.from(betterEndId.apply("iron_chandelier")), metalFolder.apply("melting"), "chandelier");
+        simpleMelting(betterEndConsumer, TinkerFluids.moltenGold, FluidValues.INGOT * 2, "gold", ItemNameIngredient.from(betterEndId.apply("gold_chandelier")), metalFolder.apply("melting"), "chandelier");
+
+        simpleMelting(TinkerFluids.moltenObsidian, FluidValues.GLASS_BLOCK * 2, ItemNameIngredient.from(betterEndId.apply("infusion_pedestal")))
+                .addByproduct(TinkerFluids.moltenEnder.result(FluidValues.SLIMEBALL * 3))
+                .save(betterEndConsumer, location(miscFolder.apply("melting") + "/obsidian/infusion_pedestal"));
+
+        simpleMelting(BetterendInit.moltenAeternium, FluidValues.INGOT, ItemNameIngredient.from(betterEndId.apply("aeternium_anvil")))
+                .addByproduct(BetterendInit.moltenTerminite.result((FluidValues.METAL_BLOCK * 3) + (FluidValues.INGOT * 4)))
+                .save(betterEndConsumer, location(metalFolder.apply("melting") + "/aeternium/anvil"));
+
+        simpleMelting(betterEndConsumer, TinkerFluids.moltenEnder, FluidValues.SLIMEBALL, "ender", listedInput.apply(List.of("ender_ore", "ender_shard", "ender_dust")), metalFolder.apply("melting"), "slimeball_1");
+
+        simpleMelting(betterEndConsumer, BetterendInit.moltenAeternium, FluidValues.INGOT, "aeternium", listedInput.apply(List.of(
+                "elytra_armored",
+                "aeternium_shovel_head",
+                "aeternium_pickaxe_head",
+                "aeternium_axe_head",
+                "aeternium_hoe_head",
+                "aeternium_hammer_head",
+                "aeternium_sword_blade",
+                "aeternium_hammer"
+        )), metalFolder.apply("melting"), "ingot_1");
+
+        hammerMelting(betterEndConsumer, TinkerFluids.moltenIron, FluidValues.INGOT * 4, "iron", ItemNameIngredient.from(betterEndId.apply("iron_hammer")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET});
+        hammerMelting(betterEndConsumer, TinkerFluids.moltenGold, FluidValues.INGOT * 4, "gold", ItemNameIngredient.from(betterEndId.apply("golden_hammer")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET});
+        hammerMelting(betterEndConsumer, TinkerFluids.moltenDiamond, FluidValues.GEM * 4, "diamond", ItemNameIngredient.from(betterEndId.apply("diamond_hammer")), gemFolder.apply("melting"), true, new int[]{FluidValues.GEM_SHARD, FluidValues.NUGGET});
+        hammerMelting(betterEndConsumer, TinkerFluids.moltenNetherite, FluidValues.INGOT, "netherite", ItemNameIngredient.from(betterEndId.apply("netherite_hammer")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.GEM_SHARD}, TinkerFluids.moltenDiamond.result(FluidValues.GEM * 2));
+
+        salvageArmor(betterEndConsumer, betterEndId, BetterendInit.moltenTerminite, FluidValues.INGOT, "terminite", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+        salvageArmor(betterEndConsumer, betterEndId, BetterendInit.moltenThallasium, FluidValues.INGOT, "thallasium", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+        salvageArmor(betterEndConsumer, betterEndId, BetterendInit.moltenAeternium, BetterendInit.moltenTerminite, FluidValues.INGOT, "aeternium", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+
+        simpleMelting(betterEndConsumer, TinkerFluids.moltenDiamond, FluidValues.GEM, "diamond", ItemNameIngredient.from(betterEndId.apply("handle_attachment_smithing_template")), gemFolder.apply("melting"), "handle_attachment_smithing_template");
+        simpleMelting(betterEndConsumer, TinkerFluids.moltenDiamond, FluidValues.GEM * 7, "diamond", listedInput.apply(List.of(
+                "leather_handle_attachment_smithing_template",
+                "aeternium_upgrade_smithing_template",
+                "netherite_upgrade_smithing_template"
+        )), gemFolder.apply("melting"), "diamond_rich_templates");
+        simpleMelting(betterEndConsumer, TinkerFluids.moltenIron, FluidValues.METAL_BLOCK, "iron", ItemNameIngredient.from(betterEndId.apply("tool_assembly_smithing_template")), metalFolder.apply("melting"), "tool_assembly_smithing_template");
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM * 7, ItemNameIngredient.from(betterEndId.apply("plate_upgrade_smithing_template")))
+                .addByproduct(TinkerFluids.moltenIron.result(FluidValues.INGOT))
+                .save(betterEndConsumer, location(gemFolder.apply("melting") + "/diamond/plate_upgrade_smithing_template"));
+        simpleMelting(betterEndConsumer, BetterendInit.moltenTerminite, FluidValues.INGOT, "terminite", ItemNameIngredient.from(betterEndId.apply("terminite_upgrade_smithing_template")), metalFolder.apply("melting"), "terminite_upgrade_smithing_template");
+        simpleMelting(betterEndConsumer, BetterendInit.moltenThallasium, FluidValues.INGOT, "thallasium", ItemNameIngredient.from(betterEndId.apply("thallasium_upgrade_smithing_template")), metalFolder.apply("melting"), "thallasium_upgrade_smithing_template");
+
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betterEndId.apply("thallasium_bars")))
+                .setFluidAndTime(BetterendInit.moltenThallasium, FluidValues.NUGGET * 3)
+                .save(consumer, location(metalFolder.apply("casting") + "/thallasium/bars"));
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betterEndId.apply("terminite_bars")))
+                .setFluidAndTime(BetterendInit.moltenTerminite, FluidValues.NUGGET * 3)
+                .save(consumer, location(metalFolder.apply("casting") + "/terminite/bars"));
     }
 
     public TCSmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {

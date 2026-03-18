@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:terminite_pickaxe_head"
+    },
+    {
+      "item": "betterend:terminite_axe_head"
+    },
+    {
+      "item": "betterend:terminite_pickaxe"
+    },
+    {
+      "item": "betterend:terminite_axe"
+    }
+  ],
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_terminite"
+  },
+  "temperature": 930,
+  "time": 111
+}

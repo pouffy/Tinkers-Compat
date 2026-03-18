@@ -7,6 +7,7 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
+import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCWoods;
@@ -62,6 +63,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
         Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
+        Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
         List<MaterialVariantId> noPlanks = List.of(TCMaterials.paloVerde);
 
         // Streamline variant recipes
@@ -100,6 +102,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(adAstraConsumer, TCMaterials.calorite, folder, "calorite", true);
         metalMaterialRecipe(adAstraConsumer, TCMaterials.ostrum, folder, "ostrum", true);
 
+        metalMaterialRecipe(betterend, TCMaterials.thallasium, folder, "thallasium", true);
+        metalMaterialRecipe(betterend, TCMaterials.terminite, folder, "terminite", true);
+        metalMaterialRecipe(betterend, TCMaterials.aeternium, folder, "aeternium", true);
+
         materialRecipe(speciesConsumer, TCMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
     }
 
@@ -110,6 +116,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
         Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
         Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
+        Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
 
         materialMeltingCasting(aetherConsumer, TCMaterials.zanite, AetherInit.moltenZanite, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, AetherInit.moltenGravitite, folder);
@@ -120,6 +127,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingCasting(adAstraConsumer, TCMaterials.desh, AdAstraInit.moltenDesh, FluidValues.INGOT, folder);
         materialMeltingCasting(adAstraConsumer, TCMaterials.calorite, AdAstraInit.moltenCalorite, FluidValues.INGOT, folder);
         materialMeltingCasting(adAstraConsumer, TCMaterials.ostrum, AdAstraInit.moltenOstrum, FluidValues.INGOT, folder);
+
+        materialMeltingCasting(betterend, TCMaterials.thallasium, BetterendInit.moltenThallasium, FluidValues.INGOT, folder);
+        materialMeltingCasting(betterend, TCMaterials.terminite, BetterendInit.moltenTerminite, FluidValues.INGOT, folder);
+        materialMeltingCasting(betterend, TCMaterials.aeternium, BetterendInit.moltenAeternium, FluidValues.INGOT, folder);
 
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, AetherTRInit.moltenValkyrum, FluidValues.INGOT, folder);
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, AetherTRInit.moltenPyral, FluidValues.INGOT, folder);

@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/terminite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/terminite"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/terminite"
+  },
+  "material": "tcompat:terminite",
+  "needed": 1,
+  "value": 9
+}

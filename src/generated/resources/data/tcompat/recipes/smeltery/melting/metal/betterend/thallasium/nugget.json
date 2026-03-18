@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/thallasium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/thallasium"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_thallasium"
+  },
+  "temperature": 875,
+  "time": 21
+}

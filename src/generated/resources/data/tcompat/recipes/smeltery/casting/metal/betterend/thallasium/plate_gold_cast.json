@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/plate"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:plates/thallasium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "cooling_time": 63,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_thallasium"
+  },
+  "result": {
+    "tag": "forge:plates/thallasium"
+  }
+}

@@ -172,7 +172,7 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
 
         buildGeneric(TCMaterials.thallasium,        0xFF378099, 0xFF449aaf, 0xFF54b0bf, 0xFF7ad0d3, 0xFFa4e8da, 0xFFcff9e2, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
         buildGeneric(TCMaterials.terminite,         0xFF01625b, 0xFF00a094, 0xFF46d5ca, 0xFF71f3e8, 0xFFa1f8f0, 0xFFebfefc, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
-        buildGeneric(TCMaterials.aeternium,         0xFF075a52, 0xFF34746e, 0xFF657a7a, 0xFF6d8883, 0xFF95a5a5, 0xFFc6cdcd, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.aeternium,         0xFF0c100f, 0xFF282f2d, 0xFF495e5a, 0xFF697876, 0xFF8d9a96, 0xFFbdcbc9, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
         buildMaterial(TCMaterials.valkyrum)
                 .armor().meleeHarvest()
                 .transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0));

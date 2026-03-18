@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:terminite_plate"
+    },
+    {
+      "item": "betterend:terminite_door"
+    },
+    {
+      "item": "betterend:terminite_chandelier"
+    },
+    {
+      "item": "betterend:terminite_hoe_head"
+    },
+    {
+      "item": "betterend:terminite_sword"
+    },
+    {
+      "item": "betterend:terminite_hoe"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_terminite"
+  },
+  "temperature": 930,
+  "time": 91
+}

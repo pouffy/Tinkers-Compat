@@ -1,0 +1,41 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:elytra_armored"
+    },
+    {
+      "item": "betterend:aeternium_shovel_head"
+    },
+    {
+      "item": "betterend:aeternium_pickaxe_head"
+    },
+    {
+      "item": "betterend:aeternium_axe_head"
+    },
+    {
+      "item": "betterend:aeternium_hoe_head"
+    },
+    {
+      "item": "betterend:aeternium_hammer_head"
+    },
+    {
+      "item": "betterend:aeternium_sword_blade"
+    },
+    {
+      "item": "betterend:aeternium_hammer"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_aeternium"
+  },
+  "temperature": 1160,
+  "time": 71
+}

@@ -119,6 +119,26 @@ public class TCTags {
         public static TagKey<Item> SENTRITE_STONE_BLOCKS = local("sentrite/stone_blocks");
         public static TagKey<Item> SENTRITE_STONE_SLABS = local("sentrite/stone_slabs");
 
+        public static TagKey<Item> THALLASIUM_INGOTS  = common("ingots/thallasium");
+        public static TagKey<Item> THALLASIUM_NUGGETS  = common("nuggets/thallasium");
+        public static TagKey<Item> THALLASIUM_PLATES = common("plates/thallasium");
+        public static TagKey<Item> THALLASIUM_BLOCKS  = common("storage_blocks/thallasium");
+        public static TagKey<Item> THALLASIUM_ORES  = common("ores/thallasium");
+        public static TagKey<Item> RAW_THALLASIUM = common("raw_materials/thallasium");
+
+        public static TagKey<Item> TERMINITE_INGOTS  = common("ingots/terminite");
+        public static TagKey<Item> TERMINITE_NUGGETS  = common("nuggets/terminite");
+        public static TagKey<Item> TERMINITE_PLATES = common("plates/terminite");
+        public static TagKey<Item> TERMINITE_BLOCKS  = common("storage_blocks/terminite");
+
+        public static TagKey<Item> AETERNIUM_INGOTS  = common("ingots/aeternium");
+        public static TagKey<Item> AETERNIUM_PLATES = common("plates/aeternium");
+        public static TagKey<Item> AETERNIUM_BLOCKS  = common("storage_blocks/aeternium");
+
+        public static TagKey<Item> THALLASIUM_BULB_LANTERNS = local("bulb_lanterns/thallasium");
+        public static TagKey<Item> TERMINITE_BULB_LANTERNS = local("bulb_lanterns/terminite");
+        public static TagKey<Item> IRON_BULB_LANTERNS = local("bulb_lanterns/iron");
+
         public static TagKey<Item> AUTOCHANT_LEFT = local("recipe/autochant/left");
         public static TagKey<Item> AUTOCHANT_RIGHT = local("recipe/autochant/right");
         public static TagKey<Item> AUTOFREEZE_LEFT = local("recipe/autofreeze/left");

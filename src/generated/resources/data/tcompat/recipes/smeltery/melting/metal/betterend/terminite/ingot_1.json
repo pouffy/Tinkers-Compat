@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betterend:terminite_shovel_head"
+    },
+    {
+      "item": "betterend:terminite_shovel"
+    },
+    {
+      "item": "betterend:terminite_sword_blade"
+    },
+    {
+      "item": "betterend:terminite_sword_handle"
+    },
+    {
+      "item": "betterend:aeternium_sword_handle"
+    },
+    {
+      "item": "betterend:terminite_upgrade_smithing_template"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_terminite"
+  },
+  "temperature": 930,
+  "time": 91
+}
