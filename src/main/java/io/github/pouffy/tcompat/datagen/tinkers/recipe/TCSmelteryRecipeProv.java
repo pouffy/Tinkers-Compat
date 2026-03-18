@@ -361,7 +361,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         Function<String, String> gemFolder = type -> betterEndFolderFunction.apply("smeltery/" + type + "/gem/%s/");
         Function<String, String> miscFolder = type -> betterEndFolderFunction.apply("smeltery/" + type + "/misc/%s/");
 
-        metal(betterEndConsumer, BetterendInit.moltenThallasium, betterEnd).metal(true).plate().optional();
+        metal(betterEndConsumer, BetterendInit.moltenThallasium, betterEnd).metal(true).singularOre(2).plate().optional();
         metal(betterEndConsumer, BetterendInit.moltenTerminite, betterEnd).metal(true).plate().optional();
         metal(betterEndConsumer, BetterendInit.moltenAeternium, betterEnd).metal(true).plate().optional();
 
