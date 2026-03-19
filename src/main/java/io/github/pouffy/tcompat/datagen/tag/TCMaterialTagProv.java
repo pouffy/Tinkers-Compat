@@ -29,7 +29,10 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
                 TCMaterials.refinedSentrite,
                 TCMaterials.pyral,
                 TCMaterials.valkyrum,
-                TCMaterials.neptune
+                TCMaterials.neptune,
+                TCMaterials.lightnum,
+                TCMaterials.stormforgedSteel,
+                TCMaterials.draculite
         );
     }
 

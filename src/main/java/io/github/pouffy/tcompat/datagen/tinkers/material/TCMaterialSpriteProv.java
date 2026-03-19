@@ -164,6 +164,10 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildGeneric(TCMaterials.veridium,          0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb, addStats(), "metal").armor().meleeHarvest();
         buildGeneric(TCMaterials.refinedSentrite,   0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1, addStats(GripMaterialStats.ID, HeadMaterialStats.ID), "metal");
 
+        buildGeneric(TCMaterials.stormforgedSteel,  0xFF4a568f, 0xFF58709f, 0xFF6283ab, 0xFF88b9d0, 0xFFa9f0f5, 0xFFdeffff, addStats(INGOT), "metal").meleeHarvest();
+        buildGeneric(TCMaterials.lightnum,          0xFF0f274b, 0xFF1f4478, 0xFF2a5a9d, 0xFF5a9bdb, 0xFF94c9ff, 0xFFffffff, addStats(INGOT), "metal").meleeHarvest();
+        buildGeneric(TCMaterials.draculite,         0xFF3b0303, 0xFF630505, 0xFF700606, 0xFFd11e1e, 0xFFf56262, 0xFFffadad, addStats(INGOT), "metal").meleeHarvest();
+
         buildGeneric(TCMaterials.pyral,             0xFF6b130b, 0xFFb7420c, 0xFFd86a0b, 0xFFffb326, 0xFFfeda87, 0xFFffeec5, addStats(), "metal").armor().ranged();
 
         buildGeneric(TCMaterials.calorite,          0xFF470d2f, 0xFF6a1534, 0xFF9e1f3f, 0xFFb83145, 0xFFcb4e4f, 0xFFdf6d5c, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();

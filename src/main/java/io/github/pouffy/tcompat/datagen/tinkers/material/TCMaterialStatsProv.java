@@ -2,10 +2,8 @@ package io.github.pouffy.tcompat.datagen.tinkers.material;
 
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.ArmorMaterial;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
-import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.*;
@@ -76,6 +74,10 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(2197, 10.0f, NETHERITE, 4.0f),
                 HandleMaterialStats.multipliers().attackSpeed(0.8f).build(),
                 StatlessMaterialStats.BINDING);
+
+        addMaterialStats(TCMaterials.stormforgedSteel, new HeadMaterialStats(503, 8.0f, IRON, 5.0f));
+        addMaterialStats(TCMaterials.lightnum, new HeadMaterialStats(503, 8.0f, DIAMOND, 6.0f));
+        addMaterialStats(TCMaterials.draculite, new HeadMaterialStats(2032, 8.0f, DIAMOND, 6.0f));
     }
 
     private void addRanged() {

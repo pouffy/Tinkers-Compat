@@ -8,6 +8,7 @@
   "mixins": [
     "AbstractArrowMixin",
     "EnderManMixin",
+    "EntityMixin",
     "ProjectileMixin",
     "TinkerFluidTabMixin",
     "aether.AbilityHooksMixin"

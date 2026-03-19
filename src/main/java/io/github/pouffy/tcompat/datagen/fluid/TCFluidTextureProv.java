@@ -37,6 +37,9 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
         compatOre(BetterendInit.moltenThallasium);
         compatOre(BetterendInit.moltenTerminite);
         compatOre(BetterendInit.moltenAeternium);
+        compatOre(AetherInit.moltenLightnum);
+        compatOre(AetherInit.moltenDraculite);
+        compatOre(DeepAetherInit.moltenStormforgedSteel);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {

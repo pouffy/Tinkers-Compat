@@ -2,6 +2,8 @@ package io.github.pouffy.tcompat.common.capability;
 
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.compatible.Compatibility;
+import io.github.pouffy.tcompat.common.capability.compatible.CompatibilityCapability;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouchedCapability;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
@@ -21,6 +23,7 @@ import net.minecraftforge.fml.common.Mod;
 public class TCompatCapabilities {
     public static final Capability<PhoenixTouched> PHOENIX_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<VoidTouched> VOID_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
+    public static final Capability<Compatibility> COMPATIBILITY_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
 
     @SubscribeEvent
     public static void register(RegisterCapabilitiesEvent event) {
@@ -37,6 +40,7 @@ public class TCompatCapabilities {
             if (event.getObject() instanceof LivingEntity livingEntity) {
                 event.addCapability(TCompat.getResource("void_touched"), new CapabilityProvider(TCompatCapabilities.VOID_TOUCHED_CAPABILITY, new VoidTouchedCapability(livingEntity)));
             }
+            event.addCapability(TCompat.getResource("compatibility"), new CapabilityProvider(TCompatCapabilities.COMPATIBILITY_CAPABILITY, new CompatibilityCapability(event.getObject())));
         }
     }
 }

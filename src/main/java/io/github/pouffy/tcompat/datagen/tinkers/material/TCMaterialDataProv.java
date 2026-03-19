@@ -36,8 +36,11 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.aetherRock, 1, ORDER_HARVEST, true, false, aether);
         addMaterial(TCMaterials.zanite, 2, ORDER_HARVEST, false, false, aether);
         addMaterial(TCMaterials.gravitite, 3, ORDER_HARVEST, false, false, aether);
+        addMaterial(TCMaterials.lightnum, 3, ORDER_HARVEST, false, false, aether);
+        addMaterial(TCMaterials.draculite, 3, ORDER_HARVEST, false, false, aether);
 
         addMaterial(TCMaterials.skyjade, 2, ORDER_HARVEST, false, false, deepAether);
+        addMaterial(TCMaterials.stormforgedSteel, 2, ORDER_HARVEST, false, false, deepAether);
 
         addMaterial(TCMaterials.veridium, 3, ORDER_HARVEST, false, false, aetherRedux);
         addMaterial(TCMaterials.refinedSentrite, 4, ORDER_HARVEST, false, false, aetherRedux);

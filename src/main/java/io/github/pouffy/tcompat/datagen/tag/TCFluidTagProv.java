@@ -43,13 +43,18 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(BetterendInit.moltenTerminite);
         fluidTag(BetterendInit.moltenThallasium);
         fluidTag(BetterendInit.moltenAeternium);
+        fluidTag(AetherInit.moltenLightnum);
+        fluidTag(AetherInit.moltenDraculite);
+        fluidTag(DeepAetherInit.moltenStormforgedSteel);
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(
                 //Aether
                 AetherInit.moltenGravitite.getTag(),
+                AetherInit.moltenLightnum.getTag(),
+                AetherInit.moltenDraculite.getTag(),
                 DeepAetherInit.moltenStratus.getTag(),
+                DeepAetherInit.moltenStormforgedSteel.getTag(),
                 AetherReduxInit.moltenVeridium.getTag(),
                 AetherReduxInit.moltenRefinedSentrite.getTag(),
-                //Treasure Reforging
                 AetherTRInit.moltenValkyrum.getTag(),
                 AetherTRInit.moltenPyral.getTag(),
                 AetherTRInit.moltenNeptune.getTag(),

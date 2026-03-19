@@ -20,10 +20,12 @@ public class DeepAetherInit extends CompatInitializer {
     public static final ModifierDeferredRegister DEEP_M = ModifierDeferredRegister.create(TCompat.MOD_ID);
     public static final FluidDeferredRegister DEEP_F = new FluidDeferredRegister(TCompat.MOD_ID);
 
-    public static final StaticModifier<DullingModifier> dulling = DEEP_M.register("dulling", DullingModifier::new);
+    public static final StaticModifier<DullingModifier> dulling = DEEP_M.register("dulling", DullingModifier::new); // Skyjade
+    public static final StaticModifier<GaleModifier> gale = DEEP_M.register("gale", GaleModifier::new); // Stormforged Steel
 
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenSkyjade = DEEP_F.register("molten_skyjade").type(hot("molten_skyjade").temperature(1625).lightLevel(13)).block(createBurning(MapColor.COLOR_LIGHT_GREEN, 13, 10, 5f)).bucket().commonTag().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenStratus = DEEP_F.register("molten_stratus").type(hot("molten_stratus").temperature(1675).lightLevel(12)).block(createBurning(MapColor.COLOR_PINK, 12, 8, 6f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenStormforgedSteel = DEEP_F.register("molten_stormforged_steel").type(hot("molten_stormforged_steel").temperature(1675).lightLevel(15)).block(createBurning(MapColor.COLOR_LIGHT_BLUE, 15, 10, 7f)).bucket().commonTag().flowing();
 
     @SubscribeEvent
     void commonSetup(final FMLCommonSetupEvent event) {

@@ -9,6 +9,9 @@
     "tcompat:refined_sentrite",
     "tcompat:pyral",
     "tcompat:valkyrum",
-    "tcompat:neptune"
+    "tcompat:neptune",
+    "tcompat:lightnum",
+    "tcompat:stormforged_steel",
+    "tcompat:draculite"
   ]
 }

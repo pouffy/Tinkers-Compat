@@ -21,9 +21,11 @@ public class AetherInit extends CompatInitializer {
     public static final FluidDeferredRegister AETHER_F = new FluidDeferredRegister(TCompat.MOD_ID);
 
     //Traits
-    public static final StaticModifier<AcclimatizationModifier> acclimatization = AETHER_M.register("acclimatization", AcclimatizationModifier::new);
-    public static final StaticModifier<AmbrogenModifier> ambrogen = AETHER_M.register("ambrogen", AmbrogenModifier::new);
-    public static final StaticModifier<AscensionModifier> ascension = AETHER_M.register("ascension", AscensionModifier::new);
+    public static final StaticModifier<AcclimatizationModifier> acclimatization = AETHER_M.register("acclimatization", AcclimatizationModifier::new); // Zanite
+    public static final StaticModifier<AmbrogenModifier> ambrogen = AETHER_M.register("ambrogen", AmbrogenModifier::new); // Holystone
+    public static final StaticModifier<AscensionModifier> ascension = AETHER_M.register("ascension", AscensionModifier::new); // Gravitite
+    public static final StaticModifier<ThunderstruckModifier> thunderstruck = AETHER_M.register("thunderstruck", ThunderstruckModifier::new); // Lightnum
+    public static final StaticModifier<BloodsuckingModifier> bloodsucking = AETHER_M.register("bloodsucking", BloodsuckingModifier::new); // Draculite
 
     //Craftable Modifiers
     public static final StaticModifier<AutochantModifier> autochant = AETHER_M.register("autochant", AutochantModifier::new);
@@ -32,6 +34,8 @@ public class AetherInit extends CompatInitializer {
     //Molten Fluids
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenZanite = AETHER_F.register("molten_zanite").type(hot("molten_zanite").temperature(1250).lightLevel(13)).block(createBurning(MapColor.COLOR_PURPLE, 13, 10, 6.5f)).bucket().commonTag().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenGravitite = AETHER_F.register("molten_gravitite").type(hot("molten_gravitite").density(-2000).temperature(1575).lightLevel(7)).block(createBurning(MapColor.COLOR_MAGENTA, 7, 8, 6f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenLightnum = AETHER_F.register("molten_lightnum").type(hot("molten_lightnum").temperature(1675).lightLevel(12)).block(createBurning(MapColor.COLOR_BLUE, 12, 8, 6f)).bucket().commonTag().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenDraculite = AETHER_F.register("molten_draculite").type(hot("molten_draculite").temperature(1675).lightLevel(15)).block(createBurning(MapColor.COLOR_RED, 15, 10, 7f)).bucket().commonTag().flowing();
 
     @SubscribeEvent
     void commonSetup(final FMLCommonSetupEvent event) {

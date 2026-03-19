@@ -38,12 +38,22 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addTraits(TCMaterials.zanite, AMMO, ModifierIds.crystalbound);
         addDefaultTraits(TCMaterials.gravitite, TCModifiers.aetherForged);
         addTraits(TCMaterials.gravitite, HeadMaterialStats.ID, AetherInit.ascension.getId(), TCModifiers.aetherForged);
+        addDefaultTraits(TCMaterials.lightnum, TCModifiers.aetherForged);
+        addTraits(TCMaterials.lightnum, HeadMaterialStats.ID, AetherInit.thunderstruck.getId());
+        addDefaultTraits(TCMaterials.draculite, TCModifiers.aetherForged);
+        addTraits(TCMaterials.draculite, HeadMaterialStats.ID, AetherInit.bloodsucking.getId());
+
         addDefaultTraits(TCMaterials.skyjade, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(DeepAetherInit.dulling, 1));
         addTraits(TCMaterials.skyjade, AMMO, ModifierIds.punch);
+        addDefaultTraits(TCMaterials.stormforgedSteel, TCModifiers.aetherForged);
+        addTraits(TCMaterials.stormforgedSteel, HeadMaterialStats.ID, DeepAetherInit.gale.getId());
+
         addDefaultTraits(TCMaterials.veridium, TCModifiers.aetherForged, AetherReduxInit.ambrofusion.getId());
         addDefaultTraits(TCMaterials.refinedSentrite, new ModifierEntry(TCModifiers.aetherForged, 1));
+
         addDefaultTraits(TCMaterials.hellbark, ModifierIds.fiery);
         addTraits(TCMaterials.hellbark, AMMO, ModifierIds.spectral);
+
         addDefaultTraits(TCMaterials.blightbunnyFang, AetherReduxInit.blighted);
         addDefaultTraits(TCMaterials.pyral, TCModifiers.aetherForged);
         addTraits(TCMaterials.pyral, ARMOR, ModifierIds.fireProtection);
@@ -53,10 +63,13 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addTraits(TCMaterials.valkyrum, ARMOR, ModifierIds.doubleJump);
         addTraits(TCMaterials.neptune, ARMOR, ModifierIds.depthStrider);
         addTraits(TCMaterials.mykapodShell, StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay);
+
         addDefaultTraits(TCMaterials.wickedWax, SpeciesInit.wicked);
+
         addDefaultTraits(TCMaterials.desh, AdAstraInit.oxygenated);
         addDefaultTraits(TCMaterials.calorite, AdAstraInit.oxygenated);
         addDefaultTraits(TCMaterials.ostrum, AdAstraInit.oxygenated);
+
         addDefaultTraits(TCMaterials.thallasium, BetterendInit.voidTouched);
         addDefaultTraits(TCMaterials.terminite, BetterendInit.voidTouched);
         addDefaultTraits(TCMaterials.aeternium, BetterendInit.voidTouched);

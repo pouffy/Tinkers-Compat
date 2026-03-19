@@ -26,7 +26,10 @@
     "autochant":              "#e5eb62",
     "autofreeze":             "#c6e1e1",
     "oxygenated":             "#a9b4ed",
-    "void_touched":           "#740696"
+    "void_touched":           "#740696",
+    "thunderstruck":          "#5a9bdb",
+    "bloodsucking":           "#d11e1e",
+    "gale":                   "#9cd9e6"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,
@@ -112,6 +115,10 @@
 
     "pyral":                  "#ffb326",
     "valkyrum":               "#c3d1d1",
-    "neptune":                "#3559c6"
+    "neptune":                "#3559c6",
+
+    "lightnum":               "#5a9bdb",
+    "draculite":              "#d11e1e",
+    "stormforged_steel":      "#88b9d0"
   }
 }

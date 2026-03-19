@@ -4,10 +4,14 @@ import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.module.AutosmeltModule;
+import io.github.pouffy.tcompat.compat.aether.ThunderstruckModifier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -41,6 +45,15 @@ public class TCCommonEvents {
                 voidTouched.tick();
             }
         });
+    }
+
+    @SubscribeEvent
+    public static void onLightningStrike(EntityStruckByLightningEvent event) {
+        Entity entity = event.getEntity();
+        LightningBolt lightningBolt = event.getLightning();
+        if (!event.isCanceled() && ThunderstruckModifier.lightningTracking(entity, lightningBolt)) {
+            event.setCanceled(true);
+        }
     }
 
     @SubscribeEvent

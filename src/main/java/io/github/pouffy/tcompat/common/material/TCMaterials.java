@@ -27,6 +27,9 @@ public class TCMaterials {
     public static final MaterialId pyral = id("pyral");
     public static final MaterialId valkyrum = id("valkyrum");
     public static final MaterialId neptune = id("neptune");
+    public static final MaterialId lightnum = id("lightnum");
+    public static final MaterialId stormforgedSteel = id("stormforged_steel");
+    public static final MaterialId draculite = id("draculite");
 
     public static final MaterialId calorite = id("calorite");
     public static final MaterialId desh = id("desh");
