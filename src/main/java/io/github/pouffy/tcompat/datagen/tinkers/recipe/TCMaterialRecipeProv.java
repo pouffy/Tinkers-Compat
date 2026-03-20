@@ -86,8 +86,11 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         //Material Parts
         metalMaterialRecipe(aetherConsumer, TCMaterials.gravitite, folder, "gravitite", true);
         gemMaterialRecipe(aetherConsumer, TCMaterials.zanite, folder, "zanite", true, false, true);
+        metalMaterialRecipe(aetherConsumer, TCMaterials.lightnum, folder, "lightnum", true);
+        metalMaterialRecipe(aetherConsumer, TCMaterials.draculite, folder, "draculite", true);
 
         gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
+        metalMaterialRecipe(deepAetherConsumer, TCMaterials.stormforgedSteel, folder, "stormforged_steel", true);
 
         metalMaterialRecipe(aetherReduxConsumer, TCMaterials.veridium, folder, "veridium", true);
         metalMaterialRecipe(aetherReduxConsumer, TCMaterials.refinedSentrite, folder, "refined_sentrite", true);
@@ -120,7 +123,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
 
         materialMeltingCasting(aetherConsumer, TCMaterials.zanite, AetherInit.moltenZanite, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, AetherInit.moltenGravitite, folder);
+        materialMeltingCasting(aetherConsumer, TCMaterials.lightnum, AetherInit.moltenLightnum, folder);
+        materialMeltingCasting(aetherConsumer, TCMaterials.draculite, AetherInit.moltenDraculite, folder);
         materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, DeepAetherInit.moltenSkyjade, FluidValues.INGOT, folder);
+        materialMeltingCasting(deepAetherConsumer, TCMaterials.stormforgedSteel, DeepAetherInit.moltenStormforgedSteel, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, AetherReduxInit.moltenVeridium, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, AetherReduxInit.moltenRefinedSentrite, folder);
 

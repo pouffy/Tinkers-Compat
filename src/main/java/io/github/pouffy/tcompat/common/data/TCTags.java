@@ -148,6 +148,12 @@ public class TCTags {
         public static TagKey<Item> OSTRUM_ORE = common("ores/ostrum");
         public static TagKey<Item> CALORITE_ORE = common("ores/calorite");
 
+        public static TagKey<Item> LIGHTNUM_INGOTS  = common("ingots/lightnum");
+        public static TagKey<Item> DRACULITE_INGOTS  = common("ingots/draculite");
+        public static TagKey<Item> STORMFORGED_STEEL_INGOTS  = common("ingots/stormforged_steel");
+
+        public static TagKey<Item> DARTS = named("aether", "darts");
+
         public static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));
         }

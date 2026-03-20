@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "item": "deep_aether:stormforged_helmet"
+  },
+  "result": {
+    "amount": 450,
+    "tag": "forge:molten_stormforged_steel",
+    "unit_size": 10
+  },
+  "temperature": 1375,
+  "time": 172
+}

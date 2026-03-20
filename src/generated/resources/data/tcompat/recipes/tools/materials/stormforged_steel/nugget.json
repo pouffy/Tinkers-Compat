@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/stormforged_steel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/stormforged_steel"
+  },
+  "material": "tcompat:stormforged_steel",
+  "needed": 9,
+  "value": 1
+}

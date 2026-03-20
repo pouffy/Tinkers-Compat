@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/lightnum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/lightnum"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_lightnum"
+  },
+  "temperature": 1375,
+  "time": 26
+}

@@ -4,7 +4,7 @@ import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.module.AutosmeltModule;
-import io.github.pouffy.tcompat.compat.aether.ThunderstruckModifier;
+import io.github.pouffy.tcompat.compat.aether.modifier.ThunderstruckModifier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LightningBolt;

@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/draculite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "cooling_time": 26,
+  "fluid": {
+    "amount": 10,
+    "tag": "forge:molten_draculite"
+  },
+  "result": {
+    "tag": "forge:nuggets/draculite"
+  }
+}

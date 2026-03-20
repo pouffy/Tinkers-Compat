@@ -35,6 +35,7 @@ import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,15 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         Function<String, String> metalFolder = type -> aetherFolderFunction.apply("smeltery/" + type + "/metal/%s/");
         Function<String, String> gemFolder = type -> aetherFolderFunction.apply("smeltery/" + type + "/gem/%s/");
         Function<String, String> miscFolder = type -> aetherFolderFunction.apply("smeltery/" + type + "/misc/%s/");
+
+        Function<List<String>, Ingredient> listedInput = inputs -> {
+            List<ResourceLocation> list = new ArrayList<>();
+            for (String s : inputs) {
+                list.add(aetherId.apply(s));
+            }
+            return ItemNameIngredient.from(list);
+        };
+
         //Generic Melting
         gem(aetherConsumer, AetherInit.moltenZanite, aether)
                 .baseUnit(FluidValues.INGOT).damageUnit(FluidValues.NUGGET).oreRate(IMeltingContainer.OreRateType.METAL)
@@ -86,6 +96,8 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
                 .meltingCasting(1, TinkerSmeltery.gemCast, 1.0f, true);
 
         metal(aetherConsumer, AetherInit.moltenGravitite, aether).ore(TCByproduct.ZANITE).metal(true).optional();
+        metal(aetherConsumer, AetherInit.moltenLightnum, aether).metal(true).optional();
+        metal(aetherConsumer, AetherInit.moltenDraculite, aether).metal(true).optional();
 
         simpleMelting(aetherConsumer, AetherInit.moltenZanite, FluidValues.INGOT, "zanite", ItemNameIngredient.from(aetherId.apply("altar")), gemFolder.apply("melting"), "altar");
 
@@ -110,6 +122,11 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         salvageAll(aetherConsumer, aetherId, AetherInit.moltenZanite, FluidValues.INGOT, "zanite", new int[]{FluidValues.NUGGET}, gemFolder.apply("melting"));
         salvageAll(aetherConsumer, aetherId, AetherInit.moltenGravitite, FluidValues.INGOT, "gravitite", new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
         salvageArmor(aetherConsumer, aetherId, TinkerFluids.moltenObsidian, FluidValues.GLASS_BLOCK, "obsidian", new int[]{FluidValues.GLASS_PANE}, miscFolder.apply("melting"));
+
+        simpleMelting(aetherConsumer, AetherInit.moltenLightnum, FluidValues.INGOT * 2, "lightnum", ItemNameIngredient.from(aetherId.apply("lightning_sword")), metalFolder.apply("melting"), "sword");
+        simpleMelting(aetherConsumer, AetherInit.moltenLightnum, FluidValues.INGOT, "lightnum", ItemNameIngredient.from(aetherId.apply("lightning_knife")), metalFolder.apply("melting"), "knife");
+        simpleMelting(aetherConsumer, AetherInit.moltenDraculite, FluidValues.INGOT * 2, "draculite", ItemNameIngredient.from(aetherId.apply("vampire_blade")), metalFolder.apply("melting"), "sword");
+        simpleMelting(aetherConsumer, AetherInit.moltenDraculite, FluidValues.INGOT, "draculite", listedInput.apply(List.of("life_shard", "regeneration_stone")), metalFolder.apply("melting"), "ingot_1");
     }
 
 
@@ -134,6 +151,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
                 .meltingCasting(1 / 9f, TinkerSmeltery.nuggetCast, 1 / 3f, true);
 
         metal(deepAetherConsumer, DeepAetherInit.moltenStratus, deepAether).metal(true).optional();
+        metal(deepAetherConsumer, DeepAetherInit.moltenStormforgedSteel, deepAether).metal(true).optional();
 
         simpleMelting(deepAetherConsumer, DeepAetherInit.moltenSkyjade, FluidValues.NUGGET * 8, "skyjade", ItemNameIngredient.from(deepAetherId.apply("skyjade_lantern")), gemFolder.apply("melting"), "skyjade_lantern");
         simpleMelting(deepAetherConsumer, DeepAetherInit.moltenSkyjade, FluidValues.NUGGET * 2, "skyjade", ItemNameIngredient.from(deepAetherId.apply("skyjade_chain")), gemFolder.apply("melting"), "skyjade_chain");
@@ -151,6 +169,23 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         //Salvaging
         salvageAll(deepAetherConsumer, deepAetherId, DeepAetherInit.moltenSkyjade, FluidValues.INGOT, "skyjade", new int[]{FluidValues.GEM_SHARD}, gemFolder.apply("melting"));
         salvageAll(deepAetherConsumer, deepAetherId, DeepAetherInit.moltenStratus, AetherInit.moltenGravitite, FluidValues.INGOT, "stratus", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+
+        simpleMelting(deepAetherConsumer, DeepAetherInit.moltenStormforgedSteel, FluidValues.INGOT * 2, "stormforged_steel", ItemNameIngredient.from(deepAetherId.apply("storm_sword")), metalFolder.apply("melting"), "sword");
+        simpleMelting(deepAetherConsumer, DeepAetherInit.moltenStormforgedSteel, FluidValues.INGOT * 3, "stormforged_steel", ItemNameIngredient.from(deepAetherId.apply("storm_bow")), metalFolder.apply("melting"), "bow");
+        simpleMelting(DeepAetherInit.moltenStormforgedSteel, FluidValues.INGOT * 5, ItemNameIngredient.from(deepAetherId.apply("stormforged_helmet")))
+                .setDamagable(FluidValues.NUGGET)
+                .save(deepAetherConsumer, location(metalFolder.apply("melting") + "/stormforged_steel/helmet"));
+        simpleMelting(DeepAetherInit.moltenStormforgedSteel, FluidValues.INGOT * 8, ItemNameIngredient.from(deepAetherId.apply("stormforged_chestplate")))
+                .setDamagable(FluidValues.NUGGET)
+                .save(deepAetherConsumer, location(metalFolder.apply("melting") + "/stormforged_steel/chestplate"));
+        simpleMelting(DeepAetherInit.moltenStormforgedSteel, FluidValues.INGOT * 7, ItemNameIngredient.from(deepAetherId.apply("stormforged_leggings")))
+                .setDamagable(FluidValues.NUGGET)
+                .save(deepAetherConsumer, location(metalFolder.apply("melting") + "/stormforged_steel/leggings"));
+        simpleMelting(DeepAetherInit.moltenStormforgedSteel, FluidValues.INGOT * 4, ItemNameIngredient.from(deepAetherId.apply("stormforged_boots")))
+                .setDamagable(FluidValues.NUGGET)
+                .save(deepAetherConsumer, location(metalFolder.apply("melting") + "/stormforged_steel/boots"));
+
+        glovesMelting(deepAetherConsumer, DeepAetherInit.moltenStormforgedSteel, FluidValues.INGOT * 2, "stormforged_steel", ItemNameIngredient.from(deepAetherId.apply("stormforged_gloves")), gemFolder.apply("melting"), true, new int[]{FluidValues.NUGGET});
     }
 
     private void aetherRedux(Consumer<FinishedRecipe> consumer, String folder) {
@@ -186,6 +221,8 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         simpleSalvaging(aetherReduxConsumer, aetherReduxId, AetherReduxInit.moltenVeridium, FluidValues.INGOT, "veridium/infused", "infused_veridium", SalvageType.AXES, new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
         simpleSalvaging(aetherReduxConsumer, aetherReduxId, AetherReduxInit.moltenVeridium, FluidValues.INGOT, "veridium/infused", "infused_veridium", SalvageType.WEAPON, new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
         simpleSalvaging(aetherReduxConsumer, aetherReduxId, AetherReduxInit.moltenVeridium, FluidValues.INGOT, "veridium/infused", "infused_veridium", SalvageType.SHOVEL, new int[]{FluidValues.NUGGET}, metalFolder.apply("melting"));
+
+        simpleMelting(aetherReduxConsumer, AetherInit.moltenDraculite, FluidValues.INGOT, "draculite", ItemNameIngredient.from(aetherReduxId.apply("vampire_amulet")), metalFolder.apply("melting"), "vampire_amulet");
     }
 
     private void aetherTreasure(Consumer<FinishedRecipe> consumer, String folder) {
@@ -206,6 +243,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         simpleMelting(aetherTreasureConsumer, AetherTRInit.moltenValkyrum, FluidValues.INGOT * 3, "valkyrie", ItemNameIngredient.from(aetherId.apply("valkyrie_cape")), metalFolder.apply("melting"), "valkyrie_cape");
         simpleMelting(aetherTreasureConsumer, AetherTRInit.moltenNeptune, FluidValues.INGOT, "neptune", ItemNameIngredient.from(aetherTreasureId.apply("neptune_mesh")), metalFolder.apply("melting"), "neptune_mesh");
         simpleMelting(aetherTreasureConsumer, AetherTRInit.moltenPyral, FluidValues.INGOT * 3, "phoenix", ItemNameIngredient.from(aetherId.apply("phoenix_bow")), metalFolder.apply("melting"), "phoenix_bow");
+        simpleMelting(aetherTreasureConsumer, AetherTRInit.moltenPyral, FluidValues.INGOT * 2, "phoenix", ItemNameIngredient.from(aetherId.apply("flaming_sword")), metalFolder.apply("melting"), "flaming_sword");
         //Gloves
         glovesMelting(aetherTreasureConsumer, AetherTRInit.moltenValkyrum, FluidValues.INGOT, "valkyrie", ItemNameIngredient.from(aetherId.apply("valkyrie_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, AetherInit.moltenGravitite.result(FluidValues.INGOT * 2));
         glovesMelting(aetherTreasureConsumer, AetherTRInit.moltenPyral, FluidValues.INGOT, "phoenix", ItemNameIngredient.from(aetherId.apply("phoenix_gloves")), metalFolder.apply("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, AetherInit.moltenGravitite.result(FluidValues.INGOT * 2));
@@ -248,6 +286,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
                 .save(speciesConsumer, location(metalFolder.apply("melting") + "/iron/hopelight"));
         simpleMelting(TinkerFluids.moltenIron, FluidValues.INGOT + (brokenLinks * 5), ItemNameIngredient.from(speciesId.apply("ricoshield")))
                 .addByproduct(TinkerFluids.moltenCopper.result(FluidValues.INGOT))
+                .setDamagable(FluidValues.NUGGET)
                 .save(speciesConsumer, location(metalFolder.apply("melting") + "/iron/ricoshield"));
         simpleMelting(speciesConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT, "copper", ItemNameIngredient.from(speciesId.apply("kinetic_core")), metalFolder.apply("melting"), "kinetic_core");
         simpleMelting(speciesConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT, "copper", ItemNameIngredient.from(speciesId.apply("quake_head")), metalFolder.apply("melting"), "quake_head");

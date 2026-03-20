@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.common.util;
 
+import com.aetherteam.aether.item.accessories.gloves.GlovesItem;
 import io.github.pouffy.tcompat.TCompat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
@@ -17,11 +18,22 @@ import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
+import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.mantle.registration.object.ItemObject;
+import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
+import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 
 import java.util.Optional;
+import java.util.function.Supplier;
 
+import static io.github.pouffy.tcompat.TCompat.getResource;
 import static slimeknights.mantle.Mantle.commonResource;
 
 public class CompatInitializer {
@@ -71,6 +83,30 @@ public class CompatInitializer {
 
     protected static void acceptMolten(CreativeModeTab.Output output, FluidObject<?> fluid, String ingot) {
         acceptCompat(output, fluid, withoutMolten(fluid), ingot);
+    }
+
+    protected static ItemObject<ModifiableItem> toolForMod(String modid, String id, ToolDefinition definition, ItemDeferredRegister register) {
+        ItemObject<ModifiableItem> tool;
+        if (ModList.get().isLoaded(modid)) {
+            tool = register.register(id, () -> new ModifiableItem(new Item.Properties().stacksTo(1), definition));
+        } else {
+            tool = new ItemObject<>(RegistryObject.create(getResource(id), ForgeRegistries.ITEMS));
+        }
+        return tool;
+    }
+
+    protected static <T extends Item> ItemObject<T> itemForMod(String modid, String id, Supplier<T> constructor, ItemDeferredRegister register) {
+        ItemObject<T> item;
+        if (ModList.get().isLoaded(modid)) {
+            item = register.register(id, constructor);
+        } else {
+            item = new ItemObject<>(RegistryObject.create(getResource(id), ForgeRegistries.ITEMS));
+        }
+        return item;
+    }
+
+    protected static ItemObject<Item> itemForMod(String modid, String id, Item.Properties properties, ItemDeferredRegister register) {
+        return itemForMod(modid, id, () -> new Item(properties), register);
     }
 
     private static final int MOLTEN_LENGTH = "molten_".length();

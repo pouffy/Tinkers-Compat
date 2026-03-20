@@ -1,9 +1,8 @@
-package io.github.pouffy.tcompat.compat.aether;
+package io.github.pouffy.tcompat.compat.aether.modifier;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;

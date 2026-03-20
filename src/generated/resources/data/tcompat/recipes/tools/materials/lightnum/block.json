@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/lightnum"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/lightnum"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/lightnum"
+  },
+  "material": "tcompat:lightnum",
+  "needed": 1,
+  "value": 9
+}

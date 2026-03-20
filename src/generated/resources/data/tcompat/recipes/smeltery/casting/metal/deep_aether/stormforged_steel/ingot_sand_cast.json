@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/ingot"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/stormforged_steel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "cooling_time": 77,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_stormforged_steel"
+  },
+  "result": {
+    "tag": "forge:ingots/stormforged_steel"
+  }
+}

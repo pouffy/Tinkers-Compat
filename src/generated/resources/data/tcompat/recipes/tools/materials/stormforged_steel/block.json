@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/stormforged_steel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/stormforged_steel"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/stormforged_steel"
+  },
+  "material": "tcompat:stormforged_steel",
+  "needed": 1,
+  "value": 9
+}

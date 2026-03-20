@@ -10,6 +10,7 @@
     "EnderManMixin",
     "EntityMixin",
     "ProjectileMixin",
+    "TinkerCommonTabMixin",
     "TinkerFluidTabMixin",
     "aether.AbilityHooksMixin"
   ],

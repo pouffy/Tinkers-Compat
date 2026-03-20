@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.compat.aether;
+package io.github.pouffy.tcompat.compat.aether.modifier;
 
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;

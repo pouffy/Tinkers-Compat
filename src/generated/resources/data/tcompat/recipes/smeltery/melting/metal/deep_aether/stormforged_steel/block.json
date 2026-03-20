@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/stormforged_steel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/stormforged_steel"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_stormforged_steel"
+  },
+  "temperature": 1375,
+  "time": 231
+}

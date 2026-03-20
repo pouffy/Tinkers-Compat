@@ -1,5 +1,5 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "byproducts": [
     {
       "amount": 90,
@@ -17,7 +17,8 @@
   },
   "result": {
     "amount": 640,
-    "tag": "forge:molten_iron"
+    "tag": "forge:molten_iron",
+    "unit_size": 10
   },
   "temperature": 800,
   "time": 160

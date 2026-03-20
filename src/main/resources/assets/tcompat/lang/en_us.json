@@ -189,6 +189,10 @@
   "item.tcompat.molten_terminite_bucket": "Molten Terminite Bucket",
   "item.tcompat.molten_aeternium_bucket": "Molten Aeternium Bucket",
 
+  "item.tcompat.lightnum_ingot": "Lightnum Ingot",
+  "item.tcompat.draculite_ingot": "Draculite Ingot",
+  "item.tcompat.stormforged_steel_ingot": "Stormforged Steel Ingot",
+
 
   "_comment": "Tooltips",
   "modifier.tcompat.kinetic.tooltip.damage": "Stored Damage: %s / 40",

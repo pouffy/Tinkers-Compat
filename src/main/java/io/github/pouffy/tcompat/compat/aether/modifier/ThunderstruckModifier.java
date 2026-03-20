@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.compat.aether;
+package io.github.pouffy.tcompat.compat.aether.modifier;
 
 import io.github.pouffy.tcompat.common.capability.compatible.Compatibility;
 import net.minecraft.world.entity.Entity;

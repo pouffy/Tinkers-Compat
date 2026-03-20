@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/stormforged_steel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/stormforged_steel"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_stormforged_steel"
+  },
+  "temperature": 1375,
+  "time": 77
+}

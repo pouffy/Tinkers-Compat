@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/draculite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/draculite"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_draculite"
+  },
+  "temperature": 1375,
+  "time": 26
+}

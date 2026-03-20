@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "aether:life_shard"
+    },
+    {
+      "item": "aether:regeneration_stone"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_draculite"
+  },
+  "temperature": 1375,
+  "time": 77
+}

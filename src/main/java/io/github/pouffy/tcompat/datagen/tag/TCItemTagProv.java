@@ -122,6 +122,10 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.AETERNIUM_INGOTS).addOptional(getResource("betterend", "aeternium_ingot"));
         this.tag(TCTags.Items.AETERNIUM_PLATES).addOptional(getResource("betterend", "aeternium_forged_plate"));
         this.tag(TCTags.Items.AETERNIUM_BLOCKS).addOptional(getResource("betterend", "aeternium_block"));
+
+        this.tag(TCTags.Items.LIGHTNUM_INGOTS).addOptional(getResource("tcompat", "lightnum_ingot"));
+        this.tag(TCTags.Items.DRACULITE_INGOTS).addOptional(getResource("tcompat", "draculite_ingot"));
+        this.tag(TCTags.Items.STORMFORGED_STEEL_INGOTS).addOptional(getResource("tcompat", "stormforged_steel_ingot"));
     }
 
     private void addMetals() {
