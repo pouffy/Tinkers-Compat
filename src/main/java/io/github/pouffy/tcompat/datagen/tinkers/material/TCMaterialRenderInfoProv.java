@@ -39,7 +39,7 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
         buildRenderInfo(TCMaterials.terminite).color(0x71f3e8).fallbacks("metal");
         buildRenderInfo(TCMaterials.aeternium).color(0x6d8883).fallbacks("metal");
 
-        buildRenderInfo(TCMaterials.stormforgedSteel).color(0x88b9d0).fallbacks("metal");
+        buildRenderInfo(TCMaterials.stormforgedSteel).color(0xb8c5d1).fallbacks("metal");
         buildRenderInfo(TCMaterials.lightnum).color(0x5a9bdb).fallbacks("metal");
         buildRenderInfo(TCMaterials.draculite).color(0xd11e1e).fallbacks("metal");
     }

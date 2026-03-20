@@ -164,7 +164,7 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildGeneric(TCMaterials.veridium,          0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb, addStats(), "metal").armor().meleeHarvest();
         buildGeneric(TCMaterials.refinedSentrite,   0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1, addStats(GripMaterialStats.ID, HeadMaterialStats.ID), "metal");
 
-        buildGeneric(TCMaterials.stormforgedSteel,  0xFF4a568f, 0xFF58709f, 0xFF6283ab, 0xFF88b9d0, 0xFFa9f0f5, 0xFFdeffff, addStats(INGOT), "metal").meleeHarvest();
+        buildGeneric(TCMaterials.stormforgedSteel,  0xFF353a3f, 0xFF58606c, 0xFF9198a9, 0xFFb8c5d1, 0xFFd6e7f1, 0xFFdeffff, addStats(INGOT), "metal").meleeHarvest();
         buildGeneric(TCMaterials.lightnum,          0xFF0f274b, 0xFF1f4478, 0xFF2a5a9d, 0xFF5a9bdb, 0xFF94c9ff, 0xFFffffff, addStats(INGOT), "metal").meleeHarvest();
         buildGeneric(TCMaterials.draculite,         0xFF3b0303, 0xFF630505, 0xFF700606, 0xFFd11e1e, 0xFFf56262, 0xFFffadad, addStats(INGOT), "metal").meleeHarvest();
 
