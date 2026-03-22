@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/cincinnasite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/cincinnasite"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/cincinnasite"
+  },
+  "material": "tcompat:cincinnasite",
+  "needed": 1,
+  "value": 9
+}

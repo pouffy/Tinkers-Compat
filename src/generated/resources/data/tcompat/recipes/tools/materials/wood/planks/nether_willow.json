@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/nether_willow"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/nether_willow"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/nether_willow"
+  },
+  "material": "tconstruct:wood#nether_willow",
+  "needed": 1,
+  "value": 1
+}

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": {
+    "item": "betternether:cincinnasite_plate"
+  },
+  "result": {
+    "amount": 720,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "temperature": 1375,
+  "time": 218
+}

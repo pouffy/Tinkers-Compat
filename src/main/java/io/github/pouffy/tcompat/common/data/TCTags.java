@@ -21,6 +21,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierManager;
 import static io.github.pouffy.tcompat.TCompat.getResource;
 import static slimeknights.mantle.Mantle.commonResource;
 
+@SuppressWarnings("unused")
 public class TCTags {
     @Getter
     static boolean tagsLoaded = false;
@@ -40,6 +41,7 @@ public class TCTags {
         return TagKey.create(registry, ResourceLocation.fromNamespaceAndPath("c", "hidden_from_recipe_viewers"));
     }
 
+    @SuppressWarnings("SameParameterValue")
     public static class Blocks {
         private static void init() {
         }
@@ -47,6 +49,8 @@ public class TCTags {
         public static TagKey<Block> END_STONE = common("end_stones");
 
         public static TagKey<Block> VOID_TOUCHED_EFFICIENT = local("void_touched_efficient");
+
+        public static TagKey<Block> OBSIDIAN_BREAKER_EFFICIENT = local("obsidian_breaker_efficient");
 
         public enum Woods {
             //BWG, BOP, TC
@@ -126,6 +130,16 @@ public class TCTags {
         public static TagKey<Item> THALLASIUM_ORES  = common("ores/thallasium");
         public static TagKey<Item> RAW_THALLASIUM = common("raw_materials/thallasium");
 
+        public static TagKey<Item> CINCINNASITE_RAW_ORES = common("raw_materials/cincinnasite");
+        public static TagKey<Item> CINCINNASITE_RAW_BLOCKS = common("storage_blocks/raw_cincinnasite");
+        public static TagKey<Item> CINCINNASITE_ORES = common("ores/cincinnasite");
+        public static TagKey<Item> CINCINNASITE_INGOTS = common("ingots/cincinnasite");
+        public static TagKey<Item> CINCINNASITE_BLOCKS = common("storage_blocks/cincinnasite");
+
+        public static TagKey<Item> NETHER_RUBY_GEMS = common("gems/nether_ruby");
+        public static TagKey<Item> NETHER_RUBY_BLOCKS = common("storage_blocks/nether_ruby");
+        public static TagKey<Item> NETHER_RUBY_ORES = common("ores/nether_ruby");
+
         public static TagKey<Item> TERMINITE_INGOTS  = common("ingots/terminite");
         public static TagKey<Item> TERMINITE_NUGGETS  = common("nuggets/terminite");
         public static TagKey<Item> TERMINITE_PLATES = common("plates/terminite");
@@ -138,6 +152,11 @@ public class TCTags {
         public static TagKey<Item> THALLASIUM_BULB_LANTERNS = local("bulb_lanterns/thallasium");
         public static TagKey<Item> TERMINITE_BULB_LANTERNS = local("bulb_lanterns/terminite");
         public static TagKey<Item> IRON_BULB_LANTERNS = local("bulb_lanterns/iron");
+
+        public static TagKey<Item> QUARTZ_GLASS = local("quartz_glass/block");
+        public static TagKey<Item> QUARTZ_GLASS_PANES = local("quartz_glass/pane");
+        public static TagKey<Item> FRAMED_QUARTZ_GLASS = local("quartz_glass/framed_block");
+        public static TagKey<Item> FRAMED_QUARTZ_GLASS_PANES = local("quartz_glass/framed_pane");
 
         public static TagKey<Item> AUTOCHANT_LEFT = local("recipe/autochant/left");
         public static TagKey<Item> AUTOCHANT_RIGHT = local("recipe/autochant/right");
@@ -167,6 +186,7 @@ public class TCTags {
         }
     }
 
+    @SuppressWarnings("SameParameterValue")
     public static class Fluids {
         private static void init() {
         }

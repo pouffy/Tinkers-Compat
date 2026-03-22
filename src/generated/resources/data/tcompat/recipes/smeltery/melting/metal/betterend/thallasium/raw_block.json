@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:ore_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/raw_thallasium"
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_thallasium"
+  },
+  "temperature": 875,
+  "time": 375
+}

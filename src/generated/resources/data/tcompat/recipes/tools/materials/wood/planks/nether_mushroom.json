@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:stems/nether_mushroom"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/nether_mushroom"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/nether_mushroom"
+  },
+  "material": "tconstruct:wood#nether_mushroom",
+  "needed": 1,
+  "value": 1
+}

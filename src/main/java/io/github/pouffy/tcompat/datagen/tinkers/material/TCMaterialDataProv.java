@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
 import io.github.pouffy.tcompat.common.material.TCMaterials;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
@@ -8,6 +9,8 @@ import net.minecraftforge.common.crafting.conditions.NotCondition;
 import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 
+@SuppressWarnings("SameParameterValue")
+@MethodsReturnNonnullByDefault
 public class TCMaterialDataProv extends AbstractMaterialDataProvider {
     public TCMaterialDataProv(PackOutput packOutput) {
         super(packOutput);
@@ -28,9 +31,10 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         ICondition species = new ModLoadedCondition("species");
         ICondition adAstra = new ModLoadedCondition("ad_astra");
         ICondition betterend = new ModLoadedCondition("betterend");
+        ICondition betternether = new ModLoadedCondition("betternether");
 
-        ICondition brass = tagFull("forge", "ingots/brass");
-        ICondition zinc = tagFull("forge", "ingots/zinc");
+        //ICondition brass = tagFull("forge", "ingots/brass");
+        //ICondition zinc = tagFull("forge", "ingots/zinc");
 
         addMaterial(TCMaterials.aetherWood, 1, ORDER_HARVEST, true, false, aether);
         addMaterial(TCMaterials.aetherRock, 1, ORDER_HARVEST, true, false, aether);
@@ -61,6 +65,9 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.thallasium, 2, ORDER_SPECIAL, false, false, betterend);
         addMaterial(TCMaterials.terminite, 2, ORDER_SPECIAL, false, false, betterend);
         addMaterial(TCMaterials.aeternium, 2, ORDER_SPECIAL, false, false, betterend);
+
+        addMaterial(TCMaterials.cincinnasite, 2, ORDER_HARVEST, false, false, betternether);
+        addMaterial(TCMaterials.netherRuby, 2, ORDER_HARVEST, false, false, betternether);
 
         //addMaterial(TCMaterials.zinc, 2, ORDER_HARVEST, false, false, zinc);
         //addMaterial(TCMaterials.brass, 2, ORDER_HARVEST, false, false, brass);

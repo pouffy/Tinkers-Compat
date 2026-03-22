@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/cincinnasite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/cincinnasite"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "temperature": 1375,
+  "time": 77
+}

@@ -6,7 +6,9 @@ import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
@@ -18,9 +20,11 @@ import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.common.TinkerTags;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.concurrent.CompletableFuture;
 
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "unused"})
+@ParametersAreNonnullByDefault @MethodsReturnNonnullByDefault
 public class TCFluidTagProv extends FluidTagsProvider {
     public TCFluidTagProv(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper helper) {
         super(packOutput, lookupProvider, TCompat.MOD_ID, helper);
@@ -46,6 +50,8 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(AetherInit.moltenLightnum);
         fluidTag(AetherInit.moltenDraculite);
         fluidTag(DeepAetherInit.moltenStormforgedSteel);
+        fluidTag(BetternetherInit.moltenCincinnasite);
+        fluidTag(BetternetherInit.moltenNetherRuby);
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(
                 //Aether
                 AetherInit.moltenGravitite.getTag(),
@@ -68,11 +74,13 @@ public class TCFluidTagProv extends FluidTagsProvider {
                 //Betterend
                 BetterendInit.moltenTerminite.getTag(),
                 BetterendInit.moltenThallasium.getTag(),
-                BetterendInit.moltenAeternium.getTag()
+                BetterendInit.moltenAeternium.getTag(),
+                //Betternether
+                BetternetherInit.moltenCincinnasite.getTag()
         );
-        //this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
-        //        AetherInit.moltenZanite.getTag()
-        //);
+        this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
+                BetternetherInit.moltenNetherRuby.getTag()
+        );
     }
 
     @Override

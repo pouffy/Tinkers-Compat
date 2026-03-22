@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betternether:cincinnasite_stairs"
+    },
+    {
+      "item": "betternether:roof_tile_cincinnasite_stairs"
+    }
+  ],
+  "result": {
+    "amount": 540,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "temperature": 1375,
+  "time": 188
+}

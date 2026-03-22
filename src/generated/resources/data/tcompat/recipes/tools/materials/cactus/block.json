@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "ingredient": {
+    "item": "quark:cactus_block"
+  },
+  "material": "tconstruct:cactus",
+  "needed": 1,
+  "value": 9
+}

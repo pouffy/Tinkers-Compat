@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
-import com.google.common.collect.Maps;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCMeltingInfo;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
@@ -8,34 +7,28 @@ import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.common.crafting.conditions.NotCondition;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
-import org.checkerframework.checker.units.qual.C;
-import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
-import slimeknights.mantle.recipe.helper.FluidOutput;
-import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
-import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
-import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +39,8 @@ import java.util.function.Function;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
 
+@SuppressWarnings("unused")
+@MethodsReturnNonnullByDefault
 public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSmelteryRecipeHelper, ICommonRecipeHelper {
     public TCSmelteryRecipeProv(PackOutput packOutput) {
         super(packOutput);
@@ -66,6 +61,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         species(consumer, folder);
         adAstra(consumer, folder);
         betterEnd(consumer, folder);
+        betterNether(consumer, folder);
     }
 
     private void aether(Consumer<FinishedRecipe> consumer, String folder) {
@@ -400,7 +396,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         Function<String, String> gemFolder = type -> betterEndFolderFunction.apply("smeltery/" + type + "/gem/%s/");
         Function<String, String> miscFolder = type -> betterEndFolderFunction.apply("smeltery/" + type + "/misc/%s/");
 
-        metal(betterEndConsumer, BetterendInit.moltenThallasium, betterEnd).metal(true).singularOre(2).plate().optional();
+        metal(betterEndConsumer, BetterendInit.moltenThallasium, betterEnd).ore().metal(true).plate().optional();
         metal(betterEndConsumer, BetterendInit.moltenTerminite, betterEnd).metal(true).plate().optional();
         metal(betterEndConsumer, BetterendInit.moltenAeternium, betterEnd).metal(true).plate().optional();
 
@@ -536,10 +532,149 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betterEndId.apply("thallasium_bars")))
                 .setFluidAndTime(BetterendInit.moltenThallasium, FluidValues.NUGGET * 3)
-                .save(consumer, location(metalFolder.apply("casting") + "/thallasium/bars"));
+                .save(betterEndConsumer, location(metalFolder.apply("casting") + "/thallasium/bars"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betterEndId.apply("terminite_bars")))
                 .setFluidAndTime(BetterendInit.moltenTerminite, FluidValues.NUGGET * 3)
-                .save(consumer, location(metalFolder.apply("casting") + "/terminite/bars"));
+                .save(betterEndConsumer, location(metalFolder.apply("casting") + "/terminite/bars"));
+    }
+
+    private void betterNether(Consumer<FinishedRecipe> consumer, String folder) {
+        String betternether = "betternether";
+        Function<String, ResourceLocation> betternetherId = name -> getResource(betternether, name);
+        Function<String, TagKey<Item>> betternetherTag = name -> TagKey.create(Registries.ITEM, getResource(betternether, name));
+        Consumer<FinishedRecipe> betternetherConsumer = withCondition(consumer, new ModLoadedCondition(betternether));
+
+        Function<String, String> betternetherFolderFunction = name -> name.formatted(betternether);
+        Function<String, String> alloyFolder = type -> betternetherFolderFunction.apply("smeltery/alloys/%s/" + type);
+        Function<String, String> metalFolder = type -> betternetherFolderFunction.apply("smeltery/" + type + "/metal/%s/");
+        Function<String, String> gemFolder = type -> betternetherFolderFunction.apply("smeltery/" + type + "/gem/%s/");
+        Function<String, String> miscFolder = type -> betternetherFolderFunction.apply("smeltery/" + type + "/misc/%s/");
+
+        metal(betternetherConsumer, BetternetherInit.moltenCincinnasite, betternether).ore().metal(4, true).optional();
+        metal(betternetherConsumer, BetternetherInit.moltenNetherRuby, betternether).ore().gem(9, true).optional();
+
+        salvageAll(betternetherConsumer, betternetherId, BetternetherInit.moltenNetherRuby, FluidValues.GEM, "nether_ruby", new int[]{FluidValues.GEM_SHARD, FluidValues.NUGGET}, gemFolder.apply("melting"));
+        salvageAll(betternetherConsumer, betternetherId, BetternetherInit.moltenNetherRuby, FluidValues.GEM, "flaming_ruby", new int[]{FluidValues.GEM_SHARD, FluidValues.NUGGET}, gemFolder.apply("melting"));
+        salvageAll(betternetherConsumer, betternetherId, BetternetherInit.moltenCincinnasite, FluidValues.INGOT, "cincinnasite", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+
+        Function<List<String>, Ingredient> listedInput = inputs -> {
+            List<ResourceLocation> list = new ArrayList<>();
+            for (String s : inputs) {
+                list.add(betternetherId.apply(s));
+            }
+            return ItemNameIngredient.from(list);
+        };
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.INGOT, "cincinnasite", listedInput.apply(List.of(
+                "cincinnasite_button",
+                "cincinnasite_chain",
+                "nether_brewing_stand"
+        )), metalFolder.apply("melting"), "ingot_1");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 2, "cincinnasite", listedInput.apply(List.of(
+                "cincinnasite_bricks",
+                "cincinnasite_bricks_pillar",
+                "cincinnasite_shears",
+                "cincinnasite_slab",
+                "roof_tile_cincinnasite_slab",
+                "bone_cincinnasite_door"
+        )), metalFolder.apply("melting"), "ingot_2");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 4, "cincinnasite", listedInput.apply(List.of(
+                "cincinnasite_pillar",
+                "taburet_cincinnasite",
+                "chair_cincinnasite",
+                "bar_stool_cincinnasite",
+                "cincinnasite_lantern",
+                "cincinnasite_tile_large",
+                "cincinnasite_tile_small",
+                "cincinnasite_carved",
+                "cincinnasite_wall",
+                "roof_tile_cincinnasite"
+        )), metalFolder.apply("melting"), "ingot_4");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, 112, "cincinnasite", ItemNameIngredient.from(betternetherId.apply("cincinnasite_small_lantern")), metalFolder.apply("melting"), "small_lantern");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, 144, "cincinnasite", ItemNameIngredient.from(betternetherId.apply("cincinnasite_brick_plate")), metalFolder.apply("melting"), "brick_plate");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 16, "cincinnasite", listedInput.apply(List.of("cincinnasite_forge", "cincinnasite_anvil", "chest_of_drawers")), metalFolder.apply("melting"), "ingot_16");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 6, "cincinnasite", listedInput.apply(List.of("cincinnasite_stairs", "roof_tile_cincinnasite_stairs")), metalFolder.apply("melting"), "stairs");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 8, "cincinnasite", ItemNameIngredient.from(betternetherId.apply("cincinnasite_plate")), metalFolder.apply("melting"), "pressure_plate");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, 22, "cincinnasite", ItemNameIngredient.from(betternetherId.apply("cincinnasite_frame")), metalFolder.apply("melting"), "frame");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 12, "cincinnasite", ItemNameIngredient.from(betternetherId.apply("cincinnasite_pedestal")), metalFolder.apply("melting"), "pedestal");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.NUGGET * 3, "cincinnasite", ItemNameIngredient.from(betternetherId.apply("cincinnasite_bars")), metalFolder.apply("melting"), "bars");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 14, "cincinnasite", ItemNameIngredient.from(betternetherId.apply("cincinnasite_fire_bowl")), metalFolder.apply("melting"), "fire_bowl");
+
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenNetherRuby, 1350, "nether_ruby", ItemNameIngredient.from(betternetherId.apply("nether_ruby_stairs")), gemFolder.apply("melting"), "stairs");
+        simpleMelting(betternetherConsumer, BetternetherInit.moltenNetherRuby, FluidValues.LARGE_GEM_BLOCK / 2, "nether_ruby", ItemNameIngredient.from(betternetherId.apply("nether_ruby_slab")), gemFolder.apply("melting"), "slab");
+
+        simpleMelting(BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 3, ItemNameIngredient.from(betternetherId.apply("cincinnasite_pot")))
+                .addByproduct(TinkerFluids.liquidSoul.result(FluidValues.GLASS_BLOCK))
+                .save(betternetherConsumer, location(metalFolder.apply("melting") + "/cincinnasite/pot"));
+        simpleMelting(BetternetherInit.moltenCincinnasite, FluidValues.INGOT * 14, ItemNameIngredient.from(betternetherId.apply("cincinnasite_fire_bowl_soul")))
+                .addByproduct(TinkerFluids.liquidSoul.result(FluidValues.GLASS_BLOCK))
+                .save(betternetherConsumer, location(metalFolder.apply("melting") + "/cincinnasite/soul_fire_bowl"));
+        simpleMelting(BetternetherInit.moltenCincinnasite, FluidValues.INGOT / 2, Ingredient.of(TCTags.Items.FRAMED_QUARTZ_GLASS))
+                .addByproduct(TinkerFluids.moltenQuartz.result(FluidValues.GEM / 2))
+                .save(betternetherConsumer, location(metalFolder.apply("melting") + "/cincinnasite/framed_quartz_glass"));
+        simpleMelting(BetternetherInit.moltenCincinnasite, 20, Ingredient.of(TCTags.Items.FRAMED_QUARTZ_GLASS_PANES))
+                .addByproduct(TinkerFluids.moltenQuartz.result(15))
+                .save(betternetherConsumer, location(metalFolder.apply("melting") + "/cincinnasite/framed_quartz_glass_pane"));
+
+        simpleMelting(betternetherConsumer, TinkerFluids.moltenQuartz, FluidValues.GEM, "quartz", Ingredient.of(TCTags.Items.QUARTZ_GLASS), gemFolder.apply("melting"), "glass");
+        simpleMelting(betternetherConsumer, TinkerFluids.moltenQuartz, 25, "quartz", Ingredient.of(TCTags.Items.QUARTZ_GLASS_PANES), gemFolder.apply("melting"), "glass_pane");
+
+        simpleMelting(TinkerFluids.moltenNetherite, FluidValues.INGOT, ItemNameIngredient.from(betternetherId.apply("netherite_fire_bowl")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT * 14))
+                .save(betternetherConsumer, location(metalFolder.apply("melting") + "/netherite/fire_bowl"));
+        simpleMelting(TinkerFluids.moltenNetherite, FluidValues.INGOT, ItemNameIngredient.from(betternetherId.apply("netherite_fire_bowl_soul")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT * 14))
+                .addByproduct(TinkerFluids.liquidSoul.result(FluidValues.GLASS_BLOCK))
+                .save(betternetherConsumer, location(metalFolder.apply("melting") + "/netherite/soul_fire_bowl"));
+
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM * 7, ItemNameIngredient.from(betternetherId.apply("flaming_ruby_upgrade_smithing_template")))
+                .addByproduct(BetternetherInit.moltenNetherRuby.result(FluidValues.GEM))
+                .save(betternetherConsumer, location(gemFolder.apply("melting") + "/diamond/flaming_ruby_upgrade_smithing_template"));
+
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(betternetherId.apply("cincinnite_helmet_diamond")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT * 5))
+                .save(betternetherConsumer, location(gemFolder.apply("melting") + "/diamond/cincinnite_diamond_helmet"));
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(betternetherId.apply("cincinnite_chestplate_diamond")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT * 8))
+                .save(betternetherConsumer, location(gemFolder.apply("melting") + "/diamond/cincinnite_diamond_chestplate"));
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(betternetherId.apply("cincinnite_leggings_diamond")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT * 7))
+                .save(betternetherConsumer, location(gemFolder.apply("melting") + "/diamond/cincinnite_diamond_leggings"));
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(betternetherId.apply("cincinnite_boots_diamond")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT * 4))
+                .save(betternetherConsumer, location(gemFolder.apply("melting") + "/diamond/cincinnite_diamond_boots"));
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, listedInput.apply(List.of("cincinnite_pickaxe_diamond", "cincinnite_axe_diamond")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT * 3))
+                .save(betternetherConsumer, location(gemFolder.apply("melting") + "/diamond/cincinnite_diamond_axes"));
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, listedInput.apply(List.of("cincinnite_sword_diamond", "cincinnite_hoe_diamond")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT * 2))
+                .save(betternetherConsumer, location(gemFolder.apply("melting") + "/diamond/cincinnite_diamond_weapons"));
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(betternetherId.apply("cincinnite_shovel_diamond")))
+                .addByproduct(BetternetherInit.moltenCincinnasite.result(FluidValues.INGOT))
+                .save(betternetherConsumer, location(gemFolder.apply("melting") + "/diamond/cincinnite_diamond_shovel"));
+
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betternetherId.apply("cincinnasite_bars")))
+                .setFluidAndTime(BetternetherInit.moltenCincinnasite, FluidValues.NUGGET * 3)
+                .save(betternetherConsumer, location(metalFolder.apply("casting") + "/cincinnasite/bars"));
+
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betternetherId.apply("quartz_glass_framed")))
+                .setFluidAndTime(BetternetherInit.moltenCincinnasite, FluidValues.INGOT / 2)
+                .setCast(ItemNameIngredient.from(betternetherId.apply("quartz_glass")), true)
+                .save(betternetherConsumer, location(metalFolder.apply("casting") + "/cincinnasite/framed_glass/colorless"));
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betternetherId.apply("quartz_glass_framed_pane")))
+                .setFluidAndTime(BetternetherInit.moltenCincinnasite, FluidValues.NUGGET * 2)
+                .setCast(ItemNameIngredient.from(betternetherId.apply("quartz_glass_pane")), true)
+                .save(betternetherConsumer, location(metalFolder.apply("casting") + "/cincinnasite/framed_glass/pane_colorless"));
+        for (DyeColor color : DyeColor.values()) {
+            String colorName = color.getSerializedName();
+            ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betternetherId.apply("quartz_glass_framed_" + colorName)))
+                    .setFluidAndTime(BetternetherInit.moltenCincinnasite, FluidValues.INGOT / 2)
+                    .setCast(ItemNameIngredient.from(betternetherId.apply("quartz_glass_" + colorName)), true)
+                    .save(betternetherConsumer, location(metalFolder.apply("casting") + "/cincinnasite/framed_glass/" + colorName));
+            ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(betternetherId.apply("quartz_glass_framed_pane_" + colorName)))
+                    .setFluidAndTime(BetternetherInit.moltenCincinnasite, FluidValues.NUGGET * 2)
+                    .setCast(ItemNameIngredient.from(betternetherId.apply("quartz_glass_pane_" + colorName)), true)
+                    .save(betternetherConsumer, location(metalFolder.apply("casting") + "/cincinnasite/framed_glass/pane_" + colorName));
+        }
     }
 
     public TCSmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {

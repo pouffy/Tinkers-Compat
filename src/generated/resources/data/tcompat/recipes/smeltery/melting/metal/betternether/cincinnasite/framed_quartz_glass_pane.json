@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 15,
+      "fluid": "tconstruct:molten_quartz"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:quartz_glass/framed_pane"
+  },
+  "result": {
+    "amount": 20,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "temperature": 1375,
+  "time": 36
+}

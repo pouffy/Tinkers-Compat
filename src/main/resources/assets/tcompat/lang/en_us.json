@@ -56,6 +56,15 @@
   "material.tconstruct.wood.umbrella_tree": "Umbrella Tree Wood",
   "material.tconstruct.wood.jellyshroom": "Jellyshroom Wood",
   "material.tconstruct.wood.lucernia": "Lucernia Wood",
+  "material.tconstruct.wood.nether_reed": "Nether Reed Wood",
+  "material.tconstruct.wood.stalagnate": "Stalagnate Wood",
+  "material.tconstruct.wood.nether_willow": "Nether Willow Wood",
+  "material.tconstruct.wood.wart": "Wart Wood",
+  "material.tconstruct.wood.rubeus": "Rubeus Wood",
+  "material.tconstruct.wood.mushroom_fir": "Mushroom Fir Wood",
+  "material.tconstruct.wood.nether_mushroom": "Mushroom Wood",
+  "material.tconstruct.wood.anchor_tree": "Anchor Tree Wood",
+  "material.tconstruct.wood.nether_sakura": "Nether Sakura Wood",
 
   "material.tcompat.aether_wood": "Skyroot",
   "material.tcompat.aether_wood.skyroot": "Skyroot",
@@ -121,6 +130,9 @@
   "material.tcompat.terminite": "Terminite",
   "material.tcompat.aeternium": "Aeternium",
 
+  "material.tcompat.cincinnasite": "Cincinnasite",
+  "material.tcompat.nether_ruby": "Nether Ruby",
+
   "material.tcompat.hellbark": "Hellbark",
 
   "material.tcompat.blightbunny_fang": "Blightbunny Fang",
@@ -151,6 +163,8 @@
   "block.tcompat.molten_thallasium_fluid": "Molten Thallasium",
   "block.tcompat.molten_terminite_fluid": "Molten Terminite",
   "block.tcompat.molten_aeternium_fluid": "Molten Aeternium",
+  "block.tcompat.molten_cincinnasite_fluid": "Molten Cincinnasite",
+  "block.tcompat.molten_nether_ruby_fluid": "Molten Nether Ruby",
   "fluid.tcompat.molten_zanite": "Molten Zanite",
   "fluid.tcompat.molten_skyjade": "Molten Skyjade",
   "fluid.tcompat.molten_gravitite": "Molten Gravitite",
@@ -169,6 +183,8 @@
   "fluid.tcompat.molten_thallasium": "Molten Thallasium",
   "fluid.tcompat.molten_terminite": "Molten Terminite",
   "fluid.tcompat.molten_aeternium": "Molten Aeternium",
+  "fluid.tcompat.molten_cincinnasite": "Molten Cincinnasite",
+  "fluid.tcompat.molten_nether_ruby": "Molten Nether Ruby",
 
   "item.tcompat.molten_zanite_bucket": "Molten Zanite Bucket",
   "item.tcompat.molten_skyjade_bucket": "Molten Skyjade Bucket",
@@ -188,6 +204,8 @@
   "item.tcompat.molten_thallasium_bucket": "Molten Thallasium Bucket",
   "item.tcompat.molten_terminite_bucket": "Molten Terminite Bucket",
   "item.tcompat.molten_aeternium_bucket": "Molten Aeternium Bucket",
+  "item.tcompat.molten_cincinnasite_bucket": "Molten Cincinnasite Bucket",
+  "item.tcompat.molten_nether_ruby_bucket": "Molten Nether Ruby Bucket",
 
   "item.tcompat.lightnum_ingot": "Lightnum Ingot",
   "item.tcompat.draculite_ingot": "Draculite Ingot",
@@ -240,6 +258,15 @@
   "modifier.tcompat.gale": "Gale",
   "modifier.tcompat.gale.flavor": "Blown away",
   "modifier.tcompat.gale.description": "Charged attacks push targets away.",
+  "modifier.tcompat.obsidian_breaker": "Obsidian Breaker",
+  "modifier.tcompat.obsidian_breaker.flavor": "Shattering",
+  "modifier.tcompat.obsidian_breaker.description": "Increased mining speed against obsidian and similar blocks.",
+  "modifier.tcompat.cinderspine": "Cinderspine",
+  "modifier.tcompat.cinderspine.flavor": "Crispy",
+  "modifier.tcompat.cinderspine.description": "Boosts the projectile's damage, but burns you when used.",
+  "modifier.tcompat.rubys_fire": "Ruby's Fire",
+  "modifier.tcompat.rubys_fire.flavor": "Heatstroke on demand",
+  "modifier.tcompat.rubys_fire.description": "Causes targets to ignite and drops to be blasted.",
 
   "modifier.tcompat.ricoshield": "Ricoshield",
   "modifier.tcompat.ricoshield.flavor": "It's gonna blow!",

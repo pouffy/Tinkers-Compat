@@ -339,6 +339,38 @@
     {
       "id": "#tcompat:logs/lucernia",
       "required": false
+    },
+    {
+      "id": "#tcompat:logs/stalagnate",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/nether_willow",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/wart",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/rubeus",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/mushroom_fir",
+      "required": false
+    },
+    {
+      "id": "#tcompat:stems/nether_mushroom",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/anchor_tree",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/nether_sakura",
+      "required": false
     }
   ]
 }

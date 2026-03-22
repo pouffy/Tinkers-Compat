@@ -34,7 +34,6 @@ import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.library.data.recipe.IByproduct;
-import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
@@ -48,6 +47,7 @@ import java.util.function.Supplier;
 import static slimeknights.mantle.Mantle.commonResource;
 import static slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe.getTemperature;
 
+@SuppressWarnings({"unused", "deprecation"})
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @Accessors(fluent = true)
 @CanIgnoreReturnValue
@@ -484,10 +484,14 @@ public class TCSmelteryRecipeBuilder {
      * Provided for non-standard ores (like gold).
      */
     public TCSmelteryRecipeBuilder rawOre() {
+        return rawOre(9);
+    }
+
+    public TCSmelteryRecipeBuilder rawOre(int storageSize) {
         assert oreRate != null;
         assert baseUnit != 0;
         oreMelting(1, "raw_materials/",      null, 1.5f, "raw",       false);
-        oreMelting(9, "storage_blocks/raw_", null, 6.0f, "raw_block", false);
+        oreMelting(storageSize, "storage_blocks/raw_", null, 6.0f, "raw_block", false);
         return this;
     }
 
@@ -521,16 +525,20 @@ public class TCSmelteryRecipeBuilder {
     }
 
     public TCSmelteryRecipeBuilder metal(boolean optional) {
+        return metal(9, optional);
+    }
+
+    public TCSmelteryRecipeBuilder metal(int storageSize, boolean optional) {
         oreRate = IMeltingContainer.OreRateType.METAL;
         baseUnit = FluidValues.INGOT;
         damageUnit = FluidValues.NUGGET;
-        melting(9, "block", "storage_blocks", 3.0f, false, optional);
-        blockCasting(9, Ingredient.EMPTY, optional);
+        melting(storageSize, "block", "storage_blocks", 3.0f, false, optional);
+        blockCasting(storageSize, Ingredient.EMPTY, optional);
         meltingCasting(1,      TinkerSmeltery.ingotCast,  1.0f, optional);
         meltingCasting(1 / 9f, TinkerSmeltery.nuggetCast, 1 / 3f, optional);
         // if we set byproducts, we are an ore
         if (hasOre) {
-            rawOre();
+            rawOre(storageSize);
             sparseOre(1);
             singularOre(2);
             denseOre(6);

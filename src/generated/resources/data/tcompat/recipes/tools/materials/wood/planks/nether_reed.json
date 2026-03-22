@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/nether_reed"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/nether_reed"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/nether_reed"
+  },
+  "material": "tconstruct:wood#nether_reed",
+  "needed": 1,
+  "value": 1
+}

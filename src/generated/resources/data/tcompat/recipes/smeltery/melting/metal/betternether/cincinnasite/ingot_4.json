@@ -1,0 +1,47 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betternether:cincinnasite_pillar"
+    },
+    {
+      "item": "betternether:taburet_cincinnasite"
+    },
+    {
+      "item": "betternether:chair_cincinnasite"
+    },
+    {
+      "item": "betternether:bar_stool_cincinnasite"
+    },
+    {
+      "item": "betternether:cincinnasite_lantern"
+    },
+    {
+      "item": "betternether:cincinnasite_tile_large"
+    },
+    {
+      "item": "betternether:cincinnasite_tile_small"
+    },
+    {
+      "item": "betternether:cincinnasite_carved"
+    },
+    {
+      "item": "betternether:cincinnasite_wall"
+    },
+    {
+      "item": "betternether:roof_tile_cincinnasite"
+    }
+  ],
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "temperature": 1375,
+  "time": 154
+}

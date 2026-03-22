@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "betternether:quartz_glass_purple"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "cooling_time": 54,
+  "fluid": {
+    "amount": 45,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "result": "betternether:quartz_glass_framed_purple"
+}

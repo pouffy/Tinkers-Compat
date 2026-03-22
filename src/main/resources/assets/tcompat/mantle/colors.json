@@ -29,7 +29,10 @@
     "void_touched":           "#740696",
     "thunderstruck":          "#5a9bdb",
     "bloodsucking":           "#d11e1e",
-    "gale":                   "#9cd9e6"
+    "gale":                   "#9cd9e6",
+    "obsidian_breaker":       "#240f44",
+    "cinderspine":            "#aa581c",
+    "rubys_fire":             "#6d0404"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,
@@ -64,6 +67,15 @@
     "wood.aeronos":           "#55536f",
     "wood.strophar":          "#968c7d",
     "wood.glacian":           "#b6859e",
+    "wood.nether_reed":       "#291d5b",
+    "wood.stalagnate":        "#417c57",
+    "wood.nether_willow":     "#8a302a",
+    "wood.wart":              "#6d0404",
+    "wood.rubeus":            "#8c264d",
+    "wood.mushroom_fir":      "#1137a0",
+    "wood.nether_mushroom":   "#eee8d6",
+    "wood.anchor_tree":       "#3b7337",
+    "wood.nether_sakura":     "#753926",
 
     "__tier_1_rock__": null,
     "rock.red_rock":          "#904727",
@@ -119,6 +131,13 @@
 
     "lightnum":               "#5a9bdb",
     "draculite":              "#d11e1e",
-    "stormforged_steel":      "#b8c5d1"
+    "stormforged_steel":      "#b8c5d1",
+
+    "thallasium":             "#7ad0d3",
+    "terminite":              "#71f3e8",
+    "aeternium":              "#697876",
+
+    "cincinnasite":           "#ffc461",
+    "nether_ruby":            "#eb4150"
   }
 }

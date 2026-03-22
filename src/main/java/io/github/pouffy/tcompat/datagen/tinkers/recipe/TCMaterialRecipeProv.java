@@ -1,16 +1,17 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCWoods;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -21,21 +22,19 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.helper.ItemOutput;
-import slimeknights.mantle.registration.object.FluidObject;
-import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.recipe.FluidValues;
-import slimeknights.tconstruct.library.recipe.casting.material.MaterialFluidRecipeBuilder;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
-import static slimeknights.mantle.Mantle.COMMON;
-import static slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe.getTemperature;
 
+@SuppressWarnings({"unused", "SameParameterValue"})
+@MethodsReturnNonnullByDefault
 public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMaterialRecipeHelper {
     public TCMaterialRecipeProv(PackOutput generator) {
         super(generator);
@@ -68,18 +67,24 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
 
         // Streamline variant recipes
         TCMaterials.woodVariants.forEach((materialVariantId, woodType) -> {
-            if (!noPlanks.contains(materialVariantId))
+            if (woodType.hasPlanks())
                 planksVariantRecipe(woodType.makeConsumer(consumer), woodType, materialVariantId);
-            logVariantRecipe(woodType.makeConsumer(consumer), woodType, materialVariantId);
+            if (woodType.hasLogs())
+                logVariantRecipe(woodType.makeConsumer(consumer), woodType, materialVariantId);
         });
 
-        TCMaterials.rockVariants.forEach((materialVariantId, rockType) -> {
-            rockVariantRecipe(rockType.makeConsumer(consumer), rockType, materialVariantId);
-        });
+        TCMaterials.rockVariants.forEach((materialVariantId, rockType) -> rockVariantRecipe(rockType.makeConsumer(consumer), rockType, materialVariantId));
 
         planksRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
         logRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
         materialRecipe(consumer, TCMaterials.dripstone, ItemNameIngredient.from(getResource("minecraft:pointed_dripstone")), 1, 1, folder + "rock/%s".formatted("pointed_dripstone"));
+
+        materialRecipe(withCondition(consumer, modLoaded("quark")), MaterialIds.cactus, ItemNameIngredient.from(getResource("quark:cactus_block")), 9, 1, folder + "cactus/block");
+        materialRecipe(withCondition(consumer, modLoaded("regions_unexplored")), MaterialIds.cactus, ItemNameIngredient.from(getResource("regions_unexplored:barrel_cactus"), getResource("regions_unexplored:saguaro_cactus")), 1, 1, folder + "cactus/regions_unexplored");
+        materialRecipe(withCondition(consumer, modLoaded("biomeswevegone")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomeswevegone:barrel_cactus"), getResource("biomeswevegone:flowering_barrel_cactus")), 1, 1, folder + "cactus/biomeswevegone");
+        materialRecipe(withCondition(consumer, modLoaded("biomeswevegone")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomeswevegone:mini_cactus"), getResource("biomeswevegone:prickly_pear_cactus"), getResource("biomeswevegone:golden_spined_cactus")), 1, 2, folder + "cactus/small/biomeswevegone");
+        materialRecipe(withCondition(consumer, modLoaded("biomesoplenty")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomesoplenty:barrel_cactus")), 1, 2, folder + "cactus/small/biomesoplenty");
+
 
         materialRecipe(aetherConsumer, TCMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
 
@@ -109,6 +114,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(betterend, TCMaterials.terminite, folder, "terminite", true);
         metalMaterialRecipe(betterend, TCMaterials.aeternium, folder, "aeternium", true);
 
+        metalMaterialRecipe(betterend, TCMaterials.cincinnasite, folder, "cincinnasite", true);
+        gemMaterialRecipe(betterend, TCMaterials.netherRuby, folder, "nether_ruby", true, false, true);
+
         materialRecipe(speciesConsumer, TCMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
     }
 
@@ -120,6 +128,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> aetherTreasureConsumer = withCondition(consumer, modLoaded("aether_treasure_reforging"));
         Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
         Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
+        Consumer<FinishedRecipe> betternether = withCondition(consumer, modLoaded("betternether"));
 
         materialMeltingCasting(aetherConsumer, TCMaterials.zanite, AetherInit.moltenZanite, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, AetherInit.moltenGravitite, folder);
@@ -137,6 +146,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingCasting(betterend, TCMaterials.thallasium, BetterendInit.moltenThallasium, FluidValues.INGOT, folder);
         materialMeltingCasting(betterend, TCMaterials.terminite, BetterendInit.moltenTerminite, FluidValues.INGOT, folder);
         materialMeltingCasting(betterend, TCMaterials.aeternium, BetterendInit.moltenAeternium, FluidValues.INGOT, folder);
+
+        materialMeltingCasting(betternether, TCMaterials.cincinnasite, BetternetherInit.moltenCincinnasite, FluidValues.INGOT, folder);
+        materialMeltingCasting(betternether, TCMaterials.netherRuby, BetternetherInit.moltenNetherRuby, FluidValues.GEM, folder);
 
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, AetherTRInit.moltenValkyrum, FluidValues.INGOT, folder);
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, AetherTRInit.moltenPyral, FluidValues.INGOT, folder);

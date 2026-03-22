@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/nether_ruby"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/nether_ruby"
+  },
+  "result": {
+    "amount": 100,
+    "tag": "forge:molten_nether_ruby"
+  },
+  "temperature": 1230,
+  "time": 73
+}

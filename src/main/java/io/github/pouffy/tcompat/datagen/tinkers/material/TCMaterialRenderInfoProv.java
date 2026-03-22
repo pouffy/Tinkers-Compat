@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
 import io.github.pouffy.tcompat.common.material.TCMaterials;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -8,6 +9,7 @@ import slimeknights.tconstruct.library.client.data.material.AbstractMaterialRend
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 
+@MethodsReturnNonnullByDefault
 public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider {
     public TCMaterialRenderInfoProv(PackOutput packOutput, @Nullable AbstractMaterialSpriteProvider materialSprites, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, materialSprites, existingFileHelper);
@@ -42,6 +44,9 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
         buildRenderInfo(TCMaterials.stormforgedSteel).color(0xb8c5d1).fallbacks("metal");
         buildRenderInfo(TCMaterials.lightnum).color(0x5a9bdb).fallbacks("metal");
         buildRenderInfo(TCMaterials.draculite).color(0xd11e1e).fallbacks("metal");
+
+        buildRenderInfo(TCMaterials.cincinnasite).color(0xffc461).fallbacks("metal");
+        buildRenderInfo(TCMaterials.netherRuby).color(0xeb4150).fallbacks("gem", "metal");
     }
 
     @Override

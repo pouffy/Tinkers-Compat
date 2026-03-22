@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "input": "tcompat:nether_ruby",
+  "result": {
+    "amount": 100,
+    "tag": "forge:molten_nether_ruby"
+  },
+  "temperature": 1230
+}

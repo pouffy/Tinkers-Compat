@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/mushroom_fir"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/mushroom_fir"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/mushroom_fir"
+  },
+  "material": "tconstruct:wood#mushroom_fir",
+  "needed": 1,
+  "value": 1
+}

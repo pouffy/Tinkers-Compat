@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": {
+    "item": "betternether:flaming_ruby_leggings"
+  },
+  "result": {
+    "amount": 700,
+    "tag": "forge:molten_nether_ruby",
+    "unit_size": 25
+  },
+  "temperature": 1230,
+  "time": 203
+}

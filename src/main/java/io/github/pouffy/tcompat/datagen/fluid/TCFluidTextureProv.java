@@ -6,7 +6,9 @@ import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
 import slimeknights.mantle.fluid.texture.FluidTexture;
@@ -15,6 +17,8 @@ import slimeknights.mantle.registration.object.FluidObject;
 import static io.github.pouffy.tcompat.TCompat.getResource;
 import static slimeknights.tconstruct.fluids.TinkerFluids.withoutMolten;
 
+@SuppressWarnings({"unused", "SameParameterValue", "UnusedReturnValue"})
+@MethodsReturnNonnullByDefault
 public class TCFluidTextureProv extends AbstractFluidTextureProvider {
     public TCFluidTextureProv(PackOutput packOutput) {
         super(packOutput, TCompat.MOD_ID);
@@ -40,6 +44,8 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
         compatOre(AetherInit.moltenLightnum);
         compatOre(AetherInit.moltenDraculite);
         compatOre(DeepAetherInit.moltenStormforgedSteel);
+        compatOre(BetternetherInit.moltenCincinnasite);
+        compatOre(BetternetherInit.moltenNetherRuby);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {
@@ -51,7 +57,7 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
     }
 
     private FluidTexture.Builder named(FluidObject<?> fluid, String name) {
-        return texture(fluid).textures(getResource("fluid/"+name+"/"), false, false);
+        return texture(fluid).root(getResource("fluid/"+name+"/"));
     }
 
     private FluidTexture.Builder slime(FluidObject<?> fluid) {

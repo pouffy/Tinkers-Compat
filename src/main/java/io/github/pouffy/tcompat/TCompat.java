@@ -19,10 +19,10 @@ import org.slf4j.Logger;
 @Mod(TCompat.MOD_ID)
 public class TCompat {
     public static final String MOD_ID = "tcompat";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
-    public TCompat() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public TCompat(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
         CompatHelper.init(modEventBus);

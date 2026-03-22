@@ -38,6 +38,10 @@ public class TCMaterials {
     public static final MaterialId thallasium = id("thallasium");
     public static final MaterialId terminite = id("terminite");
     public static final MaterialId aeternium = id("aeternium");
+
+    public static final MaterialId cincinnasite = id("cincinnasite");
+    public static final MaterialId netherRuby = id("nether_ruby");
+
     // Special Craftable Materials
     public static final MaterialId blightbunnyFang = id("blightbunny_fang");
     public static final MaterialId mykapodShell = id("mykapod_shell");
@@ -47,8 +51,8 @@ public class TCMaterials {
     public static final MaterialId hellbark = id("hellbark");
 
     // Implement Later (Maybe?)
-    public static final MaterialId brass = id("brass");
-    public static final MaterialId zinc = id("zinc");
+    //public static final MaterialId brass = id("brass");
+    //public static final MaterialId zinc = id("zinc");
 
     // Variants
     public static final MaterialVariantId
@@ -128,6 +132,16 @@ public class TCMaterials {
             umbrellaTree = woodVariant(TCWoods.UMBRELLA_TREE),
             endJellyshroom = woodVariant(TCWoods.END_JELLYSHROOM),
             lucernia = woodVariant(TCWoods.LUCERNIA),
+            //Betternether
+            netherReed = woodVariant(TCWoods.NETHER_REED),
+            stalagnate = woodVariant(TCWoods.STALAGNATE),
+            netherWillow = woodVariant(TCWoods.NETHER_WILLOW),
+            wart = woodVariant(TCWoods.WART),
+            rubeus = woodVariant(TCWoods.RUBEUS),
+            mushroomFir = woodVariant(TCWoods.MUSHROOM_FIR),
+            netherMushroom = woodVariant(TCWoods.NETHER_MUSHROOM),
+            anchorTree = woodVariant(TCWoods.ANCHOR_TREE),
+            netherSakura = woodVariant(TCWoods.NETHER_SAKURA),
 
         // Rocks
             // Aether

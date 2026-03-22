@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/anchor_tree"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/anchor_tree"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/anchor_tree"
+  },
+  "material": "tconstruct:wood#anchor_tree",
+  "needed": 1,
+  "value": 1
+}

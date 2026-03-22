@@ -6,7 +6,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.storage.loot.predicates.AnyOfCondition;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.OrCondition;
@@ -26,6 +25,7 @@ import static io.github.pouffy.tcompat.common.data.TCTags.Items.named;
  * A special container for all compatible wood variants.
  */
 
+@SuppressWarnings("unused")
 public enum TCWoods implements StringRepresentable {
     // Overworld Biome Mods
     ALPHA(builder("regions_unexplored")),
@@ -56,7 +56,7 @@ public enum TCWoods implements StringRepresentable {
     MAPLE(builder("biomeswevegone", "biomesoplenty", "regions_unexplored")),
     MAUVE(builder("regions_unexplored")),
     PALM(builder("biomeswevegone", "biomesoplenty", "regions_unexplored")),
-    PALO_VERDE(builder("biomeswevegone")),
+    PALO_VERDE(builder("biomeswevegone").noPlanks()),
     PINE(builder("biomeswevegone", "biomesoplenty")),
     PINK_BIOSHROOM(builder("regions_unexplored")),
     RAINBOW_EUCALYPTUS(builder("biomeswevegone")),
@@ -106,6 +106,17 @@ public enum TCWoods implements StringRepresentable {
     UMBRELLA_TREE(builder("betterend")),
     END_JELLYSHROOM(builder("betterend").specialLogTag("betterend", "jellyshroom_logs").alias("jellyshroom")),
     LUCERNIA(builder("betterend")),
+
+    // Betternether
+    NETHER_REED(builder("betternether").noLogs()),
+    STALAGNATE(builder("betternether")),
+    NETHER_WILLOW(builder("betternether")),
+    WART(builder("betternether")),
+    RUBEUS(builder("betternether")),
+    MUSHROOM_FIR(builder("betternether")),
+    NETHER_MUSHROOM(builder("betternether").stem()),
+    ANCHOR_TREE(builder("betternether")),
+    NETHER_SAKURA(builder("betternether")),
     ;
 
     public final String name;
@@ -138,9 +149,7 @@ public enum TCWoods implements StringRepresentable {
     // Creates a consumer that can only works if the required mods are loaded OR if the tags are filled.
     public Consumer<FinishedRecipe> makeConsumer(Consumer<FinishedRecipe> initial) {
         List<ICondition> conditions = new ArrayList<>();
-        getNamespaces().forEach(namespace -> {
-            conditions.add(new ModLoadedCondition(namespace));
-        });
+        getNamespaces().forEach(namespace -> conditions.add(new ModLoadedCondition(namespace)));
         conditions.add(new TagFilledCondition<>(logTag()));
         conditions.add(new TagFilledCondition<>(plankTag()));
         return withCondition(initial, new OrCondition(conditions.toArray(new ICondition[0])));
@@ -177,6 +186,14 @@ public enum TCWoods implements StringRepresentable {
             }
         }
         return local("logs/" + name);
+    }
+
+    public boolean hasLogs() {
+        return !this.builder.noLogs;
+    }
+
+    public boolean hasPlanks() {
+        return !this.builder.noPlanks;
     }
 
     public static TagKey<Item> stemTag(String name) {

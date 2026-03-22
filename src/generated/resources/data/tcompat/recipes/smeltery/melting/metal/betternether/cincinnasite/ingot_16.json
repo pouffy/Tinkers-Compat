@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betternether:cincinnasite_forge"
+    },
+    {
+      "item": "betternether:cincinnasite_anvil"
+    },
+    {
+      "item": "betternether:chest_of_drawers"
+    }
+  ],
+  "result": {
+    "amount": 1440,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "temperature": 1375,
+  "time": 308
+}

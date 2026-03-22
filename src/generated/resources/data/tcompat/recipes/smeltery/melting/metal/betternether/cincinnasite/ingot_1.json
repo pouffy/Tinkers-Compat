@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betternether:cincinnasite_button"
+    },
+    {
+      "item": "betternether:cincinnasite_chain"
+    },
+    {
+      "item": "betternether:nether_brewing_stand"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "temperature": 1375,
+  "time": 77
+}

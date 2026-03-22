@@ -5,5 +5,6 @@
   "tcompat:autofreeze":   "tcompat:gui/modifiers/autofreeze",
   "tcompat:ricoshield":   "tcompat:gui/modifiers/ricoshield",
   "tcompat:swapping":   "tcompat:gui/modifiers/swapping",
-  "tcompat:birt":   "tcompat:gui/modifiers/birt"
+  "tcompat:birt":   "tcompat:gui/modifiers/birt",
+  "tcompat:rubys_fire": ["betternether:item/nether_ruby", "tconstruct:gui/modifiers/tier"]
 }

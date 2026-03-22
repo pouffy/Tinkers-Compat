@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
   "cooling_time": 36,
   "fluid": {
     "amount": 30,

@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 180,
+      "tag": "forge:molten_cincinnasite"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betternether:cincinnite_sword_diamond"
+    },
+    {
+      "item": "betternether:cincinnite_hoe_diamond"
+    }
+  ],
+  "result": {
+    "amount": 100,
+    "fluid": "tconstruct:molten_diamond"
+  },
+  "temperature": 1450,
+  "time": 83
+}

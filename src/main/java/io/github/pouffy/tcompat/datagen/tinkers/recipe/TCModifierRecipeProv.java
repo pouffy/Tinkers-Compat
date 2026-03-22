@@ -6,7 +6,9 @@ import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipeBuilder;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -34,6 +36,8 @@ import java.util.function.Function;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
 
+@SuppressWarnings({"unused", "SameParameterValue"})
+@MethodsReturnNonnullByDefault
 public class TCModifierRecipeProv extends TCBaseRecipeProvider {
 
     public TCModifierRecipeProv(PackOutput packOutput) {
@@ -57,9 +61,11 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         String slotlessFolder = "tools/modifiers/slotless/";
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
+        Consumer<FinishedRecipe> betternetherConsumer = withCondition(consumer, modLoaded("betternether"));
 
         Function<String, ResourceLocation> speciesId = name -> getResource("species", name);
         Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
+        Function<String, ResourceLocation> betternetherId = name -> getResource("betternether", name);
 
         ModifierRecipeBuilder.modifier(SpeciesInit.ricoshield)
                 .setTools(TinkerTags.Items.SHIELDS)
@@ -102,7 +108,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .addInput(ItemNameIngredient.from(aetherId.apply("ambrosium_block")))
                 .addInput(ItemNameIngredient.from(aetherId.apply("ambrosium_block")))
                 .setMaxLevel(1).setSlots(SlotType.ABILITY, 1)
-                .saveSalvage(consumer, prefix(AetherInit.autochant, abilitySalvage))
+                .saveSalvage(aetherConsumer, prefix(AetherInit.autochant, abilitySalvage))
                 .save(aetherConsumer, prefix(AetherInit.autochant, abilityFolder));
 
         ModifierRecipeBuilder.modifier(AetherInit.autofreeze)
@@ -113,13 +119,21 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .addInput(ItemNameIngredient.from(aetherId.apply("icestone")))
                 .addInput(ItemNameIngredient.from(aetherId.apply("icestone")))
                 .setMaxLevel(1).setSlots(SlotType.ABILITY, 1)
-                .saveSalvage(consumer, prefix(AetherInit.autofreeze, abilitySalvage))
+                .saveSalvage(aetherConsumer, prefix(AetherInit.autofreeze, abilitySalvage))
                 .save(aetherConsumer, prefix(AetherInit.autofreeze, abilityFolder));
 
+        ModifierRecipeBuilder.modifier(BetternetherInit.rubysFire)
+                .setTools(ingredientFromTags(TinkerTags.Items.HARVEST, TinkerTags.Items.MELEE_WEAPON, TinkerTags.Items.FISHING_RODS))
+                .addInput(ItemNameIngredient.from(betternetherId.apply("flaming_ruby_upgrade_smithing_template")))
+                .addInput(Items.SCULK_CATALYST)
+                .setMaxLevel(1).setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(betternetherConsumer, prefix(BetternetherInit.rubysFire, abilitySalvage))
+                .save(betternetherConsumer, prefix(BetternetherInit.rubysFire, abilityFolder));
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
-                .save(consumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
+                .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)
-                .save(consumer, location(slotlessFolder + "ambrofusion/ambrosium_block"));
+                .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_block"));
     }
 
     private void addTextureRecipes(Consumer<FinishedRecipe> consumer) {
@@ -136,9 +150,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setMaxLevel(1).checkTraitLevel()
                 .save(aetherConsumer, prefix(TCModifiers.aetherForged, folder));
 
-        TCMaterials.woodVariants.forEach((materialVariantId, woodType) -> {
-            woodTexture(woodType.makeConsumer(consumer), woodType, materialVariantId);
-        });
+        TCMaterials.woodVariants.forEach((materialVariantId, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, materialVariantId));
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

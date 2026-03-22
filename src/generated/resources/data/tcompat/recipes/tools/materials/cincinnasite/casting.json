@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "output": "tcompat:cincinnasite",
+  "temperature": 1375
+}

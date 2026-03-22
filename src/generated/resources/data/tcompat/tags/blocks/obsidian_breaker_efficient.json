@@ -1,0 +1,40 @@
+{
+  "values": [
+    {
+      "id": "#c:nether_stones",
+      "required": false
+    },
+    {
+      "id": "#c:nether_ores",
+      "required": false
+    },
+    {
+      "id": "#c:nether_pframe",
+      "required": false
+    },
+    {
+      "id": "#c:is_obsidian",
+      "required": false
+    },
+    {
+      "id": "minecraft:obsidian",
+      "required": false
+    },
+    {
+      "id": "minecraft:crying_obsidian",
+      "required": false
+    },
+    {
+      "id": "betternether:blue_crying_obsidian",
+      "required": false
+    },
+    {
+      "id": "betternether:weeping_obsidian",
+      "required": false
+    },
+    {
+      "id": "betternether:blue_weeping_obsidian",
+      "required": false
+    }
+  ]
+}

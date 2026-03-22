@@ -1,5 +1,11 @@
 {
   "type": "tcompat:ambrofusion_modifier",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
   "ingredient": {
     "item": "aether:ambrosium_shard"
   },

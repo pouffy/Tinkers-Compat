@@ -21,6 +21,7 @@ import java.util.concurrent.CompletableFuture;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
 
+@SuppressWarnings("SameParameterValue")
 public class TCItemTagProv extends ItemTagsProvider {
     public TCItemTagProv(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, blockTagProvider, TCompat.MOD_ID, existingFileHelper);
@@ -70,13 +71,30 @@ public class TCItemTagProv extends ItemTagsProvider {
         var thallasiumLanterns = this.tag(TCTags.Items.THALLASIUM_BULB_LANTERNS).addOptional(getResource("betterend", "thallasium_bulb_lantern"));
         var terminiteLanterns = this.tag(TCTags.Items.TERMINITE_BULB_LANTERNS).addOptional(getResource("betterend", "terminite_bulb_lantern"));
         var ironLanterns = this.tag(TCTags.Items.IRON_BULB_LANTERNS).addOptional(getResource("betterend", "iron_bulb_lantern"));
+
+        var quartzGlass = this.tag(TCTags.Items.QUARTZ_GLASS).addOptional(getResource("betternether", "quartz_glass"));
+        var quartzGlassPane = this.tag(TCTags.Items.QUARTZ_GLASS_PANES).addOptional(getResource("betternether", "quartz_glass_pane"));
+        var framedQuartzGlass = this.tag(TCTags.Items.FRAMED_QUARTZ_GLASS).addOptional(getResource("betternether", "quartz_glass_framed"));
+        var framedQuartzGlassPane = this.tag(TCTags.Items.FRAMED_QUARTZ_GLASS_PANES).addOptional(getResource("betternether", "quartz_glass_framed_pane"));
+
         for (DyeColor color : DyeColor.values()) {
             String thallasium = "thallasium_bulb_lantern_" + color.getSerializedName();
             String terminite = "terminite_bulb_lantern_" + color.getSerializedName();
             String iron = "iron_bulb_lantern_" + color.getSerializedName();
+
+            String quartz = "quartz_glass_" + color.getSerializedName();
+            String quartzPane = "quartz_glass_pane_" + color.getSerializedName();
+            String framedQuartz = "quartz_glass_framed_" + color.getSerializedName();
+            String framedQuartzPane = "quartz_glass_framed_pane_" + color.getSerializedName();
+
             thallasiumLanterns.addOptional(getResource("betterend", thallasium));
             terminiteLanterns.addOptional(getResource("betterend", terminite));
             ironLanterns.addOptional(getResource("betterend", iron));
+
+            quartzGlass.addOptional(getResource("betternether", quartz));
+            quartzGlassPane.addOptional(getResource("betternether", quartzPane));
+            framedQuartzGlass.addOptional(getResource("betternether", framedQuartz));
+            framedQuartzGlassPane.addOptional(getResource("betternether", framedQuartzPane));
         }
     }
 
@@ -123,6 +141,16 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.AETERNIUM_PLATES).addOptional(getResource("betterend", "aeternium_forged_plate"));
         this.tag(TCTags.Items.AETERNIUM_BLOCKS).addOptional(getResource("betterend", "aeternium_block"));
 
+        this.tag(TCTags.Items.CINCINNASITE_RAW_ORES).addOptional(getResource("betternether", "cincinnasite"));
+        this.tag(TCTags.Items.CINCINNASITE_RAW_BLOCKS).addOptional(getResource("betternether", "cincinnasite_block"));
+        this.tag(TCTags.Items.CINCINNASITE_ORES).addOptional(getResource("betternether", "cincinnasite_ore"));
+        this.tag(TCTags.Items.CINCINNASITE_INGOTS).addOptional(getResource("betternether", "cincinnasite_ingot"));
+        this.tag(TCTags.Items.CINCINNASITE_BLOCKS).addOptional(getResource("betternether", "cincinnasite_forged"));
+
+        this.tag(TCTags.Items.NETHER_RUBY_GEMS).addOptional(getResource("betternether", "nether_ruby"));
+        this.tag(TCTags.Items.NETHER_RUBY_BLOCKS).addOptional(getResource("betternether", "nether_ruby_block"));
+        this.tag(TCTags.Items.NETHER_RUBY_ORES).addOptional(getResource("betternether", "nether_ruby_ore"));
+
         this.tag(TCTags.Items.LIGHTNUM_INGOTS).addOptional(getResource("tcompat", "lightnum_ingot"));
         this.tag(TCTags.Items.DRACULITE_INGOTS).addOptional(getResource("tcompat", "draculite_ingot"));
         this.tag(TCTags.Items.STORMFORGED_STEEL_INGOTS).addOptional(getResource("tcompat", "stormforged_steel_ingot"));
@@ -136,16 +164,20 @@ public class TCItemTagProv extends ItemTagsProvider {
         for (TCWoods wood : TCWoods.values()) {
             String woodName = wood.name;
             for (String namespace : wood.getNamespaces()) {
-                if (!wood.hasPlankRedirect()) {
-                    ResourceLocation plankId = wood.getSpecialPlankId(namespace) != null ? wood.getSpecialPlankId(namespace) : getResource(namespace, "%s_planks".formatted(woodName));
-                    this.tag(wood.plankTag()).addOptional(plankId);
+                if (wood.hasPlanks()) {
+                    if (!wood.hasPlankRedirect()) {
+                        ResourceLocation plankId = wood.getSpecialPlankId(namespace) != null ? wood.getSpecialPlankId(namespace) : getResource(namespace, "%s_planks".formatted(woodName));
+                        this.tag(wood.plankTag()).addOptional(plankId);
+                    }
+                    this.tag(TinkerTags.Items.VARIANT_PLANKS)
+                            .addOptionalTag(wood.plankTag());
                 }
-                this.tag(TinkerTags.Items.VARIANT_PLANKS)
-                        .addOptionalTag(wood.plankTag());
-                this.tag(wood.logTag())
-                        .addOptionalTag(wood.externalLogTag(namespace));
-                this.tag(TinkerTags.Items.VARIANT_LOGS)
-                        .addOptionalTag(wood.logTag());
+                if (wood.hasLogs()) {
+                    this.tag(wood.logTag())
+                            .addOptionalTag(wood.externalLogTag(namespace));
+                    this.tag(TinkerTags.Items.VARIANT_LOGS)
+                            .addOptionalTag(wood.logTag());
+                }
             }
         }
         for (TCRocks rock : TCRocks.values()) {

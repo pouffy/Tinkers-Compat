@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
 import io.github.pouffy.tcompat.common.material.TCMaterials;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
@@ -8,6 +9,7 @@ import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.*;
 
+@MethodsReturnNonnullByDefault
 public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
     public TCMaterialStatsProv(PackOutput packOutput, AbstractMaterialDataProvider materials) {
         super(packOutput, materials);
@@ -74,10 +76,18 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(2197, 10.0f, NETHERITE, 4.0f),
                 HandleMaterialStats.multipliers().attackSpeed(0.8f).build(),
                 StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.cincinnasite,
+                new HeadMaterialStats(513, 6.2f, IRON, 2.5f),
+                HandleMaterialStats.multipliers().durability(1.20f).build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.netherRuby,
+                new HeadMaterialStats(2562, 7.1f, DIAMOND, 3.1f),
+                HandleMaterialStats.multipliers().miningSpeed(1.10f).attackDamage(0.9f).build(),
+                StatlessMaterialStats.BINDING);
 
-        addMaterialStats(TCMaterials.stormforgedSteel, new HeadMaterialStats(503, 8.0f, IRON, 5.0f));
-        addMaterialStats(TCMaterials.lightnum, new HeadMaterialStats(503, 8.0f, DIAMOND, 6.0f));
-        addMaterialStats(TCMaterials.draculite, new HeadMaterialStats(2032, 8.0f, DIAMOND, 6.0f));
+        addMaterialStats(TCMaterials.stormforgedSteel, new HeadMaterialStats(503, 8.0f, IRON, 3.0f));
+        addMaterialStats(TCMaterials.lightnum, new HeadMaterialStats(503, 8.0f, DIAMOND, 4.0f));
+        addMaterialStats(TCMaterials.draculite, new HeadMaterialStats(2032, 8.0f, DIAMOND, 4.0f));
     }
 
     private void addRanged() {
@@ -108,6 +118,12 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.aeternium,
                 new LimbMaterialStats(2197, 0f, -0.05f, 0.1f),
                 new GripMaterialStats(0f, 0.1f, 1.1f));
+        addMaterialStats(TCMaterials.cincinnasite,
+                new LimbMaterialStats(513, 0.1f, 0, 0.05f),
+                new GripMaterialStats(0.05f, 0.05f, 2.5f));
+        addMaterialStats(TCMaterials.netherRuby,
+                new LimbMaterialStats(2562, -0.2f, 0.15f, 0),
+                new GripMaterialStats(0.15f, 0.1f, 3.1f));
     }
 
     private void addAmmo() {
@@ -140,6 +156,9 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addArmorShieldStats(TCMaterials.thallasium, PlatingMaterialStats.builder().durabilityFactor(15).armor(1, 4, 5, 2), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.terminite, PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 7, 3).toughness(1f).knockbackResistance(0.05f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.aeternium, PlatingMaterialStats.builder().durabilityFactor(40).armor(4, 7, 9, 4).toughness(3.5f).knockbackResistance(0.2f), StatlessMaterialStats.MAILLE);
+
+        addArmorShieldStats(TCMaterials.cincinnasite, PlatingMaterialStats.builder().durabilityFactor(12).armor(3, 5, 6, 3).toughness(1f).knockbackResistance(0.05f), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TCMaterials.netherRuby, PlatingMaterialStats.builder().durabilityFactor(18).armor(3, 5, 7, 3).toughness(1.4f).knockbackResistance(0.2f), StatlessMaterialStats.MAILLE);
     }
 
     private void addMisc() {

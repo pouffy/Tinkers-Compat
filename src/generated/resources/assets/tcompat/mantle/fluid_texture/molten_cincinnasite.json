@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/molten/compat_ore/cincinnasite/flowing",
+  "still": "tcompat:fluid/molten/compat_ore/cincinnasite/still"
+}

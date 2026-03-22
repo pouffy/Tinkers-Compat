@@ -153,10 +153,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:planks/palo_verde",
-      "required": false
-    },
-    {
       "id": "#tcompat:planks/pine",
       "required": false
     },
@@ -338,6 +334,42 @@
     },
     {
       "id": "#tcompat:planks/lucernia",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/nether_reed",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/stalagnate",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/nether_willow",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/wart",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/rubeus",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/mushroom_fir",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/nether_mushroom",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/anchor_tree",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/nether_sakura",
       "required": false
     }
   ]

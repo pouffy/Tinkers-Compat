@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/stalagnate"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/stalagnate"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/stalagnate"
+  },
+  "material": "tconstruct:wood#stalagnate",
+  "needed": 1,
+  "value": 1
+}

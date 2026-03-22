@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,7 +15,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import slimeknights.tconstruct.fluids.TinkerFluids;
-import slimeknights.tconstruct.shared.TinkerCommons;
 
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -29,7 +29,8 @@ public class TinkerFluidTabMixin {
             "deep_aether", DeepAetherInit::addTabItems,
             "aether_treasure_reforging", AetherTRInit::addTabItems,
             "ad_astra", AdAstraInit::addTabItems,
-            "betterend", BetterendInit::addTabItems
+            "betterend", BetterendInit::addTabItems,
+            "betternether", BetternetherInit::addTabItems
     );
 
     @Inject(method = "addTabItems(Lnet/minecraft/world/item/CreativeModeTab$ItemDisplayParameters;Lnet/minecraft/world/item/CreativeModeTab$Output;)V", at = @At("TAIL"), remap = false)

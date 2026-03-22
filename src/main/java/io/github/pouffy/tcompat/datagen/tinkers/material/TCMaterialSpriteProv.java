@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
 import io.github.pouffy.tcompat.common.material.TCMaterials;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
@@ -21,6 +22,8 @@ import java.util.List;
 import static io.github.pouffy.tcompat.TCompat.getResource;
 import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.*;
 
+@SuppressWarnings({"UnusedReturnValue", "unused"})
+@MethodsReturnNonnullByDefault
 public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
     @Override
     public String getName() {
@@ -122,6 +125,15 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildPlanks(TCMaterials.endJellyshroom,     0xFF4b6d77, 0xFF567a84, 0xFF608590, 0xFF70949e, 0xFF80a1a9, 0xFF88a8af, 0xFF91b0b7);
         buildPlanks(TCMaterials.lucernia,           0xFF842b2d, 0xFF9d373a, 0xFFae4140, 0xFFbe4e4b, 0xFFc95651, 0xFFd46b60, 0xFFe08270);
 
+        buildPlanks(TCMaterials.netherReed,         0xFF131219, 0xFF18171e, 0xFF111f37, 0xFF291d5b, 0xFF2d3076, 0xFF3a4177, 0xFF57498f);
+        buildPlanks(TCMaterials.stalagnate,         0xFF2c4637, 0xFF30583f, 0xFF3b6049, 0xFF417c57, 0xFF51916c, 0xFF599d76, 0xFF5da57a);
+        buildPlanks(TCMaterials.netherWillow,       0xFF601b1a, 0xFF751d1d, 0xFF7f2721, 0xFF8a302a, 0xFF9e3a33, 0xFFa7403a, 0xFFb64a42);
+        buildPlanks(TCMaterials.wart,               0xFF3f0000, 0xFF4a0000, 0xFF5d0000, 0xFF6d0404, 0xFF790c0a, 0xFF8c0f0f, 0xFF981818);
+        buildPlanks(TCMaterials.rubeus,             0xFF5c1831, 0xFF711e3d, 0xFF841f46, 0xFF8c264d, 0xFF9a2854, 0xFFa22a58, 0xFFab2d5e);
+        buildPlanks(TCMaterials.mushroomFir,        0xFF0a1e6e, 0xFF0c2583, 0xFF0e2c98, 0xFF1137a0, 0xFF1243ac, 0xFF134ab2, 0xFF1955bc);
+        buildPlanks(TCMaterials.netherMushroom,     0xFFcfc29d, 0xFFded2b0, 0xFFe9e1ca, 0xFFeee8d6, 0xFFf4f0e5, 0xFFf9f7f1, 0xFFfaf9f4);
+        buildPlanks(TCMaterials.anchorTree,         0xFF254622, 0xFF2d562a, 0xFF32622f, 0xFF3b7337, 0xFF3e793a, 0xFF458540, 0xFF4d8f47);
+        buildPlanks(TCMaterials.netherSakura,       0xFF491e12, 0xFF562618, 0xFF6a3221, 0xFF753926, 0xFF7a3c29, 0xFF8d412c, 0xFF984830);
 
         // Rock
         buildRock(TCMaterials.redRock,              0xFF7F4026, 0xFF904727, 0xFF95522F, 0xFFA95936, 0xFFAD633E, 0xFFB36D44);
@@ -177,6 +189,10 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildGeneric(TCMaterials.thallasium,        0xFF378099, 0xFF449aaf, 0xFF54b0bf, 0xFF7ad0d3, 0xFFa4e8da, 0xFFcff9e2, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
         buildGeneric(TCMaterials.terminite,         0xFF01625b, 0xFF00a094, 0xFF46d5ca, 0xFF71f3e8, 0xFFa1f8f0, 0xFFebfefc, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
         buildGeneric(TCMaterials.aeternium,         0xFF0c100f, 0xFF282f2d, 0xFF495e5a, 0xFF697876, 0xFF8d9a96, 0xFFbdcbc9, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+
+        buildGeneric(TCMaterials.cincinnasite,      0xFF9b6607, 0xFFd88a0a, 0xFFf0a31d, 0xFFffc461, 0xFFffd58e, 0xFFfff0d5, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
+        buildGeneric(TCMaterials.netherRuby,        0xFF4c000b, 0xFF6a000f, 0xFFce1425, 0xFFeb4150, 0xFFf0747f, 0xFFf8c0c5, addStats(HandleMaterialStats.ID), "gem", "metal").armor().meleeHarvest().ranged();
+
         buildMaterial(TCMaterials.valkyrum)
                 .armor().meleeHarvest()
                 .transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0));

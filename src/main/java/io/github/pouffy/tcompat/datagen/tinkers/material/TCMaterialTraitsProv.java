@@ -5,10 +5,12 @@ import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
@@ -19,6 +21,7 @@ import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import static slimeknights.tconstruct.library.materials.MaterialRegistry.*;
 
+@MethodsReturnNonnullByDefault
 public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
     public TCMaterialTraitsProv(PackOutput packOutput, AbstractMaterialDataProvider materials) {
         super(packOutput, materials);
@@ -73,5 +76,10 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TCMaterials.thallasium, BetterendInit.voidTouched);
         addDefaultTraits(TCMaterials.terminite, BetterendInit.voidTouched);
         addDefaultTraits(TCMaterials.aeternium, BetterendInit.voidTouched);
+
+        addDefaultTraits(TCMaterials.cincinnasite, ModifierIds.worldbound);
+        addTraits(TCMaterials.cincinnasite, HeadMaterialStats.ID, BetternetherInit.obsidianBreaker);
+        addDefaultTraits(TCMaterials.netherRuby, ModifierIds.worldbound);
+        addTraits(TCMaterials.netherRuby, HeadMaterialStats.ID, BetternetherInit.obsidianBreaker);
     }
 }

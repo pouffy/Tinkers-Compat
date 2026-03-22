@@ -2,7 +2,7 @@
   "stats": {
     "tconstruct:head": {
       "durability": 503,
-      "melee_attack": 6.0,
+      "melee_attack": 4.0,
       "mining_speed": 8.0,
       "mining_tier": "minecraft:diamond"
     }

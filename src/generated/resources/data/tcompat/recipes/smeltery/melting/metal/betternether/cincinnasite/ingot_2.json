@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "betternether:cincinnasite_bricks"
+    },
+    {
+      "item": "betternether:cincinnasite_bricks_pillar"
+    },
+    {
+      "item": "betternether:cincinnasite_shears"
+    },
+    {
+      "item": "betternether:cincinnasite_slab"
+    },
+    {
+      "item": "betternether:roof_tile_cincinnasite_slab"
+    },
+    {
+      "item": "betternether:bone_cincinnasite_door"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_cincinnasite"
+  },
+  "temperature": 1375,
+  "time": 109
+}

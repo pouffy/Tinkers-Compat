@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 1260,
+      "tag": "forge:molten_cincinnasite"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": {
+    "item": "betternether:netherite_fire_bowl"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_netherite"
+  },
+  "temperature": 1250,
+  "time": 74
+}
