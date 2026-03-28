@@ -57,7 +57,7 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
     }
 
     private FluidTexture.Builder named(FluidObject<?> fluid, String name) {
-        return texture(fluid).root(getResource("fluid/"+name+"/"));
+        return texture(fluid).textures(getResource("fluid/"+name+"/"), false, false);
     }
 
     private FluidTexture.Builder slime(FluidObject<?> fluid) {

@@ -204,6 +204,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         simpleMelting(aetherReduxConsumer, AetherReduxInit.moltenRefinedSentrite, FluidValues.INGOT, "refined_sentrite", Ingredient.of(TCTags.Items.SENTRITE_STONE_BLOCKS), metalFolder.apply("melting"), "stone_blocks");
         simpleMelting(aetherReduxConsumer, AetherReduxInit.moltenRefinedSentrite, FluidValues.INGOT / 2, "refined_sentrite", Ingredient.of(TCTags.Items.SENTRITE_STONE_SLABS), metalFolder.apply("melting"), "stone_slabs");
         simpleMelting(aetherReduxConsumer, AetherReduxInit.moltenVeridium, (FluidValues.INGOT * 2) + (FluidValues.NUGGET * 6), "veridium", ItemNameIngredient.from(aetherReduxId.apply("veridium_lantern")), metalFolder.apply("melting"), "lantern");
+        simpleMelting(aetherReduxConsumer, AetherReduxInit.moltenRefinedSentrite, FluidValues.INGOT * 4, "refined_sentrite", ItemNameIngredient.from(getResource("aether", "sentry_boots")), metalFolder.apply("melting"), "boots");
 
         simpleMelting(aetherReduxConsumer, AetherReduxInit.moltenVeridium, FluidValues.INGOT, "veridium", ItemNameIngredient.from(aetherReduxId.apply("veridium_dart_shooter")), metalFolder.apply("melting"), "dart_shooter");
         simpleMelting(aetherReduxConsumer, AetherReduxInit.moltenVeridium, FluidValues.METAL_BLOCK * 4, "veridium", ItemNameIngredient.from(aetherReduxId.apply("feather_of_warding")), metalFolder.apply("melting"), "feather_of_warding");

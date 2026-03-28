@@ -20,6 +20,8 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import slimeknights.tconstruct.fluids.data.FluidBlockstateModelProvider;
 import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPaletteDebugGenerator;
+import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
+import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -45,6 +47,7 @@ public class TCDataGenerator {
 
         generator.addProvider(client, new TCMaterialRenderInfoProv(packOutput, materialSprites, existingFileHelper));
         generator.addProvider(client, new MaterialPaletteDebugGenerator(packOutput, TCompat.MOD_ID, materialSprites));
+        generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, new TinkerPartSpriteProvider(), materialSprites));
         generator.addProvider(server, new TCModifierProv(packOutput));
         generator.addProvider(server, new TCModifierRecipeProv(packOutput));
 
