@@ -41,7 +41,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.TOOL_USING, ModifierHooks.ON_ATTACKED);
+        hookBuilder.addHook(this, ModifierHooks.TOOL_USING, ModifierHooks.ON_ATTACKED, ModifierHooks.TOOLTIP);
     }
 
     @Override

@@ -43,7 +43,6 @@ public class DeepAetherInit extends CompatInitializer {
     }
 
     public static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
-        output.accept(moltenSkyjade);
         acceptMolten(output, moltenSkyjade);
         acceptMolten(output, moltenStratus);
         acceptMolten(output, moltenStormforgedSteel);

@@ -1,0 +1,45 @@
+{
+  "parts": [
+    {
+      "path": "tcompat:item/tool/glaive/head",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/head_broken",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/grip",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/accessory",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/large/head",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/large/head_broken",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/large/handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/large/grip",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "tcompat:item/tool/glaive/large/accessory",
+      "stat_type": "tconstruct:binding"
+    }
+  ],
+  "replace": false
+}

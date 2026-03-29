@@ -26,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.mantle.registration.object.ItemObject;
+import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
@@ -128,5 +129,24 @@ public class CompatInitializer {
     /** Accepts the given item if the passed tag has items */
     protected static boolean acceptIfTag(CreativeModeTab.Output output, ItemLike item, TagKey<Item> tagCondition) {
         return acceptIfTag(output, item, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS, tagCondition);
+    }
+
+    private static FluidType.Properties cool() {
+        return FluidType.Properties.create()
+                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
+                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
+                .motionScale(0.0023333333333333335D)
+                .canExtinguish(true);
+
+    }
+
+    private static FluidType.Properties cool(String name) {
+        return cool().descriptionId(TConstruct.makeDescriptionId("fluid", name))
+                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
+                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY);
+    }
+
+    protected static FluidType.Properties slime(String name) {
+        return cool(name).density(1600).viscosity(1600);
     }
 }

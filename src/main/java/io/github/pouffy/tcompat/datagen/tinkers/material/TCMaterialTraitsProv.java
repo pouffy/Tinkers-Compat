@@ -81,5 +81,9 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addTraits(TCMaterials.cincinnasite, HeadMaterialStats.ID, BetternetherInit.obsidianBreaker);
         addDefaultTraits(TCMaterials.netherRuby, ModifierIds.worldbound);
         addTraits(TCMaterials.netherRuby, HeadMaterialStats.ID, BetternetherInit.obsidianBreaker);
+
+        noTraits(TCMaterials.fireDragonsteel);
+        noTraits(TCMaterials.iceDragonsteel);
+        noTraits(TCMaterials.lightningDragonsteel);
     }
 }

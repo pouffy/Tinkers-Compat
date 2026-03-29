@@ -18,6 +18,9 @@
     "#forge:molten_terminite",
     "#forge:molten_thallasium",
     "#forge:molten_aeternium",
-    "#forge:molten_cincinnasite"
+    "#forge:molten_cincinnasite",
+    "#tcompat:molten_fire_dragonsteel",
+    "#tcompat:molten_ice_dragonsteel",
+    "#tcompat:molten_lightning_dragonsteel"
   ]
 }

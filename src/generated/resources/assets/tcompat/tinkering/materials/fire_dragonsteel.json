@@ -1,0 +1,51 @@
+{
+  "color": "FF774153",
+  "fallbacks": [
+    "bone",
+    "metal"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:head",
+      "tconstruct:handle",
+      "tconstruct:binding",
+      "tconstruct:repair_kit",
+      "tconstruct:limb",
+      "tconstruct:grip"
+    ],
+    "transformer": {
+      "type": "tconstruct:grey_to_sprite",
+      "palette": [
+        {
+          "color": "FF000000",
+          "grey": 0
+        },
+        {
+          "grey": 63,
+          "path": "tcompat:generator/complex/fire_dragonsteel_63"
+        },
+        {
+          "grey": 102,
+          "path": "tcompat:generator/complex/fire_dragonsteel_102"
+        },
+        {
+          "grey": 140,
+          "path": "tcompat:generator/complex/fire_dragonsteel_140"
+        },
+        {
+          "grey": 178,
+          "path": "tcompat:generator/complex/fire_dragonsteel_178"
+        },
+        {
+          "color": "FFBD9FA7",
+          "grey": 216
+        },
+        {
+          "color": "FFEAD0D0",
+          "grey": 255
+        }
+      ]
+    }
+  },
+  "luminosity": 9
+}

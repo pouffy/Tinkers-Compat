@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.world.item.CreativeModeTab;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -30,7 +31,8 @@ public class TinkerFluidTabMixin {
             "aether_treasure_reforging", AetherTRInit::addTabItems,
             "ad_astra", AdAstraInit::addTabItems,
             "betterend", BetterendInit::addTabItems,
-            "betternether", BetternetherInit::addTabItems
+            "betternether", BetternetherInit::addTabItems,
+            "iceandfire", IFInit::addTabItems
     );
 
     @Inject(method = "addTabItems(Lnet/minecraft/world/item/CreativeModeTab$ItemDisplayParameters;Lnet/minecraft/world/item/CreativeModeTab$Output;)V", at = @At("TAIL"), remap = false)

@@ -32,6 +32,7 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         ICondition adAstra = new ModLoadedCondition("ad_astra");
         ICondition betterend = new ModLoadedCondition("betterend");
         ICondition betternether = new ModLoadedCondition("betternether");
+        ICondition iceandfire = new ModLoadedCondition("iceandfire");
 
         //ICondition brass = tagFull("forge", "ingots/brass");
         //ICondition zinc = tagFull("forge", "ingots/zinc");
@@ -68,6 +69,11 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
 
         addMaterial(TCMaterials.cincinnasite, 2, ORDER_HARVEST, false, false, betternether);
         addMaterial(TCMaterials.netherRuby, 2, ORDER_HARVEST, false, false, betternether);
+
+        addMaterial(TCMaterials.fireDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
+        addMaterial(TCMaterials.iceDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
+        addMaterial(TCMaterials.lightningDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
+
 
         //addMaterial(TCMaterials.zinc, 2, ORDER_HARVEST, false, false, zinc);
         //addMaterial(TCMaterials.brass, 2, ORDER_HARVEST, false, false, brass);

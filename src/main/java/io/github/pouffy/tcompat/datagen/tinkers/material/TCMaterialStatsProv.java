@@ -88,6 +88,19 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.stormforgedSteel, new HeadMaterialStats(503, 8.0f, IRON, 3.0f));
         addMaterialStats(TCMaterials.lightnum, new HeadMaterialStats(503, 8.0f, DIAMOND, 4.0f));
         addMaterialStats(TCMaterials.draculite, new HeadMaterialStats(2032, 8.0f, DIAMOND, 4.0f));
+
+        addMaterialStats(TCMaterials.fireDragonsteel,
+                new HeadMaterialStats(500, 3.0f, NETHERITE, 2.4f),
+                HandleMaterialStats.multipliers().durability(2.5f).attackSpeed(0.75f).build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.iceDragonsteel,
+                new HeadMaterialStats(500, 3.0f, NETHERITE, 2.4f),
+                HandleMaterialStats.multipliers().durability(2.5f).attackSpeed(0.75f).build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.lightningDragonsteel,
+                new HeadMaterialStats(500, 3.0f, NETHERITE, 2.4f),
+                HandleMaterialStats.multipliers().durability(2.5f).attackSpeed(0.75f).build(),
+                StatlessMaterialStats.BINDING);
     }
 
     private void addRanged() {
@@ -124,6 +137,16 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.netherRuby,
                 new LimbMaterialStats(2562, -0.2f, 0.15f, 0),
                 new GripMaterialStats(0.15f, 0.1f, 3.1f));
+
+        addMaterialStats(TCMaterials.fireDragonsteel,
+                new LimbMaterialStats(400, 0.25f, 0.25f, 0.3f),
+                new GripMaterialStats(2.0f, 0.25f, 2.5f));
+        addMaterialStats(TCMaterials.iceDragonsteel,
+                new LimbMaterialStats(400, 0.25f, 0.25f, 0.3f),
+                new GripMaterialStats(2.0f, 0.25f, 2.5f));
+        addMaterialStats(TCMaterials.lightningDragonsteel,
+                new LimbMaterialStats(400, 0.25f, 0.25f, 0.3f),
+                new GripMaterialStats(2.0f, 0.25f, 2.5f));
     }
 
     private void addAmmo() {

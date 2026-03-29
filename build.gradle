@@ -54,7 +54,6 @@ apply from: "$rootDir/gradle/scripts/repositories.gradle"
 apply from: "$rootDir/gradle/scripts/dependencies.gradle"
 apply from: "$rootDir/gradle/scripts/resources.gradle"
 
-
 generateModMetadata.doFirst {
     mkdir('run/server')
     mkdir('run/gametest')

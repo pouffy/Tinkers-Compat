@@ -1,0 +1,47 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "head": "tcompat:item/tool/glaive/head_broken",
+    "handle": "tcompat:item/tool/glaive/handle",
+    "grip": "tcompat:item/tool/glaive/grip",
+    "accessory": "tcompat:item/tool/glaive/accessory",
+    "large_head": "tcompat:item/tool/glaive/large/head_broken",
+    "large_handle": "tcompat:item/tool/glaive/large/handle",
+    "large_grip": "tcompat:item/tool/glaive/large/grip",
+    "large_accessory": "tcompat:item/tool/glaive/large/accessory"
+  },
+  "modifier_roots": {
+    "small": [
+      "tcompat:item/tool/glaive/modifiers/broken/",
+      "tcompat:item/tool/glaive/modifiers/"
+    ],
+    "large": [
+      "tcompat:item/tool/glaive/large/modifiers/broken/",
+      "tcompat:item/tool/glaive/large/modifiers/"
+    ]
+  },
+  "parts": [
+    {
+      "name": "handle",
+      "index": 1
+    },
+    {
+      "name": "grip",
+      "index": 3
+    },
+    {
+      "name": "head",
+      "index": 0
+    },
+    {
+      "name": "accessory",
+      "index": 2
+    }
+  ],
+  "large": true,
+  "large_offset": [
+    -2,
+    2
+  ]
+}

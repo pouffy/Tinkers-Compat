@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -52,6 +53,14 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(DeepAetherInit.moltenStormforgedSteel);
         fluidTag(BetternetherInit.moltenCincinnasite);
         fluidTag(BetternetherInit.moltenNetherRuby);
+
+        fluidTag(IFInit.fireBlood);
+        fluidTag(IFInit.iceBlood);
+        fluidTag(IFInit.lightningBlood);
+        fluidTag(IFInit.moltenFireDragonsteel);
+        fluidTag(IFInit.moltenIceDragonsteel);
+        fluidTag(IFInit.moltenLightningDragonsteel);
+
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(
                 //Aether
                 AetherInit.moltenGravitite.getTag(),
@@ -76,10 +85,19 @@ public class TCFluidTagProv extends FluidTagsProvider {
                 BetterendInit.moltenThallasium.getTag(),
                 BetterendInit.moltenAeternium.getTag(),
                 //Betternether
-                BetternetherInit.moltenCincinnasite.getTag()
+                BetternetherInit.moltenCincinnasite.getTag(),
+                //Ice & Fire
+                IFInit.moltenFireDragonsteel.getTag(),
+                IFInit.moltenIceDragonsteel.getTag(),
+                IFInit.moltenLightningDragonsteel.getTag()
         );
         this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(
                 BetternetherInit.moltenNetherRuby.getTag()
+        );
+        this.tag(TinkerTags.Fluids.SLIME_TOOLTIPS).addTags(
+                IFInit.fireBlood.getTag(),
+                IFInit.iceBlood.getTag(),
+                IFInit.lightningBlood.getTag()
         );
     }
 

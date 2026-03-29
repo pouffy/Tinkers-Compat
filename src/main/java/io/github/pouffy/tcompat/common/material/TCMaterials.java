@@ -16,6 +16,8 @@ public class TCMaterials {
     public static final Map<MaterialVariantId, TCWoods> woodVariants = new HashMap<>();
     public static final Map<MaterialVariantId, TCRocks> rockVariants = new HashMap<>();
 
+    public static final List<String> translationKeys = new ArrayList<>();
+
     // Metals & Gems
     public static final MaterialId aetherWood = id("aether_wood");
     public static final MaterialId aetherRock = id("aether_rock");
@@ -41,6 +43,10 @@ public class TCMaterials {
 
     public static final MaterialId cincinnasite = id("cincinnasite");
     public static final MaterialId netherRuby = id("nether_ruby");
+
+    public static final MaterialId fireDragonsteel = id("fire_dragonsteel");
+    public static final MaterialId iceDragonsteel = id( "ice_dragonsteel");
+    public static final MaterialId lightningDragonsteel = id( "lightning_dragonsteel");
 
     // Special Craftable Materials
     public static final MaterialId blightbunnyFang = id("blightbunny_fang");
@@ -183,6 +189,7 @@ public class TCMaterials {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.wood, woodType.getSerializedName());
         woodVariants.put(id, woodType);
         allVariants.add(id);
+        translationKeys.add("material.%s.%s.%s".formatted("tconstruct", "wood", woodType.getSerializedName()));
         return id;
     }
 
@@ -190,6 +197,7 @@ public class TCMaterials {
         MaterialVariantId id = MaterialVariantId.create(aetherWood, woodType.getSerializedName());
         woodVariants.put(id, woodType);
         allVariants.add(id);
+        translationKeys.add("material.%s.%s.%s".formatted(TCompat.MOD_ID, "aether_wood", woodType.getSerializedName()));
         return id;
     }
 
@@ -197,6 +205,7 @@ public class TCMaterials {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.rock, rockType.getSerializedName());
         rockVariants.put(id, rockType);
         allVariants.add(id);
+        translationKeys.add("material.%s.%s.%s".formatted("tconstruct", "rock", rockType.getSerializedName()));
         return id;
     }
 
@@ -204,6 +213,7 @@ public class TCMaterials {
         MaterialVariantId id = MaterialVariantId.create(aetherRock, rockType.getSerializedName());
         rockVariants.put(id, rockType);
         allVariants.add(id);
+        translationKeys.add("material.%s.%s.%s".formatted(TCompat.MOD_ID, "aether_rock", rockType.getSerializedName()));
         return id;
     }
 
@@ -211,10 +221,12 @@ public class TCMaterials {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.whitestone, rockType.getSerializedName());
         rockVariants.put(id, rockType);
         allVariants.add(id);
+        translationKeys.add("material.%s.%s.%s".formatted("tconstruct", "whitestone", rockType.getSerializedName()));
         return id;
     }
 
     private static MaterialId id(String name) {
+        translationKeys.add("material.%s.%s".formatted(TCompat.MOD_ID, name));
         return new MaterialId(TCompat.MOD_ID, name);
     }
 }

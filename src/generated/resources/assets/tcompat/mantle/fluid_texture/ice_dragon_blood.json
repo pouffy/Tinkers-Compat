@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/slime/ice_dragon_blood/flowing",
+  "still": "tcompat:fluid/slime/ice_dragon_blood/still"
+}

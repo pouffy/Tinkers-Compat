@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
@@ -46,6 +47,12 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
         compatOre(DeepAetherInit.moltenStormforgedSteel);
         compatOre(BetternetherInit.moltenCincinnasite);
         compatOre(BetternetherInit.moltenNetherRuby);
+        slime(IFInit.fireBlood);
+        slime(IFInit.iceBlood);
+        slime(IFInit.lightningBlood);
+        compatOre(IFInit.moltenFireDragonsteel);
+        compatOre(IFInit.moltenIceDragonsteel);
+        compatOre(IFInit.moltenLightningDragonsteel);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {

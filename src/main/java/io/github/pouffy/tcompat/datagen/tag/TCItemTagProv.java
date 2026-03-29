@@ -9,6 +9,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -96,6 +97,21 @@ public class TCItemTagProv extends ItemTagsProvider {
             framedQuartzGlass.addOptional(getResource("betternether", framedQuartz));
             framedQuartzGlassPane.addOptional(getResource("betternether", framedQuartzPane));
         }
+
+        var glaive = getResource("glaive");
+        this.tag(TinkerTags.Items.MODIFIABLE).addOptional(glaive);
+        this.tag(TinkerTags.Items.HELD).addOptional(glaive);
+        this.tag(TinkerTags.Items.MELEE).addOptional(glaive);
+        this.tag(TinkerTags.Items.MELEE_PRIMARY).addOptional(glaive);
+        this.tag(TinkerTags.Items.MELEE_WEAPON).addOptional(glaive);
+        this.tag(TinkerTags.Items.AOE).addOptional(glaive);
+        this.tag(TinkerTags.Items.HARVEST).addOptional(glaive);
+        this.tag(TinkerTags.Items.DURABILITY).addOptional(glaive);
+        this.tag(TinkerTags.Items.BALLISTA_AMMO).addOptional(glaive);
+        this.tag(TinkerTags.Items.MULTIPART_TOOL).addOptional(glaive);
+        this.tag(TinkerTags.Items.BONUS_SLOTS).addOptional(glaive);
+        this.tag(ItemTags.create(getResource("forge:tools"))).addOptional(glaive);
+        this.tag(ItemTags.create(getResource("minecraft:tools"))).addOptional(glaive);
     }
 
     private void addForge() {

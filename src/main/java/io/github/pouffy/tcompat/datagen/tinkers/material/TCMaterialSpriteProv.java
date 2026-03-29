@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
+import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.function.Function;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
 import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.*;
@@ -197,6 +199,16 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
                 .armor().meleeHarvest()
                 .transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0));
         buildGeneric(TCMaterials.neptune,           0xFF111b42, 0xFF1a2a66, 0xFF29439c, 0xFF3559c6, 0xFF3e6fd8, 0xFF7cbbff, addStats(), "metal").maille();
+
+        buildMaterial(TCMaterials.fireDragonsteel)
+                .fallbacks("bone", "metal").meleeHarvest().ranged()
+                .transformer(complexTransformer("fire_dragonsteel", 1, 0xFFBD9FA7, 0xFFEAD0D0));
+        buildMaterial(TCMaterials.iceDragonsteel)
+                .fallbacks("bone", "metal").meleeHarvest().ranged()
+                .transformer(complexTransformer("ice_dragonsteel", 1, 0xFFBAEAEC, 0xFFFFFFFF));
+        buildMaterial(TCMaterials.lightningDragonsteel)
+                .fallbacks("bone", "metal").meleeHarvest().ranged()
+                .transformer(complexTransformer("lightning_dragonsteel", 1, 0xFFCAA4DA, 0xFFE5CBF7));
     }
 
     public static ISpriteTransformer transformerFromSprite(ResourceLocation texture, int frames, int highlightColor) {
@@ -220,6 +232,21 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
                 .addTexture(216, highlight, 0xFFE1E1E1).addTexture(255, highlight);
         if (frames > 1) {
             return builder.animated(base, frames);
+        }
+        return builder.build();
+    }
+
+    public static ISpriteTransformer complexTransformer(String name, int frames, int c216, int c255) {
+        GreyToSpriteTransformer.Builder builder = GreyToSpriteTransformer.builderFromBlack();
+        Function<String, ResourceLocation> resolver = (n) -> TCompat.getResource("generator/complex/" + n);
+        builder.addTexture(63, resolver.apply(name + "_63"))
+                .addTexture(102, resolver.apply(name + "_102"))
+                .addTexture(140, resolver.apply(name + "_140"))
+                .addTexture(178, resolver.apply(name + "_178"))
+                .addARGB(216, c216)
+                .addARGB(255, c255);
+        if (frames > 1) {
+            return builder.animated(resolver.apply(name + "_102"), frames);
         }
         return builder.build();
     }

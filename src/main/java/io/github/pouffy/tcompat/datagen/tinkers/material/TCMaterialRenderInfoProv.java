@@ -47,6 +47,10 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
 
         buildRenderInfo(TCMaterials.cincinnasite).color(0xffc461).fallbacks("metal");
         buildRenderInfo(TCMaterials.netherRuby).color(0xeb4150).fallbacks("gem", "metal");
+
+        buildRenderInfo(TCMaterials.fireDragonsteel).color(0x774153).fallbacks("bone", "metal").luminosity(9);
+        buildRenderInfo(TCMaterials.iceDragonsteel).color(0xBAEAEC).fallbacks("bone", "metal").luminosity(9);
+        buildRenderInfo(TCMaterials.lightningDragonsteel).color(0x917DD2).fallbacks("bone", "metal").luminosity(9);
     }
 
     @Override

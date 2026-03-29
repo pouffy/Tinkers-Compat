@@ -87,4 +87,9 @@ dependencies {
     modExtraRuntimeOnly("maven.modrinth:quark:1.20.1-4.0-462")
     modCompileOnly("maven.modrinth:zeta:1.20.1-1.0-31")
     modExtraRuntimeOnly("maven.modrinth:zeta:1.20.1-1.0-31")
+    // Ice & Fire
+    modCompileOnly("maven.modrinth:ice-and-fire-dragons:2.1.13-1.20.1-beta-5")
+    modExtraRuntimeOnly("maven.modrinth:ice-and-fire-dragons:2.1.13-1.20.1-beta-5")
+    modCompileOnly("maven.modrinth:citadel:2.6.3")
+    modExtraRuntimeOnly("maven.modrinth:citadel:2.6.3")
 }
