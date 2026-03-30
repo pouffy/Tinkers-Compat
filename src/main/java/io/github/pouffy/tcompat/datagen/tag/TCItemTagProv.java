@@ -69,6 +69,22 @@ public class TCItemTagProv extends ItemTagsProvider {
                 .addOptional(getResource("aether", "blue_aercloud"))
                 .addOptional(getResource("aether", "crystal_leaves"));
 
+        this.tag(TCTags.Items.FIRE_DRAGON_SCALES)
+                .addOptional(getResource("iceandfire", "dragonscales_bronze"))
+                .addOptional(getResource("iceandfire", "dragonscales_green"))
+                .addOptional(getResource("iceandfire", "dragonscales_gray"))
+                .addOptional(getResource("iceandfire", "dragonscales_red"));
+        this.tag(TCTags.Items.ICE_DRAGON_SCALES)
+                .addOptional(getResource("iceandfire", "dragonscales_blue"))
+                .addOptional(getResource("iceandfire", "dragonscales_sapphire"))
+                .addOptional(getResource("iceandfire", "dragonscales_silver"))
+                .addOptional(getResource("iceandfire", "dragonscales_white"));
+        this.tag(TCTags.Items.LIGHTNING_DRAGON_SCALES)
+                .addOptional(getResource("iceandfire", "dragonscales_amythest"))
+                .addOptional(getResource("iceandfire", "dragonscales_black"))
+                .addOptional(getResource("iceandfire", "dragonscales_copper"))
+                .addOptional(getResource("iceandfire", "dragonscales_electric"));
+
         var thallasiumLanterns = this.tag(TCTags.Items.THALLASIUM_BULB_LANTERNS).addOptional(getResource("betterend", "thallasium_bulb_lantern"));
         var terminiteLanterns = this.tag(TCTags.Items.TERMINITE_BULB_LANTERNS).addOptional(getResource("betterend", "terminite_bulb_lantern"));
         var ironLanterns = this.tag(TCTags.Items.IRON_BULB_LANTERNS).addOptional(getResource("betterend", "iron_bulb_lantern"));

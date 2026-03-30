@@ -1,1 +1,16 @@
-{}
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tcompat:lightning"
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "level": 1,
+        "name": "tcompat:lightning"
+      }
+    ]
+  }
+}

@@ -1,8 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.tool;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFToolDefinitions;
+import io.github.pouffy.tcompat.compat.GlobalDefinitions;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ToolActions;
@@ -14,7 +13,6 @@ import slimeknights.tconstruct.library.tools.definition.module.build.MultiplySta
 import slimeknights.tconstruct.library.tools.definition.module.build.SetStatsModule;
 import slimeknights.tconstruct.library.tools.definition.module.build.ToolActionsModule;
 import slimeknights.tconstruct.library.tools.definition.module.build.ToolTraitsModule;
-import slimeknights.tconstruct.library.tools.definition.module.display.FixedMaterialToolName;
 import slimeknights.tconstruct.library.tools.definition.module.material.DefaultMaterialsModule;
 import slimeknights.tconstruct.library.tools.definition.module.material.PartStatsModule;
 import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveModule;
@@ -42,7 +40,7 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
                 IsEffectiveModule.tag(TinkerTags.Blocks.MINABLE_WITH_SWORD),
                 MiningSpeedModifierModule.blocks(7.5f, Blocks.COBWEB)
         };
-        define(IFToolDefinitions.glaive)
+        define(GlobalDefinitions.glaive)
                 // parts
                 .module(PartStatsModule.parts()
                         .part(smallBlade)

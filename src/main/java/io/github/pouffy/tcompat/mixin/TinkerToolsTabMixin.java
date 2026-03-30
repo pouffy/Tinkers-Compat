@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.mixin;
 
 import io.github.pouffy.tcompat.common.util.CompatHelper;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.world.item.CreativeModeTab;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -18,7 +18,7 @@ public class TinkerToolsTabMixin {
 
     @Unique
     private static final Map<String, BiConsumer<CreativeModeTab.ItemDisplayParameters, CreativeModeTab.Output>> tcompat$tools = Map.of(
-            "iceandfire", IFInit::addToolTabItems
+
     );
 
     @Inject(method = "addTabItems(Lnet/minecraft/world/item/CreativeModeTab$ItemDisplayParameters;Lnet/minecraft/world/item/CreativeModeTab$Output;)V", at = @At("TAIL"), remap = false)
@@ -27,6 +27,6 @@ public class TinkerToolsTabMixin {
             if (CompatHelper.isLoaded(mod))
                 consumer.accept(itemDisplayParameters, output);
         });
-
+        GlobalInit.addToolTabItems(itemDisplayParameters, output);
     }
 }

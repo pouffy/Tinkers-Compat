@@ -171,6 +171,10 @@ public class TCTags {
         public static TagKey<Item> DRACULITE_INGOTS  = common("ingots/draculite");
         public static TagKey<Item> STORMFORGED_STEEL_INGOTS  = common("ingots/stormforged_steel");
 
+        public static TagKey<Item> FIRE_DRAGON_SCALES = local("recipe/fire_dragon_scales");
+        public static TagKey<Item> ICE_DRAGON_SCALES = local("recipe/ice_dragon_scales");
+        public static TagKey<Item> LIGHTNING_DRAGON_SCALES = local("recipe/lightning_dragon_scales");
+
         public static TagKey<Item> DARTS = named("aether", "darts");
 
         public static TagKey<Item> local(String name) {

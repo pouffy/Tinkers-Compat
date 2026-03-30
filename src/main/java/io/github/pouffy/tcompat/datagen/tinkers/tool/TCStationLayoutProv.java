@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.tool;
 
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.tinkering.AbstractStationSlotLayoutProvider;
@@ -12,7 +13,7 @@ public class TCStationLayoutProv extends AbstractStationSlotLayoutProvider {
 
     @Override
     protected void addLayouts() {
-        defineModifiable(IFInit.glaive)
+        defineModifiable(GlobalInit.glaive)
                 .sortIndex(SORT_WEAPON + SORT_LARGE)
                 .addInputItem(TinkerToolParts.smallBlade,  45, 26)
                 .addInputItem(TinkerToolParts.toughHandle,  9, 62)

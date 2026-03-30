@@ -19,6 +19,14 @@ public interface Compatibility extends INBTSynchable<CompoundTag> {
 
     boolean performVampireHealing();
 
+    boolean isFrozen();
+    int getFrozenTicks();
+
+    void setFrozen(boolean frozen);
+    void setFrozenTicks(int frozenTicks);
+
+    void freeze(int ticks);
+
     void setLightningOwner(Entity owner);
     Entity getLightningOwner();
 }

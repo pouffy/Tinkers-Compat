@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common.util;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
@@ -51,11 +52,13 @@ public class CompatHelper {
             if (CompatHelper.isLoaded(mod) || DatagenModLoader.isRunningDataGen())
                 consumer.accept(eventBus);
         });
+        GlobalInit.init(eventBus);
         //Initialising the event bus for these does not matter during datagen.
         compatEvents.forEach((mod, consumer) -> {
             if (CompatHelper.isLoaded(mod))
                 consumer.accept(eventBus);
         });
+        eventBus.register(new GlobalInit());
     }
 
     public static boolean isLoaded(String namespace) {

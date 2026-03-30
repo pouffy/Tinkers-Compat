@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "input": "tcompat:fire_dragonsteel",
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_fire_dragonsteel"
+  },
+  "temperature": 1100
+}

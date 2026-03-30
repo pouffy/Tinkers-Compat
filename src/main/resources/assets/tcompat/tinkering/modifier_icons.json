@@ -6,5 +6,11 @@
   "tcompat:ricoshield":   "tcompat:gui/modifiers/ricoshield",
   "tcompat:swapping":   "tcompat:gui/modifiers/swapping",
   "tcompat:birt":   "tcompat:gui/modifiers/birt",
-  "tcompat:rubys_fire": ["betternether:item/nether_ruby", "tconstruct:gui/modifiers/tier"]
+  "tcompat:rubys_fire": ["betternether:item/nether_ruby", "tconstruct:gui/modifiers/tier"],
+  "tcompat:flamed":   "tcompat:gui/modifiers/flamed",
+  "tcompat:iced":   "tcompat:gui/modifiers/iced",
+  "tcompat:lightning":   "tcompat:gui/modifiers/lightning",
+  "tcompat:scorch_thorns":   "tcompat:gui/modifiers/scorch_thorns",
+  "tcompat:frost_thorns":   "tcompat:gui/modifiers/frost_thorns",
+  "tcompat:volt_thorns":   "tcompat:gui/modifiers/volt_thorns"
 }

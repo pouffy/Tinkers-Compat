@@ -7,6 +7,7 @@ import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipeBuilder;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
@@ -14,6 +15,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -62,10 +64,12 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
         Consumer<FinishedRecipe> betternetherConsumer = withCondition(consumer, modLoaded("betternether"));
+        Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, modLoaded("betternether"));
 
         Function<String, ResourceLocation> speciesId = name -> getResource("species", name);
         Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
         Function<String, ResourceLocation> betternetherId = name -> getResource("betternether", name);
+        Function<String, ResourceLocation> iceandfireId = name -> getResource("iceandfire", name);
 
         ModifierRecipeBuilder.modifier(SpeciesInit.ricoshield)
                 .setTools(TinkerTags.Items.SHIELDS)
@@ -76,6 +80,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .addInput(ItemNameIngredient.from(speciesId.apply("broken_links")))
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.DEFENSE, 1)
+                .saveSalvage(speciesConsumer, prefix(SpeciesInit.ricoshield, abilitySalvage))
                 .save(speciesConsumer, prefix(SpeciesInit.ricoshield, abilityFolder));
 
         ModifierRecipeBuilder.modifier(SpeciesInit.swapping)
@@ -87,6 +92,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .addInput(ItemNameIngredient.from(speciesId.apply("wicked_wax")))
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(speciesConsumer, prefix(SpeciesInit.swapping, abilitySalvage))
                 .save(speciesConsumer, prefix(SpeciesInit.swapping, abilityFolder));
 
         ModifierRecipeBuilder.modifier(SpeciesInit.birt)
@@ -98,6 +104,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .addInput(Tags.Items.INGOTS_IRON)
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(speciesConsumer, prefix(SpeciesInit.birt, abilitySalvage))
                 .save(speciesConsumer, prefix(SpeciesInit.birt, abilityFolder));
 
         ModifierRecipeBuilder.modifier(AetherInit.autochant)
@@ -130,6 +137,72 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .saveSalvage(betternetherConsumer, prefix(BetternetherInit.rubysFire, abilitySalvage))
                 .save(betternetherConsumer, prefix(BetternetherInit.rubysFire, abilityFolder));
 
+        ModifierRecipeBuilder.modifier(IFInit.flamed)
+                .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("fire_dragon_heart")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("dragonsteel_fire_ingot")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("fire_dragon_blood")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(iceandfireConsumer, prefix(IFInit.flamed, abilitySalvage))
+                .save(iceandfireConsumer, prefix(IFInit.flamed, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(IFInit.iced)
+                .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("ice_dragon_heart")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("dragonsteel_ice_ingot")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("ice_dragon_blood")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(iceandfireConsumer, prefix(IFInit.iced, abilitySalvage))
+                .save(iceandfireConsumer, prefix(IFInit.iced, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(IFInit.lightning)
+                .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("lightning_dragon_heart")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("dragonsteel_lightning_ingot")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("lightning_dragon_blood")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(iceandfireConsumer, prefix(IFInit.lightning, abilitySalvage))
+                .save(iceandfireConsumer, prefix(IFInit.lightning, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(IFInit.scorchThorns)
+                .setTools(TinkerTags.Items.CHESTPLATES)
+                .addInput(TCTags.Items.FIRE_DRAGON_SCALES)
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("fire_dragon_blood")))
+                .addInput(TCTags.Items.FIRE_DRAGON_SCALES)
+                .addInput(Tags.Items.GEMS_EMERALD)
+                .addInput(Tags.Items.GEMS_EMERALD)
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.DEFENSE, 1)
+                .saveSalvage(iceandfireConsumer, prefix(IFInit.scorchThorns, abilitySalvage))
+                .save(iceandfireConsumer, prefix(IFInit.scorchThorns, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(IFInit.frostThorns)
+                .setTools(TinkerTags.Items.CHESTPLATES)
+                .addInput(TCTags.Items.ICE_DRAGON_SCALES)
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("ice_dragon_blood")))
+                .addInput(TCTags.Items.ICE_DRAGON_SCALES)
+                .addInput(ItemTags.create(getResource("forge", "gems/sapphire")))
+                .addInput(ItemTags.create(getResource("forge", "gems/sapphire")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.DEFENSE, 1)
+                .saveSalvage(iceandfireConsumer, prefix(IFInit.frostThorns, abilitySalvage))
+                .save(iceandfireConsumer, prefix(IFInit.frostThorns, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(IFInit.voltThorns)
+                .setTools(TinkerTags.Items.CHESTPLATES)
+                .addInput(TCTags.Items.LIGHTNING_DRAGON_SCALES)
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("lightning_dragon_blood")))
+                .addInput(TCTags.Items.LIGHTNING_DRAGON_SCALES)
+                .addInput(Tags.Items.GEMS_AMETHYST)
+                .addInput(Tags.Items.GEMS_AMETHYST)
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.DEFENSE, 1)
+                .saveSalvage(iceandfireConsumer, prefix(IFInit.voltThorns, abilitySalvage))
+                .save(iceandfireConsumer, prefix(IFInit.voltThorns, abilityFolder));
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)
@@ -154,6 +227,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {
+        if (!woodType.hasPlanks()) return;
         String folder = "tools/modifiers/slotless/";
         woodTexture(consumer, material, woodType.plankTag(), folder);
     }

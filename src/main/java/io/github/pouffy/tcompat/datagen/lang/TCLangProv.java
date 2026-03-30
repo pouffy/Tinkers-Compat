@@ -83,6 +83,8 @@ public class TCLangProv extends LanguageProvider {
 
     private void misc() {
         add("modifier.tcompat.flamed.attack_bonus", "Damage against Ice Dragons");
+        add("modifier.tcompat.iced.attack_bonus", "Damage against Fire Dragons");
+        add("modifier.tcompat.lightning.attack_bonus", "Damage against Fire Dragons & Ice Dragons");
         add("modifier.tcompat.kinetic.tooltip.damage", "Stored Damage: %s / 40");
         add("recipe.tconstruct.ambrofusion.at_capacity", "Tool has no more space for ambrosium");
         add("subtitles.tcompat.void_touched.activate", "Void appears");
@@ -112,6 +114,12 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.birt", "Birt", "Birt");
         forModifier("modifier.tcompat.oxygenated", "Breathe in...", "Using the tool replenishes air by consuming Oxygen.");
         forModifier("modifier.tcompat.void_touched", "All Consuming", "Increased efficiency against end stone blocks.\nApplies a stacking damage multiplier to targets.");
+        forModifier("modifier.tcompat.scorch_thorns", "Burns with the fires of hell!", "Ignites and knocks back attackers.");
+        forModifier("modifier.tcompat.flamed", "Burns with the fires of hell!", "Ignites and knocks back targets.");
+        forModifier("modifier.tcompat.frost_thorns", "Freezes the blood in your veins!", "Freezes attackers.");
+        forModifier("modifier.tcompat.iced", "Freezes the blood in your veins!", "Freezes targets.");
+        forModifier("modifier.tcompat.volt_thorns", "Strikes with the power of the gods!", "Strikes attackers with lightning.");
+        forModifier("modifier.tcompat.lightning", "Strikes with the power of the gods!", "Strikes targets with lightning.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

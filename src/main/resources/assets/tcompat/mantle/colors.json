@@ -32,7 +32,14 @@
     "gale":                   "#9cd9e6",
     "obsidian_breaker":       "#240f44",
     "cinderspine":            "#aa581c",
-    "rubys_fire":             "#6d0404"
+    "rubys_fire":             "#6d0404",
+
+    "flamed":                 "#ff581c",
+    "iced":                   "#5effff",
+    "lightning":              "#974fff",
+    "scorch_thorns":          "#ff581c",
+    "frost_thorns":           "#5effff",
+    "volt_thorns":            "#974fff"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,

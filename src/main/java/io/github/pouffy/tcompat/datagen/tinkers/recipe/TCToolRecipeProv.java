@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -17,7 +18,7 @@ public class TCToolRecipeProv extends TCBaseRecipeProvider implements IMaterialR
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         String folder = "tools/building/";
 
-        toolBuilding(consumer, IFInit.glaive, folder);
+        toolBuilding(consumer, GlobalInit.glaive, folder);
     }
 
     @Override

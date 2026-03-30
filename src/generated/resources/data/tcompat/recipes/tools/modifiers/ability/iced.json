@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "iceandfire:ice_dragon_heart"
+    },
+    {
+      "item": "iceandfire:dragonsteel_ice_ingot"
+    },
+    {
+      "item": "iceandfire:ice_dragon_blood"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:iced",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/ranged"
+    },
+    {
+      "tag": "tconstruct:modifiable/melee/weapon"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
@@ -82,8 +83,11 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TCMaterials.netherRuby, ModifierIds.worldbound);
         addTraits(TCMaterials.netherRuby, HeadMaterialStats.ID, BetternetherInit.obsidianBreaker);
 
-        noTraits(TCMaterials.fireDragonsteel);
-        noTraits(TCMaterials.iceDragonsteel);
-        noTraits(TCMaterials.lightningDragonsteel);
+        addTraits(TCMaterials.fireDragonsteel, RANGED, IFInit.flamed);
+        addTraits(TCMaterials.fireDragonsteel, MELEE_HARVEST, IFInit.flamed);
+        addTraits(TCMaterials.iceDragonsteel, RANGED, IFInit.iced);
+        addTraits(TCMaterials.iceDragonsteel, MELEE_HARVEST, IFInit.iced);
+        addTraits(TCMaterials.lightningDragonsteel, RANGED, IFInit.lightning);
+        addTraits(TCMaterials.lightningDragonsteel, MELEE_HARVEST, IFInit.lightning);
     }
 }

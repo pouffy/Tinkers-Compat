@@ -11,6 +11,7 @@ import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCWoods;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -63,6 +64,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
         Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
         Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
+        Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
         List<MaterialVariantId> noPlanks = List.of(TCMaterials.paloVerde);
 
         // Streamline variant recipes
@@ -93,6 +95,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         gemMaterialRecipe(aetherConsumer, TCMaterials.zanite, folder, "zanite", true, false, true);
         metalMaterialRecipe(aetherConsumer, TCMaterials.lightnum, folder, "lightnum", true);
         metalMaterialRecipe(aetherConsumer, TCMaterials.draculite, folder, "draculite", true);
+
+        metalMaterialRecipe(iceandfire, TCMaterials.fireDragonsteel, folder, "fire_dragonsteel", true);
+        metalMaterialRecipe(iceandfire, TCMaterials.iceDragonsteel, folder, "ice_dragonsteel", true);
+        metalMaterialRecipe(iceandfire, TCMaterials.lightningDragonsteel, folder, "lightning_dragonsteel", true);
 
         gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
         metalMaterialRecipe(deepAetherConsumer, TCMaterials.stormforgedSteel, folder, "stormforged_steel", true);
@@ -129,6 +135,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
         Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
         Consumer<FinishedRecipe> betternether = withCondition(consumer, modLoaded("betternether"));
+        Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
 
         materialMeltingCasting(aetherConsumer, TCMaterials.zanite, AetherInit.moltenZanite, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, AetherInit.moltenGravitite, folder);
@@ -149,6 +156,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
 
         materialMeltingCasting(betternether, TCMaterials.cincinnasite, BetternetherInit.moltenCincinnasite, FluidValues.INGOT, folder);
         materialMeltingCasting(betternether, TCMaterials.netherRuby, BetternetherInit.moltenNetherRuby, FluidValues.GEM, folder);
+
+        materialMeltingCasting(iceandfire, TCMaterials.fireDragonsteel, IFInit.moltenFireDragonsteel, FluidValues.INGOT, folder);
+        materialMeltingCasting(iceandfire, TCMaterials.iceDragonsteel, IFInit.moltenIceDragonsteel, FluidValues.INGOT, folder);
+        materialMeltingCasting(iceandfire, TCMaterials.lightningDragonsteel, IFInit.moltenLightningDragonsteel, FluidValues.INGOT, folder);
 
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, AetherTRInit.moltenValkyrum, FluidValues.INGOT, folder);
         materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, AetherTRInit.moltenPyral, FluidValues.INGOT, folder);
