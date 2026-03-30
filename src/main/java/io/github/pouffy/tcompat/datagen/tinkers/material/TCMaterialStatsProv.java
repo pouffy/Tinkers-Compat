@@ -91,15 +91,15 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
 
         addMaterialStats(TCMaterials.fireDragonsteel,
                 new HeadMaterialStats(1400, 8.0f, NETHERITE, 4.0f),
-                HandleMaterialStats.multipliers().durability(2.7f).miningSpeed(1.5f).attackSpeed(1.6f).attackDamage(1.45f).build(),
+                HandleMaterialStats.multipliers().durability(1.7f).miningSpeed(1.5f).attackSpeed(1.6f).attackDamage(1.45f).build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.iceDragonsteel,
                 new HeadMaterialStats(1250, 11.0f, NETHERITE, 4.3f),
-                HandleMaterialStats.multipliers().durability(2.5f).miningSpeed(1.2f).attackSpeed(1.3f).attackDamage(1.3f).build(),
+                HandleMaterialStats.multipliers().durability(1.5f).miningSpeed(1.2f).attackSpeed(1.3f).attackDamage(1.3f).build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.lightningDragonsteel,
                 new HeadMaterialStats(1600, 7.0f, NETHERITE, 4.8f),
-                HandleMaterialStats.multipliers().durability(2.3f).miningSpeed(1.2f).attackSpeed(1.2f).attackDamage(1.3f).build(),
+                HandleMaterialStats.multipliers().durability(1.3f).miningSpeed(1.2f).attackSpeed(1.2f).attackDamage(1.3f).build(),
                 StatlessMaterialStats.BINDING);
     }
 
