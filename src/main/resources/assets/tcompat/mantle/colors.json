@@ -138,6 +138,10 @@
     "aeternium":              "#697876",
 
     "cincinnasite":           "#ffc461",
-    "nether_ruby":            "#eb4150"
+    "nether_ruby":            "#eb4150",
+
+    "fire_dragonsteel":       "#313445",
+    "ice_dragonsteel":        "#c6e8fb",
+    "lightning_dragonsteel":  "#c800eb"
   }
 }

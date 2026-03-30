@@ -90,16 +90,16 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.draculite, new HeadMaterialStats(2032, 8.0f, DIAMOND, 4.0f));
 
         addMaterialStats(TCMaterials.fireDragonsteel,
-                new HeadMaterialStats(500, 3.0f, NETHERITE, 2.4f),
-                HandleMaterialStats.multipliers().durability(2.5f).attackSpeed(0.75f).build(),
+                new HeadMaterialStats(1400, 8.0f, NETHERITE, 4.0f),
+                HandleMaterialStats.multipliers().durability(2.7f).miningSpeed(1.5f).attackSpeed(1.6f).attackDamage(1.45f).build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.iceDragonsteel,
-                new HeadMaterialStats(500, 3.0f, NETHERITE, 2.4f),
-                HandleMaterialStats.multipliers().durability(2.5f).attackSpeed(0.75f).build(),
+                new HeadMaterialStats(1250, 11.0f, NETHERITE, 4.3f),
+                HandleMaterialStats.multipliers().durability(2.5f).miningSpeed(1.2f).attackSpeed(1.3f).attackDamage(1.3f).build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.lightningDragonsteel,
-                new HeadMaterialStats(500, 3.0f, NETHERITE, 2.4f),
-                HandleMaterialStats.multipliers().durability(2.5f).attackSpeed(0.75f).build(),
+                new HeadMaterialStats(1600, 7.0f, NETHERITE, 4.8f),
+                HandleMaterialStats.multipliers().durability(2.3f).miningSpeed(1.2f).attackSpeed(1.2f).attackDamage(1.3f).build(),
                 StatlessMaterialStats.BINDING);
     }
 
@@ -139,14 +139,14 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
                 new GripMaterialStats(0.15f, 0.1f, 3.1f));
 
         addMaterialStats(TCMaterials.fireDragonsteel,
-                new LimbMaterialStats(400, 0.25f, 0.25f, 0.3f),
-                new GripMaterialStats(2.0f, 0.25f, 2.5f));
+                new LimbMaterialStats(1350, 0.5f, 0.35f, 0.3f),
+                new GripMaterialStats(2.0f, 0.35f, 5.3f));
         addMaterialStats(TCMaterials.iceDragonsteel,
-                new LimbMaterialStats(400, 0.25f, 0.25f, 0.3f),
-                new GripMaterialStats(2.0f, 0.25f, 2.5f));
+                new LimbMaterialStats(1300, 0.7f, 0.4f, 0.45f),
+                new GripMaterialStats(1.3f, 0.2f, 4f));
         addMaterialStats(TCMaterials.lightningDragonsteel,
-                new LimbMaterialStats(400, 0.25f, 0.25f, 0.3f),
-                new GripMaterialStats(2.0f, 0.25f, 2.5f));
+                new LimbMaterialStats(1100, 0.4f, 0.25f, 0.35f),
+                new GripMaterialStats(1.6f, 0.3f, 4.6f));
     }
 
     private void addAmmo() {
