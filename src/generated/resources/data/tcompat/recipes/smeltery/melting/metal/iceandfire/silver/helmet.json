@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:armor_silver_metal_helmet"
+  },
+  "result": {
+    "amount": 450,
+    "tag": "forge:molten_silver"
+  },
+  "temperature": 790,
+  "time": 134
+}

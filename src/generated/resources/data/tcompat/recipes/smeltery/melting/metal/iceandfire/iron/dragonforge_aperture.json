@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "iceandfire:dragonforge_fire_input"
+    },
+    {
+      "item": "iceandfire:dragonforge_ice_input"
+    },
+    {
+      "item": "iceandfire:dragonforge_lightning_input"
+    }
+  ],
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 120
+}

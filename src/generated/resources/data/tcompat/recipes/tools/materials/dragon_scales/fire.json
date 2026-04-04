@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:recipe/fire_dragon_scales"
+  },
+  "material": "tcompat:fire_dragon_scale",
+  "needed": 1,
+  "value": 1
+}

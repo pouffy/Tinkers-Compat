@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "iceandfire:dragonscales_amethyst",
+      "id": "iceandfire:dragonscales_amythest",
       "required": false
     },
     {
@@ -13,7 +13,7 @@
       "required": false
     },
     {
-      "id": "iceandfire:dragonscales_electric_blue",
+      "id": "iceandfire:dragonscales_electric",
       "required": false
     }
   ]

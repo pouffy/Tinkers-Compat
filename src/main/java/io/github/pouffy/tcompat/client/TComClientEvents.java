@@ -13,9 +13,8 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = TCompat.MOD_ID, value = Dist.CLIENT)
 public class TComClientEvents {
 
-
     @SubscribeEvent
-    public void onPostRenderLiving(RenderLivingEvent.Post event) {
+    public static void onPostRenderLiving(RenderLivingEvent.Post event) {
         new FrozenStateRenderer(Compatibility::getFrozenTicks, Compatibility::isFrozen).render(event.getEntity(), event.getPoseStack(), event.getMultiBufferSource(), event.getPackedLight());
     }
 }

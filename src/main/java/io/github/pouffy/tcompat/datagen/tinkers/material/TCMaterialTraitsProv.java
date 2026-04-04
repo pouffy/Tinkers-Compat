@@ -16,6 +16,7 @@ import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
@@ -89,5 +90,9 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addTraits(TCMaterials.iceDragonsteel, MELEE_HARVEST, IFInit.iced);
         addTraits(TCMaterials.lightningDragonsteel, RANGED, IFInit.lightning);
         addTraits(TCMaterials.lightningDragonsteel, MELEE_HARVEST, IFInit.lightning);
+        addTraits(TCMaterials.dragonScaleFire, ARMOR, IFInit.breathless);
+        addTraits(TCMaterials.dragonScaleIce, ARMOR, IFInit.breathless);
+        addTraits(TCMaterials.dragonScaleLightning, ARMOR, IFInit.breathless);
+        addDefaultTraits(TCMaterials.dragonBone, TinkerModifiers.firestarter);
     }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonscales_copper"
+  },
+  "material": "tcompat:lightning_dragon_scale#copper",
+  "needed": 1,
+  "value": 1
+}

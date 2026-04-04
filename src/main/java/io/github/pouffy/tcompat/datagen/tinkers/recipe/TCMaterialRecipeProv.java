@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -22,6 +23,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
+import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -99,6 +101,27 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(iceandfire, TCMaterials.fireDragonsteel, folder, "fire_dragonsteel", true);
         metalMaterialRecipe(iceandfire, TCMaterials.iceDragonsteel, folder, "ice_dragonsteel", true);
         metalMaterialRecipe(iceandfire, TCMaterials.lightningDragonsteel, folder, "lightning_dragonsteel", true);
+        materialRecipe(iceandfire, TCMaterials.dragonScaleFire, Ingredient.of(TCTags.Items.FIRE_DRAGON_SCALES), 1, 1, folder + "dragon_scales/fire");
+        materialRecipe(iceandfire, TCMaterials.dragonScaleIce, Ingredient.of(TCTags.Items.ICE_DRAGON_SCALES), 1, 1, folder + "dragon_scales/ice");
+        materialRecipe(iceandfire, TCMaterials.dragonScaleLightning, Ingredient.of(TCTags.Items.LIGHTNING_DRAGON_SCALES), 1, 1, folder + "dragon_scales/lightning");
+        materialRecipe(iceandfire, TCMaterials.dragonBronze, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_bronze")), 1, 1, folder + "dragon_scales/fire/bronze");
+        materialRecipe(iceandfire, TCMaterials.dragonGreen, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_green")), 1, 1, folder + "dragon_scales/fire/green");
+        materialRecipe(iceandfire, TCMaterials.dragonGray, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_gray")), 1, 1, folder + "dragon_scales/fire/gray");
+        materialRecipe(iceandfire, TCMaterials.dragonRed, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_red")), 1, 1, folder + "dragon_scales/fire/red");
+        materialRecipe(iceandfire, TCMaterials.dragonBlue, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_blue")), 1, 1, folder + "dragon_scales/ice/blue");
+        materialRecipe(iceandfire, TCMaterials.dragonSapphire, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_sapphire")), 1, 1, folder + "dragon_scales/ice/sapphire");
+        materialRecipe(iceandfire, TCMaterials.dragonSilver, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_silver")), 1, 1, folder + "dragon_scales/ice/silver");
+        materialRecipe(iceandfire, TCMaterials.dragonWhite, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_white")), 1, 1, folder + "dragon_scales/ice/white");
+        materialRecipe(iceandfire, TCMaterials.dragonAmethyst, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_amythest")), 1, 1, folder + "dragon_scales/lightning/amethyst");
+        materialRecipe(iceandfire, TCMaterials.dragonBlack, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_black")), 1, 1, folder + "dragon_scales/lightning/black");
+        materialRecipe(iceandfire, TCMaterials.dragonCopper, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_copper")), 1, 1, folder + "dragon_scales/lightning/copper");
+        materialRecipe(iceandfire, TCMaterials.dragonElectric, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_electric")), 1, 1, folder + "dragon_scales/lightning/electric");
+        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonbone")), 1, 1, folder + "dragon_bone/bone");
+        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_fire")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/fire_skull");
+        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_ice")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/ice_skull");
+        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_lightning")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/lightning_skull");
+        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_bone_block")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/block");
+        materialRecipe(iceandfire, MaterialIds.necroticBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:witherbone")), 1, 1, folder + "wither_bone");
 
         gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
         metalMaterialRecipe(deepAetherConsumer, TCMaterials.stormforgedSteel, folder, "stormforged_steel", true);

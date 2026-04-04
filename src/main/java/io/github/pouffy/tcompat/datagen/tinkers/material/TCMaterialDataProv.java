@@ -73,6 +73,10 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.fireDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
         addMaterial(TCMaterials.iceDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
         addMaterial(TCMaterials.lightningDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
+        addMaterial(TCMaterials.dragonBone,   3, ORDER_COMPAT, true, false, iceandfire);
+        addMaterial(TCMaterials.dragonScaleFire, 3, ORDER_COMPAT, true, false, iceandfire);
+        addMaterial(TCMaterials.dragonScaleIce, 3, ORDER_COMPAT, true, false, iceandfire);
+        addMaterial(TCMaterials.dragonScaleLightning, 3, ORDER_COMPAT, true, false, iceandfire);
 
 
         //addMaterial(TCMaterials.zinc, 2, ORDER_HARVEST, false, false, zinc);

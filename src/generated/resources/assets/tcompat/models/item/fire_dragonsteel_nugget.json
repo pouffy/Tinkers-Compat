@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tcompat:item/fire_dragonsteel_nugget"
+  }
+}

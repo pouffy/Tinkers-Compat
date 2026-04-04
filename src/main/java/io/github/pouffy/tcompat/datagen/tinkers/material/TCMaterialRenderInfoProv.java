@@ -51,6 +51,22 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
         buildRenderInfo(TCMaterials.fireDragonsteel).color(0x774153).fallbacks("bone", "metal").luminosity(9);
         buildRenderInfo(TCMaterials.iceDragonsteel).color(0xBAEAEC).fallbacks("bone", "metal").luminosity(9);
         buildRenderInfo(TCMaterials.lightningDragonsteel).color(0x917DD2).fallbacks("bone", "metal").luminosity(9);
+        buildRenderInfo(TCMaterials.dragonBone).color(0xA39F93).fallbacks("bone", "rock");
+        buildRenderInfo(TCMaterials.dragonScaleFire).color(0x700C0C).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonScaleIce).color(0x185084).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonScaleLightning).color(0x232323).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonRed).color(0x700C0C).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonGreen).color(0x40502c).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonBronze).color(0x7b622b).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonAmethyst).color(0x361c59).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonBlack).color(0x232323).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonBlue).color(0xafd1e1).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonCopper).color(0x5a3428).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonElectric).color(0x241c59).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonGray).color(0x4b443f).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonSapphire).color(0x185084).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonSilver).color(0x595c5e).fallbacks("scales", "metal");
+        buildRenderInfo(TCMaterials.dragonWhite).color(0xf1f1f1).fallbacks("scales", "metal");
     }
 
     @Override

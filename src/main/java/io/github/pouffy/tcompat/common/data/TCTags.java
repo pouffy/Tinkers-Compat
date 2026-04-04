@@ -171,6 +171,16 @@ public class TCTags {
         public static TagKey<Item> DRACULITE_INGOTS  = common("ingots/draculite");
         public static TagKey<Item> STORMFORGED_STEEL_INGOTS  = common("ingots/stormforged_steel");
 
+        public static TagKey<Item> FIRE_DRAGONSTEEL_INGOTS  = common("ingots/fire_dragonsteel");
+        public static TagKey<Item> FIRE_DRAGONSTEEL_NUGGETS = common("nuggets/fire_dragonsteel");
+        public static TagKey<Item> FIRE_DRAGONSTEEL_BLOCKS = common("storage_blocks/fire_dragonsteel");
+        public static TagKey<Item> ICE_DRAGONSTEEL_INGOTS  = common("ingots/ice_dragonsteel");
+        public static TagKey<Item> ICE_DRAGONSTEEL_NUGGETS = common("nuggets/ice_dragonsteel");
+        public static TagKey<Item> ICE_DRAGONSTEEL_BLOCKS = common("storage_blocks/ice_dragonsteel");
+        public static TagKey<Item> LIGHTNING_DRAGONSTEEL_INGOTS  = common("ingots/lightning_dragonsteel");
+        public static TagKey<Item> LIGHTNING_DRAGONSTEEL_NUGGETS = common("nuggets/lightning_dragonsteel");
+        public static TagKey<Item> LIGHTNING_DRAGONSTEEL_BLOCKS = common("storage_blocks/lightning_dragonsteel");
+
         public static TagKey<Item> FIRE_DRAGON_SCALES = local("recipe/fire_dragon_scales");
         public static TagKey<Item> ICE_DRAGON_SCALES = local("recipe/ice_dragon_scales");
         public static TagKey<Item> LIGHTNING_DRAGON_SCALES = local("recipe/lightning_dragon_scales");

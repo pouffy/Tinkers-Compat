@@ -31,6 +31,9 @@ public class TCItemModelProv extends ItemModelProvider {
         generated(getResource("draculite_ingot"), "item/draculite_ingot");
         generated(getResource("lightnum_ingot"), "item/lightnum_ingot");
         generated(getResource("stormforged_steel_ingot"), "item/stormforged_steel_ingot");
+        generated(getResource("fire_dragonsteel_nugget"), "item/fire_dragonsteel_nugget");
+        generated(getResource("ice_dragonsteel_nugget"), "item/ice_dragonsteel_nugget");
+        generated(getResource("lightning_dragonsteel_nugget"), "item/lightning_dragonsteel_nugget");
     }
 
     @SuppressWarnings("deprecation") // no its not

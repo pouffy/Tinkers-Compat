@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.compatible.Compatibility;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.module.AutosmeltModule;
@@ -11,10 +12,12 @@ import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegisterEvent;
@@ -35,6 +38,16 @@ public class TCCommonEvents {
                 }
             });
         }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerJoinLevel(EntityJoinLevelEvent event) {
+        Compatibility.get(event.getEntity()).ifPresent(Compatibility::onJoinLevel);
+    }
+
+    @SubscribeEvent
+    public static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+        Compatibility.get(event.getEntity()).ifPresent(Compatibility::onLogin);
     }
 
     @SubscribeEvent

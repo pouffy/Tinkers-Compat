@@ -5,6 +5,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.*;
@@ -101,6 +102,10 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(1600, 7.0f, NETHERITE, 4.8f),
                 HandleMaterialStats.multipliers().durability(1.3f).miningSpeed(1.2f).attackSpeed(1.2f).attackDamage(1.3f).build(),
                 StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.dragonBone,
+                new HeadMaterialStats(200, 2.5f, IRON, 1.2f),
+                HandleMaterialStats.multipliers().durability(1.05f).attackSpeed(1.25f).build(),
+                StatlessMaterialStats.BINDING);
     }
 
     private void addRanged() {
@@ -147,6 +152,9 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.lightningDragonsteel,
                 new LimbMaterialStats(1100, 0.4f, 0.25f, 0.35f),
                 new GripMaterialStats(1.6f, 0.3f, 4.6f));
+        addMaterialStats(TCMaterials.dragonBone,
+                new LimbMaterialStats(200, 0.07f, -0.07f, 0.07f),
+                new GripMaterialStats(1.0f, 0.15f, 1.5f));
     }
 
     private void addAmmo() {
@@ -182,10 +190,15 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
 
         addArmorShieldStats(TCMaterials.cincinnasite, PlatingMaterialStats.builder().durabilityFactor(12).armor(3, 5, 6, 3).toughness(1f).knockbackResistance(0.05f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.netherRuby, PlatingMaterialStats.builder().durabilityFactor(18).armor(3, 5, 7, 3).toughness(1.4f).knockbackResistance(0.2f), StatlessMaterialStats.MAILLE);
+
+        addArmorStats(TCMaterials.dragonScaleFire, PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE);
+        addArmorStats(TCMaterials.dragonScaleIce, PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE);
+        addArmorStats(TCMaterials.dragonScaleLightning, PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE);
     }
 
     private void addMisc() {
         addMaterialStats(TCMaterials.wickedWax, StatlessMaterialStats.BINDING);
+        addMaterialStats(TCMaterials.dragonBone,  new SkullStats(200, 0));
     }
 
     @Override

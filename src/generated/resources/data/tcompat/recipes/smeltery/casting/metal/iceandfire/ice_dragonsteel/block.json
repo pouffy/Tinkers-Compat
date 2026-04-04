@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/ice_dragonsteel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "cooling_time": 208,
+  "fluid": {
+    "amount": 810,
+    "tag": "tcompat:molten_ice_dragonsteel"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/ice_dragonsteel"
+  }
+}

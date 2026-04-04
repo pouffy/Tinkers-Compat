@@ -10,6 +10,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.players.PlayerList;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LightningBolt;
@@ -33,6 +36,9 @@ public class CompatibilityCapability implements Compatibility{
     private boolean isFrozen; //Used for: Ice & Fire Freezing.
     private int frozenTicks; //Used for: Ice & Fire Freezing.
 
+    private boolean shouldSyncAfterJoin;
+    private boolean shouldSyncBetweenClients;
+
     public CompatibilityCapability(Entity entity){
         this.entity = entity;
     }
@@ -43,9 +49,23 @@ public class CompatibilityCapability implements Compatibility{
     }
 
     @Override
-    public void tick() {
+    public void onUpdate() {
+        this.syncAfterJoin();
+        this.syncClients();
         this.handleVampireHealing();
         this.handleFrozen();
+    }
+
+    @Override
+    public void onJoinLevel() {
+        if (this.getEntity().level().isClientSide()) {
+            this.setSynched(Direction.SERVER, "setShouldSyncBetweenClients", true);
+        }
+    }
+
+    @Override
+    public void onLogin() {
+        this.shouldSyncAfterJoin = true;
     }
 
     //Only for Living Entities
@@ -80,9 +100,9 @@ public class CompatibilityCapability implements Compatibility{
     }
 
     public void freeze(int ticks) {
-        if (!this.isFrozen) getEntity().playSound(SoundEvents.GLASS_PLACE, 1.0F, 1.0F);
-        this.setFrozen(true);
-        this.setFrozenTicks(ticks);
+        if (!isFrozen()) getEntity().playSound(SoundEvents.GLASS_PLACE, 1.0F, 1.0F);
+        this.setSynched(Direction.CLIENT, "setFrozenTicks", ticks);
+        this.setSynched(Direction.CLIENT, "setFrozen", true);
     }
 
     public void unfreeze() {
@@ -94,8 +114,8 @@ public class CompatibilityCapability implements Compatibility{
             }
         }
         getEntity().playSound(SoundEvents.GLASS_BREAK, 3.0F, 1.0F);
-        this.setFrozen(false);
-        this.setFrozenTicks(0);
+        this.setSynched(Direction.CLIENT, "setFrozen", false);
+        this.setSynched(Direction.CLIENT, "setFrozenTicks", 0);
     }
 
     @Override
@@ -137,7 +157,7 @@ public class CompatibilityCapability implements Compatibility{
                 this.unfreeze();
             } else {
                 if (this.getFrozenTicks() > 0) {
-                    setFrozenTicks(this.getFrozenTicks() - 1);
+                    this.setFrozenTicks(this.getFrozenTicks() - 1);
                 } else {
                     this.unfreeze();
                 }
@@ -159,7 +179,8 @@ public class CompatibilityCapability implements Compatibility{
 
     private final Map<String, Triple<Type, Consumer<Object>, Supplier<Object>>> synchableFunctions = Map.ofEntries(
             Map.entry("setFrozen", Triple.of(Type.BOOLEAN, (object) -> this.setFrozen((boolean) object), this::isFrozen)),
-            Map.entry("setFrozenTicks", Triple.of(Type.INT, (object) -> this.setFrozenTicks((int) object), this::getFrozenTicks))
+            Map.entry("setFrozenTicks", Triple.of(Type.INT, (object) -> this.setFrozenTicks((int) object), this::getFrozenTicks)),
+            Map.entry("setShouldSyncBetweenClients", Triple.of(Type.BOOLEAN, (object) -> this.setShouldSyncBetweenClients((boolean) object), this::shouldSyncBetweenClients))
     );
 
     @Override
@@ -175,6 +196,42 @@ public class CompatibilityCapability implements Compatibility{
     @Override
     public SimpleChannel getPacketChannel() {
         return TCompatNetworking.INSTANCE;
+    }
+
+    private void syncAfterJoin() {
+        if (this.shouldSyncAfterJoin) {
+            this.forceSync(Direction.CLIENT);
+            this.shouldSyncAfterJoin = false;
+        }
+    }
+
+    private void syncClients() {
+        if (this.shouldSyncBetweenClients()) {
+            if (!this.getEntity().level().isClientSide()) {
+                MinecraftServer server = this.getEntity().getServer();
+                if (server != null) {
+                    PlayerList playerList = server.getPlayerList();
+                    for (ServerPlayer serverPlayer : playerList.getPlayers()) {
+                        if (!serverPlayer.getUUID().equals(this.getEntity().getUUID())) {
+                            Compatibility.get(serverPlayer).ifPresent(compat -> {
+                                if (compat instanceof CompatibilityCapability capability) {
+                                    capability.forceSync(Direction.CLIENT);
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+            this.setShouldSyncBetweenClients(false);
+        }
+    }
+
+    private boolean shouldSyncBetweenClients() {
+        return this.shouldSyncBetweenClients;
+    }
+
+    private void setShouldSyncBetweenClients(boolean shouldSyncBetweenClients) {
+        this.shouldSyncBetweenClients = shouldSyncBetweenClients;
     }
 
     @Override
@@ -193,7 +250,11 @@ public class CompatibilityCapability implements Compatibility{
         if (tag.contains("LightningOwner")) {
             this.setLightningOwner(this.getEntity().level().getEntity(tag.getInt("Owner")));
         }
-        this.setFrozen(tag.getBoolean("isFrozen"));
-        this.setFrozenTicks(tag.getInt("frozenTicks"));
+        if (tag.contains("frozenTicks")) {
+            this.setFrozenTicks(tag.getInt("frozenTicks"));
+        }
+        if (tag.contains("isFrozen")) {
+            this.setFrozen(tag.getBoolean("isFrozen"));
+        }
     }
 }

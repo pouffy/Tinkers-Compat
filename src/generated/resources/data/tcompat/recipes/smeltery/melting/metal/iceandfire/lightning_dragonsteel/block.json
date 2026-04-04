@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/lightning_dragonsteel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/lightning_dragonsteel"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tcompat:molten_lightning_dragonsteel"
+  },
+  "temperature": 1100,
+  "time": 208
+}

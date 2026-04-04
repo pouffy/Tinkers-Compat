@@ -186,6 +186,16 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.LIGHTNUM_INGOTS).addOptional(getResource("tcompat", "lightnum_ingot"));
         this.tag(TCTags.Items.DRACULITE_INGOTS).addOptional(getResource("tcompat", "draculite_ingot"));
         this.tag(TCTags.Items.STORMFORGED_STEEL_INGOTS).addOptional(getResource("tcompat", "stormforged_steel_ingot"));
+
+        this.tag(TCTags.Items.FIRE_DRAGONSTEEL_INGOTS).addOptional(getResource("iceandfire", "dragonsteel_fire_ingot"));
+        this.tag(TCTags.Items.FIRE_DRAGONSTEEL_NUGGETS).addOptional(getResource("tcompat", "fire_dragonsteel_nugget"));
+        this.tag(TCTags.Items.FIRE_DRAGONSTEEL_BLOCKS).addOptional(getResource("iceandfire", "dragonsteel_fire_block"));
+        this.tag(TCTags.Items.ICE_DRAGONSTEEL_INGOTS).addOptional(getResource("iceandfire", "dragonsteel_ice_ingot"));
+        this.tag(TCTags.Items.ICE_DRAGONSTEEL_NUGGETS).addOptional(getResource("tcompat", "ice_dragonsteel_nugget"));
+        this.tag(TCTags.Items.ICE_DRAGONSTEEL_BLOCKS).addOptional(getResource("iceandfire", "dragonsteel_ice_block"));
+        this.tag(TCTags.Items.LIGHTNING_DRAGONSTEEL_INGOTS).addOptional(getResource("iceandfire", "dragonsteel_lightning_ingot"));
+        this.tag(TCTags.Items.LIGHTNING_DRAGONSTEEL_NUGGETS).addOptional(getResource("tcompat", "lightning_dragonsteel_nugget"));
+        this.tag(TCTags.Items.LIGHTNING_DRAGONSTEEL_BLOCKS).addOptional(getResource("iceandfire", "dragonsteel_lightning_block"));
     }
 
     private void addMetals() {

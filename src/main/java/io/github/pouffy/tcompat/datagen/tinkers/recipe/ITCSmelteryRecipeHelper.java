@@ -391,17 +391,27 @@ public interface ITCSmelteryRecipeHelper extends ICastCreationHelper {
     }
 
     default void salvageArmor(Consumer<FinishedRecipe> consumer, Function<String, ResourceLocation> idFunc, FluidObject<?> fluid, int singularUnit, String name, int[] damageSizes, String folder) {
-        simpleSalvaging(consumer, idFunc, fluid, singularUnit, name, SalvageType.HELMET, damageSizes, folder);
-        simpleSalvaging(consumer, idFunc, fluid, singularUnit, name, SalvageType.CHESTPLATE, damageSizes, folder);
-        simpleSalvaging(consumer, idFunc, fluid, singularUnit, name, SalvageType.LEGGINGS, damageSizes, folder);
-        simpleSalvaging(consumer, idFunc, fluid, singularUnit, name, SalvageType.BOOTS, damageSizes, folder);
+        for (SalvageType salvage : SalvageType.armor()) {
+            simpleSalvaging(consumer, idFunc, fluid, singularUnit, name, salvage, damageSizes, folder);
+        }
     }
 
     default void salvageArmor(Consumer<FinishedRecipe> consumer, Function<String, ResourceLocation> idFunc, FluidObject<?> fluid, FluidObject<?> byproductFluid, int singularUnit, String name, int[] damageSizes, String folder) {
-        simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, SalvageType.HELMET, damageSizes, folder);
-        simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, SalvageType.CHESTPLATE, damageSizes, folder);
-        simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, SalvageType.LEGGINGS, damageSizes, folder);
-        simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, SalvageType.BOOTS, damageSizes, folder);
+        for (SalvageType salvage : SalvageType.armor()) {
+            simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, salvage, damageSizes, folder);
+        }
+    }
+
+    default void salvageTools(Consumer<FinishedRecipe> consumer, Function<String, ResourceLocation> idFunc, FluidObject<?> fluid, int singularUnit, String name, int[] damageSizes, String folder) {
+        for (SalvageType salvage : SalvageType.tools()) {
+            simpleSalvaging(consumer, idFunc, fluid, singularUnit, name, salvage, damageSizes, folder);
+        }
+    }
+
+    default void salvageTools(Consumer<FinishedRecipe> consumer, Function<String, ResourceLocation> idFunc, FluidObject<?> fluid, FluidObject<?> byproductFluid, int singularUnit, String name, int[] damageSizes, String folder) {
+        for (SalvageType salvage : SalvageType.tools()) {
+            simpleSalvaging(consumer, idFunc, fluid, byproductFluid, singularUnit, name, salvage, damageSizes, folder);
+        }
     }
 
     enum SalvageType {
@@ -436,6 +446,13 @@ public interface ITCSmelteryRecipeHelper extends ICastCreationHelper {
         SalvageType(int salvageAmount, String... types) {
             this.salvageAmount = salvageAmount;
             this.types = Arrays.asList(types);
+        }
+
+        public static SalvageType[] tools() {
+            return new SalvageType[]{AXES, WEAPON, SHOVEL};
+        }
+        public static SalvageType[] armor() {
+            return new SalvageType[]{HELMET, CHESTPLATE, LEGGINGS, BOOTS};
         }
 
         public String recipeSuffix() {

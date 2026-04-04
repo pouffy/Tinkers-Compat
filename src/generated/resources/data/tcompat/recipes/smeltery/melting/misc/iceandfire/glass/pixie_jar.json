@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "iceandfire:pixie_jar_empty"
+    },
+    {
+      "item": "iceandfire:pixie_jar_0"
+    },
+    {
+      "item": "iceandfire:pixie_jar_1"
+    },
+    {
+      "item": "iceandfire:pixie_jar_2"
+    },
+    {
+      "item": "iceandfire:pixie_jar_3"
+    },
+    {
+      "item": "iceandfire:pixie_jar_4"
+    }
+  ],
+  "result": {
+    "amount": 7000,
+    "fluid": "tconstruct:molten_glass"
+  },
+  "temperature": 750,
+  "time": 516
+}

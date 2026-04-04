@@ -47,6 +47,10 @@ public class TCMaterials {
     public static final MaterialId fireDragonsteel = id("fire_dragonsteel");
     public static final MaterialId iceDragonsteel = id( "ice_dragonsteel");
     public static final MaterialId lightningDragonsteel = id( "lightning_dragonsteel");
+    public static final MaterialId dragonBone = id("dragon_bone");
+    public static final MaterialId dragonScaleFire = id("fire_dragon_scale");
+    public static final MaterialId dragonScaleIce = id("ice_dragon_scale");
+    public static final MaterialId dragonScaleLightning = id("lightning_dragon_scale");
 
     // Special Craftable Materials
     public static final MaterialId blightbunnyFang = id("blightbunny_fang");
@@ -60,7 +64,23 @@ public class TCMaterials {
     //public static final MaterialId brass = id("brass");
     //public static final MaterialId zinc = id("zinc");
 
-    // Variants
+    public static final MaterialVariantId
+            dragonBronze = variant(dragonScaleFire, "bronze"),
+            dragonGreen = variant(dragonScaleFire, "green"),
+            dragonGray = variant(dragonScaleFire, "gray"),
+            dragonRed = variant(dragonScaleFire, "red");
+    public static final MaterialVariantId
+            dragonBlue = variant(dragonScaleIce, "blue"),
+            dragonSapphire = variant(dragonScaleIce, "sapphire"),
+            dragonSilver = variant(dragonScaleIce, "silver"),
+            dragonWhite = variant(dragonScaleIce, "white");
+    public static final MaterialVariantId
+            dragonAmethyst = variant(dragonScaleLightning, "amethyst"),
+            dragonBlack = variant(dragonScaleLightning, "black"),
+            dragonCopper = variant(dragonScaleLightning, "copper"),
+            dragonElectric = variant(dragonScaleLightning, "electric");
+
+    // Wood/Stone Variants
     public static final MaterialVariantId
         // Wood
             // Aether
@@ -222,6 +242,13 @@ public class TCMaterials {
         rockVariants.put(id, rockType);
         allVariants.add(id);
         translationKeys.add("material.%s.%s.%s".formatted("tconstruct", "whitestone", rockType.getSerializedName()));
+        return id;
+    }
+
+    private static MaterialVariantId variant(MaterialId parent, String name) {
+        MaterialVariantId id = MaterialVariantId.create(parent, name);
+        allVariants.add(id);
+        translationKeys.add("material.%s.%s.%s".formatted(parent.getNamespace(), parent.getPath(), name));
         return id;
     }
 

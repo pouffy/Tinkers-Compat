@@ -35,7 +35,11 @@ public class TCLangProv extends LanguageProvider {
 
     private void materials() {
         TCMaterials.translationKeys.forEach((key) -> {
-            if (key.contains("material.tconstruct.wood")) {
+            if (key.contains("_dragon_scale.")) {
+                String[] parts = key.split("\\.");
+                String toTranslate = parts[parts.length - 1];
+                this.add(key, "%s".formatted(toEnglishName(toTranslate)) + " Dragon Scale");
+            } else if (key.contains("material.tconstruct.wood")) {
                 String[] parts = key.split("\\.");
                 String toTranslate = parts[parts.length - 1];
                 this.add(key, "%s".formatted(toEnglishName(toTranslate)) + " Wood");
@@ -50,6 +54,10 @@ public class TCLangProv extends LanguageProvider {
         toEng("item.tcompat.lightnum_ingot");
         toEng("item.tcompat.draculite_ingot");
         toEng("item.tcompat.stormforged_steel_ingot");
+        toEng("item.tcompat.fire_dragonsteel_nugget");
+        toEng("item.tcompat.ice_dragonsteel_nugget");
+        toEng("item.tcompat.lightning_dragonsteel_nugget");
+        add("item.tconstruct.slime_helmet.material.tcompat.dragon_bone", "Dragon Slimeskull");
     }
 
     private void fluids() {
@@ -120,6 +128,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.iced", "Freezes the blood in your veins!", "Freezes targets.");
         forModifier("modifier.tcompat.volt_thorns", "Strikes with the power of the gods!", "Strikes attackers with lightning.");
         forModifier("modifier.tcompat.lightning", "Strikes with the power of the gods!", "Strikes targets with lightning.");
+        forModifier("modifier.tcompat.breathless", "Really takes your breath away", "Increased protection from dragon breath attacks.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

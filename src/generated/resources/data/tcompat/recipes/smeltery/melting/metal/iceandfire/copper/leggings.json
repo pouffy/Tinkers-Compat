@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:armor_copper_metal_leggings"
+  },
+  "result": {
+    "amount": 630,
+    "tag": "forge:molten_copper"
+  },
+  "temperature": 500,
+  "time": 132
+}

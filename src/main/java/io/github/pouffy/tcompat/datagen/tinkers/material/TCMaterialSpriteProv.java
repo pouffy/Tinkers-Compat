@@ -195,6 +195,22 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildGeneric(TCMaterials.cincinnasite,      0xFF9b6607, 0xFFd88a0a, 0xFFf0a31d, 0xFFffc461, 0xFFffd58e, 0xFFfff0d5, addStats(HandleMaterialStats.ID), "metal").armor().meleeHarvest().ranged();
         buildGeneric(TCMaterials.netherRuby,        0xFF4c000b, 0xFF6a000f, 0xFFce1425, 0xFFeb4150, 0xFFf0747f, 0xFFf8c0c5, addStats(HandleMaterialStats.ID), "gem", "metal").armor().meleeHarvest().ranged();
 
+        buildGeneric(TCMaterials.dragonScaleFire,     0xFF301511, 0xFF3e1d18, 0xFF532f2a, 0xFF82522e, 0xFF996944, 0xFFb78d6e, addStats(), "scales", "metal").armor();
+        buildGeneric(TCMaterials.dragonScaleLightning,0xFF090909, 0xFF151515, 0xFF292929, 0xFF2f2f2f, 0xFF484848, 0xFF636363, addStats(), "scales", "metal").armor();
+        buildGeneric(TCMaterials.dragonScaleIce,      0xFF002970, 0xFF06279e, 0xFF123ece, 0xFF246fe8, 0xFF5c99e8, 0xFF92d1e8, addStats(), "scales", "metal").armor();
+        buildScales(TCMaterials.dragonBronze,         0xFF301511, 0xFF3e1d18, 0xFF532f2a, 0xFF82522e, 0xFF996944, 0xFFb78d6e);
+        buildScales(TCMaterials.dragonGreen,          0xFF1f1d1c, 0xFF222c1a, 0xFF2d3526, 0xFF4d7c3f, 0xFF5a914a, 0xFF5caa5e);
+        buildScales(TCMaterials.dragonGray,           0xFF202121, 0xFF383838, 0xFF454545, 0xFF5d5356, 0xFF686162, 0xFF787474);
+        buildScales(TCMaterials.dragonRed,            0xFF280d19, 0xFF391127, 0xFF4e2039, 0xFF891e3d, 0xFFb23743, 0xFFc94a57);
+        buildScales(TCMaterials.dragonBlue,           0xFF2f6584, 0xFF3b7ea5, 0xFF4ba1c6, 0xFF7cdeef, 0xFFa9f1fc, 0xFFe2fffd);
+        buildScales(TCMaterials.dragonSapphire,       0xFF002970, 0xFF06279e, 0xFF123ece, 0xFF246fe8, 0xFF5c99e8, 0xFF92d1e8);
+        buildScales(TCMaterials.dragonSilver,         0xFF4c596d, 0xFF5e6b7a, 0xFF7e8fa0, 0xFFa8b9c1, 0xFFccd5dd, 0xFFeaf3ff);
+        buildScales(TCMaterials.dragonWhite,          0xFF797e7f, 0xFF949b9d, 0xFFa4b2b5, 0xFFc6dbdd, 0xFFe0eaee, 0xFFf6f9fa);
+        buildScales(TCMaterials.dragonAmethyst,       0xFF1f1628, 0xFF251e33, 0xFF2b2247, 0xFF4f346d, 0xFF7a3991, 0xFFa16097);
+        buildScales(TCMaterials.dragonBlack,          0xFF090909, 0xFF151515, 0xFF292929, 0xFF2f2f2f, 0xFF484848, 0xFF636363);
+        buildScales(TCMaterials.dragonCopper,         0xFF351923, 0xFF481d28, 0xFF572a23, 0xFF79402c, 0xFFa05e2f, 0xFFd3824c);
+        buildScales(TCMaterials.dragonElectric,       0xFF14143d, 0xFF1a1e51, 0xFF292989, 0xFF4643e8, 0xFF7068e8, 0xFF9691ff);
+
         buildMaterial(TCMaterials.valkyrum)
                 .armor().meleeHarvest()
                 .transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0));
@@ -274,6 +290,17 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
                 .build());
     }
 
+    private MaterialSpriteInfoBuilder buildScales(MaterialVariantId material, int c63, int c102, int c140, int c178, int c216, int c255) {
+        return buildScales(material).colorMapper(GreyToColorMapping.builderFromBlack()
+                .addARGB(63, c63)
+                .addARGB(102, c102)
+                .addARGB(140, c140)
+                .addARGB(178, c178)
+                .addARGB(216, c216)
+                .addARGB(255, c255)
+                .build());
+    }
+
     private MaterialSpriteInfoBuilder buildBindingOnly(MaterialId material, int c63, int c102, int c140, int c178, int c216, int c255, boolean bowstring, String... fallbacks) {
         Collection<MaterialStatsId> stats = new ArrayList<>(List.of(StatlessMaterialStats.BINDING.getIdentifier()));
         if (bowstring) stats.add(StatlessMaterialStats.BOWSTRING.getIdentifier());
@@ -322,6 +349,10 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
 
     private MaterialSpriteInfoBuilder buildRock(MaterialVariantId material) {
         return buildBlankVariant(material, "rock").meleeHarvest().variant();
+    }
+
+    private MaterialSpriteInfoBuilder buildScales(MaterialVariantId material) {
+        return buildBlankVariant(material, "scales", "metal").armor().variant();
     }
 
     private MaterialSpriteInfoBuilder buildBlankVariant(MaterialVariantId materialVariant, String... fallbacks) {

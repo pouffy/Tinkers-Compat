@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragon_skull_lightning"
+  },
+  "leftover": "iceandfire:dragon_bone",
+  "material": "tcompat:dragon_bone",
+  "needed": 1,
+  "value": 4
+}

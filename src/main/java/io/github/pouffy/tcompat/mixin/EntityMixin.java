@@ -18,6 +18,6 @@ public abstract class EntityMixin extends CapabilityProvider<Entity> {
 
     @Inject(method = "tick()V", at = @At("HEAD"))
     private void tick(CallbackInfo ci) {
-        getCapability(TCompatCapabilities.COMPATIBILITY_CAPABILITY).ifPresent(Compatibility::tick);
+        getCapability(TCompatCapabilities.COMPATIBILITY_CAPABILITY).ifPresent(Compatibility::onUpdate);
     }
 }

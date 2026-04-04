@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.mixin;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.world.item.CreativeModeTab;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -20,7 +21,8 @@ public class TinkerCommonTabMixin {
     @Unique
     private static final Map<String, BiConsumer<CreativeModeTab.ItemDisplayParameters, CreativeModeTab.Output>> tcompat$items = Map.of(
             "aether", AetherInit::addCommonTabItems,
-            "deep_aether", DeepAetherInit::addCommonTabItems
+            "deep_aether", DeepAetherInit::addCommonTabItems,
+            "iceandfire", IFInit::addCommonTabItems
     );
 
     @Inject(method = "addTabItems(Lnet/minecraft/world/item/CreativeModeTab$ItemDisplayParameters;Lnet/minecraft/world/item/CreativeModeTab$Output;)V", at = @At("TAIL"), remap = false)

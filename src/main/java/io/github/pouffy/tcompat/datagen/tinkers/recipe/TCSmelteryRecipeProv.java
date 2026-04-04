@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -62,6 +63,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         adAstra(consumer, folder);
         betterEnd(consumer, folder);
         betterNether(consumer, folder);
+        iceFire(consumer, folder);
     }
 
     private void aether(Consumer<FinishedRecipe> consumer, String folder) {
@@ -676,6 +678,55 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
                     .setCast(ItemNameIngredient.from(betternetherId.apply("quartz_glass_pane_" + colorName)), true)
                     .save(betternetherConsumer, location(metalFolder.apply("casting") + "/cincinnasite/framed_glass/pane_" + colorName));
         }
+    }
+
+    private void iceFire(Consumer<FinishedRecipe> consumer, String folder) {
+        String iceandfire = "iceandfire";
+        Function<String, ResourceLocation> iceandfireId = name -> getResource(iceandfire, name);
+        Function<String, TagKey<Item>> iceandfireTag = name -> TagKey.create(Registries.ITEM, getResource(iceandfire, name));
+        Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, new ModLoadedCondition(iceandfire));
+
+        Function<String, String> iceandfireFolderFunction = name -> name.formatted(iceandfire);
+        Function<String, String> alloyFolder = type -> iceandfireFolderFunction.apply("smeltery/alloys/%s/" + type);
+        Function<String, String> metalFolder = type -> iceandfireFolderFunction.apply("smeltery/" + type + "/metal/%s/");
+        Function<String, String> gemFolder = type -> iceandfireFolderFunction.apply("smeltery/" + type + "/gem/%s/");
+        Function<String, String> miscFolder = type -> iceandfireFolderFunction.apply("smeltery/" + type + "/misc/%s/");
+
+        Function<List<String>, Ingredient> listedInput = inputs -> {
+            List<ResourceLocation> list = new ArrayList<>();
+            for (String s : inputs) {
+                list.add(iceandfireId.apply(s));
+            }
+            return ItemNameIngredient.from(list);
+        };
+
+        metal(iceandfireConsumer, IFInit.moltenFireDragonsteel, iceandfire).metal(9, true).optional();
+        metal(iceandfireConsumer, IFInit.moltenIceDragonsteel, iceandfire).metal(9, true).optional();
+        metal(iceandfireConsumer, IFInit.moltenLightningDragonsteel, iceandfire).metal(9, true).optional();
+
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenIron, FluidValues.INGOT * 4, "iron", listedInput.apply(List.of(
+                "dragonforge_fire_input",
+                "dragonforge_ice_input",
+                "dragonforge_lightning_input"
+        )), metalFolder.apply("melting"), "dragonforge_aperture");
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenGlass, FluidValues.GLASS_BLOCK * 7, "glass", listedInput.apply(List.of(
+                "pixie_jar_empty",
+                "pixie_jar_0",
+                "pixie_jar_1",
+                "pixie_jar_2",
+                "pixie_jar_3",
+                "pixie_jar_4"
+        )), miscFolder.apply("melting"), "pixie_jar");
+        salvageTools(iceandfireConsumer, iceandfireId, TinkerFluids.moltenSilver, FluidValues.INGOT, "silver", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+        salvageTools(iceandfireConsumer, iceandfireId, TinkerFluids.moltenCopper, FluidValues.INGOT, "copper", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder.apply("melting"));
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenSilver, FluidValues.INGOT * 5, "silver", ItemNameIngredient.from(getResource("iceandfire:armor_silver_metal_helmet")), metalFolder.apply("melting"), "helmet");
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenSilver, FluidValues.INGOT * 8, "silver", ItemNameIngredient.from(getResource("iceandfire:armor_silver_metal_chestplate")), metalFolder.apply("melting"), "chestplate");
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenSilver, FluidValues.INGOT * 7, "silver", ItemNameIngredient.from(getResource("iceandfire:armor_silver_metal_leggings")), metalFolder.apply("melting"), "leggings");
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenSilver, FluidValues.INGOT * 4, "silver", ItemNameIngredient.from(getResource("iceandfire:armor_silver_metal_boots")), metalFolder.apply("melting"), "boots");
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 5, "copper", ItemNameIngredient.from(getResource("iceandfire:armor_copper_metal_helmet")), metalFolder.apply("melting"), "helmet");
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 8, "copper", ItemNameIngredient.from(getResource("iceandfire:armor_copper_metal_chestplate")), metalFolder.apply("melting"), "chestplate");
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 7, "copper", ItemNameIngredient.from(getResource("iceandfire:armor_copper_metal_leggings")), metalFolder.apply("melting"), "leggings");
+        simpleMelting(iceandfireConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 4, "copper", ItemNameIngredient.from(getResource("iceandfire:armor_copper_metal_boots")), metalFolder.apply("melting"), "boots");
     }
 
     public TCSmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {
