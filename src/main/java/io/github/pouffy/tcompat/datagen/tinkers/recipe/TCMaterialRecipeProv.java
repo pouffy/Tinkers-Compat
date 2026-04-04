@@ -101,9 +101,6 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(iceandfire, TCMaterials.fireDragonsteel, folder, "fire_dragonsteel", true);
         metalMaterialRecipe(iceandfire, TCMaterials.iceDragonsteel, folder, "ice_dragonsteel", true);
         metalMaterialRecipe(iceandfire, TCMaterials.lightningDragonsteel, folder, "lightning_dragonsteel", true);
-        materialRecipe(iceandfire, TCMaterials.dragonScaleFire, Ingredient.of(TCTags.Items.FIRE_DRAGON_SCALES), 1, 1, folder + "dragon_scales/fire");
-        materialRecipe(iceandfire, TCMaterials.dragonScaleIce, Ingredient.of(TCTags.Items.ICE_DRAGON_SCALES), 1, 1, folder + "dragon_scales/ice");
-        materialRecipe(iceandfire, TCMaterials.dragonScaleLightning, Ingredient.of(TCTags.Items.LIGHTNING_DRAGON_SCALES), 1, 1, folder + "dragon_scales/lightning");
         materialRecipe(iceandfire, TCMaterials.dragonBronze, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_bronze")), 1, 1, folder + "dragon_scales/fire/bronze");
         materialRecipe(iceandfire, TCMaterials.dragonGreen, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_green")), 1, 1, folder + "dragon_scales/fire/green");
         materialRecipe(iceandfire, TCMaterials.dragonGray, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_gray")), 1, 1, folder + "dragon_scales/fire/gray");

@@ -727,6 +727,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         simpleMelting(iceandfireConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 8, "copper", ItemNameIngredient.from(getResource("iceandfire:armor_copper_metal_chestplate")), metalFolder.apply("melting"), "chestplate");
         simpleMelting(iceandfireConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 7, "copper", ItemNameIngredient.from(getResource("iceandfire:armor_copper_metal_leggings")), metalFolder.apply("melting"), "leggings");
         simpleMelting(iceandfireConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 4, "copper", ItemNameIngredient.from(getResource("iceandfire:armor_copper_metal_boots")), metalFolder.apply("melting"), "boots");
+        //TODO: Add the rest of the melting recipes
     }
 
     public TCSmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, String modId) {
