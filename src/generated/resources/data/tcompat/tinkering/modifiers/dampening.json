@@ -1,0 +1,37 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "iceandfire"
+  },
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 3.5,
+      "percent": false,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "tcompat:mythical"
+      }
+    },
+    {
+      "type": "tconstruct:mob_effect",
+      "chance": {
+        "flat": 1.0
+      },
+      "effect": "minecraft:weakness",
+      "level": {
+        "flat": 4.0
+      },
+      "target": {
+        "type": "mantle:tag",
+        "tag": "tcompat:mythical"
+      },
+      "time": {
+        "flat": 20.0,
+        "random": 10.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

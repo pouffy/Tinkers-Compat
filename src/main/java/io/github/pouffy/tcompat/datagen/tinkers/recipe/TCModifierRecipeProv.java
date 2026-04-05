@@ -23,16 +23,27 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
+import slimeknights.mantle.recipe.data.ItemNameOutput;
+import slimeknights.mantle.recipe.helper.ItemOutput;
+import slimeknights.mantle.recipe.ingredient.SizedIngredient;
+import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
+import slimeknights.tconstruct.library.recipe.modifiers.ModifierSalvage;
+import slimeknights.tconstruct.library.recipe.modifiers.adding.IncrementalModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipe;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.partbuilder.Pattern;
+import slimeknights.tconstruct.library.recipe.partbuilder.recycle.PartBuilderRecycleBuilder;
 import slimeknights.tconstruct.library.tools.SlotType;
+import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.tables.TinkerTables;
 import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -203,10 +214,70 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .saveSalvage(iceandfireConsumer, prefix(IFInit.voltThorns, abilitySalvage))
                 .save(iceandfireConsumer, prefix(IFInit.voltThorns, abilityFolder));
 
+        IncrementalModifierRecipeBuilder.modifier(TCModifiers.dreadbane)
+                .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
+                .setInput(ItemNameIngredient.from(iceandfireId.apply("dread_shard")), 1, 25)
+                .setMaxLevel(5).checkTraitLevel()
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(iceandfireConsumer, prefix(TCModifiers.dreadbane, abilitySalvage))
+                .save(iceandfireConsumer, prefix(TCModifiers.dreadbane, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(TCModifiers.dampening)
+                .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
+                .addInput(ItemTags.create(getResource("forge", "gems/sapphire")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("dragonbone")))
+                .addInput(ItemTags.create(getResource("forge", "gems/sapphire")))
+                .addInput(ItemTags.create(getResource("forge", "ingots/silver")))
+                .addInput(ItemTags.create(getResource("forge", "ingots/silver")))
+                .setMaxLevel(1)
+                .setSlots(SlotType.ABILITY, 1)
+                .allowCrystal()
+                .save(consumer, wrap(TCModifiers.dampening, abilityFolder, "_level_1"));
+        ModifierRecipeBuilder.modifier(TCModifiers.dampening)
+                .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
+                .addInput(ItemTags.create(getResource("forge", "gems/sapphire")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("manuscript")))
+                .addInput(ItemTags.create(getResource("forge", "gems/sapphire")))
+                .addInput(ItemTags.create(getResource("forge", "storage_blocks/silver")))
+                .addInput(ItemTags.create(getResource("forge", "storage_blocks/silver")))
+                .disallowCrystal() // would allow a cost cheese
+                .exactLevel(2)
+                .save(consumer, wrap(TCModifiers.dampening, abilityFolder, "_level_2"));
+        ModifierRecipeBuilder.modifier(TCModifiers.dampening)
+                .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
+                .addInput(ItemTags.create(getResource("forge", "storage_blocks/sapphire")))
+                .addInput(ItemNameIngredient.from(iceandfireId.apply("sea_serpent_fang")))
+                .addInput(ItemTags.create(getResource("forge", "storage_blocks/sapphire")))
+                .addInput(ItemTags.create(getResource("forge", "storage_blocks/silver")))
+                .addInput(ItemTags.create(getResource("forge", "storage_blocks/silver")))
+                .disallowCrystal() // would allow a cost cheese
+                .exactLevel(3)
+                .save(consumer, wrap(TCModifiers.dampening, abilityFolder, "_level_3"));
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_block"));
+
+        String recycleFolder = "tables/recycling/";
+        var scales = List.of("red","bronze","green","gray","blue","white","sapphire","silver","electric","amythest","copper","black");
+        Pattern leather = new Pattern(TConstruct.MOD_ID, "maille");
+        scales.forEach(colour -> {
+            Function<Integer, ItemOutput> scale = (count) -> ItemNameOutput.fromName(iceandfireId.apply("dragonscales_%s".formatted(colour)), count);
+            PartBuilderRecycleBuilder.tool(ItemNameIngredient.from(iceandfireId.apply("armor_%s_helmet".formatted(colour))))
+                    .result(leather, scale.apply(5))
+                    .save(consumer, location(recycleFolder + colour + "_dragon_scale_helmet"));
+            PartBuilderRecycleBuilder.tool(ItemNameIngredient.from(iceandfireId.apply("armor_%s_chestplate".formatted(colour))))
+                    .result(leather, scale.apply(8))
+                    .save(consumer, location(recycleFolder + colour + "_dragon_scale_chestplate"));
+            PartBuilderRecycleBuilder.tool(ItemNameIngredient.from(iceandfireId.apply("armor_%s_leggings".formatted(colour))))
+                    .result(leather, scale.apply(7))
+                    .save(consumer, location(recycleFolder + colour + "_dragon_scale_leggings"));
+            PartBuilderRecycleBuilder.tool(ItemNameIngredient.from(iceandfireId.apply("armor_%s_boots".formatted(colour))))
+                    .result(leather, scale.apply(4))
+                    .save(consumer, location(recycleFolder + colour + "_dragon_scale_boots"));
+        });
+
     }
 
     private void addTextureRecipes(Consumer<FinishedRecipe> consumer) {

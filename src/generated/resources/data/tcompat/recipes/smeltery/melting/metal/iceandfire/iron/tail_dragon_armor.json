@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonarmor_iron_tail"
+  },
+  "result": {
+    "amount": 2430,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 313
+}

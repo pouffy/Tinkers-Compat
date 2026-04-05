@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:ingots/fire_dragonsteel"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tcompat:fire_dragonsteel_nugget"
+  }
+}

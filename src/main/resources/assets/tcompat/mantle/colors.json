@@ -39,7 +39,10 @@
     "lightning":              "#974fff",
     "scorch_thorns":          "#ff581c",
     "frost_thorns":           "#5effff",
-    "volt_thorns":            "#974fff"
+    "volt_thorns":            "#974fff",
+    "breathless":             "#ffc796",
+    "dreadbane":              "#263941",
+    "dampening":              "#b7dfdd"
   },
   "material.tconstruct": {
     "__tier_1_wood__": null,

@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "iceandfire:dragonsteel_ice_axe"
+    },
+    {
+      "item": "iceandfire:dragonsteel_ice_pickaxe"
+    }
+  ],
+  "result": {
+    "amount": 270,
+    "fluid": "tcompat:molten_ice_dragonsteel",
+    "unit_size": 10
+  },
+  "temperature": 1100,
+  "time": 120
+}

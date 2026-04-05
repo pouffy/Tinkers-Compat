@@ -1,0 +1,37 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "iceandfire"
+  },
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 1.5,
+      "percent": false,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "tcompat:dread"
+      }
+    },
+    {
+      "type": "tconstruct:mob_effect",
+      "chance": {
+        "flat": 1.0
+      },
+      "effect": "minecraft:wither",
+      "level": {
+        "flat": 1.0
+      },
+      "target": {
+        "type": "mantle:tag",
+        "tag": "tcompat:dread"
+      },
+      "time": {
+        "flat": 20.0,
+        "random": 10.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

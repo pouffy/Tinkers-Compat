@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:part_builder_recycling",
+  "pattern": {
+    "item": "tconstruct:venom_bottle"
+  },
+  "results": {
+    "tconstruct:maille": {
+      "count": 7,
+      "item": "iceandfire:dragonscales_copper"
+    }
+  },
+  "tool": {
+    "item": "iceandfire:armor_copper_leggings"
+  }
+}

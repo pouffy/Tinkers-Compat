@@ -1,0 +1,17 @@
+{
+  "type": "mantle:fill_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "tcompat:fire_dragon_blood"
+  },
+  "input": {
+    "item": "minecraft:glass_bottle"
+  },
+  "result": "iceandfire:fire_dragon_blood"
+}

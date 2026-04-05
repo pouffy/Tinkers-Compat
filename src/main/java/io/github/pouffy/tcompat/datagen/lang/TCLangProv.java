@@ -51,6 +51,7 @@ public class TCLangProv extends LanguageProvider {
 
     private void items() {
         toEng("item.tcompat.glaive");
+        add("item.tcompat.glaive.description", "The Glaive is a high reach, large radius polearm. Good for crowd control and long distance targets.");
         toEng("item.tcompat.lightnum_ingot");
         toEng("item.tcompat.draculite_ingot");
         toEng("item.tcompat.stormforged_steel_ingot");
@@ -97,6 +98,10 @@ public class TCLangProv extends LanguageProvider {
         add("recipe.tconstruct.ambrofusion.at_capacity", "Tool has no more space for ambrosium");
         add("subtitles.tcompat.void_touched.activate", "Void appears");
         add("subtitles.tcompat.void_touched.deactivate", "Void dissipates");
+        add("recipe.tcompat.modifier.dampening.level_2", "Dampening requires a different recipe for the first level.");
+        add("recipe.tcompat.modifier.dampening.level_3", "Dampening requires a different recipe for the first two levels.");
+        add("modifier.tcompat.dampening.attack_damage", "Damage against Mythical Creatures");
+        add("modifier.tcompat.dreadbane.attack_damage", "Damage against Dread Creatures");
     }
 
     private void modifiers() {
@@ -129,6 +134,8 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.volt_thorns", "Strikes with the power of the gods!", "Strikes attackers with lightning.");
         forModifier("modifier.tcompat.lightning", "Strikes with the power of the gods!", "Strikes targets with lightning.");
         forModifier("modifier.tcompat.breathless", "Really takes your breath away", "Increased protection from dragon breath attacks.");
+        forModifier("modifier.tcompat.dreadbane", "Dreadful", "Deals extra damage to Dread Creatures.");
+        forModifier("modifier.tcompat.dampening", "Begone foul magic!", "Deals extra damage to mystical creatures.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

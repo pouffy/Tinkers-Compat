@@ -9,10 +9,7 @@ import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import io.github.pouffy.tcompat.datagen.tag.*;
 import io.github.pouffy.tcompat.datagen.tinkers.material.*;
 import io.github.pouffy.tcompat.datagen.tinkers.modifier.TCModifierProv;
-import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCMaterialRecipeProv;
-import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCModifierRecipeProv;
-import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCSmelteryRecipeProv;
-import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCToolRecipeProv;
+import io.github.pouffy.tcompat.datagen.tinkers.recipe.*;
 import io.github.pouffy.tcompat.datagen.tinkers.tool.TCPartSpriteProvider;
 import io.github.pouffy.tcompat.datagen.tinkers.tool.TCStationLayoutProv;
 import io.github.pouffy.tcompat.datagen.tinkers.tool.TCToolDefinitionProv;
@@ -73,6 +70,7 @@ public class TCDataGenerator {
         generator.addProvider(server, new TCToolDefinitionProv(packOutput));
         generator.addProvider(server, new TCStationLayoutProv(packOutput));
 
+        generator.addProvider(server, new TCFluidTransferProv(packOutput));
         generator.addProvider(server, new TCMaterialRecipeProv(packOutput));
         generator.addProvider(server, new TCSmelteryRecipeProv(packOutput));
         generator.addProvider(server, new TCToolRecipeProv(packOutput));

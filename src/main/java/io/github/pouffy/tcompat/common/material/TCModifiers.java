@@ -8,6 +8,8 @@ public class TCModifiers {
     public static final ModifierId blighted = id("blighted");
     public static final ModifierId escarstay = id("escarstay");
     public static final ModifierId voidHoned = id("void_honed");
+    public static final ModifierId dreadbane = id("dreadbane");
+    public static final ModifierId dampening = id("dampening");
 
     private TCModifiers() {}
 

@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:incremental_modifier",
+  "allow_crystal": true,
+  "amount_per_item": 1,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "input": {
+    "item": "iceandfire:dread_shard"
+  },
+  "level": {
+    "max": 5
+  },
+  "needed_per_level": 25,
+  "result": "tcompat:dreadbane",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/ranged"
+    },
+    {
+      "tag": "tconstruct:modifiable/melee/weapon"
+    }
+  ]
+}

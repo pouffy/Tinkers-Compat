@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonarmor_dragonsteel_fire_tail"
+  },
+  "result": {
+    "amount": 2430,
+    "fluid": "tcompat:molten_fire_dragonsteel"
+  },
+  "temperature": 1100,
+  "time": 360
+}

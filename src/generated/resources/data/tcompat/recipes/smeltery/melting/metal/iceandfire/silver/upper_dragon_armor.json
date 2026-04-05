@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "iceandfire:dragonarmor_silver_head"
+    },
+    {
+      "item": "iceandfire:dragonarmor_silver_neck"
+    }
+  ],
+  "result": {
+    "amount": 4050,
+    "tag": "forge:molten_silver"
+  },
+  "temperature": 790,
+  "time": 401
+}

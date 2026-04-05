@@ -1,0 +1,34 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "tag": "forge:gems/sapphire"
+    },
+    {
+      "item": "iceandfire:dragonbone"
+    },
+    {
+      "tag": "forge:gems/sapphire"
+    },
+    {
+      "tag": "forge:ingots/silver"
+    },
+    {
+      "tag": "forge:ingots/silver"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:dampening",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/ranged"
+    },
+    {
+      "tag": "tconstruct:modifiable/melee/weapon"
+    }
+  ]
+}

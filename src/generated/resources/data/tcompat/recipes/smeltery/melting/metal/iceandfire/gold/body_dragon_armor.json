@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonarmor_gold_body"
+  },
+  "result": {
+    "amount": 6480,
+    "tag": "forge:molten_gold"
+  },
+  "temperature": 700,
+  "time": 483
+}

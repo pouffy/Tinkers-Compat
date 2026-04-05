@@ -12,5 +12,7 @@
   "tcompat:lightning":   "tcompat:gui/modifiers/lightning",
   "tcompat:scorch_thorns":   "tcompat:gui/modifiers/scorch_thorns",
   "tcompat:frost_thorns":   "tcompat:gui/modifiers/frost_thorns",
-  "tcompat:volt_thorns":   "tcompat:gui/modifiers/volt_thorns"
+  "tcompat:volt_thorns":   "tcompat:gui/modifiers/volt_thorns",
+  "tcompat:dreadbane":   "tcompat:gui/modifiers/dreadbane",
+  "tcompat:dampening":   "tcompat:gui/modifiers/dampening"
 }

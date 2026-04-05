@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:iron_hippogryph_armor"
+  },
+  "result": {
+    "amount": 630,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 159
+}

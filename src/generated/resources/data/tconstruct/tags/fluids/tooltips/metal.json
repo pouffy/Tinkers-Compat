@@ -1,26 +1,92 @@
 {
   "values": [
-    "#forge:molten_gravitite",
-    "#forge:molten_lightnum",
-    "#forge:molten_draculite",
-    "#forge:molten_stratus",
-    "#forge:molten_stormforged_steel",
-    "#forge:molten_veridium",
-    "#forge:molten_refined_sentrite",
-    "#forge:molten_valkyrum",
-    "#forge:molten_pyral",
-    "#forge:molten_neptune",
-    "#forge:molten_skyjade",
-    "#forge:molten_zanite",
-    "#forge:molten_desh",
-    "#forge:molten_calorite",
-    "#forge:molten_ostrum",
-    "#forge:molten_terminite",
-    "#forge:molten_thallasium",
-    "#forge:molten_aeternium",
-    "#forge:molten_cincinnasite",
-    "#tcompat:molten_fire_dragonsteel",
-    "#tcompat:molten_ice_dragonsteel",
-    "#tcompat:molten_lightning_dragonsteel"
+    {
+      "id": "#forge:molten_gravitite",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_lightnum",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_draculite",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_zanite",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_stratus",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_stormforged_steel",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_skyjade",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_veridium",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_refined_sentrite",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_valkyrum",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_pyral",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_neptune",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_desh",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_calorite",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_ostrum",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_terminite",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_thallasium",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_aeternium",
+      "required": false
+    },
+    {
+      "id": "#forge:molten_cincinnasite",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_fire_dragonsteel",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_ice_dragonsteel",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_lightning_dragonsteel",
+      "required": false
+    }
   ]
 }

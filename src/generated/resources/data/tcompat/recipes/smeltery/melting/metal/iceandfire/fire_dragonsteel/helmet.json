@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonsteel_fire_helmet"
+  },
+  "result": {
+    "amount": 450,
+    "fluid": "tcompat:molten_fire_dragonsteel",
+    "unit_size": 10
+  },
+  "temperature": 1100,
+  "time": 155
+}

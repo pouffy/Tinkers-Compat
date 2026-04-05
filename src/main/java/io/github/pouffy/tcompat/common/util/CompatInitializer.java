@@ -141,7 +141,7 @@ public class CompatInitializer {
     }
 
     private static FluidType.Properties cool(String name) {
-        return cool().descriptionId(TConstruct.makeDescriptionId("fluid", name))
+        return cool().descriptionId(TCompat.makeDescriptionId("fluid", name))
                 .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
                 .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY);
     }

@@ -1,0 +1,88 @@
+{
+  "values": [
+    {
+      "id": "iceandfire:troll",
+      "required": false
+    },
+    {
+      "id": "iceandfire:amphithere",
+      "required": false
+    },
+    {
+      "id": "iceandfire:cockatrice",
+      "required": false
+    },
+    {
+      "id": "iceandfire:cyclops",
+      "required": false
+    },
+    {
+      "id": "iceandfire:deathworm",
+      "required": false
+    },
+    {
+      "id": "iceandfire:fire_dragon",
+      "required": false
+    },
+    {
+      "id": "iceandfire:ice_dragon",
+      "required": false
+    },
+    {
+      "id": "iceandfire:lightning_dragon",
+      "required": false
+    },
+    {
+      "id": "iceandfire:gorgon",
+      "required": false
+    },
+    {
+      "id": "iceandfire:hippocampus",
+      "required": false
+    },
+    {
+      "id": "iceandfire:hippogryph",
+      "required": false
+    },
+    {
+      "id": "iceandfire:hydra",
+      "required": false
+    },
+    {
+      "id": "iceandfire:pixie",
+      "required": false
+    },
+    {
+      "id": "iceandfire:sea_serpent",
+      "required": false
+    },
+    {
+      "id": "iceandfire:siren",
+      "required": false
+    },
+    {
+      "id": "iceandfire:myrmex_queen",
+      "required": false
+    },
+    {
+      "id": "iceandfire:myrmex_royal",
+      "required": false
+    },
+    {
+      "id": "iceandfire:myrmex_sentinel",
+      "required": false
+    },
+    {
+      "id": "iceandfire:myrmex_soldier",
+      "required": false
+    },
+    {
+      "id": "iceandfire:myrmex_swarmer",
+      "required": false
+    },
+    {
+      "id": "iceandfire:myrmex_worker",
+      "required": false
+    }
+  ]
+}
