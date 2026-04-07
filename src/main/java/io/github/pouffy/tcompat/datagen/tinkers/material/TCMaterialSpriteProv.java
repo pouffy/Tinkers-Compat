@@ -217,13 +217,13 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
         buildGeneric(TCMaterials.neptune,           0xFF111b42, 0xFF1a2a66, 0xFF29439c, 0xFF3559c6, 0xFF3e6fd8, 0xFF7cbbff, addStats(), "metal").maille();
 
         buildMaterial(TCMaterials.fireDragonsteel)
-                .fallbacks("bone", "metal").meleeHarvest().ranged()
+                .fallbacks("bone", "metal").meleeHarvest().ranged().armor()
                 .transformer(complexTransformer("fire_dragonsteel", 1, 0xFFBD9FA7, 0xFFEAD0D0));
         buildMaterial(TCMaterials.iceDragonsteel)
-                .fallbacks("bone", "metal").meleeHarvest().ranged()
+                .fallbacks("bone", "metal").meleeHarvest().ranged().armor()
                 .transformer(complexTransformer("ice_dragonsteel", 1, 0xFFBAEAEC, 0xFFFFFFFF));
         buildMaterial(TCMaterials.lightningDragonsteel)
-                .fallbacks("bone", "metal").meleeHarvest().ranged()
+                .fallbacks("bone", "metal").meleeHarvest().ranged().armor()
                 .transformer(complexTransformer("lightning_dragonsteel", 1, 0xFFCAA4DA, 0xFFE5CBF7));
     }
 

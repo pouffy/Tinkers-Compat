@@ -70,13 +70,13 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.cincinnasite, 2, ORDER_HARVEST, false, false, betternether);
         addMaterial(TCMaterials.netherRuby, 2, ORDER_HARVEST, false, false, betternether);
 
-        addMaterial(TCMaterials.fireDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
-        addMaterial(TCMaterials.iceDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
-        addMaterial(TCMaterials.lightningDragonsteel, 3, ORDER_HARVEST, false, false, iceandfire);
-        addMaterial(TCMaterials.dragonBone,   3, ORDER_COMPAT, true, false, iceandfire);
-        addMaterial(TCMaterials.dragonScaleFire, 3, ORDER_COMPAT, true, false, iceandfire);
-        addMaterial(TCMaterials.dragonScaleIce, 3, ORDER_COMPAT, true, false, iceandfire);
-        addMaterial(TCMaterials.dragonScaleLightning, 3, ORDER_COMPAT, true, false, iceandfire);
+        addMaterial(TCMaterials.fireDragonsteel, 4, ORDER_HARVEST, false, false, iceandfire);
+        addMaterial(TCMaterials.iceDragonsteel, 4, ORDER_HARVEST, false, false, iceandfire);
+        addMaterial(TCMaterials.lightningDragonsteel, 4, ORDER_HARVEST, false, false, iceandfire);
+        addMaterial(TCMaterials.dragonBone,   4, ORDER_COMPAT, true, false, iceandfire);
+        addMaterial(TCMaterials.dragonScaleFire, 4, ORDER_COMPAT, true, false, iceandfire);
+        addMaterial(TCMaterials.dragonScaleIce, 4, ORDER_COMPAT, true, false, iceandfire);
+        addMaterial(TCMaterials.dragonScaleLightning, 4, ORDER_COMPAT, true, false, iceandfire);
 
 
         //addMaterial(TCMaterials.zinc, 2, ORDER_HARVEST, false, false, zinc);

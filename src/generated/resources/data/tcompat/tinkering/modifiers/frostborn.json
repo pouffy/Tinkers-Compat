@@ -1,0 +1,62 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "iceandfire"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 0.45,
+      "percent": true,
+      "target": {
+        "type": "mantle:or",
+        "predicates": [
+          {
+            "type": "mantle:tag",
+            "tag": "tcompat:lightning_dragons"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "tcompat:fire_dragons"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/melee/weapon"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_power",
+      "each_level": 0.65,
+      "percent": true,
+      "target": {
+        "type": "mantle:or",
+        "predicates": [
+          {
+            "type": "mantle:tag",
+            "tag": "tcompat:lightning_dragons"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "tcompat:fire_dragons"
+          }
+        ]
+      }
+    },
+    {
+      "type": "tconstruct:protection",
+      "damage_source": {
+        "type": "mantle:damage_type",
+        "name": "iceandfire:dragon_ice"
+      },
+      "each_level": 2.5,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

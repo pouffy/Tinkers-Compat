@@ -7,6 +7,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.phys.EntityHitResult;
@@ -27,12 +28,12 @@ import slimeknights.tconstruct.library.utils.Util;
 
 import java.util.List;
 
-public class IcedModifier extends NoLevelsModifier implements MeleeHitModifierHook, ProjectileHitModifierHook, TooltipModifierHook {
+public class IcedModifier extends NoLevelsModifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.PROJECTILE_HIT, ModifierHooks.TOOLTIP);
+        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.PROJECTILE_HIT);
     }
 
     @Override
@@ -40,33 +41,23 @@ public class IcedModifier extends NoLevelsModifier implements MeleeHitModifierHo
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
 
-        if (target != null) {
+        if (target != null && context.isFullyCharged()) {
             Compatibility.get(target).ifPresent((compat) -> compat.freeze(200));
             target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
             target.knockback(1.0, attacker.getX() - target.getX(), attacker.getZ() - target.getZ());
-            if (target.getType().is(TCEntityTagProv.create("tcompat:fire_dragons"))) {
-                target.hurt(target.damageSources().drown(), 13.5F);
-            }
         }
     }
 
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target, boolean notBlocked) {
-        if (target != null && notBlocked) {
+        boolean flag = notBlocked;
+        if (projectile instanceof AbstractArrow arrow && !arrow.isCritArrow()) flag = false;
+        if (target != null && flag) {
             Compatibility.get(target).ifPresent((compat) -> compat.freeze(200));
             target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
-            if (target.getType().is(TCEntityTagProv.create("tcompat:fire_dragons"))) {
-                target.hurt(target.damageSources().drown(), 13.5F);
-            }
         }
         return notBlocked;
-    }
-
-    @Override
-    public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
-        float amount = 8.0f;
-        tooltip.add(applyStyle(Component.literal(Util.BONUS_FORMAT.format(amount)).append(" ").append(Component.translatable("modifier.tcompat.iced.attack_bonus"))));
     }
 }

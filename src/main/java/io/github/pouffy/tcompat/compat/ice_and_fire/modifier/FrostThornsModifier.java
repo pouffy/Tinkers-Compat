@@ -7,6 +7,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
@@ -27,16 +28,23 @@ public class FrostThornsModifier extends NoLevelsModifier implements OnAttackedM
     @Override
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity attacker = (LivingEntity) source.getEntity();
-        if (attacker != null && isDirectDamage) {
+        boolean canUse = false;
+        if (context.getEntity() instanceof Player player) {
+            canUse = !player.getCooldowns().isOnCooldown(tool.getItem());
+        }
+        if (attacker != null) {
+            canUse = attacker.getRandom().nextIntBetweenInclusive(1, 16) < 3;
+        }
+        if (attacker != null && isDirectDamage && canUse) {
             LivingEntity user = context.getEntity();
             ToolDamageUtil.damageAnimated(tool, 1, user, slotType);
-            Compatibility.get(attacker).ifPresent((compat) -> compat.freeze(200));
+            int freezeTicks = Math.round((amount * 1.5f) * 20);
+            Compatibility.get(attacker).ifPresent((compat) -> compat.freeze(freezeTicks));
             attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             attacker.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
             attacker.knockback(1.0, 0.0, 0.0);
-            if (attacker.getType().is(TCEntityTagProv.create("tcompat:fire_dragons"))) {
-                attacker.knockback(1.0, user.getX() - attacker.getX(), user.getZ() - attacker.getZ());
-                attacker.hurt(attacker.damageSources().drown(), 13.5F);
+            if (context.getEntity() instanceof Player player) {
+                player.getCooldowns().addCooldown(tool.getItem(), Math.round((amount / 2) * 20));
             }
         }
     }

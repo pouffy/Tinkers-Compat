@@ -84,12 +84,9 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TCMaterials.netherRuby, ModifierIds.worldbound);
         addTraits(TCMaterials.netherRuby, HeadMaterialStats.ID, BetternetherInit.obsidianBreaker);
 
-        addTraits(TCMaterials.fireDragonsteel, RANGED, IFInit.flamed);
-        addTraits(TCMaterials.fireDragonsteel, MELEE_HARVEST, IFInit.flamed);
-        addTraits(TCMaterials.iceDragonsteel, RANGED, IFInit.iced);
-        addTraits(TCMaterials.iceDragonsteel, MELEE_HARVEST, IFInit.iced);
-        addTraits(TCMaterials.lightningDragonsteel, RANGED, IFInit.lightning);
-        addTraits(TCMaterials.lightningDragonsteel, MELEE_HARVEST, IFInit.lightning);
+        addDefaultTraits(TCMaterials.fireDragonsteel, TCModifiers.scorchborn);
+        addDefaultTraits(TCMaterials.iceDragonsteel, TCModifiers.frostborn);
+        addDefaultTraits(TCMaterials.lightningDragonsteel, TCModifiers.voltborn);
         addTraits(TCMaterials.dragonScaleFire, ARMOR, IFInit.breathless);
         addTraits(TCMaterials.dragonScaleIce, ARMOR, IFInit.breathless);
         addTraits(TCMaterials.dragonScaleLightning, ARMOR, IFInit.breathless);

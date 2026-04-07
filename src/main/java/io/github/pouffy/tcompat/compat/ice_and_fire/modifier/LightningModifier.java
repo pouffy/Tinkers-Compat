@@ -8,6 +8,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.phys.EntityHitResult;
@@ -28,12 +29,12 @@ import slimeknights.tconstruct.library.utils.Util;
 
 import java.util.List;
 
-public class LightningModifier extends NoLevelsModifier implements MeleeHitModifierHook, ProjectileHitModifierHook, TooltipModifierHook {
+public class LightningModifier extends NoLevelsModifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.PROJECTILE_HIT, ModifierHooks.TOOLTIP);
+        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.PROJECTILE_HIT);
     }
 
     @Override
@@ -44,8 +45,7 @@ public class LightningModifier extends NoLevelsModifier implements MeleeHitModif
             return;
         }
         boolean flag = !(attacker instanceof Player) || !((double) attacker.attackAnim > 0.2);
-
-        if (!attacker.level().isClientSide && flag) {
+        if (!attacker.level().isClientSide && flag && context.isFullyCharged()) {
             LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(target.level());
             lightningBolt.moveTo(target.position());
             Compatibility.get(lightningBolt).ifPresent(compatibility -> compatibility.setLightningOwner(attacker));
@@ -53,11 +53,6 @@ public class LightningModifier extends NoLevelsModifier implements MeleeHitModif
                 target.level().addFreshEntity(lightningBolt);
             }
         }
-
-        if (target.getType().is(TCEntityTagProv.create("tcompat:fire_dragons")) || target.getType().is(TCEntityTagProv.create("tcompat:ice_dragons"))) {
-            target.hurt(target.damageSources().lightningBolt(), 9.5F);
-        }
-
         target.knockback(1.0, attacker.getX() - target.getX(), attacker.getZ() - target.getZ());
     }
 
@@ -65,6 +60,7 @@ public class LightningModifier extends NoLevelsModifier implements MeleeHitModif
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target, boolean notBlocked) {
         if (target != null && notBlocked) {
             boolean flag = !(attacker instanceof Player) || !((double) attacker.attackAnim > 0.2);
+            if (projectile instanceof AbstractArrow arrow && !arrow.isCritArrow()) flag = false;
             if (!attacker.level().isClientSide && flag) {
                 LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(target.level());
                 lightningBolt.moveTo(target.position());
@@ -73,16 +69,7 @@ public class LightningModifier extends NoLevelsModifier implements MeleeHitModif
                     target.level().addFreshEntity(lightningBolt);
                 }
             }
-            if (target.getType().is(TCEntityTagProv.create("tcompat:fire_dragons")) || target.getType().is(TCEntityTagProv.create("tcompat:ice_dragons"))) {
-                target.hurt(target.damageSources().lightningBolt(), 9.5F);
-            }
         }
         return notBlocked;
-    }
-
-    @Override
-    public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
-        float amount = 8.0f;
-        tooltip.add(applyStyle(Component.literal(Util.BONUS_FORMAT.format(amount)).append(" ").append(Component.translatable("modifier.tcompat.lightning.attack_bonus"))));
     }
 }

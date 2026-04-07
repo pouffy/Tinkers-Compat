@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
@@ -24,15 +25,23 @@ public class ScorchThornsModifier extends NoLevelsModifier implements OnAttacked
     @Override
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity attacker = (LivingEntity) source.getEntity();
-        if (attacker != null && isDirectDamage) {
+        boolean canUse = false;
+        if (context.getEntity() instanceof Player player) {
+            canUse = !player.getCooldowns().isOnCooldown(tool.getItem());
+        }
+        if (attacker != null) {
+            canUse = attacker.getRandom().nextIntBetweenInclusive(1, 16) < 3;
+        }
+        if (attacker != null && isDirectDamage && canUse) {
             LivingEntity user = context.getEntity();
             ToolDamageUtil.damageAnimated(tool, 1, user, slotType);
             if (!attacker.isOnFire()) {
-                attacker.setSecondsOnFire(5);
+                int ticks = Math.round((amount * 1.5f) * 20);
+                attacker.setSecondsOnFire(ticks);
                 attacker.knockback(1.0, user.getX() - attacker.getX(), user.getZ() - attacker.getZ());
             }
-            if (attacker.getType().is(TCEntityTagProv.create("tcompat:ice_dragons"))) {
-                attacker.hurt(attacker.damageSources().inFire(), 13.5F);
+            if (context.getEntity() instanceof Player player) {
+                player.getCooldowns().addCooldown(tool.getItem(), Math.round((amount / 2) * 20));
             }
         }
     }

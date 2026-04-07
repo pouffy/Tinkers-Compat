@@ -40,6 +40,9 @@
     "scorch_thorns":          "#ff581c",
     "frost_thorns":           "#5effff",
     "volt_thorns":            "#974fff",
+    "scorchborn":             "#ff581c",
+    "frostborn":              "#5effff",
+    "voltborn":               "#974fff",
     "breathless":             "#ffc796",
     "dreadbane":              "#263941",
     "dampening":              "#b7dfdd"

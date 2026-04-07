@@ -91,16 +91,16 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addMaterialStats(TCMaterials.draculite, new HeadMaterialStats(2032, 8.0f, DIAMOND, 4.0f));
 
         addMaterialStats(TCMaterials.fireDragonsteel,
-                new HeadMaterialStats(1400, 8.0f, NETHERITE, 4.0f),
-                HandleMaterialStats.multipliers().durability(1.7f).miningSpeed(1.5f).attackSpeed(1.6f).attackDamage(1.45f).build(),
+                new HeadMaterialStats(1400, 8.0f, NETHERITE, 5.0f),
+                HandleMaterialStats.multipliers().durability(1.2f).miningSpeed(0.85f).attackSpeed(0.85f).attackDamage(1.3f).build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.iceDragonsteel,
-                new HeadMaterialStats(1250, 11.0f, NETHERITE, 4.3f),
-                HandleMaterialStats.multipliers().durability(1.5f).miningSpeed(1.2f).attackSpeed(1.3f).attackDamage(1.3f).build(),
+                new HeadMaterialStats(1250, 11.0f, NETHERITE, 5.3f),
+                HandleMaterialStats.multipliers().durability(1.15f).miningSpeed(0.88f).attackSpeed(0.88f).attackDamage(1.25f).build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.lightningDragonsteel,
-                new HeadMaterialStats(1600, 7.0f, NETHERITE, 4.8f),
-                HandleMaterialStats.multipliers().durability(1.3f).miningSpeed(1.2f).attackSpeed(1.2f).attackDamage(1.3f).build(),
+                new HeadMaterialStats(1600, 7.0f, NETHERITE, 5.8f),
+                HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(0.78f).attackSpeed(0.78f).attackDamage(1.25f).build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(TCMaterials.dragonBone,
                 new HeadMaterialStats(200, 2.5f, IRON, 1.2f),
@@ -191,6 +191,10 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addArmorShieldStats(TCMaterials.cincinnasite, PlatingMaterialStats.builder().durabilityFactor(12).armor(3, 5, 6, 3).toughness(1f).knockbackResistance(0.05f), StatlessMaterialStats.MAILLE);
         addArmorShieldStats(TCMaterials.netherRuby, PlatingMaterialStats.builder().durabilityFactor(18).armor(3, 5, 7, 3).toughness(1.4f).knockbackResistance(0.2f), StatlessMaterialStats.MAILLE);
 
+        addArmorShieldStats(TCMaterials.fireDragonsteel, PlatingMaterialStats.builder().durabilityFactor(84).armor(6, 9, 12, 7).toughness(6), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TCMaterials.iceDragonsteel, PlatingMaterialStats.builder().durabilityFactor(81).armor(6, 9, 12, 7).toughness(6), StatlessMaterialStats.MAILLE);
+        addArmorShieldStats(TCMaterials.lightningDragonsteel, PlatingMaterialStats.builder().durabilityFactor(68).armor(6, 9, 12, 7).toughness(6), StatlessMaterialStats.MAILLE);
+
         addArmorStats(TCMaterials.dragonScaleFire, PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE);
         addArmorStats(TCMaterials.dragonScaleIce, PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE);
         addArmorStats(TCMaterials.dragonScaleLightning, PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE);
@@ -198,7 +202,6 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
 
     private void addMisc() {
         addMaterialStats(TCMaterials.wickedWax, StatlessMaterialStats.BINDING);
-        addMaterialStats(TCMaterials.dragonBone,  new SkullStats(200, 0));
     }
 
     @Override

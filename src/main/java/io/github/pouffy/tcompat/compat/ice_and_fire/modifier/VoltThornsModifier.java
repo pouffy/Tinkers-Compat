@@ -29,7 +29,14 @@ public class VoltThornsModifier extends NoLevelsModifier implements OnAttackedMo
     @Override
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity attacker = (LivingEntity) source.getEntity();
-        if (attacker != null && isDirectDamage) {
+        boolean canUse = false;
+        if (context.getEntity() instanceof Player player) {
+            canUse = !player.getCooldowns().isOnCooldown(tool.getItem());
+        }
+        if (attacker != null) {
+            canUse = attacker.getRandom().nextIntBetweenInclusive(1, 16) < 3;
+        }
+        if (attacker != null && isDirectDamage && canUse) {
             LivingEntity user = context.getEntity();
             ToolDamageUtil.damageAnimated(tool, 1, user, slotType);
             boolean flag = !(user instanceof Player) || !((double) user.attackAnim > 0.2);
@@ -42,8 +49,8 @@ public class VoltThornsModifier extends NoLevelsModifier implements OnAttackedMo
                     attacker.level().addFreshEntity(lightningBolt);
                 }
             }
-            if (attacker.getType().is(TCEntityTagProv.create("tcompat:fire_dragons")) || attacker.getType().is(TCEntityTagProv.create("tcompat:ice_dragons"))) {
-                attacker.hurt(attacker.damageSources().lightningBolt(), 9.5F);
+            if (context.getEntity() instanceof Player player) {
+                player.getCooldowns().addCooldown(tool.getItem(), Math.round((amount / 3) * 20));
             }
         }
     }

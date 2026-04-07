@@ -102,6 +102,16 @@ public class TCLangProv extends LanguageProvider {
         add("recipe.tcompat.modifier.dampening.level_3", "Dampening requires a different recipe for the first two levels.");
         add("modifier.tcompat.dampening.attack_damage", "Damage against Mythical Creatures");
         add("modifier.tcompat.dreadbane.attack_damage", "Damage against Dread Creatures");
+
+        add("modifier.tcompat.scorchborn.attack_damage", "Melee Damage against Damage against Lightning & Ice Dragons");
+        add("modifier.tcompat.scorchborn.projectile_damage", "Ranged Damage against Lightning & Ice Dragons");
+        add("modifier.tcompat.scorchborn.resistance", "Protection against Fire Dragon Breath");
+        add("modifier.tcompat.frostborn.attack_damage", "Melee Damage against Fire & Lightning Dragons");
+        add("modifier.tcompat.frostborn.projectile_damage", "Ranged Damage against Fire & Lightning Dragons");
+        add("modifier.tcompat.frostborn.resistance", "Protection against Ice Dragon Breath");
+        add("modifier.tcompat.voltborn.attack_damage", "Melee Damage against Fire & Ice Dragons");
+        add("modifier.tcompat.voltborn.projectile_damage", "Ranged Damage against Fire & Ice Dragons");
+        add("modifier.tcompat.voltborn.resistance", "Protection against Lightning Dragon Breath");
     }
 
     private void modifiers() {
@@ -136,6 +146,9 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.breathless", "Really takes your breath away", "Increased protection from dragon breath attacks.");
         forModifier("modifier.tcompat.dreadbane", "Dreadful", "Deals extra damage to Dread Creatures.");
         forModifier("modifier.tcompat.dampening", "Begone foul magic!", "Deals extra damage to mystical creatures.");
+        forModifier("modifier.tcompat.scorchborn", "One with the dragon", "Bonus damage against other dragon types and bonus protection against Fire Dragons.");
+        forModifier("modifier.tcompat.frostborn", "One with the dragon", "Bonus damage against other dragon types and bonus protection against Ice Dragons.");
+        forModifier("modifier.tcompat.voltborn", "One with the dragon", "Bonus damage against other dragon types and bonus protection against Lightning Dragons.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {
