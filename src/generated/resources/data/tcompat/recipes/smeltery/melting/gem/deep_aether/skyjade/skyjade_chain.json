@@ -11,7 +11,7 @@
   },
   "result": {
     "amount": 20,
-    "tag": "forge:molten_skyjade"
+    "fluid": "tcompat:molten_skyjade"
   },
   "temperature": 1325,
   "time": 36

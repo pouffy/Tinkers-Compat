@@ -13,7 +13,7 @@
   "cooling_time": 188,
   "fluid": {
     "amount": 810,
-    "tag": "forge:molten_thallasium"
+    "tag": "tcompat:molten_thallasium"
   },
   "result": {
     "tag": "forge:storage_blocks/thallasium"

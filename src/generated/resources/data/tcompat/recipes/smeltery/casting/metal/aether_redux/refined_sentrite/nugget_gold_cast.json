@@ -13,10 +13,10 @@
       "modid": "aether_redux"
     }
   ],
-  "cooling_time": 26,
+  "cooling_time": 25,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_refined_sentrite"
+    "tag": "tcompat:molten_refined_sentrite"
   },
   "result": {
     "tag": "forge:nuggets/refined_sentrite"

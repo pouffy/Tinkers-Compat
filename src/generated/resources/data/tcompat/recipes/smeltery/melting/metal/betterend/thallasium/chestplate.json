@@ -11,7 +11,7 @@
   },
   "result": {
     "amount": 720,
-    "tag": "forge:molten_thallasium",
+    "fluid": "tcompat:molten_thallasium",
     "unit_size": 10
   },
   "temperature": 875,

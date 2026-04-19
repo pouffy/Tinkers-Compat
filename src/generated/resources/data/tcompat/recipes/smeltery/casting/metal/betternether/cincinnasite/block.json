@@ -13,7 +13,7 @@
   "cooling_time": 154,
   "fluid": {
     "amount": 360,
-    "tag": "forge:molten_cincinnasite"
+    "tag": "tcompat:molten_cincinnasite"
   },
   "result": {
     "tag": "forge:storage_blocks/cincinnasite"

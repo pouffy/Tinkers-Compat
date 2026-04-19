@@ -17,7 +17,7 @@
   "cooling_time": 74,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_valkyrum"
+    "tag": "tcompat:molten_valkyrum"
   },
   "result": {
     "tag": "forge:ingots/valkyrum"

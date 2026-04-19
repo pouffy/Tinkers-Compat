@@ -15,8 +15,8 @@
   },
   "result": {
     "amount": 10,
-    "tag": "forge:molten_gravitite"
+    "fluid": "tcompat:molten_gravitite"
   },
-  "temperature": 1275,
-  "time": 25
+  "temperature": 1075,
+  "time": 23
 }

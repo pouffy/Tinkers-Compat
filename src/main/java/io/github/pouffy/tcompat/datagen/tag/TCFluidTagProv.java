@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
@@ -33,66 +34,65 @@ public class TCFluidTagProv extends FluidTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        fluidTag(AetherInit.moltenGravitite);
-        fluidTag(AetherInit.moltenZanite);
-        fluidTag(DeepAetherInit.moltenSkyjade);
-        fluidTag(DeepAetherInit.moltenStratus);
-        fluidTag(AetherReduxInit.moltenRefinedSentrite);
-        fluidTag(AetherReduxInit.moltenVeridium);
-        fluidTag(AetherTRInit.moltenValkyrum);
-        fluidTag(AetherTRInit.moltenPyral);
-        fluidTag(AetherTRInit.moltenNeptune);
-        fluidTag(AdAstraInit.moltenDesh);
-        fluidTag(AdAstraInit.moltenCalorite);
-        fluidTag(AdAstraInit.moltenOstrum);
-        fluidTag(BetterendInit.moltenTerminite);
-        fluidTag(BetterendInit.moltenThallasium);
-        fluidTag(BetterendInit.moltenAeternium);
-        fluidTag(AetherInit.moltenLightnum);
-        fluidTag(AetherInit.moltenDraculite);
-        fluidTag(DeepAetherInit.moltenStormforgedSteel);
-        fluidTag(BetternetherInit.moltenCincinnasite);
-        fluidTag(BetternetherInit.moltenNetherRuby);
-
-        fluidTag(IFInit.fireBlood);
-        fluidTag(IFInit.iceBlood);
-        fluidTag(IFInit.lightningBlood);
-        fluidTag(IFInit.moltenFireDragonsteel);
-        fluidTag(IFInit.moltenIceDragonsteel);
-        fluidTag(IFInit.moltenLightningDragonsteel);
+        fluidTag(TCFluids.moltenGravitite);
+        fluidTag(TCFluids.moltenZanite);
+        fluidTag(TCFluids.moltenSkyjade);
+        fluidTag(TCFluids.moltenStratus);
+        fluidTag(TCFluids.moltenRefinedSentrite);
+        fluidTag(TCFluids.moltenVeridium);
+        fluidTag(TCFluids.moltenValkyrum);
+        fluidTag(TCFluids.moltenPyral);
+        fluidTag(TCFluids.moltenNeptune);
+        fluidTag(TCFluids.moltenDesh);
+        fluidTag(TCFluids.moltenCalorite);
+        fluidTag(TCFluids.moltenOstrum);
+        fluidTag(TCFluids.moltenTerminite);
+        fluidTag(TCFluids.moltenThallasium);
+        fluidTag(TCFluids.moltenAeternium);
+        fluidTag(TCFluids.moltenLightnum);
+        fluidTag(TCFluids.moltenDraculite);
+        fluidTag(TCFluids.moltenStormforgedSteel);
+        fluidTag(TCFluids.moltenCincinnasite);
+        fluidTag(TCFluids.moltenNetherRuby);
+        fluidTag(TCFluids.fireBlood);
+        fluidTag(TCFluids.iceBlood);
+        fluidTag(TCFluids.lightningBlood);
+        fluidTag(TCFluids.moltenFireDragonsteel);
+        fluidTag(TCFluids.moltenIceDragonsteel);
+        fluidTag(TCFluids.moltenLightningDragonsteel);
 
         var metals = this.tag(TinkerTags.Fluids.METAL_TOOLTIPS);
         // Aether
-        metals.addOptionalTag(AetherInit.moltenGravitite.getTag());
-        metals.addOptionalTag(AetherInit.moltenLightnum.getTag());
-        metals.addOptionalTag(AetherInit.moltenDraculite.getTag());
-        metals.addOptionalTag(AetherInit.moltenZanite.getTag());
-        metals.addOptionalTag(DeepAetherInit.moltenStratus.getTag());
-        metals.addOptionalTag(DeepAetherInit.moltenStormforgedSteel.getTag());
-        metals.addOptionalTag(DeepAetherInit.moltenSkyjade.getTag());
-        metals.addOptionalTag(AetherReduxInit.moltenVeridium.getTag());
-        metals.addOptionalTag(AetherReduxInit.moltenRefinedSentrite.getTag());
-        metals.addOptionalTag(AetherTRInit.moltenValkyrum.getTag());
-        metals.addOptionalTag(AetherTRInit.moltenPyral.getTag());
-        metals.addOptionalTag(AetherTRInit.moltenNeptune.getTag());
+        metals.addOptionalTag(TCFluids.moltenGravitite.getTag());
+        metals.addOptionalTag(TCFluids.moltenLightnum.getTag());
+        metals.addOptionalTag(TCFluids.moltenDraculite.getTag());
+        metals.addOptionalTag(TCFluids.moltenZanite.getTag());
+        metals.addOptionalTag(TCFluids.moltenStratus.getTag());
+        metals.addOptionalTag(TCFluids.moltenStormforgedSteel.getTag());
+        metals.addOptionalTag(TCFluids.moltenSkyjade.getTag());
+        metals.addOptionalTag(TCFluids.moltenVeridium.getTag());
+        metals.addOptionalTag(TCFluids.moltenRefinedSentrite.getTag());
+        metals.addOptionalTag(TCFluids.moltenValkyrum.getTag());
+        metals.addOptionalTag(TCFluids.moltenPyral.getTag());
+        metals.addOptionalTag(TCFluids.moltenNeptune.getTag());
         // Ad Astra
-        metals.addOptionalTag(AdAstraInit.moltenDesh.getTag());
-        metals.addOptionalTag(AdAstraInit.moltenCalorite.getTag());
-        metals.addOptionalTag(AdAstraInit.moltenOstrum.getTag());
+        metals.addOptionalTag(TCFluids.moltenDesh.getTag());
+        metals.addOptionalTag(TCFluids.moltenCalorite.getTag());
+        metals.addOptionalTag(TCFluids.moltenOstrum.getTag());
         // Betterend
-        metals.addOptionalTag(BetterendInit.moltenTerminite.getTag());
-        metals.addOptionalTag(BetterendInit.moltenThallasium.getTag());
-        metals.addOptionalTag(BetterendInit.moltenAeternium.getTag());
+        metals.addOptionalTag(TCFluids.moltenTerminite.getTag());
+        metals.addOptionalTag(TCFluids.moltenThallasium.getTag());
+        metals.addOptionalTag(TCFluids.moltenAeternium.getTag());
         // Betternether
-        metals.addOptionalTag(BetternetherInit.moltenCincinnasite.getTag());
+        metals.addOptionalTag(TCFluids.moltenCincinnasite.getTag());
         // Ice & Fire
-        metals.addOptionalTag(IFInit.moltenFireDragonsteel.getTag());
-        metals.addOptionalTag(IFInit.moltenIceDragonsteel.getTag());
-        metals.addOptionalTag(IFInit.moltenLightningDragonsteel.getTag());
+        metals.addOptionalTag(TCFluids.moltenFireDragonsteel.getTag());
+        metals.addOptionalTag(TCFluids.moltenIceDragonsteel.getTag());
+        metals.addOptionalTag(TCFluids.moltenLightningDragonsteel.getTag());
 
         var largeGems = this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS);
         // Betternether
-        largeGems.addOptionalTag(BetternetherInit.moltenNetherRuby.getTag());
+        largeGems.addOptionalTag(TCFluids.moltenNetherRuby.getTag());
     }
 
     @Override

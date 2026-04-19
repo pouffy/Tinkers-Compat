@@ -11,7 +11,7 @@
   },
   "result": {
     "amount": 270,
-    "tag": "forge:molten_stormforged_steel"
+    "fluid": "tcompat:molten_stormforged_steel"
   },
   "temperature": 1375,
   "time": 133

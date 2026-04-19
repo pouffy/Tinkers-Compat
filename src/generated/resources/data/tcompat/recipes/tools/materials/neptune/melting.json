@@ -9,7 +9,7 @@
   "input": "tcompat:neptune",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_neptune"
+    "fluid": "tcompat:molten_neptune"
   },
-  "temperature": 1275
+  "temperature": 850
 }

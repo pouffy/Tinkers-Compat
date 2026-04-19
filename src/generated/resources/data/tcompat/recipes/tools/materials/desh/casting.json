@@ -8,8 +8,8 @@
   ],
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_desh"
+    "tag": "tcompat:molten_desh"
   },
   "output": "tcompat:desh",
-  "temperature": 1075
+  "temperature": 975
 }

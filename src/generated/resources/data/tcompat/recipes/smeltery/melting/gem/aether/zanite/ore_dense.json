@@ -27,8 +27,8 @@
   "rate": "metal",
   "result": {
     "amount": 270,
-    "tag": "forge:molten_zanite"
+    "fluid": "tcompat:molten_zanite"
   },
-  "temperature": 950,
-  "time": 292
+  "temperature": 850,
+  "time": 278
 }

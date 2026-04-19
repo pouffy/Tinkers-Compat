@@ -13,10 +13,10 @@
       "modid": "aether"
     }
   ],
-  "cooling_time": 25,
+  "cooling_time": 23,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_gravitite"
+    "tag": "tcompat:molten_gravitite"
   },
   "result": {
     "tag": "forge:nuggets/gravitite"

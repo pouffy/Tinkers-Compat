@@ -13,7 +13,7 @@
   "cooling_time": 54,
   "fluid": {
     "amount": 45,
-    "tag": "forge:molten_cincinnasite"
+    "tag": "tcompat:molten_cincinnasite"
   },
   "result": "betternether:quartz_glass_framed_purple"
 }

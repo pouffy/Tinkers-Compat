@@ -9,7 +9,7 @@
   "input": "tcompat:aeternium",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_aeternium"
+    "fluid": "tcompat:molten_aeternium"
   },
   "temperature": 1160
 }

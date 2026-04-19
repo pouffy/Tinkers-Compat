@@ -9,7 +9,7 @@
   "input": "tcompat:lightnum",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_lightnum"
+    "fluid": "tcompat:molten_lightnum"
   },
-  "temperature": 1375
+  "temperature": 1175
 }

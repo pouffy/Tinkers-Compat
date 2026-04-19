@@ -16,7 +16,7 @@
   ],
   "result": {
     "amount": 270,
-    "tag": "forge:molten_veridium",
+    "fluid": "tcompat:molten_veridium",
     "unit_size": 10
   },
   "temperature": 1125,

@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ad_astra;
 
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.material.TCMeltingInfo;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -25,9 +26,9 @@ public class AdAstraSmeltery implements CompatSmeltery {
         Map<String, FluidObject<?>> decorativeMetals = Map.of(
                 "iron", TinkerFluids.moltenIron,
                 "steel", TinkerFluids.moltenSteel,
-                "desh", AdAstraInit.moltenDesh,
-                "ostrum", AdAstraInit.moltenOstrum,
-                "calorite", AdAstraInit.moltenCalorite
+                "desh", TCFluids.moltenDesh,
+                "ostrum", TCFluids.moltenOstrum,
+                "calorite", TCFluids.moltenCalorite
         );
 
         decorativeMetals.forEach((name, fluid) -> {
@@ -69,30 +70,30 @@ public class AdAstraSmeltery implements CompatSmeltery {
         simpleMelting(cConsumer, TinkerFluids.moltenIron, 12, "iron", ItemNameIngredient.from(compatId("marked_iron_pillar")), metalFolder("melting"), "marked_pillar");
         simpleMelting(cConsumer, TinkerFluids.moltenSteel, 112, "steel", ItemNameIngredient.from(compatId("vent")), metalFolder("melting"), "vent");
 
-        simpleMelting(AdAstraInit.moltenDesh, 32, ItemNameIngredient.from(compatId("desh_fluid_pipe")))
+        simpleMelting(TCFluids.moltenDesh, 32, ItemNameIngredient.from(compatId("desh_fluid_pipe")))
                 .addByproduct(TinkerFluids.moltenGlass.result(185))
                 .save(cConsumer, location(metalFolder("melting") + "/desh/fluid_pipe"));
-        simpleMelting(AdAstraInit.moltenOstrum, 32, ItemNameIngredient.from(compatId("ostrum_fluid_pipe")))
+        simpleMelting(TCFluids.moltenOstrum, 32, ItemNameIngredient.from(compatId("ostrum_fluid_pipe")))
                 .addByproduct(TinkerFluids.moltenGlass.result(185))
                 .save(cConsumer, location(metalFolder("melting") + "/ostrum/fluid_pipe"));
         simpleMelting(TinkerFluids.moltenSteel, 32, ItemNameIngredient.from(compatId("steel_cable")))
                 .addByproduct(TinkerFluids.moltenCopper.result(16))
                 .save(cConsumer, location(metalFolder("melting") + "/steel/cable"));
-        simpleMelting(AdAstraInit.moltenDesh, 32, ItemNameIngredient.from(compatId("desh_cable")))
+        simpleMelting(TCFluids.moltenDesh, 32, ItemNameIngredient.from(compatId("desh_cable")))
                 .addByproduct(TinkerFluids.moltenCopper.result(16))
                 .save(cConsumer, location(metalFolder("melting") + "/desh/cable"));
 
         simpleMelting(TinkerFluids.moltenSteel, 196, ItemNameIngredient.from(compatId("cable_duct")))
                 .addByproduct(TinkerFluids.moltenCopper.result(188))
                 .save(cConsumer, location(metalFolder("melting") + "/steel/cable_duct"));
-        simpleMelting(AdAstraInit.moltenDesh, 196, ItemNameIngredient.from(compatId("fluid_pipe_duct")))
+        simpleMelting(TCFluids.moltenDesh, 196, ItemNameIngredient.from(compatId("fluid_pipe_duct")))
                 .addByproduct(TinkerFluids.moltenCopper.result(FluidValues.INGOT * 2))
                 .addByproduct(TinkerFluids.moltenGlass.result(92))
                 .save(cConsumer, location(metalFolder("melting") + "/desh/fluid_pipe_duct"));
 
-        metal(cConsumer, AdAstraInit.moltenDesh, compatModId()).metal(true).optional();
-        metal(cConsumer, AdAstraInit.moltenOstrum, compatModId()).metal(true).optional();
-        metal(cConsumer, AdAstraInit.moltenCalorite, compatModId()).metal(true).optional();
+        metal(cConsumer, TCFluids.moltenDesh, compatModId()).metal(true).optional();
+        metal(cConsumer, TCFluids.moltenOstrum, compatModId()).metal(true).optional();
+        metal(cConsumer, TCFluids.moltenCalorite, compatModId()).metal(true).optional();
 
         TCMeltingInfo.AdAstra.adAstraGroup.saveAll(consumer);
         //Deco

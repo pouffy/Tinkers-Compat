@@ -19,8 +19,8 @@
         "byproducts": [
           {
             "amount": 810,
-            "rate": "metal",
-            "tag": "forge:molten_gravitite"
+            "fluid": "tcompat:molten_gravitite",
+            "rate": "metal"
           }
         ],
         "ingredient": {
@@ -29,7 +29,7 @@
         "rate": "metal",
         "result": {
           "amount": 810,
-          "tag": "forge:molten_veridium"
+          "fluid": "tcompat:molten_veridium"
         },
         "temperature": 1125,
         "time": 420
@@ -49,7 +49,7 @@
         "rate": "metal",
         "result": {
           "amount": 810,
-          "tag": "forge:molten_veridium"
+          "fluid": "tcompat:molten_veridium"
         },
         "temperature": 1125,
         "time": 420

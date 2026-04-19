@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.fluid;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
@@ -27,32 +28,32 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
 
     @Override
     public void addTextures() {
-        compatOre(DeepAetherInit.moltenSkyjade);
-        compatOre(DeepAetherInit.moltenStratus);
-        compatOre(AetherInit.moltenZanite);
-        compatOre(AetherInit.moltenGravitite);
-        compatOre(AetherReduxInit.moltenRefinedSentrite);
-        compatOre(AetherReduxInit.moltenVeridium);
-        compatOre(AetherTRInit.moltenPyral);
-        compatOre(AetherTRInit.moltenNeptune);
-        compatOre(AetherTRInit.moltenValkyrum);
-        compatOre(AdAstraInit.moltenDesh);
-        compatOre(AdAstraInit.moltenCalorite);
-        compatOre(AdAstraInit.moltenOstrum);
-        compatOre(BetterendInit.moltenThallasium);
-        compatOre(BetterendInit.moltenTerminite);
-        compatOre(BetterendInit.moltenAeternium);
-        compatOre(AetherInit.moltenLightnum);
-        compatOre(AetherInit.moltenDraculite);
-        compatOre(DeepAetherInit.moltenStormforgedSteel);
-        compatOre(BetternetherInit.moltenCincinnasite);
-        compatOre(BetternetherInit.moltenNetherRuby);
-        slime(IFInit.fireBlood);
-        slime(IFInit.iceBlood);
-        slime(IFInit.lightningBlood);
-        compatOre(IFInit.moltenFireDragonsteel);
-        compatOre(IFInit.moltenIceDragonsteel);
-        compatOre(IFInit.moltenLightningDragonsteel);
+        compatOre(TCFluids.moltenSkyjade);
+        compatOre(TCFluids.moltenStratus);
+        compatOre(TCFluids.moltenZanite);
+        compatOre(TCFluids.moltenGravitite);
+        compatOre(TCFluids.moltenRefinedSentrite);
+        compatOre(TCFluids.moltenVeridium);
+        compatOre(TCFluids.moltenPyral);
+        compatOre(TCFluids.moltenNeptune);
+        compatOre(TCFluids.moltenValkyrum);
+        compatOre(TCFluids.moltenDesh);
+        compatOre(TCFluids.moltenCalorite);
+        compatOre(TCFluids.moltenOstrum);
+        compatOre(TCFluids.moltenThallasium);
+        compatOre(TCFluids.moltenTerminite);
+        compatOre(TCFluids.moltenAeternium);
+        compatOre(TCFluids.moltenLightnum);
+        compatOre(TCFluids.moltenDraculite);
+        compatOre(TCFluids.moltenStormforgedSteel);
+        compatOre(TCFluids.moltenCincinnasite);
+        compatOre(TCFluids.moltenNetherRuby);
+        slime(TCFluids.fireBlood);
+        slime(TCFluids.iceBlood);
+        slime(TCFluids.lightningBlood);
+        compatOre(TCFluids.moltenFireDragonsteel);
+        compatOre(TCFluids.moltenIceDragonsteel);
+        compatOre(TCFluids.moltenLightningDragonsteel);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {

@@ -8,8 +8,8 @@
   ],
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_ostrum"
+    "tag": "tcompat:molten_ostrum"
   },
   "output": "tcompat:ostrum",
-  "temperature": 1485
+  "temperature": 1175
 }

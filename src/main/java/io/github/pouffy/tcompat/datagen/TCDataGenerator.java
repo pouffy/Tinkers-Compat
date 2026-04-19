@@ -78,10 +78,5 @@ public class TCDataGenerator {
         generator.addProvider(server, new TCMaterialStatsProv(packOutput, materials));
         generator.addProvider(server, new TCMaterialTraitsProv(packOutput, materials));
         generator.addProvider(server, new TCMaterialTagProv(packOutput, existingFileHelper));
-
-        generator.addProvider(client, new TCFluidTooltipProv(packOutput));
-        generator.addProvider(client, new TCFluidTextureProv(packOutput));
-        generator.addProvider(client, new FluidBucketModelProvider(packOutput, TCompat.MOD_ID));
-        generator.addProvider(client, new FluidBlockstateModelProvider(packOutput, TCompat.MOD_ID));
     }
 }

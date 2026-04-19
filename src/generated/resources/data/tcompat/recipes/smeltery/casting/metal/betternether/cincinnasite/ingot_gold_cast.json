@@ -16,7 +16,7 @@
   "cooling_time": 77,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_cincinnasite"
+    "tag": "tcompat:molten_cincinnasite"
   },
   "result": {
     "tag": "forge:ingots/cincinnasite"

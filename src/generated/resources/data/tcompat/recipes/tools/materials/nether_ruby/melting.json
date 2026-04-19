@@ -9,7 +9,7 @@
   "input": "tcompat:nether_ruby",
   "result": {
     "amount": 100,
-    "tag": "forge:molten_nether_ruby"
+    "fluid": "tcompat:molten_nether_ruby"
   },
   "temperature": 1230
 }

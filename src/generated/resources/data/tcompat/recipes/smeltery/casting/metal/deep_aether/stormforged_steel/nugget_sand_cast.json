@@ -17,7 +17,7 @@
   "cooling_time": 26,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_stormforged_steel"
+    "tag": "tcompat:molten_stormforged_steel"
   },
   "result": {
     "tag": "forge:nuggets/stormforged_steel"

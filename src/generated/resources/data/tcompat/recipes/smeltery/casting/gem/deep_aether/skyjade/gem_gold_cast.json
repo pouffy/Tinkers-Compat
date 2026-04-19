@@ -16,7 +16,7 @@
   "cooling_time": 76,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_skyjade"
+    "tag": "tcompat:molten_skyjade"
   },
   "result": {
     "tag": "forge:gems/skyjade"

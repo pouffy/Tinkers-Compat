@@ -17,7 +17,7 @@
   "cooling_time": 77,
   "fluid": {
     "amount": 100,
-    "tag": "forge:molten_nether_ruby"
+    "tag": "tcompat:molten_nether_ruby"
   },
   "result": {
     "tag": "forge:gems/nether_ruby"

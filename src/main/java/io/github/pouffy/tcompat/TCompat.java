@@ -1,6 +1,8 @@
 package io.github.pouffy.tcompat;
 
 import com.mojang.logging.LogUtils;
+import io.github.pouffy.tcompat.common.CompatModule;
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.datagen.TCDataGenerator;
@@ -15,6 +17,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.eventbus.api.IEventBus;
 import org.slf4j.Logger;
+import slimeknights.tconstruct.common.TinkerModule;
+import slimeknights.tconstruct.fluids.TinkerFluids;
 
 @Mod(TCompat.MOD_ID)
 public class TCompat {
@@ -26,6 +30,8 @@ public class TCompat {
 
         modEventBus.addListener(this::commonSetup);
         CompatHelper.init(modEventBus);
+        modEventBus.register(new TCFluids());
+        CompatModule.initRegisters(context);
 
         modEventBus.addListener(EventPriority.LOWEST, TCDataGenerator::gatherData);
     }

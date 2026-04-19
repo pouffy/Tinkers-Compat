@@ -3,7 +3,7 @@
   "byproducts": [
     {
       "amount": 180,
-      "tag": "forge:molten_gravitite",
+      "fluid": "tcompat:molten_gravitite",
       "unit_size": 10
     }
   ],
@@ -18,9 +18,9 @@
   },
   "result": {
     "amount": 90,
-    "tag": "forge:molten_pyral",
+    "fluid": "tcompat:molten_pyral",
     "unit_size": 10
   },
-  "temperature": 1550,
-  "time": 82
+  "temperature": 1225,
+  "time": 73
 }

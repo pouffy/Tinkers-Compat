@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Items;
@@ -24,9 +25,9 @@ public class TCFluidTransferProv extends AbstractFluidContainerTransferProvider 
 
     @Override
     protected void addTransfers() {
-        addBottleTransfer("fire_dragon_blood", "fire_dragon_blood", IFInit.fireBlood, "iceandfire");
-        addBottleTransfer("ice_dragon_blood", "ice_dragon_blood", IFInit.iceBlood, "iceandfire");
-        addBottleTransfer("lightning_dragon_blood", "lightning_dragon_blood", IFInit.lightningBlood, "iceandfire");
+        addBottleTransfer("fire_dragon_blood", "fire_dragon_blood", TCFluids.fireBlood, "iceandfire");
+        addBottleTransfer("ice_dragon_blood", "ice_dragon_blood", TCFluids.iceBlood, "iceandfire");
+        addBottleTransfer("lightning_dragon_blood", "lightning_dragon_blood", TCFluids.lightningBlood, "iceandfire");
     }
 
     protected void addBottleTransfer(String name, String item, FluidObject<?> fluid, String namespace) {

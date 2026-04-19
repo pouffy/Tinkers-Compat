@@ -9,7 +9,7 @@
   "input": "tcompat:stormforged_steel",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_stormforged_steel"
+    "fluid": "tcompat:molten_stormforged_steel"
   },
   "temperature": 1375
 }

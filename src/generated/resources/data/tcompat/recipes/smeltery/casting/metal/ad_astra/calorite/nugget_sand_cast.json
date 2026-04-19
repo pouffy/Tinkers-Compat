@@ -14,10 +14,10 @@
       "modid": "ad_astra"
     }
   ],
-  "cooling_time": 25,
+  "cooling_time": 26,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_calorite"
+    "tag": "tcompat:molten_calorite"
   },
   "result": {
     "tag": "forge:nuggets/calorite"

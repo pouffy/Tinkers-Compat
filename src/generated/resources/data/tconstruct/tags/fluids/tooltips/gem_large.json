@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "#forge:molten_nether_ruby",
+      "id": "#tcompat:molten_nether_ruby",
       "required": false
     }
   ]

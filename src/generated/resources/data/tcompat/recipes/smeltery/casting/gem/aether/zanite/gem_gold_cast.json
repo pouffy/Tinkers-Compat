@@ -13,10 +13,10 @@
       "modid": "aether"
     }
   ],
-  "cooling_time": 65,
+  "cooling_time": 62,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_zanite"
+    "tag": "tcompat:molten_zanite"
   },
   "result": {
     "tag": "forge:gems/zanite"

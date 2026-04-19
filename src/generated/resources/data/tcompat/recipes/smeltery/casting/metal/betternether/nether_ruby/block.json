@@ -13,7 +13,7 @@
   "cooling_time": 231,
   "fluid": {
     "amount": 900,
-    "tag": "forge:molten_nether_ruby"
+    "tag": "tcompat:molten_nether_ruby"
   },
   "result": {
     "tag": "forge:storage_blocks/nether_ruby"

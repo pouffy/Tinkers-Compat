@@ -8,7 +8,7 @@
   ],
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_thallasium"
+    "tag": "tcompat:molten_thallasium"
   },
   "output": "tcompat:thallasium",
   "temperature": 875

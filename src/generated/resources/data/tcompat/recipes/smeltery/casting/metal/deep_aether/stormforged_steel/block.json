@@ -13,7 +13,7 @@
   "cooling_time": 231,
   "fluid": {
     "amount": 810,
-    "tag": "forge:molten_stormforged_steel"
+    "tag": "tcompat:molten_stormforged_steel"
   },
   "result": {
     "tag": "forge:storage_blocks/stormforged_steel"

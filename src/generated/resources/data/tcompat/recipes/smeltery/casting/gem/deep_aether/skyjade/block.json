@@ -13,7 +13,7 @@
   "cooling_time": 227,
   "fluid": {
     "amount": 810,
-    "tag": "forge:molten_skyjade"
+    "tag": "tcompat:molten_skyjade"
   },
   "result": {
     "tag": "forge:storage_blocks/skyjade"

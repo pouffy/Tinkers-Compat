@@ -16,7 +16,7 @@
   "cooling_time": 25,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_skyjade"
+    "tag": "tcompat:molten_skyjade"
   },
   "result": {
     "tag": "forge:nuggets/skyjade"

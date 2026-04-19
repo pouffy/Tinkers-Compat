@@ -14,10 +14,10 @@
       "modid": "aether"
     }
   ],
-  "cooling_time": 26,
+  "cooling_time": 24,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_draculite"
+    "tag": "tcompat:molten_draculite"
   },
   "result": {
     "tag": "forge:nuggets/draculite"

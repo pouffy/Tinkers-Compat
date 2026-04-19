@@ -8,8 +8,8 @@
   ],
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_calorite"
+    "tag": "tcompat:molten_calorite"
   },
   "output": "tcompat:calorite",
-  "temperature": 1275
+  "temperature": 1375
 }

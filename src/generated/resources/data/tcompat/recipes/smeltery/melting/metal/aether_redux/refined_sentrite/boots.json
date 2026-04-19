@@ -11,8 +11,8 @@
   },
   "result": {
     "amount": 360,
-    "tag": "forge:molten_refined_sentrite"
+    "fluid": "tcompat:molten_refined_sentrite"
   },
-  "temperature": 1455,
-  "time": 158
+  "temperature": 1275,
+  "time": 148
 }

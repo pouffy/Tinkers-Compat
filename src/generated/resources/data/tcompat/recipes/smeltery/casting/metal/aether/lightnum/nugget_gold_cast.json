@@ -13,10 +13,10 @@
       "modid": "aether"
     }
   ],
-  "cooling_time": 26,
+  "cooling_time": 24,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_lightnum"
+    "tag": "tcompat:molten_lightnum"
   },
   "result": {
     "tag": "forge:nuggets/lightnum"

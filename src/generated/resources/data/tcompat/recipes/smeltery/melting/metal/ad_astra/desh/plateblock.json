@@ -17,8 +17,8 @@
   },
   "result": {
     "amount": 11,
-    "tag": "forge:molten_desh"
+    "fluid": "tcompat:molten_desh"
   },
-  "temperature": 1075,
-  "time": 24
+  "temperature": 975,
+  "time": 23
 }

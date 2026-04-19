@@ -16,7 +16,7 @@
   "cooling_time": 24,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_aeternium"
+    "tag": "tcompat:molten_aeternium"
   },
   "result": {
     "tag": "forge:nuggets/aeternium"

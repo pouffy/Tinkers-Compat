@@ -17,7 +17,7 @@
   "cooling_time": 77,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_stormforged_steel"
+    "tag": "tcompat:molten_stormforged_steel"
   },
   "result": {
     "tag": "forge:ingots/stormforged_steel"

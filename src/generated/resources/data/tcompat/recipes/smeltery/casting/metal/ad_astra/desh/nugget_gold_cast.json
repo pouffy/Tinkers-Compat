@@ -13,10 +13,10 @@
       "modid": "ad_astra"
     }
   ],
-  "cooling_time": 23,
+  "cooling_time": 22,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_desh"
+    "tag": "tcompat:molten_desh"
   },
   "result": {
     "tag": "forge:nuggets/desh"

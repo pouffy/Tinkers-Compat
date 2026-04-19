@@ -3,7 +3,7 @@
   "byproducts": [
     {
       "amount": 450,
-      "tag": "forge:molten_zanite",
+      "fluid": "tcompat:molten_zanite",
       "unit_size": 10
     }
   ],
@@ -18,9 +18,9 @@
   },
   "result": {
     "amount": 90,
-    "tag": "forge:molten_neptune",
+    "fluid": "tcompat:molten_neptune",
     "unit_size": 10
   },
-  "temperature": 1275,
-  "time": 166
+  "temperature": 850,
+  "time": 138
 }

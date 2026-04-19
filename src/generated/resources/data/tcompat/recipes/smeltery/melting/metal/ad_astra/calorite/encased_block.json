@@ -17,8 +17,8 @@
   },
   "result": {
     "amount": 4,
-    "tag": "forge:molten_calorite"
+    "fluid": "tcompat:molten_calorite"
   },
-  "temperature": 1275,
+  "temperature": 1375,
   "time": 16
 }

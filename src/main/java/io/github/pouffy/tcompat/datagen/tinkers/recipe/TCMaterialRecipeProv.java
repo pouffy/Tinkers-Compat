@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
@@ -157,33 +158,33 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> betternether = withCondition(consumer, modLoaded("betternether"));
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
 
-        materialMeltingCasting(aetherConsumer, TCMaterials.zanite, AetherInit.moltenZanite, FluidValues.INGOT, folder);
-        materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, AetherInit.moltenGravitite, folder);
-        materialMeltingCasting(aetherConsumer, TCMaterials.lightnum, AetherInit.moltenLightnum, folder);
-        materialMeltingCasting(aetherConsumer, TCMaterials.draculite, AetherInit.moltenDraculite, folder);
-        materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, DeepAetherInit.moltenSkyjade, FluidValues.INGOT, folder);
-        materialMeltingCasting(deepAetherConsumer, TCMaterials.stormforgedSteel, DeepAetherInit.moltenStormforgedSteel, folder);
-        materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, AetherReduxInit.moltenVeridium, folder);
-        materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, AetherReduxInit.moltenRefinedSentrite, folder);
+        materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
+        materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, TCFluids.moltenGravitite, folder);
+        materialMeltingCasting(aetherConsumer, TCMaterials.lightnum, TCFluids.moltenLightnum, folder);
+        materialMeltingCasting(aetherConsumer, TCMaterials.draculite, TCFluids.moltenDraculite, folder);
+        materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
+        materialMeltingCasting(deepAetherConsumer, TCMaterials.stormforgedSteel, TCFluids.moltenStormforgedSteel, folder);
+        materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, TCFluids.moltenVeridium, folder);
+        materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, TCFluids.moltenRefinedSentrite, folder);
 
-        materialMeltingCasting(adAstraConsumer, TCMaterials.desh, AdAstraInit.moltenDesh, FluidValues.INGOT, folder);
-        materialMeltingCasting(adAstraConsumer, TCMaterials.calorite, AdAstraInit.moltenCalorite, FluidValues.INGOT, folder);
-        materialMeltingCasting(adAstraConsumer, TCMaterials.ostrum, AdAstraInit.moltenOstrum, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, TCMaterials.desh, TCFluids.moltenDesh, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, TCMaterials.calorite, TCFluids.moltenCalorite, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, TCMaterials.ostrum, TCFluids.moltenOstrum, FluidValues.INGOT, folder);
 
-        materialMeltingCasting(betterend, TCMaterials.thallasium, BetterendInit.moltenThallasium, FluidValues.INGOT, folder);
-        materialMeltingCasting(betterend, TCMaterials.terminite, BetterendInit.moltenTerminite, FluidValues.INGOT, folder);
-        materialMeltingCasting(betterend, TCMaterials.aeternium, BetterendInit.moltenAeternium, FluidValues.INGOT, folder);
+        materialMeltingCasting(betterend, TCMaterials.thallasium, TCFluids.moltenThallasium, FluidValues.INGOT, folder);
+        materialMeltingCasting(betterend, TCMaterials.terminite, TCFluids.moltenTerminite, FluidValues.INGOT, folder);
+        materialMeltingCasting(betterend, TCMaterials.aeternium, TCFluids.moltenAeternium, FluidValues.INGOT, folder);
 
-        materialMeltingCasting(betternether, TCMaterials.cincinnasite, BetternetherInit.moltenCincinnasite, FluidValues.INGOT, folder);
-        materialMeltingCasting(betternether, TCMaterials.netherRuby, BetternetherInit.moltenNetherRuby, FluidValues.GEM, folder);
+        materialMeltingCasting(betternether, TCMaterials.cincinnasite, TCFluids.moltenCincinnasite, FluidValues.INGOT, folder);
+        materialMeltingCasting(betternether, TCMaterials.netherRuby, TCFluids.moltenNetherRuby, FluidValues.GEM, folder);
 
-        materialMeltingCasting(iceandfire, TCMaterials.fireDragonsteel, IFInit.moltenFireDragonsteel, FluidValues.INGOT, folder);
-        materialMeltingCasting(iceandfire, TCMaterials.iceDragonsteel, IFInit.moltenIceDragonsteel, FluidValues.INGOT, folder);
-        materialMeltingCasting(iceandfire, TCMaterials.lightningDragonsteel, IFInit.moltenLightningDragonsteel, FluidValues.INGOT, folder);
+        materialMeltingCasting(iceandfire, TCMaterials.fireDragonsteel, TCFluids.moltenFireDragonsteel, FluidValues.INGOT, folder);
+        materialMeltingCasting(iceandfire, TCMaterials.iceDragonsteel, TCFluids.moltenIceDragonsteel, FluidValues.INGOT, folder);
+        materialMeltingCasting(iceandfire, TCMaterials.lightningDragonsteel, TCFluids.moltenLightningDragonsteel, FluidValues.INGOT, folder);
 
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, AetherTRInit.moltenValkyrum, FluidValues.INGOT, folder);
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, AetherTRInit.moltenPyral, FluidValues.INGOT, folder);
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.zanite, TCMaterials.neptune, AetherTRInit.moltenNeptune, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, TCFluids.moltenValkyrum, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, TCFluids.moltenPyral, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.zanite, TCMaterials.neptune, TCFluids.moltenNeptune, FluidValues.INGOT, folder);
     }
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

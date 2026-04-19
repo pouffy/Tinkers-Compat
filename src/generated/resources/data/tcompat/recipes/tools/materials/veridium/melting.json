@@ -9,7 +9,7 @@
   "input": "tcompat:veridium",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_veridium"
+    "fluid": "tcompat:molten_veridium"
   },
   "temperature": 1125
 }

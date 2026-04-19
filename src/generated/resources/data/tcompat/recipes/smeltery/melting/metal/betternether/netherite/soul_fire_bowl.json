@@ -3,7 +3,7 @@
   "byproducts": [
     {
       "amount": 1260,
-      "tag": "forge:molten_cincinnasite"
+      "fluid": "tcompat:molten_cincinnasite"
     },
     {
       "amount": 1000,

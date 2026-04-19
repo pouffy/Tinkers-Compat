@@ -16,7 +16,7 @@
   "cooling_time": 71,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_aeternium"
+    "tag": "tcompat:molten_aeternium"
   },
   "result": {
     "tag": "forge:plates/aeternium"

@@ -14,10 +14,10 @@
       "modid": "ad_astra"
     }
   ],
-  "cooling_time": 27,
+  "cooling_time": 24,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_ostrum"
+    "tag": "tcompat:molten_ostrum"
   },
   "result": {
     "tag": "forge:nuggets/ostrum"

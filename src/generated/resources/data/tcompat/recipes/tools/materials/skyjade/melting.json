@@ -9,7 +9,7 @@
   "input": "tcompat:skyjade",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_skyjade"
+    "fluid": "tcompat:molten_skyjade"
   },
   "temperature": 1325
 }

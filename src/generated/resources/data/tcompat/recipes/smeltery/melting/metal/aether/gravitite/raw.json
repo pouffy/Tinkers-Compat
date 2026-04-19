@@ -19,8 +19,8 @@
         "byproducts": [
           {
             "amount": 100,
-            "rate": "gem",
-            "tag": "forge:molten_zanite"
+            "fluid": "tcompat:molten_zanite",
+            "rate": "gem"
           }
         ],
         "ingredient": {
@@ -29,10 +29,10 @@
         "rate": "metal",
         "result": {
           "amount": 90,
-          "tag": "forge:molten_gravitite"
+          "fluid": "tcompat:molten_gravitite"
         },
-        "temperature": 1275,
-        "time": 111
+        "temperature": 1075,
+        "time": 103
       }
     },
     {
@@ -49,10 +49,10 @@
         "rate": "metal",
         "result": {
           "amount": 90,
-          "tag": "forge:molten_gravitite"
+          "fluid": "tcompat:molten_gravitite"
         },
-        "temperature": 1275,
-        "time": 111
+        "temperature": 1075,
+        "time": 103
       }
     }
   ]

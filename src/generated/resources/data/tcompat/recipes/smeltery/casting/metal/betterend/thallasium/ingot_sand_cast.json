@@ -17,7 +17,7 @@
   "cooling_time": 63,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_thallasium"
+    "tag": "tcompat:molten_thallasium"
   },
   "result": {
     "tag": "forge:ingots/thallasium"

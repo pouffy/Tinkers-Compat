@@ -9,7 +9,7 @@
   "input": "tcompat:draculite",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_draculite"
+    "fluid": "tcompat:molten_draculite"
   },
-  "temperature": 1375
+  "temperature": 1175
 }

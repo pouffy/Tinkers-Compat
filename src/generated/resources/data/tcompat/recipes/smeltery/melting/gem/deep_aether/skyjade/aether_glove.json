@@ -11,7 +11,7 @@
   },
   "result": {
     "amount": 180,
-    "tag": "forge:molten_skyjade",
+    "fluid": "tcompat:molten_skyjade",
     "unit_size": 25
   },
   "temperature": 1325,

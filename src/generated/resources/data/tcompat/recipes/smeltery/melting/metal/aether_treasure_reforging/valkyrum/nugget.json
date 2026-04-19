@@ -15,7 +15,7 @@
   },
   "result": {
     "amount": 10,
-    "tag": "forge:molten_valkyrum"
+    "fluid": "tcompat:molten_valkyrum"
   },
   "temperature": 1275,
   "time": 25

@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.lang;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -62,32 +63,32 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void fluids() {
-        forFluid(DeepAetherInit.moltenSkyjade);
-        forFluid(DeepAetherInit.moltenStratus);
-        forFluid(AetherInit.moltenZanite);
-        forFluid(AetherInit.moltenGravitite);
-        forFluid(AetherReduxInit.moltenRefinedSentrite);
-        forFluid(AetherReduxInit.moltenVeridium);
-        forFluid(AetherTRInit.moltenPyral);
-        forFluid(AetherTRInit.moltenNeptune);
-        forFluid(AetherTRInit.moltenValkyrum);
-        forFluid(AdAstraInit.moltenDesh);
-        forFluid(AdAstraInit.moltenCalorite);
-        forFluid(AdAstraInit.moltenOstrum);
-        forFluid(BetterendInit.moltenThallasium);
-        forFluid(BetterendInit.moltenTerminite);
-        forFluid(BetterendInit.moltenAeternium);
-        forFluid(AetherInit.moltenLightnum);
-        forFluid(AetherInit.moltenDraculite);
-        forFluid(DeepAetherInit.moltenStormforgedSteel);
-        forFluid(BetternetherInit.moltenCincinnasite);
-        forFluid(BetternetherInit.moltenNetherRuby);
-        forFluid(IFInit.fireBlood);
-        forFluid(IFInit.iceBlood);
-        forFluid(IFInit.lightningBlood);
-        forFluid(IFInit.moltenFireDragonsteel);
-        forFluid(IFInit.moltenIceDragonsteel);
-        forFluid(IFInit.moltenLightningDragonsteel);
+        forFluid(TCFluids.moltenSkyjade);
+        forFluid(TCFluids.moltenStratus);
+        forFluid(TCFluids.moltenZanite);
+        forFluid(TCFluids.moltenGravitite);
+        forFluid(TCFluids.moltenRefinedSentrite);
+        forFluid(TCFluids.moltenVeridium);
+        forFluid(TCFluids.moltenPyral);
+        forFluid(TCFluids.moltenNeptune);
+        forFluid(TCFluids.moltenValkyrum);
+        forFluid(TCFluids.moltenDesh);
+        forFluid(TCFluids.moltenCalorite);
+        forFluid(TCFluids.moltenOstrum);
+        forFluid(TCFluids.moltenThallasium);
+        forFluid(TCFluids.moltenTerminite);
+        forFluid(TCFluids.moltenAeternium);
+        forFluid(TCFluids.moltenLightnum);
+        forFluid(TCFluids.moltenDraculite);
+        forFluid(TCFluids.moltenStormforgedSteel);
+        forFluid(TCFluids.moltenCincinnasite);
+        forFluid(TCFluids.moltenNetherRuby);
+        forFluid(TCFluids.fireBlood);
+        forFluid(TCFluids.iceBlood);
+        forFluid(TCFluids.lightningBlood);
+        forFluid(TCFluids.moltenFireDragonsteel);
+        forFluid(TCFluids.moltenIceDragonsteel);
+        forFluid(TCFluids.moltenLightningDragonsteel);
     }
 
     private void misc() {

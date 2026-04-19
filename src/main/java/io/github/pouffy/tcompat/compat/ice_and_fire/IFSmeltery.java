@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire;
 
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.data.TCShapedRecipeBuilder;
 import io.github.pouffy.tcompat.common.data.TCShapelessRecipeBuilder;
 import io.github.pouffy.tcompat.common.data.TCTags;
@@ -35,9 +36,9 @@ public class IFSmeltery implements CompatSmeltery {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> consumer, String folder) {
         var cConsumer = compatConsumer(consumer);
-        metal(cConsumer, IFInit.moltenFireDragonsteel, compatModId()).metal(9, true).optional();
-        metal(cConsumer, IFInit.moltenIceDragonsteel, compatModId()).metal(9, true).optional();
-        metal(cConsumer, IFInit.moltenLightningDragonsteel, compatModId()).metal(9, true).optional();
+        metal(cConsumer, TCFluids.moltenFireDragonsteel, compatModId()).metal(9, true).optional();
+        metal(cConsumer, TCFluids.moltenIceDragonsteel, compatModId()).metal(9, true).optional();
+        metal(cConsumer, TCFluids.moltenLightningDragonsteel, compatModId()).metal(9, true).optional();
 
         simpleMelting(cConsumer, TinkerFluids.moltenIron, FluidValues.INGOT * 4, "iron", listedInput(
                 "dragonforge_fire_input",
@@ -68,9 +69,9 @@ public class IFSmeltery implements CompatSmeltery {
         dragonArmorMelting(cConsumer, "gold", TinkerFluids.moltenGold);
         dragonArmorMelting(cConsumer, "diamond", TinkerFluids.moltenDiamond);
         dragonArmorMelting(cConsumer, "silver", TinkerFluids.moltenSilver);
-        dragonArmorMelting(cConsumer, "fire_dragonsteel", "dragonsteel_fire", IFInit.moltenFireDragonsteel);
-        dragonArmorMelting(cConsumer, "ice_dragonsteel", "dragonsteel_ice", IFInit.moltenFireDragonsteel);
-        dragonArmorMelting(cConsumer, "lightning_dragonsteel", "dragonsteel_lightning", IFInit.moltenFireDragonsteel);
+        dragonArmorMelting(cConsumer, "fire_dragonsteel", "dragonsteel_fire", TCFluids.moltenFireDragonsteel);
+        dragonArmorMelting(cConsumer, "ice_dragonsteel", "dragonsteel_ice", TCFluids.moltenFireDragonsteel);
+        dragonArmorMelting(cConsumer, "lightning_dragonsteel", "dragonsteel_lightning", TCFluids.moltenFireDragonsteel);
         MeltingRecipeBuilder.melting(ItemNameIngredient.from(getResource("iceandfire:pixie_wand")), TinkerFluids.moltenDiamond.result(FluidValues.GEM), getTemperature(TinkerFluids.moltenDiamond), IMeltingRecipe.calcTimeFactor(FluidValues.GEM)).setDamagable(new int[]{FluidValues.GEM_SHARD}).save(consumer, location(gemFolder("melting") + "/diamond/pixie_wand"));
         MeltingRecipeBuilder.melting(ItemNameIngredient.from(getResource("iceandfire:hippogryph_sword")), TinkerFluids.moltenIron.result(FluidValues.INGOT), getTemperature(TinkerFluids.moltenIron), IMeltingRecipe.calcTimeFactor(FluidValues.INGOT)).setDamagable(new int[]{FluidValues.NUGGET}).save(consumer, location(metalFolder("melting") + "/iron/hippogryph_sword"));
         simpleMelting(cConsumer, TinkerFluids.moltenIron, FluidValues.INGOT, "iron", ItemNameIngredient.from(getResource("iceandfire:dragon_flute")), metalFolder("melting"), "dragon_flute");
@@ -88,33 +89,33 @@ public class IFSmeltery implements CompatSmeltery {
         simpleMelting(cConsumer, TinkerFluids.moltenGold, FluidValues.NUGGET * 2, "gold", ItemNameIngredient.from(getResource("iceandfire:gold_pile")), metalFolder("melting"), "pile");
         simpleMelting(cConsumer, TinkerFluids.moltenSilver, FluidValues.NUGGET * 2, "silver", ItemNameIngredient.from(getResource("iceandfire:silver_pile")), metalFolder("melting"), "pile");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.NUGGET * 2, "copper", ItemNameIngredient.from(getResource("iceandfire:copper_pile")), metalFolder("melting"), "pile");
-        dragonsteelSet(cConsumer, IFInit.moltenFireDragonsteel, "fire");
-        dragonsteelSet(cConsumer, IFInit.moltenIceDragonsteel, "ice");
-        dragonsteelSet(cConsumer, IFInit.moltenLightningDragonsteel, "lightning");
+        dragonsteelSet(cConsumer, TCFluids.moltenFireDragonsteel, "fire");
+        dragonsteelSet(cConsumer, TCFluids.moltenIceDragonsteel, "ice");
+        dragonsteelSet(cConsumer, TCFluids.moltenLightningDragonsteel, "lightning");
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("fire_dragon_blood")))
-                .setFluidAndTime(IFInit.fireBlood, FluidValues.BOTTLE)
+                .setFluidAndTime(TCFluids.fireBlood, FluidValues.BOTTLE)
                 .setCast(Items.GLASS_BOTTLE, true)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_blood/fire"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("ice_dragon_blood")))
-                .setFluidAndTime(IFInit.iceBlood, FluidValues.BOTTLE)
+                .setFluidAndTime(TCFluids.iceBlood, FluidValues.BOTTLE)
                 .setCast(Items.GLASS_BOTTLE, true)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_blood/ice"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("lightning_dragon_blood")))
-                .setFluidAndTime(IFInit.lightningBlood, FluidValues.BOTTLE)
+                .setFluidAndTime(TCFluids.lightningBlood, FluidValues.BOTTLE)
                 .setCast(Items.GLASS_BOTTLE, true)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_blood/lightning"));
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("dragonbone_sword_fire")))
-                .setFluidAndTime(IFInit.fireBlood, FluidValues.BOTTLE)
+                .setFluidAndTime(TCFluids.fireBlood, FluidValues.BOTTLE)
                 .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_bone_sword/fire"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("dragonbone_sword_ice")))
-                .setFluidAndTime(IFInit.iceBlood, FluidValues.BOTTLE)
+                .setFluidAndTime(TCFluids.iceBlood, FluidValues.BOTTLE)
                 .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_bone_sword/ice"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("dragonbone_sword_lightning")))
-                .setFluidAndTime(IFInit.lightningBlood, FluidValues.BOTTLE)
+                .setFluidAndTime(TCFluids.lightningBlood, FluidValues.BOTTLE)
                 .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_bone_sword/lightning"));
 

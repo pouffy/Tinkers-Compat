@@ -8,7 +8,7 @@
   ],
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_terminite"
+    "tag": "tcompat:molten_terminite"
   },
   "output": "tcompat:terminite",
   "temperature": 930

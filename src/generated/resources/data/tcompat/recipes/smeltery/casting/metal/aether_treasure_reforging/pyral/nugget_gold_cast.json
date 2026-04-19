@@ -13,10 +13,10 @@
       "modid": "aether_treasure_reforging"
     }
   ],
-  "cooling_time": 27,
+  "cooling_time": 24,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_pyral"
+    "tag": "tcompat:molten_pyral"
   },
   "result": {
     "tag": "forge:nuggets/pyral"

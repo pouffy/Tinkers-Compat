@@ -3,7 +3,7 @@
   "byproducts": [
     {
       "amount": 2790,
-      "tag": "forge:molten_terminite"
+      "fluid": "tcompat:molten_terminite"
     }
   ],
   "conditions": [
@@ -17,7 +17,7 @@
   },
   "result": {
     "amount": 90,
-    "tag": "forge:molten_aeternium"
+    "fluid": "tcompat:molten_aeternium"
   },
   "temperature": 1160,
   "time": 71

@@ -11,7 +11,7 @@
   },
   "result": {
     "amount": 450,
-    "tag": "forge:molten_nether_ruby"
+    "fluid": "tcompat:molten_nether_ruby"
   },
   "temperature": 1230,
   "time": 163

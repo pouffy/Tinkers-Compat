@@ -16,7 +16,7 @@
   "cooling_time": 77,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_stratus"
+    "tag": "tcompat:molten_stratus"
   },
   "result": {
     "tag": "forge:ingots/stratus"

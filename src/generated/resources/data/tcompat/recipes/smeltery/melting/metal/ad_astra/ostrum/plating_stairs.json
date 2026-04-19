@@ -11,8 +11,8 @@
   },
   "result": {
     "amount": 18,
-    "tag": "forge:molten_ostrum"
+    "fluid": "tcompat:molten_ostrum"
   },
-  "temperature": 1485,
-  "time": 36
+  "temperature": 1175,
+  "time": 32
 }

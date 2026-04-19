@@ -15,8 +15,8 @@
   },
   "result": {
     "amount": 90,
-    "tag": "forge:molten_zanite"
+    "fluid": "tcompat:molten_zanite"
   },
-  "temperature": 950,
-  "time": 65
+  "temperature": 850,
+  "time": 62
 }

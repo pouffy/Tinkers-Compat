@@ -3,7 +3,7 @@
   "byproducts": [
     {
       "amount": 180,
-      "tag": "forge:molten_gravitite",
+      "fluid": "tcompat:molten_gravitite",
       "unit_size": 10
     }
   ],
@@ -18,7 +18,7 @@
   },
   "result": {
     "amount": 90,
-    "tag": "forge:molten_valkyrum",
+    "fluid": "tcompat:molten_valkyrum",
     "unit_size": 10
   },
   "temperature": 1275,

@@ -19,31 +19,10 @@ import static slimeknights.mantle.block.fluid.BurningLiquidBlock.createBurning;
 
 public class AetherTRInit extends CompatInitializer {
     public static final ModifierDeferredRegister AETHERTR_M = ModifierDeferredRegister.create(TCompat.MOD_ID);
-    public static final FluidDeferredRegister AETHERTR_F = new FluidDeferredRegister(TCompat.MOD_ID);
 
     public static final StaticModifier<PhoenixTouchedModifier> phoenixTouched = AETHERTR_M.register("phoenix_touched", PhoenixTouchedModifier::new);
 
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenPyral = AETHERTR_F.register("molten_pyral").type(hot("molten_pyral").temperature(1850).lightLevel(15)).block(createBurning(MapColor.COLOR_ORANGE, 15, 12, 7.5f)).bucket().commonTag().flowing();
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenValkyrum = AETHERTR_F.register("molten_valkyrum").type(hot("molten_valkyrum").temperature(1575).lightLevel(7)).block(createBurning(MapColor.COLOR_LIGHT_GRAY, 7, 8, 6f)).bucket().commonTag().flowing();
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenNeptune = AETHERTR_F.register("molten_neptune").type(hot("molten_neptune").temperature(1575).lightLevel(7)).block(createBurning(MapColor.COLOR_BLUE, 7, 8, 6f)).bucket().commonTag().flowing();
-
-    @SubscribeEvent
-    void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            DispenserBlock.registerBehavior(moltenPyral, dispenseBucket);
-            DispenserBlock.registerBehavior(moltenValkyrum, dispenseBucket);
-            DispenserBlock.registerBehavior(moltenNeptune, dispenseBucket);
-        });
-    }
-
-    public static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
-        acceptMolten(output, moltenPyral);
-        acceptMolten(output, moltenValkyrum);
-        acceptMolten(output, moltenNeptune);
-    }
-
     public static void init(IEventBus eventBus) {
         AETHERTR_M.register(eventBus);
-        AETHERTR_F.register(eventBus);
     }
 }

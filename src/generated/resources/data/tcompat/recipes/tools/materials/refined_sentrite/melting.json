@@ -9,7 +9,7 @@
   "input": "tcompat:refined_sentrite",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_refined_sentrite"
+    "fluid": "tcompat:molten_refined_sentrite"
   },
-  "temperature": 1455
+  "temperature": 1275
 }

@@ -9,7 +9,7 @@
   "cooling_time": 36,
   "fluid": {
     "amount": 30,
-    "tag": "forge:molten_thallasium"
+    "tag": "tcompat:molten_thallasium"
   },
   "result": "betterend:thallasium_bars"
 }

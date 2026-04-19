@@ -17,7 +17,7 @@
   "cooling_time": 23,
   "fluid": {
     "amount": 10,
-    "tag": "forge:molten_veridium"
+    "tag": "tcompat:molten_veridium"
   },
   "result": {
     "tag": "forge:nuggets/veridium"

@@ -8,7 +8,7 @@
   ],
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_cincinnasite"
+    "tag": "tcompat:molten_cincinnasite"
   },
   "output": "tcompat:cincinnasite",
   "temperature": 1375

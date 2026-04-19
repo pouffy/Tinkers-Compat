@@ -1,9 +1,9 @@
 {
   "type": "tconstruct:casting_table",
-  "cooling_time": 74,
+  "cooling_time": 62,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_neptune"
+    "tag": "tcompat:molten_neptune"
   },
   "result": "aether_treasure_reforging:neptune_mesh"
 }

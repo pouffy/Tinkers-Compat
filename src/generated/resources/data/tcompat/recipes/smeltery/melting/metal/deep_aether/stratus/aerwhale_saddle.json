@@ -11,7 +11,7 @@
   },
   "result": {
     "amount": 180,
-    "tag": "forge:molten_stratus"
+    "fluid": "tcompat:molten_stratus"
   },
   "temperature": 1375,
   "time": 109

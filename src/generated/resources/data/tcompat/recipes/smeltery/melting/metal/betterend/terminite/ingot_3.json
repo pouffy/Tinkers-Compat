@@ -22,7 +22,7 @@
   ],
   "result": {
     "amount": 270,
-    "tag": "forge:molten_terminite"
+    "fluid": "tcompat:molten_terminite"
   },
   "temperature": 930,
   "time": 111

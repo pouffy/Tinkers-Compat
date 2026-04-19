@@ -13,7 +13,7 @@
   "cooling_time": 223,
   "fluid": {
     "amount": 810,
-    "tag": "forge:molten_valkyrum"
+    "tag": "tcompat:molten_valkyrum"
   },
   "result": {
     "tag": "forge:storage_blocks/valkyrum"

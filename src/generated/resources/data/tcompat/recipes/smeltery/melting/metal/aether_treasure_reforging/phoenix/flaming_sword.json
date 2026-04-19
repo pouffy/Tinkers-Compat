@@ -11,8 +11,8 @@
   },
   "result": {
     "amount": 180,
-    "tag": "forge:molten_pyral"
+    "fluid": "tcompat:molten_pyral"
   },
-  "temperature": 1550,
-  "time": 115
+  "temperature": 1225,
+  "time": 103
 }

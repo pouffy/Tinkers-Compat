@@ -3,7 +3,7 @@
   "byproducts": [
     {
       "amount": 100,
-      "tag": "forge:molten_nether_ruby"
+      "fluid": "tcompat:molten_nether_ruby"
     }
   ],
   "conditions": [

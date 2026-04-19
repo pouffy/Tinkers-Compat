@@ -16,7 +16,7 @@
   "cooling_time": 64,
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_terminite"
+    "tag": "tcompat:molten_terminite"
   },
   "result": {
     "tag": "forge:plates/terminite"

@@ -10,10 +10,10 @@
       "modid": "ad_astra"
     }
   ],
-  "cooling_time": 206,
+  "cooling_time": 197,
   "fluid": {
     "amount": 810,
-    "tag": "forge:molten_desh"
+    "tag": "tcompat:molten_desh"
   },
   "result": {
     "tag": "forge:storage_blocks/desh"

@@ -8,8 +8,8 @@
   ],
   "fluid": {
     "amount": 90,
-    "tag": "forge:molten_zanite"
+    "tag": "tcompat:molten_zanite"
   },
   "output": "tcompat:zanite",
-  "temperature": 950
+  "temperature": 850
 }

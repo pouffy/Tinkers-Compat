@@ -9,7 +9,7 @@
   "input": "tcompat:gravitite",
   "result": {
     "amount": 90,
-    "tag": "forge:molten_gravitite"
+    "fluid": "tcompat:molten_gravitite"
   },
-  "temperature": 1275
+  "temperature": 1075
 }
