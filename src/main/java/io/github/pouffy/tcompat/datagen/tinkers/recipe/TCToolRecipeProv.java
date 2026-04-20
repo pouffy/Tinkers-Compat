@@ -28,26 +28,28 @@ public class TCToolRecipeProv extends TCBaseRecipeProvider implements IMaterialR
         String folder = "tools/building/";
         String partFolder = "tools/parts/";
 
+        Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, modLoaded("iceandfire"));
+
         PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.HELMET))
                 .setPattern(getResource("tconstruct", "helmet_plating"))
                 .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS), Ingredient.of(TinkerSmeltery.helmetPlatingCast.get())))
                 .setCost(3)
-                .save(consumer, location(partFolder + "builder/" + getResource("tconstruct", "helmet_plating").getPath()));
+                .save(iceandfireConsumer, location(partFolder + "builder/" + getResource("tconstruct", "helmet_plating").getPath()));
         PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE))
                 .setPattern(getResource("tconstruct", "chestplate_plating"))
                 .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS), Ingredient.of(TinkerSmeltery.chestplatePlatingCast.get())))
                 .setCost(6)
-                .save(consumer, location(partFolder + "builder/" + getResource("tconstruct", "chestplate_plating").getPath()));
+                .save(iceandfireConsumer, location(partFolder + "builder/" + getResource("tconstruct", "chestplate_plating").getPath()));
         PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS))
                 .setPattern(getResource("tconstruct", "leggings_plating"))
                 .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS), Ingredient.of(TinkerSmeltery.leggingsPlatingCast.get())))
                 .setCost(5)
-                .save(consumer, location(partFolder + "builder/" + getResource("tconstruct", "leggings_plating").getPath()));
+                .save(iceandfireConsumer, location(partFolder + "builder/" + getResource("tconstruct", "leggings_plating").getPath()));
         PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.BOOTS))
                 .setPattern(getResource("tconstruct", "boots_plating"))
                 .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS), Ingredient.of(TinkerSmeltery.bootsPlatingCast.get())))
                 .setCost(2)
-                .save(consumer, location(partFolder + "builder/" + getResource("tconstruct", "boots_plating").getPath()));
+                .save(iceandfireConsumer, location(partFolder + "builder/" + getResource("tconstruct", "boots_plating").getPath()));
 
         toolBuilding(consumer, GlobalInit.glaive, folder);
     }

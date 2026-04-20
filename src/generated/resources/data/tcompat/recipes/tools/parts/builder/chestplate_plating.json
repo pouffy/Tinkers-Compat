@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:part_builder",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
   "cost": 6,
   "pattern": "tconstruct:chestplate_plating",
   "pattern_item": [

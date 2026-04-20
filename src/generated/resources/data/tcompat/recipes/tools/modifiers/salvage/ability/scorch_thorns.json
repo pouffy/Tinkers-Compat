@@ -3,7 +3,7 @@
   "conditions": [
     {
       "type": "forge:mod_loaded",
-      "modid": "betternether"
+      "modid": "iceandfire"
     }
   ],
   "modifier": "tcompat:scorch_thorns",

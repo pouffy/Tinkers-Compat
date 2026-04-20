@@ -75,7 +75,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
         Consumer<FinishedRecipe> betternetherConsumer = withCondition(consumer, modLoaded("betternether"));
-        Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, modLoaded("betternether"));
+        Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, modLoaded("iceandfire"));
 
         Function<String, ResourceLocation> speciesId = name -> getResource("species", name);
         Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
