@@ -14,9 +14,11 @@ group = mod_group_id
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-boolean isSnapshot = System.getenv("SNAPSHOT")
-version = "${mod_version}" + (isSnapshot ? "-SNAPSHOT" : "")
-boolean isCI = System.getenv("CI") != null
+boolean ci = System.getenv("CI") != null ? System.getenv("CI").toBoolean() : false
+boolean release = System.getenv("RELEASE") != null ? System.getenv("RELEASE").toBoolean() : false
+boolean nightly = ci && !release
+String buildNumber = System.getenv("GITHUB_RUN_NUMBER")
+version = "${mod_version}${nightly ? "-build.${buildNumber}" : ""}"
 
 sourceSets {
     main.resources {
@@ -67,7 +69,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 machete {
-    enabled = isCI
+    enabled = ci
     ignoredTasks.addAll("jar", "slimJar")
     additionalTasks.addAll("reobfJar", "reobjSlimJar")
 }
