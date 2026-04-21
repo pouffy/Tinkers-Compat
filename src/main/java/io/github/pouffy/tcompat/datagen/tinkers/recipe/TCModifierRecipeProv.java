@@ -25,12 +25,10 @@ import net.minecraftforge.common.crafting.CompoundIngredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.mantle.recipe.helper.ItemOutput;
-import slimeknights.mantle.recipe.ingredient.SizedIngredient;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
-import slimeknights.tconstruct.library.recipe.modifiers.ModifierSalvage;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.IncrementalModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipe;
@@ -38,10 +36,8 @@ import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifier
 import slimeknights.tconstruct.library.recipe.partbuilder.Pattern;
 import slimeknights.tconstruct.library.recipe.partbuilder.recycle.PartBuilderRecycleBuilder;
 import slimeknights.tconstruct.library.tools.SlotType;
-import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.tables.TinkerTables;
 import slimeknights.tconstruct.tools.TinkerModifiers;
-import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -232,7 +228,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setMaxLevel(1)
                 .setSlots(SlotType.ABILITY, 1)
                 .allowCrystal()
-                .save(consumer, wrap(TCModifiers.dampening, abilityFolder, "_level_1"));
+                .save(iceandfireConsumer, wrap(TCModifiers.dampening, abilityFolder, "_level_1"));
         ModifierRecipeBuilder.modifier(TCModifiers.dampening)
                 .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
                 .addInput(ItemTags.create(getResource("forge", "gems/sapphire")))
@@ -242,7 +238,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .addInput(ItemTags.create(getResource("forge", "storage_blocks/silver")))
                 .disallowCrystal() // would allow a cost cheese
                 .exactLevel(2)
-                .save(consumer, wrap(TCModifiers.dampening, abilityFolder, "_level_2"));
+                .save(iceandfireConsumer, wrap(TCModifiers.dampening, abilityFolder, "_level_2"));
         ModifierRecipeBuilder.modifier(TCModifiers.dampening)
                 .setTools(ingredientFromTags(TinkerTags.Items.RANGED, TinkerTags.Items.MELEE_WEAPON))
                 .addInput(ItemTags.create(getResource("forge", "storage_blocks/sapphire")))
@@ -252,7 +248,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .addInput(ItemTags.create(getResource("forge", "storage_blocks/silver")))
                 .disallowCrystal() // would allow a cost cheese
                 .exactLevel(3)
-                .save(consumer, wrap(TCModifiers.dampening, abilityFolder, "_level_3"));
+                .save(iceandfireConsumer, wrap(TCModifiers.dampening, abilityFolder, "_level_3"));
 
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
@@ -266,16 +262,16 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
             Function<Integer, ItemOutput> scale = (count) -> ItemNameOutput.fromName(iceandfireId.apply("dragonscales_%s".formatted(colour)), count);
             PartBuilderRecycleBuilder.tool(ItemNameIngredient.from(iceandfireId.apply("armor_%s_helmet".formatted(colour))))
                     .result(leather, scale.apply(5))
-                    .save(consumer, location(recycleFolder + colour + "_dragon_scale_helmet"));
+                    .save(iceandfireConsumer, location(recycleFolder + colour + "_dragon_scale_helmet"));
             PartBuilderRecycleBuilder.tool(ItemNameIngredient.from(iceandfireId.apply("armor_%s_chestplate".formatted(colour))))
                     .result(leather, scale.apply(8))
-                    .save(consumer, location(recycleFolder + colour + "_dragon_scale_chestplate"));
+                    .save(iceandfireConsumer, location(recycleFolder + colour + "_dragon_scale_chestplate"));
             PartBuilderRecycleBuilder.tool(ItemNameIngredient.from(iceandfireId.apply("armor_%s_leggings".formatted(colour))))
                     .result(leather, scale.apply(7))
-                    .save(consumer, location(recycleFolder + colour + "_dragon_scale_leggings"));
+                    .save(iceandfireConsumer, location(recycleFolder + colour + "_dragon_scale_leggings"));
             PartBuilderRecycleBuilder.tool(ItemNameIngredient.from(iceandfireId.apply("armor_%s_boots".formatted(colour))))
                     .result(leather, scale.apply(4))
-                    .save(consumer, location(recycleFolder + colour + "_dragon_scale_boots"));
+                    .save(iceandfireConsumer, location(recycleFolder + colour + "_dragon_scale_boots"));
         });
 
     }
@@ -300,7 +296,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
     private void woodTexture(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {
         if (!woodType.hasPlanks()) return;
         String folder = "tools/modifiers/slotless/";
-        woodTexture(consumer, material, woodType.plankTag(), folder);
+        woodTexture(woodType.makeConsumer(consumer), material, woodType.plankTag(), folder);
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, MaterialVariantId material, TagKey<Item> planks, String folder) {

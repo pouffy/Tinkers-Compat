@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/nether_sakura"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/nether_sakura"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/nether_sakura"
+        }
+      ]
     }
   ],
   "inputs": [

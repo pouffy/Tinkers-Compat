@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/lucernia"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/lucernia"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/lucernia"
+        }
+      ]
     }
   ],
   "inputs": [

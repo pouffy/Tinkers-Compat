@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/blue_enchanted"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/blue_enchanted"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/blue_enchanted"
+        }
+      ]
     }
   ],
   "inputs": [

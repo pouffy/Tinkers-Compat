@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/jellyshroom"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether_redux"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:stems/jellyshroom"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/jellyshroom"
+        }
+      ]
     }
   ],
   "inputs": [

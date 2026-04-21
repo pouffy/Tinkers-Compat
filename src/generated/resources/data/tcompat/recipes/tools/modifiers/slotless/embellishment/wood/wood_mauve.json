@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/mauve"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/mauve"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/mauve"
+        }
+      ]
     }
   ],
   "inputs": [

@@ -22,6 +22,27 @@
           "tag": "tcompat:planks/cypress"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/cypress"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/cypress"
+        }
+      ]
     }
   ],
   "inputs": [

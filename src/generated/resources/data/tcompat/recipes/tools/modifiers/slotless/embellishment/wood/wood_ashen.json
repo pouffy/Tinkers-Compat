@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/ancient"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/ancient"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/ancient"
+        }
+      ]
     }
   ],
   "inputs": [

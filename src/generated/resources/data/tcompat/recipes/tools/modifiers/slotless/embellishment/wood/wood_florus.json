@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/florus"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/florus"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/florus"
+        }
+      ]
     }
   ],
   "inputs": [

@@ -22,6 +22,27 @@
           "tag": "tcompat:planks/baobab"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/baobab"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/baobab"
+        }
+      ]
     }
   ],
   "inputs": [

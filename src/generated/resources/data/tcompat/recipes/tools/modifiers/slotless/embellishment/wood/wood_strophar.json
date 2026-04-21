@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/strophar"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ad_astra"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:caps/strophar"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/strophar"
+        }
+      ]
     }
   ],
   "inputs": [

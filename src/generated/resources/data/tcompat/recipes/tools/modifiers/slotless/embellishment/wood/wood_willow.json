@@ -26,6 +26,31 @@
           "tag": "tcompat:planks/willow"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomesoplenty"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/willow"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/willow"
+        }
+      ]
     }
   ],
   "inputs": [

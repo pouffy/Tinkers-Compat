@@ -22,6 +22,27 @@
           "tag": "tcompat:planks/fir"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomesoplenty"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/fir"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/fir"
+        }
+      ]
     }
   ],
   "inputs": [

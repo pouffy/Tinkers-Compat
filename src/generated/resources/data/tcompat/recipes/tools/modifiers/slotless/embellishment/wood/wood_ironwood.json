@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/ironwood"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/ironwood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/ironwood"
+        }
+      ]
     }
   ],
   "inputs": [

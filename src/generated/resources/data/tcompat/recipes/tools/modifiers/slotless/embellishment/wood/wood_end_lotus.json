@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/end_lotus"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/end_lotus"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/end_lotus"
+        }
+      ]
     }
   ],
   "inputs": [

@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/stalagnate"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/stalagnate"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/stalagnate"
+        }
+      ]
     }
   ],
   "inputs": [

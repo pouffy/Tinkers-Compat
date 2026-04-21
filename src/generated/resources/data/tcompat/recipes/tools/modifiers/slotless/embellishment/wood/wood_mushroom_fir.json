@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/mushroom_fir"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/mushroom_fir"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/mushroom_fir"
+        }
+      ]
     }
   ],
   "inputs": [

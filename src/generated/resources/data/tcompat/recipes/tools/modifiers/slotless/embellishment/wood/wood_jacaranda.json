@@ -22,6 +22,27 @@
           "tag": "tcompat:planks/jacaranda"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomesoplenty"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/jacaranda"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/jacaranda"
+        }
+      ]
     }
   ],
   "inputs": [

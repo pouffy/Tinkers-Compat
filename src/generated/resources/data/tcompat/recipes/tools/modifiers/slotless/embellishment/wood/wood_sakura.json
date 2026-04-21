@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/sakura"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/sakura"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/sakura"
+        }
+      ]
     }
   ],
   "inputs": [

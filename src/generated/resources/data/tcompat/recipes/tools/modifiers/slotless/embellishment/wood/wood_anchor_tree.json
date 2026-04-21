@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/anchor_tree"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/anchor_tree"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/anchor_tree"
+        }
+      ]
     }
   ],
   "inputs": [

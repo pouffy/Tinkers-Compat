@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/tenanea"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/tenanea"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/tenanea"
+        }
+      ]
     }
   ],
   "inputs": [

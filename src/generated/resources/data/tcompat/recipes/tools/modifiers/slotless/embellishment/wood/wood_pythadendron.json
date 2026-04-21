@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/pythadendron"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/pythadendron"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/pythadendron"
+        }
+      ]
     }
   ],
   "inputs": [

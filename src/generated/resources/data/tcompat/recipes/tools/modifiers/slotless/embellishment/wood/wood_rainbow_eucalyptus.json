@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/rainbow_eucalyptus"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/rainbow_eucalyptus"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/rainbow_eucalyptus"
+        }
+      ]
     }
   ],
   "inputs": [

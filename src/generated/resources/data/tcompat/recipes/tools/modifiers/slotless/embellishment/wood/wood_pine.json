@@ -22,6 +22,27 @@
           "tag": "tcompat:planks/pine"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomesoplenty"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/pine"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/pine"
+        }
+      ]
     }
   ],
   "inputs": [

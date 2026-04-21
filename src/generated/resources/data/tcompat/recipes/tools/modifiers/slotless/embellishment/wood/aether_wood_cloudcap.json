@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/cloudcap"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether_redux"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:stems/cloudcap"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/cloudcap"
+        }
+      ]
     }
   ],
   "inputs": [

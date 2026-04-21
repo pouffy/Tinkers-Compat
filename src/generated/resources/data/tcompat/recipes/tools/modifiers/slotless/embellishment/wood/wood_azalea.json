@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/azalea"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/azalea"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/azalea"
+        }
+      ]
     }
   ],
   "inputs": [

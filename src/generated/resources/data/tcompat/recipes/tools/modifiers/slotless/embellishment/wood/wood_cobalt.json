@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/cobalt"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/cobalt"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/cobalt"
+        }
+      ]
     }
   ],
   "inputs": [

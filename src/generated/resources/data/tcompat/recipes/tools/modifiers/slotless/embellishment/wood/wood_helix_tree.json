@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/helix_tree"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betterend"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/helix_tree"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/helix_tree"
+        }
+      ]
     }
   ],
   "inputs": [

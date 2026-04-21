@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/conberry"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deep_aether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/conberry"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/conberry"
+        }
+      ]
     }
   ],
   "inputs": [

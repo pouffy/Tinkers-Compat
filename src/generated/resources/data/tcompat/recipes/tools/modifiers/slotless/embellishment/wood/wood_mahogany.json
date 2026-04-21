@@ -22,6 +22,27 @@
           "tag": "tcompat:planks/mahogany"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomesoplenty"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/mahogany"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/mahogany"
+        }
+      ]
     }
   ],
   "inputs": [

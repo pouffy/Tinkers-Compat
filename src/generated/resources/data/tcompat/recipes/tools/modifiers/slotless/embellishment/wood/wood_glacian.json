@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/glacian"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ad_astra"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/glacian"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/glacian"
+        }
+      ]
     }
   ],
   "inputs": [

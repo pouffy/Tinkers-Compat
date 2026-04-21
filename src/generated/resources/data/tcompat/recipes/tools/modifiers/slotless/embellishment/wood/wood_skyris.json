@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/skyris"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/skyris"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/skyris"
+        }
+      ]
     }
   ],
   "inputs": [

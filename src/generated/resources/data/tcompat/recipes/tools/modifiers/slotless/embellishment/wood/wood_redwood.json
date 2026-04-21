@@ -26,6 +26,31 @@
           "tag": "tcompat:planks/redwood"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomesoplenty"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "regions_unexplored"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/redwood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/redwood"
+        }
+      ]
     }
   ],
   "inputs": [

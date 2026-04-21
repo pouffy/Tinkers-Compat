@@ -18,6 +18,23 @@
           "tag": "tcompat:planks/white_mangrove"
         }
       ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomeswevegone"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/white_mangrove"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/white_mangrove"
+        }
+      ]
     }
   ],
   "inputs": [
