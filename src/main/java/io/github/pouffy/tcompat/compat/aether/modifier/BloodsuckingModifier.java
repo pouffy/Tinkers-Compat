@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether.modifier;
 
-import io.github.pouffy.tcompat.common.capability.compatible.Compatibility;
+import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -23,7 +23,7 @@ public class BloodsuckingModifier extends NoLevelsModifier implements MeleeHitMo
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity attacker = context.getAttacker();
         if (!(attacker instanceof Player) || context.isFullyCharged()) {
-            Compatibility.get(attacker).ifPresent(compatibility -> {
+            VampireHealing.get(attacker).ifPresent(compatibility -> {
                 compatibility.setVampireHealing(true);
             });
         }

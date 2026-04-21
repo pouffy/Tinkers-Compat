@@ -1,8 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
-import io.github.pouffy.tcompat.common.capability.compatible.Compatibility;
-import io.github.pouffy.tcompat.compat.aether.modifier.ThunderstruckModifier;
-import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
+import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -43,7 +41,7 @@ public class VoltThornsModifier extends NoLevelsModifier implements OnAttackedMo
             if (!user.level().isClientSide && flag) {
                 LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(attacker.level());
                 lightningBolt.moveTo(attacker.position());
-                Compatibility.get(lightningBolt).ifPresent(compatibility -> compatibility.setLightningOwner(attacker));
+                LightningOwner.get(lightningBolt).ifPresent(compatibility -> compatibility.setLightningOwner(attacker));
                 if (!attacker.level().isClientSide) {
                     attacker.knockback(1.0, user.getX() - attacker.getX(), user.getZ() - attacker.getZ());
                     attacker.level().addFreshEntity(lightningBolt);

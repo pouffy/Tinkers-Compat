@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether.modifier;
 
-import io.github.pouffy.tcompat.common.capability.compatible.Compatibility;
+import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -31,7 +31,7 @@ public class ThunderstruckModifier extends NoLevelsModifier implements MeleeHitM
         if (!(attacker instanceof Player) || context.isFullyCharged()) {
             LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(attacker.level());
             if (lightningBolt != null) {
-                Compatibility.get(lightningBolt).ifPresent(compatibility -> compatibility.setLightningOwner(attacker));
+                LightningOwner.get(lightningBolt).ifPresent(compatibility -> compatibility.setLightningOwner(attacker));
                 lightningBolt.setPos(target.getX(), target.getY(), target.getZ());
                 attacker.level().addFreshEntity(lightningBolt);
             }
@@ -41,9 +41,9 @@ public class ThunderstruckModifier extends NoLevelsModifier implements MeleeHitM
     //Copy of Aether hook to work with our compatibility data
     public static boolean lightningTracking(Entity entity, LightningBolt lightning) {
         if (entity instanceof LivingEntity livingEntity) {
-            Optional<Compatibility> compatibilityOptional = Compatibility.get(lightning).resolve();
+            Optional<LightningOwner> compatibilityOptional = LightningOwner.get(lightning).resolve();
             if (compatibilityOptional.isPresent()) {
-                Compatibility lightningTracker = compatibilityOptional.get();
+                LightningOwner lightningTracker = compatibilityOptional.get();
                 if (lightningTracker.getLightningOwner() != null) {
                     return livingEntity == lightningTracker.getLightningOwner() || livingEntity == lightningTracker.getLightningOwner().getVehicle() || lightningTracker.getLightningOwner().getPassengers().contains(livingEntity);
                 }

@@ -20,7 +20,9 @@ public class TCompatNetworking {
     public static synchronized void register() {
         register(PhoenixProjectileSyncPacket.class, PhoenixProjectileSyncPacket::decode);
         register(VoidTouchedSyncPacket.class, VoidTouchedSyncPacket::decode);
-        register(CompatibilitySyncPacket.class, CompatibilitySyncPacket::decode);
+        register(LightningOwnerSyncPacket.class, LightningOwnerSyncPacket::decode);
+        register(VampireHealingSyncPacket.class, VampireHealingSyncPacket::decode);
+        register(FrozenSyncPacket.class, FrozenSyncPacket::decode);
     }
 
     private static <MSG extends BasePacket> void register(final Class<MSG> packet, Function<FriendlyByteBuf, MSG> decoder) {

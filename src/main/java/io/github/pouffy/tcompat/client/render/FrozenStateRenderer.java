@@ -3,12 +3,12 @@ package io.github.pouffy.tcompat.client.render;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import io.github.pouffy.tcompat.client.TCRenderTypes;
-import io.github.pouffy.tcompat.common.capability.compatible.Compatibility;
+import io.github.pouffy.tcompat.common.capability.frozen.Frozen;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.AABB;
 import org.joml.Matrix4f;
 
@@ -21,15 +21,15 @@ public class FrozenStateRenderer {
     private static final ResourceLocation TEXTURE_2 = ResourceLocation.withDefaultNamespace("textures/block/frosted_ice_2.png");
     private static final ResourceLocation TEXTURE_3 = ResourceLocation.withDefaultNamespace("textures/block/frosted_ice_3.png");
 
-    private final Function<Compatibility, Integer> frozenTicks;
-    private final Function<Compatibility, Boolean> shouldRender;
+    private final Function<Frozen, Integer> frozenTicks;
+    private final Function<Frozen, Boolean> shouldRender;
 
-    public FrozenStateRenderer(Function<Compatibility, Integer> frozenTicks, Function<Compatibility, Boolean> shouldRender) {
+    public FrozenStateRenderer(Function<Frozen, Integer> frozenTicks, Function<Frozen, Boolean> shouldRender) {
         this.frozenTicks = frozenTicks;
         this.shouldRender = shouldRender;
     }
 
-    public void render(Entity entity, PoseStack matrixStack, MultiBufferSource bufferIn, int light) {
+    public void render(LivingEntity entity, PoseStack matrixStack, MultiBufferSource bufferIn, int light) {
         if (!shouldRender(entity)) return;
         float sideExpand = -0.125F;
         float sideExpandY = 0.325F;
@@ -114,18 +114,18 @@ public class FrozenStateRenderer {
         vertexbuffer.vertex(matrix4f, (float) boundingBox.maxX, (float) boundingBox.minY, (float) boundingBox.maxZ).color(255, 255, 255, alpha).uv(minU, maxV).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(light).normal(0.0F, -1.0F, 0.0F).endVertex();
     }
 
-    protected int getFrozenTicks(Entity entity) {
-        Optional<Compatibility> compatibilityOptional = Compatibility.get(entity).resolve();
-        if (compatibilityOptional.isPresent()) {
-            return this.frozenTicks.apply(compatibilityOptional.get());
+    protected int getFrozenTicks(LivingEntity entity) {
+        Optional<Frozen> frozenOptional = Frozen.get(entity).resolve();
+        if (frozenOptional.isPresent()) {
+            return this.frozenTicks.apply(frozenOptional.get());
         }
         return 0;
     }
 
-    protected boolean shouldRender(Entity entity) {
-        Optional<Compatibility> compatibilityOptional = Compatibility.get(entity).resolve();
-        if (compatibilityOptional.isPresent()) {
-            return this.shouldRender.apply(compatibilityOptional.get());
+    protected boolean shouldRender(LivingEntity entity) {
+        Optional<Frozen> frozenOptional = Frozen.get(entity).resolve();
+        if (frozenOptional.isPresent()) {
+            return this.shouldRender.apply(frozenOptional.get());
         }
         return false;
     }

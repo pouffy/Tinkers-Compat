@@ -1,6 +1,6 @@
-package io.github.pouffy.tcompat.common.capability.compatible;
+package io.github.pouffy.tcompat.common.capability.frozen;
 
-import io.github.pouffy.tcompat.common.network.CompatibilitySyncPacket;
+import io.github.pouffy.tcompat.common.network.FrozenSyncPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
@@ -14,8 +14,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.players.PlayerList;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.player.Player;
@@ -26,12 +24,8 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class CompatibilityCapability implements Compatibility{
-    private final Entity entity;
-
-    private Entity lightningOwner; //Used for: Lightnum Material. Saves the attacker as the owner of the LightningBolt to avoid hurting allies.
-
-    private boolean performVampireHealing; //Used for: Draculite Material. Copy of Aether's vampire healing.
+public class FrozenCapability implements Frozen {
+    private final LivingEntity entity;
 
     private boolean isFrozen; //Used for: Ice & Fire Freezing.
     private int frozenTicks; //Used for: Ice & Fire Freezing.
@@ -39,12 +33,12 @@ public class CompatibilityCapability implements Compatibility{
     private boolean shouldSyncAfterJoin;
     private boolean shouldSyncBetweenClients;
 
-    public CompatibilityCapability(Entity entity){
+    public FrozenCapability(LivingEntity entity) {
         this.entity = entity;
     }
 
     @Override
-    public Entity getEntity() {
+    public LivingEntity getEntity() {
         return this.entity;
     }
 
@@ -52,8 +46,37 @@ public class CompatibilityCapability implements Compatibility{
     public void onUpdate() {
         this.syncAfterJoin();
         this.syncClients();
-        this.handleVampireHealing();
-        this.handleFrozen();
+        if (!CompatHelper.isLoaded("iceandfire")) {
+            return;
+        }
+        if (this.isFrozen()) {
+            if (this.getEntity().getType().is(TCEntityTagProv.create("tcompat:ice_dragons"))) {
+                this.unfreeze();
+            } else if (this.getEntity().isOnFire()) {
+                this.unfreeze();
+                this.getEntity().clearFire();
+            } else if (this.getEntity().isDeadOrDying()) {
+                this.unfreeze();
+            } else {
+                if (this.getFrozenTicks() > 0) {
+                    this.setFrozenTicks(this.getFrozenTicks() - 1);
+                } else {
+                    this.unfreeze();
+                }
+
+                if (this.isFrozen()) {
+                    if (getEntity() instanceof Player player) {
+                        if (player.isCreative()) {
+                            return;
+                        }
+                    }
+                    getEntity().setDeltaMovement(getEntity().getDeltaMovement().multiply(0.25F, 1.0F, 0.25F));
+                    if (!(getEntity() instanceof EnderDragon) && !getEntity().onGround()) {
+                        getEntity().setDeltaMovement(getEntity().getDeltaMovement().add(0.0F, -0.2, 0.0F));
+                    }
+                }
+            }
+        }
     }
 
     @Override
@@ -66,27 +89,6 @@ public class CompatibilityCapability implements Compatibility{
     @Override
     public void onLogin() {
         this.shouldSyncAfterJoin = true;
-    }
-
-    //Only for Living Entities
-    @Override
-    public void setVampireHealing(boolean performVampireHealing) {
-        if (this.getEntity() instanceof LivingEntity) {
-            this.performVampireHealing = performVampireHealing;
-        }
-    }
-
-    //Only for Lightning
-    @Override
-    public void setLightningOwner(Entity lightningOwner) {
-        if (this.getEntity() instanceof LightningBolt) {
-            this.lightningOwner = lightningOwner;
-        }
-    }
-
-    @Override
-    public boolean performVampireHealing() {
-        return this.performVampireHealing;
     }
 
     @Override
@@ -128,55 +130,6 @@ public class CompatibilityCapability implements Compatibility{
         this.frozenTicks = frozenTicks;
     }
 
-    @Override
-    public Entity getLightningOwner() {
-        return this.lightningOwner;
-    }
-
-    private void handleVampireHealing() {
-        if (!this.getEntity().level().isClientSide() && this.performVampireHealing()) {
-            if (this.getEntity() instanceof LivingEntity livingEntity) {
-                livingEntity.heal(1.0F);
-            }
-            this.setVampireHealing(false);
-        }
-    }
-
-    private void handleFrozen() {
-        //Don't do anything if Ice & Fire is gone.
-        if (!CompatHelper.isLoaded("iceandfire")) {
-            return;
-        }
-        if (this.isFrozen() && this.getEntity() instanceof LivingEntity living) {
-            if (living.getType().is(TCEntityTagProv.create("tcompat:ice_dragons"))) {
-                this.unfreeze();
-            } else if (living.isOnFire()) {
-                this.unfreeze();
-                living.clearFire();
-            } else if (living.isDeadOrDying()) {
-                this.unfreeze();
-            } else {
-                if (this.getFrozenTicks() > 0) {
-                    this.setFrozenTicks(this.getFrozenTicks() - 1);
-                } else {
-                    this.unfreeze();
-                }
-
-                if (this.isFrozen()) {
-                    if (getEntity() instanceof Player player) {
-                        if (player.isCreative()) {
-                            return;
-                        }
-                    }
-                    getEntity().setDeltaMovement(getEntity().getDeltaMovement().multiply(0.25F, 1.0F, 0.25F));
-                    if (!(getEntity() instanceof EnderDragon) && !getEntity().onGround()) {
-                        getEntity().setDeltaMovement(getEntity().getDeltaMovement().add(0.0F, -0.2, 0.0F));
-                    }
-                }
-            }
-        }
-    }
-
     private final Map<String, Triple<Type, Consumer<Object>, Supplier<Object>>> synchableFunctions = Map.ofEntries(
             Map.entry("setFrozen", Triple.of(Type.BOOLEAN, (object) -> this.setFrozen((boolean) object), this::isFrozen)),
             Map.entry("setFrozenTicks", Triple.of(Type.INT, (object) -> this.setFrozenTicks((int) object), this::getFrozenTicks)),
@@ -190,7 +143,7 @@ public class CompatibilityCapability implements Compatibility{
 
     @Override
     public BasePacket getSyncPacket(String s, Type type, Object o) {
-        return new CompatibilitySyncPacket(this.getEntity().getId(), s, type, o);
+        return new FrozenSyncPacket(this.getEntity().getId(), s, type, o);
     }
 
     @Override
@@ -213,8 +166,8 @@ public class CompatibilityCapability implements Compatibility{
                     PlayerList playerList = server.getPlayerList();
                     for (ServerPlayer serverPlayer : playerList.getPlayers()) {
                         if (!serverPlayer.getUUID().equals(this.getEntity().getUUID())) {
-                            Compatibility.get(serverPlayer).ifPresent(compat -> {
-                                if (compat instanceof CompatibilityCapability capability) {
+                            Frozen.get(serverPlayer).ifPresent(frozen -> {
+                                if (frozen instanceof FrozenCapability capability) {
                                     capability.forceSync(Direction.CLIENT);
                                 }
                             });
@@ -237,9 +190,6 @@ public class CompatibilityCapability implements Compatibility{
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
-        if (this.getLightningOwner() != null) {
-            tag.putInt("LightningOwner", this.getLightningOwner().getId());
-        }
         tag.putInt("frozenTicks", this.getFrozenTicks());
         tag.putBoolean("isFrozen", this.isFrozen());
         return tag;
@@ -247,9 +197,6 @@ public class CompatibilityCapability implements Compatibility{
 
     @Override
     public void deserializeNBT(CompoundTag tag) {
-        if (tag.contains("LightningOwner")) {
-            this.setLightningOwner(this.getEntity().level().getEntity(tag.getInt("Owner")));
-        }
         if (tag.contains("frozenTicks")) {
             this.setFrozenTicks(tag.getInt("frozenTicks"));
         }

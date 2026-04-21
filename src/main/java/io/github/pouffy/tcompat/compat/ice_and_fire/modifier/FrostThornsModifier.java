@@ -1,7 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
-import io.github.pouffy.tcompat.common.capability.compatible.Compatibility;
-import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
+import io.github.pouffy.tcompat.common.capability.frozen.Frozen;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -39,7 +38,7 @@ public class FrostThornsModifier extends NoLevelsModifier implements OnAttackedM
             LivingEntity user = context.getEntity();
             ToolDamageUtil.damageAnimated(tool, 1, user, slotType);
             int freezeTicks = Math.round((amount * 1.5f) * 20);
-            Compatibility.get(attacker).ifPresent((compat) -> compat.freeze(freezeTicks));
+            Frozen.get(attacker).ifPresent((frozen) -> frozen.freeze(freezeTicks));
             attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             attacker.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
             attacker.knockback(1.0, 0.0, 0.0);
