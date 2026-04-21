@@ -37,14 +37,16 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         //ICondition brass = tagFull("forge", "ingots/brass");
         //ICondition zinc = tagFull("forge", "ingots/zinc");
 
+        //Deprecated
+        addMaterial(TCMaterials.zanite, 2, ORDER_HARVEST, false, true, aether);
+        addMaterial(TCMaterials.skyjade, 2, ORDER_HARVEST, false, true, deepAether);
+
         addMaterial(TCMaterials.aetherWood, 1, ORDER_HARVEST, true, false, aether);
         addMaterial(TCMaterials.aetherRock, 1, ORDER_HARVEST, true, false, aether);
-        addMaterial(TCMaterials.zanite, 2, ORDER_HARVEST, false, false, aether);
         addMaterial(TCMaterials.gravitite, 3, ORDER_HARVEST, false, false, aether);
         addMaterial(TCMaterials.lightnum, 3, ORDER_HARVEST, false, false, aether);
         addMaterial(TCMaterials.draculite, 3, ORDER_HARVEST, false, false, aether);
 
-        addMaterial(TCMaterials.skyjade, 2, ORDER_HARVEST, false, false, deepAether);
         addMaterial(TCMaterials.stormforgedSteel, 2, ORDER_HARVEST, false, false, deepAether);
 
         addMaterial(TCMaterials.veridium, 3, ORDER_HARVEST, false, false, aetherRedux);

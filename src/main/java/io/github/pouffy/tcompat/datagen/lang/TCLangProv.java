@@ -124,7 +124,9 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.blighted", "Intoxicating", "Hitting targets inflicts them with Inebriation");
         forModifier("modifier.tcompat.ambrofusion", "Fuel For Thought", "Tool can have it's stats buffed with Ambrosium but durability depletes faster.");
         forModifier("modifier.tcompat.dulling", "Dull their Sparkle", "Gradually loses effectiveness.");
+        forModifier("modifier.tcompat.skyjade", "Dull their Sparkle", "Gradually loses effectiveness.");
         forModifier("modifier.tcompat.acclimatization", "In For a Promotion", "Gradually becomes more effective.");
+        forModifier("modifier.tcompat.zanite", "In For a Promotion", "Gradually becomes more effective.");
         forModifier("modifier.tcompat.autochant", "Where's the book?","Tool automatically enchants all drops.");
         forModifier("modifier.tcompat.autofreeze", "Freeze!", "Tool automatically freezes all drops.");
         forModifier("modifier.tcompat.thunderstruck", "Strike me down!", "Charged attacks smite targets with lightning.");

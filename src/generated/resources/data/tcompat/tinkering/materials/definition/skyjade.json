@@ -4,7 +4,7 @@
     "modid": "deep_aether"
   },
   "craftable": false,
-  "hidden": false,
+  "hidden": true,
   "sortOrder": 1,
   "tier": 2
 }

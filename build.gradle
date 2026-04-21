@@ -5,7 +5,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'io.github.0ffz.github-packages' version '[1,2)'
-    id "net.neoforged.moddev.legacyforge" version "2.0.64-beta"
+    id "net.neoforged.moddev.legacyforge" version "2.0.91"
     id "io.github.p03w.machete" version "2.0.1"
     id "io.freefair.lombok" version "8.11"
 }

@@ -7,6 +7,7 @@ import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipeBuilder;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -65,10 +66,13 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
     }
 
     private void addModifierRecipes(Consumer<FinishedRecipe> consumer) {
+        String upgradeFolder = "tools/modifiers/upgrade/";
+        String upgradeSalvage = "tools/modifiers/salvage/upgrade/";
         String abilityFolder = "tools/modifiers/ability/";
         String abilitySalvage = "tools/modifiers/salvage/ability/";
         String slotlessFolder = "tools/modifiers/slotless/";
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
+        Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
         Consumer<FinishedRecipe> betternetherConsumer = withCondition(consumer, modLoaded("betternether"));
         Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, modLoaded("iceandfire"));
@@ -77,6 +81,20 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
         Function<String, ResourceLocation> betternetherId = name -> getResource("betternether", name);
         Function<String, ResourceLocation> iceandfireId = name -> getResource("iceandfire", name);
+
+        ModifierRecipeBuilder.modifier(AetherInit.zanite)
+                .addInput(TCTags.Items.ZANITE_GEMS)
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(aetherConsumer, prefix(AetherInit.zanite, upgradeSalvage))
+                .save(aetherConsumer, prefix(AetherInit.zanite, upgradeFolder));
+
+        ModifierRecipeBuilder.modifier(DeepAetherInit.skyjade)
+                .addInput(TCTags.Items.SKYJADE_GEMS)
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(deepAetherConsumer, prefix(DeepAetherInit.skyjade, upgradeSalvage))
+                .save(deepAetherConsumer, prefix(DeepAetherInit.skyjade, upgradeFolder));
 
         ModifierRecipeBuilder.modifier(SpeciesInit.ricoshield)
                 .setTools(TinkerTags.Items.SHIELDS)

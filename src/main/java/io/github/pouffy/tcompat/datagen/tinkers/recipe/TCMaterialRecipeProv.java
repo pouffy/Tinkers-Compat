@@ -95,7 +95,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
 
         //Material Parts
         metalMaterialRecipe(aetherConsumer, TCMaterials.gravitite, folder, "gravitite", true);
-        gemMaterialRecipe(aetherConsumer, TCMaterials.zanite, folder, "zanite", true, false, true);
+        //gemMaterialRecipe(aetherConsumer, TCMaterials.zanite, folder, "zanite", true, false, true);
         metalMaterialRecipe(aetherConsumer, TCMaterials.lightnum, folder, "lightnum", true);
         metalMaterialRecipe(aetherConsumer, TCMaterials.draculite, folder, "draculite", true);
 
@@ -121,7 +121,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_bone_block")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/block");
         materialRecipe(iceandfire, MaterialIds.necroticBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:witherbone")), 1, 1, folder + "wither_bone");
 
-        gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
+        //gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
         metalMaterialRecipe(deepAetherConsumer, TCMaterials.stormforgedSteel, folder, "stormforged_steel", true);
 
         metalMaterialRecipe(aetherReduxConsumer, TCMaterials.veridium, folder, "veridium", true);
@@ -158,11 +158,13 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> betternether = withCondition(consumer, modLoaded("betternether"));
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
 
-        materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
+        //materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
+        materialMelting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, TCFluids.moltenGravitite, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.lightnum, TCFluids.moltenLightnum, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.draculite, TCFluids.moltenDraculite, folder);
-        materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
+        //materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
+        materialMelting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
         materialMeltingCasting(deepAetherConsumer, TCMaterials.stormforgedSteel, TCFluids.moltenStormforgedSteel, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, TCFluids.moltenVeridium, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, TCFluids.moltenRefinedSentrite, folder);

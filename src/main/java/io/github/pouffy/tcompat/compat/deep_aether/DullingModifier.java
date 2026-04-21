@@ -1,29 +1,38 @@
 package io.github.pouffy.tcompat.compat.deep_aether;
 
+import io.github.pouffy.tcompat.common.module.AetherForgedModifierHook;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.ProtectionModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.mining.BlockHarvestModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedModifierHook;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
+import slimeknights.tconstruct.library.modifiers.modules.build.SetStatModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.definition.module.mining.MiningTierToolHook;
+import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-public class DullingModifier extends NoLevelsModifier implements BreakSpeedModifierHook, MeleeDamageModifierHook, ProtectionModifierHook {
+public class DullingModifier extends NoLevelsModifier implements BreakSpeedModifierHook, MeleeDamageModifierHook, ProtectionModifierHook, AetherForgedModifierHook, ToolStatsModifierHook {
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.BREAK_SPEED, ModifierHooks.MELEE_DAMAGE, ModifierHooks.PROTECTION);
+        hookBuilder.addHook(this, ModifierHooks.BREAK_SPEED, ModifierHooks.MELEE_DAMAGE, ModifierHooks.PROTECTION, GlobalInit.AETHER_FORGED, ModifierHooks.TOOL_STATS);
     }
 
     @Override
@@ -48,5 +57,15 @@ public class DullingModifier extends NoLevelsModifier implements BreakSpeedModif
 
     float decreaseStat(IToolStackView tool, float stat) {
         return (float)((double)stat / ((double)2.0F * tool.getDamage() / tool.getMultiplier(ToolStats.DURABILITY)) + (double)0.5F);
+    }
+
+    @Override
+    public boolean canUse(IToolStackView toolStackView, ModifierEntry modifierEntry) {
+        return true;
+    }
+
+    @Override
+    public void addToolStats(IToolContext iToolContext, ModifierEntry modifierEntry, ModifierStatsBuilder builder) {
+        ToolStats.HARVEST_TIER.update(builder, Tiers.IRON);
     }
 }

@@ -31,6 +31,8 @@ public class AetherInit extends CompatInitializer {
     public static final StaticModifier<ThunderstruckModifier> thunderstruck = AETHER_M.register("thunderstruck", ThunderstruckModifier::new); // Lightnum
     public static final StaticModifier<BloodsuckingModifier> bloodsucking = AETHER_M.register("bloodsucking", BloodsuckingModifier::new); // Draculite
 
+    public static final StaticModifier<AcclimatizationModifier> zanite = AETHER_M.register("zanite", AcclimatizationModifier::new);
+
     //Craftable Modifiers
     public static final StaticModifier<AutochantModifier> autochant = AETHER_M.register("autochant", AutochantModifier::new);
     public static final StaticModifier<AutofreezeModifier> autofreeze = AETHER_M.register("autofreeze", AutofreezeModifier::new);

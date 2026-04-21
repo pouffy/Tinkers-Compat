@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.modifier;
 
+import io.github.pouffy.tcompat.common.module.AetherForgedModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
@@ -19,11 +20,13 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
+import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedModifierHook;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
+import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
@@ -39,6 +42,7 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         EquipmentSlot[] armorSlots = ARMOR_SLOTS;
 
         buildModifier(TCModifiers.aetherForged, modLoaded("aether"))
+                .addModule(AetherForgedModule.INSTANCE).priority(200)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(AetherInit.acclimatization.getId(), modLoaded("aether"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
@@ -55,6 +59,7 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.escarstay, modLoaded("aether_redux"))
                 .addModule(StatBoostModule.add(ToolStats.KNOCKBACK_RESISTANCE).flat(2))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
         IJsonPredicate<LivingEntity> dreadPredicate = LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:dread"));
         buildModifier(TCModifiers.dreadbane, modLoaded("iceandfire"))
                 .addModule(ConditionalMeleeDamageModule.builder().target(dreadPredicate).eachLevel(1.5f))
@@ -65,7 +70,6 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(ConditionalMeleeDamageModule.builder().target(dampeningPredicate).eachLevel(3.5f))
                 .addModule(MobEffectModule.builder(MobEffects.WEAKNESS).target(dampeningPredicate).level(RandomLevelingValue.flat(4)).time(RandomLevelingValue.random(20, 10)).chance(LevelingValue.flat(1)).build())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
-
         IJsonPredicate<LivingEntity> scorchbornPredicate = LivingEntityPredicate.or(LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:lightning_dragons")), LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:ice_dragons")));
         buildModifier(TCModifiers.scorchborn, modLoaded("iceandfire"))
                 .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(scorchbornPredicate).percent().eachLevel(0.45f))

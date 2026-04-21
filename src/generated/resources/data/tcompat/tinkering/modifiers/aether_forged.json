@@ -4,5 +4,11 @@
     "modid": "aether"
   },
   "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tcompat:aether_forged"
+    }
+  ],
+  "priority": 200,
   "tooltip_display": "always"
 }

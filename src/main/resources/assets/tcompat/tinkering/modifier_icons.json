@@ -1,6 +1,9 @@
 {
   "tcompat:aether_forged":   "tcompat:gui/modifiers/aether_forged",
   "tcompat:ambrofusion":   ["aether:item/materials/ambrosium_shard", "tconstruct:gui/modifiers/book"],
+  "tcompat:zanite": ["aether:item/materials/zanite_gemstone", "tconstruct:gui/modifiers/tier"],
+  "tcompat:skyjade": ["deep_aether:item/skyjade", "tconstruct:gui/modifiers/tier"],
+
   "tcompat:autochant":   "tcompat:gui/modifiers/autochant",
   "tcompat:autofreeze":   "tcompat:gui/modifiers/autofreeze",
   "tcompat:ricoshield":   "tcompat:gui/modifiers/ricoshield",
