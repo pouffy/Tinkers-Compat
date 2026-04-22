@@ -4,7 +4,6 @@ import io.github.pouffy.tcompat.common.module.AetherForgedModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
-import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
 import net.minecraft.data.PackOutput;
@@ -20,13 +19,11 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
-import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedModifierHook;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
-import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
@@ -44,15 +41,11 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.aetherForged, modLoaded("aether"))
                 .addModule(AetherForgedModule.INSTANCE).priority(200)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
-        buildModifier(AetherInit.acclimatization.getId(), modLoaded("aether"))
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(AetherInit.ambrogen.getId(), modLoaded("aether"))
                 .levelDisplay(ModifierLevelDisplay.DEFAULT);
         buildModifier(AetherInit.ascension.getId(), modLoaded("aether"))
                 .levelDisplay(ModifierLevelDisplay.DEFAULT);
         buildModifier(AetherReduxInit.ambrofusion.getId(), modLoaded("aether_redux"))
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
-        buildModifier(DeepAetherInit.dulling.getId(), modLoaded("deep_aether"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TCModifiers.blighted, modLoaded("aether_redux"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);

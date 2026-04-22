@@ -39,7 +39,7 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TCMaterials.aetherWood, TCModifiers.aetherForged, ModifierIds.cultivated);
         addTraits(TCMaterials.aetherWood, AMMO, ModifierIds.economical);
         addDefaultTraits(TCMaterials.aetherRock, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.ambrogen, 1), new ModifierEntry(ModifierIds.stonebound, 1));
-        addDefaultTraits(TCMaterials.zanite, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.acclimatization, 1));
+        addDefaultTraits(TCMaterials.zanite, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.zanite, 1));
         addTraits(TCMaterials.zanite, AMMO, ModifierIds.crystalbound);
         addDefaultTraits(TCMaterials.gravitite, TCModifiers.aetherForged);
         addTraits(TCMaterials.gravitite, HeadMaterialStats.ID, AetherInit.ascension.getId(), TCModifiers.aetherForged);
@@ -48,7 +48,7 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(TCMaterials.draculite, TCModifiers.aetherForged);
         addTraits(TCMaterials.draculite, HeadMaterialStats.ID, AetherInit.bloodsucking.getId());
 
-        addDefaultTraits(TCMaterials.skyjade, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(DeepAetherInit.dulling, 1));
+        addDefaultTraits(TCMaterials.skyjade, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(DeepAetherInit.skyjade, 1));
         addTraits(TCMaterials.skyjade, AMMO, ModifierIds.punch);
         addDefaultTraits(TCMaterials.stormforgedSteel, TCModifiers.aetherForged);
         addTraits(TCMaterials.stormforgedSteel, HeadMaterialStats.ID, DeepAetherInit.gale.getId());

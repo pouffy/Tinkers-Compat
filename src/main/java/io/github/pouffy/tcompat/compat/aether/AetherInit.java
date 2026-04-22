@@ -5,27 +5,17 @@ import io.github.pouffy.tcompat.common.util.CompatInitializer;
 import io.github.pouffy.tcompat.compat.aether.modifier.*;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
-import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
-
-import static slimeknights.mantle.block.fluid.BurningLiquidBlock.createBurning;
 
 public class AetherInit extends CompatInitializer {
     public static final ModifierDeferredRegister AETHER_M = ModifierDeferredRegister.create(TCompat.MOD_ID);
     public static final ItemDeferredRegister AETHER_I = new ItemDeferredRegister(TCompat.MOD_ID);
 
     //Traits
-    public static final StaticModifier<AcclimatizationModifier> acclimatization = AETHER_M.register("acclimatization", AcclimatizationModifier::new); // Zanite
     public static final StaticModifier<AmbrogenModifier> ambrogen = AETHER_M.register("ambrogen", AmbrogenModifier::new); // Holystone
     public static final StaticModifier<AscensionModifier> ascension = AETHER_M.register("ascension", AscensionModifier::new); // Gravitite
     public static final StaticModifier<ThunderstruckModifier> thunderstruck = AETHER_M.register("thunderstruck", ThunderstruckModifier::new); // Lightnum
