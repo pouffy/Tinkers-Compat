@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:pixie_dust"
+  },
+  "result": {
+    "amount": 250,
+    "tag": "forge:ambrosia"
+  },
+  "temperature": 100,
+  "time": 55
+}

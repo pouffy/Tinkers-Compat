@@ -1,0 +1,7 @@
+{
+  "camera": "tcompat:fluid/food/wart_soup/camera",
+  "camera_opacity": 0.1,
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/food/wart_soup/flowing",
+  "still": "tcompat:fluid/food/wart_soup/still"
+}

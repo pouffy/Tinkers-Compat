@@ -1,0 +1,17 @@
+{
+  "type": "mantle:empty_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:agave_medicine"
+  },
+  "input": {
+    "item": "betternether:agave_medicine"
+  },
+  "result": "betternether:stalagnate_bowl"
+}

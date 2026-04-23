@@ -1,0 +1,17 @@
+{
+  "type": "mantle:fill_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:white_puffball_stew"
+  },
+  "input": {
+    "item": "minecraft:bowl"
+  },
+  "result": "biomeswevegone:white_puffball_stew"
+}

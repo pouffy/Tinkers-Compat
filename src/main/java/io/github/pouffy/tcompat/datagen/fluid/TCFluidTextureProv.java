@@ -2,14 +2,6 @@ package io.github.pouffy.tcompat.datagen.fluid;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.TCFluids;
-import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
-import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
-import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
-import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
-import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
-import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
@@ -54,6 +46,16 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
         compatOre(TCFluids.moltenFireDragonsteel);
         compatOre(TCFluids.moltenIceDragonsteel);
         compatOre(TCFluids.moltenLightningDragonsteel);
+        food(TCFluids.fireLilyMixture);
+        food(TCFluids.frostLilyMixture);
+        food(TCFluids.lightningLilyMixture);
+        food(TCFluids.ambrosia);
+        food(TCFluids.aloeVeraJuice);
+        food(TCFluids.whitePuffballStew);
+        food(TCFluids.alliumOddionSoup);
+        food(TCFluids.umbrellaClusterJuice);
+        food(TCFluids.wartSoup);
+        food(TCFluids.agaveMedicine);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {
@@ -82,6 +84,10 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
 
     private FluidTexture.Builder moltenFolder(FluidObject<?> fluid, String folder) {
         return named(fluid, "molten/" + folder + "/" + withoutMolten(fluid));
+    }
+
+    private FluidTexture.Builder food(FluidObject<?> fluid) {
+        return texture(fluid).wrapId("fluid/food/", "/", false, true);
     }
 
     private FluidTexture.Builder stone(FluidObject<?> fluid) {

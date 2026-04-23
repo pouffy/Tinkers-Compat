@@ -1,0 +1,17 @@
+{
+  "type": "mantle:empty_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:mushroom_stew"
+  },
+  "input": {
+    "item": "betternether:stalagnate_bowl_mushroom"
+  },
+  "result": "betternether:stalagnate_bowl"
+}

@@ -2,14 +2,6 @@ package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.TCFluids;
-import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
-import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
-import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
-import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
-import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
-import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -18,6 +10,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import slimeknights.mantle.datagen.MantleTags;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -60,6 +53,16 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(TCFluids.moltenFireDragonsteel);
         fluidTag(TCFluids.moltenIceDragonsteel);
         fluidTag(TCFluids.moltenLightningDragonsteel);
+        fluidTag(TCFluids.fireLilyMixture);
+        fluidTag(TCFluids.frostLilyMixture);
+        fluidTag(TCFluids.lightningLilyMixture);
+        fluidTag(TCFluids.ambrosia);
+        fluidTag(TCFluids.aloeVeraJuice);
+        fluidTag(TCFluids.whitePuffballStew);
+        fluidTag(TCFluids.alliumOddionSoup);
+        fluidTag(TCFluids.umbrellaClusterJuice);
+        fluidTag(TCFluids.wartSoup);
+        fluidTag(TCFluids.agaveMedicine);
 
         var metals = this.tag(TinkerTags.Fluids.METAL_TOOLTIPS);
         // Aether
@@ -93,6 +96,20 @@ public class TCFluidTagProv extends FluidTagsProvider {
         var largeGems = this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS);
         // Betternether
         largeGems.addOptionalTag(TCFluids.moltenNetherRuby.getTag());
+
+        var soups = this.tag(MantleTags.Fluids.SOUP);
+        soups.addOptionalTag(TCFluids.fireLilyMixture.getTag());
+        soups.addOptionalTag(TCFluids.frostLilyMixture.getTag());
+        soups.addOptionalTag(TCFluids.lightningLilyMixture.getTag());
+        soups.addOptionalTag(TCFluids.ambrosia.getTag());
+        soups.addOptionalTag(TCFluids.whitePuffballStew.getTag());
+        soups.addOptionalTag(TCFluids.alliumOddionSoup.getTag());
+        soups.addOptionalTag(TCFluids.wartSoup.getTag());
+        soups.addOptionalTag(TCFluids.agaveMedicine.getTag());
+
+        var bottles = this.tag(TinkerTags.Fluids.BOTTLE_TOOLTIPS);
+        bottles.addOptionalTag(TCFluids.aloeVeraJuice.getTag());
+        bottles.addOptionalTag(TCFluids.umbrellaClusterJuice.getTag());
     }
 
     @Override

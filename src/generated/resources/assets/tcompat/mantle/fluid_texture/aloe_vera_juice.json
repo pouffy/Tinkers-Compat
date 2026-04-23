@@ -1,0 +1,7 @@
+{
+  "camera": "tcompat:fluid/food/aloe_vera_juice/camera",
+  "camera_opacity": 0.1,
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/food/aloe_vera_juice/flowing",
+  "still": "tcompat:fluid/food/aloe_vera_juice/still"
+}

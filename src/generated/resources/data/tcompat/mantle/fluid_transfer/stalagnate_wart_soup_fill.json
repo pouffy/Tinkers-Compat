@@ -1,0 +1,17 @@
+{
+  "type": "mantle:fill_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:wart_soup"
+  },
+  "input": {
+    "item": "betternether:stalagnate_bowl"
+  },
+  "result": "betternether:stalagnate_bowl_wart"
+}

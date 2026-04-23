@@ -1,0 +1,7 @@
+{
+  "camera": "tcompat:fluid/food/white_puffball_stew/camera",
+  "camera_opacity": 0.1,
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/food/white_puffball_stew/flowing",
+  "still": "tcompat:fluid/food/white_puffball_stew/still"
+}

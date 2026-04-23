@@ -6,21 +6,19 @@ import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.datagen.fluid.TCFluidTextureProv;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
-import net.minecraft.core.Direction;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -44,6 +42,11 @@ public class TCFluids extends CompatModule {
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenCincinnasite, moltenNetherRuby; // Betternether
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenSkyjade, moltenStratus, moltenStormforgedSteel; // Deep Aether
     public static final FlowingFluidObject<ForgeFlowingFluid> fireBlood, iceBlood, lightningBlood, moltenFireDragonsteel, moltenIceDragonsteel, moltenLightningDragonsteel; // Ice and Fire
+
+    public static FlowingFluidObject<ForgeFlowingFluid> fireLilyMixture, frostLilyMixture, lightningLilyMixture, ambrosia;
+    public static FlowingFluidObject<ForgeFlowingFluid> aloeVeraJuice, whitePuffballStew, alliumOddionSoup;
+    public static FlowingFluidObject<ForgeFlowingFluid> umbrellaClusterJuice;
+    public static FlowingFluidObject<ForgeFlowingFluid> wartSoup, agaveMedicine;
 
     static {
         moltenDesh = FLUIDS.registerMetal("molten_desh").type(hot("molten_desh").temperature(1275).lightLevel(5)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_ORANGE, 5, 12, 4.0F)).bucket().flowing();
@@ -79,6 +82,17 @@ public class TCFluids extends CompatModule {
         moltenFireDragonsteel = FLUIDS.registerMetal("molten_fire_dragonsteel").type(hot("molten_fire_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.FIRE, 4, 10, 6f)).bucket().flowing();
         moltenIceDragonsteel = FLUIDS.registerMetal("molten_ice_dragonsteel").type(hot("molten_ice_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.ICE, 4, 10, 6f)).bucket().flowing();
         moltenLightningDragonsteel = FLUIDS.registerMetal("molten_lightning_dragonsteel").type(hot("molten_lightning_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.LAPIS, 4, 10, 6f)).bucket().flowing();
+
+        fireLilyMixture = FLUIDS.register("fire_lily_mixture").type(cool("fire_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_ORANGE, 0).commonTag().flowing();
+        frostLilyMixture = FLUIDS.register("frost_lily_mixture").type(cool("frost_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_LIGHT_BLUE, 0).commonTag().flowing();
+        lightningLilyMixture = FLUIDS.register("lightning_lily_mixture").type(cool("lightning_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_PURPLE, 0).commonTag().flowing();
+        ambrosia = FLUIDS.register("ambrosia").type(cool("ambrosia").temperature(400)).bucket().block(MapColor.COLOR_PINK, 0).commonTag().flowing();
+        aloeVeraJuice = FLUIDS.register("aloe_vera_juice").type(cool("aloe_vera_juice").temperature(400)).bucket().block(MapColor.TERRACOTTA_LIGHT_BLUE, 0).commonTag().flowing();
+        whitePuffballStew = FLUIDS.register("white_puffball_stew").type(cool("white_puffball_stew").temperature(400)).bucket().block(MapColor.TERRACOTTA_WHITE, 0).commonTag().flowing();
+        alliumOddionSoup = FLUIDS.register("allium_oddion_soup").type(cool("allium_oddion_soup").temperature(400)).bucket().block(MapColor.TERRACOTTA_ORANGE, 0).commonTag().flowing();
+        umbrellaClusterJuice = FLUIDS.register("umbrella_cluster_juice").type(cool("umbrella_cluster_juice").temperature(400)).bucket().block(MapColor.COLOR_PURPLE, 0).commonTag().flowing();
+        wartSoup = FLUIDS.register("wart_soup").type(cool("wart_soup").temperature(400)).bucket().block(MapColor.TERRACOTTA_RED, 0).commonTag().flowing();
+        agaveMedicine = FLUIDS.register("agave_medicine").type(cool("agave_medicine").temperature(400)).bucket().block(MapColor.TERRACOTTA_PURPLE, 0).commonTag().flowing();
     }
 
     private static FluidType.Properties cool() {
@@ -112,10 +126,10 @@ public class TCFluids extends CompatModule {
 
             public ItemStack execute(BlockSource source, ItemStack stack) {
                 DispensibleContainerItem container = (DispensibleContainerItem)stack.getItem();
-                BlockPos blockpos = source.getPos().relative((Direction)source.getBlockState().getValue(DispenserBlock.FACING));
+                BlockPos blockpos = source.getPos().relative(source.getBlockState().getValue(DispenserBlock.FACING));
                 Level level = source.getLevel();
-                if (container.emptyContents((Player)null, level, blockpos, (BlockHitResult)null, stack)) {
-                    container.checkExtraContent((Player)null, level, stack, blockpos);
+                if (container.emptyContents(null, level, blockpos, null, stack)) {
+                    container.checkExtraContent(null, level, stack, blockpos);
                     return new ItemStack(Items.BUCKET);
                 } else {
                     return this.defaultDispenseItemBehavior.dispense(source, stack);
@@ -149,6 +163,16 @@ public class TCFluids extends CompatModule {
             DispenserBlock.registerBehavior(moltenFireDragonsteel, dispenseBucket);
             DispenserBlock.registerBehavior(moltenIceDragonsteel, dispenseBucket);
             DispenserBlock.registerBehavior(moltenLightningDragonsteel, dispenseBucket);
+            DispenserBlock.registerBehavior(fireLilyMixture, dispenseBucket);
+            DispenserBlock.registerBehavior(frostLilyMixture, dispenseBucket);
+            DispenserBlock.registerBehavior(lightningLilyMixture, dispenseBucket);
+            DispenserBlock.registerBehavior(ambrosia, dispenseBucket);
+            DispenserBlock.registerBehavior(aloeVeraJuice, dispenseBucket);
+            DispenserBlock.registerBehavior(whitePuffballStew, dispenseBucket);
+            DispenserBlock.registerBehavior(alliumOddionSoup, dispenseBucket);
+            DispenserBlock.registerBehavior(umbrellaClusterJuice, dispenseBucket);
+            DispenserBlock.registerBehavior(wartSoup, dispenseBucket);
+            DispenserBlock.registerBehavior(agaveMedicine, dispenseBucket);
         });
     }
 
@@ -179,8 +203,21 @@ public class TCFluids extends CompatModule {
         acceptCompat(output, moltenFireDragonsteel, TCTags.Items.FIRE_DRAGONSTEEL_INGOTS);
         acceptCompat(output, moltenIceDragonsteel, TCTags.Items.ICE_DRAGONSTEEL_INGOTS);
         acceptCompat(output, moltenLightningDragonsteel, TCTags.Items.LIGHTNING_DRAGONSTEEL_INGOTS);
+        acceptCompat(output, fireLilyMixture, TCompat.getResource("iceandfire:fire_stew"));
+        acceptCompat(output, frostLilyMixture, TCompat.getResource("iceandfire:frost_stew"));
+        acceptCompat(output, lightningLilyMixture, TCompat.getResource("iceandfire:lightning_stew"));
+        acceptCompat(output, ambrosia, TCompat.getResource("iceandfire:ambrosia"));
+        acceptCompat(output, aloeVeraJuice, TCompat.getResource("biomeswevegone:aloe_vera_juice"));
+        acceptCompat(output, whitePuffballStew, TCompat.getResource("biomeswevegone:white_puffball_stew"));
+        acceptCompat(output, alliumOddionSoup, TCompat.getResource("biomeswevegone:allium_oddion_soup"));
+        acceptCompat(output, umbrellaClusterJuice, TCompat.getResource("betterend:umbrella_cluster_juice"));
+        acceptCompat(output, wartSoup, TCompat.getResource("betternether:stalagnate_bowl_wart"));
+        acceptCompat(output, agaveMedicine, TCompat.getResource("betternether:agave_medicine"));
     }
 
+    private static void acceptCompat(CreativeModeTab.Output output, ItemLike item, ResourceLocation owner) {
+        acceptIfItem(output, item, owner);
+    }
 
     private static void acceptCompat(CreativeModeTab.Output output, ItemLike item, TagKey<Item> tagKey) {
         acceptIfTag(output, item, tagKey);

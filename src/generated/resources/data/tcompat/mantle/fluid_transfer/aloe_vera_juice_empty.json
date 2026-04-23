@@ -1,0 +1,17 @@
+{
+  "type": "mantle:empty_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:aloe_vera_juice"
+  },
+  "input": {
+    "item": "biomeswevegone:aloe_vera_juice"
+  },
+  "result": "minecraft:glass_bottle"
+}

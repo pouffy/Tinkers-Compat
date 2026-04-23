@@ -1,0 +1,17 @@
+{
+  "type": "mantle:fill_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:allium_oddion_soup"
+  },
+  "input": {
+    "item": "minecraft:bowl"
+  },
+  "result": "biomeswevegone:allium_oddion_soup"
+}

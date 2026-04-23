@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#forge:aloe_vera_juice",
+      "required": false
+    },
+    {
+      "id": "#forge:umbrella_cluster_juice",
+      "required": false
+    }
+  ]
+}

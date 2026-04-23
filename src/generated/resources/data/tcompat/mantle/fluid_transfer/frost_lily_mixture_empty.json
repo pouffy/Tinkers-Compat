@@ -1,0 +1,17 @@
+{
+  "type": "mantle:empty_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:frost_lily_mixture"
+  },
+  "input": {
+    "item": "iceandfire:frost_stew"
+  },
+  "result": "minecraft:bowl"
+}

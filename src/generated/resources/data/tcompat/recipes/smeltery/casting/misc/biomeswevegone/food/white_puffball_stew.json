@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:bowl"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
+  "cooling_time": 1,
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:white_puffball_stew"
+  },
+  "result": "biomeswevegone:white_puffball_stew"
+}

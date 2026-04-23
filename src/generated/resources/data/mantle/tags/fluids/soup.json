@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "#forge:fire_lily_mixture",
+      "required": false
+    },
+    {
+      "id": "#forge:frost_lily_mixture",
+      "required": false
+    },
+    {
+      "id": "#forge:lightning_lily_mixture",
+      "required": false
+    },
+    {
+      "id": "#forge:ambrosia",
+      "required": false
+    },
+    {
+      "id": "#forge:white_puffball_stew",
+      "required": false
+    },
+    {
+      "id": "#forge:allium_oddion_soup",
+      "required": false
+    },
+    {
+      "id": "#forge:wart_soup",
+      "required": false
+    },
+    {
+      "id": "#forge:agave_medicine",
+      "required": false
+    }
+  ]
+}

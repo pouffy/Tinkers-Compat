@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
+  "ingredient": {
+    "item": "biomeswevegone:white_puffball_cap"
+  },
+  "result": {
+    "amount": 125,
+    "tag": "forge:white_puffball_stew"
+  },
+  "temperature": 100,
+  "time": 39
+}

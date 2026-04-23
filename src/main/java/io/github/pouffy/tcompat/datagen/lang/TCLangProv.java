@@ -3,14 +3,6 @@ package io.github.pouffy.tcompat.datagen.lang;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
-import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
-import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
-import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
-import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
-import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
-import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
@@ -89,6 +81,16 @@ public class TCLangProv extends LanguageProvider {
         forFluid(TCFluids.moltenFireDragonsteel);
         forFluid(TCFluids.moltenIceDragonsteel);
         forFluid(TCFluids.moltenLightningDragonsteel);
+        forFluid(TCFluids.fireLilyMixture);
+        forFluid(TCFluids.frostLilyMixture);
+        forFluid(TCFluids.lightningLilyMixture);
+        forFluid(TCFluids.ambrosia);
+        forFluid(TCFluids.aloeVeraJuice);
+        forFluid(TCFluids.whitePuffballStew);
+        forFluid(TCFluids.alliumOddionSoup);
+        forFluid(TCFluids.umbrellaClusterJuice);
+        forFluid(TCFluids.wartSoup);
+        forFluid(TCFluids.agaveMedicine);
     }
 
     private void misc() {
@@ -168,7 +170,7 @@ public class TCLangProv extends LanguageProvider {
 
     private void forFluid(FluidObject<?> fluid) {
         toEng(fluid.getId().toLanguageKey("fluid"));
-        this.add(fluid.getId().toLanguageKey("block")+"_fluid", "%s".formatted(toEnglishName(fluid.getId().toLanguageKey("fluid"))));
+        this.add(fluid.getId().toLanguageKey("block")+"_fluid", "%s".formatted(toEngStr(fluid.getId().toLanguageKey("fluid"))));
         toEng(fluid.getId().toLanguageKey("item")+"_bucket");
     }
 
@@ -177,6 +179,12 @@ public class TCLangProv extends LanguageProvider {
         String[] parts = name.split("\\.");
         String toTranslate = parts[parts.length - 1];
         this.add(name, "%s".formatted(toEnglishName(toTranslate)));
+    }
+
+    public static String toEngStr(Object internalName) {
+        String[] parts = internalName.toString().split("\\.");
+        String toTranslate = parts[parts.length - 1];
+        return toEnglishName(toTranslate);
     }
 
     public static String toEnglishName(Object internalName) {

@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
@@ -151,6 +152,12 @@ public class BetterEndSmeltery implements CompatSmeltery {
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("terminite_bars")))
                 .setFluidAndTime(TCFluids.moltenTerminite, FluidValues.NUGGET * 3)
                 .save(cConsumer, location(metalFolder("casting") + "/terminite/bars"));
+
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("umbrella_cluster_juice")))
+                .setFluidAndTime(TCFluids.umbrellaClusterJuice, FluidValues.BOTTLE)
+                .setCast(Ingredient.of(Items.GLASS_BOTTLE), true)
+                .setCoolingTime(1)
+                .save(cConsumer, location(miscFolder("casting") + "/food/umbrella_cluster_juice"));
     }
 
     @Override

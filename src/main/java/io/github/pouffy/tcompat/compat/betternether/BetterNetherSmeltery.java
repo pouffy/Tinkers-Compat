@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
@@ -137,6 +138,23 @@ public class BetterNetherSmeltery implements CompatSmeltery {
                     .setCast(ItemNameIngredient.from(compatId("quartz_glass_pane_" + colorName)), true)
                     .save(cConsumer, location(metalFolder("casting") + "/cincinnasite/framed_glass/pane_" + colorName));
         }
+
+        simpleMelting(cConsumer, TCFluids.wartSoup, 125, "food", Ingredient.of(Items.NETHER_WART), miscFolder("melting"), "wart_soup");
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("stalagnate_bowl_wart")))
+                .setFluidAndTime(TCFluids.wartSoup, FluidValues.BOWL)
+                .setCast(ItemNameIngredient.from(compatId("stalagnate_bowl")), true)
+                .setCoolingTime(1)
+                .save(cConsumer, location(miscFolder("casting") + "/food/wart_soup"));
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("agave_medicine")))
+                .setFluidAndTime(TCFluids.agaveMedicine, FluidValues.BOWL)
+                .setCast(ItemNameIngredient.from(compatId("stalagnate_bowl")), true)
+                .setCoolingTime(1)
+                .save(cConsumer, location(miscFolder("casting") + "/food/agave_medicine"));
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("stalagnate_bowl_mushroom")))
+                .setFluidAndTime(TinkerFluids.mushroomStew, FluidValues.BOWL)
+                .setCast(ItemNameIngredient.from(compatId("stalagnate_bowl")), true)
+                .setCoolingTime(1)
+                .save(cConsumer, location(miscFolder("casting") + "/food/mushroom_soup"));
     }
 
     @Override

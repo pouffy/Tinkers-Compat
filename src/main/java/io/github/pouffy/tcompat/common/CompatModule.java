@@ -5,6 +5,7 @@ import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -70,6 +71,15 @@ public class CompatModule {
 
     protected static boolean acceptIfMaterial(CreativeModeTab.Output output, ItemLike item, MaterialId material) {
         if (MaterialRegistry.getMaterial(material) != IMaterial.UNKNOWN) {
+            output.accept(item);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    protected static boolean acceptIfItem(CreativeModeTab.Output output, ItemLike item, ResourceLocation owner) {
+        if (BuiltInRegistries.ITEM.containsKey(owner)) {
             output.accept(item);
             return true;
         } else {

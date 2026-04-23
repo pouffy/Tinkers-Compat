@@ -1,0 +1,17 @@
+{
+  "type": "mantle:fill_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:umbrella_cluster_juice"
+  },
+  "input": {
+    "item": "minecraft:glass_bottle"
+  },
+  "result": "betterend:umbrella_cluster_juice"
+}

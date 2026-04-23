@@ -5,7 +5,6 @@ import io.github.pouffy.tcompat.common.data.TCShapedRecipeBuilder;
 import io.github.pouffy.tcompat.common.data.TCShapelessRecipeBuilder;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
-import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -14,11 +13,11 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
-import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
@@ -122,6 +121,28 @@ public class IFSmeltery implements CompatSmeltery {
         nugget(cConsumer, "fire", TCTags.Items.FIRE_DRAGONSTEEL_NUGGETS, TCTags.Items.FIRE_DRAGONSTEEL_INGOTS);
         nugget(cConsumer, "ice", TCTags.Items.ICE_DRAGONSTEEL_NUGGETS, TCTags.Items.ICE_DRAGONSTEEL_INGOTS);
         nugget(cConsumer, "lightning", TCTags.Items.LIGHTNING_DRAGONSTEEL_NUGGETS, TCTags.Items.LIGHTNING_DRAGONSTEEL_INGOTS);
+
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("fire_stew")))
+                .setFluidAndTime(TCFluids.fireLilyMixture, FluidValues.BOWL)
+                .setCast(Ingredient.of(Items.BOWL), true)
+                .setCoolingTime(1)
+                .save(cConsumer, location(miscFolder("casting") + "/food/fire_lily_mixture"));
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("frost_stew")))
+                .setFluidAndTime(TCFluids.frostLilyMixture, FluidValues.BOWL)
+                .setCast(Ingredient.of(Items.BOWL), true)
+                .setCoolingTime(1)
+                .save(cConsumer, location(miscFolder("casting") + "/food/frost_lily_mixture"));
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("lightning_stew")))
+                .setFluidAndTime(TCFluids.lightningLilyMixture, FluidValues.BOWL)
+                .setCast(Ingredient.of(Items.BOWL), true)
+                .setCoolingTime(1)
+                .save(cConsumer, location(miscFolder("casting") + "/food/lightning_lily_mixture"));
+        simpleMelting(cConsumer, TCFluids.ambrosia, FluidValues.BOWL, "food", ItemNameIngredient.from(getResource("iceandfire:pixie_dust")), miscFolder("melting"), "ambrosia");
+        ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("ambrosia")))
+                .setFluidAndTime(TCFluids.ambrosia, FluidValues.BOWL)
+                .setCast(Ingredient.of(Items.BOWL), true)
+                .setCoolingTime(1)
+                .save(cConsumer, location(miscFolder("casting") + "/food/ambrosia"));
     }
 
     void dragonArmorMelting(Consumer<FinishedRecipe> consumer, String name, String idName, FlowingFluidObject<ForgeFlowingFluid> molten) {
