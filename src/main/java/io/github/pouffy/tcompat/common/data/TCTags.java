@@ -92,6 +92,12 @@ public class TCTags {
         private static void init() {
         }
 
+        public static TagKey<Item> GEMS = common("gems");
+        public static TagKey<Item> BLOCKS = common("storage_blocks");
+        public static TagKey<Item> NUGGETS = common("nuggets");
+        public static TagKey<Item> INGOTS = common("ingots");
+        public static TagKey<Item> ORES = common("ores");
+
         public static TagKey<Item> ZANITE_GEMS  = common("gems/zanite");
         public static TagKey<Item> ZANITE_BLOCKS  = common("storage_blocks/zanite");
         public static TagKey<Item> ZANITE_ORES  = common("ores/zanite");
@@ -172,8 +178,11 @@ public class TCTags {
         public static TagKey<Item> CALORITE_INGOTS  = common("ingots/calorite");
 
         public static TagKey<Item> LIGHTNUM_INGOTS  = common("ingots/lightnum");
+        public static TagKey<Item> LIGHTNUM_NUGGETS  = common("nuggets/lightnum");
         public static TagKey<Item> DRACULITE_INGOTS  = common("ingots/draculite");
+        public static TagKey<Item> DRACULITE_NUGGETS  = common("nuggets/draculite");
         public static TagKey<Item> STORMFORGED_STEEL_INGOTS  = common("ingots/stormforged_steel");
+        public static TagKey<Item> STORMFORGED_STEEL_NUGGETS  = common("nuggets/stormforged_steel");
 
         public static TagKey<Item> FIRE_DRAGONSTEEL_INGOTS  = common("ingots/fire_dragonsteel");
         public static TagKey<Item> FIRE_DRAGONSTEEL_NUGGETS = common("nuggets/fire_dragonsteel");

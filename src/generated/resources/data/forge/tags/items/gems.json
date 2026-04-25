@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "aether:zanite_gemstone",
+      "required": false
+    },
+    {
+      "id": "deep_aether:skyjade",
+      "required": false
+    },
+    {
+      "id": "betternether:nether_ruby",
+      "required": false
+    }
+  ]
+}

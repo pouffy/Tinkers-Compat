@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "aether:zanite_ore",
+      "required": false
+    },
+    {
+      "id": "deep_aether:skyjade_ore",
+      "required": false
+    },
+    {
+      "id": "aether:gravitite_ore",
+      "required": false
+    },
+    {
+      "id": "aether_redux:veridium_ore",
+      "required": false
+    },
+    {
+      "id": "aether_redux:sentrite",
+      "required": false
+    },
+    {
+      "id": "betterend:thallasium_ore",
+      "required": false
+    },
+    {
+      "id": "betternether:cincinnasite_ore",
+      "required": false
+    },
+    {
+      "id": "betternether:nether_ruby_ore",
+      "required": false
+    }
+  ]
+}

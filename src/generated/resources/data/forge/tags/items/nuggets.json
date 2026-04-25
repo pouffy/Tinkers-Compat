@@ -1,0 +1,48 @@
+{
+  "values": [
+    {
+      "id": "deep_aether:skyjade_nugget",
+      "required": false
+    },
+    {
+      "id": "aether_redux:veridium_nugget",
+      "required": false
+    },
+    {
+      "id": "aether_redux:sentrite_chunk",
+      "required": false
+    },
+    {
+      "id": "betterend:thallasium_nugget",
+      "required": false
+    },
+    {
+      "id": "betterend:terminite_nugget",
+      "required": false
+    },
+    {
+      "id": "tcompat:lightnum_nugget",
+      "required": false
+    },
+    {
+      "id": "tcompat:draculite_nugget",
+      "required": false
+    },
+    {
+      "id": "tcompat:stormforged_steel_nugget",
+      "required": false
+    },
+    {
+      "id": "tcompat:fire_dragonsteel_nugget",
+      "required": false
+    },
+    {
+      "id": "tcompat:ice_dragonsteel_nugget",
+      "required": false
+    },
+    {
+      "id": "tcompat:lightning_dragonsteel_nugget",
+      "required": false
+    }
+  ]
+}

@@ -131,6 +131,71 @@ public class TCItemTagProv extends ItemTagsProvider {
     }
 
     private void addForge() {
+        // Group Tags
+        this.tag(TCTags.Items.GEMS)
+                .addOptional(getResource("aether", "zanite_gemstone"))
+                .addOptional(getResource("deep_aether", "skyjade"))
+                .addOptional(getResource("betternether", "nether_ruby"));
+        this.tag(TCTags.Items.INGOTS)
+                .addOptional(getResource("aether_redux", "gravitite_ingot"))
+                .addOptional(getResource("aether_redux", "veridium_ingot"))
+                .addOptional(getResource("aether_redux", "refined_sentrite"))
+                .addOptional(getResource("deep_aether", "stratus_ingot"))
+                .addOptional(getResource("aether_treasure_reforging", "pyral_ingot"))
+                .addOptional(getResource("aether_treasure_reforging", "valkyrum_ingot"))
+                .addOptional(getResource("betterend", "thallasium_ingot"))
+                .addOptional(getResource("betterend", "terminite_ingot"))
+                .addOptional(getResource("betterend", "aeternium_ingot"))
+                .addOptional(getResource("betternether", "cincinnasite_ingot"))
+                .addOptional(getResource("tcompat", "lightnum_ingot"))
+                .addOptional(getResource("tcompat", "draculite_ingot"))
+                .addOptional(getResource("tcompat", "stormforged_steel_ingot"))
+                .addOptional(getResource("iceandfire", "dragonsteel_fire_ingot"))
+                .addOptional(getResource("iceandfire", "dragonsteel_ice_ingot"))
+                .addOptional(getResource("iceandfire", "dragonsteel_lightning_ingot"));
+        this.tag(TCTags.Items.NUGGETS)
+                .addOptional(getResource("deep_aether", "skyjade_nugget"))
+                .addOptional(getResource("aether_redux", "veridium_nugget"))
+                .addOptional(getResource("aether_redux", "sentrite_chunk"))
+                .addOptional(getResource("betterend", "thallasium_nugget"))
+                .addOptional(getResource("betterend", "terminite_nugget"))
+                .addOptional(getResource("tcompat", "lightnum_nugget"))
+                .addOptional(getResource("tcompat", "draculite_nugget"))
+                .addOptional(getResource("tcompat", "stormforged_steel_nugget"))
+                .addOptional(getResource("tcompat", "fire_dragonsteel_nugget"))
+                .addOptional(getResource("tcompat", "ice_dragonsteel_nugget"))
+                .addOptional(getResource("tcompat", "lightning_dragonsteel_nugget"));
+        this.tag(TCTags.Items.BLOCKS)
+                .addOptional(getResource("aether", "zanite_block"))
+                .addOptional(getResource("deep_aether", "skyjade_block"))
+                .addOptional(getResource("aether_redux", "gravitite_block"))
+                .addOptional(getResource("aether_redux", "raw_gravitite_block"))
+                .addOptional(getResource("aether_redux", "veridium_block"))
+                .addOptional(getResource("aether_redux", "raw_veridium_block"))
+                .addOptional(getResource("aether_redux", "refined_sentrite_block"))
+                .addOptional(getResource("deep_aether", "stratus_block"))
+                .addOptional(getResource("aether_treasure_reforging", "pyral_block"))
+                .addOptional(getResource("aether_treasure_reforging", "valkyrum_block"))
+                .addOptional(getResource("betterend", "thallasium_block"))
+                .addOptional(getResource("betterend", "terminite_block"))
+                .addOptional(getResource("betterend", "aeternium_block"))
+                .addOptional(getResource("betternether", "cincinnasite_block"))
+                .addOptional(getResource("betternether", "cincinnasite_forged"))
+                .addOptional(getResource("betternether", "nether_ruby_block"))
+                .addOptional(getResource("iceandfire", "dragonsteel_fire_block"))
+                .addOptional(getResource("iceandfire", "dragonsteel_ice_block"))
+                .addOptional(getResource("iceandfire", "dragonsteel_lightning_block"));
+        this.tag(TCTags.Items.ORES)
+                .addOptional(getResource("aether", "zanite_ore"))
+                .addOptional(getResource("deep_aether", "skyjade_ore"))
+                .addOptional(getResource("aether", "gravitite_ore"))
+                .addOptional(getResource("aether_redux", "veridium_ore"))
+                .addOptional(getResource("aether_redux", "sentrite"))
+                .addOptional(getResource("betterend", "thallasium_ore"))
+                .addOptional(getResource("betternether", "cincinnasite_ore"))
+                .addOptional(getResource("betternether", "nether_ruby_ore"));
+
+        // Specific Tags
         this.tag(TCTags.Items.ZANITE_GEMS).addOptional(getResource("aether", "zanite_gemstone"));
         this.tag(TCTags.Items.ZANITE_BLOCKS).addOptional(getResource("aether", "zanite_block"));
         this.tag(TCTags.Items.ZANITE_ORES).addOptional(getResource("aether", "zanite_ore"));
@@ -185,8 +250,11 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.NETHER_RUBY_ORES).addOptional(getResource("betternether", "nether_ruby_ore"));
 
         this.tag(TCTags.Items.LIGHTNUM_INGOTS).addOptional(getResource("tcompat", "lightnum_ingot"));
+        this.tag(TCTags.Items.LIGHTNUM_NUGGETS).addOptional(getResource("tcompat", "lightnum_nugget"));
         this.tag(TCTags.Items.DRACULITE_INGOTS).addOptional(getResource("tcompat", "draculite_ingot"));
+        this.tag(TCTags.Items.DRACULITE_NUGGETS).addOptional(getResource("tcompat", "draculite_nugget"));
         this.tag(TCTags.Items.STORMFORGED_STEEL_INGOTS).addOptional(getResource("tcompat", "stormforged_steel_ingot"));
+        this.tag(TCTags.Items.STORMFORGED_STEEL_NUGGETS).addOptional(getResource("tcompat", "stormforged_steel_nugget"));
 
         this.tag(TCTags.Items.FIRE_DRAGONSTEEL_INGOTS).addOptional(getResource("iceandfire", "dragonsteel_fire_ingot"));
         this.tag(TCTags.Items.FIRE_DRAGONSTEEL_NUGGETS).addOptional(getResource("tcompat", "fire_dragonsteel_nugget"));

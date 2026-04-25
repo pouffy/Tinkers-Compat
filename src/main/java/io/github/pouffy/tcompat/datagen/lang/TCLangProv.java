@@ -48,6 +48,9 @@ public class TCLangProv extends LanguageProvider {
         toEng("item.tcompat.lightnum_ingot");
         toEng("item.tcompat.draculite_ingot");
         toEng("item.tcompat.stormforged_steel_ingot");
+        toEng("item.tcompat.lightnum_nugget");
+        toEng("item.tcompat.draculite_nugget");
+        toEng("item.tcompat.stormforged_steel_nugget");
         toEng("item.tcompat.fire_dragonsteel_nugget");
         toEng("item.tcompat.ice_dragonsteel_nugget");
         toEng("item.tcompat.lightning_dragonsteel_nugget");

@@ -1,0 +1,80 @@
+{
+  "values": [
+    {
+      "id": "aether:zanite_block",
+      "required": false
+    },
+    {
+      "id": "deep_aether:skyjade_block",
+      "required": false
+    },
+    {
+      "id": "aether_redux:gravitite_block",
+      "required": false
+    },
+    {
+      "id": "aether_redux:raw_gravitite_block",
+      "required": false
+    },
+    {
+      "id": "aether_redux:veridium_block",
+      "required": false
+    },
+    {
+      "id": "aether_redux:raw_veridium_block",
+      "required": false
+    },
+    {
+      "id": "aether_redux:refined_sentrite_block",
+      "required": false
+    },
+    {
+      "id": "deep_aether:stratus_block",
+      "required": false
+    },
+    {
+      "id": "aether_treasure_reforging:pyral_block",
+      "required": false
+    },
+    {
+      "id": "aether_treasure_reforging:valkyrum_block",
+      "required": false
+    },
+    {
+      "id": "betterend:thallasium_block",
+      "required": false
+    },
+    {
+      "id": "betterend:terminite_block",
+      "required": false
+    },
+    {
+      "id": "betterend:aeternium_block",
+      "required": false
+    },
+    {
+      "id": "betternether:cincinnasite_block",
+      "required": false
+    },
+    {
+      "id": "betternether:cincinnasite_forged",
+      "required": false
+    },
+    {
+      "id": "betternether:nether_ruby_block",
+      "required": false
+    },
+    {
+      "id": "iceandfire:dragonsteel_fire_block",
+      "required": false
+    },
+    {
+      "id": "iceandfire:dragonsteel_ice_block",
+      "required": false
+    },
+    {
+      "id": "iceandfire:dragonsteel_lightning_block",
+      "required": false
+    }
+  ]
+}

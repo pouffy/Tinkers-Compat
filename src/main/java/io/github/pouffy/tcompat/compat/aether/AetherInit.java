@@ -28,11 +28,15 @@ public class AetherInit extends CompatInitializer {
     public static final StaticModifier<AutofreezeModifier> autofreeze = AETHER_M.register("autofreeze", AutofreezeModifier::new);
 
     public static final ItemObject<Item> lightnumIngot = itemForMod("aether", "lightnum_ingot", new Item.Properties(), AETHER_I);
+    public static final ItemObject<Item> lightnumNugget = itemForMod("aether", "lightnum_nugget", new Item.Properties(), AETHER_I);
     public static final ItemObject<Item> draculiteIngot = itemForMod("aether", "draculite_ingot", new Item.Properties(), AETHER_I);
+    public static final ItemObject<Item> draculiteNugget = itemForMod("aether", "draculite_nugget", new Item.Properties(), AETHER_I);
 
     public static void addCommonTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
         output.accept(lightnumIngot);
+        output.accept(lightnumNugget);
         output.accept(draculiteIngot);
+        output.accept(draculiteNugget);
     }
 
     public static void init(IEventBus eventBus) {

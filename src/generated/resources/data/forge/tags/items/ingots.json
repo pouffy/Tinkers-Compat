@@ -1,0 +1,68 @@
+{
+  "values": [
+    {
+      "id": "aether_redux:gravitite_ingot",
+      "required": false
+    },
+    {
+      "id": "aether_redux:veridium_ingot",
+      "required": false
+    },
+    {
+      "id": "aether_redux:refined_sentrite",
+      "required": false
+    },
+    {
+      "id": "deep_aether:stratus_ingot",
+      "required": false
+    },
+    {
+      "id": "aether_treasure_reforging:pyral_ingot",
+      "required": false
+    },
+    {
+      "id": "aether_treasure_reforging:valkyrum_ingot",
+      "required": false
+    },
+    {
+      "id": "betterend:thallasium_ingot",
+      "required": false
+    },
+    {
+      "id": "betterend:terminite_ingot",
+      "required": false
+    },
+    {
+      "id": "betterend:aeternium_ingot",
+      "required": false
+    },
+    {
+      "id": "betternether:cincinnasite_ingot",
+      "required": false
+    },
+    {
+      "id": "tcompat:lightnum_ingot",
+      "required": false
+    },
+    {
+      "id": "tcompat:draculite_ingot",
+      "required": false
+    },
+    {
+      "id": "tcompat:stormforged_steel_ingot",
+      "required": false
+    },
+    {
+      "id": "iceandfire:dragonsteel_fire_ingot",
+      "required": false
+    },
+    {
+      "id": "iceandfire:dragonsteel_ice_ingot",
+      "required": false
+    },
+    {
+      "id": "iceandfire:dragonsteel_lightning_ingot",
+      "required": false
+    }
+  ]
+}
