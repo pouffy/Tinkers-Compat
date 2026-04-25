@@ -60,7 +60,7 @@ public class VoidTouchedModifier extends Modifier implements ProjectileHitModifi
                 touched.setAmplifier(amplifier + modifierLevel);
                 touched.setDuration(duration + modifierLevel * 20);
             } else {
-                touched.setVoided(true);
+                touched.voidTarget(true);
                 touched.setAmplifier(modifierLevel);
                 touched.setDuration(modifierLevel * 60);
             }

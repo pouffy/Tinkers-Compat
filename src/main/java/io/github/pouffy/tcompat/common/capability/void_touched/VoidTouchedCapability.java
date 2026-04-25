@@ -27,6 +27,7 @@ public class VoidTouchedCapability implements VoidTouched {
 
     //Sync all just in case
     private final Map<String, Triple<Type, Consumer<Object>, Supplier<Object>>> synchableFunctions = Map.ofEntries(
+            Map.entry("voidTarget", Triple.of(Type.BOOLEAN, (object) -> this.voidTarget((boolean) object), this::isVoided)),
             Map.entry("setVoided", Triple.of(Type.BOOLEAN, (object) -> this.setVoided((boolean) object), this::isVoided)),
             Map.entry("setAmplifier", Triple.of(Type.INT, (object) -> this.setAmplifier((int) object), this::getAmplifier)),
             Map.entry("setDuration", Triple.of(Type.INT, (object) -> this.setDuration((int) object), this::getDuration))
@@ -41,10 +42,14 @@ public class VoidTouchedCapability implements VoidTouched {
         return this.entity;
     }
 
-    @Override
-    public void setVoided(boolean isVoided) {
+    public void voidTarget(boolean isVoided) {
         var sound = isVoided ? TCSounds.VOID_TOUCHED_ACTIVATE : TCSounds.VOID_TOUCHED_DEACTIVATE;
         getEntity().level().playSound(null, getEntity().blockPosition(), sound.getSound(), SoundSource.PLAYERS);
+        this.setVoided(isVoided);
+    }
+
+    @Override
+    public void setVoided(boolean isVoided) {
         this.isVoided = isVoided;
     }
 

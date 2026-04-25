@@ -21,7 +21,7 @@ public interface VoidTouched extends INBTSynchable<CompoundTag> {
         if (getTimeLeft() > 0) {
             if (!getEntity().isAlive()) {
                 setTimeLeft(0);
-                setVoided(false);
+                voidTarget(false);
             }
             if (getEntity().level().isClientSide) {
                 createParticles();
@@ -29,7 +29,7 @@ public interface VoidTouched extends INBTSynchable<CompoundTag> {
             setTimeLeft(getTimeLeft() - 1);
         } else {
             if (isVoided()) {
-                setVoided(false);
+                voidTarget(false);
             }
             setAmplifier(0);
             setDuration(0);
@@ -48,6 +48,7 @@ public interface VoidTouched extends INBTSynchable<CompoundTag> {
         }
     }
 
+    void voidTarget(boolean isVoided);
     void setVoided(boolean isVoided);
     boolean isVoided();
 
