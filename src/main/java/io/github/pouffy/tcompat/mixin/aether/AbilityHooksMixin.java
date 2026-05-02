@@ -4,6 +4,7 @@ import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.event.hooks.AbilityHooks;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.module.AetherForgedModifierHook;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -33,18 +34,19 @@ public class AbilityHooksMixin {
         if (debuffTools) {
             if (stack.getItem() instanceof ModifiableItem) {
                 if ((state.getBlock().getDescriptionId().startsWith("block.aether.") || state.is(AetherTags.Blocks.TREATED_AS_AETHER_BLOCK)) && !state.is(AetherTags.Blocks.TREATED_AS_VANILLA_BLOCK)) {
-                    ToolStack toolStack = ToolStack.from(stack);
-                    List<ModifierEntry> validList = new ArrayList<>();
-                    for (ModifierEntry entry : toolStack.getModifierList()) {
-                        if (entry.getModifier().getHooks().hasHook(GlobalInit.AETHER_FORGED)) {
-                            validList.add(entry);
+                    CompatHelper.asTool(stack, (tool) -> {
+                        List<ModifierEntry> validList = new ArrayList<>();
+                        for (ModifierEntry entry : tool.getModifierList()) {
+                            if (entry.getModifier().getHooks().hasHook(GlobalInit.AETHER_FORGED)) {
+                                validList.add(entry);
+                            }
                         }
-                    }
-                    List<ModifierEntry> list = validList.stream().sorted(Comparator.comparingInt(entry -> -entry.getModifier().getPriority())).toList();
-                    boolean shouldWork = !list.isEmpty() && list.stream().findFirst().map(entry -> entry.getHook(GlobalInit.AETHER_FORGED).canUse(toolStack, entry)).orElse(false);
-                    if (!shouldWork)
-                        cir.setReturnValue(1.0f);
-                    else cir.setReturnValue(speed);
+                        List<ModifierEntry> list = validList.stream().sorted(Comparator.comparingInt(entry -> -entry.getModifier().getPriority())).toList();
+                        boolean shouldWork = !list.isEmpty() && list.stream().findFirst().map(entry -> entry.getHook(GlobalInit.AETHER_FORGED).canUse(tool, entry)).orElse(false);
+                        if (!shouldWork)
+                            cir.setReturnValue(1.0f);
+                        else cir.setReturnValue(speed);
+                    });
                 }
             }
         }

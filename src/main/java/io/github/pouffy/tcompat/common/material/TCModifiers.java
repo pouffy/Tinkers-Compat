@@ -7,7 +7,6 @@ public class TCModifiers {
     public static final ModifierId aetherForged = id("aether_forged");
     public static final ModifierId blighted = id("blighted");
     public static final ModifierId escarstay = id("escarstay");
-    public static final ModifierId voidHoned = id("void_honed");
 
     public static final ModifierId zanite = id("zanite");
     public static final ModifierId skyjade = id("skyjade");
