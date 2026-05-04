@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:ingots/draculite"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tcompat:draculite_nugget"
+  }
+}

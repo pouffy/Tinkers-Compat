@@ -1,9 +1,19 @@
 package io.github.pouffy.tcompat.compat.deep_aether;
 
 import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.data.TCShapedRecipeBuilder;
+import io.github.pouffy.tcompat.common.data.TCShapelessRecipeBuilder;
+import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCByproduct;
+import net.minecraft.advancements.critereon.ContextAwarePredicate;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.tconstruct.fluids.TinkerFluids;
@@ -12,6 +22,8 @@ import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import java.util.function.Consumer;
+
+import static io.github.pouffy.tcompat.TCompat.getResource;
 
 public class DeepAetherSmeltery implements CompatSmeltery {
     @Override
@@ -62,6 +74,20 @@ public class DeepAetherSmeltery implements CompatSmeltery {
                 .save(cConsumer, location(metalFolder("melting") + "/stormforged_steel/boots"));
 
         glovesMelting(cConsumer, TCFluids.moltenStormforgedSteel, FluidValues.INGOT * 2, "stormforged_steel", ItemNameIngredient.from(compatId("stormforged_gloves")), gemFolder("melting"), true, new int[]{FluidValues.NUGGET});
+
+        nugget(cConsumer, "stormforged_steel", TCTags.Items.STORMFORGED_STEEL_NUGGETS, TCTags.Items.STORMFORGED_STEEL_INGOTS);
+    }
+
+    void nugget(Consumer<FinishedRecipe> consumer, String type, TagKey<Item> nugget, TagKey<Item> ingot) {
+        TCShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, getResource("%s_nugget".formatted(type)), 9)
+                .requires(ingot)
+                .unlockedBy("has_item", new InventoryChangeTrigger.TriggerInstance(ContextAwarePredicate.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, new ItemPredicate[]{ItemPredicate.Builder.item().of(ingot).build()}))
+                .save(consumer, location("common/materials/%s_nugget_from_ingot".formatted(type)));
+        TCShapedRecipeBuilder.shaped(RecipeCategory.MISC, getResource("%s_ingot".formatted(type)))
+                .pattern("###").pattern("###").pattern("###")
+                .define('#', nugget)
+                .unlockedBy("has_item", new InventoryChangeTrigger.TriggerInstance(ContextAwarePredicate.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, new ItemPredicate[]{ItemPredicate.Builder.item().of(nugget).build()}))
+                .save(consumer, location("common/materials/%s_ingot_from_nuggets".formatted(type)));
     }
 
     @Override

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:ingots/stormforged_steel"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tcompat:stormforged_steel_nugget"
+  }
+}

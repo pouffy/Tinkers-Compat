@@ -52,7 +52,7 @@ public class CompatHelper {
     public static void init(IEventBus eventBus) {
         //Compatibility needs to be initialised during datagen so our fluids are recognised.
         compatInitializers.forEach((mod, consumer) -> {
-            if (CompatHelper.isLoaded(mod) || DatagenModLoader.isRunningDataGen())
+            if (CompatHelper.isLoaded(mod))
                 consumer.accept(eventBus);
         });
         GlobalInit.init(eventBus);
@@ -65,7 +65,7 @@ public class CompatHelper {
     }
 
     public static boolean isLoaded(String namespace) {
-        return ModList.get().isLoaded(namespace);
+        return ModList.get().isLoaded(namespace) || DatagenModLoader.isRunningDataGen();
     }
 
     public static ResourceKey<DamageType> damageKey(String location) {
@@ -76,6 +76,11 @@ public class CompatHelper {
         return ResourceKey.create(reg, TCompat.getResource(location));
     }
 
+    /**
+     * Only run if the stack is a tool.
+     * @param stack the ItemStack being used.
+     * @param consumer the method  to run.
+     */
     public static void asTool(ItemStack stack, Consumer<ToolStack> consumer) {
         if (stack.getItem() instanceof IModifiable) {
             consumer.accept(ToolStack.from(stack));
