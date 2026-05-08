@@ -29,5 +29,6 @@ public class DeepAetherInit extends CompatInitializer {
     public static void init(IEventBus eventBus) {
         DEEP_M.register(eventBus);
         DEEP_I.register(eventBus);
+        DeepAetherMaterials.staticInit();
     }
 }

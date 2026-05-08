@@ -19,13 +19,17 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.ReduceToolDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
+import slimeknights.tconstruct.library.modifiers.modules.display.DurabilityBarColorModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import static slimeknights.tconstruct.library.tools.definition.ModifiableArmorMaterial.ARMOR_SLOTS;
 
@@ -78,6 +82,11 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(voltbornPredicate).percent().eachLevel(0.45f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(voltbornPredicate).percent().eachLevel(0.65f))
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).source(new DamageTypePredicate(ObjectRetriever.damageKey("iceandfire:dragon_lightning"))).eachLevel(2.5f));
+
+        buildModifier(TCModifiers.cataclysmic, modLoaded("cataclysm"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(125)
+                .addModule(new DurabilityBarColorModule(16777215))
+                .addModule(ReduceToolDamageModule.builder().flat(1.0F));
     }
 
     @Override

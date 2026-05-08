@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.datagen.tag;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.TagKey;
@@ -24,10 +25,10 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
     @Override
     protected void addTags() {
         tag(TCTags.Materials.AETHER).add(
-                TCMaterials.aetherRock,
-                TCMaterials.aetherWood,
-                TCMaterials.zanite,
-                TCMaterials.gravitite,
+                AetherMaterials.aetherRock,
+                AetherMaterials.aetherWood,
+                AetherMaterials.zanite,
+                AetherMaterials.gravitite,
                 TCMaterials.skyjade,
                 TCMaterials.veridium,
                 TCMaterials.refinedSentrite,

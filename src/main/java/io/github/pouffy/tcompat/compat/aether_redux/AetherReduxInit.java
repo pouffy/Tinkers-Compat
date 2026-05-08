@@ -34,5 +34,6 @@ public class AetherReduxInit extends CompatInitializer {
     public static void init(IEventBus eventBus) {
         REDUX_M.register(eventBus);
         REDUX_RS.register(eventBus);
+        AetherReduxMaterials.staticInit();
     }
 }

@@ -92,4 +92,7 @@ dependencies {
     modExtraRuntimeOnly("maven.modrinth:ice-and-fire-dragons:2.1.13-1.20.1-beta-5")
     modCompileOnly("maven.modrinth:citadel:2.6.3")
     modExtraRuntimeOnly("maven.modrinth:citadel:2.6.3")
+    // L_Ender's Cataclysm
+    modCompileOnly("maven.modrinth:l_enders-cataclysm:TFKWu05d")
+    modExtraRuntimeOnly("maven.modrinth:l_enders-cataclysm:TFKWu05d")
 }

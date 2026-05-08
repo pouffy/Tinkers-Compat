@@ -3,6 +3,8 @@ package io.github.pouffy.tcompat.common;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraMaterials;
+import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
 import io.github.pouffy.tcompat.datagen.fluid.TCFluidTextureProv;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
@@ -177,11 +179,11 @@ public class TCFluids extends CompatModule {
     }
 
     public static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
-        acceptCompat(output, moltenDesh, TCMaterials.desh, TCTags.Items.DESH_INGOTS);
-        acceptCompat(output, moltenCalorite, TCMaterials.calorite, TCTags.Items.CALORITE_INGOTS);
-        acceptCompat(output, moltenOstrum, TCMaterials.ostrum, TCTags.Items.OSTRUM_INGOTS);
-        acceptCompat(output, moltenZanite, TCMaterials.zanite, TCTags.Items.ZANITE_GEMS);
-        acceptCompat(output, moltenGravitite, TCMaterials.gravitite, TCTags.Items.GRAVITITE_INGOTS);
+        acceptCompat(output, moltenDesh, AdAstraMaterials.desh, TCTags.Items.DESH_INGOTS);
+        acceptCompat(output, moltenCalorite, AdAstraMaterials.calorite, TCTags.Items.CALORITE_INGOTS);
+        acceptCompat(output, moltenOstrum, AdAstraMaterials.ostrum, TCTags.Items.OSTRUM_INGOTS);
+        acceptCompat(output, moltenZanite, AetherMaterials.zanite, TCTags.Items.ZANITE_GEMS);
+        acceptCompat(output, moltenGravitite, AetherMaterials.gravitite, TCTags.Items.GRAVITITE_INGOTS);
         acceptCompat(output, moltenLightnum, TCMaterials.lightnum, TCTags.Items.LIGHTNUM_INGOTS);
         acceptCompat(output, moltenDraculite, TCMaterials.draculite, TCTags.Items.DRACULITE_INGOTS);
         acceptCompat(output, moltenVeridium, TCMaterials.veridium, TCTags.Items.VERIDIUM_INGOTS);

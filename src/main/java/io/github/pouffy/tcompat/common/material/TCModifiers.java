@@ -17,6 +17,8 @@ public class TCModifiers {
     public static final ModifierId frostborn = id("frostborn");
     public static final ModifierId voltborn = id("voltborn");
 
+    public static final ModifierId cataclysmic = id("cataclysmic");
+
     private TCModifiers() {}
 
     private static ModifierId id(String name) {

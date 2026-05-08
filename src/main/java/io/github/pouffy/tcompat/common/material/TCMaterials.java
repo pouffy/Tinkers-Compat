@@ -16,14 +16,18 @@ public class TCMaterials {
     public static final Map<MaterialVariantId, TCWoods> woodVariants = new HashMap<>();
     public static final Map<MaterialVariantId, TCRocks> rockVariants = new HashMap<>();
 
+    public static final Map<MaterialVariantId, MaterialBuilder> variants = new HashMap<>();
+    public static final Map<MaterialVariantId, MaterialBuilder> materials = new HashMap<>();
+    public static final List<MaterialBuilder> materialBuilders = new ArrayList<>();
+
     public static final List<String> translationKeys = new ArrayList<>();
 
     // Metals & Gems
-    public static final MaterialId aetherWood = id("aether_wood");
-    public static final MaterialId aetherRock = id("aether_rock");
-    public static final MaterialId zanite = id("zanite");
+    //public static final MaterialId aetherWood = id("aether_wood");
+    //public static final MaterialId aetherRock = id("aether_rock");
+    //public static final MaterialId zanite = id("zanite");
     public static final MaterialId skyjade = id("skyjade");
-    public static final MaterialId gravitite = id("gravitite");
+    //public static final MaterialId gravitite = id("gravitite");
     public static final MaterialId veridium = id("veridium");
     public static final MaterialId refinedSentrite = id("refined_sentrite");
     public static final MaterialId pyral = id("pyral");
@@ -33,9 +37,9 @@ public class TCMaterials {
     public static final MaterialId stormforgedSteel = id("stormforged_steel");
     public static final MaterialId draculite = id("draculite");
 
-    public static final MaterialId calorite = id("calorite");
-    public static final MaterialId desh = id("desh");
-    public static final MaterialId ostrum = id("ostrum");
+    //public static final MaterialId calorite = id("calorite");
+    //public static final MaterialId desh = id("desh");
+    //public static final MaterialId ostrum = id("ostrum");
 
     public static final MaterialId thallasium = id("thallasium");
     public static final MaterialId terminite = id("terminite");
@@ -51,6 +55,12 @@ public class TCMaterials {
     public static final MaterialId dragonScaleFire = id("fire_dragon_scale");
     public static final MaterialId dragonScaleIce = id("ice_dragon_scale");
     public static final MaterialId dragonScaleLightning = id("lightning_dragon_scale");
+
+    //public static final MaterialId ancientMetal = id("ancient_metal");
+    //public static final MaterialId blackSteel = id("black_steel");
+    //public static final MaterialId cursium = id("cursium");
+    //public static final MaterialId ignitium = id("ignitium");
+    //public static final MaterialId witherite = id("witherite");
 
     // Special Craftable Materials
     public static final MaterialId blightbunnyFang = id("blightbunny_fang");
@@ -84,18 +94,18 @@ public class TCMaterials {
     public static final MaterialVariantId
         // Wood
             // Aether
-            skyroot = aetherWoodVariant(TCWoods.SKYROOT),
-            roseroot = aetherWoodVariant(TCWoods.ROSEROOT),
-            yagroot = aetherWoodVariant(TCWoods.YAGROOT),
-            cruderoot = aetherWoodVariant(TCWoods.CRUDEROOT),
-            conberry = aetherWoodVariant(TCWoods.CONBERRY),
-            sunroot = aetherWoodVariant(TCWoods.SUNROOT),
-            blightwillow = aetherWoodVariant(TCWoods.BLIGHTWILLOW),
-            fieldsproot = aetherWoodVariant(TCWoods.FIELDSPROOT),
-            cloudcap = aetherWoodVariant(TCWoods.CLOUDCAP),
-            jellyshroom = aetherWoodVariant(TCWoods.JELLYSHROOM),
-            crystal = aetherWoodVariant(TCWoods.CRYSTAL),
-            glacia = aetherWoodVariant(TCWoods.GLACIA),
+            //skyroot = aetherWoodVariant(TCWoods.SKYROOT),
+            //roseroot = aetherWoodVariant(TCWoods.ROSEROOT),
+            //yagroot = aetherWoodVariant(TCWoods.YAGROOT),
+            //cruderoot = aetherWoodVariant(TCWoods.CRUDEROOT),
+            //conberry = aetherWoodVariant(TCWoods.CONBERRY),
+            //sunroot = aetherWoodVariant(TCWoods.SUNROOT),
+            //blightwillow = aetherWoodVariant(TCWoods.BLIGHTWILLOW),
+            //fieldsproot = aetherWoodVariant(TCWoods.FIELDSPROOT),
+            //cloudcap = aetherWoodVariant(TCWoods.CLOUDCAP),
+            //jellyshroom = aetherWoodVariant(TCWoods.JELLYSHROOM),
+            //crystal = aetherWoodVariant(TCWoods.CRYSTAL),
+            //glacia = aetherWoodVariant(TCWoods.GLACIA),
             // Ad Astra
             aeronos = woodVariant(TCWoods.AERONOS),
             strophar = woodVariant(TCWoods.STROPHAR),
@@ -171,11 +181,11 @@ public class TCMaterials {
 
         // Rocks
             // Aether
-            holystone = aetherRockVariant(TCRocks.HOLYSTONE),
-            aseterite = aetherRockVariant(TCRocks.ASETERITE),
-            clorite = aetherRockVariant(TCRocks.CLORITE),
-            divinite = aetherRockVariant(TCRocks.DIVINITE),
-            driftshale = aetherRockVariant(TCRocks.DRIFTSHALE),
+            //holystone = aetherRockVariant(TCRocks.HOLYSTONE),
+            //aseterite = aetherRockVariant(TCRocks.ASETERITE),
+            //clorite = aetherRockVariant(TCRocks.CLORITE),
+            //divinite = aetherRockVariant(TCRocks.DIVINITE),
+            //driftshale = aetherRockVariant(TCRocks.DRIFTSHALE),
             // Ad Astra
             moonStone = rockVariant(TCRocks.MOON_STONE),
             conglomerate = rockVariant(TCRocks.CONGLOMERATE),
@@ -213,27 +223,11 @@ public class TCMaterials {
         return id;
     }
 
-    private static MaterialVariantId aetherWoodVariant(TCWoods woodType) {
-        MaterialVariantId id = MaterialVariantId.create(aetherWood, woodType.getSerializedName());
-        woodVariants.put(id, woodType);
-        allVariants.add(id);
-        translationKeys.add("material.%s.%s.%s".formatted(TCompat.MOD_ID, "aether_wood", woodType.getSerializedName()));
-        return id;
-    }
-
     private static MaterialVariantId rockVariant(TCRocks rockType) {
         MaterialVariantId id = MaterialVariantId.create(MaterialIds.rock, rockType.getSerializedName());
         rockVariants.put(id, rockType);
         allVariants.add(id);
         translationKeys.add("material.%s.%s.%s".formatted("tconstruct", "rock", rockType.getSerializedName()));
-        return id;
-    }
-
-    private static MaterialVariantId aetherRockVariant(TCRocks rockType) {
-        MaterialVariantId id = MaterialVariantId.create(aetherRock, rockType.getSerializedName());
-        rockVariants.put(id, rockType);
-        allVariants.add(id);
-        translationKeys.add("material.%s.%s.%s".formatted(TCompat.MOD_ID, "aether_rock", rockType.getSerializedName()));
         return id;
     }
 
@@ -255,5 +249,19 @@ public class TCMaterials {
     private static MaterialId id(String name) {
         translationKeys.add("material.%s.%s".formatted(TCompat.MOD_ID, name));
         return new MaterialId(TCompat.MOD_ID, name);
+    }
+
+    public static MaterialId material(MaterialBuilder builder) {
+        if (builder.isVariant()) return null;
+        MaterialId materialId = builder.getId().getId();
+        materials.put(materialId, builder);
+        return materialId;
+    }
+
+    public static MaterialVariantId variant(MaterialBuilder builder) {
+        if (!builder.isVariant()) return null;
+        MaterialVariantId materialId = builder.getId();
+        variants.put(materialId, builder);
+        return materialId;
     }
 }

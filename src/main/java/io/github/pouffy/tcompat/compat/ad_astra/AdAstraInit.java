@@ -24,5 +24,6 @@ public class AdAstraInit extends CompatInitializer {
 
     public static void init(IEventBus eventBus) {
         ASTRA_M.register(eventBus);
+        AdAstraMaterials.staticInit();
     }
 }

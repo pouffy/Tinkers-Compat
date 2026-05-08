@@ -5,7 +5,9 @@ import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraMaterials;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
+import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
@@ -91,10 +93,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(withCondition(consumer, modLoaded("biomesoplenty")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomesoplenty:barrel_cactus")), 1, 2, folder + "cactus/small/biomesoplenty");
 
 
-        materialRecipe(aetherConsumer, TCMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
+        materialRecipe(aetherConsumer, AetherMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
 
         //Material Parts
-        metalMaterialRecipe(aetherConsumer, TCMaterials.gravitite, folder, "gravitite", true);
+        metalMaterialRecipe(aetherConsumer, AetherMaterials.gravitite, folder, "gravitite", true);
         //gemMaterialRecipe(aetherConsumer, TCMaterials.zanite, folder, "zanite", true, false, true);
         metalMaterialRecipe(aetherConsumer, TCMaterials.lightnum, folder, "lightnum", true);
         metalMaterialRecipe(aetherConsumer, TCMaterials.draculite, folder, "draculite", true);
@@ -133,9 +135,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(aetherTreasureConsumer, TCMaterials.valkyrum, folder, "valkyrum", true);
         materialRecipe(aetherTreasureConsumer, TCMaterials.neptune, ItemNameIngredient.from(TCompat.getResource("aether_treasure_reforging:neptune_mesh")), 1, 1, folder + "neptune/mesh");
 
-        metalMaterialRecipe(adAstraConsumer, TCMaterials.desh, folder, "desh", true);
-        metalMaterialRecipe(adAstraConsumer, TCMaterials.calorite, folder, "calorite", true);
-        metalMaterialRecipe(adAstraConsumer, TCMaterials.ostrum, folder, "ostrum", true);
+        metalMaterialRecipe(adAstraConsumer, AdAstraMaterials.desh, folder, "desh", true);
+        metalMaterialRecipe(adAstraConsumer, AdAstraMaterials.calorite, folder, "calorite", true);
+        metalMaterialRecipe(adAstraConsumer, AdAstraMaterials.ostrum, folder, "ostrum", true);
 
         metalMaterialRecipe(betterend, TCMaterials.thallasium, folder, "thallasium", true);
         metalMaterialRecipe(betterend, TCMaterials.terminite, folder, "terminite", true);
@@ -159,8 +161,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
 
         //materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
-        materialMelting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
-        materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, TCFluids.moltenGravitite, folder);
+        materialMelting(aetherConsumer, AetherMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
+        materialMeltingCasting(aetherConsumer, AetherMaterials.gravitite, TCFluids.moltenGravitite, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.lightnum, TCFluids.moltenLightnum, folder);
         materialMeltingCasting(aetherConsumer, TCMaterials.draculite, TCFluids.moltenDraculite, folder);
         //materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
@@ -169,9 +171,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, TCFluids.moltenVeridium, folder);
         materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, TCFluids.moltenRefinedSentrite, folder);
 
-        materialMeltingCasting(adAstraConsumer, TCMaterials.desh, TCFluids.moltenDesh, FluidValues.INGOT, folder);
-        materialMeltingCasting(adAstraConsumer, TCMaterials.calorite, TCFluids.moltenCalorite, FluidValues.INGOT, folder);
-        materialMeltingCasting(adAstraConsumer, TCMaterials.ostrum, TCFluids.moltenOstrum, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, AdAstraMaterials.desh, TCFluids.moltenDesh, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, AdAstraMaterials.calorite, TCFluids.moltenCalorite, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, AdAstraMaterials.ostrum, TCFluids.moltenOstrum, FluidValues.INGOT, folder);
 
         materialMeltingCasting(betterend, TCMaterials.thallasium, TCFluids.moltenThallasium, FluidValues.INGOT, folder);
         materialMeltingCasting(betterend, TCMaterials.terminite, TCFluids.moltenTerminite, FluidValues.INGOT, folder);
@@ -184,9 +186,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingCasting(iceandfire, TCMaterials.iceDragonsteel, TCFluids.moltenIceDragonsteel, FluidValues.INGOT, folder);
         materialMeltingCasting(iceandfire, TCMaterials.lightningDragonsteel, TCFluids.moltenLightningDragonsteel, FluidValues.INGOT, folder);
 
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, TCFluids.moltenValkyrum, FluidValues.INGOT, folder);
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, TCFluids.moltenPyral, FluidValues.INGOT, folder);
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.zanite, TCMaterials.neptune, TCFluids.moltenNeptune, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.gravitite, TCMaterials.valkyrum, TCFluids.moltenValkyrum, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.gravitite, TCMaterials.pyral, TCFluids.moltenPyral, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.zanite, TCMaterials.neptune, TCFluids.moltenNeptune, FluidValues.INGOT, folder);
     }
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

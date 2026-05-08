@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
@@ -36,13 +37,21 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
 
     @Override
     protected void addMaterialTraits() {
-        addDefaultTraits(TCMaterials.aetherWood, TCModifiers.aetherForged, ModifierIds.cultivated);
-        addTraits(TCMaterials.aetherWood, AMMO, ModifierIds.economical);
-        addDefaultTraits(TCMaterials.aetherRock, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.ambrogen, 1), new ModifierEntry(ModifierIds.stonebound, 1));
-        addDefaultTraits(TCMaterials.zanite, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.zanite, 1));
-        addTraits(TCMaterials.zanite, AMMO, ModifierIds.crystalbound);
-        addDefaultTraits(TCMaterials.gravitite, TCModifiers.aetherForged);
-        addTraits(TCMaterials.gravitite, HeadMaterialStats.ID, AetherInit.ascension.getId(), TCModifiers.aetherForged);
+        for (MaterialBuilder builder : TCMaterials.materialBuilders) {
+            if (!builder.isVariant()) {
+                addDefaultTraits(builder.getId().getId(), builder.getTraits().defaultTraits().toArray(new ModifierEntry[0]));
+                for (var statEntry : builder.getTraits().traits().entrySet()) {
+                    addTraits(builder.getId().getId(), statEntry.getKey(), statEntry.getValue().toArray(new ModifierEntry[0]));
+                }
+            }
+        }
+        //addDefaultTraits(TCMaterials.aetherWood, TCModifiers.aetherForged, ModifierIds.cultivated);
+        //addTraits(TCMaterials.aetherWood, AMMO, ModifierIds.economical);
+        //addDefaultTraits(TCMaterials.aetherRock, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.ambrogen, 1), new ModifierEntry(ModifierIds.stonebound, 1));
+        //addDefaultTraits(TCMaterials.zanite, new ModifierEntry(TCModifiers.aetherForged, 1), new ModifierEntry(AetherInit.zanite, 1));
+        //addTraits(TCMaterials.zanite, AMMO, ModifierIds.crystalbound);
+        //addDefaultTraits(TCMaterials.gravitite, TCModifiers.aetherForged);
+        //addTraits(TCMaterials.gravitite, HeadMaterialStats.ID, AetherInit.ascension.getId(), TCModifiers.aetherForged);
         addDefaultTraits(TCMaterials.lightnum, TCModifiers.aetherForged);
         addTraits(TCMaterials.lightnum, HeadMaterialStats.ID, AetherInit.thunderstruck.getId());
         addDefaultTraits(TCMaterials.draculite, TCModifiers.aetherForged);
@@ -71,9 +80,9 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
 
         addDefaultTraits(TCMaterials.wickedWax, SpeciesInit.wicked);
 
-        addDefaultTraits(TCMaterials.desh, AdAstraInit.oxygenated);
-        addDefaultTraits(TCMaterials.calorite, AdAstraInit.oxygenated);
-        addDefaultTraits(TCMaterials.ostrum, AdAstraInit.oxygenated);
+        //addDefaultTraits(TCMaterials.desh, AdAstraInit.oxygenated);
+        //addDefaultTraits(TCMaterials.calorite, AdAstraInit.oxygenated);
+        //addDefaultTraits(TCMaterials.ostrum, AdAstraInit.oxygenated);
 
         addDefaultTraits(TCMaterials.thallasium, BetterendInit.voidTouched);
         addDefaultTraits(TCMaterials.terminite, BetterendInit.voidTouched);
@@ -91,5 +100,10 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
         addTraits(TCMaterials.dragonScaleIce, ARMOR, IFInit.breathless);
         addTraits(TCMaterials.dragonScaleLightning, ARMOR, IFInit.breathless);
         addDefaultTraits(TCMaterials.dragonBone, TinkerModifiers.firestarter);
+
+        //addTraits(TCMaterials.ancientMetal, MELEE_HARVEST, TCModifiers.cataclysmic);
+        //addTraits(TCMaterials.cursium, RANGED, TCModifiers.cataclysmic);
+        //addTraits(TCMaterials.ignitium, MELEE_HARVEST, TCModifiers.cataclysmic);
+        //addTraits(TCMaterials.witherite, RANGED, TCModifiers.cataclysmic);
     }
 }

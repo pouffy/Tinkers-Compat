@@ -40,6 +40,9 @@ public class TCLangProv extends LanguageProvider {
                 toEng(key);
             }
         });
+        TCMaterials.materialBuilders.forEach((builder) -> {
+            this.add(builder.getTranslationKey(), builder.getEnglishName());
+        });
     }
 
     private void items() {

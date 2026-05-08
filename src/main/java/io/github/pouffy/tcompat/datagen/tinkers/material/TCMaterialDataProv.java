@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
@@ -33,17 +34,24 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         ICondition betterend = new ModLoadedCondition("betterend");
         ICondition betternether = new ModLoadedCondition("betternether");
         ICondition iceandfire = new ModLoadedCondition("iceandfire");
+        ICondition cataclysm = new ModLoadedCondition("cataclysm");
 
         //ICondition brass = tagFull("forge", "ingots/brass");
         //ICondition zinc = tagFull("forge", "ingots/zinc");
 
+        for (MaterialBuilder builder : TCMaterials.materialBuilders) {
+            if(!builder.isVariant()) {
+                addMaterial(builder.getId().getId(), builder.getData().getTier(), builder.getData().getOrder(), builder.getData().isCraftable(), builder.getData().isHidden(), builder.getData().getCondition());
+            }
+        }
+
         //Deprecated
-        addMaterial(TCMaterials.zanite, 2, ORDER_HARVEST, false, true, aether);
+        //addMaterial(TCMaterials.zanite, 2, ORDER_HARVEST, false, true, aether);
         addMaterial(TCMaterials.skyjade, 2, ORDER_HARVEST, false, true, deepAether);
 
-        addMaterial(TCMaterials.aetherWood, 1, ORDER_HARVEST, true, false, aether);
-        addMaterial(TCMaterials.aetherRock, 1, ORDER_HARVEST, true, false, aether);
-        addMaterial(TCMaterials.gravitite, 3, ORDER_HARVEST, false, false, aether);
+        //addMaterial(TCMaterials.aetherWood, 1, ORDER_HARVEST, true, false, aether);
+        //addMaterial(TCMaterials.aetherRock, 1, ORDER_HARVEST, true, false, aether);
+        //addMaterial(TCMaterials.gravitite, 3, ORDER_HARVEST, false, false, aether);
         addMaterial(TCMaterials.lightnum, 3, ORDER_HARVEST, false, false, aether);
         addMaterial(TCMaterials.draculite, 3, ORDER_HARVEST, false, false, aether);
 
@@ -61,9 +69,9 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.valkyrum, 1, ORDER_SPECIAL, false, false, aetherTreasure);
         addMaterial(TCMaterials.neptune, 2, ORDER_SPECIAL, false, false, aetherTreasure);
 
-        addMaterial(TCMaterials.desh, 2, ORDER_SPECIAL, false, false, adAstra);
-        addMaterial(TCMaterials.calorite, 2, ORDER_SPECIAL, false, false, adAstra);
-        addMaterial(TCMaterials.ostrum, 2, ORDER_SPECIAL, false, false, adAstra);
+        //addMaterial(TCMaterials.desh, 2, ORDER_SPECIAL, false, false, adAstra);
+        //addMaterial(TCMaterials.calorite, 2, ORDER_SPECIAL, false, false, adAstra);
+        //addMaterial(TCMaterials.ostrum, 2, ORDER_SPECIAL, false, false, adAstra);
 
         addMaterial(TCMaterials.thallasium, 2, ORDER_SPECIAL, false, false, betterend);
         addMaterial(TCMaterials.terminite, 2, ORDER_SPECIAL, false, false, betterend);
@@ -80,6 +88,11 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
         addMaterial(TCMaterials.dragonScaleIce, 4, ORDER_COMPAT, true, false, iceandfire);
         addMaterial(TCMaterials.dragonScaleLightning, 4, ORDER_COMPAT, true, false, iceandfire);
 
+        //addMaterial(TCMaterials.ancientMetal, 4, ORDER_WEAPON, false, false, cataclysm);
+        //addMaterial(TCMaterials.blackSteel, 2, ORDER_HARVEST, false, false, cataclysm);
+        //addMaterial(TCMaterials.cursium, 4, ORDER_RANGED, false, false, cataclysm);
+        //addMaterial(TCMaterials.ignitium, 4, ORDER_WEAPON, false, false, cataclysm);
+        //addMaterial(TCMaterials.witherite, 4, ORDER_RANGED, false, false, cataclysm);
 
         //addMaterial(TCMaterials.zinc, 2, ORDER_HARVEST, false, false, zinc);
         //addMaterial(TCMaterials.brass, 2, ORDER_HARVEST, false, false, brass);

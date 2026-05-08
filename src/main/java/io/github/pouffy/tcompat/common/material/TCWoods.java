@@ -148,11 +148,15 @@ public enum TCWoods implements StringRepresentable {
 
     // Creates a consumer that can only works if the required mods are loaded OR if the tags are filled.
     public Consumer<FinishedRecipe> makeConsumer(Consumer<FinishedRecipe> initial) {
+        return withCondition(initial, makeCondition());
+    }
+
+    public OrCondition makeCondition() {
         List<ICondition> conditions = new ArrayList<>();
         getNamespaces().forEach(namespace -> conditions.add(new ModLoadedCondition(namespace)));
         conditions.add(new TagFilledCondition<>(logTag()));
         conditions.add(new TagFilledCondition<>(plankTag()));
-        return withCondition(initial, new OrCondition(conditions.toArray(new ICondition[0])));
+        return new OrCondition(conditions.toArray(new ICondition[0]));
     }
 
     static WoodVariantBuilder builder(String... namespaces) {

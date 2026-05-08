@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
@@ -9,6 +10,9 @@ import slimeknights.tconstruct.library.client.data.material.AbstractMaterialRend
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 @MethodsReturnNonnullByDefault
 public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider {
     public TCMaterialRenderInfoProv(PackOutput packOutput, @Nullable AbstractMaterialSpriteProvider materialSprites, @Nullable ExistingFileHelper existingFileHelper) {
@@ -17,13 +21,42 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
 
     @Override
     protected void addMaterialRenderInfo() {
-        buildRenderInfo(TCMaterials.aetherWood).color(0x5C5B41).fallbacks("wood", "stick", "primitive");
-        redirect(TCMaterials.aetherRock, TCMaterials.holystone);
+        //buildRenderInfo(TCMaterials.aetherWood).color(0x5C5B41).fallbacks("wood", "stick", "primitive");
+        //redirect(TCMaterials.aetherRock, TCMaterials.holystone);
         for (MaterialVariantId materialId : TCMaterials.allVariants) {
             buildRenderInfo(materialId);
         }
-        buildRenderInfo(TCMaterials.zanite).fallbacks("gem");
-        buildRenderInfo(TCMaterials.gravitite).fallbacks("metal");
+
+        for (MaterialBuilder builder : TCMaterials.materialBuilders) {
+            var riBuilder = buildRenderInfo(builder.getId());
+            var color = builder.getRenderInfo().getColor();
+            if (color != -1) {
+                riBuilder.color(color);
+            }
+            var fallbacks = builder.getRenderInfo().getFallbacks();
+            if (!Arrays.equals(fallbacks, new String[0])) {
+                riBuilder.fallbacks(fallbacks);
+            }
+            var texture = builder.getRenderInfo().getTexture();
+            if (texture != null) {
+                riBuilder.texture(texture);
+            }
+            var luminosity = builder.getRenderInfo().getLuminosity();
+            if (luminosity != 0) {
+                riBuilder.luminosity(luminosity);
+            }
+            var parent = builder.getRenderInfo().getParent();
+            if (parent != null) {
+                riBuilder.parent(parent);
+            }
+            var generator = builder.getRenderInfo().getGenerator();
+            if (generator != null) {
+                riBuilder.generator(generator);
+            }
+        }
+
+        //buildRenderInfo(TCMaterials.zanite).fallbacks("gem");
+        //buildRenderInfo(TCMaterials.gravitite).fallbacks("metal");
         buildRenderInfo(TCMaterials.skyjade).fallbacks("gem");
         buildRenderInfo(TCMaterials.veridium).fallbacks("metal");
         buildRenderInfo(TCMaterials.refinedSentrite).fallbacks("metal");
@@ -34,9 +67,9 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
         buildRenderInfo(TCMaterials.valkyrum).fallbacks("metal");
         buildRenderInfo(TCMaterials.neptune).fallbacks("metal");
         buildRenderInfo(TCMaterials.wickedWax).color(0xf93985).fallbacks("bone", "metal");
-        buildRenderInfo(TCMaterials.desh).color(0xc77142).fallbacks("metal");
-        buildRenderInfo(TCMaterials.calorite).color(0xb83145).fallbacks("metal");
-        buildRenderInfo(TCMaterials.ostrum).color(0x925e64).fallbacks("metal");
+        //buildRenderInfo(TCMaterials.desh).color(0xc77142).fallbacks("metal");
+        //buildRenderInfo(TCMaterials.calorite).color(0xb83145).fallbacks("metal");
+        //buildRenderInfo(TCMaterials.ostrum).color(0x925e64).fallbacks("metal");
         buildRenderInfo(TCMaterials.thallasium).color(0x7ad0d3).fallbacks("metal");
         buildRenderInfo(TCMaterials.terminite).color(0x71f3e8).fallbacks("metal");
         buildRenderInfo(TCMaterials.aeternium).color(0x6d8883).fallbacks("metal");
