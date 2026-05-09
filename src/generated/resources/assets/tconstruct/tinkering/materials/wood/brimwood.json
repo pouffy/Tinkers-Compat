@@ -40,6 +40,7 @@
           "path": "tcompat:generator/brimwood"
         }
       ]
-    }
+    },
+    "variant": true
   }
 }

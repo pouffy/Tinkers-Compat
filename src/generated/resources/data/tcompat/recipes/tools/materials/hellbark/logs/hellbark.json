@@ -2,8 +2,21 @@
   "type": "tconstruct:material",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "biomesoplenty"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "biomesoplenty"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/hellbark"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/hellbark"
+        }
+      ]
     }
   ],
   "ingredient": {

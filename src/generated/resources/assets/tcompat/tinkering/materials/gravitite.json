@@ -1,5 +1,5 @@
 {
-  "color": "FFF195EF",
+  "color": "FFB643A0",
   "fallbacks": [
     "metal"
   ],
@@ -14,11 +14,11 @@
       "tconstruct:plating_shield",
       "tconstruct:maille",
       "tconstruct:armor_maille",
-      "tconstruct:limb",
-      "tconstruct:grip",
       "tconstruct:head",
       "tconstruct:handle",
-      "tconstruct:binding"
+      "tconstruct:binding",
+      "tconstruct:limb",
+      "tconstruct:grip"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

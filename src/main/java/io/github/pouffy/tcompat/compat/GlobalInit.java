@@ -50,5 +50,7 @@ public class GlobalInit extends CompatInitializer {
 
     public static void init(IEventBus eventBus) {
         ITEMS.register(eventBus);
+        WoodMaterials.staticInit();
+        RockMaterials.staticInit();
     }
 }

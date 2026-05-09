@@ -6,10 +6,10 @@
   "generator": {
     "supported_stats": [
       "tconstruct:repair_kit",
-      "tconstruct:ingot",
       "tconstruct:head",
       "tconstruct:handle",
-      "tconstruct:binding"
+      "tconstruct:binding",
+      "tconstruct:ingot"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

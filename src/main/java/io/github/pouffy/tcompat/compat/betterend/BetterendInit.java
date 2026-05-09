@@ -29,5 +29,6 @@ public class BetterendInit extends CompatInitializer {
 
     public static void init(IEventBus eventBus) {
         BE_M.register(eventBus);
+        BetterendMaterials.staticInit();
     }
 }

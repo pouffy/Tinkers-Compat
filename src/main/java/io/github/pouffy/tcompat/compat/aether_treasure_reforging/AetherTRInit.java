@@ -24,5 +24,6 @@ public class AetherTRInit extends CompatInitializer {
 
     public static void init(IEventBus eventBus) {
         AETHERTR_M.register(eventBus);
+        AetherTRMaterials.staticInit();
     }
 }

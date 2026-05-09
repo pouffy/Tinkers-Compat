@@ -1,11 +1,18 @@
 package io.github.pouffy.tcompat.compat.deep_aether;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
-import io.github.pouffy.tcompat.common.material.TCRocks;
-import io.github.pouffy.tcompat.common.material.TCWoods;
-import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
+import io.github.pouffy.tcompat.common.material.*;
+import slimeknights.tconstruct.library.materials.MaterialRegistry;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
+
+import static io.github.pouffy.tcompat.compat.aether.AetherMaterials.aetherRockVariant;
+import static io.github.pouffy.tcompat.compat.aether.AetherMaterials.aetherWoodVariant;
+import static net.minecraft.world.item.Tiers.IRON;
+import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.INGOT;
 
 public class DeepAetherMaterials {
 
@@ -18,21 +25,28 @@ public class DeepAetherMaterials {
     public static final MaterialVariantId aseterite = aetherRockVariant(TCRocks.ASETERITE, 0xFF746772, 0xFF7F717D, 0xFF897A87, 0xFF938595, 0xFFA296A1, 0xFFB9ADB8);
     public static final MaterialVariantId clorite = aetherRockVariant(TCRocks.CLORITE, 0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
 
-    private static MaterialVariantId aetherWoodVariant(TCWoods woodType, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
-        MaterialVariantId id = MaterialBuilder.variant(woodType.makeCondition(), woodType.getSerializedName(), AetherMaterials.aetherWood)
-                .spriteInfo(s -> s.planks().sevenColor(c63, c102, c140, c178, c216, c234, c255))
-                .buildVariant();
-        TCMaterials.woodVariants.put(id, woodType);
-        return id;
-    }
+    public static final MaterialId skyjade = MaterialBuilder.material("deep_aether", "skyjade")
+            .data(d -> d.tier(2).order(1).deprecate())
+            .traits(t -> t.trait(TCModifiers.aetherForged, DeepAetherInit.skyjade).trait(MaterialRegistry.AMMO, ModifierIds.punch))
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(150, 10f, IRON, 2f),
+                            StatlessMaterialStats.ARROW_HEAD
+                    ).armorShieldStats(PlatingMaterialStats.builder().durabilityFactor(3).armor(3, 6, 8, 3), StatlessMaterialStats.MAILLE)
+            )
+            .renderInfo(r -> r.color(0x729752).fallbacks("gem", "metal"))
+            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).arrowHead().fallbacks("gem", "metal").sevenColor(0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397))
+            .buildMaterial();
 
-    private static MaterialVariantId aetherRockVariant(TCRocks rockType, int c63, int c102, int c140, int c178, int c216, int c255) {
-        MaterialVariantId id = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), AetherMaterials.aetherRock)
-                .spriteInfo(s -> s.planks().sixColor(c63, c102, c140, c178, c216, c255))
-                .buildVariant();
-        TCMaterials.rockVariants.put(id, rockType);
-        return id;
-    }
+    public static final MaterialId stormforgedSteel = MaterialBuilder.material("deep_aether", "stormforged_steel")
+            .data(d -> d.tier(2).order(1).craftable(false))
+            .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, DeepAetherInit.gale))
+            .stats(s ->
+                    s.stat(new HeadMaterialStats(503, 8.0f, IRON, 3.0f))
+            )
+            .renderInfo(r -> r.color(0xb8c5d1).fallbacks("metal"))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().meleeHarvest().statType(INGOT).sixColor(0xFF353a3f, 0xFF58606c, 0xFF9198a9, 0xFFb8c5d1, 0xFFd6e7f1, 0xFFdeffff))
+            .buildMaterial();
 
     public static void staticInit() {}
 }

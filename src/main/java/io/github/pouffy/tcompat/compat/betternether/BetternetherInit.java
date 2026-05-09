@@ -26,5 +26,6 @@ public class BetternetherInit extends CompatInitializer {
 
     public static void init(IEventBus eventBus) {
         BN_M.register(eventBus);
+        BetternetherMaterials.staticInit();
     }
 }

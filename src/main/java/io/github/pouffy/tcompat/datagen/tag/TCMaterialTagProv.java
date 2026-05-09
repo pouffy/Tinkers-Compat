@@ -2,8 +2,11 @@ package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
+import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxMaterials;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRMaterials;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
+import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.TagKey;
@@ -29,19 +32,19 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
                 AetherMaterials.aetherWood,
                 AetherMaterials.zanite,
                 AetherMaterials.gravitite,
-                TCMaterials.skyjade,
-                TCMaterials.veridium,
-                TCMaterials.refinedSentrite,
-                TCMaterials.pyral,
-                TCMaterials.valkyrum,
-                TCMaterials.neptune,
-                TCMaterials.lightnum,
-                TCMaterials.stormforgedSteel,
-                TCMaterials.draculite
+                DeepAetherMaterials.skyjade,
+                AetherReduxMaterials.veridium,
+                AetherReduxMaterials.refinedSentrite,
+                AetherTRMaterials.pyral,
+                AetherTRMaterials.valkyrum,
+                AetherTRMaterials.neptune,
+                AetherMaterials.lightnum,
+                DeepAetherMaterials.stormforgedSteel,
+                AetherMaterials.draculite
         );
         tag(TinkerTags.Materials.NETHER_GATED).add(
-                TCMaterials.cincinnasite,
-                TCMaterials.netherRuby
+                BetternetherMaterials.cincinnasite,
+                BetternetherMaterials.netherRuby
         );
     }
 

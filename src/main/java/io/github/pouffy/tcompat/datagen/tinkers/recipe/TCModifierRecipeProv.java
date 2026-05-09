@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.common.data.TCTags;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -308,7 +308,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setMaxLevel(1).checkTraitLevel()
                 .save(aetherConsumer, prefix(TCModifiers.aetherForged, folder));
 
-        TCMaterials.woodVariants.forEach((materialVariantId, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, materialVariantId));
+        MaterialBuilder.woodMaterials.forEach((builder, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, builder.variantId()));
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

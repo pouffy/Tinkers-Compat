@@ -1,11 +1,17 @@
 package io.github.pouffy.tcompat.compat.aether_redux;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
-import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.tools.stats.*;
+
+import static io.github.pouffy.tcompat.compat.aether.AetherMaterials.aetherRockVariant;
+import static io.github.pouffy.tcompat.compat.aether.AetherMaterials.aetherWoodVariant;
+import static net.minecraft.world.item.Tiers.DIAMOND;
+import static net.minecraft.world.item.Tiers.IRON;
 
 public class AetherReduxMaterials {
 
@@ -19,21 +25,50 @@ public class AetherReduxMaterials {
     public static final MaterialVariantId divinite = aetherRockVariant(TCRocks.DIVINITE, 0xFF8B7149, 0xFF987E55, 0xFFAA8F65, 0xFFBAA170, 0xFFCDB285, 0xFFD8C699);
     public static final MaterialVariantId driftshale = aetherRockVariant(TCRocks.DRIFTSHALE, 0xFFAA9A5D, 0xFFBEB06C, 0xFFCEC277, 0xFFD9CE81, 0xFFDFDA95, 0xFFE3E2A8);
 
-    private static MaterialVariantId aetherWoodVariant(TCWoods woodType, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
-        MaterialVariantId id = MaterialBuilder.variant(woodType.makeCondition(), woodType.getSerializedName(), AetherMaterials.aetherWood)
-                .spriteInfo(s -> s.planks().sevenColor(c63, c102, c140, c178, c216, c234, c255))
-                .buildVariant();
-        TCMaterials.woodVariants.put(id, woodType);
-        return id;
-    }
+    public static final MaterialId veridium = MaterialBuilder.material("aether_redux", "veridium")
+            .data(d -> d.tier(3).order(1).craftable(false))
+            .traits(t -> t.trait(TCModifiers.aetherForged, AetherReduxInit.ambrofusion))
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(750, 2.25f, IRON, 3.5f),
+                            HandleMaterialStats.multipliers().durability(0.85f).miningSpeed(0.95f).build(),
+                            StatlessMaterialStats.BINDING
+                    ).armorShieldStats(PlatingMaterialStats.builder().durabilityFactor(19).armor(4, 6, 7, 4).toughness(0.5f), StatlessMaterialStats.MAILLE))
+            .renderInfo(r -> r.color(0x5a90bd).fallbacks("metal"))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().armor().meleeHarvest().sixColor(0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb))
+            .buildMaterial();
 
-    private static MaterialVariantId aetherRockVariant(TCRocks rockType, int c63, int c102, int c140, int c178, int c216, int c255) {
-        MaterialVariantId id = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), AetherMaterials.aetherRock)
-                .spriteInfo(s -> s.planks().sixColor(c63, c102, c140, c178, c216, c255))
-                .buildVariant();
-        TCMaterials.rockVariants.put(id, rockType);
-        return id;
-    }
+    public static final MaterialId refinedSentrite = MaterialBuilder.material("aether_redux", "refined_sentrite")
+            .data(d -> d.tier(4).order(1).craftable(false))
+            .traits(t -> t.trait(TCModifiers.aetherForged))
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(1126, 5f, DIAMOND, 3.5f),
+                            new GripMaterialStats(0.02f, 0.15f, 3.5f)
+                    ).armorShieldStats(PlatingMaterialStats.builder().durabilityFactor(26).armor(5.2f, 7.2f, 8.2f, 5.2f).knockbackResistance(1).toughness(0.8f), StatlessMaterialStats.MAILLE))
+            .renderInfo(r -> r.color(0x5c5c61).fallbacks("metal"))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(GripMaterialStats.ID, HeadMaterialStats.ID).armor().sixColor(0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1))
+            .buildMaterial();
+
+    public static final MaterialId blightbunnyFang = MaterialBuilder.material("deep_aether", "blightbunny_fang")
+            .data(d -> d.tier(2).order(4).craftable(true))
+            .traits(t -> t.trait(AetherReduxInit.blighted))
+            .stats(s ->
+                    s.stat(StatlessMaterialStats.ARROW_HEAD)
+            )
+            .renderInfo(r -> r.color(0xc1d3d8).fallbacks("bone", "metal"))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().arrowHead().sixColor(0xFF5a6972, 0xFF6e7e88, 0xFF7f919b, 0xFFa1b5be, 0xFFc1d3d8, 0xFFdeeef2))
+            .buildMaterial();
+
+    public static final MaterialId mykapodShell = MaterialBuilder.material("deep_aether", "mykapod_shell")
+            .data(d -> d.tier(2).order(2).craftable(true))
+            .traits(t -> t.trait(StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay))
+            .stats(s ->
+                    s.stat(StatlessMaterialStats.SHIELD_CORE)
+            )
+            .renderInfo(r -> r.color(0x5e65a5).fallbacks("bone", "metal"))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().shieldCore().sixColor(0xFF2c2e5b, 0xFF3a3d6f, 0xFF4b5187, 0xFF5e65a5, 0xFF7178c2, 0xFF8f92d8))
+            .buildMaterial();
 
     public static void staticInit() {}
 }

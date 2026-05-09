@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common.material;
 
 import com.google.common.collect.ImmutableSet;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import lombok.Getter;
@@ -33,6 +34,12 @@ import java.util.function.Function;
 import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.WOOD;
 
 public class MaterialBuilder {
+    public static final Map<MaterialVariantId, MaterialBuilder> variants = new HashMap<>();
+    public static final Map<MaterialVariantId, MaterialBuilder> materials = new HashMap<>();
+    public static final List<MaterialBuilder> materialBuilders = new ArrayList<>();
+    public static final Map<MaterialBuilder, TCWoods> woodMaterials = new HashMap<>();
+    public static final Map<MaterialBuilder, TCRocks> rockMaterials = new HashMap<>();
+
     @Getter
     private final MaterialVariantId id;
     @Getter
@@ -135,18 +142,27 @@ public class MaterialBuilder {
     }
 
     public MaterialId buildMaterial() {
-        assertNoVariant("material ids");
-        MaterialId materialId = this.getId().getId();
-        TCMaterials.materials.put(materialId, this);
-        TCMaterials.materialBuilders.add(this);
+        MaterialId materialId = materialId();
+        materials.put(materialId, this);
+        materialBuilders.add(this);
         return materialId;
     }
 
     public MaterialVariantId buildVariant() {
+        MaterialVariantId variantId = variantId();
+        variants.put(variantId, this);
+        materialBuilders.add(this);
+        return variantId;
+    }
+
+    public MaterialId materialId() {
+        assertNoVariant("material ids");
+        return this.getId().getId();
+    }
+
+    public MaterialVariantId variantId() {
         assertVariant("variant ids");
-        TCMaterials.variants.put(this.getId(), this);
-        TCMaterials.materialBuilders.add(this);
-        return this.id;
+        return this.getId();
     }
 
     public static class Data {
@@ -420,6 +436,7 @@ public class MaterialBuilder {
         }
     }
 
+    @CanIgnoreReturnValue
     public static class SpriteInfo {
         @Getter
         private String[] fallbacks;

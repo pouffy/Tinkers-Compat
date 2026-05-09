@@ -95,4 +95,6 @@ dependencies {
     // L_Ender's Cataclysm
     modCompileOnly("maven.modrinth:l_enders-cataclysm:TFKWu05d")
     modExtraRuntimeOnly("maven.modrinth:l_enders-cataclysm:TFKWu05d")
+    modCompileOnly("maven.modrinth:lionfish-api:2.7")
+    modExtraRuntimeOnly("maven.modrinth:lionfish-api:2.7")
 }

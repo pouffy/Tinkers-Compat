@@ -1,7 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_redux;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -164,7 +163,7 @@ public class AmbrofusionModifier extends Modifier implements ToolDamageModifierH
     public void addAmbrofusion(IToolStackView tool, ModifierEntry entry, int amount) {
         int veridiumCoverage = 0;
         for (MaterialVariant material : tool.getMaterials().getList()) {
-            if (material.matchesVariant(TCMaterials.veridium)) veridiumCoverage += 1;
+            if (material.matchesVariant(AetherReduxMaterials.veridium)) veridiumCoverage += 1;
         }
         addAmbrosium(tool, entry, amount * (1 + veridiumCoverage));
     }

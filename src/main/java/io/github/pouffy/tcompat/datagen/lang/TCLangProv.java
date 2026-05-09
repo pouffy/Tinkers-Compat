@@ -2,7 +2,7 @@ package io.github.pouffy.tcompat.datagen.lang;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.TCFluids;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
@@ -27,20 +27,7 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void materials() {
-        TCMaterials.translationKeys.forEach((key) -> {
-            if (key.contains("_dragon_scale.")) {
-                String[] parts = key.split("\\.");
-                String toTranslate = parts[parts.length - 1];
-                this.add(key, "%s".formatted(toEnglishName(toTranslate)) + " Dragon Scale");
-            } else if (key.contains("material.tconstruct.wood")) {
-                String[] parts = key.split("\\.");
-                String toTranslate = parts[parts.length - 1];
-                this.add(key, "%s".formatted(toEnglishName(toTranslate)) + " Wood");
-            } else {
-                toEng(key);
-            }
-        });
-        TCMaterials.materialBuilders.forEach((builder) -> {
+        MaterialBuilder.materialBuilders.forEach((builder) -> {
             this.add(builder.getTranslationKey(), builder.getEnglishName());
         });
     }
