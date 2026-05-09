@@ -23,9 +23,8 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
     @Override
     protected void addMaterials() {
         for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            if(!builder.isVariant()) {
-                addMaterial(builder.getId().getId(), builder.getData().getTier(), builder.getData().getOrder(), builder.getData().isCraftable(), builder.getData().isHidden(), builder.getData().getCondition());
-            }
+            if(builder.isVariant()) continue;
+            addMaterial(builder.getId().getId(), builder.getData().getTier(), builder.getData().getOrder(), builder.getData().isCraftable(), builder.getData().isHidden(), builder.getData().getCondition());
         }
     }
 

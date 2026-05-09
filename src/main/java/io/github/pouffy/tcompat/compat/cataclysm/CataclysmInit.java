@@ -11,5 +11,6 @@ public class CataclysmInit extends CompatInitializer {
 
     public static void init(IEventBus eventBus) {
         C_M.register(eventBus);
+        CataclysmMaterials.staticInit();
     }
 }

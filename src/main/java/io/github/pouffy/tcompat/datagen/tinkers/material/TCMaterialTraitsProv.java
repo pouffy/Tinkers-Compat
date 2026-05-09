@@ -21,14 +21,12 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
     @Override
     protected void addMaterialTraits() {
         for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            if (!builder.isVariant()) {
-                addDefaultTraits(builder.getId().getId(), builder.getTraits().defaultTraits().toArray(new ModifierEntry[0]));
-                for (var statEntry : builder.getTraits().traits().entrySet()) {
-                    addTraits(builder.getId().getId(), statEntry.getKey(), statEntry.getValue().toArray(new ModifierEntry[0]));
-                }
+            if(builder.isVariant()) continue;
+            addDefaultTraits(builder.getId().getId(), builder.getTraits().defaultTraits().toArray(new ModifierEntry[0]));
+            for (var statEntry : builder.getTraits().traits().entrySet()) {
+                addTraits(builder.getId().getId(), statEntry.getKey(), statEntry.getValue().toArray(new ModifierEntry[0]));
             }
         }
-        //addTraits(TCMaterials.ancientMetal, MELEE_HARVEST, TCModifiers.cataclysmic);
         //addTraits(TCMaterials.cursium, RANGED, TCModifiers.cataclysmic);
         //addTraits(TCMaterials.ignitium, MELEE_HARVEST, TCModifiers.cataclysmic);
         //addTraits(TCMaterials.witherite, RANGED, TCModifiers.cataclysmic);

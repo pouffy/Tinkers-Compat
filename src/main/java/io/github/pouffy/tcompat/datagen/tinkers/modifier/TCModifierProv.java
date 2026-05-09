@@ -85,8 +85,8 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
 
         buildModifier(TCModifiers.cataclysmic, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(125)
-                .addModule(new DurabilityBarColorModule(16777215))
-                .addModule(ReduceToolDamageModule.builder().flat(1.0F));
+                .addModule(new DurabilityBarColorModule(0xfb6b1d))
+                .addModule(ReduceToolDamageModule.builder().flat(0.85F));
     }
 
     @Override

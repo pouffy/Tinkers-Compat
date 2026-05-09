@@ -7,11 +7,11 @@
   "modules": [
     {
       "type": "tconstruct:durability_color",
-      "color": "FFFFFF"
+      "color": "FB6B1D"
     },
     {
       "type": "tconstruct:reduce_tool_damage",
-      "flat": 1.0
+      "flat": 0.85
     }
   ],
   "priority": 125,

@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
@@ -36,7 +37,8 @@ public class CompatHelper {
             "ad_astra", AdAstraInit::init,
             "betterend", BetterendInit::init,
             "betternether", BetternetherInit::init,
-            "iceandfire", IFInit::init
+            "iceandfire", IFInit::init,
+            "cataclysm", CataclysmInit::init
     );
     private static final Map<String, Consumer<IEventBus>> compatEvents = Map.of(
             "aether", (bus) -> bus.register(new AetherInit()),
@@ -46,7 +48,8 @@ public class CompatHelper {
             "ad_astra", (bus) -> bus.register(new AdAstraInit()),
             "betterend", (bus) -> bus.register(new BetterendInit()),
             "betternether", (bus) -> bus.register(new BetternetherInit()),
-            "iceandfire", (bus) -> bus.register(new IFInit())
+            "iceandfire", (bus) -> bus.register(new IFInit()),
+            "cataclysm", (bus) -> bus.register(new CataclysmInit())
     );
 
     public static void init(IEventBus eventBus) {
