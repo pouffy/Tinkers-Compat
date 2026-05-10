@@ -50,4 +50,11 @@ repositories {
         forRepository { maven { url = "https://dvs1.progwml6.com/files/maven" } }
         filter { includeGroup("slimeknights") }
     }
+    maven { url = "https://maven.theillusivec4.top/" }
+    maven {
+        url "https://maven.shadowsoffire.dev/releases"
+        content {
+            includeGroup "dev.shadowsoffire"
+        }
+    }
 }
