@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.cataclysm.modifier;
 
 import io.github.pouffy.tcompat.TCompat;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.ItemStack;
@@ -51,7 +52,7 @@ public class AquaticModifier extends NoLevelsModifier implements ToolStatsModifi
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifierEntry, Level level, LivingEntity owner, int i, boolean b, boolean b1, ItemStack itemStack) {
-        tool.getPersistentData().putInt(fishCount, level.getEntitiesOfClass(LivingEntity.class, new AABB(owner.blockPosition()).inflate(8), (entity) ->
-                entity.getType().getCategory() == MobCategory.WATER_CREATURE || entity.getType().getCategory() == MobCategory.WATER_AMBIENT || entity.getType().getCategory() == MobCategory.AXOLOTLS || entity.getType().getCategory() == MobCategory.UNDERGROUND_WATER_CREATURE).size());
+        tool.getPersistentData().putInt(fishCount, level.getEntitiesOfClass(LivingEntity.class, new AABB(owner.blockPosition()).inflate(4), EntitySelector.NO_SPECTATORS.and((entity) ->
+                entity.getType().getCategory() == MobCategory.WATER_CREATURE || entity.getType().getCategory() == MobCategory.WATER_AMBIENT || entity.getType().getCategory() == MobCategory.AXOLOTLS || entity.getType().getCategory() == MobCategory.UNDERGROUND_WATER_CREATURE)).size());
     }
 }

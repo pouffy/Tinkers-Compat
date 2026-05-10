@@ -18,7 +18,6 @@ public class TCModifiers {
     public static final ModifierId voltborn = id("voltborn");
 
     public static final ModifierId cataclysmic = id("cataclysmic");
-    public static final ModifierId aquatic = id("aquatic");
 
     private TCModifiers() {}
 
