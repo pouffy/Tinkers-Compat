@@ -1,9 +1,11 @@
 package io.github.pouffy.tcompat.compat.deep_aether;
 
-import io.github.pouffy.tcompat.common.material.*;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.CutGemMaterialStats;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.material.TCRocks;
+import io.github.pouffy.tcompat.common.material.TCWoods;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -38,18 +40,18 @@ public class DeepAetherMaterials {
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(3).armor(3, 6, 8, 3), StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0x729752).fallbacks("gem", "metal"))
-            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).statType(CutGemMaterialStats.ID).arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397))
+            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397))
             .buildMaterial();
 
     public static final MaterialId stormforgedSteel = MaterialBuilder.material("deep_aether", "stormforged_steel")
             .data(d -> d.tier(2).order(1).craftable(false))
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, DeepAetherInit.gale))
             .stats(s ->
-                    s.stat(new HeadMaterialStats(503, 8.0f, IRON, 3.0f)).statOptional(TJStats.plainRing(503, 1.2f))
+                    s.stat(new HeadMaterialStats(503, 8.0f, IRON, 3.0f)).statOptional(CompatToolStats.plainRing(503, 1.2f))
             )
             .renderInfo(r -> r.color(0xb8c5d1).fallbacks("metal"))
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().statType(INGOT).sixColor(0xFF353a3f, 0xFF58606c, 0xFF9198a9, 0xFFb8c5d1, 0xFFd6e7f1, 0xFFdeffff))

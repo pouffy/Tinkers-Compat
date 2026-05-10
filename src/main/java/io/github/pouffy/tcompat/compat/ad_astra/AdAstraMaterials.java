@@ -1,8 +1,8 @@
 package io.github.pouffy.tcompat.compat.ad_astra;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.stats.*;
 
@@ -25,7 +25,7 @@ public class AdAstraMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(36).armor(4, 9, 7, 4).toughness(2.5f).knockbackResistance(0.1f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1840, 1.1f)
+                            CompatToolStats.plainRing(1840, 1.1f)
                     )
             )
             .renderInfo(r -> r.color(0xb83145).fallbacks("metal"))
@@ -46,7 +46,7 @@ public class AdAstraMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(35).armor(4, 9, 7, 4).toughness(2f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(940, 1f)
+                            CompatToolStats.plainRing(940, 1f)
                     )
             )
 
@@ -68,7 +68,7 @@ public class AdAstraMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(37).armor(4, 9, 7, 4).toughness(3f).knockbackResistance(0.1f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1250, 1f)
+                            CompatToolStats.plainRing(1250, 1f)
                     )
             )
             .renderInfo(r -> r.color(0x925e64).fallbacks("metal"))

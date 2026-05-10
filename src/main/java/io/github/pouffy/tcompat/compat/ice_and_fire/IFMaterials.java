@@ -2,9 +2,8 @@ package io.github.pouffy.tcompat.compat.ice_and_fire;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.CutGemMaterialStats;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTransformer;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
@@ -13,7 +12,8 @@ import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static io.github.pouffy.tcompat.datagen.tinkers.material.TCMaterialSpriteProv.complexTransformer;
-import static net.minecraft.world.item.Tiers.*;
+import static net.minecraft.world.item.Tiers.IRON;
+import static net.minecraft.world.item.Tiers.NETHERITE;
 import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 
 public class IFMaterials {
@@ -49,11 +49,11 @@ public class IFMaterials {
                             new LimbMaterialStats(200, 0.07f, -0.07f, 0.07f),
                             new GripMaterialStats(1.0f, 0.15f, 1.5f)
                     ).statOptional(
-                            TJStats.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0xc7b899).fallbacks("bone", "rock"))
-            .spriteInfo(s -> s.meleeHarvest().statType(CutGemMaterialStats.ID).ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
+            .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
             .buildMaterial();
 
     public static final MaterialId fireDragonsteel = MaterialBuilder.material("iceandfire", "fire_dragonsteel")
@@ -70,7 +70,7 @@ public class IFMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(84).armor(6, 9, 12, 7).toughness(6),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1400, 1.3f)
+                            CompatToolStats.plainRing(1400, 1.3f)
                     )
             )
             .renderInfo(r -> r.color(0x774153).fallbacks("bone", "metal").luminosity(9))
@@ -91,7 +91,7 @@ public class IFMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(81).armor(6, 9, 12, 7).toughness(6),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1250, 1.4f)
+                            CompatToolStats.plainRing(1250, 1.4f)
                     )
             )
             .renderInfo(r -> r.color(0xBAEAEC).fallbacks("bone", "metal").luminosity(9))
@@ -112,7 +112,7 @@ public class IFMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(68).armor(6, 9, 12, 7).toughness(6),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1600, 1.35f)
+                            CompatToolStats.plainRing(1600, 1.35f)
                     )
             )
             .renderInfo(r -> r.color(0x917DD2).fallbacks("bone", "metal").luminosity(9))

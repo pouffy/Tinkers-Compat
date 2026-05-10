@@ -1,11 +1,12 @@
 package io.github.pouffy.tcompat.compat.aether;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.material.*;
-import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.CutGemMaterialStats;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.material.TCRocks;
+import io.github.pouffy.tcompat.common.material.TCWoods;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
@@ -45,11 +46,11 @@ public class AetherMaterials {
                             HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.05f).build(),
                             StatlessMaterialStats.BINDING
                     ).statOptional(
-                            TJStats.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.parent(TCompat.getResource("aether_rock/holystone")))
-            .spriteInfo(s -> s.fallbacks("rock").statType(CutGemMaterialStats.ID).meleeHarvest().sixColor(0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2))
+            .spriteInfo(s -> s.fallbacks("rock").statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).meleeHarvest().sixColor(0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2))
             .buildMaterial();
 
     public static final MaterialId zanite = MaterialBuilder.material("aether", "zanite")
@@ -63,11 +64,11 @@ public class AetherMaterials {
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2), StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0x5b22b0).fallbacks("gem", "metal"))
-            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).statType(CutGemMaterialStats.ID).fletching().arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff))
+            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).fletching().arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff))
             .buildMaterial();
 
     public static final MaterialId gravitite = MaterialBuilder.material("aether", "gravitite")
@@ -82,7 +83,7 @@ public class AetherMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1562, 1.1f)
+                            CompatToolStats.plainRing(1562, 1.1f)
                     )
             )
             .renderInfo(r -> r.color(0xb643a0).fallbacks("metal"))
@@ -96,7 +97,7 @@ public class AetherMaterials {
                     s.stat(
                             new HeadMaterialStats(503, 8.0f, DIAMOND, 4.0f)
                     ).statOptional(
-                            TJStats.plainRing(503, 1.2f)
+                            CompatToolStats.plainRing(503, 1.2f)
                     )
             )
             .renderInfo(r -> r.color(0x5a9bdb).fallbacks("metal"))
@@ -110,7 +111,7 @@ public class AetherMaterials {
                     s.stat(
                             new HeadMaterialStats(2032, 8.0f, DIAMOND, 4.0f)
                     ).statOptional(
-                            TJStats.plainRing(2032, 1.2f)
+                            CompatToolStats.plainRing(2032, 1.2f)
                     )
             )
             .renderInfo(r -> r.color(0xd11e1e).fallbacks("metal"))

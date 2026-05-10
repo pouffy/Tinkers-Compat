@@ -1,9 +1,8 @@
 package io.github.pouffy.tcompat.compat.betterend;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.stats.*;
 
@@ -25,7 +24,7 @@ public class BetterendMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(15).armor(1, 4, 5, 2),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(321, 1.1f)
+                            CompatToolStats.plainRing(321, 1.1f)
                     )
             )
             .renderInfo(r -> r.color(0x7ad0d3).fallbacks("metal"))
@@ -46,7 +45,7 @@ public class BetterendMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 7, 3).toughness(1f).knockbackResistance(0.05f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1231, 1.2f)
+                            CompatToolStats.plainRing(1231, 1.2f)
                     )
             )
             .renderInfo(r -> r.color(0x71f3e8).fallbacks("metal"))
@@ -67,7 +66,7 @@ public class BetterendMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(40).armor(4, 7, 9, 4).toughness(3.5f).knockbackResistance(0.2f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(2197, 1.3f)
+                            CompatToolStats.plainRing(2197, 1.3f)
                     )
             )
             .renderInfo(r -> r.color(0x6d8883).fallbacks("metal"))

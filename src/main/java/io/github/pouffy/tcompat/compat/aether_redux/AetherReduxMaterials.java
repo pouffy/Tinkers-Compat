@@ -4,9 +4,8 @@ import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.CutGemMaterialStats;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.tools.stats.*;
@@ -39,7 +38,7 @@ public class AetherReduxMaterials {
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(19).armor(4, 6, 7, 4).toughness(0.5f), StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(750, 1.1f)
+                            CompatToolStats.plainRing(750, 1.1f)
                     )
             )
             .renderInfo(r -> r.color(0x5a90bd).fallbacks("metal"))
@@ -56,7 +55,7 @@ public class AetherReduxMaterials {
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(26).armor(5.2f, 7.2f, 8.2f, 5.2f).knockbackResistance(1).toughness(0.8f), StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1126, 1.2f)
+                            CompatToolStats.plainRing(1126, 1.2f)
                     )
             )
             .renderInfo(r -> r.color(0x5c5c61).fallbacks("metal"))
@@ -67,20 +66,20 @@ public class AetherReduxMaterials {
             .data(d -> d.tier(2).order(4).craftable(true))
             .traits(t -> t.trait(AetherReduxInit.blighted))
             .stats(s ->
-                    s.stat(StatlessMaterialStats.ARROW_HEAD).statOptional(TJStats.CUT_GEM)
+                    s.stat(StatlessMaterialStats.ARROW_HEAD).statOptional(CompatToolStats.Statless.CUT_GEM)
             )
             .renderInfo(r -> r.color(0xc1d3d8).fallbacks("bone", "metal"))
-            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(CutGemMaterialStats.ID).arrowHead().sixColor(0xFF5a6972, 0xFF6e7e88, 0xFF7f919b, 0xFFa1b5be, 0xFFc1d3d8, 0xFFdeeef2))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).arrowHead().sixColor(0xFF5a6972, 0xFF6e7e88, 0xFF7f919b, 0xFFa1b5be, 0xFFc1d3d8, 0xFFdeeef2))
             .buildMaterial();
 
     public static final MaterialId mykapodShell = MaterialBuilder.material("deep_aether", "mykapod_shell")
             .data(d -> d.tier(2).order(2).craftable(true))
             .traits(t -> t.trait(StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay))
             .stats(s ->
-                    s.stat(StatlessMaterialStats.SHIELD_CORE).statOptional(TJStats.CUT_GEM)
+                    s.stat(StatlessMaterialStats.SHIELD_CORE).statOptional(CompatToolStats.Statless.CUT_GEM)
             )
             .renderInfo(r -> r.color(0x5e65a5).fallbacks("bone", "metal"))
-            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(CutGemMaterialStats.ID).shieldCore().sixColor(0xFF2c2e5b, 0xFF3a3d6f, 0xFF4b5187, 0xFF5e65a5, 0xFF7178c2, 0xFF8f92d8))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).shieldCore().sixColor(0xFF2c2e5b, 0xFF3a3d6f, 0xFF4b5187, 0xFF5e65a5, 0xFF7178c2, 0xFF8f92d8))
             .buildMaterial();
 
     public static void staticInit() {}

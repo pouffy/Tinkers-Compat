@@ -2,8 +2,8 @@ package io.github.pouffy.tcompat.compat.aether_treasure_reforging;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
@@ -29,7 +29,7 @@ public class AetherTRMaterials {
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(342, 1.3f)
+                            CompatToolStats.plainRing(342, 1.3f)
                     )
             )
             .renderInfo(r -> r.color(0xffb326).fallbacks("metal"))
@@ -49,7 +49,7 @@ public class AetherTRMaterials {
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(1562, 1.3f)
+                            CompatToolStats.plainRing(1562, 1.3f)
                     )
             )
             .renderInfo(r -> r.color(0xd11e1e).fallbacks("metal"))

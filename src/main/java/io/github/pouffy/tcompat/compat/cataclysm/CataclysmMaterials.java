@@ -2,9 +2,8 @@ package io.github.pouffy.tcompat.compat.cataclysm;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.CutGemMaterialStats;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
@@ -12,7 +11,7 @@ import slimeknights.tconstruct.tools.stats.*;
 import static io.github.pouffy.tcompat.datagen.tinkers.material.TCMaterialSpriteProv.complexTransformer;
 import static net.minecraft.world.item.Tiers.DIAMOND;
 import static net.minecraft.world.item.Tiers.NETHERITE;
-import static slimeknights.tconstruct.library.materials.MaterialRegistry.*;
+import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 
 public class CataclysmMaterials {
 
@@ -31,7 +30,7 @@ public class CataclysmMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(35).armor(6, 11, 7, 4).toughness(3.0F).knockbackResistance(0.2F),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.plainRing(750, 1.4f)
+                            CompatToolStats.plainRing(750, 1.4f)
                     )
             )
             .renderInfo(r -> r.color(0xb98a3c).fallbacks("metal"))
@@ -50,7 +49,7 @@ public class CataclysmMaterials {
                             new GripMaterialStats(0.15f, 0.1f, 2.0F),
                             PlatingMaterialStats.builder().shieldDurability(840).buildShield()
                     ).statOptional(
-                            TJStats.plainRing(750, 1.1f)
+                            CompatToolStats.plainRing(750, 1.1f)
                     )
             )
             .renderInfo(r -> r.color(0x485063).fallbacks("metal"))
@@ -68,11 +67,11 @@ public class CataclysmMaterials {
                             StatlessMaterialStats.BOWSTRING,
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            TJStats.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0x39d2b2).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(CutGemMaterialStats.ID).maille().bowstring().head().sixColor(0xFF0e4b3d, 0xFF156353, 0xFF198871, 0xFF39d2b2, 0xFF56eccc, 0xFF75ffe2))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).maille().bowstring().head().sixColor(0xFF0e4b3d, 0xFF156353, 0xFF198871, 0xFF39d2b2, 0xFF56eccc, 0xFF75ffe2))
             .buildMaterial();
 
     public static final MaterialId lacrima = MaterialBuilder.material("cataclysm", "lacrima")
@@ -83,11 +82,11 @@ public class CataclysmMaterials {
                             new HeadMaterialStats(2800, 9.0F, NETHERITE, 2.0F),
                             HandleMaterialStats.multipliers().durability(1.1f).build()
                     ).statOptional(
-                            TJStats.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0x7eb5d8).fallbacks("gem"))
-            .spriteInfo(s -> s.fallbacks("gem").repairKit().statType(CutGemMaterialStats.ID).handle().head().sixColor(0xFF443c86, 0xFF565d95, 0xFF6071c1, 0xFF7eb5d8, 0xFFa4dcea, 0xFFd9f4f7))
+            .spriteInfo(s -> s.fallbacks("gem").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).handle().head().sixColor(0xFF443c86, 0xFF565d95, 0xFF6071c1, 0xFF7eb5d8, 0xFFa4dcea, 0xFFd9f4f7))
             .buildMaterial();
 
     public static final MaterialId essenceOfTheStorm = MaterialBuilder.material("cataclysm", "essence_of_the_storm")
@@ -106,7 +105,7 @@ public class CataclysmMaterials {
                     s.stat(
                             HandleMaterialStats.multipliers().durability(1.4f).build(), StatlessMaterialStats.BINDING
                     ).statOptional(
-                            TJStats.plainRing(2800, 1.4f)
+                            CompatToolStats.plainRing(2800, 1.4f)
                     )
             )
             .renderInfo(r -> r.color(0x6e7786).fallbacks("metal"))
@@ -120,11 +119,11 @@ public class CataclysmMaterials {
                     s.stat(
                             HandleMaterialStats.multipliers().attackSpeed(0.9f).build()
                     ).statOptional(
-                            TJStats.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0xa4222f).fallbacks("rock"))
-            .spriteInfo(s -> s.fallbacks("rock").repairKit().statType(CutGemMaterialStats.ID).handle().sixColor(0xFF490911, 0xFF791a26, 0xFF8c1d2a, 0xFFa4222f, 0xFFc62a37, 0xFFe23f36))
+            .spriteInfo(s -> s.fallbacks("rock").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).handle().sixColor(0xFF490911, 0xFF791a26, 0xFF8c1d2a, 0xFFa4222f, 0xFFc62a37, 0xFFe23f36))
             .buildMaterial();
 
     public static final MaterialId voidJaw = MaterialBuilder.material("cataclysm", "void_jaw")
@@ -160,7 +159,7 @@ public class CataclysmMaterials {
     //   - Phantasmic [Cursium, Black Steel (Team Up)]
     //   - Stormed [Essence of the Storm, Lacrima (Team Up)]
     //   - Fluxed [Witherite, Iron (Team Up)]
-    //   - Scatter [Void Jaw]
+    //   - Void Scatter [Void Jaw]
     //  Modifiers:
     //   - Cursed [Armor, Req. Netherite]
     //   - Ignited [Armor, Req. Netherite]
