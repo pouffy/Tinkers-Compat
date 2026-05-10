@@ -2,7 +2,7 @@ package io.github.pouffy.tcompat.compat.species;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
-import slimeknights.tconstruct.tools.stats.*;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 public class SpeciesMaterials {
 

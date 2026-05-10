@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
-import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;

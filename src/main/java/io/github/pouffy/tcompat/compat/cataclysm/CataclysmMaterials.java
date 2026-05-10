@@ -115,7 +115,7 @@ public class CataclysmMaterials {
 
     public static final MaterialId coral = MaterialBuilder.material("cataclysm", "coral")
             .data(d -> d.tier(4).order(1).craftable(true))
-            .traits(t -> t.trait(HandleMaterialStats.ID, TCModifiers.aquatic))
+            .traits(t -> t.trait(HandleMaterialStats.ID, CataclysmInit.aquatic))
             .stats(s ->
                     s.stat(
                             HandleMaterialStats.multipliers().attackSpeed(0.9f).build()
@@ -129,7 +129,7 @@ public class CataclysmMaterials {
 
     public static final MaterialId voidJaw = MaterialBuilder.material("cataclysm", "void_jaw")
             .data(d -> d.tier(4).order(1).craftable(true))
-            //.traits(t -> t.trait(HandleMaterialStats.ID, CataclysmInit.voidScatter))
+            .traits(t -> t.trait(StatlessMaterialStats.ARROW_HEAD.getIdentifier(), CataclysmInit.voidScatter))
             .stats(s ->
                     s.stat(StatlessMaterialStats.ARROW_HEAD)
             )

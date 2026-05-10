@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.compat.species;
 
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;

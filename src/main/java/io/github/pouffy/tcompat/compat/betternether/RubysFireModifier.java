@@ -24,7 +24,9 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.*;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 @ParametersAreNonnullByDefault

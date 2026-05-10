@@ -1,9 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_redux;
 
-import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;

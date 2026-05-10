@@ -1,5 +1,11 @@
 {
   "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tcompat:cataclysmic"
+      }
+    ],
     "tconstruct:head": [
       {
         "level": 1,

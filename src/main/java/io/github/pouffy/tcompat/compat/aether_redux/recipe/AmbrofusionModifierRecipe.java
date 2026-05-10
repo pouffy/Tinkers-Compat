@@ -1,7 +1,5 @@
 package io.github.pouffy.tcompat.compat.aether_redux.recipe;
 
-import com.aetherteam.aether.Aether;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AmbrofusionModifier;
 import lombok.Getter;
