@@ -1,0 +1,47 @@
+{
+  "color": "FF6E7786",
+  "fallbacks": [
+    "metal"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:repair_kit",
+      "tinkersjewelry:plain_ring",
+      "tconstruct:handle",
+      "tconstruct:binding"
+    ],
+    "transformer": {
+      "type": "tconstruct:grey_to_sprite",
+      "palette": [
+        {
+          "color": "FF000000",
+          "grey": 0
+        },
+        {
+          "grey": 63,
+          "path": "tcompat:generator/complex/witherite_63"
+        },
+        {
+          "grey": 102,
+          "path": "tcompat:generator/complex/witherite_102"
+        },
+        {
+          "grey": 140,
+          "path": "tcompat:generator/complex/witherite_140"
+        },
+        {
+          "grey": 178,
+          "path": "tcompat:generator/complex/witherite_178"
+        },
+        {
+          "color": "FF5E6777",
+          "grey": 216
+        },
+        {
+          "color": "FF6E7786",
+          "grey": 255
+        }
+      ]
+    }
+  }
+}

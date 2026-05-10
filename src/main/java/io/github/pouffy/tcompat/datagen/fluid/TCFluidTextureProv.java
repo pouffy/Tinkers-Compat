@@ -56,6 +56,10 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
         food(TCFluids.umbrellaClusterJuice);
         food(TCFluids.wartSoup);
         food(TCFluids.agaveMedicine);
+        compatOre(TCFluids.moltenAncientMetal);
+        compatOre(TCFluids.moltenBlackSteel);
+        compatOre(TCFluids.moltenCursium);
+        compatOre(TCFluids.moltenWitherite);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {

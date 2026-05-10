@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "input": "tcompat:witherite",
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_witherite"
+  },
+  "temperature": 1200
+}

@@ -13,6 +13,7 @@ import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRMateria
 import io.github.pouffy.tcompat.compat.betterend.BetterendMaterials;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
 import io.github.pouffy.tcompat.common.material.TCWoods;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmMaterials;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFMaterials;
 import io.github.pouffy.tcompat.compat.species.SpeciesMaterials;
@@ -69,6 +70,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
         Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
+        Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
 
         // Streamline variant recipes
         MaterialBuilder.woodMaterials.forEach((builder, woodType) -> {
@@ -120,6 +122,17 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_bone_block")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/block");
         materialRecipe(iceandfire, MaterialIds.necroticBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:witherbone")), 1, 1, folder + "wither_bone");
 
+        metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);
+        metalMaterialRecipe(cataclysm, CataclysmMaterials.blackSteel, folder, "black_steel", true);
+        metalMaterialRecipe(cataclysm, CataclysmMaterials.cursium, folder, "cursium", true);
+        metalMaterialRecipe(cataclysm, CataclysmMaterials.witherite, folder, "witherite", true);
+        materialRecipe(iceandfire, CataclysmMaterials.lacrima, ItemNameIngredient.from(TCompat.getResource("cataclysm:lacrima")), 1, 1, folder + "lacrima");
+        materialRecipe(iceandfire, CataclysmMaterials.essenceOfTheStorm, ItemNameIngredient.from(TCompat.getResource("cataclysm:essence_of_the_storm")), 1, 1, folder + "essence_of_the_storm");
+        materialRecipe(iceandfire, CataclysmMaterials.coral, ItemNameIngredient.from(TCompat.getResource("cataclysm:coral_chunk")), 1, 1, folder + "coral");
+        materialRecipe(iceandfire, CataclysmMaterials.voidJaw, ItemNameIngredient.from(TCompat.getResource("cataclysm:void_jaw")), 1, 1, folder + "void_jaw");
+        materialRecipe(iceandfire, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:koboleton_bone")), 1, 1, folder + "koboleton_bone/bone");
+        materialRecipe(iceandfire, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:kobolediator_skull")), 8, 1, folder + "koboleton_bone/skull");
+
         //gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
         metalMaterialRecipe(deepAetherConsumer, DeepAetherMaterials.stormforgedSteel, folder, "stormforged_steel", true);
 
@@ -156,6 +169,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
         Consumer<FinishedRecipe> betternether = withCondition(consumer, modLoaded("betternether"));
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
+        Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
 
         //materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
         materialMelting(aetherConsumer, AetherMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
@@ -186,6 +200,11 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.gravitite, AetherTRMaterials.valkyrum, TCFluids.moltenValkyrum, FluidValues.INGOT, folder);
         materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.gravitite, AetherTRMaterials.pyral, TCFluids.moltenPyral, FluidValues.INGOT, folder);
         materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.zanite, AetherTRMaterials.neptune, TCFluids.moltenNeptune, FluidValues.INGOT, folder);
+
+        materialMeltingCasting(cataclysm, CataclysmMaterials.ancientMetal, TCFluids.moltenAncientMetal, folder);
+        materialMeltingCasting(cataclysm, CataclysmMaterials.blackSteel, TCFluids.moltenBlackSteel, folder);
+        materialMeltingCasting(cataclysm, CataclysmMaterials.cursium, TCFluids.moltenCursium, folder);
+        materialMeltingCasting(cataclysm, CataclysmMaterials.witherite, TCFluids.moltenWitherite, folder);
     }
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

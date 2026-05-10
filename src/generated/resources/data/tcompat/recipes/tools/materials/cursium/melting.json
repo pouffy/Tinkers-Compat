@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "input": "tcompat:cursium",
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_cursium"
+  },
+  "temperature": 1200
+}

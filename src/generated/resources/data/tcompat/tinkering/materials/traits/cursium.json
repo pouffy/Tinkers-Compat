@@ -1,11 +1,5 @@
 {
   "perStat": {
-    "tconstruct:head": [
-      {
-        "level": 1,
-        "name": "tcompat:cataclysmic"
-      }
-    ],
     "tconstruct:maille": [
       {
         "level": 1,

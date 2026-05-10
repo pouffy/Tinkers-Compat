@@ -1,0 +1,49 @@
+{
+  "color": "FFA4222F",
+  "fallbacks": [
+    "rock"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:repair_kit",
+      "tinkersjewelry:gem",
+      "tconstruct:handle"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF490911",
+            "grey": 63
+          },
+          {
+            "color": "FF791A26",
+            "grey": 102
+          },
+          {
+            "color": "FF8C1D2A",
+            "grey": 140
+          },
+          {
+            "color": "FFA4222F",
+            "grey": 178
+          },
+          {
+            "color": "FFC62A37",
+            "grey": 216
+          },
+          {
+            "color": "FFE23F36",
+            "grey": 255
+          }
+        ]
+      }
+    }
+  }
+}

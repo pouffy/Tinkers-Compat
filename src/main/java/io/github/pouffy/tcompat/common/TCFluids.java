@@ -48,6 +48,8 @@ public class TCFluids extends CompatModule {
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenCincinnasite, moltenNetherRuby; // Betternether
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenSkyjade, moltenStratus, moltenStormforgedSteel; // Deep Aether
     public static final FlowingFluidObject<ForgeFlowingFluid> fireBlood, iceBlood, lightningBlood, moltenFireDragonsteel, moltenIceDragonsteel, moltenLightningDragonsteel; // Ice and Fire
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenAncientMetal, moltenBlackSteel, moltenCursium, moltenWitherite; // Cataclysm
+
 
     public static FlowingFluidObject<ForgeFlowingFluid> fireLilyMixture, frostLilyMixture, lightningLilyMixture, ambrosia;
     public static FlowingFluidObject<ForgeFlowingFluid> aloeVeraJuice, whitePuffballStew, alliumOddionSoup;
@@ -88,6 +90,11 @@ public class TCFluids extends CompatModule {
         moltenFireDragonsteel = FLUIDS.registerMetal("molten_fire_dragonsteel").type(hot("molten_fire_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.FIRE, 4, 10, 6f)).bucket().flowing();
         moltenIceDragonsteel = FLUIDS.registerMetal("molten_ice_dragonsteel").type(hot("molten_ice_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.ICE, 4, 10, 6f)).bucket().flowing();
         moltenLightningDragonsteel = FLUIDS.registerMetal("molten_lightning_dragonsteel").type(hot("molten_lightning_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.LAPIS, 4, 10, 6f)).bucket().flowing();
+
+        moltenAncientMetal = FLUIDS.registerGem("molten_ancient_metal").type(hot("molten_ancient_metal").temperature(1350).lightLevel(3)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_ORANGE, 3, 12, 5.0F)).bucket().flowing();
+        moltenBlackSteel = FLUIDS.registerMetal("molten_black_steel").type(hot("molten_black_steel").temperature(1100).lightLevel(3)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_BLACK, 3, 12, 3.0F)).bucket().flowing();
+        moltenCursium = FLUIDS.registerMetal("molten_cursium").type(hot("molten_cursium").temperature(1500).lightLevel(11)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_CYAN, 11, 16, 5.0F)).bucket().flowing();
+        moltenWitherite = FLUIDS.registerMetal("molten_witherite").type(hot("molten_witherite").temperature(1500).lightLevel(9)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_RED, 11, 16, 5.0F)).bucket().flowing();
 
         fireLilyMixture = FLUIDS.register("fire_lily_mixture").type(cool("fire_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_ORANGE, 0).commonTag().flowing();
         frostLilyMixture = FLUIDS.register("frost_lily_mixture").type(cool("frost_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_LIGHT_BLUE, 0).commonTag().flowing();

@@ -87,6 +87,22 @@
     {
       "id": "#tcompat:molten_lightning_dragonsteel",
       "required": false
+    },
+    {
+      "id": "#tcompat:molten_ancient_metal",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_black_steel",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_cursium",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_witherite",
+      "required": false
     }
   ]
 }
