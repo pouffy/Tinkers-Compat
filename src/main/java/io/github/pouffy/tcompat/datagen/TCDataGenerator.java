@@ -6,6 +6,7 @@ import io.github.pouffy.tcompat.datagen.client.TCToolItemModelProv;
 import io.github.pouffy.tcompat.datagen.fluid.TCFluidTextureProv;
 import io.github.pouffy.tcompat.datagen.fluid.TCFluidTooltipProv;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
+import io.github.pouffy.tcompat.datagen.mantle.MantleColorsProvider;
 import io.github.pouffy.tcompat.datagen.tag.*;
 import io.github.pouffy.tcompat.datagen.tinkers.material.*;
 import io.github.pouffy.tcompat.datagen.tinkers.modifier.TCModifierProv;
@@ -57,6 +58,7 @@ public class TCDataGenerator {
         generator.addProvider(client, new TCItemModelProv(packOutput, existingFileHelper));
 
         generator.addProvider(client, new TCMaterialRenderInfoProv(packOutput, materialSprites, existingFileHelper));
+        generator.addProvider(client, new MantleColorsProvider(packOutput));
         generator.addProvider(client, new MaterialPaletteDebugGenerator(packOutput, TCompat.MOD_ID, materialSprites));
         //For Tinkers' Tools
         generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, new TinkerPartSpriteProvider(), materialSprites));
