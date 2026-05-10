@@ -84,6 +84,10 @@ public class TCLangProv extends LanguageProvider {
         forFluid(TCFluids.umbrellaClusterJuice);
         forFluid(TCFluids.wartSoup);
         forFluid(TCFluids.agaveMedicine);
+        forFluid(TCFluids.moltenAncientMetal);
+        forFluid(TCFluids.moltenBlackSteel);
+        forFluid(TCFluids.moltenCursium);
+        forFluid(TCFluids.moltenWitherite);
     }
 
     private void misc() {
