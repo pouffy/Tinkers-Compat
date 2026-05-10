@@ -228,16 +228,25 @@ public class MaterialBuilder {
         }
     }
 
-    public record Stats(Map<MaterialStatsId, IMaterialStats> stats) {
+    public record Stats(Map<MaterialStatsId, IMaterialStats> stats, Map<MaterialStatsId, IMaterialStats> optionalStats) {
 
         public static Stats fresh() {
-            return new Stats(new HashMap<>());
+            return new Stats(new HashMap<>(), new HashMap<>());
         }
 
         public Stats stat(IMaterialStats... stats) {
             for (IMaterialStats stat : stats) {
                 if (!this.stats.containsKey(stat.getIdentifier())) {
                     this.stats.put(stat.getIdentifier(), stat);
+                }
+            }
+            return this;
+        }
+
+        public Stats statOptional(IMaterialStats... stats) {
+            for (IMaterialStats stat : stats) {
+                if (!this.optionalStats.containsKey(stat.getIdentifier())) {
+                    this.optionalStats.put(stat.getIdentifier(), stat);
                 }
             }
             return this;
@@ -257,9 +266,29 @@ public class MaterialBuilder {
             return this;
         }
 
+        public Stats armorStatsOptional(ArmorModuleBuilder<? extends IMaterialStats> statBuilder, IMaterialStats... otherStats) {
+            IMaterialStats[] stats = new IMaterialStats[4];
+
+            for(ArmorItem.Type slotType : ArmorItem.Type.values()) {
+                stats[slotType.ordinal()] = statBuilder.build(slotType);
+            }
+
+            this.statOptional(stats);
+            if (otherStats.length > 0) {
+                this.statOptional(otherStats);
+            }
+            return this;
+        }
+
         public Stats armorShieldStats(ArmorModuleBuilder.ArmorShieldModuleBuilder<? extends IMaterialStats> statBuilder, IMaterialStats... otherStats) {
             this.armorStats(statBuilder, otherStats);
             this.stat(statBuilder.buildShield());
+            return this;
+        }
+
+        public Stats armorShieldStatsOptional(ArmorModuleBuilder.ArmorShieldModuleBuilder<? extends IMaterialStats> statBuilder, IMaterialStats... otherStats) {
+            this.armorStatsOptional(statBuilder, otherStats);
+            this.statOptional(statBuilder.buildShield());
             return this;
         }
     }
@@ -538,6 +567,30 @@ public class MaterialBuilder {
             this.statType(HeadMaterialStats.ID);
             this.statType(HandleMaterialStats.ID);
             this.statType(StatlessMaterialStats.BINDING.getIdentifier());
+            this.repairKit();
+            return this;
+        }
+
+        public SpriteInfo head() {
+            this.statType(HeadMaterialStats.ID);
+            this.repairKit();
+            return this;
+        }
+
+        public SpriteInfo handle() {
+            this.statType(HandleMaterialStats.ID);
+            this.repairKit();
+            return this;
+        }
+
+        public SpriteInfo binding() {
+            this.statType(StatlessMaterialStats.BINDING.getIdentifier());
+            this.repairKit();
+            return this;
+        }
+
+        public SpriteInfo bowstring() {
+            this.statType(StatlessMaterialStats.BOWSTRING.getIdentifier());
             this.repairKit();
             return this;
         }

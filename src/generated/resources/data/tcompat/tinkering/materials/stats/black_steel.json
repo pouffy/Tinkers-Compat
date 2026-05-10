@@ -26,6 +26,11 @@
     },
     "tconstruct:plating_shield": {
       "durability": 840
+    },
+    "tinkersjewelry:plain_ring": {
+      "amplification": 1.1,
+      "durability": 750,
+      "optional": true
     }
   }
 }

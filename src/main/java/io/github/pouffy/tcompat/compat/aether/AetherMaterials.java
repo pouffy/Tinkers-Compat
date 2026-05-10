@@ -3,6 +3,9 @@ package io.github.pouffy.tcompat.compat.aether;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.material.*;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.CutGemMaterialStats;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
@@ -41,10 +44,12 @@ public class AetherMaterials {
                             new HeadMaterialStats(130, 4f, STONE, 1f),
                             HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.05f).build(),
                             StatlessMaterialStats.BINDING
+                    ).statOptional(
+                            TJStats.CUT_GEM
                     )
             )
             .renderInfo(r -> r.parent(TCompat.getResource("aether_rock/holystone")))
-            .spriteInfo(s -> s.fallbacks("rock").meleeHarvest().sixColor(0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2))
+            .spriteInfo(s -> s.fallbacks("rock").statType(CutGemMaterialStats.ID).meleeHarvest().sixColor(0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2))
             .buildMaterial();
 
     public static final MaterialId zanite = MaterialBuilder.material("aether", "zanite")
@@ -55,10 +60,14 @@ public class AetherMaterials {
                             new HeadMaterialStats(251, 6f, IRON, 2f),
                             StatlessMaterialStats.ARROW_HEAD,
                             StatlessMaterialStats.FLETCHING
-                    ).armorShieldStats(PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2), StatlessMaterialStats.MAILLE)
+                    ).armorShieldStats(
+                            PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2), StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.CUT_GEM
+                    )
             )
             .renderInfo(r -> r.color(0x5b22b0).fallbacks("gem", "metal"))
-            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).fletching().arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff))
+            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).statType(CutGemMaterialStats.ID).fletching().arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff))
             .buildMaterial();
 
     public static final MaterialId gravitite = MaterialBuilder.material("aether", "gravitite")
@@ -71,29 +80,41 @@ public class AetherMaterials {
                             StatlessMaterialStats.BINDING
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f),
-                            StatlessMaterialStats.MAILLE))
+                            StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.plainRing(1562, 1.1f)
+                    )
+            )
             .renderInfo(r -> r.color(0xb643a0).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().armor().meleeHarvest().ranged().sixColor(0xFF390c35, 0xFF5c1256, 0xFFb643a0, 0xFFda67d0, 0xFFf195ef, 0xFFffcbfd))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF390c35, 0xFF5c1256, 0xFFb643a0, 0xFFda67d0, 0xFFf195ef, 0xFFffcbfd))
             .buildMaterial();
 
     public static final MaterialId lightnum = MaterialBuilder.material("aether", "lightnum")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.thunderstruck))
             .stats(s ->
-                    s.stat(new HeadMaterialStats(503, 8.0f, DIAMOND, 4.0f))
+                    s.stat(
+                            new HeadMaterialStats(503, 8.0f, DIAMOND, 4.0f)
+                    ).statOptional(
+                            TJStats.plainRing(503, 1.2f)
+                    )
             )
             .renderInfo(r -> r.color(0x5a9bdb).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().meleeHarvest().statType(INGOT).sixColor(0xFF0f274b, 0xFF1f4478, 0xFF2a5a9d, 0xFF5a9bdb, 0xFF94c9ff, 0xFFffffff))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().statType(INGOT).sixColor(0xFF0f274b, 0xFF1f4478, 0xFF2a5a9d, 0xFF5a9bdb, 0xFF94c9ff, 0xFFffffff))
             .buildMaterial();
 
     public static final MaterialId draculite = MaterialBuilder.material("aether", "draculite")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.bloodsucking))
             .stats(s ->
-                    s.stat(new HeadMaterialStats(2032, 8.0f, DIAMOND, 4.0f))
+                    s.stat(
+                            new HeadMaterialStats(2032, 8.0f, DIAMOND, 4.0f)
+                    ).statOptional(
+                            TJStats.plainRing(2032, 1.2f)
+                    )
             )
             .renderInfo(r -> r.color(0xd11e1e).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().meleeHarvest().statType(INGOT).sixColor(0xFF3b0303, 0xFF630505, 0xFF700606, 0xFFd11e1e, 0xFFf56262, 0xFFffadad))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().statType(INGOT).sixColor(0xFF3b0303, 0xFF630505, 0xFF700606, 0xFFd11e1e, 0xFFf56262, 0xFFffadad))
             .buildMaterial();
 
     public static final MaterialVariantId skyroot = aetherWoodVariant(TCWoods.SKYROOT, 0xFF333122, 0xFF403D2A, 0xFF4F4D36, 0xFF5C5B41, 0xFF63634A, 0xFF737558, 0xFF7B7E61);

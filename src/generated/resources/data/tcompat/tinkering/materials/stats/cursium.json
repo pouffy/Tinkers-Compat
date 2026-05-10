@@ -7,6 +7,9 @@
       "mining_speed": 9.0,
       "mining_tier": "minecraft:netherite"
     },
-    "tconstruct:maille": {}
+    "tconstruct:maille": {},
+    "tinkersjewelry:gem": {
+      "optional": true
+    }
   }
 }

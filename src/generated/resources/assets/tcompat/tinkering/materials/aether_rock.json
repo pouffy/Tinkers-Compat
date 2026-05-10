@@ -3,6 +3,7 @@
   "color": "FFCCCCCC",
   "generator": {
     "supported_stats": [
+      "tinkersjewelry:gem",
       "tconstruct:head",
       "tconstruct:handle",
       "tconstruct:binding",

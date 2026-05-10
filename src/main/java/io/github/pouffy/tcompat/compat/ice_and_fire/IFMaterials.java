@@ -2,6 +2,9 @@ package io.github.pouffy.tcompat.compat.ice_and_fire;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.CutGemMaterialStats;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTransformer;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
@@ -45,10 +48,12 @@ public class IFMaterials {
                             StatlessMaterialStats.BINDING,
                             new LimbMaterialStats(200, 0.07f, -0.07f, 0.07f),
                             new GripMaterialStats(1.0f, 0.15f, 1.5f)
+                    ).statOptional(
+                            TJStats.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0xc7b899).fallbacks("bone", "rock"))
-            .spriteInfo(s -> s.meleeHarvest().ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
+            .spriteInfo(s -> s.meleeHarvest().statType(CutGemMaterialStats.ID).ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
             .buildMaterial();
 
     public static final MaterialId fireDragonsteel = MaterialBuilder.material("iceandfire", "fire_dragonsteel")
@@ -56,16 +61,20 @@ public class IFMaterials {
             .traits(t -> t.trait(TCModifiers.scorchborn))
             .stats(s ->
                     s.stat(
-                                    new HeadMaterialStats(1400, 8.0f, NETHERITE, 5.0f),
-                                    HandleMaterialStats.multipliers().durability(1.2f).miningSpeed(0.85f).attackSpeed(0.85f).attackDamage(1.3f).build(),
-                                    StatlessMaterialStats.BINDING,
-                                    new LimbMaterialStats(1350, 0.5f, 0.35f, 0.3f),
-                                    new GripMaterialStats(2.0f, 0.35f, 5.3f))
-                            .armorShieldStats(
-                                    PlatingMaterialStats.builder().durabilityFactor(84).armor(6, 9, 12, 7).toughness(6),
-                                    StatlessMaterialStats.MAILLE))
+                            new HeadMaterialStats(1400, 8.0f, NETHERITE, 5.0f),
+                            HandleMaterialStats.multipliers().durability(1.2f).miningSpeed(0.85f).attackSpeed(0.85f).attackDamage(1.3f).build(),
+                            StatlessMaterialStats.BINDING,
+                            new LimbMaterialStats(1350, 0.5f, 0.35f, 0.3f),
+                            new GripMaterialStats(2.0f, 0.35f, 5.3f)
+                    ).armorShieldStats(
+                            PlatingMaterialStats.builder().durabilityFactor(84).armor(6, 9, 12, 7).toughness(6),
+                            StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.plainRing(1400, 1.3f)
+                    )
+            )
             .renderInfo(r -> r.color(0x774153).fallbacks("bone", "metal").luminosity(9))
-            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().meleeHarvest().ranged().armor().transformer(complexTransformer("fire_dragonsteel", 1, 0xFFBD9FA7, 0xFFEAD0D0)))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().ranged().armor().transformer(complexTransformer("fire_dragonsteel", 1, 0xFFBD9FA7, 0xFFEAD0D0)))
             .buildMaterial();
 
     public static final MaterialId iceDragonsteel = MaterialBuilder.material("iceandfire", "ice_dragonsteel")
@@ -73,16 +82,20 @@ public class IFMaterials {
             .traits(t -> t.trait(TCModifiers.frostborn))
             .stats(s ->
                     s.stat(
-                                    new HeadMaterialStats(1250, 11.0f, NETHERITE, 5.3f),
-                                    HandleMaterialStats.multipliers().durability(1.15f).miningSpeed(0.88f).attackSpeed(0.88f).attackDamage(1.25f).build(),
-                                    StatlessMaterialStats.BINDING,
-                                    new LimbMaterialStats(1300, 0.7f, 0.4f, 0.45f),
-                                    new GripMaterialStats(1.3f, 0.2f, 4f))
-                            .armorShieldStats(
-                                    PlatingMaterialStats.builder().durabilityFactor(81).armor(6, 9, 12, 7).toughness(6),
-                                    StatlessMaterialStats.MAILLE))
+                            new HeadMaterialStats(1250, 11.0f, NETHERITE, 5.3f),
+                            HandleMaterialStats.multipliers().durability(1.15f).miningSpeed(0.88f).attackSpeed(0.88f).attackDamage(1.25f).build(),
+                            StatlessMaterialStats.BINDING,
+                            new LimbMaterialStats(1300, 0.7f, 0.4f, 0.45f),
+                            new GripMaterialStats(1.3f, 0.2f, 4f)
+                    ).armorShieldStats(
+                            PlatingMaterialStats.builder().durabilityFactor(81).armor(6, 9, 12, 7).toughness(6),
+                            StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.plainRing(1250, 1.4f)
+                    )
+            )
             .renderInfo(r -> r.color(0xBAEAEC).fallbacks("bone", "metal").luminosity(9))
-            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().meleeHarvest().ranged().armor().transformer(complexTransformer("ice_dragonsteel", 1, 0xFFBAEAEC, 0xFFFFFFFF)))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().ranged().armor().transformer(complexTransformer("ice_dragonsteel", 1, 0xFFBAEAEC, 0xFFFFFFFF)))
             .buildMaterial();
 
     public static final MaterialId lightningDragonsteel = MaterialBuilder.material("iceandfire", "lightning_dragonsteel")
@@ -90,16 +103,20 @@ public class IFMaterials {
             .traits(t -> t.trait(TCModifiers.voltborn))
             .stats(s ->
                     s.stat(
-                                    new HeadMaterialStats(1600, 7.0f, NETHERITE, 5.8f),
-                                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(0.78f).attackSpeed(0.78f).attackDamage(1.25f).build(),
-                                    StatlessMaterialStats.BINDING,
-                                    new LimbMaterialStats(1100, 0.4f, 0.25f, 0.35f),
-                                    new GripMaterialStats(1.6f, 0.3f, 4.6f))
-                            .armorShieldStats(
-                                    PlatingMaterialStats.builder().durabilityFactor(68).armor(6, 9, 12, 7).toughness(6),
-                                    StatlessMaterialStats.MAILLE))
+                            new HeadMaterialStats(1600, 7.0f, NETHERITE, 5.8f),
+                            HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(0.78f).attackSpeed(0.78f).attackDamage(1.25f).build(),
+                            StatlessMaterialStats.BINDING,
+                            new LimbMaterialStats(1100, 0.4f, 0.25f, 0.35f),
+                            new GripMaterialStats(1.6f, 0.3f, 4.6f)
+                    ).armorShieldStats(
+                            PlatingMaterialStats.builder().durabilityFactor(68).armor(6, 9, 12, 7).toughness(6),
+                            StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.plainRing(1600, 1.35f)
+                    )
+            )
             .renderInfo(r -> r.color(0x917DD2).fallbacks("bone", "metal").luminosity(9))
-            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().meleeHarvest().ranged().armor().transformer(complexTransformer("lightning_dragonsteel", 1, 0xFFCAA4DA, 0xFFE5CBF7)))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().ranged().armor().transformer(complexTransformer("lightning_dragonsteel", 1, 0xFFCAA4DA, 0xFFE5CBF7)))
             .buildMaterial();
 
     private static MaterialId dragonScales(String type, int c63, int c102, int c140, int c178, int c216, int c255) {

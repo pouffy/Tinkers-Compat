@@ -19,6 +19,7 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
             if (builder.isVariant()) continue;
             addMaterialStats(builder.materialId(), builder.getStats().stats().values().toArray(new IMaterialStats[0]));
+            addOptionalStats(builder.materialId(), builder.getStats().optionalStats().values().toArray(new IMaterialStats[0]));
         }
     }
 

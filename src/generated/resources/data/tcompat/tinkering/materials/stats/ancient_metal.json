@@ -37,6 +37,11 @@
       "durability": 525,
       "knockback_resistance": 0.2,
       "toughness": 3.0
+    },
+    "tinkersjewelry:plain_ring": {
+      "amplification": 1.4,
+      "durability": 750,
+      "optional": true
     }
   }
 }

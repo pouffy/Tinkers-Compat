@@ -2,6 +2,9 @@ package io.github.pouffy.tcompat.compat.cataclysm;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.CutGemMaterialStats;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
@@ -16,14 +19,18 @@ public class CataclysmMaterials {
             .traits(t -> t.trait(HeadMaterialStats.ID, TCModifiers.cataclysmic))
             .stats(s ->
                     s.stat(
-                                    new HeadMaterialStats(750, 8.0F, DIAMOND, 2.0F),
-                                    HandleMaterialStats.multipliers().durability(1.25f).build(),
-                                    StatlessMaterialStats.BINDING)
-                            .armorStats(
-                                    PlatingMaterialStats.builder().durabilityFactor(35).armor(6, 11, 7, 4).toughness(3.0F).knockbackResistance(0.2F),
-                                    StatlessMaterialStats.MAILLE))
+                            new HeadMaterialStats(750, 8.0F, DIAMOND, 2.0F),
+                            HandleMaterialStats.multipliers().durability(1.25f).build(),
+                            StatlessMaterialStats.BINDING
+                    ).armorStats(
+                            PlatingMaterialStats.builder().durabilityFactor(35).armor(6, 11, 7, 4).toughness(3.0F).knockbackResistance(0.2F),
+                            StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.plainRing(750, 1.4f)
+                    )
+            )
             .renderInfo(r -> r.color(0xb98a3c).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().armor().meleeHarvest().sixColor(0xFF4c1e15, 0xFF682e22, 0xFF945b31, 0xFFb98a3c, 0xFFdbb86a, 0xFFffe69a))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().sixColor(0xFF4c1e15, 0xFF682e22, 0xFF945b31, 0xFFb98a3c, 0xFFdbb86a, 0xFFffe69a))
             .buildMaterial();
 
     public static final MaterialId blackSteel = MaterialBuilder.material("cataclysm", "black_steel")
@@ -31,14 +38,18 @@ public class CataclysmMaterials {
             .traits(t -> t.trait(ModifierIds.ductile))
             .stats(s ->
                     s.stat(
-                                    new HeadMaterialStats(750, 8.0F, DIAMOND, 2.0F),
-                                    HandleMaterialStats.multipliers().durability(0.89f).build(),
-                                    StatlessMaterialStats.BINDING,
-                                    new LimbMaterialStats(750, 0.1f, 0, 0.05f),
-                                    new GripMaterialStats(0.15f, 0.1f, 2.0F)
-                    ).stat(PlatingMaterialStats.builder().shieldDurability(840).buildShield()))
+                            new HeadMaterialStats(750, 8.0F, DIAMOND, 2.0F),
+                            HandleMaterialStats.multipliers().durability(0.89f).build(),
+                            StatlessMaterialStats.BINDING,
+                            new LimbMaterialStats(750, 0.1f, 0, 0.05f),
+                            new GripMaterialStats(0.15f, 0.1f, 2.0F),
+                            PlatingMaterialStats.builder().shieldDurability(840).buildShield()
+                    ).statOptional(
+                            TJStats.plainRing(750, 1.1f)
+                    )
+            )
             .renderInfo(r -> r.color(0x485063).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlatingMaterialStats.SHIELD.getId()).meleeHarvest().ranged().sixColor(0xFF171a1e, 0xFF1f232c, 0xFF2d313d, 0xFF485063, 0xFF616879, 0xFF969cad))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).statType(PlatingMaterialStats.SHIELD.getId()).meleeHarvest().ranged().sixColor(0xFF171a1e, 0xFF1f232c, 0xFF2d313d, 0xFF485063, 0xFF616879, 0xFF969cad))
             .buildMaterial();
 
     public static final MaterialId cursium = MaterialBuilder.material("cataclysm", "cursium")
@@ -51,10 +62,12 @@ public class CataclysmMaterials {
                     s.stat(
                             new HeadMaterialStats(2800, 9.0F, NETHERITE, 2.0F),
                             StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0x39d2b2).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().maille().bowstring().head().sixColor(0xFF0e4b3d, 0xFF156353, 0xFF198871, 0xFF39d2b2, 0xFF56eccc, 0xFF75ffe2))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(CutGemMaterialStats.ID).maille().bowstring().head().sixColor(0xFF0e4b3d, 0xFF156353, 0xFF198871, 0xFF39d2b2, 0xFF56eccc, 0xFF75ffe2))
             .buildMaterial();
 
     public static final MaterialId lacrima = MaterialBuilder.material("cataclysm", "lacrima")
@@ -64,10 +77,12 @@ public class CataclysmMaterials {
                     s.stat(
                             new HeadMaterialStats(2800, 9.0F, NETHERITE, 2.0F),
                             HandleMaterialStats.multipliers().durability(1.1f).build()
+                    ).statOptional(
+                            TJStats.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0x7eb5d8).fallbacks("gem"))
-            .spriteInfo(s -> s.fallbacks("gem").repairKit().handle().head().sixColor(0xFF443c86, 0xFF565d95, 0xFF6071c1, 0xFF7eb5d8, 0xFFa4dcea, 0xFFd9f4f7))
+            .spriteInfo(s -> s.fallbacks("gem").repairKit().statType(CutGemMaterialStats.ID).handle().head().sixColor(0xFF443c86, 0xFF565d95, 0xFF6071c1, 0xFF7eb5d8, 0xFFa4dcea, 0xFFd9f4f7))
             .buildMaterial();
 
     public static final MaterialId essenceOfTheStorm = MaterialBuilder.material("cataclysm", "essence_of_the_storm")

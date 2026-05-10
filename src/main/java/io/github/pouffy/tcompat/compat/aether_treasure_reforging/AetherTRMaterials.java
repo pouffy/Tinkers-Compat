@@ -2,6 +2,8 @@ package io.github.pouffy.tcompat.compat.aether_treasure_reforging;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
+import io.github.pouffy.tcompat.compat.tinkersjewelry.TJStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
@@ -24,10 +26,14 @@ public class AetherTRMaterials {
                     s.stat(
                             new LimbMaterialStats(80, -0.1f, 0.1f, -0.15f),
                             new GripMaterialStats(-0.2f, -0.35f, 0)
-                    ).armorShieldStats(PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE)
+                    ).armorShieldStats(
+                            PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.plainRing(342, 1.3f)
+                    )
             )
             .renderInfo(r -> r.color(0xffb326).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().armor().ranged().sixColor(0xFF6b130b, 0xFFb7420c, 0xFFd86a0b, 0xFFffb326, 0xFFfeda87, 0xFFffeec5))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().ranged().sixColor(0xFF6b130b, 0xFFb7420c, 0xFFd86a0b, 0xFFffb326, 0xFFfeda87, 0xFFffeec5))
             .buildMaterial();
 
     public static final MaterialId valkyrum = MaterialBuilder.material("aether_treasure_reforging", "valkyrum")
@@ -40,10 +46,14 @@ public class AetherTRMaterials {
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(1562, 4f, DIAMOND, 3f)
-                    ).armorShieldStats(PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE)
+                    ).armorShieldStats(
+                            PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f), StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            TJStats.plainRing(1562, 1.3f)
+                    )
             )
             .renderInfo(r -> r.color(0xd11e1e).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().armor().meleeHarvest().transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0)))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0)))
             .buildMaterial();
 
     public static final MaterialId neptune = MaterialBuilder.material("aether_treasure_reforging", "neptune")
