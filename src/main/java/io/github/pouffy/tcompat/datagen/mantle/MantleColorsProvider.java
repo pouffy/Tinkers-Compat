@@ -11,6 +11,7 @@ import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
@@ -100,7 +101,7 @@ public class MantleColorsProvider extends GenericDataProvider {
             if (l == null) {
                 l = new ArrayList<>();
             }
-            ColorEntry entry = new ColorEntry(path, TextColor.fromRgb(material.getRenderInfo().getColor()));
+            ColorEntry entry = new ColorEntry(path, material.getRenderInfo().getColor());
             l.add(entry);
             return l;
         });
@@ -113,7 +114,7 @@ public class MantleColorsProvider extends GenericDataProvider {
             if (l == null) {
                 l = new ArrayList<>();
             }
-            ColorEntry entry = new ColorEntry(path, TextColor.fromRgb(color));
+            ColorEntry entry = new ColorEntry(path, color);
             l.add(entry);
             return l;
         });
@@ -124,24 +125,28 @@ public class MantleColorsProvider extends GenericDataProvider {
         return "Tinkers' Compatibility Color Provider";
     }
 
-    private record ColorEntry(String path, TextColor color) {}
+    private record ColorEntry(String path, int color) {}
 
     private JsonObject serialise() {
         JsonObject json = new JsonObject();
         for (String namespace : this.modifierColors.keySet()) {
             JsonObject namespaced = new JsonObject();
             for (ColorEntry entry : this.modifierColors.get(namespace)) {
-                namespaced.addProperty(entry.path, entry.color.serialize());
+                namespaced.addProperty(entry.path, hexString(entry.color));
             }
             json.add("modifier.%s".formatted(namespace), namespaced);
         }
         for (String namespace : this.materialColors.keySet()) {
             JsonObject namespaced = new JsonObject();
             for (ColorEntry entry : this.materialColors.get(namespace)) {
-                namespaced.addProperty(entry.path, entry.color.serialize());
+                namespaced.addProperty(entry.path, hexString(entry.color));
             }
             json.add("material.%s".formatted(namespace), namespaced);
         }
         return json;
+    }
+
+    public static String hexString(int colour) {
+        return String.format("#%06X", (0xFFFFFF & colour));
     }
 }
