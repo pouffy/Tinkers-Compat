@@ -465,7 +465,7 @@ public class MaterialBuilder {
         }
 
         public SpriteInfo planks() {
-            return this.fallbacks("wood", "stick", "primitive").meleeHarvest().ranged().shieldCore().statType(WOOD);
+            return this.fallbacks("wood", "stick", "primitive").meleeHarvest().ranged().shieldCore().arrowShaft().statType(WOOD);
         }
 
         public SpriteInfo rock() {

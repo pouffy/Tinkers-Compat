@@ -35,7 +35,7 @@ public class DeepAetherMaterials {
                     ).armorShieldStats(PlatingMaterialStats.builder().durabilityFactor(3).armor(3, 6, 8, 3), StatlessMaterialStats.MAILLE)
             )
             .renderInfo(r -> r.color(0x729752).fallbacks("gem", "metal"))
-            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).arrowHead().fallbacks("gem", "metal").sevenColor(0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397))
+            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397))
             .buildMaterial();
 
     public static final MaterialId stormforgedSteel = MaterialBuilder.material("deep_aether", "stormforged_steel")

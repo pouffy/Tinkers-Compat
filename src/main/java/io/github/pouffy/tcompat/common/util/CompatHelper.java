@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common.util;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -17,14 +18,19 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.tools.stats.*;
 
 import java.util.Map;
 import java.util.function.Consumer;
+
+import static net.minecraft.world.item.Tiers.STONE;
+import static net.minecraft.world.item.Tiers.WOOD;
 
 public class CompatHelper {
 
@@ -89,4 +95,36 @@ public class CompatHelper {
             consumer.accept(ToolStack.from(stack));
         }
     }
+
+    //Never datagenerated. Just used as fallbacks. Will always fallback to wood if the parent isn't defined here
+    public static MaterialBuilder woodStatsBuilder = MaterialBuilder.material("tconstruct", "wood")
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(60, 2f, WOOD, 0f),
+                            HandleMaterialStats.percents().build(), // flat all around
+                            StatlessMaterialStats.BINDING,
+                            new LimbMaterialStats(60, 0, 0, 0),
+                            new GripMaterialStats(0f, 0, 0),
+                            StatlessMaterialStats.ARROW_SHAFT,
+                            StatlessMaterialStats.SHIELD_CORE
+                    )
+            );
+
+    public static MaterialBuilder rockStatsBuilder = MaterialBuilder.material("tconstruct", "rock")
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(130, 4f, STONE, 1f),
+                            HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.05f).build(),
+                            StatlessMaterialStats.BINDING
+                    )
+            );
+
+    public static MaterialBuilder whitestoneStatsBuilder = MaterialBuilder.material("tconstruct", "whitestone")
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(275, 6.0F, Tiers.IRON, 1.25F),
+                            HandleMaterialStats.multipliers().durability(0.95F).miningSpeed(1.1F).attackSpeed(0.95F).build(),
+                            StatlessMaterialStats.BINDING
+                    )
+            );
 }

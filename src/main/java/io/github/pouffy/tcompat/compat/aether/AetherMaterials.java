@@ -58,7 +58,7 @@ public class AetherMaterials {
                     ).armorShieldStats(PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2), StatlessMaterialStats.MAILLE)
             )
             .renderInfo(r -> r.color(0x5b22b0).fallbacks("gem", "metal"))
-            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).fletching().arrowHead().fallbacks("gem", "metal").sevenColor(0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff))
+            .spriteInfo(s -> s.plating(HeadMaterialStats.ID).fletching().arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF1c0d3b, 0xFF350f6c, 0xFF5b22b0, 0xFF8a4ee4, 0xFFaf7ff6, 0xFFbf9cf4, 0xFFe1cdff))
             .buildMaterial();
 
     public static final MaterialId gravitite = MaterialBuilder.material("aether", "gravitite")

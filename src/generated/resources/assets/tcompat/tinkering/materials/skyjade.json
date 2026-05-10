@@ -14,7 +14,9 @@
       "tconstruct:plating_shield",
       "tconstruct:head",
       "tconstruct:repair_kit",
-      "tconstruct:arrow_head"
+      "tconstruct:arrow_head",
+      "tconstruct:maille",
+      "tconstruct:armor_maille"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",
