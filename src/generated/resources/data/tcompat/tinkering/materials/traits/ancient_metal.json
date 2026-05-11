@@ -10,6 +10,10 @@
       {
         "level": 1,
         "name": "tcompat:cataclysmic"
+      },
+      {
+        "level": 1,
+        "name": "tcompat:sandstorm"
       }
     ]
   }

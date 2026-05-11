@@ -18,7 +18,7 @@ public class CataclysmMaterials {
     public static final MaterialId ancientMetal = MaterialBuilder.material("cataclysm", "ancient_metal")
             .data(d -> d.tier(4).order(1).craftable(false))
             .traits(t -> t
-                    .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic/*, CataclysmInit.sandstorm*/)
+                    .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.sandstorm)
                     .trait(ARMOR, TCModifiers.cataclysmic)
             )
             .stats(s ->

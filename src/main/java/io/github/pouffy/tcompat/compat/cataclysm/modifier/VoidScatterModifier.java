@@ -1,21 +1,19 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier;
 
+import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -74,32 +72,14 @@ public class VoidScatterModifier extends NoLevelsModifier implements ProjectileH
                 }
                 vec = vec.scale(0.35F);
                 vec = mulPoseVector(vec, dir);
-                var shard = createEntity(projectile.level(), x, y, z, vec, projectile.getOwner(), target);
-                if (shard != null) projectile.level().addFreshEntity(shard);
+                if (CompatHelper.isLoaded("cataclysm")) {
+                    var shard = CataclysmHandler.createVoidShard(projectile.level(), x, y, z, vec, projectile.getOwner(), target);
+                    if (shard != null) projectile.level().addFreshEntity(shard);
+                }
             }
             projectile.playSound(SoundEvents.GLASS_BREAK, 1.1F, 0.8F);
         }
         projectile.getPersistentData().putBoolean("VoidScattered", true);
-    }
-
-    public static Entity createEntity(Level level, double x, double y, double z, Vec3 vec, Entity owner, Entity hitEntity) {
-        var shard = ObjectRetriever.getEntity("cataclysm:void_shard");
-        if (shard.isPresent()) {
-            var type = shard.get().builtInRegistryHolder();
-            CompoundTag compoundtag = new CompoundTag();
-            compoundtag.putString("id", type.key().location().toString());
-            Entity entity = EntityType.loadEntityRecursive(compoundtag, level, (e) -> {
-                e.moveTo(x + vec.x, y + vec.y + (double)0.25F, vec.z + z);
-                return e;
-            });
-            entity.setDeltaMovement(vec);
-            try {
-                entity.getClass().getDeclaredField("ignoreEntity").set(entity, hitEntity);
-            } catch (NoSuchFieldException | IllegalAccessException ignored) {}
-            if (entity instanceof Projectile projectile) projectile.setOwner(owner);
-            return entity;
-        }
-        return null;
     }
 
     public List<Vec3> getShootVectors(RandomSource random, float uncertainty) {

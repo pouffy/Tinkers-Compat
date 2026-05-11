@@ -1,17 +1,27 @@
 package io.github.pouffy.tcompat.common;
 
+import com.github.L_Ender.cataclysm.init.ModItems;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.frozen.Frozen;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.module.AutosmeltModule;
+import io.github.pouffy.tcompat.common.network.SwingClientArmPacket;
+import io.github.pouffy.tcompat.common.network.TCompatNetworking;
+import io.github.pouffy.tcompat.common.network.base.PacketRelay;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.modifier.ThunderstruckModifier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
@@ -20,9 +30,14 @@ import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegisterEvent;
+import slimeknights.mantle.network.MantleNetwork;
+import slimeknights.mantle.network.packet.SwingArmPacket;
+import slimeknights.mantle.util.OffhandCooldownTracker;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -37,6 +52,40 @@ public class TCCommonEvents {
             PhoenixTouched.get(projectile).ifPresent(phoenixTouched -> {
                 if (phoenixTouched.isPhoenixProjectile() && phoenixTouched.getFireTime() > 0) {
                     entityHitResult.getEntity().setSecondsOnFire(phoenixTouched.getFireTime());
+                }
+            });
+        }
+    }
+
+
+    @SubscribeEvent
+    public static void onLeftClick(PlayerInteractEvent.LeftClickEmpty event) {
+        Player player = event.getEntity();
+        ItemStack rightItem = event.getEntity().getMainHandItem();
+        CompatHelper.asTool(rightItem, (tool) -> {
+            boolean flag = false;
+            if (!player.getItemInHand(InteractionHand.MAIN_HAND).is(rightItem.getItem())) return;
+            for (ModifierEntry entry : tool.getModifiers()) {
+                boolean swing = entry.getHook(GlobalInit.TOOL_SWING).swingMainHand(tool, entry, rightItem, event.getEntity());
+                if (swing) flag = true;
+            }
+            if (event.getLevel().isClientSide && flag) {
+                PacketRelay.sendToServer(TCompatNetworking.INSTANCE, new SwingClientArmPacket(event.getEntity(), InteractionHand.MAIN_HAND));
+            }
+        });
+        //Only swing off-hand if the main hand is empty.
+        ItemStack leftItem = event.getEntity().getOffhandItem();
+        if (rightItem.isEmpty()) {
+            CompatHelper.asTool(leftItem, (tool) -> {
+                boolean flag = false;
+                if (!player.getItemInHand(InteractionHand.OFF_HAND).is(leftItem.getItem())) return;
+                for (ModifierEntry entry : tool.getModifiers()) {
+                    boolean swing = entry.getHook(GlobalInit.TOOL_SWING).swingOffHand(tool, entry, leftItem, event.getEntity());
+                    if (swing) flag = true;
+                }
+                OffhandCooldownTracker.swingHand(player, InteractionHand.OFF_HAND, false);
+                if (event.getLevel().isClientSide && flag) {
+                    PacketRelay.sendToServer(TCompatNetworking.INSTANCE, new SwingClientArmPacket(event.getEntity(), InteractionHand.OFF_HAND));
                 }
             });
         }
