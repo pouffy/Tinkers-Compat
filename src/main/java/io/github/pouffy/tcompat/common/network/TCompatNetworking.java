@@ -22,7 +22,6 @@ public class TCompatNetworking {
         register(VoidTouchedSyncPacket.class, VoidTouchedSyncPacket::decode);
         register(LightningOwnerSyncPacket.class, LightningOwnerSyncPacket::decode);
         register(VampireHealingSyncPacket.class, VampireHealingSyncPacket::decode);
-        register(FrozenSyncPacket.class, FrozenSyncPacket::decode);
         register(SwingClientArmPacket.class, SwingClientArmPacket::decode);
     }
 

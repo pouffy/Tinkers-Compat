@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTransformer;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.stats.*;
 
@@ -40,7 +41,10 @@ public class IFMaterials {
 
     public static final MaterialId dragonBone = MaterialBuilder.material("iceandfire", "dragon_bone")
             .data(d -> d.tier(4).order(5).craftable(true))
-            .traits(t -> t.trait(TinkerModifiers.firestarter))
+            .traits(t -> t
+                    .trait(TinkerModifiers.firestarter)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.flame_gem, 1))
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(200, 2.5f, IRON, 1.2f),

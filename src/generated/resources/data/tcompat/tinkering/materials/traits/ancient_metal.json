@@ -15,6 +15,12 @@
         "level": 1,
         "name": "tcompat:sandstorm"
       }
+    ],
+    "tinkersjewelry:plain_ring": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:precious"
+      }
     ]
   }
 }

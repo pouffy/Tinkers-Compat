@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "tag": "tcompat:molten_cursium"
+  },
+  "input": "tconstruct:string",
+  "output": "tcompat:cursium",
+  "temperature": 1200
+}

@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static io.github.pouffy.tcompat.compat.aether.AetherMaterials.aetherRockVariant;
@@ -64,7 +65,10 @@ public class AetherReduxMaterials {
 
     public static final MaterialId blightbunnyFang = MaterialBuilder.material("deep_aether", "blightbunny_fang")
             .data(d -> d.tier(2).order(4).craftable(true))
-            .traits(t -> t.trait(AetherReduxInit.blighted))
+            .traits(t -> t
+                    .trait(AetherReduxInit.blighted)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.poison_gem, 3))
+            )
             .stats(s ->
                     s.stat(StatlessMaterialStats.ARROW_HEAD).statOptional(CompatToolStats.Statless.CUT_GEM)
             )
@@ -74,7 +78,10 @@ public class AetherReduxMaterials {
 
     public static final MaterialId mykapodShell = MaterialBuilder.material("deep_aether", "mykapod_shell")
             .data(d -> d.tier(2).order(2).craftable(true))
-            .traits(t -> t.trait(StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay))
+            .traits(t -> t
+                    .trait(StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.armor_gem, 4))
+            )
             .stats(s ->
                     s.stat(StatlessMaterialStats.SHIELD_CORE).statOptional(CompatToolStats.Statless.CUT_GEM)
             )

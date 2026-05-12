@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
@@ -32,7 +33,10 @@ public class DeepAetherMaterials {
 
     public static final MaterialId skyjade = MaterialBuilder.material("deep_aether", "skyjade")
             .data(d -> d.tier(2).order(1).deprecate())
-            .traits(t -> t.trait(TCModifiers.aetherForged, DeepAetherInit.skyjade).trait(MaterialRegistry.AMMO, ModifierIds.punch))
+            .traits(t -> t
+                    .trait(TCModifiers.aetherForged, DeepAetherInit.skyjade).trait(MaterialRegistry.AMMO, ModifierIds.punch)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.health_gem, 2))
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(150, 10f, IRON, 2f),

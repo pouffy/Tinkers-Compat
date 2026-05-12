@@ -12,5 +12,13 @@
       "level": 1,
       "name": "tconstruct:stonebound"
     }
-  ]
+  ],
+  "perStat": {
+    "tinkersjewelry:gem": [
+      {
+        "level": 2,
+        "name": "tinkersjewelry:armor_gem"
+      }
+    ]
+  }
 }

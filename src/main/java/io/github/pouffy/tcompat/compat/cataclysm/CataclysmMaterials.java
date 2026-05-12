@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
 
@@ -20,6 +21,7 @@ public class CataclysmMaterials {
             .traits(t -> t
                     .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.sandstorm)
                     .trait(ARMOR, TCModifiers.cataclysmic)
+                    .trait(PlainRingMaterialStats.ID, new ModifierEntry(TCModifiers.precious, 1))
             )
             .stats(s ->
                     s.stat(
@@ -39,7 +41,10 @@ public class CataclysmMaterials {
 
     public static final MaterialId blackSteel = MaterialBuilder.material("cataclysm", "black_steel")
             .data(d -> d.tier(3).order(1).craftable(false))
-            .traits(t -> t.trait(ModifierIds.ductile))
+            .traits(t -> t
+                    .trait(ModifierIds.ductile)
+                    .trait(PlainRingMaterialStats.ID, new ModifierEntry(TCModifiers.ductile, 1))
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(750, 8.0F, DIAMOND, 2.0F),
@@ -59,8 +64,9 @@ public class CataclysmMaterials {
     public static final MaterialId cursium = MaterialBuilder.material("cataclysm", "cursium")
             .data(d -> d.tier(4).order(1).craftable(false))
             .traits(t -> t
-                    .trait(StatlessMaterialStats.MAILLE.getIdentifier(), TCModifiers.cataclysmic/*, CataclysmInit.reanimation*/)
-                    //.trait(StatlessMaterialStats.BOWSTRING.getIdentifier(), CataclysmInit.phantasmic)
+                    .trait(StatlessMaterialStats.MAILLE.getIdentifier(), TCModifiers.cataclysmic, TCModifiers.ghostly)
+                    .trait(StatlessMaterialStats.BOWSTRING.getIdentifier(), CataclysmInit.phantasmic)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.glowing_gem, 1))
             )
             .stats(s ->
                     s.stat(
@@ -76,7 +82,10 @@ public class CataclysmMaterials {
 
     public static final MaterialId lacrima = MaterialBuilder.material("cataclysm", "lacrima")
             .data(d -> d.tier(4).order(1).craftable(true))
-            .traits(t -> t.trait(HeadMaterialStats.ID, TCModifiers.cataclysmic/*, CataclysmInit.stormed*/))
+            .traits(t -> t
+                    .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic/*, CataclysmInit.stormed*/)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.swim_gem, 1))
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(2800, 9.0F, NETHERITE, 2.0F),
@@ -114,7 +123,10 @@ public class CataclysmMaterials {
 
     public static final MaterialId coral = MaterialBuilder.material("cataclysm", "coral")
             .data(d -> d.tier(4).order(1).craftable(true))
-            .traits(t -> t.trait(HandleMaterialStats.ID, CataclysmInit.aquatic))
+            .traits(t -> t
+                    .trait(HandleMaterialStats.ID, CataclysmInit.aquatic)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.swim_gem, 2))
+            )
             .stats(s ->
                     s.stat(
                             HandleMaterialStats.multipliers().attackSpeed(0.9f).build()
@@ -148,18 +160,18 @@ public class CataclysmMaterials {
 
     //TODO:
     //  Materials:
-    //   - Cursium [Head, Bowstring]
-    //   - Essence of the Storm [Binding]
-    //   - Lacrima [Handle, Head]
-    //   - Witherite [Handle, Binding]
-    //   - Coral Chunk [Handle]
-    //   - Void Jaw [Arrow Head]
-    //   - Koboleton Bone [Maille]
+    //   - Cursium [Head, Bowstring] x
+    //   - Essence of the Storm [Binding] x
+    //   - Lacrima [Handle, Head] x
+    //   - Witherite [Handle, Binding] x
+    //   - Coral Chunk [Handle] x
+    //   - Void Jaw [Arrow Head] x
+    //   - Koboleton Bone [Maille, Handle] x
     //  Traits:
     //   - Phantasmic [Cursium, Black Steel (Team Up)]
     //   - Stormed [Essence of the Storm, Lacrima (Team Up)]
     //   - Fluxed [Witherite, Iron (Team Up)]
-    //   - Void Scatter [Void Jaw]
+    //   - Void Scatter [Void Jaw] x
     //  Modifiers:
     //   - Cursed [Armor, Req. Netherite]
     //   - Ignited [Armor, Req. Netherite]

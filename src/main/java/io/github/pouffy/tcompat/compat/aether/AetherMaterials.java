@@ -11,6 +11,7 @@ import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
 
@@ -39,7 +40,10 @@ public class AetherMaterials {
 
     public static final MaterialId aetherRock = MaterialBuilder.material("aether", "aether_rock")
             .data(d -> d.tier(1).order(1).craftable(true))
-            .traits(t -> t.trait(TCModifiers.aetherForged, AetherInit.ambrogen, ModifierIds.stonebound))
+            .traits(t -> t
+                    .trait(TCModifiers.aetherForged, AetherInit.ambrogen, ModifierIds.stonebound)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.armor_gem, 2))
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(130, 4f, STONE, 1f),
@@ -55,7 +59,10 @@ public class AetherMaterials {
 
     public static final MaterialId zanite = MaterialBuilder.material("aether", "zanite")
             .data(d -> d.tier(2).order(1).deprecate())
-            .traits(t -> t.trait(TCModifiers.aetherForged, AetherInit.zanite).trait(MaterialRegistry.AMMO, ModifierIds.crystalbound))
+            .traits(t -> t
+                    .trait(TCModifiers.aetherForged, AetherInit.zanite).trait(MaterialRegistry.AMMO, ModifierIds.crystalbound)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.mining_speed_gem, 2))
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(251, 6f, IRON, 2f),

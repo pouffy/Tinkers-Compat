@@ -5,6 +5,12 @@
         "level": 1,
         "name": "tcompat:cataclysmic"
       }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:swim_gem"
+      }
     ]
   }
 }

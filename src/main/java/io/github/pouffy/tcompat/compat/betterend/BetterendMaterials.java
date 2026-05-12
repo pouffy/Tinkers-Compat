@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.*;
@@ -12,7 +13,7 @@ public class BetterendMaterials {
 
     public static final MaterialId thallasium = MaterialBuilder.material("betterend", "thallasium")
             .data(d -> d.tier(2).order(3).craftable(false))
-            .traits(t -> t.trait(BetterendInit.voidTouched))
+            .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(321, 7f, IRON, 2.5f),
@@ -33,7 +34,7 @@ public class BetterendMaterials {
 
     public static final MaterialId terminite = MaterialBuilder.material("betterend", "terminite")
             .data(d -> d.tier(2).order(3).craftable(false))
-            .traits(t -> t.trait(BetterendInit.voidTouched))
+            .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(1231, 8.5f, DIAMOND, 3.0f),
@@ -54,7 +55,7 @@ public class BetterendMaterials {
 
     public static final MaterialId aeternium = MaterialBuilder.material("betterend", "aeternium")
             .data(d -> d.tier(2).order(3).craftable(false))
-            .traits(t -> t.trait(BetterendInit.voidTouched))
+            .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(2197, 10.0f, NETHERITE, 4.0f),

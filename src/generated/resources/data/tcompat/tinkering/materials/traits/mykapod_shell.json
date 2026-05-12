@@ -5,6 +5,12 @@
         "level": 1,
         "name": "tcompat:escarstay"
       }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 4,
+        "name": "tinkersjewelry:armor_gem"
+      }
     ]
   }
 }

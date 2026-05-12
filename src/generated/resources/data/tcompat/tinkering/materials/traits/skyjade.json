@@ -15,6 +15,12 @@
         "level": 1,
         "name": "tconstruct:punch"
       }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 2,
+        "name": "tinkersjewelry:health_gem"
+      }
     ]
   }
 }

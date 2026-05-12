@@ -4,5 +4,13 @@
       "level": 1,
       "name": "tconstruct:ductile"
     }
-  ]
+  ],
+  "perStat": {
+    "tinkersjewelry:plain_ring": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:ductile"
+      }
+    ]
+  }
 }

@@ -4,8 +4,6 @@ package io.github.pouffy.tcompat.common.capability;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.compatible.LightningOwnerCapability;
 import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
-import io.github.pouffy.tcompat.common.capability.frozen.Frozen;
-import io.github.pouffy.tcompat.common.capability.frozen.FrozenCapability;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouchedCapability;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
@@ -29,7 +27,6 @@ public class TCompatCapabilities {
     public static final Capability<PhoenixTouched> PHOENIX_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<VoidTouched> VOID_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<LightningOwner> LIGHTNING_OWNER_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
-    public static final Capability<Frozen> FROZEN_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<VampireHealing> VAMPIRE_HEALING_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
 
     @SubscribeEvent
@@ -46,7 +43,6 @@ public class TCompatCapabilities {
             }
             if (event.getObject() instanceof LivingEntity livingEntity) {
                 event.addCapability(TCompat.getResource("void_touched"), new CapabilityProvider(TCompatCapabilities.VOID_TOUCHED_CAPABILITY, new VoidTouchedCapability(livingEntity)));
-                event.addCapability(TCompat.getResource("frozen"), new CapabilityProvider(TCompatCapabilities.FROZEN_CAPABILITY, new FrozenCapability(livingEntity)));
                 event.addCapability(TCompat.getResource("vampire_healing"), new CapabilityProvider(TCompatCapabilities.VAMPIRE_HEALING_CAPABILITY, new VampireHealingCapability(livingEntity)));
             }
             if (event.getObject() instanceof LightningBolt lightningBolt) {

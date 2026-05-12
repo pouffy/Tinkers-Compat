@@ -94,9 +94,11 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(SpeciesInit.birt.getId(),                  0x3ac2d4);
         //Cataclysm
         addColor(TCModifiers.cataclysmic,                   0xfb6b1d);
+        addColor(TCModifiers.ghostly,                       0x56eccc);
         addColor(CataclysmInit.voidScatter.getId(),         0x8219ff);
         addColor(CataclysmInit.aquatic.getId(),             0xc62a37);
         addColor(CataclysmInit.sandstorm.getId(),           0xdbb86a);
+        addColor(CataclysmInit.phantasmic.getId(),          0x56eccc);
     }
 
     public void addColor(MaterialBuilder material) {

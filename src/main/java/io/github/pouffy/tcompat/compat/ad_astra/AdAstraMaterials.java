@@ -1,9 +1,11 @@
 package io.github.pouffy.tcompat.compat.ad_astra;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.DIAMOND;
@@ -13,7 +15,10 @@ public class AdAstraMaterials {
 
     public static final MaterialId calorite = MaterialBuilder.material("ad_astra", "calorite")
             .data(d -> d.tier(2).order(3).craftable(false))
-            .traits(t -> t.trait(AdAstraInit.oxygenated))
+            .traits(t -> t
+                    .trait(AdAstraInit.oxygenated)
+                    .trait(PlainRingMaterialStats.ID, new ModifierEntry[] {})
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(1840, 6f, NETHERITE, 4.5f),
@@ -34,7 +39,10 @@ public class AdAstraMaterials {
 
     public static final MaterialId desh = MaterialBuilder.material("ad_astra", "desh")
             .data(d -> d.tier(2).order(3).craftable(false))
-            .traits(t -> t.trait(AdAstraInit.oxygenated))
+            .traits(t -> t
+                    .trait(AdAstraInit.oxygenated)
+                    .trait(PlainRingMaterialStats.ID, new ModifierEntry[] {})
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(940, 4f, DIAMOND, 2.6f),
@@ -56,7 +64,10 @@ public class AdAstraMaterials {
 
     public static final MaterialId ostrum = MaterialBuilder.material("ad_astra", "ostrum")
             .data(d -> d.tier(2).order(3).craftable(false))
-            .traits(t -> t.trait(AdAstraInit.oxygenated))
+            .traits(t -> t
+                    .trait(AdAstraInit.oxygenated)
+                    .trait(PlainRingMaterialStats.ID, new ModifierEntry[] {})
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(1250, 5f, DIAMOND, 3.8f),
