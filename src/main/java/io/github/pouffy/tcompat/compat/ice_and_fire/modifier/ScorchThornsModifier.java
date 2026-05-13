@@ -1,9 +1,9 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
+import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
@@ -25,9 +25,7 @@ public class ScorchThornsModifier extends NoLevelsModifier implements OnAttacked
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity attacker = (LivingEntity) source.getEntity();
         boolean canUse = false;
-        if (context.getEntity() instanceof Player player) {
-            canUse = !player.getCooldowns().isOnCooldown(tool.getItem());
-        }
+        if (ModifierCooldowns.isOnCooldown(modifier.getId(), context.getEntity())) return;
         if (attacker != null) {
             canUse = attacker.getRandom().nextIntBetweenInclusive(1, 16) < 3;
         }
@@ -39,9 +37,7 @@ public class ScorchThornsModifier extends NoLevelsModifier implements OnAttacked
                 attacker.setSecondsOnFire(ticks);
                 attacker.knockback(1.0, user.getX() - attacker.getX(), user.getZ() - attacker.getZ());
             }
-            if (context.getEntity() instanceof Player player) {
-                player.getCooldowns().addCooldown(tool.getItem(), Math.round((amount / 2) * 20));
-            }
+            ModifierCooldowns.addCooldown(modifier.getId(), Math.round((amount / 2) * 20), context.getEntity());
         }
     }
 }

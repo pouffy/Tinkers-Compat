@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
@@ -127,6 +128,9 @@ public class TCCommonEvents {
                 voidTouched.tick();
             }
         });
+        if (entity instanceof Player player) {
+            ModifierCooldowns.get(player).ifPresent(ModifierCooldowns::tick);
+        }
         VampireHealing.get(entity).ifPresent(VampireHealing::onUpdate);
     }
 

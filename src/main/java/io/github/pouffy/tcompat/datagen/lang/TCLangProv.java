@@ -103,6 +103,8 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.dampening.attack_damage", "Damage against Mythical Creatures");
         add("modifier.tcompat.dreadbane.attack_damage", "Damage against Dread Creatures");
 
+        add("notification.tcompat.modifier_cooldown", "Modifier: %s is on cooldown");
+
         add("modifier.tcompat.scorchborn.attack_damage", "Melee Damage against Damage against Lightning & Ice Dragons");
         add("modifier.tcompat.scorchborn.projectile_damage", "Ranged Damage against Lightning & Ice Dragons");
         add("modifier.tcompat.scorchborn.resistance", "Protection against Fire Dragon Breath");
@@ -157,6 +159,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.sandstorm", "Curse of Ra", "Charged strikes summon a sandstorm.");
         forModifier("modifier.tcompat.phantasmic", "Who ya gonna call?", "Shooting an arrow summons three phantom arrows.");
         forModifier("modifier.tcompat.ghostly", "Missed me!", "Small chance to completely ignore an incoming attack. Chance increases if the attack is a projectile.");
+        forModifier("modifier.tcompat.tidal", "Washed away", "When used while sneaking, it summons Waves in a Fan pattern.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

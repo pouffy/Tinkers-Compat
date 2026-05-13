@@ -1,6 +1,8 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.data.TCTags;
+import io.github.pouffy.tcompat.common.module.AbstractTeamUpModifier;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -14,13 +16,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.tconstruct.library.materials.MaterialRegistry;
+import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileLaunchModifierHook;
-import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.capability.EntityModifierCapability;
 import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
@@ -32,8 +35,9 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
-public class PhantasmicModifier extends NoLevelsModifier implements ProjectileLaunchModifierHook, GeneralInteractionModifierHook {
+public class PhantasmicModifier extends AbstractTeamUpModifier implements ProjectileLaunchModifierHook, GeneralInteractionModifierHook {
     private final ResourceLocation timeLeftKey = TCompat.getResource("time_left");
 
     @Override
@@ -44,19 +48,21 @@ public class PhantasmicModifier extends NoLevelsModifier implements ProjectileLa
 
     @Override
     public void onStoppedUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
+        if(!isValid(tool)) return;
         tool.getPersistentData().putInt(timeLeftKey, timeLeft);
     }
 
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        if(!primary) return;
+        if(!primary || !isValid(tool)) return;
         Entity pointedEntity = this.getPlayerLookTarget(shooter.level(), shooter);
-        int arrowcount = 3;
-        float offsetangle = 12.0F;
+        int arrowCount = 2;
+        float offsetAngle = 3.0F;
         int chargeTime = 72000 - tool.getPersistentData().getInt(timeLeftKey);
+        tool.getPersistentData().remove(timeLeftKey);
         if (arrow != null) {
-            AbstractArrow abstractarrow = arrow;
-            for(int j = 0; j < arrowcount; ++j) {
+            AbstractArrow abstractArrow = arrow;
+            for(int j = 0; j < arrowCount; ++j) {
                 float charge = GeneralInteractionModifierHook.getToolCharge(tool, (float)chargeTime);
                 float velocity = ConditionalStatModifierHook.getModifiedStat(tool, shooter, ToolStats.VELOCITY);
                 float power = charge * velocity;
@@ -70,7 +76,7 @@ public class PhantasmicModifier extends NoLevelsModifier implements ProjectileLa
                                 if (baseDamageAddition > 0) {
                                     homingArrow.setBaseDamage(homingArrow.getBaseDamage() + (double)baseDamageAddition * 0.35 + (double)0.5F);
                                 }
-                                abstractarrow = homingArrow;
+                                abstractArrow = homingArrow;
                                 break targeted;
                             }
                         }
@@ -83,23 +89,23 @@ public class PhantasmicModifier extends NoLevelsModifier implements ProjectileLa
                             homingArrow.setBaseDamage(homingArrow.getBaseDamage() + (double)baseDamageAddition * 0.35 + (double)0.5F);
                         }
 
-                        abstractarrow = homingArrow;
+                        abstractArrow = homingArrow;
                     }
                 }
                 ModifierNBT modifiers = tool.getModifiers();
-                EntityModifierCapability.getCapability(abstractarrow).addModifiers(modifiers);
-                ModDataNBT arrowData = PersistentDataCapability.getOrWarn(abstractarrow);
+                EntityModifierCapability.getCapability(abstractArrow).addModifiers(modifiers);
+                ModDataNBT arrowData = PersistentDataCapability.getOrWarn(abstractArrow);
                 for(ModifierEntry entry : modifiers.getModifiers()) {
-                    entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, entry, shooter, ItemStack.EMPTY, abstractarrow, abstractarrow, arrowData, false);
+                    entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, entry, shooter, ItemStack.EMPTY, abstractArrow, abstractArrow, arrowData, false);
                 }
                 float inaccuracy = ModifierUtil.getInaccuracy(tool, shooter);
-                abstractarrow.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
-                abstractarrow.shootFromRotation(shooter, shooter.getXRot(), shooter.getYRot() + ((float)j - (float)(arrowcount - 1) / 2.0F) * offsetangle, 0.0F, power * 3.0F, inaccuracy);
+                abstractArrow.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+                abstractArrow.shootFromRotation(shooter, shooter.getXRot(), shooter.getYRot() + (j - 1 / 2.0F) * offsetAngle, 0.0F, power * 3.0F, inaccuracy);
                 if (power == 1.0F) {
-                    abstractarrow.setCritArrow(true);
+                    abstractArrow.setCritArrow(true);
                 }
 
-                shooter.level().addFreshEntity(abstractarrow);
+                shooter.level().addFreshEntity(abstractArrow);
             }
         }
     }
@@ -137,5 +143,11 @@ public class PhantasmicModifier extends NoLevelsModifier implements ProjectileLa
     @Override
     public InteractionResult onToolUse(IToolStackView iToolStackView, ModifierEntry modifierEntry, Player player, InteractionHand interactionHand, InteractionSource interactionSource) {
         return InteractionResult.CONSUME;
+    }
+
+    @Override
+    protected Predicate<IMaterial> getRequiredMaterials() {
+        var tagSource = MaterialRegistry.getTagSource().valuesInTag(TCTags.Materials.CURSIUM_COMPANION);
+        return (material) -> tagSource != null && tagSource.contains(material);
     }
 }

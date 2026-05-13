@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.datagen.mantle;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
@@ -17,7 +16,6 @@ import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.PackOutput;
-import net.minecraft.network.chat.TextColor;
 import slimeknights.mantle.data.GenericDataProvider;
 import slimeknights.mantle.util.JsonHelper;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
@@ -99,6 +97,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(CataclysmInit.aquatic.getId(),             0xc62a37);
         addColor(CataclysmInit.sandstorm.getId(),           0xdbb86a);
         addColor(CataclysmInit.phantasmic.getId(),          0x56eccc);
+        addColor(CataclysmInit.tidal.getId(),               0x6071c1);
     }
 
     public void addColor(MaterialBuilder material) {

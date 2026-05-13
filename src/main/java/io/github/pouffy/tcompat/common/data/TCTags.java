@@ -233,6 +233,10 @@ public class TCTags {
         private static void init() {}
         /** Materials available in aether */
         public static final TagKey<IMaterial> AETHER = local("aether");
+        //Team-Up tags
+        public static final TagKey<IMaterial> CURSIUM_COMPANION = local("companions/cursium");
+        public static final TagKey<IMaterial> LACRIMA_COMPANION = local("companions/lacrima");
+        public static final TagKey<IMaterial> WITHERITE_COMPANION = local("companions/witherite");
 
         @SuppressWarnings("SameParameterValue")  // may want more tags later
         private static TagKey<IMaterial> local(String name) {

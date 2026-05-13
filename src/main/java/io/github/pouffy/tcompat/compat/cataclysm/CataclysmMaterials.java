@@ -83,7 +83,7 @@ public class CataclysmMaterials {
     public static final MaterialId lacrima = MaterialBuilder.material("cataclysm", "lacrima")
             .data(d -> d.tier(4).order(1).craftable(true))
             .traits(t -> t
-                    .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic/*, CataclysmInit.stormed*/)
+                    .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.tidal)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.swim_gem, 1))
             )
             .stats(s ->
@@ -169,7 +169,7 @@ public class CataclysmMaterials {
     //   - Koboleton Bone [Maille, Handle] x
     //  Traits:
     //   - Phantasmic [Cursium, Black Steel (Team Up)]
-    //   - Stormed [Essence of the Storm, Lacrima (Team Up)]
+    //   - Tidal [Essence of the Storm, Lacrima (Team Up)]
     //   - Fluxed [Witherite, Iron (Team Up)]
     //   - Void Scatter [Void Jaw] x
     //  Modifiers:

@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common.util;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
@@ -15,13 +16,16 @@ import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tiers;
 import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.tools.stats.*;
@@ -93,6 +97,13 @@ public class CompatHelper {
     public static void asTool(ItemStack stack, Consumer<ToolStack> consumer) {
         if (stack.getItem() instanceof IModifiable) {
             consumer.accept(ToolStack.from(stack));
+        }
+    }
+
+    public static void sendCooldownMessage(Player player, ModifierEntry modifierEntry) {
+        if (ModifierCooldowns.isOnCooldown(modifierEntry.getId(), player)) {
+            Component message = Component.translatable("notification.tcompat.modifier_cooldown", modifierEntry.getModifier().getDisplayName());
+            player.displayClientMessage(message, true);
         }
     }
 

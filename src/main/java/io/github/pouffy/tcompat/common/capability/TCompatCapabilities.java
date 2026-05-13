@@ -2,8 +2,10 @@ package io.github.pouffy.tcompat.common.capability;
 
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.capability.compatible.LightningOwnerCapability;
 import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
+import io.github.pouffy.tcompat.common.capability.compatible.LightningOwnerCapability;
+import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
+import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldownsCapability;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouchedCapability;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
@@ -13,6 +15,7 @@ import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouchedCapabi
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -28,6 +31,7 @@ public class TCompatCapabilities {
     public static final Capability<VoidTouched> VOID_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<LightningOwner> LIGHTNING_OWNER_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<VampireHealing> VAMPIRE_HEALING_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
+    public static final Capability<ModifierCooldowns> MODIFIER_COOLDOWNS_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
 
     @SubscribeEvent
     public static void register(RegisterCapabilitiesEvent event) {
@@ -38,6 +42,9 @@ public class TCompatCapabilities {
     public static class Registration {
         @SubscribeEvent
         public static void attachEntityCapabilities(AttachCapabilitiesEvent<Entity> event) {
+            if (event.getObject() instanceof Player player) {
+                event.addCapability(TCompat.getResource("modifier_cooldowns"), new CapabilityProvider(TCompatCapabilities.MODIFIER_COOLDOWNS_CAPABILITY, new ModifierCooldownsCapability(player)));
+            }
             if (event.getObject() instanceof Projectile projectile) {
                 event.addCapability(TCompat.getResource("phoenix_touched"), new CapabilityProvider(TCompatCapabilities.PHOENIX_TOUCHED_CAPABILITY, new PhoenixTouchedCapability(projectile)));
             }
