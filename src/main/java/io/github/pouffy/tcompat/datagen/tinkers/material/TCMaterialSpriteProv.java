@@ -13,12 +13,16 @@ import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
-import slimeknights.tconstruct.tools.stats.*;
+import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.function.Function;
 
-import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.*;
+import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.WOOD;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 @MethodsReturnNonnullByDefault

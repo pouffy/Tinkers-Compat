@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.common.capability.phoenix;
 
-import com.aetherteam.aether.network.packet.PhoenixArrowSyncPacket;
 import io.github.pouffy.tcompat.common.network.PhoenixProjectileSyncPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;

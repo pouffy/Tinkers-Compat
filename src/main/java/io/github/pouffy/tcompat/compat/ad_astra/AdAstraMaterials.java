@@ -1,7 +1,6 @@
 package io.github.pouffy.tcompat.compat.ad_astra;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;

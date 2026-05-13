@@ -1,8 +1,6 @@
 package io.github.pouffy.tcompat.datagen.client;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
-import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

@@ -4,11 +4,9 @@ import io.github.pouffy.tcompat.common.capability.TCSounds;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.VoidTouchedSyncPacket;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;
-import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.simple.SimpleChannel;
 import org.apache.commons.lang3.tuple.Triple;
 

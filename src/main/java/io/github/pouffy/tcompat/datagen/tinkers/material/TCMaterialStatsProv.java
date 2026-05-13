@@ -6,7 +6,6 @@ import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
-import slimeknights.tconstruct.tools.stats.*;
 
 @MethodsReturnNonnullByDefault
 public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {

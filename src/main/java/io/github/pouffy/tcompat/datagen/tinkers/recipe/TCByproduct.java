@@ -1,9 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.common.TCFluids;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
-import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
-import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import slimeknights.mantle.recipe.helper.FluidOutput;
