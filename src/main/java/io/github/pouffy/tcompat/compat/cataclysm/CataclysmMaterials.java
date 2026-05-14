@@ -150,7 +150,7 @@ public class CataclysmMaterials {
 
     public static final MaterialId koboletonBone = MaterialBuilder.material("cataclysm", "koboleton_bone")
             .data(d -> d.tier(4).order(1).craftable(true))
-            //.traits(t -> t.trait(HandleMaterialStats.ID, CataclysmInit.dustCollector))
+            .traits(t -> t.trait(HandleMaterialStats.ID, TCModifiers.archaeologist))
             .stats(s ->
                     s.stat(StatlessMaterialStats.MAILLE, HandleMaterialStats.multipliers().attackDamage(1.2f).build())
             )
@@ -168,12 +168,12 @@ public class CataclysmMaterials {
     //   - Void Jaw [Arrow Head] x
     //   - Koboleton Bone [Maille, Handle] x
     //  Traits:
-    //   - Phantasmic [Cursium, Black Steel (Team Up)]
-    //   - Tidal [Essence of the Storm, Lacrima (Team Up)]
+    //   - Phantasmic [Cursium, Black Steel (Team Up)] x
+    //   - Tidal [Essence of the Storm, Lacrima (Team Up)] x
     //   - Fluxed [Witherite, Iron (Team Up)]
     //   - Void Scatter [Void Jaw] x
+    //   - Archaeologist [Koboleton Bone] x
     //  Modifiers:
-    //   - Cursed [Armor, Req. Netherite]
     //   - Ignited [Armor, Req. Netherite]
 
 

@@ -1,0 +1,46 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "cataclysm"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 0.25,
+      "percent": true,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "cataclysm:team_ancient_remnant"
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/melee/weapon"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_power",
+      "each_level": 0.35,
+      "percent": true,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "cataclysm:team_ancient_remnant"
+      }
+    },
+    {
+      "type": "tconstruct:protection",
+      "damage_source": "mantle:can_protect",
+      "each_level": 0.25,
+      "flat": 0.75,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      },
+      "wearing_entity": {
+        "type": "mantle:tag",
+        "tag": "cataclysm:team_ancient_remnant"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

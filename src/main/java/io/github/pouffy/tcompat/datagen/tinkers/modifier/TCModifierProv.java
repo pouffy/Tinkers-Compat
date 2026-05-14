@@ -187,6 +187,11 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(ReduceToolDamageModule.builder().flat(0.85F));
         buildModifier(TCModifiers.ghostly, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        IJsonPredicate<LivingEntity> ancientRemnant = LivingEntityPredicate.tag(TCEntityTagProv.create("cataclysm:team_ancient_remnant"));
+        buildModifier(TCModifiers.archaeologist, modLoaded("cataclysm"))
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(ancientRemnant).percent().eachLevel(0.25f))
+                .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(ancientRemnant).percent().eachLevel(0.35f))
+                .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(ancientRemnant).amount(0.75f, 0.25f));
     }
 
     @Override

@@ -114,6 +114,10 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.voltborn.attack_damage", "Melee Damage against Fire & Ice Dragons");
         add("modifier.tcompat.voltborn.projectile_damage", "Ranged Damage against Fire & Ice Dragons");
         add("modifier.tcompat.voltborn.resistance", "Protection against Lightning Dragon Breath");
+        add("modifier.tcompat.archaeologist.attack_damage", "Archaeology Melee Damage");
+        add("modifier.tcompat.archaeologist.projectile_damage", "Archaeology Ranged Damage");
+        add("modifier.tcompat.archaeologist.resistance", "Archaeology Protection");
+
         add("modifier.tcompat.zanite.attack_damage", "Zanite Melee Damage");
         add("modifier.tcompat.zanite.projectile_damage", "Zanite Ranged Damage");
         add("modifier.tcompat.zanite.mining_speed", "Zanite Mining Speed");
@@ -168,6 +172,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.phantasmic", "Who ya gonna call?", "Shooting an arrow summons three phantom arrows.");
         forModifier("modifier.tcompat.ghostly", "Missed me!", "Small chance to completely ignore an incoming attack. Chance increases if the attack is a projectile.");
         forModifier("modifier.tcompat.tidal", "Washed away", "When used while sneaking, it summons Waves in a Fan pattern.");
+        forModifier("modifier.tcompat.archaeologist", "Belongs in a museum", "Bonus damage and protection against ancient remnants.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {
