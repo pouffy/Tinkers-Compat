@@ -1,0 +1,59 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ancient_aether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/highsproot"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/highsproot"
+        }
+      ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ancient_aether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/highsproot"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/highsproot"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:planks/highsproot"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "tcompat:planks/highsproot"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tcompat:aether_wood#highsproot"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

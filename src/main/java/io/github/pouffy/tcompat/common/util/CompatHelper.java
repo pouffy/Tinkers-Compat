@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
+import io.github.pouffy.tcompat.compat.ancient_aether.AncientAetherInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
@@ -30,6 +31,7 @@ import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.tools.stats.*;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -38,29 +40,32 @@ import static net.minecraft.world.item.Tiers.WOOD;
 
 public class CompatHelper {
 
-    private static final Map<String, Consumer<IEventBus>> compatInitializers = Map.of(
-            "aether", AetherInit::init,
-            "aether_redux", AetherReduxInit::init,
-            "deep_aether", DeepAetherInit::init,
-            "aether_treasure_reforging", AetherTRInit::init,
-            "species", SpeciesInit::init,
-            "ad_astra", AdAstraInit::init,
-            "betterend", BetterendInit::init,
-            "betternether", BetternetherInit::init,
-            "iceandfire", IFInit::init,
-            "cataclysm", CataclysmInit::init
-    );
-    private static final Map<String, Consumer<IEventBus>> compatEvents = Map.of(
-            "aether", (bus) -> bus.register(new AetherInit()),
-            "aether_redux", (bus) -> bus.register(new AetherReduxInit()),
-            "deep_aether", (bus) -> bus.register(new DeepAetherInit()),
-            "aether_treasure_reforging", (bus) -> bus.register(new AetherTRInit()),
-            "ad_astra", (bus) -> bus.register(new AdAstraInit()),
-            "betterend", (bus) -> bus.register(new BetterendInit()),
-            "betternether", (bus) -> bus.register(new BetternetherInit()),
-            "iceandfire", (bus) -> bus.register(new IFInit()),
-            "cataclysm", (bus) -> bus.register(new CataclysmInit())
-    );
+    private static final Map<String, Consumer<IEventBus>> compatInitializers = new HashMap<>();
+    private static final Map<String, Consumer<IEventBus>> compatEvents = new HashMap<>();
+
+    static {
+        compatInitializers.put("ad_astra", AdAstraInit::init);
+        compatInitializers.put("aether", AetherInit::init);
+        compatInitializers.put("aether_redux", AetherReduxInit::init);
+        compatInitializers.put("aether_treasure_reforging", AetherTRInit::init);
+        compatInitializers.put("ancient_aether", AncientAetherInit::init);
+        compatInitializers.put("betterend", BetterendInit::init);
+        compatInitializers.put("betternether", BetternetherInit::init);
+        compatInitializers.put("cataclysm", CataclysmInit::init);
+        compatInitializers.put("deep_aether", DeepAetherInit::init);
+        compatInitializers.put("iceandfire", IFInit::init);
+        compatInitializers.put("species", SpeciesInit::init);
+
+        compatEvents.put("ad_astra", (bus) -> bus.register(new AdAstraInit()));
+        compatEvents.put("aether", (bus) -> bus.register(new AetherInit()));
+        compatEvents.put("aether_redux", (bus) -> bus.register(new AetherReduxInit()));
+        compatEvents.put("aether_treasure_reforging", (bus) -> bus.register(new AetherTRInit()));
+        compatEvents.put("betterend", (bus) -> bus.register(new BetterendInit()));
+        compatEvents.put("betternether", (bus) -> bus.register(new BetternetherInit()));
+        compatEvents.put("cataclysm", (bus) -> bus.register(new CataclysmInit()));
+        compatEvents.put("deep_aether", (bus) -> bus.register(new DeepAetherInit()));
+        compatEvents.put("iceandfire", (bus) -> bus.register(new IFInit()));
+    }
 
     public static void init(IEventBus eventBus) {
         //Compatibility needs to be initialised during datagen so our fluids are recognised.

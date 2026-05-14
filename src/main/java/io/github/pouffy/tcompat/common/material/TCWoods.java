@@ -89,6 +89,8 @@ public enum TCWoods implements StringRepresentable {
     FIELDSPROOT(builder("aether_redux")),
     CRYSTAL(builder("aether_redux")),
     GLACIA(builder("aether_redux")),
+    HIGHSPROOT(builder("ancient_aether")),
+    AETHER_SAKURA(builder("ancient_aether").specialLogTag("ancient_aether", "sakura_logs").specialPlankId("ancient_aether", "sakura_planks").alias("sakura")),
 
     // Ad Astra
     AERONOS(builder("ad_astra").logType("caps")),
