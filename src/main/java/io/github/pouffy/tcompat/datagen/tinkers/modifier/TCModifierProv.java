@@ -19,13 +19,18 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
+import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
+import slimeknights.tconstruct.library.json.variable.tool.StatMultiplierVariable;
+import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ReduceToolDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
 import slimeknights.tconstruct.library.modifiers.modules.display.DurabilityBarColorModule;
+import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
@@ -54,6 +59,101 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.escarstay, modLoaded("aether_redux"))
                 .addModule(StatBoostModule.add(ToolStats.KNOCKBACK_RESISTANCE).flat(2))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
+        buildModifier(TCModifiers.zanite, modLoaded("aether"))
+                .addModule(ConditionalMeleeDamageModule.builder().tool(ToolStackPredicate.tag(TinkerTags.Items.MELEE)).percent().formula()
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide()
+                        .sqrt()
+                        .variable(0).multiply()
+                        .constant(0.005F).multiply()
+                        .constant(1.0F).add()
+                        .variable(1).multiply()
+                        .build()
+                )
+                .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).tool(ToolStackPredicate.tag(TinkerTags.Items.RANGED)).percent().formula()
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide()
+                        .sqrt()
+                        .variable(0).multiply()
+                        .constant(0.005F).multiply()
+                        .constant(1.0F).add()
+                        .variable(1).multiply()
+                        .build()
+                )
+                .addModule(ConditionalMiningSpeedModule.builder().tool(ToolStackPredicate.tag(TinkerTags.Items.HARVEST)).percent().formula()
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide()
+                        .sqrt()
+                        .variable(0).multiply()
+                        .constant(0.005F).multiply()
+                        .constant(1.0F).add()
+                        .variable(1).multiply()
+                        .build()
+                )
+                .addModule(ConditionalStatModule.stat(ToolStats.ARMOR).tool(ToolStackPredicate.tag(TinkerTags.Items.ARMOR)).percent().formula()
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide()
+                        .sqrt()
+                        .variable(0).multiply()
+                        .constant(0.005F).multiply()
+                        .constant(1.0F).add()
+                        .variable(1).multiply()
+                        .build()
+                )
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
+        buildModifier(TCModifiers.skyjade, modLoaded("deep_aether"))
+                .addModule(ConditionalMeleeDamageModule.builder().tool(ToolStackPredicate.tag(TinkerTags.Items.MELEE)).percent().formula()
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide()
+                        .sqrt()
+                        .variable(0).multiply()
+                        .constant(-0.01F).multiply()
+                        .constant(1.0F).add()
+                        .variable(1).multiply()
+                        .build()
+                )
+                .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).tool(ToolStackPredicate.tag(TinkerTags.Items.RANGED)).percent().formula()
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide()
+                        .sqrt()
+                        .variable(0).multiply()
+                        .constant(-0.01F).multiply()
+                        .constant(1.0F).add()
+                        .variable(1).multiply()
+                        .build()
+                )
+                .addModule(ConditionalMiningSpeedModule.builder().tool(ToolStackPredicate.tag(TinkerTags.Items.HARVEST)).percent().formula()
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide()
+                        .sqrt()
+                        .variable(0).multiply()
+                        .constant(-0.01F).multiply()
+                        .constant(1.0F).add()
+                        .variable(1).multiply()
+                        .build()
+                )
+                .addModule(ConditionalStatModule.stat(ToolStats.ARMOR).tool(ToolStackPredicate.tag(TinkerTags.Items.ARMOR)).percent().formula()
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide()
+                        .sqrt()
+                        .variable(0).multiply()
+                        .constant(-0.01F).multiply()
+                        .constant(1.0F).add()
+                        .variable(1).multiply()
+                        .build()
+                )
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
 
         IJsonPredicate<LivingEntity> dreadPredicate = LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:dread"));
         buildModifier(TCModifiers.dreadbane, modLoaded("iceandfire"))

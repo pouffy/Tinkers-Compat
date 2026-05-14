@@ -82,19 +82,19 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Function<String, ResourceLocation> betternetherId = name -> getResource("betternether", name);
         Function<String, ResourceLocation> iceandfireId = name -> getResource("iceandfire", name);
 
-        ModifierRecipeBuilder.modifier(AetherInit.zanite)
+        ModifierRecipeBuilder.modifier(TCModifiers.zanite)
                 .addInput(TCTags.Items.ZANITE_GEMS)
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.UPGRADE, 1)
-                .saveSalvage(aetherConsumer, prefix(AetherInit.zanite, upgradeSalvage))
-                .save(aetherConsumer, prefix(AetherInit.zanite, upgradeFolder));
+                .saveSalvage(aetherConsumer, prefix(TCModifiers.zanite, upgradeSalvage))
+                .save(aetherConsumer, prefix(TCModifiers.zanite, upgradeFolder));
 
-        ModifierRecipeBuilder.modifier(DeepAetherInit.skyjade)
+        ModifierRecipeBuilder.modifier(TCModifiers.skyjade)
                 .addInput(TCTags.Items.SKYJADE_GEMS)
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.UPGRADE, 1)
-                .saveSalvage(deepAetherConsumer, prefix(DeepAetherInit.skyjade, upgradeSalvage))
-                .save(deepAetherConsumer, prefix(DeepAetherInit.skyjade, upgradeFolder));
+                .saveSalvage(deepAetherConsumer, prefix(TCModifiers.skyjade, upgradeSalvage))
+                .save(deepAetherConsumer, prefix(TCModifiers.skyjade, upgradeFolder));
 
         ModifierRecipeBuilder.modifier(SpeciesInit.ricoshield)
                 .setTools(TinkerTags.Items.SHIELDS)

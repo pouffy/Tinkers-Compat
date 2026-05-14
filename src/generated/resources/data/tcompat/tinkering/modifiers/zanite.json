@@ -1,0 +1,129 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "aether"
+  },
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "formula": [
+        "$lost",
+        "$max",
+        "/",
+        "sqrt",
+        "$level",
+        "*",
+        0.005,
+        "*",
+        1.0,
+        "+",
+        "$damage",
+        "*"
+      ],
+      "percent": true,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/melee"
+      },
+      "variables": {
+        "lost": "tconstruct:tool_lost_durability",
+        "max": {
+          "type": "tconstruct:stat_multiplier",
+          "stat": "tconstruct:durability"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$lost",
+        "$max",
+        "/",
+        "sqrt",
+        "$level",
+        "*",
+        0.005,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:projectile_damage",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/ranged"
+      },
+      "variables": {
+        "lost": "tconstruct:tool_lost_durability",
+        "max": {
+          "type": "tconstruct:stat_multiplier",
+          "stat": "tconstruct:durability"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:conditional_mining_speed",
+      "formula": [
+        "$lost",
+        "$max",
+        "/",
+        "sqrt",
+        "$level",
+        "*",
+        0.005,
+        "*",
+        1.0,
+        "+",
+        "$speed",
+        "*"
+      ],
+      "percent": true,
+      "require_effective": true,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/harvest"
+      },
+      "variables": {
+        "lost": "tconstruct:tool_lost_durability",
+        "max": {
+          "type": "tconstruct:stat_multiplier",
+          "stat": "tconstruct:durability"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$lost",
+        "$max",
+        "/",
+        "sqrt",
+        "$level",
+        "*",
+        0.005,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:armor",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      },
+      "variables": {
+        "lost": "tconstruct:tool_lost_durability",
+        "max": {
+          "type": "tconstruct:stat_multiplier",
+          "stat": "tconstruct:durability"
+        }
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

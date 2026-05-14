@@ -114,6 +114,14 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.voltborn.attack_damage", "Melee Damage against Fire & Ice Dragons");
         add("modifier.tcompat.voltborn.projectile_damage", "Ranged Damage against Fire & Ice Dragons");
         add("modifier.tcompat.voltborn.resistance", "Protection against Lightning Dragon Breath");
+        add("modifier.tcompat.zanite.attack_damage", "Zanite Melee Damage");
+        add("modifier.tcompat.zanite.projectile_damage", "Zanite Ranged Damage");
+        add("modifier.tcompat.zanite.mining_speed", "Zanite Mining Speed");
+        add("modifier.tcompat.zanite.armor", "Zanite Armor");
+        add("modifier.tcompat.skyjade.attack_damage", "Skyjade Melee Damage");
+        add("modifier.tcompat.skyjade.projectile_damage", "Skyjade Ranged Damage");
+        add("modifier.tcompat.skyjade.mining_speed", "Skyjade Mining Speed");
+        add("modifier.tcompat.skyjade.armor", "Skyjade Armor");
     }
 
     private void modifiers() {

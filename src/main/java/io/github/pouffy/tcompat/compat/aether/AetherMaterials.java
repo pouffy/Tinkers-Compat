@@ -60,7 +60,7 @@ public class AetherMaterials {
     public static final MaterialId zanite = MaterialBuilder.material("aether", "zanite")
             .data(d -> d.tier(2).order(1).deprecate())
             .traits(t -> t
-                    .trait(TCModifiers.aetherForged, AetherInit.zanite).trait(MaterialRegistry.AMMO, ModifierIds.crystalbound)
+                    .trait(TCModifiers.aetherForged, TCModifiers.zanite).trait(MaterialRegistry.AMMO, ModifierIds.crystalbound)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.mining_speed_gem, 2))
             )
             .stats(s ->
