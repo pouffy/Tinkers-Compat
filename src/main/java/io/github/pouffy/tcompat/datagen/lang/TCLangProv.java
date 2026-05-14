@@ -91,29 +91,32 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void misc() {
-        add("modifier.tcompat.flamed.attack_bonus", "Damage against Ice Dragons");
-        add("modifier.tcompat.iced.attack_bonus", "Damage against Fire Dragons");
-        add("modifier.tcompat.lightning.attack_bonus", "Damage against Fire Dragons & Ice Dragons");
+        add("modifier.tcompat.flamed.attack_bonus", "Ice Dragon Damage Bonus");
+        add("modifier.tcompat.iced.attack_bonus", "Fire Dragon Damage Bonus");
+        add("modifier.tcompat.lightning.attack_bonus", "Fire & Ice Dragon Damage Bonus");
         add("modifier.tcompat.kinetic.tooltip.damage", "Stored Damage: %s / 40");
         add("recipe.tconstruct.ambrofusion.at_capacity", "Tool has no more space for ambrosium");
         add("subtitles.tcompat.void_touched.activate", "Void appears");
         add("subtitles.tcompat.void_touched.deactivate", "Void dissipates");
         add("recipe.tcompat.modifier.dampening.level_2", "Dampening requires a different recipe for the first level.");
         add("recipe.tcompat.modifier.dampening.level_3", "Dampening requires a different recipe for the first two levels.");
-        add("modifier.tcompat.dampening.attack_damage", "Damage against Mythical Creatures");
-        add("modifier.tcompat.dreadbane.attack_damage", "Damage against Dread Creatures");
+        add("modifier.tcompat.dampening.attack_damage", "Dampening Melee Damage");
+        add("modifier.tcompat.dampening.projectile_damage", "Dampening Ranged Damage");
+        add("modifier.tcompat.dreadbane.attack_damage", "Dreadbane Melee Damage");
+        add("modifier.tcompat.dreadbane.projectile_damage", "Dreadbane Ranged Damage");
 
         add("notification.tcompat.modifier_cooldown", "Modifier: %s is on cooldown");
 
-        add("modifier.tcompat.scorchborn.attack_damage", "Melee Damage against Damage against Lightning & Ice Dragons");
-        add("modifier.tcompat.scorchborn.projectile_damage", "Ranged Damage against Lightning & Ice Dragons");
-        add("modifier.tcompat.scorchborn.resistance", "Protection against Fire Dragon Breath");
-        add("modifier.tcompat.frostborn.attack_damage", "Melee Damage against Fire & Lightning Dragons");
-        add("modifier.tcompat.frostborn.projectile_damage", "Ranged Damage against Fire & Lightning Dragons");
-        add("modifier.tcompat.frostborn.resistance", "Protection against Ice Dragon Breath");
-        add("modifier.tcompat.voltborn.attack_damage", "Melee Damage against Fire & Ice Dragons");
-        add("modifier.tcompat.voltborn.projectile_damage", "Ranged Damage against Fire & Ice Dragons");
-        add("modifier.tcompat.voltborn.resistance", "Protection against Lightning Dragon Breath");
+        add("modifier.tcompat.scorchborn.attack_damage", "Lightning & Ice Dragon Melee Damage");
+        add("modifier.tcompat.scorchborn.projectile_damage", "Lightning & Ice Dragon Ranged Damage");
+        add("modifier.tcompat.scorchborn.resistance", "Fire Dragon Breath Protection");
+        add("modifier.tcompat.frostborn.attack_damage", "Fire & Lightning Dragon Melee Damage");
+        add("modifier.tcompat.frostborn.projectile_damage", "Fire & Lightning Dragon Ranged Damage");
+        add("modifier.tcompat.frostborn.resistance", "Ice Dragon Breath Protection");
+        add("modifier.tcompat.voltborn.attack_damage", "Fire & Ice Dragon Melee Damage");
+        add("modifier.tcompat.voltborn.projectile_damage", "Fire & Ice Dragon Ranged Damage");
+        add("modifier.tcompat.voltborn.resistance", "Lightning Dragon Breath Protection");
+
         add("modifier.tcompat.archaeologist.attack_damage", "Archaeology Melee Damage");
         add("modifier.tcompat.archaeologist.projectile_damage", "Archaeology Ranged Damage");
         add("modifier.tcompat.archaeologist.resistance", "Archaeology Protection");

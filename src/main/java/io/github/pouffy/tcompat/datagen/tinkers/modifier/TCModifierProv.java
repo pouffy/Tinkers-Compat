@@ -158,11 +158,13 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         IJsonPredicate<LivingEntity> dreadPredicate = LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:dread"));
         buildModifier(TCModifiers.dreadbane, modLoaded("iceandfire"))
                 .addModule(ConditionalMeleeDamageModule.builder().target(dreadPredicate).eachLevel(1.5f))
+                .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(dreadPredicate).eachLevel(1.75f))
                 .addModule(MobEffectModule.builder(MobEffects.WITHER).target(dreadPredicate).level(RandomLevelingValue.flat(1)).time(RandomLevelingValue.random(20, 10)).chance(LevelingValue.flat(1)).build())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         IJsonPredicate<LivingEntity> dampeningPredicate = LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:mythical"));
         buildModifier(TCModifiers.dampening, modLoaded("iceandfire"))
-                .addModule(ConditionalMeleeDamageModule.builder().target(dampeningPredicate).eachLevel(3.5f))
+                .addModule(ConditionalMeleeDamageModule.builder().target(dampeningPredicate).eachLevel(2.5f))
+                .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(dampeningPredicate).eachLevel(1.75f))
                 .addModule(MobEffectModule.builder(MobEffects.WEAKNESS).target(dampeningPredicate).level(RandomLevelingValue.flat(4)).time(RandomLevelingValue.random(20, 10)).chance(LevelingValue.flat(1)).build())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         IJsonPredicate<LivingEntity> scorchbornPredicate = LivingEntityPredicate.or(LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:lightning_dragons")), LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:ice_dragons")));
