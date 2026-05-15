@@ -28,7 +28,7 @@ public enum TCRocks implements StringRepresentable {
     CHALK(builder("regions_unexplored")),
 
     // Quark
-    LIMESTONE(builder("quark", "create")),
+    LIMESTONE(builder("quark", "create", "alexscaves")),
     JASPER(builder("quark")),
     SHALE(builder("quark")),
     PERMAFROST(builder("quark", "ad_astra")),
