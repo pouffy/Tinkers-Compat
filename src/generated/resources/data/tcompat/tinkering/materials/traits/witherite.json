@@ -1,1 +1,16 @@
-{}
+{
+  "perStat": {
+    "tconstruct:grip": [
+      {
+        "level": 1,
+        "name": "tcompat:fluxed"
+      }
+    ],
+    "tconstruct:handle": [
+      {
+        "level": 1,
+        "name": "tcompat:standstill"
+      }
+    ]
+  }
+}

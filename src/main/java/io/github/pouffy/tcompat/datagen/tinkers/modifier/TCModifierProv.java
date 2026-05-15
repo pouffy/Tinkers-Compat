@@ -28,6 +28,7 @@ import slimeknights.tconstruct.library.modifiers.modules.behavior.ReduceToolDama
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
+import slimeknights.tconstruct.library.modifiers.modules.combat.KnockbackModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
 import slimeknights.tconstruct.library.modifiers.modules.display.DurabilityBarColorModule;
 import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
@@ -194,6 +195,9 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(ancientRemnant).percent().eachLevel(0.25f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(ancientRemnant).percent().eachLevel(0.35f))
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(ancientRemnant).amount(0.75f, 0.25f));
+        buildModifier(TCModifiers.standstill, modLoaded("cataclysm"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(300)
+                .addModule(KnockbackModule.builder().formula().constant(0.0f).build());
     }
 
     @Override

@@ -176,6 +176,8 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.ghostly", "Missed me!", "Small chance to completely ignore an incoming attack. Chance increases if the attack is a projectile.");
         forModifier("modifier.tcompat.tidal", "Washed away", "When used while sneaking, it summons Waves in a Fan pattern.");
         forModifier("modifier.tcompat.archaeologist", "Belongs in a museum", "Bonus damage and protection against ancient remnants.");
+        forModifier("modifier.tcompat.standstill", "Stay right there", "Removes all knockback.");
+        forModifier("modifier.tcompat.fluxed", "Industrial Grade Combat", "Fully charged shots fire a heavy-duty Wither Rocket.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

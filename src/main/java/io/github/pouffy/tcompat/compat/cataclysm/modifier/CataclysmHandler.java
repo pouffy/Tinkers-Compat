@@ -1,17 +1,23 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier;
 
+import com.github.L_Ender.cataclysm.config.CMCommonConfig;
 import com.github.L_Ender.cataclysm.entity.effect.Wave_Entity;
-import com.github.L_Ender.cataclysm.entity.projectile.Phantom_Arrow_Entity;
-import com.github.L_Ender.cataclysm.entity.projectile.Sandstorm_Projectile;
-import com.github.L_Ender.cataclysm.entity.projectile.Void_Shard_Entity;
+import com.github.L_Ender.cataclysm.entity.projectile.*;
+import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.github.L_Ender.cataclysm.init.ModSounds;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
@@ -64,5 +70,36 @@ public class CataclysmHandler {
             WaveEntity.setYRot(-((float)(Mth.atan2(dx, dz) * (180D / Math.PI))));
             shooter.level().addFreshEntity(WaveEntity);
         }
+    }
+
+    public static Projectile createLaser(LivingEntity shooter, Vec3 vec) {
+        if (!CompatHelper.isLoaded("cataclysm")) return null;
+        Laser_Beam_Entity laser = new Laser_Beam_Entity(shooter, vec, shooter.level(), (float) CMCommonConfig.LaserGatling.damage);
+        float yRot = (float)(Mth.atan2(vec.z, vec.x) * (180D / Math.PI)) + 90.0F;
+        float xRot = (float)(-(Mth.atan2(vec.y, Math.sqrt(vec.x * vec.x + vec.z * vec.z)) * (180D / Math.PI)));
+        laser.setYRot(yRot);
+        laser.setXRot(xRot);
+        laser.setPosRaw(shooter.getX(), shooter.getY() + (double)(shooter.getEyeHeight() * 0.8F), shooter.getZ());
+        RandomSource rand = shooter.level().getRandom();
+        shooter.gameEvent(GameEvent.ITEM_INTERACT_START);
+        shooter.playSound(ModSounds.HARBINGER_LASER.get(), 0.2F, 1.0F + (rand.nextFloat() - rand.nextFloat()) * 0.2F);
+        return laser;
+    }
+
+    public static ThrowableProjectile createHowitzer(LivingEntity shooter, float power) {
+        if (!CompatHelper.isLoaded("cataclysm")) return null;
+        Wither_Howitzer_Entity howitzer = new Wither_Howitzer_Entity(ModEntities.WITHER_HOWITZER.get(), shooter.level(), shooter);
+        howitzer.setRadius(3.5F);
+        howitzer.shootFromRotation(shooter, shooter.getXRot(), shooter.getYRot(), 0.0F, power, 1.0F);
+        return howitzer;
+    }
+
+    public static Projectile createWitherMissile(LivingEntity entity, Vec3 vec3, double x, double z, float yRot, float xRot) {
+        if (!CompatHelper.isLoaded("cataclysm")) return null;
+        Wither_Missile_Entity witherMissile = new Wither_Missile_Entity(entity, vec3.normalize(), entity.level(), 16.0F);
+        witherMissile.setYRot(yRot);
+        witherMissile.setXRot(xRot);
+        witherMissile.setPosRaw(x, entity.getEyeY(), z);
+        return witherMissile;
     }
 }

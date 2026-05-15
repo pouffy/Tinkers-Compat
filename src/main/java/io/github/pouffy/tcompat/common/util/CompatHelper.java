@@ -20,6 +20,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tiers;
@@ -105,10 +106,12 @@ public class CompatHelper {
         }
     }
 
-    public static void sendCooldownMessage(Player player, ModifierEntry modifierEntry) {
-        if (ModifierCooldowns.isOnCooldown(modifierEntry.getId(), player)) {
-            Component message = Component.translatable("notification.tcompat.modifier_cooldown", modifierEntry.getModifier().getDisplayName());
-            player.displayClientMessage(message, true);
+    public static void sendCooldownMessage(LivingEntity entity, ModifierEntry modifierEntry) {
+        if (entity instanceof Player player) {
+            if (ModifierCooldowns.isOnCooldown(modifierEntry.getId(), player)) {
+                Component message = Component.translatable("notification.tcompat.modifier_cooldown", modifierEntry.getModifier().getDisplayName());
+                player.displayClientMessage(message, true);
+            }
         }
     }
 

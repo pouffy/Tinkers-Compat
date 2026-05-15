@@ -20,6 +20,7 @@ public class TCModifiers {
     public static final ModifierId cataclysmic = id("cataclysmic");
     public static final ModifierId ghostly = id("ghostly");
     public static final ModifierId archaeologist = id("archaeologist");
+    public static final ModifierId standstill = id("standstill");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");

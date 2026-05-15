@@ -109,16 +109,17 @@ public class CataclysmMaterials {
 
     public static final MaterialId witherite = MaterialBuilder.material("cataclysm", "witherite")
             .data(d -> d.tier(4).order(1).craftable(false))
-            //.traits(t -> t.trait(HandleMaterialStats.ID, CataclysmInit.fluxed))
+            .traits(t -> t.trait(GripMaterialStats.ID, CataclysmInit.fluxed).trait(HandleMaterialStats.ID, TCModifiers.standstill))
             .stats(s ->
                     s.stat(
-                            HandleMaterialStats.multipliers().durability(1.4f).build(), StatlessMaterialStats.BINDING
+                            HandleMaterialStats.multipliers().durability(1.4f).build(), StatlessMaterialStats.BINDING,
+                            new GripMaterialStats(0.14f, 0.05f, 2.0F)
                     ).statOptional(
                             CompatToolStats.plainRing(2800, 1.4f)
                     )
             )
             .renderInfo(r -> r.color(0x6e7786).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).handle().binding().transformer(complexTransformer("witherite", 1, 0xFF5e6777, 0xFF6e7786)))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).statType(GripMaterialStats.ID).handle().binding().transformer(complexTransformer("witherite", 1, 0xFF5e6777, 0xFF6e7786)))
             .buildMaterial();
 
     public static final MaterialId coral = MaterialBuilder.material("cataclysm", "coral")
@@ -170,11 +171,15 @@ public class CataclysmMaterials {
     //  Traits:
     //   - Phantasmic [Cursium, Black Steel (Team Up)] x
     //   - Tidal [Essence of the Storm, Lacrima (Team Up)] x
-    //   - Fluxed [Witherite, Iron (Team Up)]
+    //   - Fluxed [Witherite, Iron (Team Up)] x
     //   - Void Scatter [Void Jaw] x
     //   - Archaeologist [Koboleton Bone] x
     //  Modifiers:
     //   - Ignited [Armor, Req. Netherite]
+    //  Recipes:
+    //   - Melting
+    //   - Misc Casting
+    //   - Modifiers
 
 
     public static void staticInit() {}
