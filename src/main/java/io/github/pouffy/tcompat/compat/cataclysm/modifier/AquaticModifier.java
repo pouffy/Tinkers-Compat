@@ -36,9 +36,6 @@ public class AquaticModifier extends NoLevelsModifier implements ToolStatsModifi
         int fish = context.getPersistentData().getInt(fishCount);
         if(fish <= 0) return;
         float leveledValue = new LevelingValue(0.075f, 0.05f).compute(fish);
-        if (ToolStats.DURABILITY.supports(context.getItem())) {
-            StatBoostModule.StatOperation.MULTIPLY_BASE.apply(builder, ToolStats.DURABILITY, leveledValue);
-        }
         if (ToolStats.ATTACK_DAMAGE.supports(context.getItem())) {
             StatBoostModule.StatOperation.MULTIPLY_BASE.apply(builder, ToolStats.ATTACK_DAMAGE, leveledValue);
         }

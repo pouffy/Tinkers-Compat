@@ -48,7 +48,7 @@ public class TCFluids extends CompatModule {
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenCincinnasite, moltenNetherRuby; // Betternether
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenSkyjade, moltenStratus, moltenStormforgedSteel; // Deep Aether
     public static final FlowingFluidObject<ForgeFlowingFluid> fireBlood, iceBlood, lightningBlood, moltenFireDragonsteel, moltenIceDragonsteel, moltenLightningDragonsteel; // Ice and Fire
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenAncientMetal, moltenBlackSteel, moltenCursium, moltenWitherite; // Cataclysm
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenAncientMetal, moltenBlackSteel, moltenCursium, moltenWitherite, moltenIgnitium, moltenLacrima; // Cataclysm
 
 
     public static FlowingFluidObject<ForgeFlowingFluid> fireLilyMixture, frostLilyMixture, lightningLilyMixture, ambrosia;
@@ -95,6 +95,8 @@ public class TCFluids extends CompatModule {
         moltenBlackSteel = FLUIDS.registerMetal("molten_black_steel").type(hot("molten_black_steel").temperature(1100).lightLevel(3)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_BLACK, 3, 12, 3.0F)).bucket().flowing();
         moltenCursium = FLUIDS.registerMetal("molten_cursium").type(hot("molten_cursium").temperature(1500).lightLevel(11)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_CYAN, 11, 16, 5.0F)).bucket().flowing();
         moltenWitherite = FLUIDS.registerMetal("molten_witherite").type(hot("molten_witherite").temperature(1500).lightLevel(9)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_RED, 11, 16, 5.0F)).bucket().flowing();
+        moltenIgnitium = FLUIDS.registerMetal("molten_ignitium").type(hot("molten_ignitium").temperature(1750).lightLevel(14)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_ORANGE, 14, 19, 7.0F)).bucket().flowing();
+        moltenLacrima = FLUIDS.registerGem("molten_lacrima").type(hot("molten_lacrima").temperature(1230).lightLevel(10)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_LIGHT_BLUE, 10, 8, 2.0F)).bucket().flowing();
 
         fireLilyMixture = FLUIDS.register("fire_lily_mixture").type(cool("fire_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_ORANGE, 0).commonTag().flowing();
         frostLilyMixture = FLUIDS.register("frost_lily_mixture").type(cool("frost_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_LIGHT_BLUE, 0).commonTag().flowing();

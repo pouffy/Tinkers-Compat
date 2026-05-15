@@ -60,6 +60,8 @@ public class TCFluidTextureProv extends AbstractFluidTextureProvider {
         compatOre(TCFluids.moltenBlackSteel);
         compatOre(TCFluids.moltenCursium);
         compatOre(TCFluids.moltenWitherite);
+        compatOre(TCFluids.moltenIgnitium);
+        compatOre(TCFluids.moltenLacrima);
     }
 
     private FluidTexture.Builder root(FluidObject<?> fluid) {

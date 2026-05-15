@@ -3,6 +3,10 @@
     {
       "id": "#tcompat:molten_nether_ruby",
       "required": false
+    },
+    {
+      "id": "#tcompat:molten_lacrima",
+      "required": false
     }
   ]
 }

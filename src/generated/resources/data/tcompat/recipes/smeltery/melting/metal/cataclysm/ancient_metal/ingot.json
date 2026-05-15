@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/ancient_metal"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/ancient_metal"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_ancient_metal"
+  },
+  "temperature": 1050,
+  "time": 68
+}

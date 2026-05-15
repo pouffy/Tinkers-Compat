@@ -265,6 +265,23 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.LIGHTNING_DRAGONSTEEL_INGOTS).addOptional(getResource("iceandfire", "dragonsteel_lightning_ingot"));
         this.tag(TCTags.Items.LIGHTNING_DRAGONSTEEL_NUGGETS).addOptional(getResource("tcompat", "lightning_dragonsteel_nugget"));
         this.tag(TCTags.Items.LIGHTNING_DRAGONSTEEL_BLOCKS).addOptional(getResource("iceandfire", "dragonsteel_lightning_block"));
+
+        this.tag(TCTags.Items.WITHERITE_INGOTS).addOptional(getResource("cataclysm", "witherite_ingot"));
+        this.tag(TCTags.Items.WITHERITE_NUGGETS).addOptional(getResource("tcompat", "witherite_nugget"));
+        this.tag(TCTags.Items.WITHERITE_BLOCKS).addOptional(getResource("cataclysm", "witherite_block"));
+        this.tag(TCTags.Items.ANCIENT_METAL_INGOTS).addOptional(getResource("cataclysm", "ancient_metal_ingot"));
+        this.tag(TCTags.Items.ANCIENT_METAL_NUGGETS).addOptional(getResource("cataclysm", "ancient_metal_nugget"));
+        this.tag(TCTags.Items.ANCIENT_METAL_BLOCKS).addOptional(getResource("cataclysm", "ancient_metal_block"));
+        this.tag(TCTags.Items.BLACK_STEEL_INGOTS).addOptional(getResource("cataclysm", "black_steel_ingot"));
+        this.tag(TCTags.Items.BLACK_STEEL_NUGGETS).addOptional(getResource("cataclysm", "black_steel_nugget"));
+        this.tag(TCTags.Items.BLACK_STEEL_BLOCKS).addOptional(getResource("cataclysm", "black_steel_block"));
+        this.tag(TCTags.Items.IGNITIUM_INGOTS).addOptional(getResource("cataclysm", "ignitium_ingot"));
+        this.tag(TCTags.Items.IGNITIUM_NUGGETS).addOptional(getResource("tcompat", "ignitium_nugget"));
+        this.tag(TCTags.Items.IGNITIUM_BLOCKS).addOptional(getResource("cataclysm", "ignitium_block"));
+        this.tag(TCTags.Items.CURSIUM_INGOTS).addOptional(getResource("cataclysm", "cursium_ingot"));
+        this.tag(TCTags.Items.CURSIUM_NUGGETS).addOptional(getResource("tcompat", "cursium_nugget"));
+        this.tag(TCTags.Items.CURSIUM_BLOCKS).addOptional(getResource("cataclysm", "cursium_block"));
+        this.tag(TCTags.Items.LACRIMA_GEMS).addOptional(getResource("cataclysm", "lacrima"));
     }
 
     private void addMetals() {

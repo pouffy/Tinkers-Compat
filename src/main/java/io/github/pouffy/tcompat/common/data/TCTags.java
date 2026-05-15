@@ -198,6 +198,23 @@ public class TCTags {
         public static TagKey<Item> ICE_DRAGON_SCALES = local("recipe/ice_dragon_scales");
         public static TagKey<Item> LIGHTNING_DRAGON_SCALES = local("recipe/lightning_dragon_scales");
 
+        public static TagKey<Item> WITHERITE_INGOTS  = common("ingots/witherite");
+        public static TagKey<Item> WITHERITE_NUGGETS = common("nuggets/witherite");
+        public static TagKey<Item> WITHERITE_BLOCKS = common("storage_blocks/witherite");
+        public static TagKey<Item> ANCIENT_METAL_INGOTS  = common("ingots/ancient_metal");
+        public static TagKey<Item> ANCIENT_METAL_NUGGETS = common("nuggets/ancient_metal");
+        public static TagKey<Item> ANCIENT_METAL_BLOCKS = common("storage_blocks/ancient_metal");
+        public static TagKey<Item> BLACK_STEEL_INGOTS  = common("ingots/black_steel");
+        public static TagKey<Item> BLACK_STEEL_NUGGETS = common("nuggets/black_steel");
+        public static TagKey<Item> BLACK_STEEL_BLOCKS = common("storage_blocks/black_steel");
+        public static TagKey<Item> IGNITIUM_INGOTS  = common("ingots/ignitium");
+        public static TagKey<Item> IGNITIUM_NUGGETS = common("nuggets/ignitium");
+        public static TagKey<Item> IGNITIUM_BLOCKS = common("storage_blocks/ignitium");
+        public static TagKey<Item> CURSIUM_INGOTS  = common("ingots/cursium");
+        public static TagKey<Item> CURSIUM_NUGGETS = common("nuggets/cursium");
+        public static TagKey<Item> CURSIUM_BLOCKS = common("storage_blocks/cursium");
+        public static TagKey<Item> LACRIMA_GEMS = common("gems/lacrima");
+
         public static TagKey<Item> DARTS = named("aether", "darts");
 
         public static TagKey<Item> local(String name) {

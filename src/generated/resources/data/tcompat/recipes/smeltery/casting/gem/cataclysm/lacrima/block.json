@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/lacrima"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "cooling_time": 203,
+  "fluid": {
+    "amount": 900,
+    "tag": "tcompat:molten_lacrima"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/lacrima"
+  }
+}

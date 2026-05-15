@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/witherite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/witherite"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_witherite"
+  },
+  "temperature": 1200,
+  "time": 72
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/ancient_metal"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "cooling_time": 203,
+  "fluid": {
+    "amount": 810,
+    "tag": "tcompat:molten_ancient_metal"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/ancient_metal"
+  }
+}

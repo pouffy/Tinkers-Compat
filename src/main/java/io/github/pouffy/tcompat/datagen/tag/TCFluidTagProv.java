@@ -67,6 +67,8 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(TCFluids.moltenBlackSteel);
         fluidTag(TCFluids.moltenCursium);
         fluidTag(TCFluids.moltenWitherite);
+        fluidTag(TCFluids.moltenIgnitium);
+        fluidTag(TCFluids.moltenLacrima);
 
         var metals = this.tag(TinkerTags.Fluids.METAL_TOOLTIPS);
         // Aether
@@ -101,10 +103,12 @@ public class TCFluidTagProv extends FluidTagsProvider {
         metals.addOptionalTag(TCFluids.moltenBlackSteel.getTag());
         metals.addOptionalTag(TCFluids.moltenCursium.getTag());
         metals.addOptionalTag(TCFluids.moltenWitherite.getTag());
+        metals.addOptionalTag(TCFluids.moltenIgnitium.getTag());
 
         var largeGems = this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS);
         // Betternether
         largeGems.addOptionalTag(TCFluids.moltenNetherRuby.getTag());
+        largeGems.addOptionalTag(TCFluids.moltenLacrima.getTag());
 
         var soups = this.tag(MantleTags.Fluids.SOUP);
         soups.addOptionalTag(TCFluids.fireLilyMixture.getTag());

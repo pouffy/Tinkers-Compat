@@ -88,6 +88,8 @@ public class TCLangProv extends LanguageProvider {
         forFluid(TCFluids.moltenBlackSteel);
         forFluid(TCFluids.moltenCursium);
         forFluid(TCFluids.moltenWitherite);
+        forFluid(TCFluids.moltenIgnitium);
+        forFluid(TCFluids.moltenLacrima);
     }
 
     private void misc() {

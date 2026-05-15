@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/ignitium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "cooling_time": 237,
+  "fluid": {
+    "amount": 810,
+    "tag": "tcompat:molten_ignitium"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/ignitium"
+  }
+}

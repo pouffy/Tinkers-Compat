@@ -7,6 +7,7 @@ dependencies {
     modImplementation("slimeknights.tconstruct:TConstruct:${minecraft_version}-${tconstruct_version}")
 
     modExtraRuntimeOnly("curse.maven:tconjei-974154:6841685")
+    modExtraRuntimeOnly("curse.maven:blessfulled-1182590:6624691")
 
     //Annotation Processors
     annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
