@@ -119,6 +119,7 @@ public class MeltingInfo {
 
     private static final int MOLTEN_LENGTH = "molten_".length();
     public static String withoutMolten(ResourceLocation fluid) {
+        if (!fluid.getPath().startsWith("molten_")) return fluid.getPath();
         return fluid.getPath().substring(MOLTEN_LENGTH);
     }
 
