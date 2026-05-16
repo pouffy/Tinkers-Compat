@@ -178,6 +178,8 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.tide_guardian", "Sponge Muscles", "Water Breathing and increased strength when wet.");
         forModifier("modifier.tcompat.aqua_shot", "Sopping Wet", "Does extra damage when shooter is wet");
         forModifier("modifier.tcompat.leeching", "What's yours is mine", "Poisons and leeches life from target");
+        forModifier("modifier.tcompat.amphitheric", "Go Away", "Knocks all mobs back with the power of an amphithere's wings");
+        forModifier("modifier.tcompat.stymphalian", "Soar", "The metallic fletching enables the arrow to soar like a bird");
         //Cataclysm
         forModifier("modifier.tcompat.cataclysmic", "Nigh Unstoppable", "The spirits of ancient gods try to hold your tool together.");
         forModifier("modifier.tcompat.void_scatter", "Scatter!", "Upon hitting a target, the arrow shatters into multiple void shards.");

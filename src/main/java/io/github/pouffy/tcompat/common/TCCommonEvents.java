@@ -65,6 +65,13 @@ public class TCCommonEvents {
                     voidScatter.setScatter(false);
                 }
             });
+            if (hit instanceof EntityHitResult entityHitResult && entityHitResult.getEntity() instanceof LivingEntity living) {
+                Leeching.get(projectile).ifPresent(leeching -> {
+                    if (leeching.isAmphithere()) {
+                        leeching.amphithereEffect(living);
+                    }
+                });
+            }
         }
 
     }
@@ -132,7 +139,7 @@ public class TCCommonEvents {
         if (event.getSource().getEntity() instanceof Projectile projectile) {
             Leeching.get(projectile).ifPresent(leeching -> {
                 if (leeching.isLeeching()) {
-                    if (leeching.getOwner() instanceof LivingEntity living) {
+                    if (event.getSource().getDirectEntity() instanceof LivingEntity living) {
                         living.heal(event.getAmount());
                     }
                     if (entity instanceof Player player) {

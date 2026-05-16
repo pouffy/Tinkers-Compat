@@ -4,7 +4,6 @@ import io.github.pouffy.tcompat.common.network.LeechingSyncPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraftforge.network.simple.SimpleChannel;
 import org.apache.commons.lang3.tuple.Triple;
@@ -15,11 +14,14 @@ import java.util.function.Supplier;
 
 public class LeechingCapability implements Leeching {
     private final Projectile projectile;
-    private Entity owner;
     private boolean isLeeching;
+    private boolean isAmphithere;
+    private boolean isStymphalian;
 
     private final Map<String, Triple<Type, Consumer<Object>, Supplier<Object>>> synchableFunctions = Map.ofEntries(
-            Map.entry("setLeeching", Triple.of(Type.BOOLEAN, (object) -> this.setLeeching((boolean) object), this::isLeeching))
+            Map.entry("setLeeching", Triple.of(Type.BOOLEAN, (object) -> this.setLeeching((boolean) object), this::isLeeching)),
+            Map.entry("setAmphithere", Triple.of(Type.BOOLEAN, (object) -> this.setAmphithere((boolean) object), this::isAmphithere)),
+            Map.entry("setStymphalian", Triple.of(Type.BOOLEAN, (object) -> this.setStymphalian((boolean) object), this::isStymphalian))
     );
 
     public LeechingCapability(Projectile projectile) {
@@ -42,22 +44,31 @@ public class LeechingCapability implements Leeching {
     }
 
     @Override
-    public void setOwner(Entity owner) {
-        this.owner = owner;
+    public void setAmphithere(boolean isAmphithere) {
+        this.isAmphithere = isAmphithere;
     }
 
     @Override
-    public Entity getOwner() {
-        return this.owner;
+    public boolean isAmphithere() {
+        return this.isAmphithere;
+    }
+
+    @Override
+    public void setStymphalian(boolean isStymphalian) {
+        this.isStymphalian = isStymphalian;
+    }
+
+    @Override
+    public boolean isStymphalian() {
+        return this.isStymphalian;
     }
 
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
         tag.putBoolean("isLeeching", this.isLeeching());
-        if (this.getOwner() != null) {
-            tag.putInt("owner", this.getOwner().getId());
-        }
+        tag.putBoolean("isAmphithere", this.isAmphithere());
+        tag.putBoolean("isStymphalian", this.isStymphalian());
         return tag;
     }
 
@@ -66,8 +77,11 @@ public class LeechingCapability implements Leeching {
         if (tag.contains("isLeeching")) {
             this.setLeeching(tag.getBoolean("isLeeching"));
         }
-        if (tag.contains("owner")) {
-            this.setOwner(this.getProjectile().level().getEntity(tag.getInt("owner")));
+        if (tag.contains("isAmphithere")) {
+            this.setLeeching(tag.getBoolean("isAmphithere"));
+        }
+        if (tag.contains("isStymphalian")) {
+            this.setStymphalian(tag.getBoolean("isStymphalian"));
         }
     }
 

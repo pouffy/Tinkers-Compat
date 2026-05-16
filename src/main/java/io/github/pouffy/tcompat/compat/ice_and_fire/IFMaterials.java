@@ -163,6 +163,22 @@ public class IFMaterials {
             .spriteInfo(s -> s.arrowHead().fallbacks("hydra", "bone").sixColor(0xFF4f424b, 0xFF5f5d52, 0xFF81847c, 0xFF989a87, 0xFFb2bea0, 0xFFd6decb))
             .buildMaterial();
 
+    public static final MaterialId amphithereFeather = MaterialBuilder.material("iceandfire", "amphithere_feather")
+            .data(d -> d.tier(2).order(4).craftable(true))
+            .traits(t -> t.trait(IFInit.amphitheric))
+            .stats(s -> s.stat(StatlessMaterialStats.FLETCHING))
+            .renderInfo(r -> r.color(0x1a8b80).fallbacks("amphithere"))
+            .spriteInfo(s -> s.fletching().fallbacks("amphithere").sixColor(0xFF00361f, 0xFF105a37, 0xFF197956, 0xFF0d7f68, 0xFF1a8b80, 0xFF1c9b86))
+            .buildMaterial();
+
+    public static final MaterialId stymphalianBirdFeather = MaterialBuilder.material("iceandfire", "stymphalian_bird_feather")
+            .data(d -> d.tier(2).order(4).craftable(true))
+            .traits(t -> t.trait(IFInit.stymphalian))
+            .stats(s -> s.stat(StatlessMaterialStats.FLETCHING))
+            .renderInfo(r -> r.color(0x896a55).fallbacks("stymphalian"))
+            .spriteInfo(s -> s.fletching().fallbacks("stymphalian").sixColor(0xFF1f160f, 0xFF3d2b1e, 0xFF513a2a, 0xFF68503f, 0xFF896a55, 0xFFa08776))
+            .buildMaterial();
+
     private static MaterialId dragonScales(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
         var builder = MaterialBuilder.material("iceandfire", type+"_dragon_scale")
                 .data(d -> d.tier(4).order(5).craftable(true)).traits(t -> t.trait(ARMOR, IFInit.breathless))

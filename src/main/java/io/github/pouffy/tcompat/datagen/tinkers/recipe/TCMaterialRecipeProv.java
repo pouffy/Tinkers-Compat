@@ -150,6 +150,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.serpentTeal, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_scale_block_teal")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:sea_serpent_scales_teal")), folder + "sea_serpent_scales/teal_block");
         materialRecipe(iceandfire, IFMaterials.seaSerpentFang, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_fang")), 1, 1, folder + "sea_serpent_fang");
         materialRecipe(iceandfire, IFMaterials.hydraFang, ItemNameIngredient.from(TCompat.getResource("iceandfire:hydra_fang")), 1, 1, folder + "hydra_fang");
+        materialRecipe(iceandfire, IFMaterials.amphithereFeather, ItemNameIngredient.from(TCompat.getResource("iceandfire:amphithere_feather")), 1, 1, folder + "amphithere_feather");
+        materialRecipe(iceandfire, IFMaterials.stymphalianBirdFeather, ItemNameIngredient.from(TCompat.getResource("iceandfire:stymphalian_bird_feather")), 1, 1, folder + "stymphalian_bird_feather");
 
 
         metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);

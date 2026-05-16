@@ -88,6 +88,8 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(IFInit.voltThorns.getId(),                 0x974fff);
         addColor(IFInit.breathless.getId(),                 0xffc796);
         addColor(IFInit.leeching.getId(),                   0xb2bea0);
+        addColor(IFInit.amphitheric.getId(),                0x1a8b80);
+        addColor(IFInit.stymphalian.getId(),                0x896a55);
         //Species
         addColor(SpeciesInit.ricoshield.getId(),            0x59002b);
         addColor(SpeciesInit.wicked.getId(),                0xffa342);
