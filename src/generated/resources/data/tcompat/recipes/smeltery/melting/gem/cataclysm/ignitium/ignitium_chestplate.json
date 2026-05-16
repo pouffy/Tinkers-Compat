@@ -1,0 +1,33 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 800,
+      "fluid": "tconstruct:molten_diamond"
+    },
+    {
+      "amount": 90,
+      "tag": "forge:molten_netherite"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "cataclysm:ignitium_chestplate"
+    },
+    {
+      "item": "cataclysm:ignitium_elytra_chestplate"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_ignitium"
+  },
+  "temperature": 1450,
+  "time": 79
+}

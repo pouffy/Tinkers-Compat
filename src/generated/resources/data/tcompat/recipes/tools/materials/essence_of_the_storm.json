@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:essence_of_the_storm"
+  },
+  "material": "tcompat:essence_of_the_storm",
+  "needed": 1,
+  "value": 1
+}

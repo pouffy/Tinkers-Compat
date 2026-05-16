@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "byproducts": [
+    {
+      "amount": 500,
+      "fluid": "tconstruct:molten_diamond",
+      "unit_size": 25
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:monstrous_helm"
+  },
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_netherite",
+    "unit_size": 10
+  },
+  "temperature": 1250,
+  "time": 104
+}

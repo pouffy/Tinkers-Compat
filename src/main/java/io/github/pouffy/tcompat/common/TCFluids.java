@@ -2,7 +2,13 @@ package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraMaterials;
+import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
+import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxMaterials;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRMaterials;
+import io.github.pouffy.tcompat.compat.betterend.BetterendMaterials;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
+import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import io.github.pouffy.tcompat.datagen.fluid.TCFluidTextureProv;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
@@ -42,6 +48,8 @@ public class TCFluids extends CompatModule {
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenCincinnasite, moltenNetherRuby; // Betternether
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenSkyjade, moltenStratus, moltenStormforgedSteel; // Deep Aether
     public static final FlowingFluidObject<ForgeFlowingFluid> fireBlood, iceBlood, lightningBlood, moltenFireDragonsteel, moltenIceDragonsteel, moltenLightningDragonsteel; // Ice and Fire
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenAncientMetal, moltenBlackSteel, moltenCursium, moltenWitherite, moltenIgnitium, moltenLacrima; // Cataclysm
+
 
     public static FlowingFluidObject<ForgeFlowingFluid> fireLilyMixture, frostLilyMixture, lightningLilyMixture, ambrosia;
     public static FlowingFluidObject<ForgeFlowingFluid> aloeVeraJuice, whitePuffballStew, alliumOddionSoup;
@@ -82,6 +90,13 @@ public class TCFluids extends CompatModule {
         moltenFireDragonsteel = FLUIDS.registerMetal("molten_fire_dragonsteel").type(hot("molten_fire_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.FIRE, 4, 10, 6f)).bucket().flowing();
         moltenIceDragonsteel = FLUIDS.registerMetal("molten_ice_dragonsteel").type(hot("molten_ice_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.ICE, 4, 10, 6f)).bucket().flowing();
         moltenLightningDragonsteel = FLUIDS.registerMetal("molten_lightning_dragonsteel").type(hot("molten_lightning_dragonsteel").temperature(1400).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.LAPIS, 4, 10, 6f)).bucket().flowing();
+
+        moltenAncientMetal = FLUIDS.registerGem("molten_ancient_metal").type(hot("molten_ancient_metal").temperature(1350).lightLevel(3)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_ORANGE, 3, 12, 5.0F)).bucket().flowing();
+        moltenBlackSteel = FLUIDS.registerMetal("molten_black_steel").type(hot("molten_black_steel").temperature(1100).lightLevel(3)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_BLACK, 3, 12, 3.0F)).bucket().flowing();
+        moltenCursium = FLUIDS.registerMetal("molten_cursium").type(hot("molten_cursium").temperature(1500).lightLevel(11)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_CYAN, 11, 16, 5.0F)).bucket().flowing();
+        moltenWitherite = FLUIDS.registerMetal("molten_witherite").type(hot("molten_witherite").temperature(1500).lightLevel(9)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_RED, 11, 16, 5.0F)).bucket().flowing();
+        moltenIgnitium = FLUIDS.registerMetal("molten_ignitium").type(hot("molten_ignitium").temperature(1750).lightLevel(14)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_ORANGE, 14, 19, 7.0F)).bucket().flowing();
+        moltenLacrima = FLUIDS.registerGem("molten_lacrima").type(hot("molten_lacrima").temperature(1230).lightLevel(10)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_LIGHT_BLUE, 10, 8, 2.0F)).bucket().flowing();
 
         fireLilyMixture = FLUIDS.register("fire_lily_mixture").type(cool("fire_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_ORANGE, 0).commonTag().flowing();
         frostLilyMixture = FLUIDS.register("frost_lily_mixture").type(cool("frost_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_LIGHT_BLUE, 0).commonTag().flowing();
@@ -177,26 +192,26 @@ public class TCFluids extends CompatModule {
     }
 
     public static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
-        acceptCompat(output, moltenDesh, TCMaterials.desh, TCTags.Items.DESH_INGOTS);
-        acceptCompat(output, moltenCalorite, TCMaterials.calorite, TCTags.Items.CALORITE_INGOTS);
-        acceptCompat(output, moltenOstrum, TCMaterials.ostrum, TCTags.Items.OSTRUM_INGOTS);
-        acceptCompat(output, moltenZanite, TCMaterials.zanite, TCTags.Items.ZANITE_GEMS);
-        acceptCompat(output, moltenGravitite, TCMaterials.gravitite, TCTags.Items.GRAVITITE_INGOTS);
-        acceptCompat(output, moltenLightnum, TCMaterials.lightnum, TCTags.Items.LIGHTNUM_INGOTS);
-        acceptCompat(output, moltenDraculite, TCMaterials.draculite, TCTags.Items.DRACULITE_INGOTS);
-        acceptCompat(output, moltenVeridium, TCMaterials.veridium, TCTags.Items.VERIDIUM_INGOTS);
-        acceptCompat(output, moltenRefinedSentrite, TCMaterials.refinedSentrite, TCTags.Items.REFINED_SENTRITE_INGOTS);
-        acceptCompat(output, moltenPyral, TCMaterials.pyral, TCTags.Items.PYRAL_INGOTS);
-        acceptCompat(output, moltenValkyrum, TCMaterials.valkyrum, TCTags.Items.VALKYRUM_INGOTS);
-        acceptCompat(output, moltenNeptune, TCMaterials.neptune, TCTags.Items.NEPTUNE_MESH);
-        acceptCompat(output, moltenThallasium, TCMaterials.thallasium, TCTags.Items.THALLASIUM_INGOTS);
-        acceptCompat(output, moltenTerminite, TCMaterials.terminite, TCTags.Items.TERMINITE_INGOTS);
-        acceptCompat(output, moltenAeternium, TCMaterials.aeternium, TCTags.Items.AETERNIUM_INGOTS);
-        acceptCompat(output, moltenCincinnasite, TCMaterials.cincinnasite, TCTags.Items.CINCINNASITE_INGOTS);
-        acceptCompat(output, moltenNetherRuby, TCMaterials.netherRuby, TCTags.Items.NETHER_RUBY_GEMS);
-        acceptCompat(output, moltenSkyjade, TCMaterials.skyjade, TCTags.Items.SKYJADE_GEMS);
+        acceptCompat(output, moltenDesh, AdAstraMaterials.desh, TCTags.Items.DESH_INGOTS);
+        acceptCompat(output, moltenCalorite, AdAstraMaterials.calorite, TCTags.Items.CALORITE_INGOTS);
+        acceptCompat(output, moltenOstrum, AdAstraMaterials.ostrum, TCTags.Items.OSTRUM_INGOTS);
+        acceptCompat(output, moltenZanite, AetherMaterials.zanite, TCTags.Items.ZANITE_GEMS);
+        acceptCompat(output, moltenGravitite, AetherMaterials.gravitite, TCTags.Items.GRAVITITE_INGOTS);
+        acceptCompat(output, moltenLightnum, AetherMaterials.lightnum, TCTags.Items.LIGHTNUM_INGOTS);
+        acceptCompat(output, moltenDraculite, AetherMaterials.draculite, TCTags.Items.DRACULITE_INGOTS);
+        acceptCompat(output, moltenVeridium, AetherReduxMaterials.veridium, TCTags.Items.VERIDIUM_INGOTS);
+        acceptCompat(output, moltenRefinedSentrite, AetherReduxMaterials.refinedSentrite, TCTags.Items.REFINED_SENTRITE_INGOTS);
+        acceptCompat(output, moltenPyral, AetherTRMaterials.pyral, TCTags.Items.PYRAL_INGOTS);
+        acceptCompat(output, moltenValkyrum, AetherTRMaterials.valkyrum, TCTags.Items.VALKYRUM_INGOTS);
+        acceptCompat(output, moltenNeptune, AetherTRMaterials.neptune, TCTags.Items.NEPTUNE_MESH);
+        acceptCompat(output, moltenThallasium, BetterendMaterials.thallasium, TCTags.Items.THALLASIUM_INGOTS);
+        acceptCompat(output, moltenTerminite, BetterendMaterials.terminite, TCTags.Items.TERMINITE_INGOTS);
+        acceptCompat(output, moltenAeternium, BetterendMaterials.aeternium, TCTags.Items.AETERNIUM_INGOTS);
+        acceptCompat(output, moltenCincinnasite, BetternetherMaterials.cincinnasite, TCTags.Items.CINCINNASITE_INGOTS);
+        acceptCompat(output, moltenNetherRuby, BetternetherMaterials.netherRuby, TCTags.Items.NETHER_RUBY_GEMS);
+        acceptCompat(output, moltenSkyjade, DeepAetherMaterials.skyjade, TCTags.Items.SKYJADE_GEMS);
         acceptCompat(output, moltenStratus, TCTags.Items.STRATUS_INGOTS);
-        acceptCompat(output, moltenStormforgedSteel, TCMaterials.stormforgedSteel, TCTags.Items.STORMFORGED_STEEL_INGOTS);
+        acceptCompat(output, moltenStormforgedSteel, DeepAetherMaterials.stormforgedSteel, TCTags.Items.STORMFORGED_STEEL_INGOTS);
         acceptCompat(output, fireBlood, TCTags.Items.FIRE_DRAGON_SCALES);
         acceptCompat(output, iceBlood, TCTags.Items.ICE_DRAGON_SCALES);
         acceptCompat(output, lightningBlood, TCTags.Items.LIGHTNING_DRAGON_SCALES);

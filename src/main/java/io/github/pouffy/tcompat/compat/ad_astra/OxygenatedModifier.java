@@ -1,21 +1,16 @@
 package io.github.pouffy.tcompat.compat.ad_astra;
 
-import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.fluids.FluidType;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.DamageDealtModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BlockBreakModifierHook;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;

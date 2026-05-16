@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 270,
+      "fluid": "tconstruct:molten_netherite"
+    },
+    {
+      "amount": 90,
+      "fluid": "tconstruct:molten_gold"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:brontes"
+  },
+  "result": {
+    "amount": 300,
+    "fluid": "tcompat:molten_lacrima"
+  },
+  "temperature": 930,
+  "time": 117
+}

@@ -289,6 +289,14 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/highsproot",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/aether_sakura",
+      "required": false
+    },
+    {
       "id": "#tcompat:caps/aeronos",
       "required": false
     },

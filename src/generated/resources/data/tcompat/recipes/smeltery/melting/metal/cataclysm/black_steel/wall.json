@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:black_steel_wall"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tcompat:molten_black_steel"
+  },
+  "temperature": 800,
+  "time": 180
+}

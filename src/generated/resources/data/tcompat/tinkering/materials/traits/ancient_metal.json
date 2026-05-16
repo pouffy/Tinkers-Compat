@@ -1,0 +1,26 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tcompat:cataclysmic"
+      }
+    ],
+    "tconstruct:head": [
+      {
+        "level": 1,
+        "name": "tcompat:cataclysmic"
+      },
+      {
+        "level": 1,
+        "name": "tcompat:sandstorm"
+      }
+    ],
+    "tinkersjewelry:plain_ring": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:precious"
+      }
+    ]
+  }
+}

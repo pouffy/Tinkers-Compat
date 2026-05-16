@@ -1,5 +1,5 @@
 {
-  "color": "FFF4F0E5",
+  "color": "FFEEE8D6",
   "fallbacks": [
     "wood",
     "stick",
@@ -14,6 +14,7 @@
       "tconstruct:limb",
       "tconstruct:grip",
       "tconstruct:shield_core",
+      "tconstruct:arrow_shaft",
       "tconstruct:wood"
     ],
     "transformer": {

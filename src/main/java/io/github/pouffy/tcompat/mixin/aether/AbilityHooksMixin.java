@@ -2,8 +2,6 @@ package io.github.pouffy.tcompat.mixin.aether;
 
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.event.hooks.AbilityHooks;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
-import io.github.pouffy.tcompat.common.module.AetherForgedModifierHook;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.world.entity.player.Player;
@@ -14,15 +12,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
-import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.aetherteam.aether.event.hooks.AbilityHooks.ToolHooks.debuffTools;
 

@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/black_steel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/black_steel"
+  },
+  "material": "tcompat:black_steel",
+  "needed": 9,
+  "value": 1
+}

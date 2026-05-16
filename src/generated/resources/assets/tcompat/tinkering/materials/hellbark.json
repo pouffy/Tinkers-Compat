@@ -14,7 +14,6 @@
       "tconstruct:limb",
       "tconstruct:grip",
       "tconstruct:shield_core",
-      "tconstruct:wood",
       "tconstruct:arrow_shaft"
     ],
     "transformer": {
@@ -56,7 +55,6 @@
           }
         ]
       }
-    },
-    "variant": true
+    }
   }
 }

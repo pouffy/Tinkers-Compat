@@ -23,6 +23,9 @@
       "draw_speed": 0.07,
       "durability": 200,
       "velocity": -0.07
+    },
+    "tinkersjewelry:gem": {
+      "optional": true
     }
   }
 }

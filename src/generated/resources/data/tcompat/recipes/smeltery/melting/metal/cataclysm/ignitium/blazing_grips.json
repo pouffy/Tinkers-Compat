@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:blazing_grips"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_ignitium"
+  },
+  "temperature": 1450,
+  "time": 79
+}

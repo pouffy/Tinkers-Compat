@@ -37,5 +37,6 @@ public class IFInit extends CompatInitializer {
     public static void init(IEventBus eventBus) {
         IF_M.register(eventBus);
         IF_I.register(eventBus);
+        IFMaterials.staticInit();
     }
 }

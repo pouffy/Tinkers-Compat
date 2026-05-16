@@ -26,6 +26,9 @@
     },
     "tconstruct:plating_shield": {
       "durability": 54
+    },
+    "tinkersjewelry:gem": {
+      "optional": true
     }
   }
 }

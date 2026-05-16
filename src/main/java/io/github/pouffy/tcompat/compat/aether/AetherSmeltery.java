@@ -21,7 +21,6 @@ import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;

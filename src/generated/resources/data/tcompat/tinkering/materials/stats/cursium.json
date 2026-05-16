@@ -1,0 +1,9 @@
+{
+  "stats": {
+    "tconstruct:bowstring": {},
+    "tconstruct:maille": {},
+    "tinkersjewelry:gem": {
+      "optional": true
+    }
+  }
+}

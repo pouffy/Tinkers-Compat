@@ -1,24 +1,32 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "byproducts": [
     {
       "amount": 180,
-      "fluid": "tcompat:molten_ostrum"
+      "fluid": "tcompat:molten_ostrum",
+      "unit_size": 10
     },
     {
       "amount": 90,
-      "fluid": "tconstruct:molten_netherite"
+      "fluid": "tconstruct:molten_netherite",
+      "unit_size": 10
     },
     {
       "amount": 400,
-      "fluid": "tconstruct:molten_diamond"
+      "fluid": "tconstruct:molten_diamond",
+      "unit_size": 25
     },
     {
       "amount": 180,
-      "fluid": "tcompat:molten_desh"
+      "fluid": "tcompat:molten_desh",
+      "unit_size": 10
     }
   ],
   "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    },
     {
       "type": "forge:mod_loaded",
       "modid": "ad_astra"
@@ -29,7 +37,8 @@
   },
   "result": {
     "amount": 1800,
-    "fluid": "tcompat:molten_calorite"
+    "fluid": "tcompat:molten_calorite",
+    "unit_size": 10
   },
   "temperature": 1375,
   "time": 344

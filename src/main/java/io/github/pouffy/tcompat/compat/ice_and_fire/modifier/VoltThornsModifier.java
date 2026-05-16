@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
 import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
+import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -28,9 +29,7 @@ public class VoltThornsModifier extends NoLevelsModifier implements OnAttackedMo
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity attacker = (LivingEntity) source.getEntity();
         boolean canUse = false;
-        if (context.getEntity() instanceof Player player) {
-            canUse = !player.getCooldowns().isOnCooldown(tool.getItem());
-        }
+        if (ModifierCooldowns.isOnCooldown(modifier.getId(), context.getEntity())) return;
         if (attacker != null) {
             canUse = attacker.getRandom().nextIntBetweenInclusive(1, 16) < 3;
         }
@@ -47,9 +46,7 @@ public class VoltThornsModifier extends NoLevelsModifier implements OnAttackedMo
                     attacker.level().addFreshEntity(lightningBolt);
                 }
             }
-            if (context.getEntity() instanceof Player player) {
-                player.getCooldowns().addCooldown(tool.getItem(), Math.round((amount / 3) * 20));
-            }
+            ModifierCooldowns.addCooldown(modifier.getId(), Math.round((amount / 3) * 20), context.getEntity());
         }
     }
 }

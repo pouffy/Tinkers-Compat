@@ -13,6 +13,10 @@
           "modid": "create"
         },
         {
+          "type": "forge:mod_loaded",
+          "modid": "alexscaves"
+        },
+        {
           "type": "mantle:tag_filled",
           "tag": "tcompat:rocks/limestone"
         }

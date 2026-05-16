@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/ignitium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/ignitium"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_ignitium"
+  },
+  "temperature": 1450,
+  "time": 79
+}

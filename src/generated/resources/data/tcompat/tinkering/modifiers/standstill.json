@@ -1,0 +1,17 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "cataclysm"
+  },
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:knockback",
+      "formula": [
+        0.0
+      ]
+    }
+  ],
+  "priority": 300,
+  "tooltip_display": "always"
+}

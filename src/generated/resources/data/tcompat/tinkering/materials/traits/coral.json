@@ -1,0 +1,16 @@
+{
+  "perStat": {
+    "tconstruct:handle": [
+      {
+        "level": 1,
+        "name": "tcompat:aquatic"
+      }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 2,
+        "name": "tinkersjewelry:swim_gem"
+      }
+    ]
+  }
+}

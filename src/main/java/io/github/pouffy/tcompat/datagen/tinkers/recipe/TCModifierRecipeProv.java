@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.common.data.TCTags;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -82,19 +82,19 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Function<String, ResourceLocation> betternetherId = name -> getResource("betternether", name);
         Function<String, ResourceLocation> iceandfireId = name -> getResource("iceandfire", name);
 
-        ModifierRecipeBuilder.modifier(AetherInit.zanite)
+        ModifierRecipeBuilder.modifier(TCModifiers.zanite)
                 .addInput(TCTags.Items.ZANITE_GEMS)
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.UPGRADE, 1)
-                .saveSalvage(aetherConsumer, prefix(AetherInit.zanite, upgradeSalvage))
-                .save(aetherConsumer, prefix(AetherInit.zanite, upgradeFolder));
+                .saveSalvage(aetherConsumer, prefix(TCModifiers.zanite, upgradeSalvage))
+                .save(aetherConsumer, prefix(TCModifiers.zanite, upgradeFolder));
 
-        ModifierRecipeBuilder.modifier(DeepAetherInit.skyjade)
+        ModifierRecipeBuilder.modifier(TCModifiers.skyjade)
                 .addInput(TCTags.Items.SKYJADE_GEMS)
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.UPGRADE, 1)
-                .saveSalvage(deepAetherConsumer, prefix(DeepAetherInit.skyjade, upgradeSalvage))
-                .save(deepAetherConsumer, prefix(DeepAetherInit.skyjade, upgradeFolder));
+                .saveSalvage(deepAetherConsumer, prefix(TCModifiers.skyjade, upgradeSalvage))
+                .save(deepAetherConsumer, prefix(TCModifiers.skyjade, upgradeFolder));
 
         ModifierRecipeBuilder.modifier(SpeciesInit.ricoshield)
                 .setTools(TinkerTags.Items.SHIELDS)
@@ -308,7 +308,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setMaxLevel(1).checkTraitLevel()
                 .save(aetherConsumer, prefix(TCModifiers.aetherForged, folder));
 
-        TCMaterials.woodVariants.forEach((materialVariantId, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, materialVariantId));
+        MaterialBuilder.woodMaterials.forEach((builder, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, builder.variantId()));
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

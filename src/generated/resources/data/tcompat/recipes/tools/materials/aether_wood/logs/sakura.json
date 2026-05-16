@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ancient_aether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/aether_sakura"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/aether_sakura"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/aether_sakura"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/sakura"
+  },
+  "material": "tcompat:aether_wood#sakura",
+  "needed": 1,
+  "value": 4
+}

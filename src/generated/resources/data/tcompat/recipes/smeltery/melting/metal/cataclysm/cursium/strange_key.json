@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:strange_key"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_cursium"
+  },
+  "temperature": 1200,
+  "time": 72
+}

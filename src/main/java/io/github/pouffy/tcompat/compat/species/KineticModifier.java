@@ -1,12 +1,12 @@
 package io.github.pouffy.tcompat.compat.species;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntitySelector;
@@ -52,8 +52,8 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
     @Override
     public void afterStopUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int useDuration, int timeLeft, ModifierEntry activeModifier) {
         var data = tool.getPersistentData();
-        if (data.contains(STORED_DAMAGE) && data.getFloat(STORED_DAMAGE) > 0.0F) {
-            this.damageTargets(tool, entity.level(), data.getFloat(STORED_DAMAGE), entity);
+        if (data.contains(STORED_DAMAGE) && data.getFloat(STORED_DAMAGE) > 0.0F && !ModifierCooldowns.isOnCooldown(modifier.getId(), entity)) {
+            this.damageTargets(tool, modifier, entity.level(), data.getFloat(STORED_DAMAGE), entity);
         }
     }
 
@@ -62,7 +62,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
         LivingEntity self = context.getEntity();
         var data = tool.getPersistentData();
         int max = tool.getStats().getInt(ToolStats.BLOCK_AMOUNT) / 2;
-        if (amount > 0.0F && self.isDamageSourceBlocked(source)) {
+        if (amount > 0.0F && self.isDamageSourceBlocked(source) && !ModifierCooldowns.isOnCooldown(modifier.getId(), self)) {
             if (self instanceof Player player && amount > max) {
                 player.disableShield(true);
             }
@@ -73,7 +73,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
         }
     }
 
-    private void damageTargets(IToolStackView tool, Level level, float amount, LivingEntity player) {
+    private void damageTargets(IToolStackView tool, ModifierEntry modifier, Level level, float amount, LivingEntity player) {
         var data = tool.getPersistentData();
         List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(4.0F), EntitySelector.NO_CREATIVE_OR_SPECTATOR);
         if (level instanceof ServerLevel serverLevel) {
@@ -117,9 +117,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
             }
         }
 
-        if (player instanceof Player player1) {
-            player1.getCooldowns().addCooldown(tool.getItem(), (int)(data.getFloat(STORED_DAMAGE) / 4.0F) * 20);
-        }
+        ModifierCooldowns.addCooldown(modifier.getId(), (int)(data.getFloat(STORED_DAMAGE) / 4.0F) * 20, player);
 
         data.putFloat(STORED_DAMAGE, 0.0F);
     }

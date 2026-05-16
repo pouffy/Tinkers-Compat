@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
-import io.github.pouffy.tcompat.common.capability.frozen.Frozen;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -32,7 +32,7 @@ public class IcedModifier extends NoLevelsModifier implements MeleeHitModifierHo
         LivingEntity attacker = context.getAttacker();
 
         if (target != null && context.isFullyCharged()) {
-            Frozen.get(target).ifPresent((frozen) -> frozen.freeze(200));
+            if (CompatHelper.isLoaded("iceandfire")) IceFireHandler.freeze(target, 200);
             target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
             target.knockback(1.0, attacker.getX() - target.getX(), attacker.getZ() - target.getZ());
@@ -44,7 +44,7 @@ public class IcedModifier extends NoLevelsModifier implements MeleeHitModifierHo
         boolean flag = notBlocked;
         if (projectile instanceof AbstractArrow arrow && !arrow.isCritArrow()) flag = false;
         if (target != null && flag) {
-            Frozen.get(target).ifPresent((frozen) -> frozen.freeze(200));
+            if (CompatHelper.isLoaded("iceandfire")) IceFireHandler.freeze(target, 200);
             target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
         }

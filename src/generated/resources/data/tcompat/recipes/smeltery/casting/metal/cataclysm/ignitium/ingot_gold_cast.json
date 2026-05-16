@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/ignitium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "cooling_time": 79,
+  "fluid": {
+    "amount": 90,
+    "tag": "tcompat:molten_ignitium"
+  },
+  "result": {
+    "tag": "forge:ingots/ignitium"
+  }
+}

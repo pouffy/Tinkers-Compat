@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.compat;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.module.AetherForgedModifierHook;
 import io.github.pouffy.tcompat.common.module.AetherForgedModule;
+import io.github.pouffy.tcompat.common.module.ToolSwingModifierHook;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
 import io.github.pouffy.tcompat.compat.ice_and_fire.item.ModifiableGlaiveItem;
 import net.minecraft.core.registries.Registries;
@@ -15,12 +16,14 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.RegisterEvent;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.build.ValidateModifierHook;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.helper.ToolBuildHandler;
-import slimeknights.tconstruct.tools.modules.interaction.BrushModule;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import java.util.function.Consumer;
 
@@ -29,7 +32,18 @@ public class GlobalInit extends CompatInitializer {
 
     public static final ItemObject<ModifiableGlaiveItem> glaive = ITEMS.register("glaive", () -> new ModifiableGlaiveItem(new Item.Properties().stacksTo(1), GlobalDefinitions.glaive));
 
-    public static final ModuleHook<AetherForgedModifierHook> AETHER_FORGED = ModifierHooks.register(TCompat.getResource("aether_forged"), AetherForgedModifierHook.class, (toolStackView, modifierEntry) -> true);
+    public static final ModuleHook<AetherForgedModifierHook> AETHER_FORGED = ModifierHooks.register(TCompat.getResource("aether_forged"), AetherForgedModifierHook.class, new AetherForgedModifierHook() {
+        @Override
+        public boolean canUse(IToolStackView toolStackView, ModifierEntry modifierEntry) {
+            return true;
+        }
+
+        @Override
+        public boolean canProjectileUse(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifierEntry) {
+            return true;
+        }
+    });
+    public static final ModuleHook<ToolSwingModifierHook> TOOL_SWING = ModifierHooks.register(TCompat.getResource("tool_swing"), ToolSwingModifierHook.class, ToolSwingModifierHook.AllMerger::new, (toolStackView, modifierEntry, stack, player) -> false);
 
     @SubscribeEvent
     void commonSetup(final FMLCommonSetupEvent event) {
@@ -50,5 +64,7 @@ public class GlobalInit extends CompatInitializer {
 
     public static void init(IEventBus eventBus) {
         ITEMS.register(eventBus);
+        WoodMaterials.staticInit();
+        RockMaterials.staticInit();
     }
 }

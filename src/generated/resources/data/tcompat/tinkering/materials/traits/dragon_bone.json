@@ -4,5 +4,13 @@
       "level": 1,
       "name": "tconstruct:firestarter"
     }
-  ]
+  ],
+  "perStat": {
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:flame_gem"
+      }
+    ]
+  }
 }

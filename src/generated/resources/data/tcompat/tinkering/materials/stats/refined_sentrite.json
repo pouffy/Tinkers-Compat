@@ -1,5 +1,10 @@
 {
   "stats": {
+    "tconstruct:grip": {
+      "accuracy": 0.15,
+      "durability": 0.02,
+      "melee_damage": 3.5
+    },
     "tconstruct:head": {
       "durability": 1126,
       "melee_attack": 3.5,
@@ -35,6 +40,11 @@
       "durability": 468,
       "knockback_resistance": 1.0,
       "toughness": 0.8
+    },
+    "tinkersjewelry:plain_ring": {
+      "amplification": 1.2,
+      "durability": 1126,
+      "optional": true
     }
   }
 }

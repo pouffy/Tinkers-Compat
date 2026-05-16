@@ -7,6 +7,7 @@ import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRSmelter
 import io.github.pouffy.tcompat.compat.betterend.BetterEndSmeltery;
 import io.github.pouffy.tcompat.compat.betternether.BetterNetherSmeltery;
 import io.github.pouffy.tcompat.compat.bwg.BWGSmeltery;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmSmeltery;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherSmeltery;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFSmeltery;
 import io.github.pouffy.tcompat.compat.species.SpeciesSmeltery;
@@ -40,5 +41,6 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         new BetterNetherSmeltery().addRecipes(consumer, folder);
         new IFSmeltery().addRecipes(consumer, folder);
         new BWGSmeltery().addRecipes(consumer, folder);
+        new CataclysmSmeltery().addRecipes(consumer, folder);
     }
 }

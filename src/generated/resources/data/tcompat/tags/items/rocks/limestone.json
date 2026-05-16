@@ -15,6 +15,14 @@
     {
       "id": "#create:limestone_rocks",
       "required": false
+    },
+    {
+      "id": "alexscaves:limestone",
+      "required": false
+    },
+    {
+      "id": "#alexscaves:limestone_rocks",
+      "required": false
     }
   ]
 }

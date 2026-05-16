@@ -15,6 +15,15 @@
       }
     },
     {
+      "type": "tconstruct:conditional_power",
+      "each_level": 1.75,
+      "percent": false,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "tcompat:dread"
+      }
+    },
+    {
       "type": "tconstruct:mob_effect",
       "chance": {
         "flat": 1.0

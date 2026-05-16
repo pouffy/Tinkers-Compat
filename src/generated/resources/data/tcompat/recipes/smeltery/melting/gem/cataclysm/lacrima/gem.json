@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/lacrima"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/lacrima"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "tcompat:molten_lacrima"
+  },
+  "temperature": 930,
+  "time": 64
+}

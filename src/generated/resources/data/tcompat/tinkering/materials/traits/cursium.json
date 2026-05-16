@@ -1,0 +1,26 @@
+{
+  "perStat": {
+    "tconstruct:bowstring": [
+      {
+        "level": 1,
+        "name": "tcompat:phantasmic"
+      }
+    ],
+    "tconstruct:maille": [
+      {
+        "level": 1,
+        "name": "tcompat:cataclysmic"
+      },
+      {
+        "level": 1,
+        "name": "tcompat:ghostly"
+      }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:glowing_gem"
+      }
+    ]
+  }
+}

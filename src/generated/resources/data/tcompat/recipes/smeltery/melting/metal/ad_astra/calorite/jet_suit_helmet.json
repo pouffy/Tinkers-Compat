@@ -1,28 +1,37 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "byproducts": [
     {
       "amount": 200,
-      "fluid": "tconstruct:molten_amethyst"
+      "fluid": "tconstruct:molten_amethyst",
+      "unit_size": 25
     },
     {
       "amount": 1500,
-      "fluid": "tconstruct:molten_glass"
+      "fluid": "tconstruct:molten_glass",
+      "unit_size": 250
     },
     {
       "amount": 360,
-      "fluid": "tcompat:molten_ostrum"
+      "fluid": "tcompat:molten_ostrum",
+      "unit_size": 10
     },
     {
       "amount": 90,
-      "fluid": "tconstruct:molten_netherite"
+      "fluid": "tconstruct:molten_netherite",
+      "unit_size": 10
     },
     {
       "amount": 500,
-      "fluid": "tconstruct:molten_diamond"
+      "fluid": "tconstruct:molten_diamond",
+      "unit_size": 25
     }
   ],
   "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    },
     {
       "type": "forge:mod_loaded",
       "modid": "ad_astra"
@@ -33,7 +42,8 @@
   },
   "result": {
     "amount": 360,
-    "fluid": "tcompat:molten_calorite"
+    "fluid": "tcompat:molten_calorite",
+    "unit_size": 10
   },
   "temperature": 1375,
   "time": 154

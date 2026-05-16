@@ -6,10 +6,11 @@
   ],
   "generator": {
     "supported_stats": [
+      "tconstruct:repair_kit",
+      "tinkersjewelry:plain_ring",
       "tconstruct:head",
       "tconstruct:handle",
       "tconstruct:binding",
-      "tconstruct:repair_kit",
       "tconstruct:limb",
       "tconstruct:grip",
       "tconstruct:armor_plating",

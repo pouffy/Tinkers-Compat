@@ -1,7 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.tool;
 
 import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.tinkering.AbstractStationSlotLayoutProvider;
 import slimeknights.tconstruct.tools.TinkerToolParts;
@@ -18,7 +17,7 @@ public class TCStationLayoutProv extends AbstractStationSlotLayoutProvider {
                 .addInputItem(TinkerToolParts.smallBlade,  45, 26)
                 .addInputItem(TinkerToolParts.toughHandle,  9, 62)
                 .addInputItem(TinkerToolParts.toughHandle, 27, 44)
-                .addInputItem(TinkerToolParts.toolBinding,  27, 62)
+                .addInputItem(TinkerToolParts.toolBinding,  45, 44)
                 .build();
     }
 

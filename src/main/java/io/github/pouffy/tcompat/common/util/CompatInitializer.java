@@ -4,11 +4,10 @@ import io.github.pouffy.tcompat.TCompat;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fml.ModList;
@@ -24,7 +23,6 @@ import java.util.Optional;
 import java.util.function.Supplier;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
-import static slimeknights.mantle.Mantle.commonResource;
 
 public class CompatInitializer {
 

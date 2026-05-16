@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 180,
+      "fluid": "tcompat:molten_cursium"
+    },
+    {
+      "amount": 90,
+      "fluid": "tcompat:molten_black_steel"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:wrath_of_the_desert"
+  },
+  "result": {
+    "amount": 1000,
+    "fluid": "tconstruct:molten_glass"
+  },
+  "temperature": 750,
+  "time": 195
+}

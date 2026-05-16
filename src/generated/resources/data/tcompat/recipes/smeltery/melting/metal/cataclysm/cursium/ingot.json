@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/cursium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/cursium"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_cursium"
+  },
+  "temperature": 1200,
+  "time": 72
+}

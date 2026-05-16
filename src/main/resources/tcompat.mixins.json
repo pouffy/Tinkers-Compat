@@ -12,7 +12,8 @@
     "TinkerCommonTabMixin",
     "TinkerFluidTabMixin",
     "TinkerToolsTabMixin",
-    "aether.AbilityHooksMixin"
+    "aether.AbilityHooksMixin",
+    "aether.WeaponHooksMixin"
   ],
   "client": [
   ],

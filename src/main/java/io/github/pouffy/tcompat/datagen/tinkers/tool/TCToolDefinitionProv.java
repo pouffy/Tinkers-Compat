@@ -56,7 +56,7 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
                 .module(new MultiplyStatsModule(MultiplierNBT.builder()
                         .set(ToolStats.ATTACK_DAMAGE, 1.5f)
                         .set(ToolStats.MINING_SPEED, 0.25f)
-                        .set(ToolStats.DURABILITY, 3.5f).build()))
+                        .set(ToolStats.DURABILITY, 1.5f).build()))
                 .largeToolStartingSlots()
                 // traits
                 .module(ToolTraitsModule.builder()

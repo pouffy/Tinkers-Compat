@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "input": "tcompat:ancient_metal",
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_ancient_metal"
+  },
+  "temperature": 1050
+}

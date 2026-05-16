@@ -5,6 +5,11 @@
       "melee_attack": 4.0,
       "mining_speed": 8.0,
       "mining_tier": "minecraft:diamond"
+    },
+    "tinkersjewelry:plain_ring": {
+      "amplification": 1.2,
+      "durability": 503,
+      "optional": true
     }
   }
 }

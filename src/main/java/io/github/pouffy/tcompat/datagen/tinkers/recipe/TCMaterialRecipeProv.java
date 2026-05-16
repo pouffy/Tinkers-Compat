@@ -2,18 +2,21 @@ package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.TCFluids;
-import io.github.pouffy.tcompat.common.data.TCTags;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCRocks;
-import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
-import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
-import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
-import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
-import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
-import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
 import io.github.pouffy.tcompat.common.material.TCWoods;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
+import io.github.pouffy.tcompat.compat.RockMaterials;
+import io.github.pouffy.tcompat.compat.WoodMaterials;
+import io.github.pouffy.tcompat.compat.ad_astra.AdAstraMaterials;
+import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
+import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxMaterials;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRMaterials;
+import io.github.pouffy.tcompat.compat.betterend.BetterendMaterials;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmMaterials;
+import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IFMaterials;
+import io.github.pouffy.tcompat.compat.species.SpeciesMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -31,7 +34,6 @@ import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -68,21 +70,21 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> adAstraConsumer = withCondition(consumer, modLoaded("ad_astra"));
         Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
-        List<MaterialVariantId> noPlanks = List.of(TCMaterials.paloVerde);
+        Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
 
         // Streamline variant recipes
-        TCMaterials.woodVariants.forEach((materialVariantId, woodType) -> {
+        MaterialBuilder.woodMaterials.forEach((builder, woodType) -> {
             if (woodType.hasPlanks())
-                planksVariantRecipe(woodType.makeConsumer(consumer), woodType, materialVariantId);
+                planksVariantRecipe(woodType.makeConsumer(consumer), woodType, builder.variantId());
             if (woodType.hasLogs())
-                logVariantRecipe(woodType.makeConsumer(consumer), woodType, materialVariantId);
+                logVariantRecipe(woodType.makeConsumer(consumer), woodType, builder.variantId());
         });
 
-        TCMaterials.rockVariants.forEach((materialVariantId, rockType) -> rockVariantRecipe(rockType.makeConsumer(consumer), rockType, materialVariantId));
+        MaterialBuilder.rockMaterials.forEach((builder, rockType) -> rockVariantRecipe(rockType.makeConsumer(consumer), rockType, builder.variantId()));
 
-        planksRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
-        logRecipe(bopConsumer, TCWoods.HELLBARK, TCMaterials.hellbark);
-        materialRecipe(consumer, TCMaterials.dripstone, ItemNameIngredient.from(getResource("minecraft:pointed_dripstone")), 1, 1, folder + "rock/%s".formatted("pointed_dripstone"));
+        planksRecipe(TCWoods.HELLBARK.makeConsumer(consumer), TCWoods.HELLBARK, WoodMaterials.hellbark);
+        logRecipe(TCWoods.HELLBARK.makeConsumer(consumer), TCWoods.HELLBARK, WoodMaterials.hellbark);
+        materialRecipe(consumer, RockMaterials.dripstone, ItemNameIngredient.from(getResource("minecraft:pointed_dripstone")), 1, 1, folder + "rock/%s".formatted("pointed_dripstone"));
 
         materialRecipe(withCondition(consumer, modLoaded("quark")), MaterialIds.cactus, ItemNameIngredient.from(getResource("quark:cactus_block")), 9, 1, folder + "cactus/block");
         materialRecipe(withCondition(consumer, modLoaded("regions_unexplored")), MaterialIds.cactus, ItemNameIngredient.from(getResource("regions_unexplored:barrel_cactus"), getResource("regions_unexplored:saguaro_cactus")), 1, 1, folder + "cactus/regions_unexplored");
@@ -91,60 +93,70 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(withCondition(consumer, modLoaded("biomesoplenty")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomesoplenty:barrel_cactus")), 1, 2, folder + "cactus/small/biomesoplenty");
 
 
-        materialRecipe(aetherConsumer, TCMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
+        materialRecipe(aetherConsumer, AetherMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
 
         //Material Parts
-        metalMaterialRecipe(aetherConsumer, TCMaterials.gravitite, folder, "gravitite", true);
-        //gemMaterialRecipe(aetherConsumer, TCMaterials.zanite, folder, "zanite", true, false, true);
-        metalMaterialRecipe(aetherConsumer, TCMaterials.lightnum, folder, "lightnum", true);
-        metalMaterialRecipe(aetherConsumer, TCMaterials.draculite, folder, "draculite", true);
+        metalMaterialRecipe(aetherConsumer, AetherMaterials.gravitite, folder, "gravitite", true);
+        metalMaterialRecipe(aetherConsumer, AetherMaterials.lightnum, folder, "lightnum", true);
+        metalMaterialRecipe(aetherConsumer, AetherMaterials.draculite, folder, "draculite", true);
 
-        metalMaterialRecipe(iceandfire, TCMaterials.fireDragonsteel, folder, "fire_dragonsteel", true);
-        metalMaterialRecipe(iceandfire, TCMaterials.iceDragonsteel, folder, "ice_dragonsteel", true);
-        metalMaterialRecipe(iceandfire, TCMaterials.lightningDragonsteel, folder, "lightning_dragonsteel", true);
-        materialRecipe(iceandfire, TCMaterials.dragonBronze, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_bronze")), 1, 1, folder + "dragon_scales/fire/bronze");
-        materialRecipe(iceandfire, TCMaterials.dragonGreen, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_green")), 1, 1, folder + "dragon_scales/fire/green");
-        materialRecipe(iceandfire, TCMaterials.dragonGray, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_gray")), 1, 1, folder + "dragon_scales/fire/gray");
-        materialRecipe(iceandfire, TCMaterials.dragonRed, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_red")), 1, 1, folder + "dragon_scales/fire/red");
-        materialRecipe(iceandfire, TCMaterials.dragonBlue, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_blue")), 1, 1, folder + "dragon_scales/ice/blue");
-        materialRecipe(iceandfire, TCMaterials.dragonSapphire, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_sapphire")), 1, 1, folder + "dragon_scales/ice/sapphire");
-        materialRecipe(iceandfire, TCMaterials.dragonSilver, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_silver")), 1, 1, folder + "dragon_scales/ice/silver");
-        materialRecipe(iceandfire, TCMaterials.dragonWhite, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_white")), 1, 1, folder + "dragon_scales/ice/white");
-        materialRecipe(iceandfire, TCMaterials.dragonAmethyst, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_amythest")), 1, 1, folder + "dragon_scales/lightning/amethyst");
-        materialRecipe(iceandfire, TCMaterials.dragonBlack, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_black")), 1, 1, folder + "dragon_scales/lightning/black");
-        materialRecipe(iceandfire, TCMaterials.dragonCopper, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_copper")), 1, 1, folder + "dragon_scales/lightning/copper");
-        materialRecipe(iceandfire, TCMaterials.dragonElectric, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_electric")), 1, 1, folder + "dragon_scales/lightning/electric");
-        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonbone")), 1, 1, folder + "dragon_bone/bone");
-        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_fire")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/fire_skull");
-        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_ice")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/ice_skull");
-        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_lightning")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/lightning_skull");
-        materialRecipe(iceandfire, TCMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_bone_block")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/block");
+        metalMaterialRecipe(iceandfire, IFMaterials.fireDragonsteel, folder, "fire_dragonsteel", true);
+        metalMaterialRecipe(iceandfire, IFMaterials.iceDragonsteel, folder, "ice_dragonsteel", true);
+        metalMaterialRecipe(iceandfire, IFMaterials.lightningDragonsteel, folder, "lightning_dragonsteel", true);
+        materialRecipe(iceandfire, IFMaterials.dragonBronze, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_bronze")), 1, 1, folder + "dragon_scales/fire/bronze");
+        materialRecipe(iceandfire, IFMaterials.dragonGreen, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_green")), 1, 1, folder + "dragon_scales/fire/green");
+        materialRecipe(iceandfire, IFMaterials.dragonGray, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_gray")), 1, 1, folder + "dragon_scales/fire/gray");
+        materialRecipe(iceandfire, IFMaterials.dragonRed, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_red")), 1, 1, folder + "dragon_scales/fire/red");
+        materialRecipe(iceandfire, IFMaterials.dragonBlue, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_blue")), 1, 1, folder + "dragon_scales/ice/blue");
+        materialRecipe(iceandfire, IFMaterials.dragonSapphire, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_sapphire")), 1, 1, folder + "dragon_scales/ice/sapphire");
+        materialRecipe(iceandfire, IFMaterials.dragonSilver, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_silver")), 1, 1, folder + "dragon_scales/ice/silver");
+        materialRecipe(iceandfire, IFMaterials.dragonWhite, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_white")), 1, 1, folder + "dragon_scales/ice/white");
+        materialRecipe(iceandfire, IFMaterials.dragonAmethyst, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_amythest")), 1, 1, folder + "dragon_scales/lightning/amethyst");
+        materialRecipe(iceandfire, IFMaterials.dragonBlack, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_black")), 1, 1, folder + "dragon_scales/lightning/black");
+        materialRecipe(iceandfire, IFMaterials.dragonCopper, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_copper")), 1, 1, folder + "dragon_scales/lightning/copper");
+        materialRecipe(iceandfire, IFMaterials.dragonElectric, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonscales_electric")), 1, 1, folder + "dragon_scales/lightning/electric");
+        materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragonbone")), 1, 1, folder + "dragon_bone/bone");
+        materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_fire")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/fire_skull");
+        materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_ice")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/ice_skull");
+        materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_lightning")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/lightning_skull");
+        materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_bone_block")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/block");
         materialRecipe(iceandfire, MaterialIds.necroticBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:witherbone")), 1, 1, folder + "wither_bone");
 
+        metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);
+        metalMaterialRecipe(cataclysm, CataclysmMaterials.blackSteel, folder, "black_steel", true);
+        metalMaterialRecipe(cataclysm, CataclysmMaterials.cursium, folder, "cursium", true);
+        metalMaterialRecipe(cataclysm, CataclysmMaterials.witherite, folder, "witherite", true);
+        materialRecipe(iceandfire, CataclysmMaterials.lacrima, ItemNameIngredient.from(TCompat.getResource("cataclysm:lacrima")), 1, 1, folder + "lacrima");
+        materialRecipe(iceandfire, CataclysmMaterials.essenceOfTheStorm, ItemNameIngredient.from(TCompat.getResource("cataclysm:essence_of_the_storm")), 1, 1, folder + "essence_of_the_storm");
+        materialRecipe(iceandfire, CataclysmMaterials.coral, ItemNameIngredient.from(TCompat.getResource("cataclysm:coral_chunk")), 1, 1, folder + "coral");
+        materialRecipe(iceandfire, CataclysmMaterials.voidJaw, ItemNameIngredient.from(TCompat.getResource("cataclysm:void_jaw")), 1, 1, folder + "void_jaw");
+        materialRecipe(iceandfire, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:koboleton_bone")), 1, 1, folder + "koboleton_bone/bone");
+        materialRecipe(iceandfire, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:kobolediator_skull")), 8, 1, folder + "koboleton_bone/skull");
+
         //gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
-        metalMaterialRecipe(deepAetherConsumer, TCMaterials.stormforgedSteel, folder, "stormforged_steel", true);
+        metalMaterialRecipe(deepAetherConsumer, DeepAetherMaterials.stormforgedSteel, folder, "stormforged_steel", true);
 
-        metalMaterialRecipe(aetherReduxConsumer, TCMaterials.veridium, folder, "veridium", true);
-        metalMaterialRecipe(aetherReduxConsumer, TCMaterials.refinedSentrite, folder, "refined_sentrite", true);
-        materialRecipe(aetherReduxConsumer, TCMaterials.blightbunnyFang, ItemNameIngredient.from(TCompat.getResource("aether_redux:blightbunny_fang")), 1, 1, folder + "blightbunny_fang");
-        materialRecipe(aetherReduxConsumer, TCMaterials.mykapodShell, ItemNameIngredient.from(TCompat.getResource("aether_redux:mykapod_shell_chunk")), 1, 1, folder + "mykapod_shell_chunk");
+        metalMaterialRecipe(aetherReduxConsumer, AetherReduxMaterials.veridium, folder, "veridium", true);
+        metalMaterialRecipe(aetherReduxConsumer, AetherReduxMaterials.refinedSentrite, folder, "refined_sentrite", true);
+        materialRecipe(aetherReduxConsumer, AetherReduxMaterials.blightbunnyFang, ItemNameIngredient.from(TCompat.getResource("aether_redux:blightbunny_fang")), 1, 1, folder + "blightbunny_fang");
+        materialRecipe(aetherReduxConsumer, AetherReduxMaterials.mykapodShell, ItemNameIngredient.from(TCompat.getResource("aether_redux:mykapod_shell_chunk")), 1, 1, folder + "mykapod_shell_chunk");
 
-        metalMaterialRecipe(aetherTreasureConsumer, TCMaterials.pyral, folder, "pyral", true);
-        metalMaterialRecipe(aetherTreasureConsumer, TCMaterials.valkyrum, folder, "valkyrum", true);
-        materialRecipe(aetherTreasureConsumer, TCMaterials.neptune, ItemNameIngredient.from(TCompat.getResource("aether_treasure_reforging:neptune_mesh")), 1, 1, folder + "neptune/mesh");
+        metalMaterialRecipe(aetherTreasureConsumer, AetherTRMaterials.pyral, folder, "pyral", true);
+        metalMaterialRecipe(aetherTreasureConsumer, AetherTRMaterials.valkyrum, folder, "valkyrum", true);
+        materialRecipe(aetherTreasureConsumer, AetherTRMaterials.neptune, ItemNameIngredient.from(TCompat.getResource("aether_treasure_reforging:neptune_mesh")), 1, 1, folder + "neptune/mesh");
 
-        metalMaterialRecipe(adAstraConsumer, TCMaterials.desh, folder, "desh", true);
-        metalMaterialRecipe(adAstraConsumer, TCMaterials.calorite, folder, "calorite", true);
-        metalMaterialRecipe(adAstraConsumer, TCMaterials.ostrum, folder, "ostrum", true);
+        metalMaterialRecipe(adAstraConsumer, AdAstraMaterials.desh, folder, "desh", true);
+        metalMaterialRecipe(adAstraConsumer, AdAstraMaterials.calorite, folder, "calorite", true);
+        metalMaterialRecipe(adAstraConsumer, AdAstraMaterials.ostrum, folder, "ostrum", true);
 
-        metalMaterialRecipe(betterend, TCMaterials.thallasium, folder, "thallasium", true);
-        metalMaterialRecipe(betterend, TCMaterials.terminite, folder, "terminite", true);
-        metalMaterialRecipe(betterend, TCMaterials.aeternium, folder, "aeternium", true);
+        metalMaterialRecipe(betterend, BetterendMaterials.thallasium, folder, "thallasium", true);
+        metalMaterialRecipe(betterend, BetterendMaterials.terminite, folder, "terminite", true);
+        metalMaterialRecipe(betterend, BetterendMaterials.aeternium, folder, "aeternium", true);
 
-        metalMaterialRecipe(betterend, TCMaterials.cincinnasite, folder, "cincinnasite", true);
-        gemMaterialRecipe(betterend, TCMaterials.netherRuby, folder, "nether_ruby", true, false, true);
+        metalMaterialRecipe(betterend, BetternetherMaterials.cincinnasite, folder, "cincinnasite", true);
+        gemMaterialRecipe(betterend, BetternetherMaterials.netherRuby, folder, "nether_ruby", true, false, true);
 
-        materialRecipe(speciesConsumer, TCMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
+        materialRecipe(speciesConsumer, SpeciesMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
@@ -157,36 +169,44 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
         Consumer<FinishedRecipe> betternether = withCondition(consumer, modLoaded("betternether"));
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
+        Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
 
         //materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
-        materialMelting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
-        materialMeltingCasting(aetherConsumer, TCMaterials.gravitite, TCFluids.moltenGravitite, folder);
-        materialMeltingCasting(aetherConsumer, TCMaterials.lightnum, TCFluids.moltenLightnum, folder);
-        materialMeltingCasting(aetherConsumer, TCMaterials.draculite, TCFluids.moltenDraculite, folder);
+        materialMelting(aetherConsumer, AetherMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
+        materialMeltingCasting(aetherConsumer, AetherMaterials.gravitite, TCFluids.moltenGravitite, folder);
+        materialMeltingCasting(aetherConsumer, AetherMaterials.lightnum, TCFluids.moltenLightnum, folder);
+        materialMeltingCasting(aetherConsumer, AetherMaterials.draculite, TCFluids.moltenDraculite, folder);
         //materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
-        materialMelting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
-        materialMeltingCasting(deepAetherConsumer, TCMaterials.stormforgedSteel, TCFluids.moltenStormforgedSteel, folder);
-        materialMeltingCasting(aetherReduxConsumer, TCMaterials.veridium, TCFluids.moltenVeridium, folder);
-        materialMeltingCasting(aetherReduxConsumer, TCMaterials.refinedSentrite, TCFluids.moltenRefinedSentrite, folder);
+        materialMelting(deepAetherConsumer, DeepAetherMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
+        materialMeltingCasting(deepAetherConsumer, DeepAetherMaterials.stormforgedSteel, TCFluids.moltenStormforgedSteel, folder);
+        materialMeltingCasting(aetherReduxConsumer, AetherReduxMaterials.veridium, TCFluids.moltenVeridium, folder);
+        materialMeltingCasting(aetherReduxConsumer, AetherReduxMaterials.refinedSentrite, TCFluids.moltenRefinedSentrite, folder);
 
-        materialMeltingCasting(adAstraConsumer, TCMaterials.desh, TCFluids.moltenDesh, FluidValues.INGOT, folder);
-        materialMeltingCasting(adAstraConsumer, TCMaterials.calorite, TCFluids.moltenCalorite, FluidValues.INGOT, folder);
-        materialMeltingCasting(adAstraConsumer, TCMaterials.ostrum, TCFluids.moltenOstrum, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, AdAstraMaterials.desh, TCFluids.moltenDesh, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, AdAstraMaterials.calorite, TCFluids.moltenCalorite, FluidValues.INGOT, folder);
+        materialMeltingCasting(adAstraConsumer, AdAstraMaterials.ostrum, TCFluids.moltenOstrum, FluidValues.INGOT, folder);
 
-        materialMeltingCasting(betterend, TCMaterials.thallasium, TCFluids.moltenThallasium, FluidValues.INGOT, folder);
-        materialMeltingCasting(betterend, TCMaterials.terminite, TCFluids.moltenTerminite, FluidValues.INGOT, folder);
-        materialMeltingCasting(betterend, TCMaterials.aeternium, TCFluids.moltenAeternium, FluidValues.INGOT, folder);
+        materialMeltingCasting(betterend, BetterendMaterials.thallasium, TCFluids.moltenThallasium, FluidValues.INGOT, folder);
+        materialMeltingCasting(betterend, BetterendMaterials.terminite, TCFluids.moltenTerminite, FluidValues.INGOT, folder);
+        materialMeltingCasting(betterend, BetterendMaterials.aeternium, TCFluids.moltenAeternium, FluidValues.INGOT, folder);
 
-        materialMeltingCasting(betternether, TCMaterials.cincinnasite, TCFluids.moltenCincinnasite, FluidValues.INGOT, folder);
-        materialMeltingCasting(betternether, TCMaterials.netherRuby, TCFluids.moltenNetherRuby, FluidValues.GEM, folder);
+        materialMeltingCasting(betternether, BetternetherMaterials.cincinnasite, TCFluids.moltenCincinnasite, FluidValues.INGOT, folder);
+        materialMeltingCasting(betternether, BetternetherMaterials.netherRuby, TCFluids.moltenNetherRuby, FluidValues.GEM, folder);
 
-        materialMeltingCasting(iceandfire, TCMaterials.fireDragonsteel, TCFluids.moltenFireDragonsteel, FluidValues.INGOT, folder);
-        materialMeltingCasting(iceandfire, TCMaterials.iceDragonsteel, TCFluids.moltenIceDragonsteel, FluidValues.INGOT, folder);
-        materialMeltingCasting(iceandfire, TCMaterials.lightningDragonsteel, TCFluids.moltenLightningDragonsteel, FluidValues.INGOT, folder);
+        materialMeltingCasting(iceandfire, IFMaterials.fireDragonsteel, TCFluids.moltenFireDragonsteel, FluidValues.INGOT, folder);
+        materialMeltingCasting(iceandfire, IFMaterials.iceDragonsteel, TCFluids.moltenIceDragonsteel, FluidValues.INGOT, folder);
+        materialMeltingCasting(iceandfire, IFMaterials.lightningDragonsteel, TCFluids.moltenLightningDragonsteel, FluidValues.INGOT, folder);
 
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.valkyrum, TCFluids.moltenValkyrum, FluidValues.INGOT, folder);
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.gravitite, TCMaterials.pyral, TCFluids.moltenPyral, FluidValues.INGOT, folder);
-        materialMeltingComposite(aetherTreasureConsumer, TCMaterials.zanite, TCMaterials.neptune, TCFluids.moltenNeptune, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.gravitite, AetherTRMaterials.valkyrum, TCFluids.moltenValkyrum, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.gravitite, AetherTRMaterials.pyral, TCFluids.moltenPyral, FluidValues.INGOT, folder);
+        materialMeltingComposite(aetherTreasureConsumer, AetherMaterials.zanite, AetherTRMaterials.neptune, TCFluids.moltenNeptune, FluidValues.INGOT, folder);
+
+        materialMeltingCasting(cataclysm, CataclysmMaterials.ancientMetal, TCFluids.moltenAncientMetal, folder);
+        materialMeltingCasting(cataclysm, CataclysmMaterials.blackSteel, TCFluids.moltenBlackSteel, folder);
+        materialMeltingCasting(cataclysm, CataclysmMaterials.cursium, TCFluids.moltenCursium, folder);
+        materialMeltingCasting(cataclysm, CataclysmMaterials.witherite, TCFluids.moltenWitherite, folder);
+
+        materialComposite(cataclysm, MaterialIds.string, CataclysmMaterials.cursium, TCFluids.moltenCursium, FluidValues.INGOT, folder);
     }
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

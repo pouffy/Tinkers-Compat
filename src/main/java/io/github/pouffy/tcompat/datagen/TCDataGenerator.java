@@ -3,9 +3,8 @@ package io.github.pouffy.tcompat.datagen;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.datagen.client.TCItemModelProv;
 import io.github.pouffy.tcompat.datagen.client.TCToolItemModelProv;
-import io.github.pouffy.tcompat.datagen.fluid.TCFluidTextureProv;
-import io.github.pouffy.tcompat.datagen.fluid.TCFluidTooltipProv;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
+import io.github.pouffy.tcompat.datagen.mantle.MantleColorsProvider;
 import io.github.pouffy.tcompat.datagen.tag.*;
 import io.github.pouffy.tcompat.datagen.tinkers.material.*;
 import io.github.pouffy.tcompat.datagen.tinkers.modifier.TCModifierProv;
@@ -19,8 +18,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import slimeknights.tconstruct.TConstruct;
-import slimeknights.tconstruct.fluids.data.FluidBlockstateModelProvider;
-import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPaletteDebugGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
@@ -57,6 +54,7 @@ public class TCDataGenerator {
         generator.addProvider(client, new TCItemModelProv(packOutput, existingFileHelper));
 
         generator.addProvider(client, new TCMaterialRenderInfoProv(packOutput, materialSprites, existingFileHelper));
+        generator.addProvider(client, new MantleColorsProvider(packOutput));
         generator.addProvider(client, new MaterialPaletteDebugGenerator(packOutput, TCompat.MOD_ID, materialSprites));
         //For Tinkers' Tools
         generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, new TinkerPartSpriteProvider(), materialSprites));

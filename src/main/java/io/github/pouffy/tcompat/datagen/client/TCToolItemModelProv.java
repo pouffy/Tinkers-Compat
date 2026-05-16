@@ -3,7 +3,6 @@ package io.github.pouffy.tcompat.datagen.client;
 import com.google.gson.JsonObject;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.library.data.AbstractToolItemModelProvider;

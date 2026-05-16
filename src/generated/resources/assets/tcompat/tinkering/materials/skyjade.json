@@ -1,11 +1,11 @@
 {
-  "color": "FF9ADA5B",
+  "color": "FF729752",
   "fallbacks": [
-    "gem"
+    "gem",
+    "metal"
   ],
   "generator": {
     "supported_stats": [
-      "tconstruct:repair_kit",
       "tconstruct:armor_plating",
       "tconstruct:plating_helmet",
       "tconstruct:plating_chestplate",
@@ -13,7 +13,11 @@
       "tconstruct:plating_boots",
       "tconstruct:plating_shield",
       "tconstruct:head",
-      "tconstruct:arrow_head"
+      "tconstruct:repair_kit",
+      "tinkersjewelry:gem",
+      "tconstruct:arrow_head",
+      "tconstruct:maille",
+      "tconstruct:armor_maille"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

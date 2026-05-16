@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:koboleton_bone"
+  },
+  "material": "tcompat:koboleton_bone",
+  "needed": 1,
+  "value": 1
+}

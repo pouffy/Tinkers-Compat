@@ -2,7 +2,7 @@ package io.github.pouffy.tcompat.datagen.lang;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.TCFluids;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
@@ -27,18 +27,8 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void materials() {
-        TCMaterials.translationKeys.forEach((key) -> {
-            if (key.contains("_dragon_scale.")) {
-                String[] parts = key.split("\\.");
-                String toTranslate = parts[parts.length - 1];
-                this.add(key, "%s".formatted(toEnglishName(toTranslate)) + " Dragon Scale");
-            } else if (key.contains("material.tconstruct.wood")) {
-                String[] parts = key.split("\\.");
-                String toTranslate = parts[parts.length - 1];
-                this.add(key, "%s".formatted(toEnglishName(toTranslate)) + " Wood");
-            } else {
-                toEng(key);
-            }
+        MaterialBuilder.materialBuilders.forEach((builder) -> {
+            this.add(builder.getTranslationKey(), builder.getEnglishName());
         });
     }
 
@@ -94,35 +84,58 @@ public class TCLangProv extends LanguageProvider {
         forFluid(TCFluids.umbrellaClusterJuice);
         forFluid(TCFluids.wartSoup);
         forFluid(TCFluids.agaveMedicine);
+        forFluid(TCFluids.moltenAncientMetal);
+        forFluid(TCFluids.moltenBlackSteel);
+        forFluid(TCFluids.moltenCursium);
+        forFluid(TCFluids.moltenWitherite);
+        forFluid(TCFluids.moltenIgnitium);
+        forFluid(TCFluids.moltenLacrima);
     }
 
     private void misc() {
-        add("modifier.tcompat.flamed.attack_bonus", "Damage against Ice Dragons");
-        add("modifier.tcompat.iced.attack_bonus", "Damage against Fire Dragons");
-        add("modifier.tcompat.lightning.attack_bonus", "Damage against Fire Dragons & Ice Dragons");
+        add("modifier.tcompat.flamed.attack_bonus", "Ice Dragon Damage Bonus");
+        add("modifier.tcompat.iced.attack_bonus", "Fire Dragon Damage Bonus");
+        add("modifier.tcompat.lightning.attack_bonus", "Fire & Ice Dragon Damage Bonus");
         add("modifier.tcompat.kinetic.tooltip.damage", "Stored Damage: %s / 40");
         add("recipe.tconstruct.ambrofusion.at_capacity", "Tool has no more space for ambrosium");
         add("subtitles.tcompat.void_touched.activate", "Void appears");
         add("subtitles.tcompat.void_touched.deactivate", "Void dissipates");
         add("recipe.tcompat.modifier.dampening.level_2", "Dampening requires a different recipe for the first level.");
         add("recipe.tcompat.modifier.dampening.level_3", "Dampening requires a different recipe for the first two levels.");
-        add("modifier.tcompat.dampening.attack_damage", "Damage against Mythical Creatures");
-        add("modifier.tcompat.dreadbane.attack_damage", "Damage against Dread Creatures");
+        add("modifier.tcompat.dampening.attack_damage", "Dampening Melee Damage");
+        add("modifier.tcompat.dampening.projectile_damage", "Dampening Ranged Damage");
+        add("modifier.tcompat.dreadbane.attack_damage", "Dreadbane Melee Damage");
+        add("modifier.tcompat.dreadbane.projectile_damage", "Dreadbane Ranged Damage");
 
-        add("modifier.tcompat.scorchborn.attack_damage", "Melee Damage against Damage against Lightning & Ice Dragons");
-        add("modifier.tcompat.scorchborn.projectile_damage", "Ranged Damage against Lightning & Ice Dragons");
-        add("modifier.tcompat.scorchborn.resistance", "Protection against Fire Dragon Breath");
-        add("modifier.tcompat.frostborn.attack_damage", "Melee Damage against Fire & Lightning Dragons");
-        add("modifier.tcompat.frostborn.projectile_damage", "Ranged Damage against Fire & Lightning Dragons");
-        add("modifier.tcompat.frostborn.resistance", "Protection against Ice Dragon Breath");
-        add("modifier.tcompat.voltborn.attack_damage", "Melee Damage against Fire & Ice Dragons");
-        add("modifier.tcompat.voltborn.projectile_damage", "Ranged Damage against Fire & Ice Dragons");
-        add("modifier.tcompat.voltborn.resistance", "Protection against Lightning Dragon Breath");
+        add("notification.tcompat.modifier_cooldown", "Modifier: %s is on cooldown");
+
+        add("modifier.tcompat.scorchborn.attack_damage", "Lightning & Ice Dragon Melee Damage");
+        add("modifier.tcompat.scorchborn.projectile_damage", "Lightning & Ice Dragon Ranged Damage");
+        add("modifier.tcompat.scorchborn.resistance", "Fire Dragon Breath Protection");
+        add("modifier.tcompat.frostborn.attack_damage", "Fire & Lightning Dragon Melee Damage");
+        add("modifier.tcompat.frostborn.projectile_damage", "Fire & Lightning Dragon Ranged Damage");
+        add("modifier.tcompat.frostborn.resistance", "Ice Dragon Breath Protection");
+        add("modifier.tcompat.voltborn.attack_damage", "Fire & Ice Dragon Melee Damage");
+        add("modifier.tcompat.voltborn.projectile_damage", "Fire & Ice Dragon Ranged Damage");
+        add("modifier.tcompat.voltborn.resistance", "Lightning Dragon Breath Protection");
+
+        add("modifier.tcompat.archaeologist.attack_damage", "Archaeology Melee Damage");
+        add("modifier.tcompat.archaeologist.projectile_damage", "Archaeology Ranged Damage");
+        add("modifier.tcompat.archaeologist.resistance", "Archaeology Protection");
+
+        add("modifier.tcompat.zanite.attack_damage", "Zanite Melee Damage");
+        add("modifier.tcompat.zanite.projectile_damage", "Zanite Ranged Damage");
+        add("modifier.tcompat.zanite.mining_speed", "Zanite Mining Speed");
+        add("modifier.tcompat.zanite.armor", "Zanite Armor");
+        add("modifier.tcompat.skyjade.attack_damage", "Skyjade Melee Damage");
+        add("modifier.tcompat.skyjade.projectile_damage", "Skyjade Ranged Damage");
+        add("modifier.tcompat.skyjade.mining_speed", "Skyjade Mining Speed");
+        add("modifier.tcompat.skyjade.armor", "Skyjade Armor");
     }
 
     private void modifiers() {
         forModifier("modifier.tcompat.escarstay", "Tough as Snails", "Large flat increase in knockback resistance.");
-        forModifier("modifier.tcompat.aether_forged", "Heavenly!", "Allows your tool to use it's full mining speed in The Aether.");
+        forModifier("modifier.tcompat.aether_forged", "Heavenly!", "Allows your tool to use it's full effectiveness in The Aether.");
         forModifier("modifier.tcompat.phoenix_touched", "Flamin' Hot", "Launched projectiles are lit with an immortal flame.");
         forModifier("modifier.tcompat.ambrogen", "Snack Generator", "Small chance to dislodge Ambrosium from broken blocks.");
         forModifier("modifier.tcompat.ascension", "Up You Go!", "Interacting with a block will cause it to ascend to a higher plane.");
@@ -157,6 +170,16 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.scorchborn", "One with the dragon", "Bonus damage against other dragon types and bonus protection against Fire Dragons.");
         forModifier("modifier.tcompat.frostborn", "One with the dragon", "Bonus damage against other dragon types and bonus protection against Ice Dragons.");
         forModifier("modifier.tcompat.voltborn", "One with the dragon", "Bonus damage against other dragon types and bonus protection against Lightning Dragons.");
+        forModifier("modifier.tcompat.cataclysmic", "Nigh Unstoppable", "The spirits of ancient gods try to hold your tool together.");
+        forModifier("modifier.tcompat.void_scatter", "Scatter!", "Upon hitting a target, the arrow shatters into multiple void shards.");
+        forModifier("modifier.tcompat.aquatic", "Sleeping with the fishes", "Your tool stats are buffed based on the amount of aquatic creatures nearby.");
+        forModifier("modifier.tcompat.sandstorm", "Curse of Ra", "Charged strikes summon a sandstorm.");
+        forModifier("modifier.tcompat.phantasmic", "Who ya gonna call?", "Shooting an arrow summons three phantom arrows.");
+        forModifier("modifier.tcompat.ghostly", "Missed me!", "Small chance to completely ignore an incoming attack. Chance increases if the attack is a projectile.");
+        forModifier("modifier.tcompat.tidal", "Washed away", "When used while sneaking, it summons Waves in a Fan pattern.");
+        forModifier("modifier.tcompat.archaeologist", "Belongs in a museum", "Bonus damage and protection against ancient remnants.");
+        forModifier("modifier.tcompat.standstill", "Stay right there", "Removes all knockback.");
+        forModifier("modifier.tcompat.fluxed", "Industrial Grade Combat", "Fully charged shots fire a heavy-duty Wither Rocket.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

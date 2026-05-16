@@ -4,11 +4,12 @@ import io.github.pouffy.tcompat.compat.GlobalInit;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import java.util.List;
 
@@ -20,6 +21,11 @@ public enum AetherForgedModule implements ModifierModule, AetherForgedModifierHo
 
     @Override
     public boolean canUse(IToolStackView toolStackView, ModifierEntry modifierEntry) {
+        return true;
+    }
+
+    @Override
+    public boolean canProjectileUse(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifierEntry) {
         return true;
     }
 

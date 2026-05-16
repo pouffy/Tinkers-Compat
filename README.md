@@ -19,16 +19,25 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 
 ## Currently Supports:
 
-### [Oh The Biomes We've Gone](https://modrinth.com/mod/oh-the-biomes-weve-gone)
+<details>
+  <summary><a href="https://modrinth.com/mod/oh-the-biomes-weve-gone">Oh The Biomes We've Gone</a></summary>
+
 - **Wood** Material Variants
 - **Rock** Material Variants
 - Red Rock & Dacite usable for crafting Modifier Workbench
+- Aloe Vera Juice Fluid
+- White Puffball Stew Fluid
+- Allium Oddion Soup Fluid
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/biomes-o-plenty">Biomes O' Plenty</a></summary>
 
-### [Biomes O' Plenty](https://modrinth.com/mod/biomes-o-plenty)
 - **Wood** Material Variants
 - Hellbark Material
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/aether">The Aether</a></summary>
 
-### [The Aether](https://modrinth.com/mod/aether)
 - **Aether Wood** Material (Skyroot)
 - **Aether Rock** Material (Holystone)
 - Aether Forged Modifier
@@ -38,23 +47,26 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Bloodsucking Trait
 - Ascension Trait
 - Gravitite Material
-- Zanite Material
+- Zanite Modifier
 - Draculite Material
 - Lightnum Material
 - Smeltery Melting Recipes
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/deep-aether">Deep Aether</a></summary>
 
-### [Deep Aether](https://modrinth.com/mod/deep-aether)
 - **Aether Wood** Variants
 - **Aether Rock** Variants
 - Stratus Block usable for crafting Tinker's Anvil
-- Dulling Trait
+- Skyjade Modifier
 - Gale Trait
 - Stratus Material
-- Skyjade Material
 - Stormforged Steel Material
 - Smeltery Melting Recipes
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/the-aether-redux">The Aether: Redux</a></summary>
 
-### [The Aether: Redux](https://modrinth.com/mod/the-aether-redux)
 - **Aether Wood** Variants
 - **Aether Rock** Variants
 - Ambrofusion Modifier
@@ -62,52 +74,71 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Veridium Material
 - Blightbunny Fang Material
 - Smeltery Melting Recipes
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/aether-treasure-reforging">Aether Treasure Reforging</a></summary>
 
-### [Aether Treasure Reforging](https://modrinth.com/mod/aether-treasure-reforging)
 - Phoenix Material
 - Valkyrum Material
 - Neptune Material
 - Phoenix Touched Trait
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/species">Species</a></summary>
 
-### [Species](https://modrinth.com/mod/species)
 - Wicked Wax Binding Material
 - Wicked Trait
 - Ricoshield Modifier
 - Birt Modifier
 - Swapping Modifier
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/quark">Quark</a></summary>
 
-### [Quark](https://modrinth.com/mod/quark)
 - **Wood** Material Variants
 - **Rock** Material Variants
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/regions-unexplored">Regions Unexplored</a></summary>
 
-### [Regions Unexplored](https://modrinth.com/mod/regions-unexplored)
 - **Wood** Material Variants
 - **Rock** Material Variants
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/betternether-forge">BetterNether</a></summary>
 
-### [BetterNether](https://modrinth.com/mod/betternether-forge)
 - **Wood** Material Variants
 - Cincinnasite Material
 - Nether Ruby Material
 - Obsidian Breaker Trait
 - Ruby's Fire Modifier
+- Wart Soup Fluid
+- Agave Medicine Fluid
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/betterend-forge">BetterEnd</a></summary>
 
-### [BetterEnd](https://modrinth.com/mod/betterend-forge)
 - **Whitestone** Material Variants
 - **Wood** Material Variants
 - Aternium Material
 - Thallasium Material
 - Terminite Material
 - Void Touched Trait
+- Umbrella Cluster Juice Fluid
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/ad-astra">Ad Astra</a></summary>
 
-### [Ad Astra](https://modrinth.com/mod/ad-astra)
 - **Wood** Material Variants
 - **Rock** Material Variants
 - Desh Material
 - Calorite Material
 - Ostrum Material
 - Oxygenated Trait
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/ice-and-fire-dragons">Ice and Fire</a></summary>
 
-### [Ice and Fire](https://modrinth.com/mod/ice-and-fire-dragons)
 - Fire Dragonsteel Material
 - Ice Dragonsteel Material
 - Lightning Dragonsteel Material
@@ -124,10 +155,38 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Dreadbane Modifier
 - Dampening Modifier
 - Smeltery Melting & Casting Recipes
+- Fire Lily Mixture Fluid
+- Frost Lily Mixture Fluid
+- Lightning Lily Mixture Fluid
+- Ambrosia Fluid
+</details>
+<details>
+  <summary><a href="https://modrinth.com/mod/l_enders-cataclysm">L_Ender's Cataclysm</a></summary>
+
+- Ancient Metal Material
+- Black Steel Material
+- Cursium Material
+- Lacrima Material
+- Essence of the Storm Material
+- Witherite Material
+- Coral Material
+- Void Jaw Material
+- Koboleton Bone Material
+- Cataclysmic Trait
+- Sandstorm Trait
+- Ghostly Trait
+- Phantasmic Trait
+- Tidal Trait
+- Fluxed Trait
+- Standstill Trait
+- Aquatic Trait
+- Void Scatter Trait
+- Archaeologist Trait
+- Smeltery Melting & Casting Recipes
+</details>
 
 ## Planned
 
-- Soup & Stew fluids & Smeltery Recipes.
 - More Ice & Fire compat.
 
 

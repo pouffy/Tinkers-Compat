@@ -1,0 +1,20 @@
+{
+  "perStat": {
+    "tconstruct:head": [
+      {
+        "level": 1,
+        "name": "tcompat:cataclysmic"
+      },
+      {
+        "level": 1,
+        "name": "tcompat:tidal"
+      }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:swim_gem"
+      }
+    ]
+  }
+}

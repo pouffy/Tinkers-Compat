@@ -1,0 +1,19 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "cataclysm"
+  },
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:durability_color",
+      "color": "FB6B1D"
+    },
+    {
+      "type": "tconstruct:reduce_tool_damage",
+      "flat": 0.85
+    }
+  ],
+  "priority": 125,
+  "tooltip_display": "always"
+}

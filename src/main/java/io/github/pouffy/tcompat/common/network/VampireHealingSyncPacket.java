@@ -1,12 +1,9 @@
 package io.github.pouffy.tcompat.common.network;
 
-import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.network.base.INBTSynchable;
-import io.github.pouffy.tcompat.common.network.base.SyncEntityPacket;
 import io.github.pouffy.tcompat.common.network.base.SyncLivingEntityPacket;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.common.util.LazyOptional;
 import oshi.util.tuples.Quartet;

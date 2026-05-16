@@ -25,5 +25,6 @@ public class SpeciesInit extends CompatInitializer {
     public static void init(IEventBus eventBus) {
         SPECIES_M.register(eventBus);
         SPECIES_PT.register(eventBus);
+        SpeciesMaterials.staticInit();
     }
 }

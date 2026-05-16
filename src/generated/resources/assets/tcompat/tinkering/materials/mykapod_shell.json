@@ -6,8 +6,9 @@
   ],
   "generator": {
     "supported_stats": [
-      "tconstruct:shield_core",
-      "tconstruct:repair_kit"
+      "tconstruct:repair_kit",
+      "tinkersjewelry:gem",
+      "tconstruct:shield_core"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

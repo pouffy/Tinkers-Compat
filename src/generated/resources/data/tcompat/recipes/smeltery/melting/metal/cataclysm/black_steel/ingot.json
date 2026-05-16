@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/black_steel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/black_steel"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_black_steel"
+  },
+  "temperature": 800,
+  "time": 60
+}

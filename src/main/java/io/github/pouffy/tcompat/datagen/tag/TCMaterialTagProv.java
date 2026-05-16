@@ -2,7 +2,12 @@ package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
-import io.github.pouffy.tcompat.common.material.TCMaterials;
+import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
+import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxMaterials;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRMaterials;
+import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmMaterials;
+import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.TagKey;
@@ -11,6 +16,7 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractMaterialTagProvider;
 import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.materials.definition.MaterialManager;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
 
@@ -24,23 +30,32 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
     @Override
     protected void addTags() {
         tag(TCTags.Materials.AETHER).add(
-                TCMaterials.aetherRock,
-                TCMaterials.aetherWood,
-                TCMaterials.zanite,
-                TCMaterials.gravitite,
-                TCMaterials.skyjade,
-                TCMaterials.veridium,
-                TCMaterials.refinedSentrite,
-                TCMaterials.pyral,
-                TCMaterials.valkyrum,
-                TCMaterials.neptune,
-                TCMaterials.lightnum,
-                TCMaterials.stormforgedSteel,
-                TCMaterials.draculite
+                AetherMaterials.aetherRock,
+                AetherMaterials.aetherWood,
+                AetherMaterials.zanite,
+                AetherMaterials.gravitite,
+                DeepAetherMaterials.skyjade,
+                AetherReduxMaterials.veridium,
+                AetherReduxMaterials.refinedSentrite,
+                AetherTRMaterials.pyral,
+                AetherTRMaterials.valkyrum,
+                AetherTRMaterials.neptune,
+                AetherMaterials.lightnum,
+                DeepAetherMaterials.stormforgedSteel,
+                AetherMaterials.draculite
         );
         tag(TinkerTags.Materials.NETHER_GATED).add(
-                TCMaterials.cincinnasite,
-                TCMaterials.netherRuby
+                BetternetherMaterials.cincinnasite,
+                BetternetherMaterials.netherRuby
+        );
+        tag(TCTags.Materials.CURSIUM_COMPANION).add(
+                CataclysmMaterials.blackSteel
+        );
+        tag(TCTags.Materials.LACRIMA_COMPANION).add(
+                CataclysmMaterials.essenceOfTheStorm
+        );
+        tag(TCTags.Materials.WITHERITE_COMPANION).add(
+                MaterialIds.iron
         );
     }
 

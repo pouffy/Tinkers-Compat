@@ -1,11 +1,12 @@
 {
-  "color": "FFFEDA87",
+  "color": "FFFFB326",
   "fallbacks": [
     "metal"
   ],
   "generator": {
     "supported_stats": [
       "tconstruct:repair_kit",
+      "tinkersjewelry:plain_ring",
       "tconstruct:armor_plating",
       "tconstruct:plating_helmet",
       "tconstruct:plating_chestplate",

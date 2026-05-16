@@ -285,6 +285,14 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/highsproot",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/aether_sakura",
+      "required": false
+    },
+    {
       "id": "#tcompat:planks/aeronos",
       "required": false
     },

@@ -22,7 +22,8 @@ public class TCompatNetworking {
         register(VoidTouchedSyncPacket.class, VoidTouchedSyncPacket::decode);
         register(LightningOwnerSyncPacket.class, LightningOwnerSyncPacket::decode);
         register(VampireHealingSyncPacket.class, VampireHealingSyncPacket::decode);
-        register(FrozenSyncPacket.class, FrozenSyncPacket::decode);
+        register(ModifierCooldownsSyncPacket.class, ModifierCooldownsSyncPacket::decode);
+        register(SwingClientArmPacket.class, SwingClientArmPacket::decode);
     }
 
     private static <MSG extends BasePacket> void register(final Class<MSG> packet, Function<FriendlyByteBuf, MSG> decoder) {

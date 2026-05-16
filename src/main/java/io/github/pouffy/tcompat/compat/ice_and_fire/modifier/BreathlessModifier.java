@@ -3,7 +3,6 @@ package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
-import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.ProtectionModifierHook;

@@ -48,6 +48,11 @@
     "tconstruct:plating_shield": {
       "durability": 1458,
       "toughness": 6.0
+    },
+    "tinkersjewelry:plain_ring": {
+      "amplification": 1.4,
+      "durability": 1250,
+      "optional": true
     }
   }
 }

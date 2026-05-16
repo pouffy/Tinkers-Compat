@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "cataclysm:astrape"
+    },
+    {
+      "item": "cataclysm:ceraunus"
+    }
+  ],
+  "result": {
+    "amount": 300,
+    "fluid": "tcompat:molten_lacrima"
+  },
+  "temperature": 930,
+  "time": 117
+}

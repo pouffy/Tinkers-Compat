@@ -1,5 +1,8 @@
 {
   "stats": {
-    "tconstruct:shield_core": {}
+    "tconstruct:shield_core": {},
+    "tinkersjewelry:gem": {
+      "optional": true
+    }
   }
 }

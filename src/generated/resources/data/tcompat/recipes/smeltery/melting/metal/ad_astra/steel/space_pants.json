@@ -1,6 +1,10 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:damagable_melting",
   "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    },
     {
       "type": "forge:mod_loaded",
       "modid": "ad_astra"
@@ -11,7 +15,8 @@
   },
   "result": {
     "amount": 450,
-    "fluid": "tconstruct:molten_steel"
+    "fluid": "tconstruct:molten_steel",
+    "unit_size": 10
   },
   "temperature": 950,
   "time": 145

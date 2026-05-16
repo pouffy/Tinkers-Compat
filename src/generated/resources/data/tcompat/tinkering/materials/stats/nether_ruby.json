@@ -53,6 +53,9 @@
       "durability": 324,
       "knockback_resistance": 0.2,
       "toughness": 1.4
+    },
+    "tinkersjewelry:gem": {
+      "optional": true
     }
   }
 }
