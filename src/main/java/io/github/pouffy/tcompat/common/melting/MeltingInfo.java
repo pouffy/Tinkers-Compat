@@ -15,8 +15,7 @@ import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
 
 import static slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe.getTemperature;
@@ -28,6 +27,8 @@ public class MeltingInfo {
     private ResourceLocation result;
     @Getter
     private final Map<ResourceLocation, Integer> outputs = new HashMap<>();
+    @Getter
+    private int[] damageSizes = new int[]{};
 
     private int temperature;
 
@@ -83,6 +84,11 @@ public class MeltingInfo {
         return this;
     }
 
+    public MeltingInfo setDamagable(int... damageSizes) {
+        this.damageSizes = damageSizes;
+        return this;
+    }
+
     public MeltingInfo copyWithCount(int count) {
         Preconditions.checkArgument(count >= 1, "Amount must be greater than 1");
         MeltingInfo meltingInfo = new MeltingInfo(itemKey);
@@ -101,6 +107,9 @@ public class MeltingInfo {
         for (var byproduct : getOutputs().entrySet()) {
             if (byproduct.getKey().equals(result)) continue;
             initialBuilder.addByproduct(new NamedFluidOutput(byproduct.getKey(), byproduct.getValue()));
+        }
+        if (damageSizes.length != 0) {
+            initialBuilder.setDamagable(damageSizes);
         }
         return initialBuilder;
     }

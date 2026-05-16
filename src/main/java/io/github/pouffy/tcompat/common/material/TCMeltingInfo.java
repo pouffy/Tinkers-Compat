@@ -111,43 +111,43 @@ public class TCMeltingInfo {
         public static final MeltingInfo wrench = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("wrench"))
                 .setResult(TinkerFluids.moltenIron, (FluidValues.INGOT * 2) + (rod * 2)));
         public static final MeltingInfo spaceHelmet = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("space_helmet"))
-                .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 5)
+                .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 5).setDamagable(FluidValues.NUGGET, FluidValues.GLASS_PANE)
                 .byproduct(tcMolten("glass"), (FluidValues.GLASS_PANE)));
         public static final MeltingInfo spaceSuit = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("space_suit"))
-                .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 4)
+                .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 4).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET)
                 .components(oxygenGear, gasTank.copyWithCount(2)));
         public static final MeltingInfo spacePants = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("space_pants"))
-                .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 5));
+                .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 5)).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET);
         public static final MeltingInfo spaceBoots = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("space_boots"))
-                .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 2));
+                .setResult(TinkerFluids.moltenSteel, FluidValues.INGOT * 2)).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET);
         public static final MeltingInfo netheriteSpaceHelmet = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("netherite_space_helmet"))
-                .setResult(TCFluids.moltenOstrum, FluidValues.INGOT * 4)
+                .setResult(TCFluids.moltenOstrum, FluidValues.INGOT * 4).setDamagable(FluidValues.NUGGET, FluidValues.GLASS_PANE, FluidValues.NUGGET, FluidValues.GEM_SHARD)
                 .byproduct(tcMolten("glass"), (FluidValues.GLASS_BLOCK))
                 .component(netheriteHelmet));
         public static final MeltingInfo netheriteSpaceSuit = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("netherite_space_suit"))
-                .setResult(TCFluids.moltenOstrum, FluidValues.INGOT * 4)
+                .setResult(TCFluids.moltenOstrum, FluidValues.INGOT * 4).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.GEM_SHARD)
                 .components(netheriteChestplate, oxygenGear, largeGasTank.copyWithCount(2)));
         public static final MeltingInfo netheriteSpacePants = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("netherite_space_pants"))
-                .setResult(TCFluids.moltenOstrum, FluidValues.INGOT * 4)
+                .setResult(TCFluids.moltenOstrum, FluidValues.INGOT * 4).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.GEM_SHARD, FluidValues.NUGGET)
                 .byproduct(TCFluids.moltenDesh.result(FluidValues.INGOT * 2))
                 .component(netheriteLeggings));
         public static final MeltingInfo netheriteSpaceBoots = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("netherite_space_boots"))
-                .setResult(TCFluids.moltenOstrum, FluidValues.INGOT * 2)
+                .setResult(TCFluids.moltenOstrum, FluidValues.INGOT * 2).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.GEM_SHARD, FluidValues.NUGGET)
                 .byproduct(TCFluids.moltenDesh.result(FluidValues.INGOT * 2))
                 .component(netheriteBoots));
         public static final MeltingInfo jetSuitHelmet = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("jet_suit_helmet"))
-                .setResult(TCFluids.moltenCalorite, FluidValues.INGOT * 4)
+                .setResult(TCFluids.moltenCalorite, FluidValues.INGOT * 4).setDamagable(FluidValues.NUGGET, FluidValues.GEM_SHARD, FluidValues.GLASS_PANE, FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.GEM_SHARD)
                 .byproduct(tcMolten("amethyst"), (FluidValues.GEM * 2))
                 .byproduct(tcMolten("glass"), (FluidValues.GLASS_PANE * 2))
                 .component(netheriteSpaceHelmet));
         public static final MeltingInfo jetSuit = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("jet_suit"))
-                .setResult(TCFluids.moltenCalorite, FluidValues.INGOT * 2)
+                .setResult(TCFluids.moltenCalorite, FluidValues.INGOT * 2).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.GEM_SHARD, FluidValues.NUGGET)
                 .components(caloriteTank.copyWithCount(2), netheriteSpaceSuit, caloriteEngine, etrionicCapacitor.copyWithCount(2)));
         public static final MeltingInfo jetSuitPants = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("jet_suit_pants"))
-                .setResult(TCFluids.moltenCalorite, (FluidValues.INGOT * 4) + (FluidValues.METAL_BLOCK * 2))
+                .setResult(TCFluids.moltenCalorite, (FluidValues.INGOT * 4) + (FluidValues.METAL_BLOCK * 2)).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.GEM_SHARD, FluidValues.NUGGET)
                 .component(netheriteSpacePants));
         public static final MeltingInfo jetSuitBoots = adAstraGroup.create(MeltingInfo.create(adAstraId.apply("jet_suit_boots"))
-                .setResult(TCFluids.moltenCalorite, (FluidValues.INGOT * 2) + (FluidValues.METAL_BLOCK * 2))
+                .setResult(TCFluids.moltenCalorite, (FluidValues.INGOT * 2) + (FluidValues.METAL_BLOCK * 2)).setDamagable(FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.NUGGET, FluidValues.GEM_SHARD, FluidValues.NUGGET)
                 .component(netheriteSpaceBoots));
 
         //Machines
