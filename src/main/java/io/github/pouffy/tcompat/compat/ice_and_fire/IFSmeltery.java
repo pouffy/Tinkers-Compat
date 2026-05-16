@@ -95,28 +95,28 @@ public class IFSmeltery implements CompatSmeltery {
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("fire_dragon_blood")))
                 .setFluidAndTime(TCFluids.fireBlood, FluidValues.BOTTLE)
-                .setCast(Items.GLASS_BOTTLE, true)
+                .setCast(Items.GLASS_BOTTLE, true).setCoolingTime(1)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_blood/fire"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("ice_dragon_blood")))
                 .setFluidAndTime(TCFluids.iceBlood, FluidValues.BOTTLE)
-                .setCast(Items.GLASS_BOTTLE, true)
+                .setCast(Items.GLASS_BOTTLE, true).setCoolingTime(1)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_blood/ice"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("lightning_dragon_blood")))
                 .setFluidAndTime(TCFluids.lightningBlood, FluidValues.BOTTLE)
-                .setCast(Items.GLASS_BOTTLE, true)
+                .setCast(Items.GLASS_BOTTLE, true).setCoolingTime(1)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_blood/lightning"));
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("dragonbone_sword_fire")))
                 .setFluidAndTime(TCFluids.fireBlood, FluidValues.BOTTLE)
-                .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true)
+                .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true).setCoolingTime(1)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_bone_sword/fire"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("dragonbone_sword_ice")))
                 .setFluidAndTime(TCFluids.iceBlood, FluidValues.BOTTLE)
-                .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true)
+                .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true).setCoolingTime(1)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_bone_sword/ice"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("dragonbone_sword_lightning")))
                 .setFluidAndTime(TCFluids.lightningBlood, FluidValues.BOTTLE)
-                .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true)
+                .setCast(ItemNameIngredient.from(compatId("dragonbone_sword")), true).setCoolingTime(1)
                 .save(cConsumer, location(miscFolder("casting") + "/dragon_bone_sword/lightning"));
 
         nugget(cConsumer, "fire", TCTags.Items.FIRE_DRAGONSTEEL_NUGGETS, TCTags.Items.FIRE_DRAGONSTEEL_INGOTS);

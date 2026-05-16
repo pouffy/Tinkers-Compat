@@ -10,7 +10,7 @@
       "modid": "iceandfire"
     }
   ],
-  "cooling_time": 100,
+  "cooling_time": 1,
   "fluid": {
     "amount": 250,
     "tag": "tcompat:ice_dragon_blood"
