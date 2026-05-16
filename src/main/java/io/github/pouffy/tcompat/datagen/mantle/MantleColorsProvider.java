@@ -79,6 +79,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.frostborn,                     0x5effff);
         addColor(TCModifiers.voltborn,                      0x974fff);
         addColor(TCModifiers.tideGuardian,                  0x2aa6fd);
+        addColor(TCModifiers.aquaShot,                      0xdbccb5);
         addColor(IFInit.flamed.getId(),                     0xff581c);
         addColor(IFInit.iced.getId(),                       0x5effff);
         addColor(IFInit.lightning.getId(),                  0x974fff);
@@ -86,6 +87,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(IFInit.frostThorns.getId(),                0x5effff);
         addColor(IFInit.voltThorns.getId(),                 0x974fff);
         addColor(IFInit.breathless.getId(),                 0xffc796);
+        addColor(IFInit.leeching.getId(),                   0xb2bea0);
         //Species
         addColor(SpeciesInit.ricoshield.getId(),            0x59002b);
         addColor(SpeciesInit.wicked.getId(),                0xffa342);

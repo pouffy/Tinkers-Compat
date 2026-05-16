@@ -1,9 +1,13 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
+import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.entity.props.EntityDataProvider;
+import com.github.alexthe666.iceandfire.enums.EnumParticles;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.Projectile;
 
 public class IceFireHandler {
 
@@ -14,5 +18,10 @@ public class IceFireHandler {
                 provider.frozenData.setFrozen(living, frozenTicks);
             });
         }
+    }
+
+    public static void hydraParticles(Projectile projectile, double xRatio, double zRatio, double d0, double d1, double d2) {
+        RandomSource random = projectile.level().random;
+        IceAndFire.PROXY.spawnParticle(EnumParticles.Hydra, projectile.getX() + xRatio + (random.nextFloat() * projectile.getBbWidth() * 1.0F) - (double)projectile.getBbWidth() - d0 * (double)10.0F, projectile.getY() + (double)(random.nextFloat() * projectile.getBbHeight()) - d1 * (double)10.0F, projectile.getZ() + zRatio + (double)(random.nextFloat() * projectile.getBbWidth() * 1.0F) - (double)projectile.getBbWidth() - d2 * (double)10.0F, 0.1, 1.0F, 0.1);
     }
 }

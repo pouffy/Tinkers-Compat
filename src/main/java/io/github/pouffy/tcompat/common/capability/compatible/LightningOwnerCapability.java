@@ -67,7 +67,7 @@ public class LightningOwnerCapability implements LightningOwner {
     @Override
     public void deserializeNBT(CompoundTag tag) {
         if (tag.contains("LightningOwner")) {
-            this.setLightningOwner(this.getEntity().level().getEntity(tag.getInt("Owner")));
+            this.setLightningOwner(this.getEntity().level().getEntity(tag.getInt("LightningOwner")));
         }
     }
 }

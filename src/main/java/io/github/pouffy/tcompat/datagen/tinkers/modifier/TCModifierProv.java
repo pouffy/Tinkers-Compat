@@ -187,6 +187,8 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.tideGuardian, modLoaded("iceandfire"))
                 .addModule(MobEffectModule.builder(MobEffects.WATER_BREATHING).toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).target(wetPredicate).build())
                 .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).target(wetPredicate).percent().eachLevel(0.65f));
+        buildModifier(TCModifiers.aquaShot, modLoaded("iceandfire"))
+                .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).holder(wetPredicate).eachLevel(1.0f));
 
         buildModifier(TCModifiers.cataclysmic, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(125)

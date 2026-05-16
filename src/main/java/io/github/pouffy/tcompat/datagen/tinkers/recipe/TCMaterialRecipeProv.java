@@ -132,8 +132,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_ice")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/ice_skull");
         materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_skull_lightning")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/lightning_skull");
         materialRecipe(iceandfire, IFMaterials.dragonBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:dragon_bone_block")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:dragon_bone")), folder + "dragon_bone/block");
-        materialRecipe(iceandfire, MaterialIds.necroticBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:witherbone")), 1, 1, folder + "wither_bone");
-        materialRecipe(iceandfire, MaterialIds.necroticBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:wither_shard")), 1, 3, folder + "wither_bone_shard");
+        materialRecipe(iceandfire, MaterialIds.necroticBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:witherbone")), 1, 1, folder + "necrotic_bone/wither_bone");
+        materialRecipe(iceandfire, MaterialIds.necroticBone, ItemNameIngredient.from(TCompat.getResource("iceandfire:wither_shard")), 1, 3, folder + "necrotic_bone/wither_shard");
         materialRecipe(iceandfire, IFMaterials.serpentBlue, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_scales_blue")), 1, 1, folder + "sea_serpent_scales/blue");
         materialRecipe(iceandfire, IFMaterials.serpentBronze, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_scales_bronze")), 1, 1, folder + "sea_serpent_scales/bronze");
         materialRecipe(iceandfire, IFMaterials.serpentDeepBlue, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_scales_deepblue")), 1, 1, folder + "sea_serpent_scales/deep_blue");
@@ -148,6 +148,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.serpentPurple, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_scale_block_purple")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:sea_serpent_scales_purple")), folder + "sea_serpent_scales/purple_block");
         materialRecipe(iceandfire, IFMaterials.serpentRed, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_scale_block_red")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:sea_serpent_scales_red")), folder + "sea_serpent_scales/red_block");
         materialRecipe(iceandfire, IFMaterials.serpentTeal, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_scale_block_teal")), 9, 1, ItemNameOutput.fromName(TCompat.getResource("iceandfire:sea_serpent_scales_teal")), folder + "sea_serpent_scales/teal_block");
+        materialRecipe(iceandfire, IFMaterials.seaSerpentFang, ItemNameIngredient.from(TCompat.getResource("iceandfire:sea_serpent_fang")), 1, 1, folder + "sea_serpent_fang");
+        materialRecipe(iceandfire, IFMaterials.hydraFang, ItemNameIngredient.from(TCompat.getResource("iceandfire:hydra_fang")), 1, 1, folder + "hydra_fang");
+
 
         metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);
         metalMaterialRecipe(cataclysm, CataclysmMaterials.blackSteel, folder, "black_steel", true);

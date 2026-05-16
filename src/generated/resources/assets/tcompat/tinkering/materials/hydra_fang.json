@@ -1,0 +1,48 @@
+{
+  "color": "FFB2BEA0",
+  "fallbacks": [
+    "hydra",
+    "bone"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:arrow_head"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF4F424B",
+            "grey": 63
+          },
+          {
+            "color": "FF5F5D52",
+            "grey": 102
+          },
+          {
+            "color": "FF81847C",
+            "grey": 140
+          },
+          {
+            "color": "FF989A87",
+            "grey": 178
+          },
+          {
+            "color": "FFB2BEA0",
+            "grey": 216
+          },
+          {
+            "color": "FFD6DECB",
+            "grey": 255
+          }
+        ]
+      }
+    }
+  }
+}

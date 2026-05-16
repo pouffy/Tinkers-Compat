@@ -1,0 +1,48 @@
+{
+  "color": "FFDBCCB5",
+  "fallbacks": [
+    "tooth",
+    "bone"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:arrow_head"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF4B414C",
+            "grey": 63
+          },
+          {
+            "color": "FF665D5A",
+            "grey": 102
+          },
+          {
+            "color": "FF91817A",
+            "grey": 140
+          },
+          {
+            "color": "FFB7A796",
+            "grey": 178
+          },
+          {
+            "color": "FFDBCCB5",
+            "grey": 216
+          },
+          {
+            "color": "FFFFE7C4",
+            "grey": 255
+          }
+        ]
+      }
+    }
+  }
+}

@@ -2,7 +2,9 @@ package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
-import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
+import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
+import io.github.pouffy.tcompat.common.capability.projectile.leeching.Leeching;
+import io.github.pouffy.tcompat.common.capability.projectile.void_scatter.VoidScatter;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
@@ -49,13 +51,22 @@ public class TCCommonEvents {
     @SubscribeEvent
     static void projectileHit(ProjectileImpactEvent event) {
         HitResult hit = event.getRayTraceResult();
-        if (hit instanceof EntityHitResult entityHitResult && event.getEntity() instanceof Projectile projectile) {
-            PhoenixTouched.get(projectile).ifPresent(phoenixTouched -> {
-                if (phoenixTouched.isPhoenixProjectile() && phoenixTouched.getFireTime() > 0) {
-                    entityHitResult.getEntity().setSecondsOnFire(phoenixTouched.getFireTime());
+        if (event.getEntity() instanceof Projectile projectile) {
+            if (hit instanceof EntityHitResult entityHitResult) {
+                PhoenixTouched.get(projectile).ifPresent(phoenixTouched -> {
+                    if (phoenixTouched.isPhoenixProjectile() && phoenixTouched.getFireTime() > 0) {
+                        entityHitResult.getEntity().setSecondsOnFire(phoenixTouched.getFireTime());
+                    }
+                });
+            }
+            VoidScatter.get(projectile).ifPresent(voidScatter -> {
+                if (voidScatter.shouldScatter()) {
+                    voidScatter.hit(projectile, event.getRayTraceResult());
+                    voidScatter.setScatter(false);
                 }
             });
         }
+
     }
 
 
@@ -117,6 +128,18 @@ public class TCCommonEvents {
                     event.setCanceled(true);
                 }
             }
+        }
+        if (event.getSource().getEntity() instanceof Projectile projectile) {
+            Leeching.get(projectile).ifPresent(leeching -> {
+                if (leeching.isLeeching()) {
+                    if (leeching.getOwner() instanceof LivingEntity living) {
+                        living.heal(event.getAmount());
+                    }
+                    if (entity instanceof Player player) {
+                        leeching.damageShield(player, event.getAmount());
+                    }
+                }
+            });
         }
     }
 

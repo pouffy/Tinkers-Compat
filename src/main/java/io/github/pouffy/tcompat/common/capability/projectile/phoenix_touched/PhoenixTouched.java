@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.common.capability.phoenix;
+package io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched;
 
 import io.github.pouffy.tcompat.common.capability.TCompatCapabilities;
 import io.github.pouffy.tcompat.common.network.base.INBTSynchable;

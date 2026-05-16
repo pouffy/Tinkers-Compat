@@ -147,6 +147,22 @@ public class IFMaterials {
             .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().ranged().armor().transformer(complexTransformer("lightning_dragonsteel", 1, 0xFFCAA4DA, 0xFFE5CBF7)))
             .buildMaterial();
 
+    public static final MaterialId seaSerpentFang = MaterialBuilder.material("iceandfire", "sea_serpent_fang")
+            .data(d -> d.tier(2).order(4).craftable(true))
+            .traits(t -> t.trait(TCModifiers.aquaShot))
+            .stats(s -> s.stat(StatlessMaterialStats.ARROW_HEAD))
+            .renderInfo(r -> r.color(0xdbccb5).fallbacks("tooth", "bone"))
+            .spriteInfo(s -> s.arrowHead().fallbacks("tooth", "bone").sixColor(0xFF4b414c, 0xFF665d5a, 0xFF91817a, 0xFFb7a796, 0xFFdbccb5, 0xFFffe7c4))
+            .buildMaterial();
+
+    public static final MaterialId hydraFang = MaterialBuilder.material("iceandfire", "hydra_fang")
+            .data(d -> d.tier(2).order(4).craftable(true))
+            .traits(t -> t.trait(IFInit.leeching))
+            .stats(s -> s.stat(StatlessMaterialStats.ARROW_HEAD))
+            .renderInfo(r -> r.color(0xb2bea0).fallbacks("hydra", "bone"))
+            .spriteInfo(s -> s.arrowHead().fallbacks("hydra", "bone").sixColor(0xFF4f424b, 0xFF5f5d52, 0xFF81847c, 0xFF989a87, 0xFFb2bea0, 0xFFd6decb))
+            .buildMaterial();
+
     private static MaterialId dragonScales(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
         var builder = MaterialBuilder.material("iceandfire", type+"_dragon_scale")
                 .data(d -> d.tier(4).order(5).craftable(true)).traits(t -> t.trait(ARMOR, IFInit.breathless))

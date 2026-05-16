@@ -1,0 +1,25 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "iceandfire"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_stat",
+      "each_level": 1.0,
+      "entity": {
+        "type": "mantle:or",
+        "predicates": [
+          "mantle:underwater",
+          "mantle:raining_at",
+          "mantle:feet_in_water",
+          "mantle:eyes_in_water"
+        ]
+      },
+      "percent": false,
+      "stat": "tconstruct:projectile_damage"
+    }
+  ],
+  "tooltip_display": "always"
+}

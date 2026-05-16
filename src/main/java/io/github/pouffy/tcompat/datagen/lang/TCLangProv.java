@@ -176,6 +176,8 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.frostborn", "One with the dragon", "Bonus damage against other dragon types and bonus protection against Ice Dragons.");
         forModifier("modifier.tcompat.voltborn", "One with the dragon", "Bonus damage against other dragon types and bonus protection against Lightning Dragons.");
         forModifier("modifier.tcompat.tide_guardian", "Sponge Muscles", "Water Breathing and increased strength when wet.");
+        forModifier("modifier.tcompat.aqua_shot", "Sopping Wet", "Does extra damage when shooter is wet");
+        forModifier("modifier.tcompat.leeching", "What's yours is mine", "Poisons and leeches life from target");
         //Cataclysm
         forModifier("modifier.tcompat.cataclysmic", "Nigh Unstoppable", "The spirits of ancient gods try to hold your tool together.");
         forModifier("modifier.tcompat.void_scatter", "Scatter!", "Upon hitting a target, the arrow shatters into multiple void shards.");

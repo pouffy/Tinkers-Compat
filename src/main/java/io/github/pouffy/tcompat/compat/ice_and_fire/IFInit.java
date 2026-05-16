@@ -23,6 +23,7 @@ public class IFInit extends CompatInitializer {
     public static final StaticModifier<LightningModifier> lightning = IF_M.register("lightning", LightningModifier::new);
     public static final StaticModifier<VoltThornsModifier> voltThorns = IF_M.register("volt_thorns", VoltThornsModifier::new);
     public static final StaticModifier<BreathlessModifier> breathless = IF_M.register("breathless", BreathlessModifier::new);
+    public static final StaticModifier<LeechingModifier> leeching = IF_M.register("leeching", LeechingModifier::new);
 
     public static final ItemObject<Item> fireDragonsteelNugget = itemForMod("iceandfire", "fire_dragonsteel_nugget", new Item.Properties(), IF_I);
     public static final ItemObject<Item> iceDragonsteelNugget = itemForMod("iceandfire", "ice_dragonsteel_nugget", new Item.Properties(), IF_I);

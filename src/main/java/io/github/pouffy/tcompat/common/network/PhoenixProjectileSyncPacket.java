@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.common.network;
 
-import io.github.pouffy.tcompat.common.capability.phoenix.PhoenixTouched;
+import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
 import io.github.pouffy.tcompat.common.network.base.INBTSynchable;
 import io.github.pouffy.tcompat.common.network.base.SyncEntityPacket;
 import net.minecraft.network.FriendlyByteBuf;
