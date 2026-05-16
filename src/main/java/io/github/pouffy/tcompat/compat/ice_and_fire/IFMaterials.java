@@ -66,6 +66,7 @@ public class IFMaterials {
             .data(d -> d.tier(4).order(5).craftable(true))
             .traits(t -> t
                     .trait(TinkerModifiers.firestarter)
+                    .trait(StatlessMaterialStats.ARROW_SHAFT.getIdentifier(), ModifierIds.fiery)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.flame_gem, 1))
             )
             .stats(s ->
@@ -74,13 +75,13 @@ public class IFMaterials {
                             HandleMaterialStats.multipliers().durability(1.05f).attackSpeed(1.25f).build(),
                             StatlessMaterialStats.BINDING,
                             new LimbMaterialStats(200, 0.07f, -0.07f, 0.07f),
-                            new GripMaterialStats(1.0f, 0.15f, 1.5f)
+                            new GripMaterialStats(1.0f, 0.15f, 1.5f), StatlessMaterialStats.ARROW_SHAFT
                     ).statOptional(
                             CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.color(0xc7b899).fallbacks("bone", "rock"))
-            .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
+            .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).arrowShaft().ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
             .buildMaterial();
 
     public static final MaterialId fireDragonsteel = MaterialBuilder.material("iceandfire", "fire_dragonsteel")
