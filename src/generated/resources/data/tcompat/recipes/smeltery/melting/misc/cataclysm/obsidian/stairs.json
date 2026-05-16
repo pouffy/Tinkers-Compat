@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "cataclysm:obsidian_brick_stairs"
+    },
+    {
+      "item": "cataclysm:polished_obsidian_stairs"
+    }
+  ],
+  "result": {
+    "amount": 1500,
+    "fluid": "tconstruct:molten_obsidian"
+  },
+  "temperature": 1000,
+  "time": 271
+}

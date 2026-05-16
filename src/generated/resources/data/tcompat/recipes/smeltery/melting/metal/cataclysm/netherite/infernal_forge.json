@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "fluid": "tconstruct:molten_gold"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:infernal_forge"
+  },
+  "result": {
+    "amount": 270,
+    "fluid": "tconstruct:molten_netherite"
+  },
+  "temperature": 1250,
+  "time": 127
+}

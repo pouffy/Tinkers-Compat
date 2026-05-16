@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "fluid": "tcompat:molten_black_steel"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:cursed_bow"
+  },
+  "result": {
+    "amount": 180,
+    "fluid": "tcompat:molten_cursium"
+  },
+  "temperature": 1200,
+  "time": 102
+}

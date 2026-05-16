@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 500,
+      "fluid": "minecraft:lava"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:lava_power_cell"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_netherite"
+  },
+  "temperature": 1250,
+  "time": 74
+}

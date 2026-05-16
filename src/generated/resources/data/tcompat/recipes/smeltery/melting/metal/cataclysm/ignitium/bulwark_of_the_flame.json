@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "fluid": "tconstruct:molten_iron"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:bulwark_of_the_flame"
+  },
+  "result": {
+    "amount": 180,
+    "fluid": "tcompat:molten_ignitium"
+  },
+  "temperature": 1450,
+  "time": 112
+}

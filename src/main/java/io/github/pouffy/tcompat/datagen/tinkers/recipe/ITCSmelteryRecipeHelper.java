@@ -353,6 +353,17 @@ public interface ITCSmelteryRecipeHelper extends ICastCreationHelper {
         MeltingRecipeBuilder.melting(input, fluidOut.apply(outAmount), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(outAmount)).save(consumer, location(prefix + type));
     }
 
+    default MeltingRecipeBuilder simpleMelting(FluidObject<?> fluid, int outAmount, Ingredient input, int[] damageSizes) {
+        IntFunction<FluidOutput> fluidOut = fluid::result;
+        return MeltingRecipeBuilder.melting(input, fluidOut.apply(outAmount), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(outAmount)).setDamagable(damageSizes);
+    }
+
+    default void simpleMelting(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid, int outAmount, String name, Ingredient input, String folder, String type, int[] damageSizes) {
+        String prefix = folder + "/" + name + "/";
+        IntFunction<FluidOutput> fluidOut = fluid::result;
+        MeltingRecipeBuilder.melting(input, fluidOut.apply(outAmount), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(outAmount)).setDamagable(damageSizes).save(consumer, location(prefix + type));
+    }
+
     default void simpleSalvaging(Consumer<FinishedRecipe> consumer, Function<String, ResourceLocation> idFunc, FluidObject<?> fluid, int singularUnit, String name, String techName, SalvageType salvage, int[] damageSizes, String folder) {
         String prefix = folder + "/" + name + "/" + salvage.recipeSuffix();
         IntFunction<FluidOutput> fluidOut = fluid::result;

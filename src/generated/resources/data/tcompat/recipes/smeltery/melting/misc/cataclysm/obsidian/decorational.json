@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "cataclysm:obsidian_bricks"
+    },
+    {
+      "item": "cataclysm:obsidian_brick_wall"
+    },
+    {
+      "item": "cataclysm:polished_obsidian"
+    },
+    {
+      "item": "cataclysm:chiseled_obsidian_bricks"
+    },
+    {
+      "item": "cataclysm:obsidian_pillar"
+    },
+    {
+      "item": "cataclysm:polished_obsidian_wall"
+    }
+  ],
+  "result": {
+    "amount": 1000,
+    "fluid": "tconstruct:molten_obsidian"
+  },
+  "temperature": 1000,
+  "time": 221
+}

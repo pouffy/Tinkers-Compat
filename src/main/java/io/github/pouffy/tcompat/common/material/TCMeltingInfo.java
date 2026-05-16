@@ -38,10 +38,137 @@ public class TCMeltingInfo {
             .setResult(TinkerFluids.moltenNetherite, FluidValues.INGOT)
             .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.GEM * 4));
 
+    private static final MeltingInfo netheriteSword = MeltingInfo.create(getResource("minecraft:netherite_sword"))
+            .setResult(TinkerFluids.moltenNetherite, FluidValues.INGOT)
+            .byproduct(TinkerFluids.moltenDiamond.result(FluidValues.GEM * 2));
+
+    private static final MeltingInfo shield = MeltingInfo.create(getResource("minecraft:shield"))
+            .setResult(TinkerFluids.moltenIron, 90);
+
+    private static final MeltingInfo enderEye = MeltingInfo.create(getResource("minecraft:ender_eye"))
+            .setResult(TinkerFluids.moltenEnder, 250);
+
     private static final int rod = 45;
 
     public static ResourceLocation tcMolten(String material) {
         return TCompat.getResource("tconstruct:molten_" + material);
+    }
+
+    public static class Cataclysm {
+        public static final Function<String, ResourceLocation> cataclysm = name -> getResource("cataclysm", name);
+        public static final InfoGroup cataclysmGroup = new InfoGroup();
+
+        public static final MeltingInfo gauntletOfGuard = cataclysmGroup.create("misc", MeltingInfo.create(cataclysm.apply("gauntlet_of_guard"))
+                .byproduct(TinkerFluids.enderSlime.result(500))
+                .setResult(TinkerFluids.moltenObsidian, 4000));
+        public static final MeltingInfo gauntletOfBulwark = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("gauntlet_of_bulwark"))
+                .component(gauntletOfGuard)
+                .byproduct(tcMolten("iron"), 90)
+                .setResult(TCFluids.moltenIgnitium, 180));
+        public static final MeltingInfo gauntletOfMaelstrom = cataclysmGroup.create("misc", MeltingInfo.create(cataclysm.apply("gauntlet_of_maelstrom"))
+                .component(gauntletOfGuard)
+                .setResult(TinkerFluids.moltenGlass, 1000));
+        public static final MeltingInfo infernalForge = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("infernal_forge"))
+                .byproduct(tcMolten("gold"), 90)
+                .setResult(TinkerFluids.moltenNetherite, 270));
+        public static final MeltingInfo brontes = cataclysmGroup.create("gem", MeltingInfo.create(cataclysm.apply("brontes"))
+                .component(infernalForge)
+                .setResult(TCFluids.moltenLacrima, 300));
+        public static final MeltingInfo voidForge = cataclysmGroup.create("misc", MeltingInfo.create(cataclysm.apply("void_forge"))
+                .component(infernalForge)
+                .setResult(TinkerFluids.enderSlime, 500));
+        public static final MeltingInfo witherAssaultShoulderWeapon = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("wither_assault_shoulder_weapon"))
+                .setResult(TCFluids.moltenWitherite, 180));
+        public static final MeltingInfo voidAssaultShoulderWeapon = cataclysmGroup.create("misc", MeltingInfo.create(cataclysm.apply("void_assault_shoulder_weapon"))
+                .component(witherAssaultShoulderWeapon)
+                .setResult(TinkerFluids.enderSlime, 500));
+        public static final MeltingInfo theAnnihilator = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("the_annihilator"))
+                .byproduct(TCFluids.moltenBlackSteel.result(90))
+                .setResult(TCFluids.moltenCursium, 180));
+        public static final MeltingInfo theImmolator = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("the_immolator"))
+                .component(theAnnihilator)
+                .setResult(TCFluids.moltenIgnitium, 90));
+        public static final MeltingInfo soulRender = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("soul_render"))
+                .byproduct(TCFluids.moltenBlackSteel.result(180))
+                .setResult(TCFluids.moltenCursium, 270));
+        public static final MeltingInfo cursedBow = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("cursed_bow"))
+                .byproduct(TCFluids.moltenBlackSteel.result(90))
+                .setResult(TCFluids.moltenCursium, 180));
+        public static final MeltingInfo wrathOfTheDesert = cataclysmGroup.create("misc", MeltingInfo.create(cataclysm.apply("wrath_of_the_desert"))
+                .component(cursedBow)
+                .setResult(TinkerFluids.moltenGlass, 1000));
+        public static final MeltingInfo meatShredder = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("meat_shredder"))
+                .byproduct(tcMolten("iron"), 810)
+                .setResult(TCFluids.moltenWitherite, 180));
+        public static final MeltingInfo laserGatling = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("laser_gatling"))
+                .byproduct(tcMolten("iron"), 270)
+                .setResult(TCFluids.moltenWitherite, 180));
+        public static final MeltingInfo ancientSpear = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("ancient_spear"))
+                .setResult(TCFluids.moltenAncientMetal, 360));
+
+        public static final MeltingInfo theIncinerator = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("the_incinerator"))
+                .component(netheriteSword)
+                .setResult(TCFluids.moltenIgnitium, 180));
+        public static final MeltingInfo bulwarkOfTheFlame = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("bulwark_of_the_flame"))
+                .component(shield)
+                .setResult(TCFluids.moltenIgnitium, 180));
+        public static final MeltingInfo ignitiumHelmet = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("ignitium_helmet"))
+                .component(netheriteHelmet)
+                .setResult(TCFluids.moltenIgnitium, 90));
+        public static final MeltingInfo ignitiumLeggings = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("ignitium_leggings"))
+                .component(netheriteLeggings)
+                .setResult(TCFluids.moltenIgnitium, 90));
+        public static final MeltingInfo ignitiumBoots = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("ignitium_boots"))
+                .component(netheriteBoots)
+                .setResult(TCFluids.moltenIgnitium, 90));
+        public static final MeltingInfo cursiumHelmet = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("cursium_helmet"))
+                .component(netheriteHelmet)
+                .setResult(TCFluids.moltenCursium, 90));
+        public static final MeltingInfo cursiumChestplate = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("cursium_chestplate"))
+                .component(netheriteChestplate)
+                .setResult(TCFluids.moltenCursium, 90));
+        public static final MeltingInfo cursiumLeggings = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("cursium_leggings"))
+                .component(netheriteLeggings)
+                .setResult(TCFluids.moltenCursium, 90));
+        public static final MeltingInfo cursiumBoots = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("cursium_boots"))
+                .component(netheriteBoots)
+                .setResult(TCFluids.moltenCursium, 90));
+
+        public static final MeltingInfo mechEye = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("mech_eye"))
+                .component(enderEye)
+                .setResult(TinkerFluids.moltenIron, 360));
+        public static final MeltingInfo flameEye = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("flame_eye"))
+                .component(enderEye)
+                .byproduct(TinkerFluids.liquidSoul.result(3000))
+                .setResult(TinkerFluids.moltenDebris, 180));
+        public static final MeltingInfo voidEye = cataclysmGroup.create("misc", MeltingInfo.create(cataclysm.apply("void_eye"))
+                .component(enderEye)
+                .setResult(TinkerFluids.enderSlime, 250));
+        public static final MeltingInfo monstrousEye = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("monstrous_eye"))
+                .component(enderEye)
+                .byproduct(FluidOutput.fromFluid(Fluids.LAVA, 4000))
+                .setResult(TinkerFluids.moltenDebris, 180));
+        public static final MeltingInfo abyssEye = cataclysmGroup.create("misc", MeltingInfo.create(cataclysm.apply("abyss_eye"))
+                .component(enderEye)
+                .setResult(TinkerFluids.moltenObsidian, 4000));
+        public static final MeltingInfo desertEye = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("desert_eye"))
+                .component(enderEye)
+                .byproduct(TinkerFluids.moltenEmerald.result(100))
+                .setResult(TinkerFluids.moltenGold, 90));
+        public static final MeltingInfo cursedEye = cataclysmGroup.create(MeltingInfo.create(cataclysm.apply("cursed_eye"))
+                .component(enderEye)
+                .setResult(TinkerFluids.moltenGold, 360));
+        public static final MeltingInfo stormEye = cataclysmGroup.create("gem", MeltingInfo.create(cataclysm.apply("storm_eye"))
+                .component(enderEye)
+                .byproduct(tcMolten("copper"), 270)
+                .setResult(TinkerFluids.moltenDiamond, 200));
+
+        public static final MeltingInfo abyssalSacrifice = cataclysmGroup.create("gem", MeltingInfo.create(cataclysm.apply("abyssal_sacrifice"))
+                .byproduct(tcMolten("emerald"), 900)
+                .byproduct(tcMolten("gold"), 900)
+                .byproduct(tcMolten("iron"), 810)
+                .byproduct(tcMolten("amethyst"), 400)
+                .setResult(TinkerFluids.moltenDiamond, 900));
     }
 
     public static class AdAstra {

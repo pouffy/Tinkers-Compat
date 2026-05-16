@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 250,
+      "fluid": "tconstruct:molten_ender"
+    },
+    {
+      "amount": 100,
+      "fluid": "tconstruct:molten_emerald"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:desert_eye"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tconstruct:molten_gold"
+  },
+  "temperature": 700,
+  "time": 57
+}

@@ -20,6 +20,18 @@ import java.util.function.Consumer;
 
 import static slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe.getTemperature;
 
+/**
+ * MeltingInfo is a class used for tier/upgrade based items.
+ * <p>
+ *     A few mods add items made from layers of other items.
+ *     <p>
+ *         This makes it easier to create melting recipes by allowing you to stack infos.
+ *         <p>
+ *             Any components are broken down to a list of all outputs and all matching fluids are combined.
+ *         </p>
+ *     </p>
+ * </p>
+ */
 public class MeltingInfo {
     @Getter
     private final ResourceLocation itemKey;
@@ -102,16 +114,19 @@ public class MeltingInfo {
 
     public MeltingRecipeBuilder toRecipe() {
         ResourceLocation result = this.getResult();
-        int resultAmount = this.getOutputs().get(result);
-        var initialBuilder = MeltingRecipeBuilder.melting(ItemNameIngredient.from(getItemKey()), new NamedFluidOutput(result, resultAmount), temperature, IMeltingRecipe.calcTimeFactor(resultAmount));
-        for (var byproduct : getOutputs().entrySet()) {
-            if (byproduct.getKey().equals(result)) continue;
-            initialBuilder.addByproduct(new NamedFluidOutput(byproduct.getKey(), byproduct.getValue()));
+        if (this.getOutputs().containsKey(result)) {
+            int resultAmount = this.getOutputs().get(result);
+            var initialBuilder = MeltingRecipeBuilder.melting(ItemNameIngredient.from(getItemKey()), new NamedFluidOutput(result, resultAmount), temperature, IMeltingRecipe.calcTimeFactor(resultAmount));
+            for (var byproduct : getOutputs().entrySet()) {
+                if (byproduct.getKey().equals(result)) continue;
+                initialBuilder.addByproduct(new NamedFluidOutput(byproduct.getKey(), byproduct.getValue()));
+            }
+            if (damageSizes.length != 0) {
+                initialBuilder.setDamagable(damageSizes);
+            }
+            return initialBuilder;
         }
-        if (damageSizes.length != 0) {
-            initialBuilder.setDamagable(damageSizes);
-        }
-        return initialBuilder;
+        return null;
     }
 
     public MeltingInfo save(Consumer<FinishedRecipe> consumer) {
@@ -122,7 +137,8 @@ public class MeltingInfo {
         Consumer<FinishedRecipe> finalConsumer = withCondition(consumer, new ModLoadedCondition(getItemKey().getNamespace()));
         String name = withoutMolten(getResult());
         String prefix = "smeltery/melting/" + type + "/" + getItemKey().getNamespace() + "/" + name + "/";
-        toRecipe().save(finalConsumer, location(prefix.formatted(getItemKey().getNamespace()) + getItemKey().getPath()));
+        var builder = this.toRecipe();
+        if (builder != null) builder.save(finalConsumer, location(prefix.formatted(getItemKey().getNamespace()) + getItemKey().getPath()));
         return this;
     }
 

@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:bloom_stone_pauldrons"
+  },
+  "result": {
+    "amount": 200,
+    "fluid": "tconstruct:molten_amethyst",
+    "unit_size": 5
+  },
+  "temperature": 950,
+  "time": 97
+}

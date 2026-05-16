@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:vitality_ankh"
+  },
+  "result": {
+    "amount": 360,
+    "fluid": "tcompat:molten_ancient_metal"
+  },
+  "temperature": 1050,
+  "time": 136
+}

@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 270,
+      "fluid": "tconstruct:molten_iron"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:laser_gatling"
+  },
+  "result": {
+    "amount": 180,
+    "fluid": "tcompat:molten_witherite"
+  },
+  "temperature": 1200,
+  "time": 102
+}
