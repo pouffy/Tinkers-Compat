@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonscale_white"
+  },
+  "leftover": "iceandfire:dragonscales_white",
+  "material": "tcompat:ice_dragon_scale#white",
+  "needed": 1,
+  "value": 9
+}

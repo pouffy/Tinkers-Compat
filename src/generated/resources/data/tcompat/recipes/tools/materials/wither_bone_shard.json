@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:wither_shard"
+  },
+  "material": "tconstruct:necrotic_bone",
+  "needed": 3,
+  "value": 1
+}

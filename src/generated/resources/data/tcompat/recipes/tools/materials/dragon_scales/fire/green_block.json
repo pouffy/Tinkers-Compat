@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonscale_green"
+  },
+  "leftover": "iceandfire:dragonscales_green",
+  "material": "tcompat:fire_dragon_scale#green",
+  "needed": 1,
+  "value": 9
+}

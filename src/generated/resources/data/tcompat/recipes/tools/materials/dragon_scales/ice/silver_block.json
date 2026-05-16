@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonscale_silver"
+  },
+  "leftover": "iceandfire:dragonscales_silver",
+  "material": "tcompat:ice_dragon_scale#silver",
+  "needed": 1,
+  "value": 9
+}

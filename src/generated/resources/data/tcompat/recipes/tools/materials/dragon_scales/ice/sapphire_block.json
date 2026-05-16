@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:dragonscale_sapphire"
+  },
+  "leftover": "iceandfire:dragonscales_sapphire",
+  "material": "tcompat:ice_dragon_scale#sapphire",
+  "needed": 1,
+  "value": 9
+}
