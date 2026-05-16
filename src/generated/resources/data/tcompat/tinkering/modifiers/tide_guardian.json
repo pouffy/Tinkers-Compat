@@ -1,0 +1,49 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "iceandfire"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:mob_effect",
+      "effect": "minecraft:water_breathing",
+      "level": {
+        "flat": 1.0
+      },
+      "target": {
+        "type": "mantle:or",
+        "predicates": [
+          "mantle:underwater",
+          "mantle:raining_at",
+          "mantle:feet_in_water",
+          "mantle:eyes_in_water"
+        ]
+      },
+      "time": {},
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 0.65,
+      "percent": true,
+      "target": {
+        "type": "mantle:or",
+        "predicates": [
+          "mantle:underwater",
+          "mantle:raining_at",
+          "mantle:feet_in_water",
+          "mantle:eyes_in_water"
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

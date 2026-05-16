@@ -183,6 +183,10 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(voltbornPredicate).percent().eachLevel(0.45f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(voltbornPredicate).percent().eachLevel(0.65f))
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).source(new DamageTypePredicate(ObjectRetriever.damageKey("iceandfire:dragon_lightning"))).eachLevel(2.5f));
+        IJsonPredicate<LivingEntity> wetPredicate = LivingEntityPredicate.or(LivingEntityPredicate.UNDERWATER, LivingEntityPredicate.RAINING, LivingEntityPredicate.FEET_IN_WATER, LivingEntityPredicate.EYES_IN_WATER);
+        buildModifier(TCModifiers.tideGuardian, modLoaded("iceandfire"))
+                .addModule(MobEffectModule.builder(MobEffects.WATER_BREATHING).toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).target(wetPredicate).build())
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).target(wetPredicate).percent().eachLevel(0.65f));
 
         buildModifier(TCModifiers.cataclysmic, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(125)

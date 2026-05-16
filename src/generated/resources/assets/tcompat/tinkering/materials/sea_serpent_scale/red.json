@@ -1,0 +1,58 @@
+{
+  "color": "FFD71E31",
+  "fallbacks": [
+    "scales",
+    "metal"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:repair_kit",
+      "tconstruct:fletching",
+      "tconstruct:armor_plating",
+      "tconstruct:plating_helmet",
+      "tconstruct:plating_chestplate",
+      "tconstruct:plating_leggings",
+      "tconstruct:plating_boots",
+      "tconstruct:plating_shield",
+      "tconstruct:maille",
+      "tconstruct:armor_maille"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF5D0922",
+            "grey": 63
+          },
+          {
+            "color": "FF871425",
+            "grey": 102
+          },
+          {
+            "color": "FFAB1A24",
+            "grey": 140
+          },
+          {
+            "color": "FFD71E31",
+            "grey": 178
+          },
+          {
+            "color": "FFF7243A",
+            "grey": 216
+          },
+          {
+            "color": "FFFB6149",
+            "grey": 255
+          }
+        ]
+      }
+    },
+    "variant": true
+  }
+}

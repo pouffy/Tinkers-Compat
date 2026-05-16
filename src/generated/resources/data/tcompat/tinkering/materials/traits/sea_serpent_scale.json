@@ -1,0 +1,16 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tcompat:tide_guardian"
+      }
+    ],
+    "tconstruct:fletching": [
+      {
+        "level": 1,
+        "name": "tconstruct:fins_ammo"
+      }
+    ]
+  }
+}

@@ -10,6 +10,7 @@ import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static io.github.pouffy.tcompat.datagen.tinkers.material.TCMaterialSpriteProv.complexTransformer;
@@ -22,6 +23,20 @@ public class IFMaterials {
     public static final MaterialId dragonScaleFire = dragonScales("fire", 0xFF301511, 0xFF3e1d18, 0xFF532f2a, 0xFF82522e, 0xFF996944, 0xFFb78d6e);
     public static final MaterialId dragonScaleIce = dragonScales("ice", 0xFF002970, 0xFF06279e, 0xFF123ece, 0xFF246fe8, 0xFF5c99e8, 0xFF92d1e8);
     public static final MaterialId dragonScaleLightning = dragonScales("lightning", 0xFF090909, 0xFF151515, 0xFF292929, 0xFF2f2f2f, 0xFF484848, 0xFF636363);
+
+    public static final MaterialId seaSerpentScale = MaterialBuilder.material("iceandfire", "sea_serpent_scale")
+            .data(d -> d.tier(4).order(5).craftable(true))
+            .traits(t -> t.trait(ARMOR, TCModifiers.tideGuardian).trait(StatlessMaterialStats.FLETCHING.getIdentifier(), ModifierIds.finsAmmo))
+            .stats(s ->
+                    s.stat(
+                            StatlessMaterialStats.FLETCHING
+                    ).armorStats(
+                            PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE
+                    )
+            )
+            .renderInfo(r -> r.color(0x228eda).fallbacks("scales", "metal"))
+            .spriteInfo(s -> s.fallbacks("scales", "metal").fletching().repairKit().armor().sixColor(0xFF053755, 0xFF0f5a80, 0xFF1e74b5, 0xFF228eda, 0xFF2aa6fd, 0xFF39cfff))
+            .buildMaterial();
 
     public static final MaterialVariantId
             dragonBronze = dragonScalesVariant("bronze", dragonScaleFire,           0xFF301511, 0xFF3e1d18, 0xFF532f2a, 0xFF82522e, 0xFF996944, 0xFFb78d6e),
@@ -38,6 +53,14 @@ public class IFMaterials {
             dragonBlack = dragonScalesVariant("black", dragonScaleLightning,        0xFF090909, 0xFF151515, 0xFF292929, 0xFF2f2f2f, 0xFF484848, 0xFF636363),
             dragonCopper = dragonScalesVariant("copper", dragonScaleLightning,      0xFF351923, 0xFF481d28, 0xFF572a23, 0xFF79402c, 0xFFa05e2f, 0xFFd3824c),
             dragonElectric = dragonScalesVariant("electric", dragonScaleLightning,  0xFF14143d, 0xFF1a1e51, 0xFF292989, 0xFF4643e8, 0xFF7068e8, 0xFF9691ff);
+    public static final MaterialVariantId
+            serpentBlue = seaSerpentScaleVariant("blue",          0xFF053755, 0xFF0f5a80, 0xFF1e74b5, 0xFF228eda, 0xFF2aa6fd, 0xFF39cfff),
+            serpentBronze = seaSerpentScaleVariant("bronze",      0xFF4d2c02, 0xFF76430b, 0xFFa16911, 0xFFb87219, 0xFFd57c26, 0xFFffa05a),
+            serpentDeepBlue = seaSerpentScaleVariant("deep_blue", 0xFF031d4f, 0xFF0f3a80, 0xFF1e49b5, 0xFF2459de, 0xFF2a6afd, 0xFF3997ff),
+            serpentGreen = seaSerpentScaleVariant("green",        0xFF002d1e, 0xFF025d3e, 0xFF05874b, 0xFF089655, 0xFF0ea761, 0xFF0dd65d),
+            serpentPurple = seaSerpentScaleVariant("purple",      0xFF190354, 0xFF361990, 0xFF501eb5, 0xFF5a1fdc, 0xFF6824fd, 0xFF8b45ff),
+            serpentRed = seaSerpentScaleVariant("red",            0xFF5d0922, 0xFF871425, 0xFFab1a24, 0xFFd71e31, 0xFFf7243a, 0xFFfb6149),
+            serpentTeal = seaSerpentScaleVariant("teal",          0xFF004544, 0xFF06857f, 0xFF08aa8e, 0xFF03c6ba, 0xFF03d4db, 0xFF72ffdc);
 
     public static final MaterialId dragonBone = MaterialBuilder.material("iceandfire", "dragon_bone")
             .data(d -> d.tier(4).order(5).craftable(true))
@@ -134,6 +157,14 @@ public class IFMaterials {
         return builder.buildMaterial();
     }
 
+    private static MaterialVariantId seaSerpentScaleVariant(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
+        var builder = MaterialBuilder.variant("iceandfire", type, seaSerpentScale)
+                .lang(TCLangProv.toEngStr(type) + " Sea Serpent Scale")
+                .renderInfo(r -> r.color(c178).fallbacks("scales", "metal"))
+                .spriteInfo(s -> s.repairKit().fletching().armor().fallbacks("scales", "metal").sixColor(c63, c102, c140, c178, c216, c255));
+        return builder.buildVariant();
+    }
+
     private static MaterialVariantId dragonScalesVariant(String type, MaterialId parent, int c63, int c102, int c140, int c178, int c216, int c255) {
         var builder = MaterialBuilder.variant("iceandfire", type, parent)
                 .lang(TCLangProv.toEngStr(type) + " Dragon Scale")
@@ -145,6 +176,22 @@ public class IFMaterials {
     private static MaterialVariantId dragonScalesVariant(String type, MaterialId parent, ISpriteTransformer spriteTransformer) {
         var builder = MaterialBuilder.variant("iceandfire", type, parent)
                 .lang(TCLangProv.toEngStr(type) + " Dragon Scale")
+                .renderInfo(r -> r.fallbacks("scales", "metal"))
+                .spriteInfo(s -> s.repairKit().armor().fallbacks("scales", "metal").transformer(spriteTransformer));
+        return builder.buildVariant();
+    }
+
+    private static MaterialVariantId scalesVariant(String type, String suffix, MaterialId parent, int c63, int c102, int c140, int c178, int c216, int c255) {
+        var builder = MaterialBuilder.variant("iceandfire", type, parent)
+                .lang(TCLangProv.toEngStr(type) + " " + suffix)
+                .renderInfo(r -> r.color(c178).fallbacks("scales", "metal"))
+                .spriteInfo(s -> s.repairKit().armor().fallbacks("scales", "metal").sixColor(c63, c102, c140, c178, c216, c255));
+        return builder.buildVariant();
+    }
+
+    private static MaterialVariantId scalesVariant(String type, String suffix, MaterialId parent, ISpriteTransformer spriteTransformer) {
+        var builder = MaterialBuilder.variant("iceandfire", type, parent)
+                .lang(TCLangProv.toEngStr(type) + " " + suffix)
                 .renderInfo(r -> r.fallbacks("scales", "metal"))
                 .spriteInfo(s -> s.repairKit().armor().fallbacks("scales", "metal").transformer(spriteTransformer));
         return builder.buildVariant();

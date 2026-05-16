@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:sea_serpent_scale_block_red"
+  },
+  "leftover": "iceandfire:sea_serpent_scales_red",
+  "material": "tcompat:sea_serpent_scale#red",
+  "needed": 1,
+  "value": 9
+}
