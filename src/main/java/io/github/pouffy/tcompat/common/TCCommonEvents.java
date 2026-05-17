@@ -15,7 +15,7 @@ import io.github.pouffy.tcompat.common.network.base.PacketRelay;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.modifier.ThunderstruckModifier;
-import net.minecraft.core.BlockPos;
+import io.github.pouffy.tcompat.compat.ice_and_fire.modifier.AmphithericModifier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
@@ -25,9 +25,8 @@ import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
@@ -40,7 +39,6 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegisterEvent;
-import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.util.OffhandCooldownTracker;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -105,16 +103,6 @@ public class TCCommonEvents {
                 if (event.getLevel().isClientSide && flag) {
                     PacketRelay.sendToServer(TCompatNetworking.INSTANCE, new SwingClientArmPacket(event.getEntity(), InteractionHand.OFF_HAND));
                 }
-            });
-        }
-    }
-
-    @SubscribeEvent
-    public void onLivingDamage(LivingDamageEvent event) {
-        LivingEntity entity = event.getEntity();
-        if (event.getSource().getDirectEntity() instanceof Projectile projectile) {
-            ProjectileAbility.get(projectile).ifPresent(ability -> {
-                ability.handleLeeching(event.getAmount(), entity);
             });
         }
     }
@@ -186,20 +174,10 @@ public class TCCommonEvents {
 
     }
 
-    public static LivingEntityPredicate sunPredicate = LivingEntityPredicate.simple((entity) -> {
-        if (entity.level().isDay() && !entity.level().isClientSide) {
-            float brightness = (float)entity.level().getBrightness(LightLayer.SKY, entity.blockPosition());
-            BlockPos blockpos = entity.getVehicle() instanceof Boat ? (new BlockPos(entity.getBlockX(), entity.getBlockY(), entity.getBlockZ())).above() : new BlockPos(entity.getBlockX(), entity.getBlockY(), entity.getBlockZ());
-            return brightness > 0.5F && entity.level().canSeeSky(blockpos);
-        }
-        return false;
-    });
-
     @SubscribeEvent
     void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
             ModifierModule.LOADER.register(TCompat.getResource("autosmelt"), AutosmeltModule.LOADER);
-            LivingEntityPredicate.LOADER.register(TCompat.getResource("sun_exposed"), sunPredicate.getLoader());
         }
     }
 }

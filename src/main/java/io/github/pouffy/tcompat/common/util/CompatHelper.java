@@ -15,15 +15,19 @@ import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tiers;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -34,6 +38,7 @@ import slimeknights.tconstruct.tools.stats.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.function.Consumer;
 
 import static net.minecraft.world.item.Tiers.STONE;
@@ -113,6 +118,17 @@ public class CompatHelper {
                 player.displayClientMessage(message, true);
             }
         }
+    }
+
+    public static Entity getEntityByUUID(Level level, UUID uuid) {
+        if (level instanceof ServerLevel serverLevel) {
+            for (var entity : serverLevel.getEntities().getAll()) {
+                if (uuid.equals(entity.getUUID())) {
+                    return entity;
+                }
+            }
+        }
+        return null;
     }
 
     //Never datagenerated. Just used as fallbacks. Will always fallback to wood if the parent isn't defined here

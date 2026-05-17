@@ -155,6 +155,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.trollFrost,              ItemNameIngredient.from(TCompat.getResource("iceandfire:troll_leather_frost"                )), 1, 1, folder + "troll_leather/frost");
         materialRecipe(iceandfire, IFMaterials.trollMountain,           ItemNameIngredient.from(TCompat.getResource("iceandfire:troll_leather_mountain"             )), 1, 1, folder + "troll_leather/mountain");
         materialRecipe(iceandfire, IFMaterials.trollForest,             ItemNameIngredient.from(TCompat.getResource("iceandfire:troll_leather_forest"               )), 1, 1, folder + "troll_leather/forest");
+        materialRecipe(iceandfire, IFMaterials.myrmexDesert,            ItemNameIngredient.from(TCompat.getResource("iceandfire:myrmex_desert_chitin"               )), 1, 1, folder + "myrmex_chitin/desert");
+        materialRecipe(iceandfire, IFMaterials.myrmexJungle,            ItemNameIngredient.from(TCompat.getResource("iceandfire:myrmex_jungle_chitin"               )), 1, 1, folder + "myrmex_chitin/jungle");
 
 
         metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);

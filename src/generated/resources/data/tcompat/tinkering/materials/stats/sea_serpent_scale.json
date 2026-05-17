@@ -3,24 +3,24 @@
     "tconstruct:fletching": {},
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
-      "armor": 5.0,
-      "durability": 468,
-      "toughness": 2.0
+      "armor": 4.0,
+      "durability": 390,
+      "toughness": 2.5
     },
     "tconstruct:plating_chestplate": {
-      "armor": 9.0,
-      "durability": 576,
-      "toughness": 2.0
+      "armor": 7.0,
+      "durability": 480,
+      "toughness": 2.5
     },
     "tconstruct:plating_helmet": {
-      "armor": 5.0,
-      "durability": 396,
-      "toughness": 2.0
+      "armor": 4.0,
+      "durability": 330,
+      "toughness": 2.5
     },
     "tconstruct:plating_leggings": {
-      "armor": 7.0,
-      "durability": 540,
-      "toughness": 2.0
+      "armor": 8.0,
+      "durability": 450,
+      "toughness": 2.5
     }
   }
 }

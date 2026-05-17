@@ -80,6 +80,8 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.voltborn,                      0x974fff);
         addColor(TCModifiers.tideGuardian,                  0x2aa6fd);
         addColor(TCModifiers.aquaShot,                      0xdbccb5);
+        addColor(TCModifiers.petrifying,                    0x50606b);
+        addColor(TCModifiers.allythropod,                   0xac6111);
         addColor(IFInit.flamed.getId(),                     0xff581c);
         addColor(IFInit.iced.getId(),                       0x5effff);
         addColor(IFInit.lightning.getId(),                  0x974fff);

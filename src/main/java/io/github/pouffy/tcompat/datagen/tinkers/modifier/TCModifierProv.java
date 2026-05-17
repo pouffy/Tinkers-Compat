@@ -4,20 +4,25 @@ import io.github.pouffy.tcompat.common.TCCommonEvents;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.module.AetherForgedModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.damage.DamageTypePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
+import slimeknights.mantle.data.predicate.entity.MobTypePredicate;
 import slimeknights.mantle.data.predicate.item.ItemPredicate;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
@@ -26,6 +31,7 @@ import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
 import slimeknights.tconstruct.library.json.variable.tool.StatMultiplierVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
+import slimeknights.tconstruct.library.modifiers.impl.BasicModifier;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ReduceToolDamageModule;
@@ -174,17 +180,17 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         IJsonPredicate<LivingEntity> scorchbornPredicate = LivingEntityPredicate.or(LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:lightning_dragons")), LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:ice_dragons")));
         buildModifier(TCModifiers.scorchborn, modLoaded("iceandfire"))
-                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(scorchbornPredicate).percent().eachLevel(0.45f))
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE)).target(scorchbornPredicate).percent().eachLevel(0.45f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(scorchbornPredicate).percent().eachLevel(0.65f))
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).source(new DamageTypePredicate(ObjectRetriever.damageKey("iceandfire:dragon_fire"))).eachLevel(2.5f));
         IJsonPredicate<LivingEntity> frostbornPredicate = LivingEntityPredicate.or(LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:lightning_dragons")), LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:fire_dragons")));
         buildModifier(TCModifiers.frostborn, modLoaded("iceandfire"))
-                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(frostbornPredicate).percent().eachLevel(0.45f))
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE)).target(frostbornPredicate).percent().eachLevel(0.45f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(frostbornPredicate).percent().eachLevel(0.65f))
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).source(new DamageTypePredicate(ObjectRetriever.damageKey("iceandfire:dragon_ice"))).eachLevel(2.5f));
         IJsonPredicate<LivingEntity> voltbornPredicate = LivingEntityPredicate.or(LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:ice_dragons")), LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:fire_dragons")));
         buildModifier(TCModifiers.voltborn, modLoaded("iceandfire"))
-                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(voltbornPredicate).percent().eachLevel(0.45f))
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE)).target(voltbornPredicate).percent().eachLevel(0.45f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(voltbornPredicate).percent().eachLevel(0.65f))
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).source(new DamageTypePredicate(ObjectRetriever.damageKey("iceandfire:dragon_lightning"))).eachLevel(2.5f));
         IJsonPredicate<LivingEntity> wetPredicate = LivingEntityPredicate.or(LivingEntityPredicate.UNDERWATER, LivingEntityPredicate.RAINING, LivingEntityPredicate.FEET_IN_WATER, LivingEntityPredicate.EYES_IN_WATER);
@@ -194,9 +200,14 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.aquaShot, modLoaded("iceandfire"))
                 .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).holder(wetPredicate).eachLevel(1.0f));
         buildModifier(TCModifiers.petrifying, modLoaded("iceandfire"))
-                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).attacker(TCCommonEvents.sunPredicate).percent().flat(0.25f))
-                .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).holder(TCCommonEvents.sunPredicate).percent().flat(0.25f))
-                .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(TCCommonEvents.sunPredicate).flat(0.25f));
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE)).attacker(GlobalInit.SUN_EXPOSED).percent().amount(0.25F, 0.05F))
+                .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).holder(GlobalInit.SUN_EXPOSED).percent().amount(0.25F, 0.05F))
+                .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(GlobalInit.SUN_EXPOSED).amount(0.25F, 0.05F));
+        IJsonPredicate<LivingEntity> allythropodPredicate = LivingEntityPredicate.or(new MobTypePredicate(MobType.ARTHROPOD).inverted(), LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:death_worms")));
+        buildModifier(TCModifiers.allythropod, modLoaded("iceandfire"))
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE)).target(allythropodPredicate).amount(5.0F, 0.25F))
+                .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(allythropodPredicate).amount(5.0F, 0.25F))
+                .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).attacker(allythropodPredicate.inverted()).eachLevel(1.5f));
 
         buildModifier(TCModifiers.cataclysmic, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(125)
@@ -206,7 +217,7 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         IJsonPredicate<LivingEntity> ancientRemnant = LivingEntityPredicate.tag(TCEntityTagProv.create("cataclysm:team_ancient_remnant"));
         buildModifier(TCModifiers.archaeologist, modLoaded("cataclysm"))
-                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).target(ancientRemnant).percent().eachLevel(0.25f))
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE)).target(ancientRemnant).percent().eachLevel(0.25f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(ancientRemnant).percent().eachLevel(0.35f))
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(ancientRemnant).amount(0.75f, 0.25f));
         buildModifier(TCModifiers.standstill, modLoaded("cataclysm"))

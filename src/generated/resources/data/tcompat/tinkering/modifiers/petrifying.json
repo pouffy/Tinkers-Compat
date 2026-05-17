@@ -1,0 +1,44 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "iceandfire"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "attacker": "tcompat:sun_exposed",
+      "each_level": 0.05,
+      "flat": 0.25,
+      "percent": true,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/melee"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "each_level": 0.05,
+      "entity": "tcompat:sun_exposed",
+      "flat": 0.25,
+      "percent": true,
+      "stat": "tconstruct:projectile_damage",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/ranged"
+      }
+    },
+    {
+      "type": "tconstruct:protection",
+      "damage_source": "mantle:can_protect",
+      "each_level": 0.05,
+      "flat": 0.25,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      },
+      "wearing_entity": "tcompat:sun_exposed"
+    }
+  ],
+  "tooltip_display": "always"
+}

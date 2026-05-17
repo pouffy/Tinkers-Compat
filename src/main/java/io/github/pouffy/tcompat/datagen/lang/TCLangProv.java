@@ -118,6 +118,13 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.voltborn.attack_damage", "Fire & Ice Dragon Melee Damage");
         add("modifier.tcompat.voltborn.projectile_damage", "Fire & Ice Dragon Ranged Damage");
         add("modifier.tcompat.voltborn.resistance", "Lightning Dragon Breath Protection");
+        add("modifier.tcompat.petrifying.attack_damage", "Petrified Melee Damage");
+        add("modifier.tcompat.petrifying.projectile_damage", "Petrified Ranged Damage");
+        add("modifier.tcompat.petrifying.resistance", "Petrified Protection");
+        add("modifier.tcompat.allythropod.attack_damage", "Allythropod Melee Damage");
+        add("modifier.tcompat.allythropod.projectile_damage", "Allythropod Ranged Damage");
+        add("modifier.tcompat.allythropod.resistance", "Allythropod Protection");
+        add("modifier.tcompat.tide_guardian.attack_damage", "Tide Guardian Melee Damage");
 
         add("modifier.tcompat.archaeologist.attack_damage", "Archaeology Melee Damage");
         add("modifier.tcompat.archaeologist.projectile_damage", "Archaeology Ranged Damage");
@@ -181,6 +188,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.amphitheric", "Go Away", "Knocks all mobs back with the power of an amphithere's wings");
         forModifier("modifier.tcompat.stymphalian", "Soar", "The metallic fletching enables the arrow to soar like a bird");
         forModifier("modifier.tcompat.petrifying", "Pretty Solid", "The troll's hide petrifies in sunlight, strengthening your tool");
+        forModifier("modifier.tcompat.allythropod", "Why not be friends?", "Bonus damage to non-arthropods and deathworms");
         //Cataclysm
         forModifier("modifier.tcompat.cataclysmic", "Nigh Unstoppable", "The spirits of ancient gods try to hold your tool together.");
         forModifier("modifier.tcompat.void_scatter", "Scatter!", "Upon hitting a target, the arrow shatters into multiple void shards.");

@@ -4,7 +4,6 @@ import io.github.pouffy.tcompat.common.network.ProjectileAbilitySyncPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraftforge.network.simple.SimpleChannel;
 import org.apache.commons.lang3.tuple.Triple;
@@ -15,7 +14,6 @@ import java.util.function.Supplier;
 
 public class ProjectileAbilityCapability implements ProjectileAbility {
     private final Projectile projectile;
-    private Entity owner;
     private boolean isLeeching;
     private boolean isAmphithere;
     private boolean isStymphalian;
@@ -33,16 +31,6 @@ public class ProjectileAbilityCapability implements ProjectileAbility {
     @Override
     public Projectile getProjectile() {
         return this.projectile;
-    }
-
-    @Override
-    public void setOwner(Entity owner) {
-        this.owner = owner;
-    }
-
-    @Override
-    public Entity getOwner() {
-        return this.owner;
     }
 
     @Override
@@ -78,9 +66,6 @@ public class ProjectileAbilityCapability implements ProjectileAbility {
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
-        if (this.getOwner() != null) {
-            tag.putInt("owner", this.getOwner().getId());
-        }
         tag.putBoolean("isLeeching", this.isLeeching());
         tag.putBoolean("isAmphithere", this.isAmphithere());
         tag.putBoolean("isStymphalian", this.isStymphalian());
@@ -89,14 +74,11 @@ public class ProjectileAbilityCapability implements ProjectileAbility {
 
     @Override
     public void deserializeNBT(CompoundTag tag) {
-        if (tag.contains("owner")) {
-            this.setOwner(getProjectile().level().getEntity(tag.getInt("owner")));
-        }
         if (tag.contains("isLeeching")) {
             this.setLeeching(tag.getBoolean("isLeeching"));
         }
         if (tag.contains("isAmphithere")) {
-            this.setLeeching(tag.getBoolean("isAmphithere"));
+            this.setAmphithere(tag.getBoolean("isAmphithere"));
         }
         if (tag.contains("isStymphalian")) {
             this.setStymphalian(tag.getBoolean("isStymphalian"));

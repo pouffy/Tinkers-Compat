@@ -14,8 +14,7 @@ import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static io.github.pouffy.tcompat.datagen.tinkers.material.TCMaterialSpriteProv.complexTransformer;
-import static net.minecraft.world.item.Tiers.IRON;
-import static net.minecraft.world.item.Tiers.NETHERITE;
+import static net.minecraft.world.item.Tiers.*;
 import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 
 public class IFMaterials {
@@ -31,7 +30,7 @@ public class IFMaterials {
                     s.stat(
                             StatlessMaterialStats.FLETCHING
                     ).armorStats(
-                            PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE
+                            PlatingMaterialStats.builder().durabilityFactor(30).armor(4, 8, 7, 4).toughness(2.5F), StatlessMaterialStats.MAILLE
                     )
             )
             .renderInfo(r -> r.color(0x228eda).fallbacks("scales", "metal"))
@@ -40,11 +39,24 @@ public class IFMaterials {
 
     public static final MaterialId trollLeather = MaterialBuilder.material("iceandfire", "troll_leather")
             .data(d -> d.tier(2).order(4).craftable(true))
-            .traits(t -> t.trait(TCModifiers.petrifying))
-            .traits(t -> t.trait(StatlessMaterialStats.MAILLE.getIdentifier(), ModifierIds.projectileProtection))
+            .traits(t -> t.trait(TCModifiers.petrifying).trait(StatlessMaterialStats.MAILLE.getIdentifier(), ModifierIds.projectileProtection))
             .stats(s -> s.stat(StatlessMaterialStats.MAILLE, StatlessMaterialStats.BINDING))
-            .renderInfo(r -> r.color(0x50606b).fallbacks("leather"))
-            .spriteInfo(s -> s.maille().binding().fallbacks("leather").sixColor(0xFF0f1717, 0xFF1b2529, 0xFF3b474d, 0xFF485961, 0xFF50606b, 0xFF66737a))
+            .renderInfo(r -> r.color(0x50606b).fallbacks("cloth"))
+            .spriteInfo(s -> s.maille().binding().fallbacks("cloth").sixColor(0xFF0f1717, 0xFF1b2529, 0xFF3b474d, 0xFF485961, 0xFF50606b, 0xFF66737a))
+            .buildMaterial();
+
+    public static final MaterialId myrmexChitin = MaterialBuilder.material("iceandfire", "myrmex_chitin")
+            .data(d -> d.tier(3).order(4).craftable(true))
+            .traits(t -> t.trait(TCModifiers.allythropod))
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(600, 6.0F, DIAMOND, 1.0F), StatlessMaterialStats.BINDING
+                    ).armorStats(
+                            PlatingMaterialStats.builder().durabilityFactor(20).armor(3, 5, 8, 4)
+                    )
+            )
+            .renderInfo(r -> r.color(0x904a10).fallbacks("chitin", "wood"))
+            .spriteInfo(s -> s.plating().head().binding().fallbacks("chitin", "wood").sevenColor(0xFF2c322a, 0xFF4c3f06, 0xFF663f27, 0xFF724f06, 0xFF904a10, 0xFFac6111, 0xFFd06e33))
             .buildMaterial();
 
     public static final MaterialVariantId
@@ -74,6 +86,9 @@ public class IFMaterials {
             trollFrost = trollLeatherVariant("frost",       0xFF0f1717, 0xFF1b2529, 0xFF3b474d, 0xFF485961, 0xFF50606b, 0xFF66737a),
             trollMountain = trollLeatherVariant("mountain", 0xFF0e0d12, 0xFF1b1c1f, 0xFF3b3f45, 0xFF4e5359, 0xFF60636b, 0xFF6d717a),
             trollForest = trollLeatherVariant("forest",     0xFF1b1f1b, 0xFF272e2e, 0xFF343d3d, 0xFF49574e, 0xFF5a6961, 0xFF6a7a73);
+    public static final MaterialVariantId
+            myrmexDesert = myrmexChitinVariant("desert", 0xFF2c322a, 0xFF4c3f06, 0xFF663f27, 0xFF724f06, 0xFF904a10, 0xFFac6111, 0xFFd06e33),
+            myrmexJungle = myrmexChitinVariant("jungle", 0xFF283a47, 0xFF2e4f57, 0xFF1d6c57, 0xFF1b7f7c, 0xFF369281, 0xFF3da09d, 0xFF1bbaa8);
 
     public static final MaterialId dragonBone = MaterialBuilder.material("iceandfire", "dragon_bone")
             .data(d -> d.tier(4).order(5).craftable(true))
@@ -203,11 +218,20 @@ public class IFMaterials {
         return builder.buildMaterial();
     }
 
+
+    private static MaterialVariantId myrmexChitinVariant(String type, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
+        var builder = MaterialBuilder.variant("iceandfire", type, myrmexChitin)
+                .lang(TCLangProv.toEngStr(type) + " Myrmex Chitin")
+                .renderInfo(r -> r.color(c178).fallbacks("chitin", "wood"))
+                .spriteInfo(s -> s.repairKit().binding().head().plating().fallbacks("chitin", "wood").sevenColor(c63, c102, c140, c178, c216, c234, c255));
+        return builder.buildVariant();
+    }
+
     private static MaterialVariantId trollLeatherVariant(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
         var builder = MaterialBuilder.variant("iceandfire", type, trollLeather)
                 .lang(TCLangProv.toEngStr(type) + " Troll Leather")
-                .renderInfo(r -> r.color(c178).fallbacks("leather"))
-                .spriteInfo(s -> s.repairKit().binding().maille().fallbacks("leather").sixColor(c63, c102, c140, c178, c216, c255));
+                .renderInfo(r -> r.color(c178).fallbacks("cloth"))
+                .spriteInfo(s -> s.repairKit().binding().maille().fallbacks("cloth").sixColor(c63, c102, c140, c178, c216, c255));
         return builder.buildVariant();
     }
 

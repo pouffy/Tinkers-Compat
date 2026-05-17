@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:troll_leather_frost"
+  },
+  "material": "tcompat:troll_leather#frost",
+  "needed": 1,
+  "value": 1
+}

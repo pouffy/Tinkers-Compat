@@ -1,0 +1,78 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "iceandfire"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 0.25,
+      "flat": 5.0,
+      "percent": false,
+      "target": {
+        "type": "mantle:or",
+        "predicates": [
+          {
+            "type": "mantle:inverted",
+            "inverted_type": "mantle:mob_type",
+            "mobs": "minecraft:arthropod"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "tcompat:death_worms"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/melee"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_power",
+      "each_level": 0.25,
+      "flat": 5.0,
+      "percent": false,
+      "target": {
+        "type": "mantle:or",
+        "predicates": [
+          {
+            "type": "mantle:inverted",
+            "inverted_type": "mantle:mob_type",
+            "mobs": "minecraft:arthropod"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "tcompat:death_worms"
+          }
+        ]
+      }
+    },
+    {
+      "type": "tconstruct:protection",
+      "attacker": {
+        "type": "mantle:inverted",
+        "inverted_type": "mantle:or",
+        "predicates": [
+          {
+            "type": "mantle:inverted",
+            "inverted_type": "mantle:mob_type",
+            "mobs": "minecraft:arthropod"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "tcompat:death_worms"
+          }
+        ]
+      },
+      "damage_source": "mantle:can_protect",
+      "each_level": 1.5,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

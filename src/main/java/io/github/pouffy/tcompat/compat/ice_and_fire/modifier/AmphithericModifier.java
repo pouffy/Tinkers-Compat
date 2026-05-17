@@ -29,7 +29,7 @@ public class AmphithericModifier extends NoLevelsModifier implements ProjectileL
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.PROJECTILE_LAUNCH, ModifierHooks.PROJECTILE_SHOT, ModifierHooks.PROJECTILE_THROWN);
+        hookBuilder.addHook(this, ModifierHooks.PROJECTILE_LAUNCH, ModifierHooks.PROJECTILE_SHOT, ModifierHooks.PROJECTILE_THROWN, ModifierHooks.PROJECTILE_HIT);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AmphithericModifier extends NoLevelsModifier implements ProjectileL
         launch(projectile, null);
     }
 
-    private void launch(Projectile projectile, @Nullable Entity hitEntity) {
+    public static void launch(Projectile projectile, @Nullable Entity hitEntity) {
         Predicate<Entity> selector = (entity) -> !(entity instanceof Projectile) && entity != hitEntity;
         RandomSource random = projectile.level().random;
         double xRatio = projectile.getDeltaMovement().x;
@@ -82,7 +82,7 @@ public class AmphithericModifier extends NoLevelsModifier implements ProjectileL
         ProjectileAbility.get(projectile).ifPresent(leeching -> leeching.setAmphithere(false));
     }
 
-    private void launchEntity(Entity entity, double xRatio, double zRatio) {
+    public static void launchEntity(Entity entity, double xRatio, double zRatio) {
         float f = Mth.sqrt((float)(xRatio * xRatio + zRatio * zRatio));
         entity.setDeltaMovement(entity.getDeltaMovement().multiply(0.5F, 1.0F, 0.5F).subtract(xRatio / (double)f * (double)-1.4F, 0.0F, zRatio / (double)f * (double)-1.4F).add(0.0F, 0.6, 0.0F));
         entity.hasImpulse = true;

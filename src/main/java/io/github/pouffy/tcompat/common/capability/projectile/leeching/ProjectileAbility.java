@@ -6,9 +6,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
@@ -24,9 +22,6 @@ public interface ProjectileAbility extends INBTSynchable<CompoundTag> {
         return projectile.getCapability(TCompatCapabilities.PROJECTILE_ABILITY_CAPABILITY);
     }
 
-    void setOwner(Entity owner);
-    Entity getOwner();
-
     void setLeeching(boolean isLeeching);
     boolean isLeeching();
     void setAmphithere(boolean isAmphithere);
@@ -34,35 +29,27 @@ public interface ProjectileAbility extends INBTSynchable<CompoundTag> {
     void setStymphalian(boolean isStymphalian);
     boolean isStymphalian();
 
-    default void damageShield(Player player, float damage) {
-        if (damage >= 3.0F && player.getUseItem().getItem().canPerformAction(player.getUseItem(), ToolActions.SHIELD_BLOCK)) {
-            ItemStack copyBeforeUse = player.getUseItem().copy();
-            int i = 1 + Mth.floor(damage);
-            player.getUseItem().hurtAndBreak(i, player, (entity) -> entity.broadcastBreakEvent(EquipmentSlot.CHEST));
-            if (player.getUseItem().isEmpty()) {
-                InteractionHand hand = player.getUsedItemHand();
-                ForgeEventFactory.onPlayerDestroyItem(player, copyBeforeUse, hand);
-                if (hand == InteractionHand.MAIN_HAND) {
-                    player.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
-                } else {
-                    player.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
-                }
+    static void damageShield(Player player, float damage) {
+        ItemStack shield = player.getUseItem();
 
-                player.stopUsingItem();
-                player.playSound(SoundEvents.SHIELD_BREAK, 0.8F, 0.8F + player.level().random.nextFloat() * 0.4F);
-            }
-        }
-    }
+        if (damage < 3.0F || !player.isBlocking() || !shield.canPerformAction(ToolActions.SHIELD_BLOCK)) return;
 
-    default void handleLeeching(float damage, Entity target) {
-        if (this.isLeeching()) {
-            if (this.getOwner() instanceof LivingEntity living) {
-                living.heal(damage);
-            }
-            if (target instanceof Player player) {
-                this.damageShield(player, damage);
-            }
-            this.setLeeching(false);
+        InteractionHand hand = player.getUsedItemHand();
+        ItemStack copyBeforeUse = shield.copy();
+
+        int durabilityDamage = 1 + Mth.floor(damage);
+        shield.hurtAndBreak(durabilityDamage, player, entity -> entity.broadcastBreakEvent(
+                hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND)
+        );
+
+        if (shield.isEmpty()) {
+            ForgeEventFactory.onPlayerDestroyItem(player, copyBeforeUse, hand);
+
+            if (hand == InteractionHand.MAIN_HAND) player.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+            else player.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
+
+            player.stopUsingItem();
+            player.playSound(SoundEvents.SHIELD_BREAK, 0.8F, 0.8F + player.level().random.nextFloat() * 0.4F);
         }
     }
 }
