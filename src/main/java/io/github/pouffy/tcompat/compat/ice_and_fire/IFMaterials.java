@@ -59,6 +59,14 @@ public class IFMaterials {
             .spriteInfo(s -> s.plating().head().binding().fallbacks("chitin", "wood").sevenColor(0xFF2c322a, 0xFF4c3f06, 0xFF663f27, 0xFF724f06, 0xFF904a10, 0xFFac6111, 0xFFd06e33))
             .buildMaterial();
 
+    public static final MaterialId deathwormChitin = MaterialBuilder.material("iceandfire", "deathworm_chitin")
+            .lang("Death Worm Chitin")
+            .data(d -> d.tier(3).order(4).craftable(true))
+            .stats(s -> s.armorStats(PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 7, 3).toughness(1.5F)))
+            .renderInfo(r -> r.color(0xd5c3b8).fallbacks("chitin", "wood"))
+            .spriteInfo(s -> s.plating().fallbacks("chitin", "wood").sevenColor(0xFF6d5f54, 0xFF89746c, 0xFFb39a8f, 0xFFb1ae97, 0xFFd5c3b8, 0xFFe5dec9, 0xFFfdf7e4))
+            .buildMaterial();
+
     public static final MaterialVariantId
             dragonBronze = dragonScalesVariant("bronze", dragonScaleFire,           0xFF301511, 0xFF3e1d18, 0xFF532f2a, 0xFF82522e, 0xFF996944, 0xFFb78d6e),
             dragonGreen = dragonScalesVariant("green", dragonScaleFire,             0xFF1f1d1c, 0xFF222c1a, 0xFF2d3526, 0xFF4d7c3f, 0xFF5a914a, 0xFF5caa5e),
@@ -89,6 +97,10 @@ public class IFMaterials {
     public static final MaterialVariantId
             myrmexDesert = myrmexChitinVariant("desert", 0xFF2c322a, 0xFF4c3f06, 0xFF663f27, 0xFF724f06, 0xFF904a10, 0xFFac6111, 0xFFd06e33),
             myrmexJungle = myrmexChitinVariant("jungle", 0xFF283a47, 0xFF2e4f57, 0xFF1d6c57, 0xFF1b7f7c, 0xFF369281, 0xFF3da09d, 0xFF1bbaa8);
+    public static final MaterialVariantId
+            deathwormWhite = deathwormChitinVariant("white", "White",       0xFF6d5f54, 0xFF89746c, 0xFFb39a8f, 0xFFb1ae97, 0xFFd5c3b8, 0xFFe5dec9, 0xFFfdf7e4),
+            deathwormRed = deathwormChitinVariant("red", "Red",             0xFF4a1920, 0xFF582020, 0xFF6f1d1d, 0xFF892f2f, 0xFFa1453d, 0xFFae523d, 0xFFc96539),
+            deathwormYellow = deathwormChitinVariant("yellow", "Tan",       0xFF63462e, 0xFF7d5a4c, 0xFFb68773, 0xFFc2a58e, 0xFFdec0af, 0xFFe5dbbb, 0xFFffefc3);
 
     public static final MaterialId dragonBone = MaterialBuilder.material("iceandfire", "dragon_bone")
             .data(d -> d.tier(4).order(5).craftable(true))
@@ -218,6 +230,13 @@ public class IFMaterials {
         return builder.buildMaterial();
     }
 
+    private static MaterialVariantId deathwormChitinVariant(String type, String name, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
+        var builder = MaterialBuilder.variant("iceandfire", type, deathwormChitin)
+                .lang(name + " Death Worm Chitin")
+                .renderInfo(r -> r.color(c178).fallbacks("chitin", "wood"))
+                .spriteInfo(s -> s.repairKit().plating().fallbacks("chitin", "wood").sevenColor(c63, c102, c140, c178, c216, c234, c255));
+        return builder.buildVariant();
+    }
 
     private static MaterialVariantId myrmexChitinVariant(String type, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
         var builder = MaterialBuilder.variant("iceandfire", type, myrmexChitin)

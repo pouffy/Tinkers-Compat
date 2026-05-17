@@ -6,7 +6,7 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tconstruct:mob_effect",
+      "type": "tcompat:mob_effect_user",
       "effect": "minecraft:water_breathing",
       "level": {
         "flat": 1.0
@@ -20,16 +20,20 @@
           "mantle:eyes_in_water"
         ]
       },
-      "time": {},
+      "time": {
+        "flat": 50.0
+      },
       "tool": {
         "type": "mantle:tag",
         "tag": "tconstruct:modifiable/armor"
       }
     },
     {
-      "type": "tconstruct:conditional_melee_damage",
-      "each_level": 0.65,
-      "percent": true,
+      "type": "tcompat:mob_effect_user",
+      "effect": "minecraft:strength",
+      "level": {
+        "flat": 1.0
+      },
       "target": {
         "type": "mantle:or",
         "predicates": [
@@ -38,6 +42,9 @@
           "mantle:feet_in_water",
           "mantle:eyes_in_water"
         ]
+      },
+      "time": {
+        "flat": 50.0
       },
       "tool": {
         "type": "mantle:tag",

@@ -1,9 +1,7 @@
 package io.github.pouffy.tcompat.compat;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.module.AetherForgedModifierHook;
-import io.github.pouffy.tcompat.common.module.AetherForgedModule;
-import io.github.pouffy.tcompat.common.module.ToolSwingModifierHook;
+import io.github.pouffy.tcompat.common.module.*;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
 import io.github.pouffy.tcompat.compat.ice_and_fire.item.ModifiableGlaiveItem;
 import net.minecraft.core.BlockPos;
@@ -25,7 +23,6 @@ import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
-import slimeknights.tconstruct.library.json.predicate.TinkerPredicate;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
@@ -83,6 +80,7 @@ public class GlobalInit extends CompatInitializer {
     void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
             ModifierModule.LOADER.register(getResource("aether_forged"), AetherForgedModule.LOADER);
+            ModifierModule.LOADER.register(getResource("mob_effect_user"), MobEffectUserModule.LOADER);
             LivingEntityPredicate.LOADER.register(getResource("sun_exposed"), SUN_EXPOSED.getLoader());
         }
     }

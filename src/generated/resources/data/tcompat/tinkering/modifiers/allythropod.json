@@ -7,9 +7,9 @@
   "modules": [
     {
       "type": "tconstruct:conditional_melee_damage",
-      "each_level": 0.25,
-      "flat": 5.0,
-      "percent": false,
+      "each_level": 0.1,
+      "flat": 0.2,
+      "percent": true,
       "target": {
         "type": "mantle:or",
         "predicates": [
@@ -31,9 +31,9 @@
     },
     {
       "type": "tconstruct:conditional_power",
-      "each_level": 0.25,
-      "flat": 5.0,
-      "percent": false,
+      "each_level": 0.1,
+      "flat": 0.2,
+      "percent": true,
       "target": {
         "type": "mantle:or",
         "predicates": [
@@ -67,7 +67,7 @@
         ]
       },
       "damage_source": "mantle:can_protect",
-      "each_level": 1.5,
+      "each_level": 3.5,
       "tool": {
         "type": "mantle:tag",
         "tag": "tconstruct:modifiable/armor"

@@ -157,7 +157,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.trollForest,             ItemNameIngredient.from(TCompat.getResource("iceandfire:troll_leather_forest"               )), 1, 1, folder + "troll_leather/forest");
         materialRecipe(iceandfire, IFMaterials.myrmexDesert,            ItemNameIngredient.from(TCompat.getResource("iceandfire:myrmex_desert_chitin"               )), 1, 1, folder + "myrmex_chitin/desert");
         materialRecipe(iceandfire, IFMaterials.myrmexJungle,            ItemNameIngredient.from(TCompat.getResource("iceandfire:myrmex_jungle_chitin"               )), 1, 1, folder + "myrmex_chitin/jungle");
-
+        materialRecipe(iceandfire, IFMaterials.deathwormWhite,          ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_white"             )), 1, 1, folder + "deathworm_chitin/white");
+        materialRecipe(iceandfire, IFMaterials.deathwormRed,            ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_red"               )), 1, 1, folder + "deathworm_chitin/red");
+        materialRecipe(iceandfire, IFMaterials.deathwormYellow,         ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_yellow"            )), 1, 1, folder + "deathworm_chitin/yellow");
 
         metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);
         metalMaterialRecipe(cataclysm, CataclysmMaterials.blackSteel, folder, "black_steel", true);

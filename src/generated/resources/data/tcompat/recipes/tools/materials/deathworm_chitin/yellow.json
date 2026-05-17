@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "ingredient": {
+    "item": "iceandfire:deathworm_chitin_yellow"
+  },
+  "material": "tcompat:deathworm_chitin#yellow",
+  "needed": 1,
+  "value": 1
+}
