@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.common.capability.projectile.void_scatter;
 
-import io.github.pouffy.tcompat.common.network.LeechingSyncPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.VoidScatterSyncPacket;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;

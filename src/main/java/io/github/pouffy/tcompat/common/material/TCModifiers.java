@@ -18,6 +18,7 @@ public class TCModifiers {
     public static final ModifierId voltborn = id("voltborn");
     public static final ModifierId tideGuardian = id("tide_guardian");
     public static final ModifierId aquaShot = id("aqua_shot");
+    public static final ModifierId petrifying = id("petrifying");
 
     public static final ModifierId cataclysmic = id("cataclysmic");
     public static final ModifierId ghostly = id("ghostly");

@@ -2,8 +2,8 @@ package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
+import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.Leeching;
 import io.github.pouffy.tcompat.common.capability.projectile.void_scatter.VoidScatter;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
@@ -15,6 +15,7 @@ import io.github.pouffy.tcompat.common.network.base.PacketRelay;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.modifier.ThunderstruckModifier;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
@@ -24,18 +25,23 @@ import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegisterEvent;
+import slimeknights.mantle.data.predicate.IJsonPredicate;
+import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.util.OffhandCooldownTracker;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
@@ -65,13 +71,6 @@ public class TCCommonEvents {
                     voidScatter.setScatter(false);
                 }
             });
-            if (hit instanceof EntityHitResult entityHitResult && entityHitResult.getEntity() instanceof LivingEntity living) {
-                Leeching.get(projectile).ifPresent(leeching -> {
-                    if (leeching.isAmphithere()) {
-                        leeching.amphithereEffect(living);
-                    }
-                });
-            }
         }
 
     }
@@ -111,6 +110,16 @@ public class TCCommonEvents {
     }
 
     @SubscribeEvent
+    public void onLivingDamage(LivingDamageEvent event) {
+        LivingEntity entity = event.getEntity();
+        if (event.getSource().getDirectEntity() instanceof Projectile projectile) {
+            ProjectileAbility.get(projectile).ifPresent(ability -> {
+                ability.handleLeeching(event.getAmount(), entity);
+            });
+        }
+    }
+
+    @SubscribeEvent
     public void onLivingAttack(LivingAttackEvent event) {
         LivingEntity entity = event.getEntity();
         if (!entity.level().isClientSide() && !entity.isDeadOrDying()) {
@@ -135,18 +144,6 @@ public class TCCommonEvents {
                     event.setCanceled(true);
                 }
             }
-        }
-        if (event.getSource().getEntity() instanceof Projectile projectile) {
-            Leeching.get(projectile).ifPresent(leeching -> {
-                if (leeching.isLeeching()) {
-                    if (event.getSource().getDirectEntity() instanceof LivingEntity living) {
-                        living.heal(event.getAmount());
-                    }
-                    if (entity instanceof Player player) {
-                        leeching.damageShield(player, event.getAmount());
-                    }
-                }
-            });
         }
     }
 
@@ -176,22 +173,33 @@ public class TCCommonEvents {
     @SubscribeEvent
     static void hurt(LivingHurtEvent event) {
         var entity = event.getEntity();
-        AtomicReference<Float> amount = new AtomicReference<>(event.getAmount());
+        AtomicReference<Float> voidAmount = new AtomicReference<>(event.getAmount());
         VoidTouched.get(entity).ifPresent(voidTouched -> {
             if (voidTouched.isVoided()) {
                 float multiplier = ((voidTouched.getAmplifier()) * 0.05f);
-                amount.updateAndGet(v -> v + (v * multiplier));
+                voidAmount.updateAndGet(v -> v + (v * multiplier));
             }
         });
-        if (amount.get() != event.getAmount()) {
-            event.setAmount(amount.get());
+        if (voidAmount.get() != event.getAmount()) {
+            event.setAmount(voidAmount.get());
         }
+
     }
+
+    public static LivingEntityPredicate sunPredicate = LivingEntityPredicate.simple((entity) -> {
+        if (entity.level().isDay() && !entity.level().isClientSide) {
+            float brightness = (float)entity.level().getBrightness(LightLayer.SKY, entity.blockPosition());
+            BlockPos blockpos = entity.getVehicle() instanceof Boat ? (new BlockPos(entity.getBlockX(), entity.getBlockY(), entity.getBlockZ())).above() : new BlockPos(entity.getBlockX(), entity.getBlockY(), entity.getBlockZ());
+            return brightness > 0.5F && entity.level().canSeeSky(blockpos);
+        }
+        return false;
+    });
 
     @SubscribeEvent
     void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
             ModifierModule.LOADER.register(TCompat.getResource("autosmelt"), AutosmeltModule.LOADER);
+            LivingEntityPredicate.LOADER.register(TCompat.getResource("sun_exposed"), sunPredicate.getLoader());
         }
     }
 }

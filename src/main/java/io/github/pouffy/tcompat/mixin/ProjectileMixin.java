@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.mixin;
 
 import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.Leeching;
+import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbility;
 import io.github.pouffy.tcompat.common.network.base.INBTSynchable;
 import io.github.pouffy.tcompat.compat.ice_and_fire.modifier.IceFireHandler;
 import net.minecraft.core.particles.ParticleTypes;
@@ -33,14 +33,14 @@ public class ProjectileMixin {
                 }
             }
         });
-        Leeching.get(projectile).ifPresent(leeching -> {
+        ProjectileAbility.get(projectile).ifPresent(leeching -> {
             Projectile innerProjectile = leeching.getProjectile();
             if (tcompat$testValid(innerProjectile)) {
                 if (leeching.isLeeching()) {
                     for (int i = 0; i < 2; i++) {
                         this.tcompat$leechingParticles(innerProjectile);
                     }
-                    leeching.setSynched(INBTSynchable.Direction.CLIENT, "setLeeching", true); // Sync Leeching variable to client.
+                    leeching.setSynched(INBTSynchable.Direction.CLIENT, "setLeeching", true); // Sync ProjectileAbility variable to client.
                 }
                 if (leeching.isAmphithere()) {
                     if ((projectile.tickCount == 1 || projectile.tickCount % 70 == 0) && !projectile.onGround()) {

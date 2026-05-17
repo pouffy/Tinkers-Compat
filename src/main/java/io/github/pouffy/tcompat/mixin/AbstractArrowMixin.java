@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.mixin;
 
+import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.Leeching;
 import io.github.pouffy.tcompat.common.network.base.INBTSynchable;
 import io.github.pouffy.tcompat.compat.ice_and_fire.modifier.IceFireHandler;
 import net.minecraft.core.particles.ParticleTypes;
@@ -46,7 +46,7 @@ public class AbstractArrowMixin {
                 }
             }
         });
-        Leeching.get(arrow).ifPresent(leeching -> {
+        ProjectileAbility.get(arrow).ifPresent(leeching -> {
             Projectile innerProjectile = leeching.getProjectile();
             if (leeching.isLeeching()) {
                 if (!this.inGround) {
@@ -54,7 +54,7 @@ public class AbstractArrowMixin {
                         this.tcompat$leechingParticles(innerProjectile);
                     }
                 }
-                leeching.setSynched(INBTSynchable.Direction.CLIENT, "setLeeching", true); // Sync Leeching variable to client.
+                leeching.setSynched(INBTSynchable.Direction.CLIENT, "setLeeching", true); // Sync ProjectileAbility variable to client.
             }
             if (leeching.isAmphithere()) {
                 if (!this.inGround) {
@@ -63,7 +63,7 @@ public class AbstractArrowMixin {
                     }
                     this.tcompat$amphithereParticles(innerProjectile);
                 }
-                leeching.setSynched(INBTSynchable.Direction.CLIENT, "setAmphithere", true); // Sync Leeching variable to client.
+                leeching.setSynched(INBTSynchable.Direction.CLIENT, "setAmphithere", true); // Sync ProjectileAbility variable to client.
             }
             if (leeching.isStymphalian()) {
                 float sqrt = Mth.sqrt((float)(arrow.getDeltaMovement().x * arrow.getDeltaMovement().x + arrow.getDeltaMovement().z * arrow.getDeltaMovement().z));

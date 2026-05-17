@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.Leeching;
+import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbility;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -27,12 +27,13 @@ public class LeechingModifier extends NoLevelsModifier implements ProjectileLaun
 
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        leech(projectile);
+        leech(projectile, shooter);
     }
 
-    private void leech(Projectile projectile) {
-        Leeching.get(projectile).ifPresent(leeching -> {
+    private void leech(Projectile projectile, LivingEntity shooter) {
+        ProjectileAbility.get(projectile).ifPresent(leeching -> {
             leeching.setLeeching(true);
+            leeching.setOwner(shooter);
         });
     }
 }

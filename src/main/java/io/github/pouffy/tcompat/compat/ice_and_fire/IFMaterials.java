@@ -38,6 +38,15 @@ public class IFMaterials {
             .spriteInfo(s -> s.fallbacks("scales", "metal").fletching().repairKit().armor().sixColor(0xFF053755, 0xFF0f5a80, 0xFF1e74b5, 0xFF228eda, 0xFF2aa6fd, 0xFF39cfff))
             .buildMaterial();
 
+    public static final MaterialId trollLeather = MaterialBuilder.material("iceandfire", "troll_leather")
+            .data(d -> d.tier(2).order(4).craftable(true))
+            .traits(t -> t.trait(TCModifiers.petrifying))
+            .traits(t -> t.trait(StatlessMaterialStats.MAILLE.getIdentifier(), ModifierIds.projectileProtection))
+            .stats(s -> s.stat(StatlessMaterialStats.MAILLE, StatlessMaterialStats.BINDING))
+            .renderInfo(r -> r.color(0x50606b).fallbacks("leather"))
+            .spriteInfo(s -> s.maille().binding().fallbacks("leather").sixColor(0xFF0f1717, 0xFF1b2529, 0xFF3b474d, 0xFF485961, 0xFF50606b, 0xFF66737a))
+            .buildMaterial();
+
     public static final MaterialVariantId
             dragonBronze = dragonScalesVariant("bronze", dragonScaleFire,           0xFF301511, 0xFF3e1d18, 0xFF532f2a, 0xFF82522e, 0xFF996944, 0xFFb78d6e),
             dragonGreen = dragonScalesVariant("green", dragonScaleFire,             0xFF1f1d1c, 0xFF222c1a, 0xFF2d3526, 0xFF4d7c3f, 0xFF5a914a, 0xFF5caa5e),
@@ -61,6 +70,10 @@ public class IFMaterials {
             serpentPurple = seaSerpentScaleVariant("purple",      0xFF190354, 0xFF361990, 0xFF501eb5, 0xFF5a1fdc, 0xFF6824fd, 0xFF8b45ff),
             serpentRed = seaSerpentScaleVariant("red",            0xFF5d0922, 0xFF871425, 0xFFab1a24, 0xFFd71e31, 0xFFf7243a, 0xFFfb6149),
             serpentTeal = seaSerpentScaleVariant("teal",          0xFF004544, 0xFF06857f, 0xFF08aa8e, 0xFF03c6ba, 0xFF03d4db, 0xFF72ffdc);
+    public static final MaterialVariantId
+            trollFrost = trollLeatherVariant("frost",       0xFF0f1717, 0xFF1b2529, 0xFF3b474d, 0xFF485961, 0xFF50606b, 0xFF66737a),
+            trollMountain = trollLeatherVariant("mountain", 0xFF0e0d12, 0xFF1b1c1f, 0xFF3b3f45, 0xFF4e5359, 0xFF60636b, 0xFF6d717a),
+            trollForest = trollLeatherVariant("forest",     0xFF1b1f1b, 0xFF272e2e, 0xFF343d3d, 0xFF49574e, 0xFF5a6961, 0xFF6a7a73);
 
     public static final MaterialId dragonBone = MaterialBuilder.material("iceandfire", "dragon_bone")
             .data(d -> d.tier(4).order(5).craftable(true))
@@ -188,6 +201,14 @@ public class IFMaterials {
                 .renderInfo(r -> r.color(c178).fallbacks("scales", "metal"))
                 .spriteInfo(s -> s.fallbacks("scales", "metal").repairKit().armor().sixColor(c63, c102, c140, c178, c216, c255));
         return builder.buildMaterial();
+    }
+
+    private static MaterialVariantId trollLeatherVariant(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
+        var builder = MaterialBuilder.variant("iceandfire", type, trollLeather)
+                .lang(TCLangProv.toEngStr(type) + " Troll Leather")
+                .renderInfo(r -> r.color(c178).fallbacks("leather"))
+                .spriteInfo(s -> s.repairKit().binding().maille().fallbacks("leather").sixColor(c63, c102, c140, c178, c216, c255));
+        return builder.buildVariant();
     }
 
     private static MaterialVariantId seaSerpentScaleVariant(String type, int c63, int c102, int c140, int c178, int c216, int c255) {

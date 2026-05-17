@@ -1,15 +1,19 @@
 package io.github.pouffy.tcompat.datagen.tinkers.modifier;
 
+import io.github.pouffy.tcompat.common.TCCommonEvents;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.module.AetherForgedModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
+import net.minecraft.core.BlockPos;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.damage.DamageTypePredicate;
@@ -189,6 +193,10 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).target(wetPredicate).percent().eachLevel(0.65f));
         buildModifier(TCModifiers.aquaShot, modLoaded("iceandfire"))
                 .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).holder(wetPredicate).eachLevel(1.0f));
+        buildModifier(TCModifiers.petrifying, modLoaded("iceandfire"))
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE_WEAPON)).attacker(TCCommonEvents.sunPredicate).percent().flat(0.25f))
+                .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).holder(TCCommonEvents.sunPredicate).percent().flat(0.25f))
+                .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(TCCommonEvents.sunPredicate).flat(0.25f));
 
         buildModifier(TCModifiers.cataclysmic, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(125)

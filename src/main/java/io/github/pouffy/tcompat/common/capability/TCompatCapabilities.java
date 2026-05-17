@@ -8,8 +8,8 @@ import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldownsCapability;
 import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouchedCapability;
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.Leeching;
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.LeechingCapability;
+import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbility;
+import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbilityCapability;
 import io.github.pouffy.tcompat.common.capability.projectile.void_scatter.VoidScatter;
 import io.github.pouffy.tcompat.common.capability.projectile.void_scatter.VoidScatterCapability;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
@@ -32,7 +32,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = TCompat.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TCompatCapabilities {
     public static final Capability<PhoenixTouched> PHOENIX_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
-    public static final Capability<Leeching> LEECHING_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
+    public static final Capability<ProjectileAbility> PROJECTILE_ABILITY_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<VoidScatter> VOID_SCATTER_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<VoidTouched> VOID_TOUCHED_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
     public static final Capability<LightningOwner> LIGHTNING_OWNER_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() { });
@@ -53,7 +53,7 @@ public class TCompatCapabilities {
             }
             if (event.getObject() instanceof Projectile projectile) {
                 event.addCapability(TCompat.getResource("phoenix_touched"), new CapabilityProvider(TCompatCapabilities.PHOENIX_TOUCHED_CAPABILITY, new PhoenixTouchedCapability(projectile)));
-                event.addCapability(TCompat.getResource("leeching"), new CapabilityProvider(TCompatCapabilities.LEECHING_CAPABILITY, new LeechingCapability(projectile)));
+                event.addCapability(TCompat.getResource("projectile_ability"), new CapabilityProvider(TCompatCapabilities.PROJECTILE_ABILITY_CAPABILITY, new ProjectileAbilityCapability(projectile)));
                 event.addCapability(TCompat.getResource("void_scatter"), new CapabilityProvider(TCompatCapabilities.VOID_SCATTER_CAPABILITY, new VoidScatterCapability(projectile)));
             }
             if (event.getObject() instanceof LivingEntity livingEntity) {

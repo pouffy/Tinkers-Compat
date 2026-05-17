@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.Leeching;
+import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbility;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -23,7 +23,7 @@ public class StymphalianModifier extends NoLevelsModifier implements ProjectileL
 
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        Leeching.get(projectile).ifPresent(leeching -> {
+        ProjectileAbility.get(projectile).ifPresent(leeching -> {
             leeching.setStymphalian(true);
         });
     }
