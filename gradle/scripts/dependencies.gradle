@@ -107,8 +107,13 @@ dependencies {
     // Other Tinker Addons
     modExtraRuntimeOnly("dev.shadowsoffire:Placebo:1.20.1-8.6.0")
     modExtraRuntimeOnly("dev.shadowsoffire:ApothicAttributes:1.20.1-1.3.5")
-    modExtraRuntimeOnly("top.theillusivec4.curios:curios-forge:5.9.1+1.20.1")
+    modExtraRuntimeOnly("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
+    modExtraRuntimeOnly("maven.modrinth:irons-spells-n-spellbooks:1.20.1-3.15.6")
+    modExtraRuntimeOnly("maven.modrinth:caelus:3.2.0+1.20.1")
+    modExtraRuntimeOnly("maven.modrinth:playeranimator:1.0.2-rc1+1.20-forge")
+    modExtraRuntimeOnly("maven.modrinth:irons-lib:1.20.1-1.0.2")
 
     modExtraRuntimeOnly("curse.maven:tinkers-jewelry-1191965:6328912")
     modExtraRuntimeOnly("curse.maven:tinkers-jewelry-ex-1268977:7658337")
+    modExtraRuntimeOnly("maven.modrinth:constructs-casting:2.2.4")
 }
