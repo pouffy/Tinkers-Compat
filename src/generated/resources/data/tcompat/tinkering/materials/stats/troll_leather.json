@@ -1,5 +1,10 @@
 {
   "stats": {
+    "constructs_casting:magic_cloth": {
+      "cooldown_reduction": -0.05,
+      "optional": true,
+      "spell_slots": 8.0
+    },
     "tconstruct:binding": {},
     "tconstruct:maille": {}
   }

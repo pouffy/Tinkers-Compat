@@ -92,6 +92,8 @@ public class TCTags {
         private static void init() {
         }
 
+        public static TagKey<Item> MAGIC_MODIFIABLE = named("constructs_casting", "modifiable_magic");
+
         public static TagKey<Item> GEMS = common("gems");
         public static TagKey<Item> BLOCKS = common("storage_blocks");
         public static TagKey<Item> NUGGETS = common("nuggets");

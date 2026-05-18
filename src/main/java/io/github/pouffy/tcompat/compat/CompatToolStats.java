@@ -9,7 +9,10 @@ import net.minecraft.network.chat.Component;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
+import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
+import slimeknights.tconstruct.library.tools.stat.ToolStatId;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
@@ -56,4 +59,10 @@ public class CompatToolStats {
     public static MagicClothMaterialStats magicCloth(float spellSlots, float cooldownReduction) {
         return new MagicClothMaterialStats(spellSlots, cooldownReduction);
     }
+
+    //Don't register these
+    public static final FloatToolStat MAX_MANA = new FloatToolStat(new ToolStatId("constructs_casting", "max_mana"), 0xFF55FFFF, 0, -50, 5000);
+    public static final FloatToolStat SPELL_SLOTS = new FloatToolStat(new ToolStatId("constructs_casting", "spell_slots"), 0xFFd6be96, 0, 0, 15f);
+    public static final FloatToolStat SPELL_POWER = new FloatToolStat(new ToolStatId("constructs_casting", "spell_power"), 0xFF5555FF, 0, -2048f, 2048f);
+    public static final FloatToolStat COOLDOWN_REDUCTION = new FloatToolStat(new ToolStatId("constructs_casting", "cooldown_reduction"), 0xffe8bfcf, 0, -2048f, 2048f);
 }

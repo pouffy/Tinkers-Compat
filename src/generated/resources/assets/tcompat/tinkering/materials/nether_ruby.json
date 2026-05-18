@@ -8,6 +8,7 @@
     "supported_stats": [
       "tconstruct:repair_kit",
       "tinkersjewelry:gem",
+      "constructs_casting:adornment",
       "tconstruct:armor_plating",
       "tconstruct:plating_helmet",
       "tconstruct:plating_chestplate",

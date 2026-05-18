@@ -85,17 +85,19 @@ public class CataclysmMaterials {
             .traits(t -> t
                     .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.tidal)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.swim_gem, 1))
+                    .trait(CompatToolStats.Statless.ADORNMENT.getIdentifier(), TCModifiers.iceUpgrade, TCModifiers.lightningUpgrade)
             )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(2800, 9.0F, NETHERITE, 2.0F),
                             HandleMaterialStats.multipliers().durability(1.1f).build()
                     ).statOptional(
-                            CompatToolStats.Statless.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM,
+                            CompatToolStats.Statless.ADORNMENT
                     )
             )
             .renderInfo(r -> r.color(0x7eb5d8).fallbacks("gem"))
-            .spriteInfo(s -> s.fallbacks("gem").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).handle().head().sixColor(0xFF443c86, 0xFF565d95, 0xFF6071c1, 0xFF7eb5d8, 0xFFa4dcea, 0xFFd9f4f7))
+            .spriteInfo(s -> s.fallbacks("gem").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).statType(CompatToolStats.Statless.ADORNMENT.getIdentifier()).handle().head().sixColor(0xFF443c86, 0xFF565d95, 0xFF6071c1, 0xFF7eb5d8, 0xFFa4dcea, 0xFFd9f4f7))
             .buildMaterial();
 
     public static final MaterialId essenceOfTheStorm = MaterialBuilder.material("cataclysm", "essence_of_the_storm")

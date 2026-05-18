@@ -193,7 +193,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(betterend, BetterendMaterials.aeternium, folder, "aeternium", true);
 
         metalMaterialRecipe(betterend, BetternetherMaterials.cincinnasite, folder, "cincinnasite", true);
-        gemMaterialRecipe(betterend, BetternetherMaterials.netherRuby, folder, "nether_ruby", true, false, true);
+        materialRecipe(betterend, BetternetherMaterials.netherRuby, ItemNameIngredient.from(TCompat.getResource("betternether:nether_ruby")), 1, 1, folder + "nether_ruby");
 
         materialRecipe(speciesConsumer, SpeciesMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
     }

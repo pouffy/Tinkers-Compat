@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.betternether;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
@@ -35,7 +36,11 @@ public class BetternetherMaterials {
 
     public static final MaterialId netherRuby = MaterialBuilder.material("betternether", "nether_ruby")
             .data(d -> d.tier(2).order(1).craftable(false))
-            .traits(t -> t.trait(ModifierIds.worldbound).trait(HeadMaterialStats.ID, BetternetherInit.obsidianBreaker))
+            .traits(t -> t
+                    .trait(ModifierIds.worldbound)
+                    .trait(HeadMaterialStats.ID, BetternetherInit.obsidianBreaker)
+                    .trait(CompatToolStats.Statless.ADORNMENT.getIdentifier(), TCModifiers.fireUpgrade, TCModifiers.fireDispulsion)
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(2562, 7.1f, DIAMOND, 3.1f),
@@ -47,11 +52,19 @@ public class BetternetherMaterials {
                             PlatingMaterialStats.builder().durabilityFactor(18).armor(3, 5, 7, 3).toughness(1.4f).knockbackResistance(0.2f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
-                            CompatToolStats.Statless.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM,
+                            CompatToolStats.Statless.ADORNMENT
                     )
             )
             .renderInfo(r -> r.color(0xeb4150).fallbacks("gem", "metal"))
-            .spriteInfo(s -> s.fallbacks("gem", "metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).armor().meleeHarvest().ranged().sixColor(0xFF4c000b, 0xFF6a000f, 0xFFce1425, 0xFFeb4150, 0xFFf0747f, 0xFFf8c0c5))
+            .spriteInfo(s -> s.fallbacks("gem", "metal")
+                    .repairKit()
+                    .statType(CompatToolStats.Statless.CUT_GEM.getIdentifier())
+                    .statType(CompatToolStats.Statless.ADORNMENT.getIdentifier())
+                    .armor()
+                    .meleeHarvest()
+                    .ranged()
+                    .sixColor(0xFF4c000b, 0xFF6a000f, 0xFFce1425, 0xFFeb4150, 0xFFf0747f, 0xFFf8c0c5))
             .buildMaterial();
 
     public static void staticInit() {}

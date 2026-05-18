@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
@@ -48,6 +49,10 @@ public class ObjectRetriever {
 
     public static Optional<RecipeType<?>> getRecipe(String id) {
         return get(BuiltInRegistries.RECIPE_TYPE, id);
+    }
+
+    public static Optional<Attribute> getAttribute(String id) {
+        return get(BuiltInRegistries.ATTRIBUTE, id);
     }
 
     // Resource Keys

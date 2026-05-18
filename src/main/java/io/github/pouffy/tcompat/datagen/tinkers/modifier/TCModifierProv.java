@@ -1,9 +1,12 @@
 package io.github.pouffy.tcompat.datagen.tinkers.modifier;
 
+import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.module.AetherForgedModule;
 import io.github.pouffy.tcompat.common.module.MobEffectUserModule;
+import io.github.pouffy.tcompat.common.module.OptionalAttributeModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
+import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
@@ -13,7 +16,13 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.common.crafting.conditions.AndCondition;
+import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.damage.DamageTypePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
@@ -23,10 +32,16 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
+import slimeknights.tconstruct.library.json.math.ModifierFormula;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
+import slimeknights.tconstruct.library.json.variable.entity.EntityVariable;
+import slimeknights.tconstruct.library.json.variable.melee.MeleeVariable;
+import slimeknights.tconstruct.library.json.variable.stat.EntityConditionalStatVariable;
 import slimeknights.tconstruct.library.json.variable.tool.StatMultiplierVariable;
+import slimeknights.tconstruct.library.json.variable.tool.ToolStatVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ReduceToolDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
@@ -38,7 +53,12 @@ import slimeknights.tconstruct.library.modifiers.modules.display.DurabilityBarCo
 import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import slimeknights.tconstruct.shared.TinkerAttributes;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static slimeknights.tconstruct.library.json.math.ModifierFormula.*;
 import static slimeknights.tconstruct.library.tools.definition.ModifiableArmorMaterial.ARMOR_SLOTS;
 
 public class TCModifierProv extends AbstractModifierProvider implements IConditionBuilder {
@@ -189,8 +209,9 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).source(new DamageTypePredicate(ObjectRetriever.damageKey("iceandfire:dragon_lightning"))).eachLevel(2.5f));
         IJsonPredicate<LivingEntity> wetPredicate = LivingEntityPredicate.or(LivingEntityPredicate.UNDERWATER, LivingEntityPredicate.RAINING, LivingEntityPredicate.FEET_IN_WATER, LivingEntityPredicate.EYES_IN_WATER);
         buildModifier(TCModifiers.tideGuardian, modLoaded("iceandfire"))
-                .addModule(MobEffectUserModule.builder(MobEffects.WATER_BREATHING).toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).time(RandomLevelingValue.flat(50)).user(wetPredicate).build())
-                .addModule(MobEffectUserModule.builder(MobEffects.DAMAGE_BOOST).toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).time(RandomLevelingValue.flat(50)).user(wetPredicate).build());
+                .addModule(MobEffectUserModule.builder(MobEffects.WATER_BREATHING).toolItem(ItemPredicate.tag(TinkerTags.Items.HELMETS)).time(RandomLevelingValue.flat(50)).user(wetPredicate).build())
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.CHESTPLATES)).attacker(wetPredicate).eachLevel(2.0f))
+                .addModule(AttributeModule.builder(ForgeMod.SWIM_SPEED, AttributeModifier.Operation.ADDITION).toolItem(ItemPredicate.or(ItemPredicate.tag(TinkerTags.Items.LEGGINGS), ItemPredicate.tag(TinkerTags.Items.BOOTS))).uniqueFrom(TCModifiers.tideGuardian).amount(1.5f, 0.75f));
         buildModifier(TCModifiers.aquaShot, modLoaded("iceandfire"))
                 .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE).holder(wetPredicate).eachLevel(1.0f));
         buildModifier(TCModifiers.petrifying, modLoaded("iceandfire"))
@@ -217,10 +238,21 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.standstill, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(300)
                 .addModule(KnockbackModule.builder().formula().constant(0.0f).build());
+
+        buildModifier(TCModifiers.stained, modLoaded("malum"))
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("lodestone:magic_damage"), AttributeModifier.Operation.ADDITION).amount(2, 1));
     }
 
     @Override
     public String getName() {
         return "Tinker's Compatability Modifiers";
+    }
+
+    private ICondition allModsLoaded(String... modid) {
+        List<ICondition> conditions = new ArrayList<>();
+        for (var id : modid) {
+            conditions.add(new ModLoadedCondition(id));
+        }
+        return new AndCondition(conditions.toArray(new ICondition[0]));
     }
 }

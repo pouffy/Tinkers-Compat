@@ -1,5 +1,15 @@
 {
   "perStat": {
+    "constructs_casting:adornment": [
+      {
+        "level": 1,
+        "name": "constructs_casting:ice_upgrade"
+      },
+      {
+        "level": 1,
+        "name": "constructs_casting:lightning_upgrade"
+      }
+    ],
     "tconstruct:head": [
       {
         "level": 1,

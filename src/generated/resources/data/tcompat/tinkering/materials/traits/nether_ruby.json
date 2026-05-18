@@ -6,6 +6,16 @@
     }
   ],
   "perStat": {
+    "constructs_casting:adornment": [
+      {
+        "level": 1,
+        "name": "constructs_casting:fire_upgrade"
+      },
+      {
+        "level": 1,
+        "name": "constructs_casting:fire_dispulsion"
+      }
+    ],
     "tconstruct:head": [
       {
         "level": 1,

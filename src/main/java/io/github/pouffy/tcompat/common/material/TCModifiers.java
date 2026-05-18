@@ -26,6 +26,8 @@ public class TCModifiers {
     public static final ModifierId archaeologist = id("archaeologist");
     public static final ModifierId standstill = id("standstill");
 
+    public static final ModifierId stained = id("stained");
+
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");
     public static final ModifierId poison_gem = compatId("tinkersjewelry", "poison_gem");
@@ -37,6 +39,15 @@ public class TCModifiers {
     public static final ModifierId precious = compatId("tinkersjewelry", "precious");
     public static final ModifierId ductile = compatId("tinkersjewelry", "ductile");
 
+    //Construct's Casting
+    public static final ModifierId conserving = compatId("constructs_casting", "conserving");
+    public static final ModifierId fireUpgrade = compatId("constructs_casting", "fire_upgrade");
+    public static final ModifierId iceUpgrade = compatId("constructs_casting", "ice_upgrade");
+    public static final ModifierId lightningUpgrade = compatId("constructs_casting", "lightning_upgrade");
+    public static final ModifierId puncturing = compatId("constructs_casting", "puncturing");
+    public static final ModifierId calorific = compatId("constructs_casting", "calorific");
+    public static final ModifierId holyUpgrade = compatId("constructs_casting", "holy_upgrade");
+    public static final ModifierId fireDispulsion = compatId("constructs_casting", "fire_dispulsion");
 
     private TCModifiers() {}
 

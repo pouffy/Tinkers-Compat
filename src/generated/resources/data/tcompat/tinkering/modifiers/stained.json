@@ -1,0 +1,25 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "malum"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tcompat:optional_attribute",
+      "attribute": "lodestone:magic_damage",
+      "each_level": 1.0,
+      "flat": 2.0,
+      "operation": "addition",
+      "slots": [
+        "mainhand",
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ]
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -3,15 +3,20 @@ package io.github.pouffy.tcompat.compat.ice_and_fire;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
+import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
+import io.github.pouffy.tcompat.compat.constructs_casting.MagicClothMaterialStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTransformer;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.shared.command.subcommand.GeneratePartTexturesCommand;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
+
+import java.util.Objects;
 
 import static io.github.pouffy.tcompat.datagen.tinkers.material.TCMaterialSpriteProv.complexTransformer;
 import static net.minecraft.world.item.Tiers.*;
@@ -39,10 +44,17 @@ public class IFMaterials {
 
     public static final MaterialId trollLeather = MaterialBuilder.material("iceandfire", "troll_leather")
             .data(d -> d.tier(2).order(4).craftable(true))
-            .traits(t -> t.trait(TCModifiers.petrifying).trait(StatlessMaterialStats.MAILLE.getIdentifier(), ModifierIds.projectileProtection))
-            .stats(s -> s.stat(StatlessMaterialStats.MAILLE, StatlessMaterialStats.BINDING))
+            .traits(t -> t
+                    .trait(TCModifiers.petrifying)
+                    .trait(StatlessMaterialStats.MAILLE.getIdentifier(), ModifierIds.projectileProtection)
+                    .trait(MagicClothMaterialStats.ID, TCModifiers.conserving)
+            )
+            .stats(s -> s
+                    .stat(StatlessMaterialStats.MAILLE, StatlessMaterialStats.BINDING)
+                    .statOptional(CompatToolStats.magicCloth(8, -0.05f))
+            )
             .renderInfo(r -> r.color(0x50606b).fallbacks("cloth"))
-            .spriteInfo(s -> s.maille().binding().fallbacks("cloth").sixColor(0xFF0f1717, 0xFF1b2529, 0xFF3b474d, 0xFF485961, 0xFF50606b, 0xFF66737a))
+            .spriteInfo(s -> s.maille().binding().statType(MagicClothMaterialStats.ID).fallbacks("cloth").sixColor(0xFF0f1717, 0xFF1b2529, 0xFF3b474d, 0xFF485961, 0xFF50606b, 0xFF66737a))
             .buildMaterial();
 
     public static final MaterialId myrmexChitin = MaterialBuilder.material("iceandfire", "myrmex_chitin")
@@ -108,6 +120,7 @@ public class IFMaterials {
                     .trait(TinkerModifiers.firestarter)
                     .trait(StatlessMaterialStats.ARROW_SHAFT.getIdentifier(), ModifierIds.fiery)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.flame_gem, 1))
+                    .trait(MagicBaseMaterialStats.ID, TCModifiers.puncturing)
             )
             .stats(s ->
                     s.stat(
@@ -117,11 +130,12 @@ public class IFMaterials {
                             new LimbMaterialStats(200, 0.07f, -0.07f, 0.07f),
                             new GripMaterialStats(1.0f, 0.15f, 1.5f), StatlessMaterialStats.ARROW_SHAFT
                     ).statOptional(
-                            CompatToolStats.Statless.CUT_GEM
+                            CompatToolStats.Statless.CUT_GEM,
+                            CompatToolStats.magicBase(90, -0.05f)
                     )
             )
             .renderInfo(r -> r.color(0xc7b899).fallbacks("bone", "rock"))
-            .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).arrowShaft().ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
+            .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).statType(MagicBaseMaterialStats.ID).arrowShaft().ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
             .buildMaterial();
 
     public static final MaterialId fireDragonsteel = MaterialBuilder.material("iceandfire", "fire_dragonsteel")
@@ -221,12 +235,26 @@ public class IFMaterials {
 
     private static MaterialId dragonScales(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
         var builder = MaterialBuilder.material("iceandfire", type+"_dragon_scale")
-                .data(d -> d.tier(4).order(5).craftable(true)).traits(t -> t.trait(ARMOR, IFInit.breathless))
+                .data(d -> d.tier(4).order(5).craftable(true))
+                .traits(t -> {
+                    t.trait(ARMOR, IFInit.breathless);
+                    if (Objects.equals(type, "fire"))
+                        t.trait(MagicBaseMaterialStats.ID, TCModifiers.fireUpgrade);
+                    else if (Objects.equals(type, "ice"))
+                        t.trait(MagicBaseMaterialStats.ID, TCModifiers.iceUpgrade);
+                    else if (Objects.equals(type, "lightning"))
+                        t.trait(MagicBaseMaterialStats.ID, TCModifiers.lightningUpgrade);
+                    return t;
+                })
                 .stats(s ->
-                        s.armorStats(PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE)
+                        s.armorStats(
+                                PlatingMaterialStats.builder().durabilityFactor(36).armor(5, 7, 9, 5).toughness(2.0f), StatlessMaterialStats.MAILLE
+                        ).statOptional(
+                                CompatToolStats.magicBase(150, 0.15f)
+                        )
                 )
                 .renderInfo(r -> r.color(c178).fallbacks("scales", "metal"))
-                .spriteInfo(s -> s.fallbacks("scales", "metal").repairKit().armor().sixColor(c63, c102, c140, c178, c216, c255));
+                .spriteInfo(s -> s.fallbacks("scales", "metal").repairKit().armor().statType(MagicBaseMaterialStats.ID).sixColor(c63, c102, c140, c178, c216, c255));
         return builder.buildMaterial();
     }
 

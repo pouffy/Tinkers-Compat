@@ -1,5 +1,10 @@
 {
   "stats": {
+    "constructs_casting:magic_base": {
+      "max_mana": 150.0,
+      "optional": true,
+      "spell_power": 0.15
+    },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
       "armor": 5.0,

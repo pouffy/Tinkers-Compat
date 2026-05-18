@@ -25,16 +25,12 @@
       },
       "tool": {
         "type": "mantle:tag",
-        "tag": "tconstruct:modifiable/armor"
+        "tag": "tconstruct:modifiable/armor/helmets"
       }
     },
     {
-      "type": "tcompat:mob_effect_user",
-      "effect": "minecraft:strength",
-      "level": {
-        "flat": 1.0
-      },
-      "target": {
+      "type": "tconstruct:conditional_melee_damage",
+      "attacker": {
         "type": "mantle:or",
         "predicates": [
           "mantle:underwater",
@@ -43,13 +39,41 @@
           "mantle:eyes_in_water"
         ]
       },
-      "time": {
-        "flat": 50.0
-      },
+      "each_level": 2.0,
+      "percent": false,
       "tool": {
         "type": "mantle:tag",
-        "tag": "tconstruct:modifiable/armor"
+        "tag": "tconstruct:modifiable/armor/chestplate"
       }
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "forge:swim_speed",
+      "each_level": 0.75,
+      "flat": 1.5,
+      "operation": "addition",
+      "slots": [
+        "mainhand",
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "tool": {
+        "type": "mantle:or",
+        "predicates": [
+          {
+            "type": "mantle:tag",
+            "tag": "tconstruct:modifiable/armor/leggings"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "tconstruct:modifiable/armor/boots"
+          }
+        ]
+      },
+      "unique": "tcompat.modifier.tide_guardian"
     }
   ],
   "tooltip_display": "always"

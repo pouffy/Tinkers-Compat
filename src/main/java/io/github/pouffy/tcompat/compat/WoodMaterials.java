@@ -1,7 +1,9 @@
 package io.github.pouffy.tcompat.compat;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCWoods;
+import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTransformer;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
@@ -91,7 +93,11 @@ public class WoodMaterials {
 
     public static final MaterialId hellbark = MaterialBuilder.material(TCWoods.HELLBARK.makeCondition(), "hellbark")
             .data(d -> d.tier(1).order(1).craftable(true))
-            .traits(t -> t.trait(ModifierIds.fiery).trait(MaterialRegistry.AMMO, ModifierIds.spectral))
+            .traits(t -> t
+                    .trait(ModifierIds.fiery)
+                    .trait(MaterialRegistry.AMMO, ModifierIds.spectral)
+                    .trait(MagicBaseMaterialStats.ID, TCModifiers.calorific)
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(60, 2f, WOOD, 0f),
@@ -101,10 +107,12 @@ public class WoodMaterials {
                             new GripMaterialStats(0f, 0, 0),
                             StatlessMaterialStats.ARROW_SHAFT,
                             StatlessMaterialStats.SHIELD_CORE
+                    ).statOptional(
+                            CompatToolStats.magicBase(100, 0.0f)
                     )
             )
             .renderInfo(r -> r.color(0x332929).fallbacks("wood", "stick", "primitive"))
-            .spriteInfo(s -> s.meleeHarvest().ranged().shieldCore().arrowShaft().fallbacks("wood", "stick", "primitive").sevenColor(0xFF20191a, 0xFF281e1f, 0xFF2f2425, 0xFF332929, 0xFF382d2d, 0xFF3b3031, 0xFF3e3233))
+            .spriteInfo(s -> s.meleeHarvest().ranged().shieldCore().arrowShaft().statType(MagicBaseMaterialStats.ID).fallbacks("wood", "stick", "primitive").sevenColor(0xFF20191a, 0xFF281e1f, 0xFF2f2425, 0xFF332929, 0xFF382d2d, 0xFF3b3031, 0xFF3e3233))
             .buildMaterial();
 
     private static MaterialVariantId woodVariant(TCWoods woodType, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {

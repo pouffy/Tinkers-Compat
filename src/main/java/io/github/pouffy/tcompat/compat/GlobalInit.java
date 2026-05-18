@@ -11,6 +11,7 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,6 +24,7 @@ import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
+import slimeknights.tconstruct.library.json.variable.entity.EntityVariable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
@@ -71,6 +73,27 @@ public class GlobalInit extends CompatInitializer {
         }
     });
 
+    public static EntityVariable SKY_LIGHT = SingletonLoader.singleton((loader) -> new EntityVariable() {
+
+        @Override
+        public float getValue(LivingEntity living) {
+            Level level = living.level();
+            int light = 0;
+            BlockPos blockpos = living.getVehicle() instanceof Boat ? (new BlockPos(living.getBlockX(), living.getBlockY(), living.getBlockZ())).above() : new BlockPos(living.getBlockX(), living.getBlockY(), living.getBlockZ());
+            if (level.canSeeSky(blockpos)) {
+                light = living.level().getBrightness(LightLayer.SKY, living.blockPosition());
+            } else {
+                light = Math.min(living.level().getBrightness(LightLayer.BLOCK, living.blockPosition()), 8);
+            }
+            return light;
+        }
+
+        @Override
+        public RecordLoadable<? extends EntityVariable> getLoader() {
+            return loader;
+        }
+    });
+
     @SubscribeEvent
     void commonSetup(final FMLCommonSetupEvent event) {
 
@@ -81,7 +104,9 @@ public class GlobalInit extends CompatInitializer {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
             ModifierModule.LOADER.register(getResource("aether_forged"), AetherForgedModule.LOADER);
             ModifierModule.LOADER.register(getResource("mob_effect_user"), MobEffectUserModule.LOADER);
+            ModifierModule.LOADER.register(getResource("optional_attribute"), OptionalAttributeModule.LOADER);
             LivingEntityPredicate.LOADER.register(getResource("sun_exposed"), SUN_EXPOSED.getLoader());
+            EntityVariable.LOADER.register(getResource("sky_light"), SKY_LIGHT.getLoader());
         }
     }
 

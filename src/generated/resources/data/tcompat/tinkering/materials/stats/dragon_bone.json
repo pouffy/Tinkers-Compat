@@ -1,5 +1,10 @@
 {
   "stats": {
+    "constructs_casting:magic_base": {
+      "max_mana": 90.0,
+      "optional": true,
+      "spell_power": -0.05
+    },
     "tconstruct:arrow_shaft": {},
     "tconstruct:binding": {},
     "tconstruct:grip": {

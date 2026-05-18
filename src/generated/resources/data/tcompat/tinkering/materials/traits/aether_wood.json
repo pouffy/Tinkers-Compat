@@ -10,6 +10,12 @@
     }
   ],
   "perStat": {
+    "constructs_casting:magic_base": [
+      {
+        "level": 1,
+        "name": "constructs_casting:holy_upgrade"
+      }
+    ],
     "tconstruct:ammo": [
       {
         "level": 1,

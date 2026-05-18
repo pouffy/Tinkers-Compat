@@ -6,6 +6,7 @@ import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
+import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
@@ -22,7 +23,11 @@ public class AetherMaterials {
 
     public static final MaterialId aetherWood = MaterialBuilder.material("aether", "aether_wood")
             .data(d -> d.tier(1).order(1).craftable(true))
-            .traits(t -> t.trait(TCModifiers.aetherForged, ModifierIds.cultivated).trait(MaterialRegistry.AMMO, ModifierIds.economical))
+            .traits(t -> t
+                    .trait(TCModifiers.aetherForged, ModifierIds.cultivated)
+                    .trait(MaterialRegistry.AMMO, ModifierIds.economical)
+                    .trait(MagicBaseMaterialStats.ID, TCModifiers.holyUpgrade)
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(60, 2f, WOOD, 0f),
@@ -32,10 +37,12 @@ public class AetherMaterials {
                             new GripMaterialStats(0f, 0, 0),
                             StatlessMaterialStats.ARROW_SHAFT,
                             StatlessMaterialStats.SHIELD_CORE
+                    ).statOptional(
+                            CompatToolStats.magicBase(100, 0.0f)
                     )
             )
             .renderInfo(r -> r.color(0x5C5B41).fallbacks("wood", "stick", "primitive"))
-            .spriteInfo(s -> s.meleeHarvest().ranged().shieldCore().arrowShaft().fallbacks("wood", "stick", "primitive").sixColor(0xFF333122, 0xFF403D2A, 0xFF4F4D36, 0xFF5C5B41, 0xFF63634A, 0xFF7B7E61))
+            .spriteInfo(s -> s.meleeHarvest().ranged().shieldCore().arrowShaft().statType(MagicBaseMaterialStats.ID).fallbacks("wood", "stick", "primitive").sixColor(0xFF333122, 0xFF403D2A, 0xFF4F4D36, 0xFF5C5B41, 0xFF63634A, 0xFF7B7E61))
             .buildMaterial();
 
     public static final MaterialId aetherRock = MaterialBuilder.material("aether", "aether_rock")

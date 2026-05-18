@@ -26,6 +26,7 @@ public class TCEntityTagProv extends EntityTypeTagsProvider {
         tag(create("tcompat:fire_dragons")).addOptional(getResource("iceandfire:fire_dragon"));
         tag(create("tcompat:ice_dragons")).addOptional(getResource("iceandfire:ice_dragon"));
         tag(create("tcompat:lightning_dragons")).addOptional(getResource("iceandfire:lightning_dragon"));
+        tag(create("tcompat:death_worms")).addOptional(getResource("iceandfire:deathworm"));
         tag(create("tcompat:dread"))
                 .addOptional(getResource("iceandfire:dread_beast"))
                 .addOptional(getResource("iceandfire:dread_ghoul"))
