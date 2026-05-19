@@ -1,0 +1,14 @@
+{
+  "stats": {
+    "tconstruct:head": {
+      "durability": 340,
+      "melee_attack": 1.5,
+      "mining_speed": 6.5,
+      "mining_tier": "minecraft:gold"
+    },
+    "tconstruct:maille": {},
+    "tinkersjewelry:gem": {
+      "optional": true
+    }
+  }
+}

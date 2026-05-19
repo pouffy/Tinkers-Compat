@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "input": "tcompat:soul_stained_steel",
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_soul_stained_steel"
+  },
+  "temperature": 950
+}

@@ -14,8 +14,8 @@ import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
+import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -60,7 +60,9 @@ public class CompatHelper {
         compatInitializers.put("cataclysm", CataclysmInit::init);
         compatInitializers.put("deep_aether", DeepAetherInit::init);
         compatInitializers.put("iceandfire", IFInit::init);
+        compatInitializers.put("malum", MalumInit::init);
         compatInitializers.put("species", SpeciesInit::init);
+
 
         compatEvents.put("ad_astra", (bus) -> bus.register(new AdAstraInit()));
         compatEvents.put("aether", (bus) -> bus.register(new AetherInit()));
@@ -71,6 +73,7 @@ public class CompatHelper {
         compatEvents.put("cataclysm", (bus) -> bus.register(new CataclysmInit()));
         compatEvents.put("deep_aether", (bus) -> bus.register(new DeepAetherInit()));
         compatEvents.put("iceandfire", (bus) -> bus.register(new IFInit()));
+        compatEvents.put("malum", (bus) -> bus.register(new MalumInit()));
     }
 
     public static void init(IEventBus eventBus) {

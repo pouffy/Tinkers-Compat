@@ -16,6 +16,7 @@ import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmMaterials;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFMaterials;
+import io.github.pouffy.tcompat.compat.malum.MalumMaterials;
 import io.github.pouffy.tcompat.compat.species.SpeciesMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
@@ -209,6 +210,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> betternether = withCondition(consumer, modLoaded("betternether"));
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
         Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
+        Consumer<FinishedRecipe> malum = withCondition(consumer, modLoaded("malum"));
 
         //materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
         materialMelting(aetherConsumer, AetherMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
@@ -244,6 +246,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingCasting(cataclysm, CataclysmMaterials.blackSteel, TCFluids.moltenBlackSteel, folder);
         materialMeltingCasting(cataclysm, CataclysmMaterials.cursium, TCFluids.moltenCursium, folder);
         materialMeltingCasting(cataclysm, CataclysmMaterials.witherite, TCFluids.moltenWitherite, folder);
+
+        materialMeltingCasting(malum, MalumMaterials.soulStainedSteel, TCFluids.moltenSoulStainedSteel, folder);
+        materialMeltingCasting(malum, MalumMaterials.hallowedGold, TCFluids.moltenHallowedGold, folder);
 
         materialComposite(cataclysm, MaterialIds.string, CataclysmMaterials.cursium, TCFluids.moltenCursium, FluidValues.INGOT, folder);
     }

@@ -27,6 +27,8 @@ public class TCModifiers {
     public static final ModifierId standstill = id("standstill");
 
     public static final ModifierId stained = id("stained");
+    public static final ModifierId warded = id("warded");
+    public static final ModifierId hallowed = id("hallowed");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");

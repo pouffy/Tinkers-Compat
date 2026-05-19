@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "#tcompat:fire_dragon_blood",
+      "required": false
+    },
+    {
+      "id": "#tcompat:ice_dragon_blood",
+      "required": false
+    },
+    {
+      "id": "#tcompat:lightning_dragon_blood",
+      "required": false
+    },
+    {
+      "id": "#tcompat:runic_sap",
+      "required": false
+    },
+    {
+      "id": "#tcompat:cursed_sap",
+      "required": false
+    }
+  ]
+}

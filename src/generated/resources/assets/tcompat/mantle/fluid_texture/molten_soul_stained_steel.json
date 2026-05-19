@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/molten/compat_ore/soul_stained_steel/flowing",
+  "still": "tcompat:fluid/molten/compat_ore/soul_stained_steel/still"
+}

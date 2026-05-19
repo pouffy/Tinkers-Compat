@@ -12,11 +12,14 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import slimeknights.mantle.client.model.NBTKeyModel;
+import slimeknights.tconstruct.TConstruct;
 
 @Mod(TCompat.MOD_ID)
 public class TCompat {
@@ -37,6 +40,7 @@ public class TCompat {
     private void commonSetup(final FMLCommonSetupEvent event) {
         TCompatNetworking.register();
         LOGGER.info("HELLO FROM COMMON SETUP");
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> NBTKeyModel.registerExtraTexture(TConstruct.getResource("creative_slot"), "rune", getResource("gui/modifiers/rune")));
     }
 
     public static ResourceLocation getResource(String name) {

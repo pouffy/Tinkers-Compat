@@ -27,6 +27,9 @@ public class TComClientEvents {
         setTranslucent(TCFluids.iceBlood);
         setTranslucent(TCFluids.lightningBlood);
         setTranslucent(TCFluids.moltenLacrima);
+        setTranslucent(TCFluids.moltenBlazingQuartz);
+        setTranslucent(TCFluids.runicSap);
+        setTranslucent(TCFluids.cursedSap);
     }
 
     private static void setTranslucent(FlowingFluidObject<?> fluid) {

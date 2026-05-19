@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/slime/runic_sap/flowing",
+  "still": "tcompat:fluid/slime/runic_sap/still"
+}

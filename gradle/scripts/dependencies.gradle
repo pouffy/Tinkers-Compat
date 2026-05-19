@@ -102,7 +102,11 @@ dependencies {
     modExtraRuntimeOnly("maven.modrinth:l_enders-cataclysm:TFKWu05d")
     modCompileOnly("maven.modrinth:lionfish-api:2.7")
     modExtraRuntimeOnly("maven.modrinth:lionfish-api:2.7")
-
+    // Malum
+    modCompileOnly("maven.modrinth:malum:1.20.1-1.6.7")
+    modExtraRuntimeOnly("maven.modrinth:malum:1.20.1-1.6.7")
+    modCompileOnly("team.lodestar.lodestone:lodestone:1.20.1-1.6.4.252")
+    modExtraRuntimeOnly("team.lodestar.lodestone:lodestone:1.20.1-1.6.4.252")
 
     // Other Tinker Addons
     modExtraRuntimeOnly("dev.shadowsoffire:Placebo:1.20.1-8.6.0")

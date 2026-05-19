@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "tcompat:fluid/slime/cursed_sap/flowing",
+  "still": "tcompat:fluid/slime/cursed_sap/still"
+}

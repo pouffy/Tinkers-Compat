@@ -45,6 +45,7 @@
     "fire_dragon_scale.red": "#891E3D",
     "fire_dragonsteel": "#774153",
     "gravitite": "#B643A0",
+    "hallowed_gold": "#F7D85A",
     "hellbark": "#332929",
     "hydra_fang": "#B2BEA0",
     "ice_dragon_scale": "#246FE8",
@@ -81,6 +82,7 @@
     "sea_serpent_scale.red": "#D71E31",
     "sea_serpent_scale.teal": "#03C6BA",
     "skyjade": "#729752",
+    "soul_stained_steel": "#CE7CEE",
     "stormforged_steel": "#B8C5D1",
     "stymphalian_bird_feather": "#896A55",
     "terminite": "#71F3E8",
@@ -210,6 +212,7 @@
     "frostborn": "#5EFFFF",
     "gale": "#9CD9E6",
     "ghostly": "#56ECCC",
+    "hallowed": "#E4AB38",
     "iced": "#5EFFFF",
     "leeching": "#B2BEA0",
     "lightning": "#974FFF",
@@ -224,6 +227,7 @@
     "scorch_thorns": "#FF581C",
     "scorchborn": "#FF581C",
     "skyjade": "#9ADA5B",
+    "stained": "#CE7CEE",
     "standstill": "#6E7786",
     "stymphalian": "#896A55",
     "swapping": "#E72A8B",
@@ -234,7 +238,11 @@
     "void_touched": "#740696",
     "volt_thorns": "#974FFF",
     "voltborn": "#974FFF",
+    "warded": "#CE7CEE",
     "wicked": "#FFA342",
     "zanite": "#AF7FF6"
+  },
+  "stat.tconstruct.slot": {
+    "rune": "#D200CB"
   }
 }

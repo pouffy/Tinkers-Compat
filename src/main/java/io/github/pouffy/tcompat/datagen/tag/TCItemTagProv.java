@@ -282,6 +282,19 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.CURSIUM_NUGGETS).addOptional(getResource("tcompat", "cursium_nugget"));
         this.tag(TCTags.Items.CURSIUM_BLOCKS).addOptional(getResource("cataclysm", "cursium_block"));
         this.tag(TCTags.Items.LACRIMA_GEMS).addOptional(getResource("cataclysm", "lacrima"));
+
+        this.tag(TCTags.Items.SOUL_STAINED_STEEL_INGOTS).addOptional(getResource("malum", "soul_stained_steel_ingot"));
+        this.tag(TCTags.Items.SOUL_STAINED_STEEL_NUGGETS).addOptional(getResource("malum", "soul_stained_steel_nugget"));
+        this.tag(TCTags.Items.SOUL_STAINED_STEEL_BLOCKS).addOptional(getResource("malum", "block_of_soul_stained_steel"));
+        this.tag(TCTags.Items.MALIGNANT_PEWTER_INGOTS).addOptional(getResource("malum", "malignant_pewter_ingot"));
+        this.tag(TCTags.Items.MALIGNANT_PEWTER_NUGGETS).addOptional(getResource("malum", "malignant_pewter_nugget"));
+        this.tag(TCTags.Items.MALIGNANT_PEWTER_BLOCKS).addOptional(getResource("malum", "block_of_malignant_pewter"));
+        this.tag(TCTags.Items.HALLOWED_GOLD_INGOTS).addOptional(getResource("malum", "hallowed_gold_ingot"));
+        this.tag(TCTags.Items.HALLOWED_GOLD_NUGGETS).addOptional(getResource("malum", "hallowed_gold_nugget"));
+        this.tag(TCTags.Items.HALLOWED_GOLD_BLOCKS).addOptional(getResource("malum", "block_of_hallowed_gold"));
+        this.tag(TCTags.Items.BLAZING_QUARTZ_GEMS).addOptional(getResource("malum", "blazing_quartz"));
+        this.tag(TCTags.Items.BLAZING_QUARTZ_NUGGETS).addOptional(getResource("malum", "blazing_quartz_fragment"));
+        this.tag(TCTags.Items.BLAZING_QUARTZ_BLOCKS).addOptional(getResource("malum", "block_of_blazing_quartz"));
     }
 
     private void addMetals() {

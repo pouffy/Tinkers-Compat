@@ -4,10 +4,6 @@ repositories {
     flatDir {
         dir 'libs'
     }
-    maven {
-        name = "Jared's maven"
-        url = "https://maven.blamejared.com/"
-    } // JEI
     maven { // JEI mirror, AE2
         name = "ModMaven"
         url = "https://modmaven.dev"
@@ -56,5 +52,9 @@ repositories {
         content {
             includeGroup "dev.shadowsoffire"
         }
+    }
+    maven { //Lodestone
+        name = "BlameJared maven"
+        url = uri("https://maven.blamejared.com/")
     }
 }

@@ -69,6 +69,12 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(TCFluids.moltenWitherite);
         fluidTag(TCFluids.moltenIgnitium);
         fluidTag(TCFluids.moltenLacrima);
+        fluidTag(TCFluids.runicSap);
+        fluidTag(TCFluids.cursedSap);
+        fluidTag(TCFluids.moltenSoulStainedSteel);
+        fluidTag(TCFluids.moltenMalignantPewter);
+        fluidTag(TCFluids.moltenHallowedGold);
+        fluidTag(TCFluids.moltenBlazingQuartz);
 
         var metals = this.tag(TinkerTags.Fluids.METAL_TOOLTIPS);
         // Aether
@@ -104,11 +110,27 @@ public class TCFluidTagProv extends FluidTagsProvider {
         metals.addOptionalTag(TCFluids.moltenCursium.getTag());
         metals.addOptionalTag(TCFluids.moltenWitherite.getTag());
         metals.addOptionalTag(TCFluids.moltenIgnitium.getTag());
+        // Malum
+        metals.addOptionalTag(TCFluids.moltenSoulStainedSteel.getTag());
+        metals.addOptionalTag(TCFluids.moltenMalignantPewter.getTag());
+        metals.addOptionalTag(TCFluids.moltenHallowedGold.getTag());
 
         var largeGems = this.tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS);
         // Betternether
         largeGems.addOptionalTag(TCFluids.moltenNetherRuby.getTag());
+        // Cataclysm
         largeGems.addOptionalTag(TCFluids.moltenLacrima.getTag());
+        // Malum
+        largeGems.addOptionalTag(TCFluids.moltenBlazingQuartz.getTag());
+
+        var slimes = this.tag(TinkerTags.Fluids.SLIME_TOOLTIPS);
+        // Ice and Fire
+        slimes.addOptionalTag(TCFluids.fireBlood.getTag());
+        slimes.addOptionalTag(TCFluids.iceBlood.getTag());
+        slimes.addOptionalTag(TCFluids.lightningBlood.getTag());
+        // Malum
+        slimes.addOptionalTag(TCFluids.runicSap.getTag());
+        slimes.addOptionalTag(TCFluids.cursedSap.getTag());
 
         var soups = this.tag(MantleTags.Fluids.SOUP);
         soups.addOptionalTag(TCFluids.fireLilyMixture.getTag());

@@ -107,6 +107,18 @@
     {
       "id": "#tcompat:molten_ignitium",
       "required": false
+    },
+    {
+      "id": "#tcompat:molten_soul_stained_steel",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_malignant_pewter",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_hallowed_gold",
+      "required": false
     }
   ]
 }

@@ -13,12 +13,14 @@ import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
+import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.PackOutput;
 import slimeknights.mantle.data.GenericDataProvider;
 import slimeknights.mantle.util.JsonHelper;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
+import slimeknights.tconstruct.library.tools.SlotType;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -26,6 +28,7 @@ import java.util.concurrent.CompletableFuture;
 public class MantleColorsProvider extends GenericDataProvider {
     private final Map<String, List<ColorEntry>> modifierColors = new HashMap<>();
     private final Map<String, List<ColorEntry>> materialColors = new HashMap<>();
+    private final Map<String, List<ColorEntry>> slotColors = new HashMap<>();
 
     public MantleColorsProvider(PackOutput packOutput) {
         super(packOutput, PackOutput.Target.RESOURCE_PACK, "mantle", JsonHelper.DEFAULT_GSON);
@@ -46,6 +49,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
             addColor(builder);
         }
+        addColor(MalumInit.RUNE_SLOT,                       0xd200cb);
         //Ad Astra
         addColor(AdAstraInit.oxygenated.getId(),            0xa9b4ed);
         //Aether
@@ -107,6 +111,10 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(CataclysmInit.phantasmic.getId(),          0x56eccc);
         addColor(CataclysmInit.tidal.getId(),               0x6071c1);
         addColor(CataclysmInit.fluxed.getId(),              0x6e7786);
+        //Malum
+        addColor(TCModifiers.stained,                       0xce7cee);
+        addColor(TCModifiers.warded,                        0xce7cee);
+        addColor(TCModifiers.hallowed,                      0xe4ab38);
     }
 
     public void addColor(MaterialBuilder material) {
@@ -126,6 +134,18 @@ public class MantleColorsProvider extends GenericDataProvider {
         String namespace = modifier.getNamespace();
         String path = modifier.getPath();
         this.modifierColors.compute(namespace, (n, l) -> {
+            if (l == null) {
+                l = new ArrayList<>();
+            }
+            ColorEntry entry = new ColorEntry(path, color);
+            l.add(entry);
+            return l;
+        });
+    }
+
+    public void addColor(SlotType slotType, int color) {
+        String path = slotType.getName();
+        this.slotColors.compute("tconstruct", (n, l) -> {
             if (l == null) {
                 l = new ArrayList<>();
             }
@@ -157,6 +177,13 @@ public class MantleColorsProvider extends GenericDataProvider {
                 namespaced.addProperty(entry.path, hexString(entry.color));
             }
             json.add("material.%s".formatted(namespace), namespaced);
+        }
+        for (String namespace : this.slotColors.keySet()) {
+            JsonObject namespaced = new JsonObject();
+            for (ColorEntry entry : this.slotColors.get(namespace)) {
+                namespaced.addProperty(entry.path, hexString(entry.color));
+            }
+            json.add("stat.%s.slot".formatted(namespace), namespaced);
         }
         return json;
     }

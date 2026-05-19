@@ -1,0 +1,51 @@
+{
+  "color": "FFF7D85A",
+  "fallbacks": [
+    "metal"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:repair_kit",
+      "tinkersjewelry:gem",
+      "tconstruct:head",
+      "tconstruct:maille",
+      "tconstruct:armor_maille"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "color": "FF000000",
+            "grey": 0
+          },
+          {
+            "color": "FF772923",
+            "grey": 63
+          },
+          {
+            "color": "FFA94F2D",
+            "grey": 102
+          },
+          {
+            "color": "FFD97F28",
+            "grey": 140
+          },
+          {
+            "color": "FFF7D85A",
+            "grey": 178
+          },
+          {
+            "color": "FFFFF394",
+            "grey": 216
+          },
+          {
+            "color": "FFFFFDE9",
+            "grey": 255
+          }
+        ]
+      }
+    }
+  }
+}

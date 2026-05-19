@@ -217,6 +217,19 @@ public class TCTags {
         public static TagKey<Item> CURSIUM_BLOCKS = common("storage_blocks/cursium");
         public static TagKey<Item> LACRIMA_GEMS = common("gems/lacrima");
 
+        public static TagKey<Item> SOUL_STAINED_STEEL_INGOTS  = common("ingots/soul_stained_steel");
+        public static TagKey<Item> SOUL_STAINED_STEEL_NUGGETS = common("nuggets/soul_stained_steel");
+        public static TagKey<Item> SOUL_STAINED_STEEL_BLOCKS = common("storage_blocks/soul_stained_steel");
+        public static TagKey<Item> MALIGNANT_PEWTER_INGOTS  = common("ingots/malignant_pewter");
+        public static TagKey<Item> MALIGNANT_PEWTER_NUGGETS = common("nuggets/malignant_pewter");
+        public static TagKey<Item> MALIGNANT_PEWTER_BLOCKS = common("storage_blocks/malignant_pewter");
+        public static TagKey<Item> HALLOWED_GOLD_INGOTS  = common("ingots/hallowed_gold");
+        public static TagKey<Item> HALLOWED_GOLD_NUGGETS = common("nuggets/hallowed_gold");
+        public static TagKey<Item> HALLOWED_GOLD_BLOCKS = common("storage_blocks/hallowed_gold");
+        public static TagKey<Item> BLAZING_QUARTZ_GEMS = common("gems/blazing_quartz");
+        public static TagKey<Item> BLAZING_QUARTZ_NUGGETS = common("nuggets/blazing_quartz");
+        public static TagKey<Item> BLAZING_QUARTZ_BLOCKS = common("storage_blocks/blazing_quartz");
+
         public static TagKey<Item> DARTS = named("aether", "darts");
 
         public static TagKey<Item> local(String name) {

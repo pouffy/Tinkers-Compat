@@ -6,10 +6,10 @@ import io.github.pouffy.tcompat.common.module.AetherForgedModule;
 import io.github.pouffy.tcompat.common.module.MobEffectUserModule;
 import io.github.pouffy.tcompat.common.module.OptionalAttributeModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
-import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
+import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.effect.MobEffects;
@@ -17,7 +17,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.crafting.conditions.AndCondition;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -32,18 +31,14 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
-import slimeknights.tconstruct.library.json.math.ModifierFormula;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
-import slimeknights.tconstruct.library.json.variable.entity.EntityVariable;
-import slimeknights.tconstruct.library.json.variable.melee.MeleeVariable;
-import slimeknights.tconstruct.library.json.variable.stat.EntityConditionalStatVariable;
 import slimeknights.tconstruct.library.json.variable.tool.StatMultiplierVariable;
-import slimeknights.tconstruct.library.json.variable.tool.ToolStatVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ReduceToolDamageModule;
+import slimeknights.tconstruct.library.modifiers.modules.build.ModifierSlotModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
@@ -53,12 +48,10 @@ import slimeknights.tconstruct.library.modifiers.modules.display.DurabilityBarCo
 import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.shared.TinkerAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static slimeknights.tconstruct.library.json.math.ModifierFormula.*;
 import static slimeknights.tconstruct.library.tools.definition.ModifiableArmorMaterial.ARMOR_SLOTS;
 
 public class TCModifierProv extends AbstractModifierProvider implements IConditionBuilder {
@@ -240,7 +233,12 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(KnockbackModule.builder().formula().constant(0.0f).build());
 
         buildModifier(TCModifiers.stained, modLoaded("malum"))
-                .addModule(OptionalAttributeModule.builder(TCompat.getResource("lodestone:magic_damage"), AttributeModifier.Operation.ADDITION).amount(2, 1));
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("lodestone:magic_damage"), AttributeModifier.Operation.ADDITION).amount(1, 0.75f));
+        buildModifier(TCModifiers.warded, modLoaded("malum"))
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:soul_ward_capacity"), AttributeModifier.Operation.ADDITION).eachLevel(1.5f))
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:soul_ward_recovery_rate"), AttributeModifier.Operation.MULTIPLY_BASE).amount(0.05f, 0.05f));
+        buildModifier(TCModifiers.hallowed, modLoaded("malum"))
+                .addModule(ModifierSlotModule.slot(MalumInit.RUNE_SLOT).flat(1)).levelDisplay(ModifierLevelDisplay.NO_LEVELS).build();
     }
 
     @Override

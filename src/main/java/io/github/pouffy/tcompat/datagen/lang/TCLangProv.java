@@ -48,48 +48,7 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void fluids() {
-        forFluid(TCFluids.moltenSkyjade);
-        forFluid(TCFluids.moltenStratus);
-        forFluid(TCFluids.moltenZanite);
-        forFluid(TCFluids.moltenGravitite);
-        forFluid(TCFluids.moltenRefinedSentrite);
-        forFluid(TCFluids.moltenVeridium);
-        forFluid(TCFluids.moltenPyral);
-        forFluid(TCFluids.moltenNeptune);
-        forFluid(TCFluids.moltenValkyrum);
-        forFluid(TCFluids.moltenDesh);
-        forFluid(TCFluids.moltenCalorite);
-        forFluid(TCFluids.moltenOstrum);
-        forFluid(TCFluids.moltenThallasium);
-        forFluid(TCFluids.moltenTerminite);
-        forFluid(TCFluids.moltenAeternium);
-        forFluid(TCFluids.moltenLightnum);
-        forFluid(TCFluids.moltenDraculite);
-        forFluid(TCFluids.moltenStormforgedSteel);
-        forFluid(TCFluids.moltenCincinnasite);
-        forFluid(TCFluids.moltenNetherRuby);
-        forFluid(TCFluids.fireBlood);
-        forFluid(TCFluids.iceBlood);
-        forFluid(TCFluids.lightningBlood);
-        forFluid(TCFluids.moltenFireDragonsteel);
-        forFluid(TCFluids.moltenIceDragonsteel);
-        forFluid(TCFluids.moltenLightningDragonsteel);
-        forFluid(TCFluids.fireLilyMixture);
-        forFluid(TCFluids.frostLilyMixture);
-        forFluid(TCFluids.lightningLilyMixture);
-        forFluid(TCFluids.ambrosia);
-        forFluid(TCFluids.aloeVeraJuice);
-        forFluid(TCFluids.whitePuffballStew);
-        forFluid(TCFluids.alliumOddionSoup);
-        forFluid(TCFluids.umbrellaClusterJuice);
-        forFluid(TCFluids.wartSoup);
-        forFluid(TCFluids.agaveMedicine);
-        forFluid(TCFluids.moltenAncientMetal);
-        forFluid(TCFluids.moltenBlackSteel);
-        forFluid(TCFluids.moltenCursium);
-        forFluid(TCFluids.moltenWitherite);
-        forFluid(TCFluids.moltenIgnitium);
-        forFluid(TCFluids.moltenLacrima);
+        TCFluids.registeredFluids.forEach((key, fluid) -> forFluid(fluid.fluid(), fluid.lang()));
     }
 
     private void misc() {
@@ -138,6 +97,12 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.skyjade.projectile_damage", "Skyjade Ranged Damage");
         add("modifier.tcompat.skyjade.mining_speed", "Skyjade Mining Speed");
         add("modifier.tcompat.skyjade.armor", "Skyjade Armor");
+
+        add("item.tconstruct.creative_slot.rune", "Creative Rune Slot");
+        add("stat.tconstruct.slot.prefix.rune", "Rune Slots: ");
+        add("stat.tconstruct.slot.display.rune", "rune");
+        add("modifier.tconstruct.rebalanced.rune", "Rune");
+        add("recipe.tconstruct.remove_modifier.rune", "Extract Rune");
     }
 
     private void modifiers() {
@@ -200,6 +165,10 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.archaeologist", "Belongs in a museum", "Bonus damage and protection against ancient remnants.");
         forModifier("modifier.tcompat.standstill", "Stay right there", "Removes all knockback.");
         forModifier("modifier.tcompat.fluxed", "Industrial Grade Combat", "Fully charged shots fire a heavy-duty Wither Rocket.");
+        //Malum
+        forModifier("modifier.tcompat.stained", "Iron's cooler sibling", "Tool deals extra magic damage.");
+        forModifier("modifier.tcompat.warded", "Safe enough", "Increased Soul Ward capacity and recovery rate.");
+        forModifier("modifier.tcompat.hallowed", "It's just a tribute", "Adds one bonus Rune slot to the tool.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {
@@ -213,6 +182,15 @@ public class TCLangProv extends LanguageProvider {
         add(key+".flavor", flavor);
         add(key+".description", description);
     }
+    private void forFluid(FluidObject<?> fluid, String lang) {
+        String fluidKey = fluid.getId().toLanguageKey("fluid");
+        String blockKey = fluid.getId().toLanguageKey("block")+"_fluid";
+        String itemKey = fluid.getId().toLanguageKey("item")+"_bucket";
+        this.add(fluidKey, lang);
+        this.add(blockKey, lang);
+        this.add(itemKey, lang + " Bucket");
+    }
+
 
     private void forFluid(FluidObject<?> fluid) {
         toEng(fluid.getId().toLanguageKey("fluid"));
