@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/hallowed_gold"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/hallowed_gold"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tcompat:molten_hallowed_gold"
+  },
+  "temperature": 775,
+  "time": 178
+}

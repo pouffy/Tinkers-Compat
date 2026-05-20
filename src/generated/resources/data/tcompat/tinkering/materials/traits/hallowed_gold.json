@@ -4,5 +4,13 @@
       "level": 1,
       "name": "tcompat:hallowed"
     }
-  ]
+  ],
+  "perStat": {
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:armor_gem"
+      }
+    ]
+  }
 }

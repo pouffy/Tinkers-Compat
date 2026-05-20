@@ -72,6 +72,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> betterend = withCondition(consumer, modLoaded("betterend"));
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
         Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
+        Consumer<FinishedRecipe> malum = withCondition(consumer, modLoaded("malum"));
 
         // Streamline variant recipes
         MaterialBuilder.woodMaterials.forEach((builder, woodType) -> {
@@ -173,6 +174,11 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:koboleton_bone")), 1, 1, folder + "koboleton_bone/bone");
         materialRecipe(iceandfire, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:kobolediator_skull")), 8, 1, folder + "koboleton_bone/skull");
 
+        metalMaterialRecipe(malum, MalumMaterials.soulStainedSteel, folder, "soul_stained_steel", true);
+        metalMaterialRecipe(malum, MalumMaterials.hallowedGold, folder, "hallowed_gold", true);
+        metalMaterialRecipe(malum, MalumMaterials.malignantPewter, folder, "malignant_pewter", true);
+        materialRecipe(malum, MalumMaterials.spiritFabric, ItemNameIngredient.from(TCompat.getResource("malum:spirit_fabric")), 1, 1, folder + "spirit_fabric");
+
         //gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
         metalMaterialRecipe(deepAetherConsumer, DeepAetherMaterials.stormforgedSteel, folder, "stormforged_steel", true);
 
@@ -249,6 +255,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
 
         materialMeltingCasting(malum, MalumMaterials.soulStainedSteel, TCFluids.moltenSoulStainedSteel, folder);
         materialMeltingCasting(malum, MalumMaterials.hallowedGold, TCFluids.moltenHallowedGold, folder);
+        materialMeltingCasting(malum, MalumMaterials.malignantPewter, TCFluids.moltenMalignantPewter, folder);
 
         materialComposite(cataclysm, MaterialIds.string, CataclysmMaterials.cursium, TCFluids.moltenCursium, FluidValues.INGOT, folder);
     }

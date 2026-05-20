@@ -24,6 +24,11 @@ public interface CompatSmeltery extends ITCSmelteryRecipeHelper, ICommonRecipeHe
 
     void addRecipes(Consumer<FinishedRecipe> consumer, String folder);
 
+    default void toData(Consumer<FinishedRecipe> consumer) {
+        TCompat.LOGGER.info("Smeltery provider for: {}", compatModId());
+        addRecipes(consumer, "smeltery/melting/");
+    }
+
     default String getModId() {
         return TCompat.MOD_ID;
     }

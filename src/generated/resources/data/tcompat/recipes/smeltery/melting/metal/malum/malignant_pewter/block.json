@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/malignant_pewter"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/malignant_pewter"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tcompat:molten_malignant_pewter"
+  },
+  "temperature": 1150,
+  "time": 212
+}

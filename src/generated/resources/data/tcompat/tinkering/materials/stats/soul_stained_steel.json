@@ -38,9 +38,7 @@
       "durability": 396,
       "toughness": 2.0
     },
-    "tinkersjewelry:plain_ring": {
-      "amplification": 1.4,
-      "durability": 1250,
+    "tinkersjewelry:gem": {
       "optional": true
     }
   }

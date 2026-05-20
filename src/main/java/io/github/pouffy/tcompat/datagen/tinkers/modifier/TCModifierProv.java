@@ -232,13 +232,18 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(300)
                 .addModule(KnockbackModule.builder().formula().constant(0.0f).build());
 
-        buildModifier(TCModifiers.stained, modLoaded("malum"))
+        // Some of these only use attributes provided by lodestone so we can just require lodestone there.
+        buildModifier(TCModifiers.stained, modLoaded("lodestone"))
                 .addModule(OptionalAttributeModule.builder(TCompat.getResource("lodestone:magic_damage"), AttributeModifier.Operation.ADDITION).amount(1, 0.75f));
         buildModifier(TCModifiers.warded, modLoaded("malum"))
                 .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:soul_ward_capacity"), AttributeModifier.Operation.ADDITION).eachLevel(1.5f))
                 .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:soul_ward_recovery_rate"), AttributeModifier.Operation.MULTIPLY_BASE).amount(0.05f, 0.05f));
         buildModifier(TCModifiers.hallowed, modLoaded("malum"))
                 .addModule(ModifierSlotModule.slot(MalumInit.RUNE_SLOT).flat(1)).levelDisplay(ModifierLevelDisplay.NO_LEVELS).build();
+        buildModifier(TCModifiers.stronghold, modLoaded("malum"))
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:malignant_conversion"), AttributeModifier.Operation.ADDITION).amount(0.15f, 0.05f));
+        buildModifier(TCModifiers.magicProficiency, modLoaded("lodestone"))
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("lodestone:magic_proficiency"), AttributeModifier.Operation.ADDITION).amount(0.1f, 0.05f));
     }
 
     @Override

@@ -10,6 +10,7 @@ import io.github.pouffy.tcompat.compat.bwg.BWGSmeltery;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmSmeltery;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherSmeltery;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFSmeltery;
+import io.github.pouffy.tcompat.compat.malum.MalumSmeltery;
 import io.github.pouffy.tcompat.compat.species.SpeciesSmeltery;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -30,17 +31,17 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        String folder = "smeltery/melting/";
-        new AetherSmeltery().addRecipes(consumer, folder);
-        new DeepAetherSmeltery().addRecipes(consumer, folder);
-        new AetherReduxSmeltery().addRecipes(consumer, folder);
-        new AetherTRSmeltery().addRecipes(consumer, folder);
-        new SpeciesSmeltery().addRecipes(consumer, folder);
-        new AdAstraSmeltery().addRecipes(consumer, folder);
-        new BetterEndSmeltery().addRecipes(consumer, folder);
-        new BetterNetherSmeltery().addRecipes(consumer, folder);
-        new IFSmeltery().addRecipes(consumer, folder);
-        new BWGSmeltery().addRecipes(consumer, folder);
-        new CataclysmSmeltery().addRecipes(consumer, folder);
+        new AetherSmeltery().toData(consumer);
+        new DeepAetherSmeltery().toData(consumer);
+        new AetherReduxSmeltery().toData(consumer);
+        new AetherTRSmeltery().toData(consumer);
+        new SpeciesSmeltery().toData(consumer);
+        new AdAstraSmeltery().toData(consumer);
+        new BetterEndSmeltery().toData(consumer);
+        new BetterNetherSmeltery().toData(consumer);
+        new IFSmeltery().toData(consumer);
+        new BWGSmeltery().toData(consumer);
+        new CataclysmSmeltery().toData(consumer);
+        new MalumSmeltery().toData(consumer);
     }
 }

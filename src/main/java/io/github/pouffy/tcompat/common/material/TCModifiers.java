@@ -29,6 +29,8 @@ public class TCModifiers {
     public static final ModifierId stained = id("stained");
     public static final ModifierId warded = id("warded");
     public static final ModifierId hallowed = id("hallowed");
+    public static final ModifierId stronghold = id("stronghold");
+    public static final ModifierId magicProficiency = id("magic_proficiency");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");
@@ -40,6 +42,7 @@ public class TCModifiers {
     public static final ModifierId flame_gem = compatId("tinkersjewelry", "flame_gem");
     public static final ModifierId precious = compatId("tinkersjewelry", "precious");
     public static final ModifierId ductile = compatId("tinkersjewelry", "ductile");
+    public static final ModifierId armorToughness_gem = id("armor_toughness_gem");
 
     //Construct's Casting
     public static final ModifierId conserving = compatId("constructs_casting", "conserving");

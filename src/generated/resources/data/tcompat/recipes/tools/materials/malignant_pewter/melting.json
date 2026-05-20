@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "input": "tcompat:malignant_pewter",
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_malignant_pewter"
+  },
+  "temperature": 1150
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/hallowed_gold"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 178,
+  "fluid": {
+    "amount": 810,
+    "tag": "tcompat:molten_hallowed_gold"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/hallowed_gold"
+  }
+}

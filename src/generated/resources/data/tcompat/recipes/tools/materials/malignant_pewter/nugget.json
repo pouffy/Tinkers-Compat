@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/malignant_pewter"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/malignant_pewter"
+  },
+  "material": "tcompat:malignant_pewter",
+  "needed": 9,
+  "value": 1
+}

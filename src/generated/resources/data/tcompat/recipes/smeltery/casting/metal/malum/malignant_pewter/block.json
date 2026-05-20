@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/malignant_pewter"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 212,
+  "fluid": {
+    "amount": 810,
+    "tag": "tcompat:molten_malignant_pewter"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/malignant_pewter"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/nugget"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/hallowed_gold"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 20,
+  "fluid": {
+    "amount": 10,
+    "tag": "tcompat:molten_hallowed_gold"
+  },
+  "result": {
+    "tag": "forge:nuggets/hallowed_gold"
+  }
+}

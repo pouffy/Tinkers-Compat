@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/hallowed_gold"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/hallowed_gold"
+  },
+  "material": "tcompat:hallowed_gold",
+  "needed": 1,
+  "value": 1
+}

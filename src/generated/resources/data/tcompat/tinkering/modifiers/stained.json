@@ -1,7 +1,7 @@
 {
   "condition": {
     "type": "forge:mod_loaded",
-    "modid": "malum"
+    "modid": "lodestone"
   },
   "level_display": "tconstruct:default",
   "modules": [

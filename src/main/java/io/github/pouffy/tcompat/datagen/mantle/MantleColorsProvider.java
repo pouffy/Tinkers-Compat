@@ -112,9 +112,13 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(CataclysmInit.tidal.getId(),               0x6071c1);
         addColor(CataclysmInit.fluxed.getId(),              0x6e7786);
         //Malum
+        addColor(TCModifiers.armorToughness_gem,            0x8a5eae);
         addColor(TCModifiers.stained,                       0xce7cee);
         addColor(TCModifiers.warded,                        0xce7cee);
         addColor(TCModifiers.hallowed,                      0xe4ab38);
+        addColor(TCModifiers.stronghold,                    0x5e4870);
+        addColor(TCModifiers.magicProficiency,              0xa32cbf);
+        addColor(MalumInit.certainty.getId(),               0x4d2450);
     }
 
     public void addColor(MaterialBuilder material) {

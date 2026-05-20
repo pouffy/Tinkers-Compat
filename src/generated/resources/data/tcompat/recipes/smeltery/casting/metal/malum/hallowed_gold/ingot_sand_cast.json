@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/ingot"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/hallowed_gold"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 59,
+  "fluid": {
+    "amount": 90,
+    "tag": "tcompat:molten_hallowed_gold"
+  },
+  "result": {
+    "tag": "forge:ingots/hallowed_gold"
+  }
+}

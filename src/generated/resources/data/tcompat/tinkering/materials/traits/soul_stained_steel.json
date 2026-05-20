@@ -11,6 +11,12 @@
         "level": 1,
         "name": "tcompat:warded"
       }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tcompat:armor_toughness_gem"
+      }
     ]
   }
 }

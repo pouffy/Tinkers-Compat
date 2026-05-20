@@ -1,0 +1,35 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "tinkersjewelry"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "minecraft:generic.armor_toughness",
+      "formula": [
+        "$level",
+        0.5,
+        "*",
+        "$amplification",
+        "*",
+        1.5,
+        "+"
+      ],
+      "operation": "addition",
+      "unique": "tcompat.modifier.armor_toughness_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    },
+    {
+      "type": "tinkersjewelry:hurt_user",
+      "flat": 1.0
+    }
+  ],
+  "tooltip_display": "always"
+}

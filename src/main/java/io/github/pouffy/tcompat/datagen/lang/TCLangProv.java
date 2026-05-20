@@ -169,6 +169,10 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.stained", "Iron's cooler sibling", "Tool deals extra magic damage.");
         forModifier("modifier.tcompat.warded", "Safe enough", "Increased Soul Ward capacity and recovery rate.");
         forModifier("modifier.tcompat.hallowed", "It's just a tribute", "Adds one bonus Rune slot to the tool.");
+        forModifier("modifier.tcompat.stronghold", "Extra safe", "Increased Malignant Conversion.");
+        forModifier("modifier.tcompat.certainty", "Don't be grim", "A successful slaughter will sometimes double the force of the next swing.");
+        forModifier("modifier.tcompat.magic_proficiency", "My potions are too strong for you, traveller...", "Increases Magic Proficiency, and, in turn, magic damage.");
+        forModifier("modifier.tcompat.armor_toughness_gem", "Armor Toughness", "Tough", "Adds additional armor toughness");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

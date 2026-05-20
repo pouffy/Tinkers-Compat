@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/malignant_pewter"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/malignant_pewter"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/malignant_pewter"
+  },
+  "material": "tcompat:malignant_pewter",
+  "needed": 1,
+  "value": 9
+}
