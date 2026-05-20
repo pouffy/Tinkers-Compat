@@ -173,6 +173,9 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.certainty", "Don't be grim", "A successful slaughter will sometimes double the force of the next swing.");
         forModifier("modifier.tcompat.magic_proficiency", "My potions are too strong for you, traveller...", "Increases Magic Proficiency, and, in turn, magic damage.");
         forModifier("modifier.tcompat.armor_toughness_gem", "Armor Toughness", "Tough", "Adds additional armor toughness");
+        forModifier("modifier.tcompat.cloaking", "Now you see me", "Reduces enemy aggression");
+        forModifier("modifier.tcompat.arcane_resonance", "Extra potent", "Bonus potency for spirit-collection effects.");
+        forModifier("modifier.tcompat.spirit_harvester", "Feeling exposed?", "Attacking exposes the target's soul");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

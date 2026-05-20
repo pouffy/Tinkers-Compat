@@ -118,6 +118,9 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.hallowed,                      0xe4ab38);
         addColor(TCModifiers.stronghold,                    0x5e4870);
         addColor(TCModifiers.magicProficiency,              0xa32cbf);
+        addColor(TCModifiers.cloaking,                      0xbbf1f4);
+        addColor(TCModifiers.arcaneResonance,               0xffaa7d);
+        addColor(TCModifiers.spiritHarvester,               0xeccef6);
         addColor(MalumInit.certainty.getId(),               0x4d2450);
     }
 

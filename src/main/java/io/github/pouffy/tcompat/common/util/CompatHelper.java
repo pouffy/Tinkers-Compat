@@ -25,6 +25,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.Level;
@@ -39,6 +40,7 @@ import slimeknights.tconstruct.tools.stats.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import static net.minecraft.world.item.Tiers.STONE;
@@ -48,6 +50,7 @@ public class CompatHelper {
 
     private static final Map<String, Consumer<IEventBus>> compatInitializers = new HashMap<>();
     private static final Map<String, Consumer<IEventBus>> compatEvents = new HashMap<>();
+    public static final Map<String, BiConsumer<CreativeModeTab.ItemDisplayParameters, CreativeModeTab.Output>> compatItems = new HashMap<>();
 
     static {
         compatInitializers.put("ad_astra", AdAstraInit::init);
@@ -74,6 +77,10 @@ public class CompatHelper {
         compatEvents.put("deep_aether", (bus) -> bus.register(new DeepAetherInit()));
         compatEvents.put("iceandfire", (bus) -> bus.register(new IFInit()));
         compatEvents.put("malum", (bus) -> bus.register(new MalumInit()));
+
+        compatItems.put("aether", AetherInit::addCommonTabItems);
+        compatItems.put("deep_aether", DeepAetherInit::addCommonTabItems);
+        compatItems.put("iceandfire", IFInit::addCommonTabItems);
     }
 
     public static void init(IEventBus eventBus) {

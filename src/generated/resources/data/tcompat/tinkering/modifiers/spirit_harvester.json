@@ -1,0 +1,13 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "malum"
+  },
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tcompat:soul_exposure"
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.module.AetherForgedModule;
 import io.github.pouffy.tcompat.common.module.MobEffectUserModule;
 import io.github.pouffy.tcompat.common.module.OptionalAttributeModule;
+import io.github.pouffy.tcompat.common.module.SoulExposureModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -244,6 +245,13 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:malignant_conversion"), AttributeModifier.Operation.ADDITION).amount(0.15f, 0.05f));
         buildModifier(TCModifiers.magicProficiency, modLoaded("lodestone"))
                 .addModule(OptionalAttributeModule.builder(TCompat.getResource("lodestone:magic_proficiency"), AttributeModifier.Operation.ADDITION).amount(0.1f, 0.05f));
+        buildModifier(TCModifiers.cloaking, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.arcaneResonance, modLoaded("malum"))
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:arcane_resonance"), AttributeModifier.Operation.MULTIPLY_BASE).amount(0.1f, 0.1f));
+        buildModifier(TCModifiers.spiritHarvester, modLoaded("malum"))
+                .addModule(SoulExposureModule.INSTANCE)
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override

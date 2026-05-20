@@ -5,9 +5,11 @@ import io.github.pouffy.tcompat.common.CompatModule;
 import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.datagen.TCDataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,6 +22,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import slimeknights.mantle.client.model.NBTKeyModel;
 import slimeknights.tconstruct.TConstruct;
+import slimeknights.tconstruct.fluids.TinkerFluids;
+import slimeknights.tconstruct.shared.TinkerCommons;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 @Mod(TCompat.MOD_ID)
 public class TCompat {
@@ -62,6 +67,8 @@ public class TCompat {
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("HELLO from server starting");
     }
+
+
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {

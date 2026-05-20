@@ -14,6 +14,7 @@ import io.github.pouffy.tcompat.common.network.base.PacketRelay;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.modifier.ThunderstruckModifier;
+import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
@@ -26,6 +27,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -36,11 +38,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegisterEvent;
 import slimeknights.mantle.util.OffhandCooldownTracker;
+import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.shared.TinkerCommons;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -68,6 +73,17 @@ public class TCCommonEvents {
 
     }
 
+    @SubscribeEvent
+    public static void livingVisibility(LivingEvent.LivingVisibilityEvent event) {
+        Entity entity = event.getLookingEntity();
+        if (entity instanceof LivingEntity watcher) {
+            LivingEntity target = event.getEntity();
+            if (MalumHandler.isCloaking(target)) {
+                float visibilityModifier = 0.25f;
+                event.modifyVisibility(visibilityModifier);
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onLeftClick(PlayerInteractEvent.LeftClickEmpty event) {
@@ -155,6 +171,7 @@ public class TCCommonEvents {
 
     @SubscribeEvent
     static void hurt(LivingHurtEvent event) {
+        if (CompatHelper.isLoaded("malum")) MalumHandler.exposeSoul(event);
         var entity = event.getEntity();
         AtomicReference<Float> voidAmount = new AtomicReference<>(event.getAmount());
         VoidTouched.get(entity).ifPresent(voidTouched -> {
@@ -166,13 +183,21 @@ public class TCCommonEvents {
         if (voidAmount.get() != event.getAmount()) {
             event.setAmount(voidAmount.get());
         }
-
     }
 
     @SubscribeEvent
-    void registerSerializers(RegisterEvent event) {
-        if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
-            ModifierModule.LOADER.register(TCompat.getResource("autosmelt"), AutosmeltModule.LOADER);
+    static void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == TinkerFluids.tabFluids.getKey()) {
+            TCFluids.addTabItems(event.getParameters(), event);
+        }
+        if (event.getTabKey() == TinkerCommons.tabGeneral.getKey()) {
+            CompatHelper.compatItems.forEach((mod, consumer) -> {
+                if (CompatHelper.isLoaded(mod))
+                    consumer.accept(event.getParameters(), event);
+            });
+        }
+        if (event.getTabKey() == TinkerTools.tabTools.getKey()) {
+            GlobalInit.addToolTabItems(event.getParameters(), event);
         }
     }
 }

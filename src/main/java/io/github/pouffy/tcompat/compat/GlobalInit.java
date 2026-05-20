@@ -55,6 +55,7 @@ public class GlobalInit extends CompatInitializer {
         }
     });
     public static final ModuleHook<ToolSwingModifierHook> TOOL_SWING = ModifierHooks.register(getResource("tool_swing"), ToolSwingModifierHook.class, ToolSwingModifierHook.AllMerger::new, (toolStackView, modifierEntry, stack, player) -> false);
+    public static final ModuleHook<SoulExposureModifierHook> SOUL_EXPOSURE = ModifierHooks.register(getResource("soul_exposure"), SoulExposureModifierHook.class, (tool, modifier) -> true);
 
     public static LivingEntityPredicate SUN_EXPOSED = SingletonLoader.singleton((loader) -> new LivingEntityPredicate() {
         @Override
@@ -103,10 +104,13 @@ public class GlobalInit extends CompatInitializer {
     void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
             ModifierModule.LOADER.register(getResource("aether_forged"), AetherForgedModule.LOADER);
+            ModifierModule.LOADER.register(getResource("soul_exposure"), SoulExposureModule.LOADER);
             ModifierModule.LOADER.register(getResource("mob_effect_user"), MobEffectUserModule.LOADER);
             ModifierModule.LOADER.register(getResource("optional_attribute"), OptionalAttributeModule.LOADER);
+            ModifierModule.LOADER.register(TCompat.getResource("autosmelt"), AutosmeltModule.LOADER);
             LivingEntityPredicate.LOADER.register(getResource("sun_exposed"), SUN_EXPOSED.getLoader());
             EntityVariable.LOADER.register(getResource("sky_light"), SKY_LIGHT.getLoader());
+            EntityVariable.LOADER.register(getResource("player_stat"), StatEntityVariable.LOADER);
         }
     }
 

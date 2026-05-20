@@ -79,5 +79,26 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("cloth").repairKit().binding().bowstring().maille().sixColor(0xFF1d1c20, 0xFF272429, 0xFF312c31, 0xFF3e2e3e, 0xFF463652, 0xFF5e367a))
             .buildMaterial();
 
+    public static final MaterialId astralWeave = MaterialBuilder.material("malum", "astral_weave")
+            .data(d -> d.tier(2).order(4).craftable(true))
+            .traits(t -> t.trait(TCModifiers.cloaking))
+            .stats(s ->
+                    s.stat(
+                            StatlessMaterialStats.BINDING,
+                            StatlessMaterialStats.BOWSTRING
+                    )
+            )
+            .renderInfo(r -> r.color(0x779ec3).fallbacks("cloth"))
+            .spriteInfo(s -> s.fallbacks("cloth").repairKit().binding().bowstring().sixColor(0xFF534276, 0xFF665b89, 0xFF6672b2, 0xFF779ec3, 0xFF7ccdc7, 0xFFbbf1f4))
+            .buildMaterial();
+
+    public static final MaterialId alchemicalCalx = MaterialBuilder.material("malum", "alchemical_calx")
+            .data(d -> d.tier(2).order(20).craftable(true))
+            .traits(t -> t.trait(TCModifiers.arcaneResonance))
+            .stats(s -> s.stat(StatlessMaterialStats.BINDING))
+            .renderInfo(r -> r.color(0xc9b586).fallbacks("rock"))
+            .spriteInfo(s -> s.fallbacks("rock").repairKit().binding().sixColor(0xFF6f5d51, 0xFF857164, 0xFF928773, 0xFFc9b586, 0xFFe1d1a2, 0xFFf6ecce))
+            .buildMaterial();
+
     public static void staticInit() {}
 }

@@ -9,13 +9,12 @@
     "AbstractArrowMixin",
     "EnderManMixin",
     "ProjectileMixin",
-    "TinkerCommonTabMixin",
-    "TinkerFluidTabMixin",
-    "TinkerToolsTabMixin",
     "aether.AbilityHooksMixin",
     "aether.WeaponHooksMixin"
   ],
   "client": [
+    "LivingEntityRendererMixin",
+    "PlayerRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

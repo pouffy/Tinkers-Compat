@@ -31,6 +31,9 @@ public class TCModifiers {
     public static final ModifierId hallowed = id("hallowed");
     public static final ModifierId stronghold = id("stronghold");
     public static final ModifierId magicProficiency = id("magic_proficiency");
+    public static final ModifierId cloaking = id("cloaking");
+    public static final ModifierId arcaneResonance = id("arcane_resonance");
+    public static final ModifierId spiritHarvester = id("spirit_harvester");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");
