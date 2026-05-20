@@ -9,6 +9,7 @@
     "AbstractArrowMixin",
     "EnderManMixin",
     "ProjectileMixin",
+    "ServerPlayerMixin",
     "aether.AbilityHooksMixin",
     "aether.WeaponHooksMixin"
   ],
