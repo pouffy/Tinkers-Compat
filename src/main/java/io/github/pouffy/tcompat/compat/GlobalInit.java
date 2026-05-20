@@ -1,7 +1,9 @@
 package io.github.pouffy.tcompat.compat;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.TCFluids;
 import io.github.pouffy.tcompat.common.module.*;
+import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
 import io.github.pouffy.tcompat.compat.ice_and_fire.item.ModifiableGlaiveItem;
 import net.minecraft.core.BlockPos;
@@ -114,7 +116,7 @@ public class GlobalInit extends CompatInitializer {
         }
     }
 
-    public static void addToolTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output tab) {
+    public static void addToolTabItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output tab) {
         Consumer<ItemStack> output = tab::accept;
         ToolBuildHandler.addVariants(output, glaive.get(), "");
     }
@@ -123,5 +125,15 @@ public class GlobalInit extends CompatInitializer {
         ITEMS.register(eventBus);
         WoodMaterials.staticInit();
         RockMaterials.staticInit();
+    }
+
+    // Order: Compat Items -> Tools -> Fluids
+    public static void collectTabItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
+        CompatHelper.compatItems.forEach((mod, consumer) -> {
+            if (CompatHelper.isLoaded(mod))
+                consumer.accept(parameters, output);
+        });
+        addToolTabItems(parameters, output);
+        TCFluids.addTabItems(parameters, output);
     }
 }

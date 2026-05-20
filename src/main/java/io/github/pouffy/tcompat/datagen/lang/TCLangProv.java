@@ -52,6 +52,7 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void misc() {
+        add("itemGroup.tcompat.tcompat", "Tinkers' Compatibility");
         add("modifier.tcompat.flamed.attack_bonus", "Ice Dragon Damage Bonus");
         add("modifier.tcompat.iced.attack_bonus", "Fire Dragon Damage Bonus");
         add("modifier.tcompat.lightning.attack_bonus", "Fire & Ice Dragon Damage Bonus");

@@ -1,0 +1,17 @@
+{
+  "tool": "tcompat:glaive",
+  "text": [
+    { "text": "The Glaive is a high reach, large radius polearm. Good for crowd control and long distance targets." }
+  ],
+  "properties": [
+    "+3 Attack Damage",
+    "1.0 Attack Speed",
+    "150% Durability",
+    "150% Attack Damage",
+    "25% Mining Speed",
+    "Reach II",
+    "Silky Shears",
+    "2 Upgrade Slots",
+    "1 Ability Slot"
+  ]
+}

@@ -180,20 +180,4 @@ public class TCCommonEvents {
             event.setAmount(voidAmount.get());
         }
     }
-
-    @SubscribeEvent
-    static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == TinkerFluids.tabFluids.getKey()) {
-            TCFluids.addTabItems(event.getParameters(), event);
-        }
-        if (event.getTabKey() == TinkerCommons.tabGeneral.getKey()) {
-            CompatHelper.compatItems.forEach((mod, consumer) -> {
-                if (CompatHelper.isLoaded(mod))
-                    consumer.accept(event.getParameters(), event);
-            });
-        }
-        if (event.getTabKey() == TinkerTools.tabTools.getKey()) {
-            GlobalInit.addToolTabItems(event.getParameters(), event);
-        }
-    }
 }
