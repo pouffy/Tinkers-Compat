@@ -58,7 +58,6 @@ public class TCompat {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         TCompatNetworking.register();
-        LOGGER.info("HELLO FROM COMMON SETUP");
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> NBTKeyModel.registerExtraTexture(TConstruct.getResource("creative_slot"), "rune", getResource("gui/modifiers/rune")));
     }
 
@@ -79,7 +78,6 @@ public class TCompat {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("HELLO from server starting");
     }
 
 
@@ -89,7 +87,6 @@ public class TCompat {
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            LOGGER.info("HELLO FROM CLIENT SETUP");
         }
     }
 }

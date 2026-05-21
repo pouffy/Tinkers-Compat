@@ -161,7 +161,6 @@ public class CompatHelper {
             itemStacks.addAll(CuriosHandler.getCurioTools(attacker));
         }
 
-        TCompat.LOGGER.info("Found {} valid tool stacks", itemStacks.size());
         return itemStacks;
     }
 

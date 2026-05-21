@@ -24,7 +24,6 @@ public class SpiritHarvestHandlerMixin {
         if (collector instanceof Player player) {
             AttributeInstance instance = player.getAttribute(AttributeRegistry.ARCANE_RESONANCE.get());
             var toolStacks = CompatHelper.getModifiableStacks(collector).stream().map(ToolStack::from).filter(toolStack -> !toolStack.getModifiers().getModifiers().stream().filter(entry -> entry.getHook(GlobalInit.COLLECT_SPIRIT).canTarget(toolStack, entry, collector, instance != null ? instance.getValue() : 0.0F)).toList().isEmpty()).toList();
-            TCompat.LOGGER.info("Narrowed down to {} valid tool stacks", toolStacks.size());
             for (ToolStack toolStack : toolStacks) {
                 for (ModifierEntry entry : toolStack.getModifiers()) {
                     entry.getHook(GlobalInit.COLLECT_SPIRIT).pickupSpirit(toolStack, entry, collector, instance != null ? instance.getValue() : 0.0F, 1.0F / toolStacks.size());

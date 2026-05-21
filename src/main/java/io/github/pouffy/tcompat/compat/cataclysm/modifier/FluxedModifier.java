@@ -69,13 +69,10 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                     if (entity.isShiftKeyDown()) {
                         var howitzer = CataclysmHandler.createHowitzer(entity, f);
                         if (howitzer != null) {
-                            TCompat.LOGGER.info("Creating Howitzer");
                             appendModifiers(tool, entity, howitzer);
                             level.addFreshEntity(howitzer);
                             arrow.discard();
                             ModifierCooldowns.addCooldown(modifier.getId(), 100, entity);
-                        } else {
-                            TCompat.LOGGER.info("Issue creating Howitzer");
                         }
                     } else {
                         float d7 = entity.getYRot();
@@ -94,13 +91,10 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                         float xRot = (float)(-(Mth.atan2(vec3.y, Math.sqrt(vec3.x * vec3.x + vec3.z * vec3.z)) * (180D / Math.PI)));
                         var witherMissile = CataclysmHandler.createWitherMissile(entity, vec3, x, Z, yRot, xRot);
                         if (witherMissile != null) {
-                            TCompat.LOGGER.info("Creating Wither Missile");
                             appendModifiers(tool, entity, witherMissile);
                             level.addFreshEntity(witherMissile);
                             arrow.discard();
                             ModifierCooldowns.addCooldown(modifier.getId(), 40, entity);
-                        } else {
-                            TCompat.LOGGER.info("Issue creating Wither Missile");
                         }
                     }
                 }
