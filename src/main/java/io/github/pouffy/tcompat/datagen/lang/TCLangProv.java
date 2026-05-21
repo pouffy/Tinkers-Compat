@@ -177,6 +177,8 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.cloaking", "Now you see me", "Reduces enemy aggression");
         forModifier("modifier.tcompat.arcane_resonance", "Extra potent", "Bonus potency for spirit-collection effects.");
         forModifier("modifier.tcompat.spirit_harvester", "Feeling exposed?", "Attacking exposes the target's soul");
+        forModifier("modifier.tcompat.runic", "It's just a tribute", "Adds one bonus Rune slot to the tool.");
+        forModifier("modifier.tcompat.spirit_repair", "Late stage capitalism", "Collecting spirits repairs the tool.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

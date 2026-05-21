@@ -12,6 +12,7 @@ import io.github.pouffy.tcompat.compat.ancient_aether.AncientAetherInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
+import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
@@ -33,10 +34,13 @@ import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.tools.stats.*;
+import team.lodestar.lodestone.systems.item.IEventResponderItem;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -139,6 +143,30 @@ public class CompatHelper {
             }
         }
         return null;
+    }
+
+    public static ArrayList<ItemStack> getModifiableStacks(LivingEntity attacker) {
+        ArrayList<ItemStack> itemStacks = new ArrayList<>();
+
+        ItemStack mainHeld = attacker.getMainHandItem();
+        ItemStack offHeld = attacker.getOffhandItem();
+        if (isTool(mainHeld)) itemStacks.add(mainHeld);
+        if (isTool(offHeld)) itemStacks.add(offHeld);
+
+        attacker.getArmorSlots().forEach(stack -> {
+            if (isTool(stack)) itemStacks.add(stack);
+        });
+
+        if (isLoaded("curios")) {
+            itemStacks.addAll(CuriosHandler.getCurioTools(attacker));
+        }
+
+        TCompat.LOGGER.info("Found {} valid tool stacks", itemStacks.size());
+        return itemStacks;
+    }
+
+    public static boolean isTool(ItemStack stack) {
+        return stack.getItem() instanceof IModifiable modifiable && modifiable.getToolDefinition() != ToolDefinition.EMPTY;
     }
 
     //Never datagenerated. Just used as fallbacks. Will always fallback to wood if the parent isn't defined here

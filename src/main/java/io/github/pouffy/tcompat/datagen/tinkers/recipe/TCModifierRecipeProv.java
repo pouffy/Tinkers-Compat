@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRe
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
+import io.github.pouffy.tcompat.compat.malum.MalumMaterials;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
@@ -309,6 +310,8 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .save(aetherConsumer, prefix(TCModifiers.aetherForged, folder));
 
         MaterialBuilder.woodMaterials.forEach((builder, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, builder.variantId()));
+        woodTexture(TCWoods.RUNEWOOD.makeConsumer(consumer), TCWoods.RUNEWOOD, MalumMaterials.runewood);
+        woodTexture(TCWoods.SOULWOOD.makeConsumer(consumer), TCWoods.SOULWOOD, MalumMaterials.soulwood);
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

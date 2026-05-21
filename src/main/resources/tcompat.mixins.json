@@ -11,7 +11,8 @@
     "ProjectileMixin",
     "ServerPlayerMixin",
     "aether.AbilityHooksMixin",
-    "aether.WeaponHooksMixin"
+    "aether.WeaponHooksMixin",
+    "malum.SpiritHarvestHandlerMixin"
   ],
   "client": [
     "LivingEntityRendererMixin",

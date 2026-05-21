@@ -252,6 +252,8 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.spiritHarvester, modLoaded("malum"))
                 .addModule(SoulExposureModule.INSTANCE)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runic, modLoaded("malum"))
+                .addModule(ModifierSlotModule.slot(MalumInit.RUNE_SLOT).flat(1)).levelDisplay(ModifierLevelDisplay.NO_LEVELS).build();
     }
 
     @Override

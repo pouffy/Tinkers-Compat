@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "malum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/runewood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "malum:runewood_planks"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/runewood"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "malum:runewood_planks"
+  },
+  "material": "tcompat:runewood",
+  "needed": 1,
+  "value": 4
+}

@@ -1,0 +1,59 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "malum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/soulwood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "malum:soulwood_planks"
+        }
+      ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "malum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/soulwood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "malum:soulwood_planks"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "malum:soulwood_planks"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "malum:soulwood_planks"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tcompat:runewood#soulwood"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

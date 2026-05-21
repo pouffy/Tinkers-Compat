@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "malum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/twisted_rock"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:rocks/twisted_rock"
+  },
+  "material": "tcompat:tainted_rock#twisted_rock",
+  "needed": 1,
+  "value": 1
+}

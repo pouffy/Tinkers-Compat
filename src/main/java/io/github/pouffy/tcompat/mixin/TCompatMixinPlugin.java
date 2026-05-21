@@ -23,6 +23,9 @@ public class TCompatMixinPlugin implements IMixinConfigPlugin {
         if (mixinClassName.contains("io.github.pouffy.tcompat.mixin.aether")) {
             return isClassFound("com.aetherteam.aether.Aether");
         }
+        if (mixinClassName.contains("io.github.pouffy.tcompat.mixin.malum")) {
+            return isClassFound("com.sammy.malum.MalumMod");
+        }
         return true;
     }
 

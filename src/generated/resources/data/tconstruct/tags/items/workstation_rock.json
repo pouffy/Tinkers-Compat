@@ -115,6 +115,14 @@
     {
       "id": "betterend:umbralith",
       "required": false
+    },
+    {
+      "id": "malum:tainted_rock",
+      "required": false
+    },
+    {
+      "id": "malum:twisted_rock",
+      "required": false
     }
   ]
 }

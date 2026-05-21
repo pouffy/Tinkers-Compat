@@ -1,11 +1,17 @@
 package io.github.pouffy.tcompat.compat.malum;
 
+import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
+import io.github.pouffy.tcompat.compat.aether.AetherInit;
+import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
+import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.*;
@@ -101,7 +107,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId soulstone = MaterialBuilder.material("malum", "soulstone")
-            .data(d -> d.tier(1).order(1).craftable(false))
+            .data(d -> d.tier(1).order(1).craftable(true))
             .traits(t -> t.trait(TCModifiers.spiritHarvester))
             .stats(s ->
                     s.stat(
@@ -114,9 +120,59 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("rock").repairKit().meleeHarvest().sixColor(0xFF261628, 0xFF382d47, 0xFF5f3c61, 0xFF723e6b, 0xFF933da1, 0xFFc341c9))
             .buildMaterial();
 
+    public static final MaterialId runewood = MaterialBuilder.material("malum", "runewood")
+            .data(d -> d.tier(0).order(1).craftable(true))
+            .traits(t -> t
+                    .trait(TCModifiers.runic, ModifierIds.cultivated)
+                    .trait(MaterialRegistry.AMMO, ModifierIds.economical)
+                    .trait(MagicBaseMaterialStats.ID, TCModifiers.regrowth)
+            )
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(80, 2f, WOOD, 0f),
+                            HandleMaterialStats.percents().build(), // flat all around
+                            StatlessMaterialStats.BINDING,
+                            new LimbMaterialStats(80, 0, 0, 0),
+                            new GripMaterialStats(0f, 0, 0),
+                            StatlessMaterialStats.ARROW_SHAFT,
+                            StatlessMaterialStats.SHIELD_CORE
+                    ).statOptional(
+                            CompatToolStats.magicBase(120, 0.25f)
+                    )
+            )
+            .renderInfo(r -> r.color(0x522f35).fallbacks("wood", "stick", "primitive"))
+            .spriteInfo(s -> s.meleeHarvest().ranged().shieldCore().arrowShaft().statType(MagicBaseMaterialStats.ID).fallbacks("wood", "stick", "primitive").sevenColor(0xFF261a1e, 0xFF2d2024, 0xFF372727, 0xFF412e2b, 0xFF522f35, 0xFF593535, 0xFF643b3b))
+            .buildMaterial();
+
+    public static final MaterialId taintedRock = MaterialBuilder.material("malum", "tainted_rock")
+            .data(d -> d.tier(1).order(1).craftable(true))
+            .traits(t -> t.trait(MalumInit.spiritRepair))
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(160, 4f, STONE, 1f),
+                            HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.15f).build(),
+                            StatlessMaterialStats.BINDING
+                    ).statOptional(
+                            CompatToolStats.Statless.CUT_GEM
+                    )
+            )
+            .renderInfo(r -> r.color(0x857a8c).fallbacks("rock"))
+            .spriteInfo(s -> s.fallbacks("rock").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).meleeHarvest().sixColor(0xFF625b66, 0xFF6f6774, 0xFF797081, 0xFF857a8c, 0xFF918496, 0xFFa091ab))
+            .buildMaterial();
+
     public static final MaterialVariantId nullSlate = MaterialBuilder.variant("malum", "null_slate", soulstone)
             .renderInfo(r -> r.color(0xa500ca).fallbacks("rock"))
             .spriteInfo(s -> s.fallbacks("rock").repairKit().meleeHarvest().sixColor(0xFF172036, 0xFF38204d, 0xFF7e195f, 0xFFa500ca, 0xFFff33c3, 0xFFfe66d1))
+            .buildVariant();
+
+    public static final MaterialVariantId soulwood = MaterialBuilder.variant("malum", "soulwood", runewood)
+            .renderInfo(r -> r.color(0x4b3e53).fallbacks("wood", "stick", "primitive"))
+            .spriteInfo(s -> s.fallbacks("wood", "stick", "primitive").repairKit().meleeHarvest().sevenColor(0xFF291d30, 0xFF302338, 0xFF3b2a45, 0xFF40374a, 0xFF4b3e53, 0xFF594353, 0xFF65495e))
+            .buildVariant();
+
+    public static final MaterialVariantId twistedRock = MaterialBuilder.variant("malum", "twisted_rock", taintedRock)
+            .renderInfo(r -> r.color(0x3a364f).fallbacks("rock"))
+            .spriteInfo(s -> s.fallbacks("rock").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).meleeHarvest().sixColor(0xFF212638, 0xFF262b3e, 0xFF2f3045, 0xFF3a364f, 0xFF453a58, 0xFF514063))
             .buildVariant();
 
 

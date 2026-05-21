@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "tconstruct:binding": {},
+    "tconstruct:handle": {
+      "durability": -0.1,
+      "melee_damage": 0.0,
+      "melee_speed": 0.0,
+      "mining_speed": 0.15
+    },
+    "tconstruct:head": {
+      "durability": 160,
+      "melee_attack": 1.0,
+      "mining_speed": 4.0,
+      "mining_tier": "minecraft:stone"
+    },
+    "tinkersjewelry:gem": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/blazing_quartz"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 207,
+  "fluid": {
+    "amount": 900,
+    "tag": "tcompat:molten_blazing_quartz"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/blazing_quartz"
+  }
+}

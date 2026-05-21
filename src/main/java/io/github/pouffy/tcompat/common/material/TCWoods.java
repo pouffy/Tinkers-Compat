@@ -119,6 +119,10 @@ public enum TCWoods implements StringRepresentable {
     NETHER_MUSHROOM(builder("betternether").stem()),
     ANCHOR_TREE(builder("betternether")),
     NETHER_SAKURA(builder("betternether")),
+
+    //Malum
+    RUNEWOOD(builder("malum").redirectPlankTag("malum", "runewood_planks")),
+    SOULWOOD(builder("malum").redirectPlankTag("malum", "soulwood_planks")),
     ;
 
     public final String name;

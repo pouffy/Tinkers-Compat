@@ -82,6 +82,13 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
                 logVariantRecipe(woodType.makeConsumer(consumer), woodType, builder.variantId());
         });
 
+        planksRecipe(TCWoods.RUNEWOOD.makeConsumer(consumer), TCWoods.RUNEWOOD, MalumMaterials.runewood);
+        logRecipe(TCWoods.RUNEWOOD.makeConsumer(consumer), TCWoods.RUNEWOOD, MalumMaterials.runewood);
+        planksVariantRecipe(TCWoods.SOULWOOD.makeConsumer(consumer), TCWoods.SOULWOOD, MalumMaterials.soulwood);
+        logVariantRecipe(TCWoods.SOULWOOD.makeConsumer(consumer), TCWoods.SOULWOOD, MalumMaterials.soulwood);
+        rockRecipe(TCRocks.TAINTED_ROCK.makeConsumer(consumer), TCRocks.TAINTED_ROCK, MalumMaterials.taintedRock);
+        rockVariantRecipe(TCRocks.TWISTED_ROCK.makeConsumer(consumer), TCRocks.TWISTED_ROCK, MalumMaterials.twistedRock);
+
         MaterialBuilder.rockMaterials.forEach((builder, rockType) -> rockVariantRecipe(rockType.makeConsumer(consumer), rockType, builder.variantId()));
 
         planksRecipe(TCWoods.HELLBARK.makeConsumer(consumer), TCWoods.HELLBARK, WoodMaterials.hellbark);
@@ -298,6 +305,11 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         String folder = "tools/materials/";
         Function<String, ResourceLocation> namespaceFunction = name -> getResource(namespace, name);
         materialRecipe(consumer, material, ItemNameIngredient.from(namespaceFunction.apply(material.getPath())), 1, 1, folder + material.getId().getPath() + "/%s".formatted(material.getPath()));
+    }
+
+    private void rockRecipe(Consumer<FinishedRecipe> consumer, TCRocks rockType, MaterialId material) {
+        String folder = "tools/materials/";
+        materialRecipe(consumer, material, Ingredient.of(rockType.rockTag()), 1, 1, folder + material.getId().getPath() + "/%s".formatted(material.getPath()));
     }
 
     private static ResourceKey<Item> itemKey(String name) {

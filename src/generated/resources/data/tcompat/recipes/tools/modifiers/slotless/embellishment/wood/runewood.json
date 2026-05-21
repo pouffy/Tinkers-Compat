@@ -1,0 +1,59 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "malum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/runewood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "malum:runewood_planks"
+        }
+      ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "malum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/runewood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "malum:runewood_planks"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "malum:runewood_planks"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "malum:runewood_planks"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tcompat:runewood"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

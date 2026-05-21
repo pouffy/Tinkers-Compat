@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "malum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/soulwood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "malum:soulwood_planks"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "malum:soulwood_planks"
+  },
+  "material": "tcompat:runewood#soulwood",
+  "needed": 1,
+  "value": 1
+}

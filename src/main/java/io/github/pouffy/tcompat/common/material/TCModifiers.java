@@ -34,6 +34,7 @@ public class TCModifiers {
     public static final ModifierId cloaking = id("cloaking");
     public static final ModifierId arcaneResonance = id("arcane_resonance");
     public static final ModifierId spiritHarvester = id("spirit_harvester");
+    public static final ModifierId runic = id("runic");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");
@@ -56,6 +57,7 @@ public class TCModifiers {
     public static final ModifierId calorific = compatId("constructs_casting", "calorific");
     public static final ModifierId holyUpgrade = compatId("constructs_casting", "holy_upgrade");
     public static final ModifierId fireDispulsion = compatId("constructs_casting", "fire_dispulsion");
+    public static final ModifierId regrowth = compatId("constructs_casting", "regrowth");
 
     private TCModifiers() {}
 

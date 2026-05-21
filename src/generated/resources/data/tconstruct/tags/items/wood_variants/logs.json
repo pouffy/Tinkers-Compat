@@ -379,6 +379,14 @@
     {
       "id": "#tcompat:logs/nether_sakura",
       "required": false
+    },
+    {
+      "id": "#tcompat:logs/runewood",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/soulwood",
+      "required": false
     }
   ]
 }

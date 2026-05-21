@@ -58,6 +58,14 @@ public class GlobalInit extends CompatInitializer {
     });
     public static final ModuleHook<ToolSwingModifierHook> TOOL_SWING = ModifierHooks.register(getResource("tool_swing"), ToolSwingModifierHook.class, ToolSwingModifierHook.AllMerger::new, (toolStackView, modifierEntry, stack, player) -> false);
     public static final ModuleHook<SoulExposureModifierHook> SOUL_EXPOSURE = ModifierHooks.register(getResource("soul_exposure"), SoulExposureModifierHook.class, (tool, modifier) -> true);
+    public static final ModuleHook<CollectSpiritModifierHook> COLLECT_SPIRIT = ModifierHooks.register(getResource("collect_spirit"), CollectSpiritModifierHook.class, new CollectSpiritModifierHook() {
+        @Override
+        public boolean canTarget(IToolStackView toolStack, ModifierEntry modifierEntry, LivingEntity collector, double arcaneResonance) {return false;}
+
+        @Override
+        public void pickupSpirit(IToolStackView toolStack, ModifierEntry modifierEntry, LivingEntity collector, double arcaneResonance, float effectiveness) {}
+    });
+
 
     public static LivingEntityPredicate SUN_EXPOSED = SingletonLoader.singleton((loader) -> new LivingEntityPredicate() {
         @Override

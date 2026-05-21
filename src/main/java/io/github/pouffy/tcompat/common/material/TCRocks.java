@@ -59,6 +59,9 @@ public enum TCRocks implements StringRepresentable {
     AZURE_JADESTONE(builder("betterend")),
     SANDY_JADESTONE(builder("betterend")),
     UMBRALITH(builder("betterend")),
+
+    TAINTED_ROCK(builder("malum")),
+    TWISTED_ROCK(builder("malum")),
     ;
 
     public final String name;

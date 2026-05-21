@@ -1,0 +1,35 @@
+{
+  "stats": {
+    "constructs_casting:magic_base": {
+      "max_mana": 120.0,
+      "optional": true,
+      "spell_power": 0.25
+    },
+    "tconstruct:arrow_shaft": {},
+    "tconstruct:binding": {},
+    "tconstruct:grip": {
+      "accuracy": 0.0,
+      "durability": 0.0,
+      "melee_damage": 0.0
+    },
+    "tconstruct:handle": {
+      "durability": 0.0,
+      "melee_damage": 0.0,
+      "melee_speed": 0.0,
+      "mining_speed": 0.0
+    },
+    "tconstruct:head": {
+      "durability": 80,
+      "melee_attack": 0.0,
+      "mining_speed": 2.0,
+      "mining_tier": "minecraft:wood"
+    },
+    "tconstruct:limb": {
+      "accuracy": 0.0,
+      "draw_speed": 0.0,
+      "durability": 80,
+      "velocity": 0.0
+    },
+    "tconstruct:shield_core": {}
+  }
+}

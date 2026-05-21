@@ -1,0 +1,26 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tcompat:runic"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:cultivated"
+    }
+  ],
+  "perStat": {
+    "constructs_casting:magic_base": [
+      {
+        "level": 1,
+        "name": "constructs_casting:regrowth"
+      }
+    ],
+    "tconstruct:ammo": [
+      {
+        "level": 1,
+        "name": "tconstruct:economical"
+      }
+    ]
+  }
+}

@@ -379,6 +379,14 @@
     {
       "id": "#tcompat:planks/nether_sakura",
       "required": false
+    },
+    {
+      "id": "#malum:runewood_planks",
+      "required": false
+    },
+    {
+      "id": "#malum:soulwood_planks",
+      "required": false
     }
   ]
 }

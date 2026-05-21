@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "malum:tainted_rock",
+      "required": false
+    },
+    {
+      "id": "#malum:tainted_rock_rocks",
+      "required": false
+    }
+  ]
+}
