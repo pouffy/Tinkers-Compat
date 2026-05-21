@@ -6,8 +6,8 @@
 [Join My Discord](https://discord.gg/9N8cZh3hdB)
 
 [![Modloader: Forge](https://img.shields.io/badge/mod%20loader-forge-CC974D?style=flat-square)](https://files.minecraftforge.net/net/minecraftforge/forge/)
-[![Modrinth Downloads](https://img.shields.io/modrinth/dt/7dqAlUms?color=00AF5C&logo=modrinth)](https://modrinth.com/mod/aether)
-[![Modrinth Version](https://img.shields.io/modrinth/game-versions/7dqAlUms?color=00AF5C&label=latest&logo=modrinth&last=true)](https://modrinth.com/mod/aether)
+[![Modrinth Downloads](https://img.shields.io/modrinth/dt/7dqAlUms?color=00AF5C&logo=modrinth)](https://modrinth.com/mod/tinkers-compatibility)
+[![Modrinth Version](https://img.shields.io/modrinth/game-versions/7dqAlUms?color=00AF5C&label=latest&logo=modrinth&last=true)](https://modrinth.com/mod/tinkers-compatibility)
 [![CurseForge Downloads](http://cf.way2muchnoise.eu/1201964.svg)](https://www.curseforge.com/minecraft/mc-mods/tinkers-compatibility)
 [![CurseForge Version](http://cf.way2muchnoise.eu/versions/1201964_latest.svg)](https://www.curseforge.com/minecraft/mc-mods/tinkers-compatibility)
 
