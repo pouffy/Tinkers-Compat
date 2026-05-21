@@ -14,7 +14,7 @@ import static net.minecraft.world.item.Tiers.IRON;
 public class BetternetherMaterials {
 
     public static final MaterialId cincinnasite = MaterialBuilder.material("betternether", "cincinnasite")
-            .data(d -> d.tier(2).order(1).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false))
             .traits(t -> t.trait(ModifierIds.worldbound).trait(HeadMaterialStats.ID, BetternetherInit.obsidianBreaker))
             .stats(s ->
                     s.stat(
@@ -35,7 +35,7 @@ public class BetternetherMaterials {
             .buildMaterial();
 
     public static final MaterialId netherRuby = MaterialBuilder.material("betternether", "nether_ruby")
-            .data(d -> d.tier(2).order(1).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false))
             .traits(t -> t
                     .trait(ModifierIds.worldbound)
                     .trait(HeadMaterialStats.ID, BetternetherInit.obsidianBreaker)

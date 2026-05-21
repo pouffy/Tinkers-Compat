@@ -116,6 +116,7 @@ public class TCItemTagProv extends ItemTagsProvider {
 
         var glaive = getResource("glaive");
         this.tag(TinkerTags.Items.MODIFIABLE).addOptional(glaive);
+        this.tag(TinkerTags.Items.BROAD_TOOLS).addOptional(glaive);
         this.tag(TinkerTags.Items.HELD).addOptional(glaive);
         this.tag(TinkerTags.Items.MELEE).addOptional(glaive);
         this.tag(TinkerTags.Items.MELEE_PRIMARY).addOptional(glaive);

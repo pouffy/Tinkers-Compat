@@ -29,7 +29,7 @@ public class IFMaterials {
     public static final MaterialId dragonScaleLightning = dragonScales("lightning", 0xFF090909, 0xFF151515, 0xFF292929, 0xFF2f2f2f, 0xFF484848, 0xFF636363);
 
     public static final MaterialId seaSerpentScale = MaterialBuilder.material("iceandfire", "sea_serpent_scale")
-            .data(d -> d.tier(4).order(5).craftable(true))
+            .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(ARMOR, TCModifiers.tideGuardian).trait(StatlessMaterialStats.FLETCHING.getIdentifier(), ModifierIds.finsAmmo))
             .stats(s ->
                     s.stat(
@@ -43,7 +43,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId trollLeather = MaterialBuilder.material("iceandfire", "troll_leather")
-            .data(d -> d.tier(2).order(4).craftable(true))
+            .data(d -> d.tier(1).order(3).craftable(true))
             .traits(t -> t
                     .trait(TCModifiers.petrifying)
                     .trait(StatlessMaterialStats.MAILLE.getIdentifier(), ModifierIds.projectileProtection)
@@ -58,7 +58,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId myrmexChitin = MaterialBuilder.material("iceandfire", "myrmex_chitin")
-            .data(d -> d.tier(3).order(4).craftable(true))
+            .data(d -> d.tier(1).order(3).craftable(true))
             .traits(t -> t.trait(TCModifiers.allythropod))
             .stats(s ->
                     s.stat(
@@ -73,7 +73,7 @@ public class IFMaterials {
 
     public static final MaterialId deathwormChitin = MaterialBuilder.material("iceandfire", "deathworm_chitin")
             .lang("Death Worm Chitin")
-            .data(d -> d.tier(3).order(4).craftable(true))
+            .data(d -> d.tier(1).order(3).craftable(true))
             .stats(s -> s.armorStats(PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 7, 3).toughness(1.5F)))
             .renderInfo(r -> r.color(0xd5c3b8).fallbacks("chitin", "wood"))
             .spriteInfo(s -> s.plating().fallbacks("chitin", "wood").sevenColor(0xFF6d5f54, 0xFF89746c, 0xFFb39a8f, 0xFFb1ae97, 0xFFd5c3b8, 0xFFe5dec9, 0xFFfdf7e4))
@@ -115,7 +115,7 @@ public class IFMaterials {
             deathwormYellow = deathwormChitinVariant("yellow", "Tan",       0xFF63462e, 0xFF7d5a4c, 0xFFb68773, 0xFFc2a58e, 0xFFdec0af, 0xFFe5dbbb, 0xFFffefc3);
 
     public static final MaterialId dragonBone = MaterialBuilder.material("iceandfire", "dragon_bone")
-            .data(d -> d.tier(4).order(5).craftable(true))
+            .data(d -> d.tier(1).order(2).craftable(true))
             .traits(t -> t
                     .trait(TinkerModifiers.firestarter)
                     .trait(StatlessMaterialStats.ARROW_SHAFT.getIdentifier(), ModifierIds.fiery)
@@ -139,7 +139,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId fireDragonsteel = MaterialBuilder.material("iceandfire", "fire_dragonsteel")
-            .data(d -> d.tier(4).order(1).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false))
             .traits(t -> t.trait(TCModifiers.scorchborn))
             .stats(s ->
                     s.stat(
@@ -160,7 +160,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId iceDragonsteel = MaterialBuilder.material("iceandfire", "ice_dragonsteel")
-            .data(d -> d.tier(4).order(1).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false))
             .traits(t -> t.trait(TCModifiers.frostborn))
             .stats(s ->
                     s.stat(
@@ -181,7 +181,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId lightningDragonsteel = MaterialBuilder.material("iceandfire", "lightning_dragonsteel")
-            .data(d -> d.tier(4).order(1).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false))
             .traits(t -> t.trait(TCModifiers.voltborn))
             .stats(s ->
                     s.stat(
@@ -202,7 +202,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId seaSerpentFang = MaterialBuilder.material("iceandfire", "sea_serpent_fang")
-            .data(d -> d.tier(2).order(4).craftable(true))
+            .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(TCModifiers.aquaShot))
             .stats(s -> s.stat(StatlessMaterialStats.ARROW_HEAD))
             .renderInfo(r -> r.color(0xdbccb5).fallbacks("tooth", "bone"))
@@ -210,7 +210,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId hydraFang = MaterialBuilder.material("iceandfire", "hydra_fang")
-            .data(d -> d.tier(2).order(4).craftable(true))
+            .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.leeching))
             .stats(s -> s.stat(StatlessMaterialStats.ARROW_HEAD))
             .renderInfo(r -> r.color(0xb2bea0).fallbacks("hydra", "bone"))
@@ -218,7 +218,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId amphithereFeather = MaterialBuilder.material("iceandfire", "amphithere_feather")
-            .data(d -> d.tier(2).order(4).craftable(true))
+            .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.amphitheric))
             .stats(s -> s.stat(StatlessMaterialStats.FLETCHING))
             .renderInfo(r -> r.color(0x1a8b80).fallbacks("amphithere"))
@@ -226,7 +226,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId stymphalianBirdFeather = MaterialBuilder.material("iceandfire", "stymphalian_bird_feather")
-            .data(d -> d.tier(2).order(4).craftable(true))
+            .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.stymphalian))
             .stats(s -> s.stat(StatlessMaterialStats.FLETCHING))
             .renderInfo(r -> r.color(0x896a55).fallbacks("stymphalian"))

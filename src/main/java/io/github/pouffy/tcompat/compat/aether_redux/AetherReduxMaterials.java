@@ -29,7 +29,7 @@ public class AetherReduxMaterials {
     public static final MaterialVariantId driftshale = aetherRockVariant(TCRocks.DRIFTSHALE, 0xFFAA9A5D, 0xFFBEB06C, 0xFFCEC277, 0xFFD9CE81, 0xFFDFDA95, 0xFFE3E2A8);
 
     public static final MaterialId veridium = MaterialBuilder.material("aether_redux", "veridium")
-            .data(d -> d.tier(3).order(1).craftable(false))
+            .data(d -> d.tier(2).order(1).craftable(false))
             .traits(t -> t.trait(TCModifiers.aetherForged, AetherReduxInit.ambrofusion))
             .stats(s ->
                     s.stat(
@@ -47,7 +47,7 @@ public class AetherReduxMaterials {
             .buildMaterial();
 
     public static final MaterialId refinedSentrite = MaterialBuilder.material("aether_redux", "refined_sentrite")
-            .data(d -> d.tier(4).order(1).craftable(false))
+            .data(d -> d.tier(2).order(1).craftable(false))
             .traits(t -> t.trait(TCModifiers.aetherForged))
             .stats(s ->
                     s.stat(
@@ -64,7 +64,7 @@ public class AetherReduxMaterials {
             .buildMaterial();
 
     public static final MaterialId blightbunnyFang = MaterialBuilder.material("deep_aether", "blightbunny_fang")
-            .data(d -> d.tier(2).order(4).craftable(true))
+            .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t
                     .trait(AetherReduxInit.blighted)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.poison_gem, 3))
@@ -77,7 +77,7 @@ public class AetherReduxMaterials {
             .buildMaterial();
 
     public static final MaterialId mykapodShell = MaterialBuilder.material("deep_aether", "mykapod_shell")
-            .data(d -> d.tier(2).order(2).craftable(true))
+            .data(d -> d.tier(1).order(2).craftable(true))
             .traits(t -> t
                     .trait(StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.armor_gem, 4))

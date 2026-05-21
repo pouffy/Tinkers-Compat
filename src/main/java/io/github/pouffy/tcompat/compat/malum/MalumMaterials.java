@@ -5,16 +5,16 @@ import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.tools.stats.*;
 
+import static net.minecraft.world.item.Tiers.*;
 import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
-import static net.minecraft.world.item.Tiers.DIAMOND;
-import static net.minecraft.world.item.Tiers.GOLD;
 
 public class MalumMaterials {
 
     public static final MaterialId soulStainedSteel = MaterialBuilder.material("malum", "soul_stained_steel")
-            .data(d -> d.tier(3).order(1).craftable(false))
+            .data(d -> d.tier(3).order(2).craftable(false))
             .lang("Soulstained Steel")
             .traits(t -> t.trait(TCModifiers.stained).trait(ARMOR, TCModifiers.warded).trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), TCModifiers.armorToughness_gem))
             .stats(s ->
@@ -49,7 +49,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId malignantPewter = MaterialBuilder.material("malum", "malignant_pewter")
-            .data(d -> d.tier(3).order(1).craftable(false))
+            .data(d -> d.tier(3).order(2).craftable(false))
             .traits(t -> t.trait(MalumInit.certainty).trait(ARMOR, TCModifiers.stronghold))
             .stats(s ->
                     s.stat(
@@ -66,7 +66,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId spiritFabric = MaterialBuilder.material("malum", "spirit_fabric")
-            .data(d -> d.tier(2).order(4).craftable(true))
+            .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(TCModifiers.magicProficiency))
             .stats(s ->
                     s.stat(
@@ -80,7 +80,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId astralWeave = MaterialBuilder.material("malum", "astral_weave")
-            .data(d -> d.tier(2).order(4).craftable(true))
+            .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(TCModifiers.cloaking))
             .stats(s ->
                     s.stat(
@@ -93,12 +93,32 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId alchemicalCalx = MaterialBuilder.material("malum", "alchemical_calx")
-            .data(d -> d.tier(2).order(20).craftable(true))
+            .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(TCModifiers.arcaneResonance))
             .stats(s -> s.stat(StatlessMaterialStats.BINDING))
             .renderInfo(r -> r.color(0xc9b586).fallbacks("rock"))
             .spriteInfo(s -> s.fallbacks("rock").repairKit().binding().sixColor(0xFF6f5d51, 0xFF857164, 0xFF928773, 0xFFc9b586, 0xFFe1d1a2, 0xFFf6ecce))
             .buildMaterial();
+
+    public static final MaterialId soulstone = MaterialBuilder.material("malum", "soulstone")
+            .data(d -> d.tier(1).order(1).craftable(false))
+            .traits(t -> t.trait(TCModifiers.spiritHarvester))
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(240, 4f, STONE, 1f),
+                            HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.15f).build(),
+                            StatlessMaterialStats.BINDING
+                    )
+            )
+            .renderInfo(r -> r.color(0x723e6b).fallbacks("rock"))
+            .spriteInfo(s -> s.fallbacks("rock").repairKit().meleeHarvest().sixColor(0xFF261628, 0xFF382d47, 0xFF5f3c61, 0xFF723e6b, 0xFF933da1, 0xFFc341c9))
+            .buildMaterial();
+
+    public static final MaterialVariantId nullSlate = MaterialBuilder.variant("malum", "null_slate", soulstone)
+            .renderInfo(r -> r.color(0xa500ca).fallbacks("rock"))
+            .spriteInfo(s -> s.fallbacks("rock").repairKit().meleeHarvest().sixColor(0xFF172036, 0xFF38204d, 0xFF7e195f, 0xFFa500ca, 0xFFff33c3, 0xFFfe66d1))
+            .buildVariant();
+
 
     public static void staticInit() {}
 }

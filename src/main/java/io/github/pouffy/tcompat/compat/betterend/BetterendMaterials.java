@@ -12,7 +12,7 @@ import static net.minecraft.world.item.Tiers.*;
 public class BetterendMaterials {
 
     public static final MaterialId thallasium = MaterialBuilder.material("betterend", "thallasium")
-            .data(d -> d.tier(2).order(3).craftable(false))
+            .data(d -> d.tier(2).order(0).craftable(false))
             .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
                     s.stat(
@@ -33,7 +33,7 @@ public class BetterendMaterials {
             .buildMaterial();
 
     public static final MaterialId terminite = MaterialBuilder.material("betterend", "terminite")
-            .data(d -> d.tier(2).order(3).craftable(false))
+            .data(d -> d.tier(2).order(0).craftable(false))
             .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
                     s.stat(
@@ -54,7 +54,7 @@ public class BetterendMaterials {
             .buildMaterial();
 
     public static final MaterialId aeternium = MaterialBuilder.material("betterend", "aeternium")
-            .data(d -> d.tier(2).order(3).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false))
             .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
                     s.stat(

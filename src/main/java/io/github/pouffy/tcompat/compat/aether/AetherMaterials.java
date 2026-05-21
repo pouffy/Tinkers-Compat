@@ -22,7 +22,7 @@ import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider
 public class AetherMaterials {
 
     public static final MaterialId aetherWood = MaterialBuilder.material("aether", "aether_wood")
-            .data(d -> d.tier(1).order(1).craftable(true))
+            .data(d -> d.tier(0).order(1).craftable(true))
             .traits(t -> t
                     .trait(TCModifiers.aetherForged, ModifierIds.cultivated)
                     .trait(MaterialRegistry.AMMO, ModifierIds.economical)
@@ -65,7 +65,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId zanite = MaterialBuilder.material("aether", "zanite")
-            .data(d -> d.tier(2).order(1).deprecate())
+            .data(d -> d.tier(2).order(25).deprecate())
             .traits(t -> t
                     .trait(TCModifiers.aetherForged, TCModifiers.zanite).trait(MaterialRegistry.AMMO, ModifierIds.crystalbound)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.mining_speed_gem, 2))
@@ -86,7 +86,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId gravitite = MaterialBuilder.material("aether", "gravitite")
-            .data(d -> d.tier(3).order(1).craftable(false))
+            .data(d -> d.tier(2).order(2).craftable(false))
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.ascension, TCModifiers.aetherForged))
             .stats(s ->
                     s.stat(
@@ -105,7 +105,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId lightnum = MaterialBuilder.material("aether", "lightnum")
-            .data(d -> d.tier(3).order(1).craftable(false))
+            .data(d -> d.tier(2).order(2).craftable(false))
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.thunderstruck))
             .stats(s ->
                     s.stat(
@@ -119,7 +119,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId draculite = MaterialBuilder.material("aether", "draculite")
-            .data(d -> d.tier(3).order(1).craftable(false))
+            .data(d -> d.tier(2).order(2).craftable(false))
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.bloodsucking))
             .stats(s ->
                     s.stat(
