@@ -1,17 +1,56 @@
 {
   "values": [
-    "tcompat:aether_rock",
-    "tcompat:aether_wood",
-    "tcompat:zanite",
-    "tcompat:gravitite",
-    "tcompat:skyjade",
-    "tcompat:veridium",
-    "tcompat:refined_sentrite",
-    "tcompat:pyral",
-    "tcompat:valkyrum",
-    "tcompat:neptune",
-    "tcompat:lightnum",
-    "tcompat:stormforged_steel",
-    "tcompat:draculite"
+    {
+      "id": "tcompat:aether_rock",
+      "required": false
+    },
+    {
+      "id": "tcompat:aether_wood",
+      "required": false
+    },
+    {
+      "id": "tcompat:zanite",
+      "required": false
+    },
+    {
+      "id": "tcompat:gravitite",
+      "required": false
+    },
+    {
+      "id": "tcompat:skyjade",
+      "required": false
+    },
+    {
+      "id": "tcompat:veridium",
+      "required": false
+    },
+    {
+      "id": "tcompat:refined_sentrite",
+      "required": false
+    },
+    {
+      "id": "tcompat:pyral",
+      "required": false
+    },
+    {
+      "id": "tcompat:valkyrum",
+      "required": false
+    },
+    {
+      "id": "tcompat:neptune",
+      "required": false
+    },
+    {
+      "id": "tcompat:lightnum",
+      "required": false
+    },
+    {
+      "id": "tcompat:stormforged_steel",
+      "required": false
+    },
+    {
+      "id": "tcompat:draculite",
+      "required": false
+    }
   ]
 }

@@ -125,7 +125,7 @@ public class MalumMaterials {
             .traits(t -> t
                     .trait(TCModifiers.runic, ModifierIds.cultivated)
                     .trait(MaterialRegistry.AMMO, ModifierIds.economical)
-                    .trait(MagicBaseMaterialStats.ID, TCModifiers.regrowth)
+                    .trait(MagicBaseMaterialStats.ID, TCModifiers.regrowth, TCModifiers.runic)
             )
             .stats(s ->
                     s.stat(

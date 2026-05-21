@@ -1,6 +1,12 @@
 {
   "values": [
-    "tcompat:cincinnasite",
-    "tcompat:nether_ruby"
+    {
+      "id": "tcompat:cincinnasite",
+      "required": false
+    },
+    {
+      "id": "tcompat:nether_ruby",
+      "required": false
+    }
   ]
 }

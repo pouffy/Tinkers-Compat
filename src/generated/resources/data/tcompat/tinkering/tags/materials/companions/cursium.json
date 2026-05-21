@@ -1,5 +1,8 @@
 {
   "values": [
-    "tcompat:black_steel"
+    {
+      "id": "tcompat:black_steel",
+      "required": false
+    }
   ]
 }

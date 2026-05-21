@@ -29,7 +29,7 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
 
     @Override
     protected void addTags() {
-        tag(TCTags.Materials.AETHER).add(
+        tag(TCTags.Materials.AETHER).addOptional(
                 AetherMaterials.aetherRock,
                 AetherMaterials.aetherWood,
                 AetherMaterials.zanite,
@@ -44,17 +44,17 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
                 DeepAetherMaterials.stormforgedSteel,
                 AetherMaterials.draculite
         );
-        tag(TinkerTags.Materials.NETHER_GATED).add(
+        tag(TinkerTags.Materials.NETHER_GATED).addOptional(
                 BetternetherMaterials.cincinnasite,
                 BetternetherMaterials.netherRuby
         );
-        tag(TCTags.Materials.CURSIUM_COMPANION).add(
+        tag(TCTags.Materials.CURSIUM_COMPANION).addOptional(
                 CataclysmMaterials.blackSteel
         );
-        tag(TCTags.Materials.LACRIMA_COMPANION).add(
+        tag(TCTags.Materials.LACRIMA_COMPANION).addOptional(
                 CataclysmMaterials.essenceOfTheStorm
         );
-        tag(TCTags.Materials.WITHERITE_COMPANION).add(
+        tag(TCTags.Materials.WITHERITE_COMPANION).addOptional(
                 MaterialIds.iron
         );
     }
