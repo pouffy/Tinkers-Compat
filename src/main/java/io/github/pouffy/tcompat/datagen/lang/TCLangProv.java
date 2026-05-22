@@ -184,6 +184,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.spirit_harvester", "Feeling exposed?", "Attacking exposes the target's soul");
         forModifier("modifier.tcompat.runic", "It's just a tribute", "Adds one bonus Rune slot to the tool.");
         forModifier("modifier.tcompat.spirit_repair", "Late stage capitalism", "Collecting spirits repairs the tool.");
+        forModifier("modifier.tcompat.deliverance", "2-3 business days", "Deal a weakened attack in order for your next attack to be doubled");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

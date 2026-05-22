@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -25,6 +26,8 @@ import team.lodestar.lodestone.helpers.SoundHelper;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+
+import static com.sammy.malum.common.item.curiosities.weapons.scythe.MalumScytheItem.canSweep;
 
 public class MalumHandler {
 
@@ -99,5 +102,16 @@ public class MalumHandler {
                 });
             }
         }
+    }
+
+    public static void deliverance(LivingEntity target, LivingEntity attacker) {
+        SoundHelper.playSound(target, SoundRegistry.MALIGNANT_METAL_MOTIF.get(), 2.0F, 1.25F);
+        SoundHelper.playSound(target, SoundRegistry.MALIGNANT_METAL_MOTIF.get(), 3.0F, 1.75F);
+        ParticleHelper.SlashParticleEffectBuilder particle = ParticleHelper.createSlashingEffect(ParticleEffectTypeRegistry.EDGE_OF_DELIVERANCE_CRIT);
+        if (!canSweep(attacker)) {
+            particle.setVertical();
+        }
+
+        particle.spawnTargetBoundSlashingParticle(attacker, target);
     }
 }

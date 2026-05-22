@@ -6,7 +6,7 @@
       "modid": "malum"
     }
   ],
-  "cooling_time": 4,
+  "cooling_time": 80,
   "fluid": {
     "amount": 125,
     "tag": "tcompat:cursed_sap"

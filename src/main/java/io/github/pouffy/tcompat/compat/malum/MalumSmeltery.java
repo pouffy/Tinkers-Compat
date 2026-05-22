@@ -112,20 +112,20 @@ public class MalumSmeltery implements CompatSmeltery {
                 .setCast(Items.GLASS_BOTTLE, true).setCoolingTime(1)
                 .save(cConsumer, location(miscFolder("casting") + "/sap/runic/bottle"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("runic_sapball")))
-                .setFluidAndTime(TCFluids.runicSap, 500).setCoolingTime(2)
+                .setFluidAndTime(TCFluids.runicSap, 500).setCoolingTime(40)
                 .save(cConsumer, location(miscFolder("casting") + "/sap/runic/ball"));
         ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("runic_sap_block")))
-                .setFluidAndTime(TCFluids.runicSap, 125).setCoolingTime(4)
+                .setFluidAndTime(TCFluids.runicSap, 125).setCoolingTime(80)
                 .save(cConsumer, location(miscFolder("casting") + "/sap/runic/block"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("cursed_sap")))
                 .setFluidAndTime(TCFluids.cursedSap, FluidValues.BOTTLE)
                 .setCast(Items.GLASS_BOTTLE, true).setCoolingTime(1)
                 .save(cConsumer, location(miscFolder("casting") + "/sap/cursed/bottle"));
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("cursed_sapball")))
-                .setFluidAndTime(TCFluids.cursedSap, 500).setCoolingTime(2)
+                .setFluidAndTime(TCFluids.cursedSap, 500).setCoolingTime(40)
                 .save(cConsumer, location(miscFolder("casting") + "/sap/cursed/ball"));
         ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("cursed_sap_block")))
-                .setFluidAndTime(TCFluids.cursedSap, 125).setCoolingTime(4)
+                .setFluidAndTime(TCFluids.cursedSap, 125).setCoolingTime(80)
                 .save(cConsumer, location(miscFolder("casting") + "/sap/cursed/block"));
     }
 

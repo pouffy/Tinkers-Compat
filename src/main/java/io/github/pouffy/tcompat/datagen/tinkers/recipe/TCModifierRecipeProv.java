@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRe
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
+import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.malum.MalumMaterials;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -77,11 +78,13 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
         Consumer<FinishedRecipe> betternetherConsumer = withCondition(consumer, modLoaded("betternether"));
         Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, modLoaded("iceandfire"));
+        Consumer<FinishedRecipe> malumConsumer = withCondition(consumer, modLoaded("malum"));
 
         Function<String, ResourceLocation> speciesId = name -> getResource("species", name);
         Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
         Function<String, ResourceLocation> betternetherId = name -> getResource("betternether", name);
         Function<String, ResourceLocation> iceandfireId = name -> getResource("iceandfire", name);
+        Function<String, ResourceLocation> malumId = name -> getResource("malum", name);
 
         ModifierRecipeBuilder.modifier(TCModifiers.zanite)
                 .addInput(TCTags.Items.ZANITE_GEMS)
@@ -268,6 +271,18 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .disallowCrystal() // would allow a cost cheese
                 .exactLevel(3)
                 .save(iceandfireConsumer, wrap(TCModifiers.dampening, abilityFolder, "_level_3"));
+
+        ModifierRecipeBuilder.modifier(MalumInit.deliverance)
+                .setTools(TinkerTags.Items.MELEE_WEAPON)
+                .addInput(TCTags.Items.MALIGNANT_PEWTER_INGOTS)
+                .addInput(TCTags.Items.MALIGNANT_LEAD_GEMS)
+                .addInput(TCTags.Items.MALIGNANT_PEWTER_INGOTS)
+                .addInput(ItemNameIngredient.from(malumId.apply("earthen_spirit")))
+                .addInput(ItemNameIngredient.from(malumId.apply("eldritch_spirit")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(malumConsumer, prefix(MalumInit.deliverance, abilitySalvage))
+                .save(malumConsumer, prefix(MalumInit.deliverance, abilityFolder));
 
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));

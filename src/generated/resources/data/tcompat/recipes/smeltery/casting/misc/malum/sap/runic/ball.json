@@ -6,7 +6,7 @@
       "modid": "malum"
     }
   ],
-  "cooling_time": 2,
+  "cooling_time": 40,
   "fluid": {
     "amount": 500,
     "tag": "tcompat:runic_sap"
