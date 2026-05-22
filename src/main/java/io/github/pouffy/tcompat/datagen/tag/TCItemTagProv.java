@@ -296,6 +296,12 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.BLAZING_QUARTZ_GEMS).addOptional(getResource("malum", "blazing_quartz"));
         this.tag(TCTags.Items.BLAZING_QUARTZ_NUGGETS).addOptional(getResource("malum", "blazing_quartz_fragment"));
         this.tag(TCTags.Items.BLAZING_QUARTZ_BLOCKS).addOptional(getResource("malum", "block_of_blazing_quartz"));
+        this.tag(TCTags.Items.CTHONIC_GOLD_GEMS).addOptional(getResource("malum", "cthonic_gold"));
+        this.tag(TCTags.Items.CTHONIC_GOLD_NUGGETS).addOptional(getResource("malum", "cthonic_gold_fragment"));
+        this.tag(TCTags.Items.CTHONIC_GOLD_BLOCKS).addOptional(getResource("malum", "block_of_cthonic_gold"));
+        this.tag(TCTags.Items.CTHONIC_GOLD_ORES).addOptional(getResource("malum", "cthonic_gold_ore"));
+        this.tag(TCTags.Items.MALIGNANT_LEAD_GEMS).addOptional(getResource("malum", "malignant_lead"));
+        this.tag(TCTags.Items.MALIGNANT_LEAD_BLOCKS).addOptional(getResource("malum", "block_of_malignant_lead"));
     }
 
     private void addMetals() {

@@ -10,9 +10,9 @@
       "modid": "malum"
     }
   ],
-  "cooling_time": 207,
+  "cooling_time": 185,
   "fluid": {
-    "amount": 900,
+    "amount": 720,
     "tag": "tcompat:molten_blazing_quartz"
   },
   "result": {

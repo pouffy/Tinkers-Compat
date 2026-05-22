@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "malum:ornate_ring"
+    },
+    {
+      "item": "malum:ornate_necklace"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_soul_stained_steel"
+  },
+  "temperature": 950,
+  "time": 65
+}

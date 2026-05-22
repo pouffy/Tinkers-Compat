@@ -2,6 +2,10 @@
   "type": "tconstruct:melting",
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/blazing_quartz"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "malum"
     }
@@ -10,7 +14,7 @@
     "tag": "forge:gems/blazing_quartz"
   },
   "result": {
-    "amount": 100,
+    "amount": 80,
     "fluid": "tcompat:molten_blazing_quartz"
   },
   "temperature": 975,

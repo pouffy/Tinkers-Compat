@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gem"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/malignant_lead"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 70,
+  "fluid": {
+    "amount": 80,
+    "tag": "tcompat:molten_malignant_lead"
+  },
+  "result": {
+    "tag": "forge:gems/malignant_lead"
+  }
+}

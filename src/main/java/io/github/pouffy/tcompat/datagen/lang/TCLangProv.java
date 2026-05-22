@@ -53,6 +53,11 @@ public class TCLangProv extends LanguageProvider {
 
     private void misc() {
         add("itemGroup.tcompat.tcompat", "Tinkers' Compatibility");
+
+        add("gui.tcompat.fluid.gem", "%s gems");
+        add("gui.tcompat.fluid.block", "%s blocks");
+        add("gui.tcompat.fluid.shard", "%s fragments");
+
         add("modifier.tcompat.flamed.attack_bonus", "Ice Dragon Damage Bonus");
         add("modifier.tcompat.iced.attack_bonus", "Fire Dragon Damage Bonus");
         add("modifier.tcompat.lightning.attack_bonus", "Fire & Ice Dragon Damage Bonus");

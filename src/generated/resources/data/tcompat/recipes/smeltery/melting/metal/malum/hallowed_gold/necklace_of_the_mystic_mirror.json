@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 250,
+      "tag": "forge:ender"
+    },
+    {
+      "amount": 125,
+      "fluid": "tconstruct:molten_glass"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "item": "malum:necklace_of_the_mystic_mirror"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_hallowed_gold"
+  },
+  "temperature": 775,
+  "time": 59
+}

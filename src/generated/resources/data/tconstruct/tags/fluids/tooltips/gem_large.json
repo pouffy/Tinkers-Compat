@@ -7,10 +7,6 @@
     {
       "id": "#tcompat:molten_lacrima",
       "required": false
-    },
-    {
-      "id": "#tcompat:molten_blazing_quartz",
-      "required": false
     }
   ]
 }

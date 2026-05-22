@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/malignant_lead"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/malignant_lead"
+  },
+  "result": {
+    "amount": 720,
+    "fluid": "tcompat:molten_malignant_lead"
+  },
+  "temperature": 1290,
+  "time": 224
+}

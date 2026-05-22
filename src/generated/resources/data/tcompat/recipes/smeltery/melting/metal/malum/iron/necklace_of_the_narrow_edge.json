@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "item": "malum:necklace_of_the_narrow_edge"
+  },
+  "result": {
+    "amount": 990,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 199
+}

@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#tcompat:molten_blazing_quartz",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_cthonic_gold",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_malignant_lead",
+      "required": false
+    }
+  ]
+}

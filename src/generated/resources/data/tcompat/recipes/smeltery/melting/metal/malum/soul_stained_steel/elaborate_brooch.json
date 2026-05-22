@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "item": "malum:elaborate_brooch"
+  },
+  "result": {
+    "amount": 900,
+    "fluid": "tcompat:molten_soul_stained_steel"
+  },
+  "temperature": 950,
+  "time": 205
+}

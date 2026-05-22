@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.data.TCTags;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -75,6 +76,8 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(TCFluids.moltenMalignantPewter);
         fluidTag(TCFluids.moltenHallowedGold);
         fluidTag(TCFluids.moltenBlazingQuartz);
+        fluidTag(TCFluids.moltenCthonicGold);
+        fluidTag(TCFluids.moltenMalignantLead);
 
         var metals = this.tag(TinkerTags.Fluids.METAL_TOOLTIPS);
         // Aether
@@ -120,8 +123,12 @@ public class TCFluidTagProv extends FluidTagsProvider {
         largeGems.addOptionalTag(TCFluids.moltenNetherRuby.getTag());
         // Cataclysm
         largeGems.addOptionalTag(TCFluids.moltenLacrima.getTag());
+
+        var smallerGems = this.tag(TCTags.Fluids.SMALLER_GEM_TOOLTIPS);
         // Malum
-        largeGems.addOptionalTag(TCFluids.moltenBlazingQuartz.getTag());
+        smallerGems.addOptionalTag(TCFluids.moltenBlazingQuartz.getTag());
+        smallerGems.addOptionalTag(TCFluids.moltenCthonicGold.getTag());
+        smallerGems.addOptionalTag(TCFluids.moltenMalignantLead.getTag());
 
         var slimes = this.tag(TinkerTags.Fluids.SLIME_TOOLTIPS);
         // Ice and Fire

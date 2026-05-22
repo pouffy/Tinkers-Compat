@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "malum:ring_of_manaweaving"
+    },
+    {
+      "item": "malum:belt_of_the_magebane"
+    }
+  ],
+  "result": {
+    "amount": 390,
+    "fluid": "tcompat:molten_soul_stained_steel"
+  },
+  "temperature": 950,
+  "time": 135
+}

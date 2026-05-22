@@ -1,0 +1,30 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "malum:malignant_stronghold_helmet"
+    },
+    {
+      "item": "malum:malignant_stronghold_chestplate"
+    },
+    {
+      "item": "malum:malignant_stronghold_leggings"
+    },
+    {
+      "item": "malum:malignant_stronghold_boots"
+    }
+  ],
+  "result": {
+    "amount": 195,
+    "fluid": "tcompat:molten_malignant_pewter",
+    "unit_size": 10
+  },
+  "temperature": 1150,
+  "time": 104
+}

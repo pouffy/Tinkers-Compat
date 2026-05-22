@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "item": "malum:cursed_sap_block"
+  },
+  "result": {
+    "amount": 125,
+    "fluid": "tcompat:cursed_sap"
+  },
+  "temperature": 150,
+  "time": 42
+}

@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "malum:ether"
+    },
+    {
+      "item": "malum:iridescent_ether"
+    }
+  ],
+  "result": {
+    "amount": 40,
+    "fluid": "tcompat:molten_blazing_quartz"
+  },
+  "temperature": 975,
+  "time": 44
+}

@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.datagen;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.datagen.client.TCItemModelProv;
 import io.github.pouffy.tcompat.datagen.client.TCToolItemModelProv;
+import io.github.pouffy.tcompat.datagen.fluid.TCFluidTooltipProv;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import io.github.pouffy.tcompat.datagen.mantle.MantleColorsProvider;
 import io.github.pouffy.tcompat.datagen.tag.*;
@@ -69,6 +70,7 @@ public class TCDataGenerator {
         generator.addProvider(server, new TCStationLayoutProv(packOutput));
 
         generator.addProvider(server, new TCFluidTransferProv(packOutput));
+        generator.addProvider(client, new TCFluidTooltipProv(packOutput));
         generator.addProvider(server, new TCMaterialRecipeProv(packOutput));
         generator.addProvider(server, new TCSmelteryRecipeProv(packOutput));
         generator.addProvider(server, new TCToolRecipeProv(packOutput));

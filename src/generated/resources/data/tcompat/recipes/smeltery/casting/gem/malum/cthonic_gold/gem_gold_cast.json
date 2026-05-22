@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gem"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/cthonic_gold"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 61,
+  "fluid": {
+    "amount": 80,
+    "tag": "tcompat:molten_cthonic_gold"
+  },
+  "result": {
+    "tag": "forge:gems/cthonic_gold"
+  }
+}

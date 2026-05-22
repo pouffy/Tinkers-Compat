@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "malum:gilded_ring"
+    },
+    {
+      "item": "malum:weavers_workbench"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_hallowed_gold"
+  },
+  "temperature": 775,
+  "time": 59
+}

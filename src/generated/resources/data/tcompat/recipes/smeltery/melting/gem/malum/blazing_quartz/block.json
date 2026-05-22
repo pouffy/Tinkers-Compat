@@ -14,7 +14,7 @@
     "tag": "forge:storage_blocks/blazing_quartz"
   },
   "result": {
-    "amount": 900,
+    "amount": 720,
     "fluid": "tcompat:molten_blazing_quartz"
   },
   "temperature": 975,

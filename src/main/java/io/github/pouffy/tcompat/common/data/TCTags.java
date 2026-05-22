@@ -229,6 +229,12 @@ public class TCTags {
         public static TagKey<Item> BLAZING_QUARTZ_GEMS = common("gems/blazing_quartz");
         public static TagKey<Item> BLAZING_QUARTZ_NUGGETS = common("nuggets/blazing_quartz");
         public static TagKey<Item> BLAZING_QUARTZ_BLOCKS = common("storage_blocks/blazing_quartz");
+        public static TagKey<Item> CTHONIC_GOLD_GEMS = common("gems/cthonic_gold");
+        public static TagKey<Item> CTHONIC_GOLD_NUGGETS = common("nuggets/cthonic_gold");
+        public static TagKey<Item> CTHONIC_GOLD_BLOCKS = common("storage_blocks/cthonic_gold");
+        public static TagKey<Item> CTHONIC_GOLD_ORES = common("ores/cthonic_gold");
+        public static TagKey<Item> MALIGNANT_LEAD_GEMS = common("gems/malignant_lead");
+        public static TagKey<Item> MALIGNANT_LEAD_BLOCKS = common("storage_blocks/malignant_lead");
 
         public static TagKey<Item> DARTS = named("aether", "darts");
 
@@ -250,7 +256,9 @@ public class TCTags {
         private static void init() {
         }
 
-        public static TagKey<Fluid> OXYGEN  = common("oxygen");
+        public static final TagKey<Fluid> OXYGEN  = common("oxygen");
+
+        public static final TagKey<Fluid> SMALLER_GEM_TOOLTIPS = local("tooltips/smaller_gem");
 
         private static TagKey<Fluid> common(String name) {
             return TagKey.create(Registries.FLUID, commonResource(name));

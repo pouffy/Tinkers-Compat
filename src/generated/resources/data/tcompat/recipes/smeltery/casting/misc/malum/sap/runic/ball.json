@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 2,
+  "fluid": {
+    "amount": 500,
+    "tag": "tcompat:runic_sap"
+  },
+  "result": "malum:runic_sapball"
+}

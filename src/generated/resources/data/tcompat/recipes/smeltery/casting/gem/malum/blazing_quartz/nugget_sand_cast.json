@@ -6,13 +6,17 @@
   "cast_consumed": true,
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/blazing_quartz"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "malum"
     }
   ],
-  "cooling_time": 24,
+  "cooling_time": 22,
   "fluid": {
-    "amount": 12,
+    "amount": 10,
     "tag": "tcompat:molten_blazing_quartz"
   },
   "result": {

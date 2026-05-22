@@ -1,0 +1,30 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "malum:soul_stained_steel_helmet"
+    },
+    {
+      "item": "malum:soul_stained_steel_chestplate"
+    },
+    {
+      "item": "malum:soul_stained_steel_leggings"
+    },
+    {
+      "item": "malum:soul_stained_steel_boots"
+    }
+  ],
+  "result": {
+    "amount": 390,
+    "fluid": "tcompat:molten_soul_stained_steel",
+    "unit_size": 10
+  },
+  "temperature": 950,
+  "time": 135
+}

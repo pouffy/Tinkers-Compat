@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/malignant_lead"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 211,
+  "fluid": {
+    "amount": 720,
+    "tag": "tcompat:molten_malignant_lead"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/malignant_lead"
+  }
+}

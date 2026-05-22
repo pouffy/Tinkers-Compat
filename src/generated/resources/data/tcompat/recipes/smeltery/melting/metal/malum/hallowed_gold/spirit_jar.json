@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 1750,
+      "fluid": "tconstruct:molten_glass"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "item": "malum:spirit_jar"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_hallowed_gold"
+  },
+  "temperature": 775,
+  "time": 59
+}

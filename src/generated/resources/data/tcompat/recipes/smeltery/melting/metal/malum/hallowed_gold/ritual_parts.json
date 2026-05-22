@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "malum:runic_workbench"
+    },
+    {
+      "item": "malum:runewood_obelisk"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "fluid": "tcompat:molten_hallowed_gold"
+  },
+  "temperature": 775,
+  "time": 84
+}

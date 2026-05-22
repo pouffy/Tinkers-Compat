@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 4,
+  "fluid": {
+    "amount": 125,
+    "tag": "tcompat:cursed_sap"
+  },
+  "result": "malum:cursed_sap_block"
+}

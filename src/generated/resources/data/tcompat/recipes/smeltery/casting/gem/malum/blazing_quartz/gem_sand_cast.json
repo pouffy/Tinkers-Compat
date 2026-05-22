@@ -6,13 +6,17 @@
   "cast_consumed": true,
   "conditions": [
     {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/blazing_quartz"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "malum"
     }
   ],
-  "cooling_time": 69,
+  "cooling_time": 62,
   "fluid": {
-    "amount": 100,
+    "amount": 80,
     "tag": "tcompat:molten_blazing_quartz"
   },
   "result": {

@@ -55,7 +55,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId malignantPewter = MaterialBuilder.material("malum", "malignant_pewter")
-            .data(d -> d.tier(3).order(2).craftable(false))
+            .data(d -> d.tier(4).order(2).craftable(false))
             .traits(t -> t.trait(MalumInit.certainty).trait(ARMOR, TCModifiers.stronghold))
             .stats(s ->
                     s.stat(

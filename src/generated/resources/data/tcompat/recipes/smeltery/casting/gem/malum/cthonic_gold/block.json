@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/cthonic_gold"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "cooling_time": 183,
+  "fluid": {
+    "amount": 720,
+    "tag": "tcompat:molten_cthonic_gold"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/cthonic_gold"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "tag": "tcompat:tooltips/smaller_gem",
+  "units": [
+    {
+      "key": "gui.tcompat.fluid.block",
+      "needed": 720
+    },
+    {
+      "key": "gui.tcompat.fluid.gem",
+      "needed": 80
+    },
+    {
+      "key": "gui.tcompat.fluid.shard",
+      "needed": 10
+    }
+  ]
+}
