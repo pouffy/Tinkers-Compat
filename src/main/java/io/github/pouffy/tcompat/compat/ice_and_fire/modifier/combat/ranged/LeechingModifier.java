@@ -52,6 +52,6 @@ public class LeechingModifier extends NoLevelsModifier implements ProjectileShoo
 
     @Override
     public void onProjectileShoot(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, ItemStack ammo, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        ProjectileAbility.activate(projectile, "leeching");
+        ProjectileAbility.activate(projectile, ProjectileAbilityHooks.LEECHING);
     }
 }

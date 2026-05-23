@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat;
 
 import com.mojang.logging.LogUtils;
+import io.github.pouffy.tcompat.client.TComClientConfig;
 import io.github.pouffy.tcompat.common.CompatModule;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.cooldown.CooldownHandler;
@@ -19,6 +20,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -52,6 +54,7 @@ public class TCompat {
         CompatModule.initRegisters(context);
         CREATIVE_TABS.register(modEventBus);
         modEventBus.addListener(EventPriority.LOWEST, TCDataGenerator::gatherData);
+        context.registerConfig(ModConfig.Type.CLIENT, TComClientConfig.SPEC, String.format("%s-client.toml", "tcompat"));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

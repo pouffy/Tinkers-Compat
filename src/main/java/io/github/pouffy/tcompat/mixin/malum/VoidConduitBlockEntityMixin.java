@@ -20,7 +20,7 @@ import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import team.lodestar.lodestone.systems.blockentity.LodestoneBlockEntity;
 
-@Mixin(VoidConduitBlockEntity.class)
+@Mixin(value = VoidConduitBlockEntity.class, remap = false)
 public abstract class VoidConduitBlockEntityMixin extends LodestoneBlockEntity {
 
     @Shadow

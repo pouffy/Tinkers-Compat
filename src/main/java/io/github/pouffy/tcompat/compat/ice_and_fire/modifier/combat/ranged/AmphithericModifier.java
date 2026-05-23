@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.combat.ranged;
 
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -34,7 +35,7 @@ public class AmphithericModifier extends NoLevelsModifier implements ProjectileL
 
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        ProjectileAbility.activate(projectile, "amphithere");
+        ProjectileAbility.activate(projectile, ProjectileAbilityHooks.AMPHITHERE);
     }
 
     @Override
@@ -77,7 +78,7 @@ public class AmphithericModifier extends NoLevelsModifier implements ProjectileL
         } else {
             projectile.level().broadcastEntityEvent(projectile, (byte)20);
         }
-        ProjectileAbility.deactivate(projectile, "amphithere");
+        ProjectileAbility.deactivate(projectile, ProjectileAbilityHooks.AMPHITHERE);
     }
 
     public static void launchEntity(Entity entity, double xRatio, double zRatio) {

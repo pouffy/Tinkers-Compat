@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability;
 
+import io.github.pouffy.tcompat.common.capability.projectile.ability.types.*;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -10,6 +11,40 @@ import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.event.ForgeEventFactory;
 
 public class ProjectileAbilityHooks {
+
+    /**
+     * Creates a cloud particle trail
+     * @see AmphithereAbility
+     */
+    public static final String AMPHITHERE = "amphithere";
+    /**
+     * Instantly discards the projectile on its first tick
+     * @see InstantDiscardAbility
+     */
+    public static final String INSTANT_DISCARD = "instant_discard";
+    /**
+     * Creates a green particle trail
+     * @see LeechingAbility
+     */
+    public static final String LEECHING = "leeching";
+    /**
+     * Projectile ignites targets
+     * <p>
+     * Creates a fire particle trail
+     * </p>
+     * @see PhoenixTouchedAbility
+     */
+    public static final String PHOENIX_TOUCHED = "phoenix_touched";
+    /**
+     * Projectile travels straight for a period of time before dropping
+     * @see StymphalianAbility
+     */
+    public static final String STYMPHALIAN = "stymphalian";
+    /**
+     * Projectile explodes into multiple Void Shards on impact
+     * @see VoidScatterAbility
+     */
+    public static final String VOID_SCATTER = "void_scatter";
 
     public static void damageShield(Player player, float damage) {
         ItemStack shield = player.getUseItem();

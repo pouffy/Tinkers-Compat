@@ -1,6 +1,8 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.ranged;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.modifier.base.AbstractTeamUpModifier;
@@ -69,7 +71,7 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                         if (howitzer != null) {
                             appendModifiers(tool, entity, howitzer);
                             level.addFreshEntity(howitzer);
-                            arrow.discard();
+                            ProjectileAbility.activate(arrow, ProjectileAbilityHooks.INSTANT_DISCARD);
                             TCompat.COOLDOWN_HANDLER.addCooldown(entity, modifier.getId(), 100);
                         }
                     } else {
@@ -91,7 +93,7 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                         if (witherMissile != null) {
                             appendModifiers(tool, entity, witherMissile);
                             level.addFreshEntity(witherMissile);
-                            arrow.discard();
+                            ProjectileAbility.activate(arrow, ProjectileAbilityHooks.INSTANT_DISCARD);
                             TCompat.COOLDOWN_HANDLER.addCooldown(entity, modifier.getId(), 40);
                         }
                     }
