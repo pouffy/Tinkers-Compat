@@ -1,28 +1,15 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability.types;
 
 import io.github.pouffy.tcompat.compat.ice_and_fire.modifier.IceFireHandler;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 
-public class LeechingAbility implements IProjectileAbility {
-
-    private boolean isActive;
+public class LeechingAbility extends AbstractProjectileAbility {
 
     @Override
     public String serializedName() {
         return "leeching";
-    }
-
-    @Override
-    public boolean isActive() {
-        return this.isActive;
-    }
-
-    @Override
-    public void setActive(boolean active) {
-        this.isActive = active;
     }
 
     @Override

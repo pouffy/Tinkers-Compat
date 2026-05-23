@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability;
 
 import io.github.pouffy.tcompat.common.capability.TCompatCapabilities;
-import io.github.pouffy.tcompat.common.capability.projectile.ability.types.IProjectileAbility;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.types.AbstractProjectileAbility;
 import io.github.pouffy.tcompat.common.network.base.INBTSynchable;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -19,16 +19,16 @@ public interface ProjectileAbility extends INBTSynchable<CompoundTag> {
     }
 
     /**
-     * @return A map of ability names to {@link IProjectileAbility}
+     * @return A map of ability names to {@link AbstractProjectileAbility}
      */
-    Map<String, IProjectileAbility> getAbilities();
+    Map<String, AbstractProjectileAbility> getAbilities();
 
     /**
      * Filters out any abilities that aren't active.
-     * @return A map of active ability names to {@link IProjectileAbility}
+     * @return A map of active ability names to {@link AbstractProjectileAbility}
      */
-    default Map<String, IProjectileAbility> getActiveAbilities() {
-        Map<String, IProjectileAbility> abilityMap = new HashMap<>();
+    default Map<String, AbstractProjectileAbility> getActiveAbilities() {
+        Map<String, AbstractProjectileAbility> abilityMap = new HashMap<>();
         for (var entry : getAbilities().entrySet()) {
             if (entry.getValue().isActive())
                 abilityMap.put(entry.getKey(), entry.getValue());
@@ -37,21 +37,21 @@ public interface ProjectileAbility extends INBTSynchable<CompoundTag> {
     }
 
     /**
-     * @return An instance of {@link IProjectileAbility} regardless of its active status
+     * @return An instance of {@link AbstractProjectileAbility} regardless of its active status
      */
-    default IProjectileAbility getAbility(String name) {
+    default AbstractProjectileAbility getAbility(String name) {
         return getAbilities().get(name);
     }
 
     /**
      * Syncronises the ability to the client. Automatically run during:
-     * {@link IProjectileAbility#tickArrow(AbstractArrow, Projectile, boolean, int)}
-     * - {@link IProjectileAbility#tickProjectile(Projectile, Projectile)}
+     * {@link AbstractProjectileAbility#tickArrow(AbstractArrow, Projectile, boolean, int)}
+     * - {@link AbstractProjectileAbility#tickProjectile(Projectile, Projectile)}
      * - {@link ProjectileAbility#activate(Projectile, String)}
      * - {@link ProjectileAbility#deactivate(Projectile, String)}
-     * @param ability the {@link IProjectileAbility} to be synced
+     * @param ability the {@link AbstractProjectileAbility} to be synced
      */
-    void sendClient(IProjectileAbility ability);
+    void sendClient(AbstractProjectileAbility ability);
 
     /**
      * Activates the ability in a given projectile.

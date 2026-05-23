@@ -22,23 +22,11 @@ import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VoidScatterAbility implements IProjectileAbility {
-
-    private boolean isActive;
+public class VoidScatterAbility extends AbstractProjectileAbility {
 
     @Override
     public String serializedName() {
         return "void_scatter";
-    }
-
-    @Override
-    public boolean isActive() {
-        return this.isActive;
-    }
-
-    @Override
-    public void setActive(boolean active) {
-        this.isActive = active;
     }
 
     @Override

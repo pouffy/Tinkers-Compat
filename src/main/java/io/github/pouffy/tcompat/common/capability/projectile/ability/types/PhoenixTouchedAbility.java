@@ -10,9 +10,8 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 
-public class PhoenixTouchedAbility implements IProjectileAbility {
+public class PhoenixTouchedAbility extends AbstractProjectileAbility {
 
-    private boolean isActive;
     @Getter @Setter
     private int fireTime;
 
@@ -20,16 +19,6 @@ public class PhoenixTouchedAbility implements IProjectileAbility {
     @Override
     public String serializedName() {
         return "phoenix_touched";
-    }
-
-    @Override
-    public boolean isActive() {
-        return this.isActive;
-    }
-
-    @Override
-    public void setActive(boolean active) {
-        this.isActive = active;
     }
 
     @Override

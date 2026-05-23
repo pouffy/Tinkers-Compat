@@ -18,16 +18,16 @@ public class ProjectileAbilityCapability implements ProjectileAbility {
 
     private final Projectile projectile;
 
-    public final Map<String, IProjectileAbility> abilities;
+    public final Map<String, AbstractProjectileAbility> abilities;
 
     public ProjectileAbilityCapability(Projectile projectile) {
         this.projectile = projectile;
         this.abilities = Map.ofEntries(
-                IProjectileAbility.makeEntry(new PhoenixTouchedAbility()),
-                IProjectileAbility.makeEntry(new LeechingAbility()),
-                IProjectileAbility.makeEntry(new AmphithereAbility()),
-                IProjectileAbility.makeEntry(new StymphalianAbility()),
-                IProjectileAbility.makeEntry(new VoidScatterAbility())
+                AbstractProjectileAbility.makeEntry(new PhoenixTouchedAbility()),
+                AbstractProjectileAbility.makeEntry(new LeechingAbility()),
+                AbstractProjectileAbility.makeEntry(new AmphithereAbility()),
+                AbstractProjectileAbility.makeEntry(new StymphalianAbility()),
+                AbstractProjectileAbility.makeEntry(new VoidScatterAbility())
         );
     }
 
@@ -37,12 +37,12 @@ public class ProjectileAbilityCapability implements ProjectileAbility {
     }
 
     @Override
-    public Map<String, IProjectileAbility> getAbilities() {
+    public Map<String, AbstractProjectileAbility> getAbilities() {
         return abilities;
     }
 
     @Override
-    public void sendClient(IProjectileAbility ability) {
+    public void sendClient(AbstractProjectileAbility ability) {
         if (ability == null) return;
         this.setSynched(Direction.CLIENT, ability.getSetKey(), ability.isActive());
     }

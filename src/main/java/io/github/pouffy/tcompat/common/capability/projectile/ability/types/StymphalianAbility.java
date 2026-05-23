@@ -1,27 +1,15 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability.types;
 
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 
-public class StymphalianAbility implements IProjectileAbility {
+public class StymphalianAbility extends AbstractProjectileAbility {
 
-    private boolean isActive;
 
     @Override
     public String serializedName() {
         return "stymphalian";
-    }
-
-    @Override
-    public boolean isActive() {
-        return this.isActive;
-    }
-
-    @Override
-    public void setActive(boolean active) {
-        this.isActive = active;
     }
 
     @Override
