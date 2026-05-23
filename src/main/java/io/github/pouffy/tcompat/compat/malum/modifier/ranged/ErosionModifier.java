@@ -1,7 +1,8 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.ranged;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.module.OptionalAttributeModule;
+import io.github.pouffy.tcompat.common.modifier.base.MalumStaffModifier;
+import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;

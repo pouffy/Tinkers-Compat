@@ -2,7 +2,12 @@ package io.github.pouffy.tcompat.compat.cataclysm;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
-import io.github.pouffy.tcompat.compat.cataclysm.modifier.*;
+import io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.melee.SandstormModifier;
+import io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.melee.TidalModifier;
+import io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.ranged.FluxedModifier;
+import io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.ranged.PhantasmicModifier;
+import io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.ranged.VoidScatterModifier;
+import io.github.pouffy.tcompat.compat.cataclysm.modifier.general.AquaticModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;

@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.betterend;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.betterend.modifier.combat.VoidTouchedModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;

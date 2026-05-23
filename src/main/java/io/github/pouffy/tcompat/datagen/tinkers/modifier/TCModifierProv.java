@@ -1,11 +1,11 @@
 package io.github.pouffy.tcompat.datagen.tinkers.modifier;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
-import io.github.pouffy.tcompat.common.module.AetherForgedModule;
-import io.github.pouffy.tcompat.common.module.MobEffectUserModule;
-import io.github.pouffy.tcompat.common.module.OptionalAttributeModule;
-import io.github.pouffy.tcompat.common.module.SoulExposureModule;
+import io.github.pouffy.tcompat.common.modifier.TCModifiers;
+import io.github.pouffy.tcompat.common.modifier.module.AetherForgedModule;
+import io.github.pouffy.tcompat.common.modifier.module.MobEffectUserModule;
+import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
+import io.github.pouffy.tcompat.common.modifier.module.SoulExposureModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;

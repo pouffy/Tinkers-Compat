@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.ad_astra;
 
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.material.TCMeltingInfo;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import net.minecraft.data.recipes.FinishedRecipe;

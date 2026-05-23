@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.datagen.lang;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;

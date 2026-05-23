@@ -6,13 +6,13 @@ import io.github.pouffy.tcompat.common.capability.projectile.void_scatter.VoidSc
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.common.network.SwingClientArmPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.base.PacketRelay;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.aether.modifier.ThunderstruckModifier;
+import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.ThunderstruckModifier;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;

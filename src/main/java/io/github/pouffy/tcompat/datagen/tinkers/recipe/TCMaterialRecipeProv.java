@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;

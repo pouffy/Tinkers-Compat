@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicClothMaterialStats;
@@ -11,7 +11,6 @@ import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTran
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.shared.command.subcommand.GeneratePartTexturesCommand;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;

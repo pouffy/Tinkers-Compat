@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.bwg;
 
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;

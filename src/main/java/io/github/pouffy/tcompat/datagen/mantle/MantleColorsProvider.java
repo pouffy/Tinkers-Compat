@@ -3,7 +3,7 @@ package io.github.pouffy.tcompat.datagen.mantle;
 import com.google.gson.JsonObject;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;

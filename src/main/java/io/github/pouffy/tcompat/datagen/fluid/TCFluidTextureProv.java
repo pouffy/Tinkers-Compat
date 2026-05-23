@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.datagen.fluid;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;

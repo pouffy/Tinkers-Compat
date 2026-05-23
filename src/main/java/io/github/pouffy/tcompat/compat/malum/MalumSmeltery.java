@@ -1,12 +1,10 @@
 package io.github.pouffy.tcompat.compat.malum;
 
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.recipe.FluidValues;

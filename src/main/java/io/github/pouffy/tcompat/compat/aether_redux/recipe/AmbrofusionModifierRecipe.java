@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.compat.aether_redux.recipe;
 
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
-import io.github.pouffy.tcompat.compat.aether_redux.AmbrofusionModifier;
+import io.github.pouffy.tcompat.compat.aether_redux.modifier.general.AmbrofusionModifier;
 import lombok.Getter;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.BuiltInRegistries;

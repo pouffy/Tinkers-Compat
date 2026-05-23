@@ -2,12 +2,11 @@ package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipeBuilder;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
-import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.malum.MalumMaterials;

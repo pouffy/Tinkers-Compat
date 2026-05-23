@@ -1,8 +1,8 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire;
 
-import io.github.pouffy.tcompat.common.TCFluids;
-import io.github.pouffy.tcompat.common.data.TCShapedRecipeBuilder;
-import io.github.pouffy.tcompat.common.data.TCShapelessRecipeBuilder;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
+import io.github.pouffy.tcompat.common.data.recipe.TCShapedRecipeBuilder;
+import io.github.pouffy.tcompat.common.data.recipe.TCShapelessRecipeBuilder;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;

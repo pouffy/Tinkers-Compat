@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.aether_treasure_reforging;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.aether_treasure_reforging.modifier.ranged.PhoenixTouchedModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;

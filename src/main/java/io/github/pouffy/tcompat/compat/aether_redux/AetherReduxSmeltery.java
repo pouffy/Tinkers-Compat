@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_redux;
 
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCByproduct;

@@ -2,7 +2,7 @@ package io.github.pouffy.tcompat;
 
 import com.mojang.logging.LogUtils;
 import io.github.pouffy.tcompat.common.CompatModule;
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.cooldown.CooldownHandler;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
@@ -13,7 +13,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,9 +27,6 @@ import org.slf4j.Logger;
 import slimeknights.mantle.client.model.NBTKeyModel;
 import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
 import slimeknights.tconstruct.TConstruct;
-import slimeknights.tconstruct.fluids.TinkerFluids;
-import slimeknights.tconstruct.shared.TinkerCommons;
-import slimeknights.tconstruct.tools.TinkerTools;
 
 @Mod(TCompat.MOD_ID)
 public class TCompat {

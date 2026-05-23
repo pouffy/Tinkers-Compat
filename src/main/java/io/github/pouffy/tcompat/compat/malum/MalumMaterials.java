@@ -1,16 +1,12 @@
 package io.github.pouffy.tcompat.compat.malum;
 
-import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
-import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
-import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
 

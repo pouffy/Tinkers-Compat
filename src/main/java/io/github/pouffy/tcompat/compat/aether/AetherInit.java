@@ -2,7 +2,12 @@ package io.github.pouffy.tcompat.compat.aether;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
-import io.github.pouffy.tcompat.compat.aether.modifier.*;
+import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.AscensionModifier;
+import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.BloodsuckingModifier;
+import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.ThunderstruckModifier;
+import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AmbrogenModifier;
+import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AutochantModifier;
+import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AutofreezeModifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;

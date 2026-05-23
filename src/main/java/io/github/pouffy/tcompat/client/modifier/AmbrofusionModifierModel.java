@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.client.modifier;
 
 import com.mojang.math.Transformation;
-import io.github.pouffy.tcompat.compat.aether_redux.AmbrofusionModifier;
+import io.github.pouffy.tcompat.compat.aether_redux.modifier.general.AmbrofusionModifier;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.Material;

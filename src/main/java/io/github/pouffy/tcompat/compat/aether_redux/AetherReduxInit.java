@@ -2,6 +2,8 @@ package io.github.pouffy.tcompat.compat.aether_redux;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.aether_redux.modifier.combat.ranged.BlightedModifier;
+import io.github.pouffy.tcompat.compat.aether_redux.modifier.general.AmbrofusionModifier;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipe;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;

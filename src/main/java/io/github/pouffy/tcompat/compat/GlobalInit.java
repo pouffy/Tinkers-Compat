@@ -1,8 +1,12 @@
 package io.github.pouffy.tcompat.compat;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.TCFluids;
-import io.github.pouffy.tcompat.common.module.*;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
+import io.github.pouffy.tcompat.common.modifier.hook.AetherForgedModifierHook;
+import io.github.pouffy.tcompat.common.modifier.hook.CollectSpiritModifierHook;
+import io.github.pouffy.tcompat.common.modifier.hook.SoulExposureModifierHook;
+import io.github.pouffy.tcompat.common.modifier.hook.ToolSwingModifierHook;
+import io.github.pouffy.tcompat.common.modifier.module.*;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
 import io.github.pouffy.tcompat.compat.ice_and_fire.item.ModifiableGlaiveItem;

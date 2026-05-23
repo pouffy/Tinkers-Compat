@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.compat.deep_aether;
 
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.CompatToolStats;

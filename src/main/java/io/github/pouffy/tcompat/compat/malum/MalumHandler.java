@@ -15,7 +15,7 @@ import com.sammy.malum.registry.common.SoundRegistry;
 import com.sammy.malum.registry.common.SpiritTypeRegistry;
 import com.sammy.malum.visual_effects.networked.ParticleEffectType;
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.material.TCModifiers;
+import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;

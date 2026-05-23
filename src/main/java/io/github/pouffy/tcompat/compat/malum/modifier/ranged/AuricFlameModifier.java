@@ -1,7 +1,8 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.ranged;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.module.OptionalAttributeModule;
+import io.github.pouffy.tcompat.common.modifier.base.MalumStaffModifier;
+import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
@@ -12,7 +13,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import slimeknights.tconstruct.library.modifiers.modules.build.VolatileFlagModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 

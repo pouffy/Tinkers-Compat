@@ -2,6 +2,9 @@ package io.github.pouffy.tcompat.compat.betternether;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.betternether.modifier.defence.CinderspineModifier;
+import io.github.pouffy.tcompat.compat.betternether.modifier.harvest.ObsidianBreakerModifier;
+import io.github.pouffy.tcompat.compat.betternether.modifier.harvest.RubysFireModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;

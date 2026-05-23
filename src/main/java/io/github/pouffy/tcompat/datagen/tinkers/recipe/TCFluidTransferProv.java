@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;

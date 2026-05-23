@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.deep_aether;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.deep_aether.modifier.combat.melee.GaleModifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;

@@ -2,6 +2,10 @@ package io.github.pouffy.tcompat.compat.species;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.species.modifier.combat.SwappingModifier;
+import io.github.pouffy.tcompat.compat.species.modifier.combat.WickedModifier;
+import io.github.pouffy.tcompat.compat.species.modifier.combat.melee.BirtModifier;
+import io.github.pouffy.tcompat.compat.species.modifier.defence.KineticModifier;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.eventbus.api.IEventBus;
