@@ -1,0 +1,136 @@
+{
+  "values": [
+    {
+      "id": "tcompat:nether_ruby",
+      "required": false
+    },
+    {
+      "id": "tcompat:zanite",
+      "required": false
+    },
+    {
+      "id": "tcompat:gravitite",
+      "required": false
+    },
+    {
+      "id": "tcompat:lightnum",
+      "required": false
+    },
+    {
+      "id": "tcompat:draculite",
+      "required": false
+    },
+    {
+      "id": "tcompat:skyjade",
+      "required": false
+    },
+    {
+      "id": "tcompat:stormforged_steel",
+      "required": false
+    },
+    {
+      "id": "tcompat:veridium",
+      "required": false
+    },
+    {
+      "id": "tcompat:refined_sentrite",
+      "required": false
+    },
+    {
+      "id": "tcompat:blightbunny_fang",
+      "required": false
+    },
+    {
+      "id": "tcompat:mykapod_shell",
+      "required": false
+    },
+    {
+      "id": "tcompat:ancient_metal",
+      "required": false
+    },
+    {
+      "id": "tcompat:cursium",
+      "required": false
+    },
+    {
+      "id": "tcompat:lacrima",
+      "required": false
+    },
+    {
+      "id": "tcompat:essence_of_the_storm",
+      "required": false
+    },
+    {
+      "id": "tcompat:witherite",
+      "required": false
+    },
+    {
+      "id": "tcompat:void_jaw",
+      "required": false
+    },
+    {
+      "id": "tcompat:koboleton_bone",
+      "required": false
+    },
+    {
+      "id": "tcompat:pyral",
+      "required": false
+    },
+    {
+      "id": "tcompat:valkyrum",
+      "required": false
+    },
+    {
+      "id": "tcompat:neptune",
+      "required": false
+    },
+    {
+      "id": "tcompat:terminite",
+      "required": false
+    },
+    {
+      "id": "tcompat:aeternium",
+      "required": false
+    },
+    {
+      "id": "tcompat:fire_dragonsteel",
+      "required": false
+    },
+    {
+      "id": "tcompat:ice_dragonsteel",
+      "required": false
+    },
+    {
+      "id": "tcompat:lightning_dragonsteel",
+      "required": false
+    },
+    {
+      "id": "tcompat:soul_stained_steel",
+      "required": false
+    },
+    {
+      "id": "tcompat:hallowed_gold",
+      "required": false
+    },
+    {
+      "id": "tcompat:malignant_pewter",
+      "required": false
+    },
+    {
+      "id": "tcompat:astral_weave",
+      "required": false
+    },
+    {
+      "id": "tcompat:calorite",
+      "required": false
+    },
+    {
+      "id": "tcompat:desh",
+      "required": false
+    },
+    {
+      "id": "tcompat:ostrum",
+      "required": false
+    }
+  ]
+}

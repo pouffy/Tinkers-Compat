@@ -35,7 +35,7 @@ public class BetternetherMaterials {
             .buildMaterial();
 
     public static final MaterialId netherRuby = MaterialBuilder.material("betternether", "nether_ruby")
-            .data(d -> d.tier(4).order(0).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(ModifierIds.worldbound)
                     .trait(HeadMaterialStats.ID, BetternetherInit.obsidianBreaker)

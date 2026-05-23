@@ -12,7 +12,7 @@ import static net.minecraft.world.item.Tiers.NETHERITE;
 
 public class AdAstraMaterials {
 
-    public static final MaterialId calorite = MaterialBuilder.material("ad_astra", "calorite")
+    public static final MaterialId calorite = MaterialBuilder.material("ad_astra", "calorite").excludeFromLoot()
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
                     .trait(AdAstraInit.oxygenated)
@@ -36,7 +36,7 @@ public class AdAstraMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF470d2f, 0xFF6a1534, 0xFF9e1f3f, 0xFFb83145, 0xFFcb4e4f, 0xFFdf6d5c))
             .buildMaterial();
 
-    public static final MaterialId desh = MaterialBuilder.material("ad_astra", "desh")
+    public static final MaterialId desh = MaterialBuilder.material("ad_astra", "desh").excludeFromLoot()
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
                     .trait(AdAstraInit.oxygenated)
@@ -61,7 +61,7 @@ public class AdAstraMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF7a3045, 0xFF9e4539, 0xFFb25b3d, 0xFFc77142, 0xFFd68d4d, 0xFFe9ba5d))
             .buildMaterial();
 
-    public static final MaterialId ostrum = MaterialBuilder.material("ad_astra", "ostrum")
+    public static final MaterialId ostrum = MaterialBuilder.material("ad_astra", "ostrum").excludeFromLoot()
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
                     .trait(AdAstraInit.oxygenated)

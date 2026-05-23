@@ -52,7 +52,7 @@ public class DeepAetherMaterials {
             .buildMaterial();
 
     public static final MaterialId stormforgedSteel = MaterialBuilder.material("deep_aether", "stormforged_steel")
-            .data(d -> d.tier(2).order(2).craftable(false))
+            .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, DeepAetherInit.gale))
             .stats(s ->
                     s.stat(new HeadMaterialStats(503, 8.0f, IRON, 3.0f)).statOptional(CompatToolStats.plainRing(503, 1.2f))

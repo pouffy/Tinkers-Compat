@@ -20,7 +20,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 public class MalumMaterials {
 
     public static final MaterialId soulStainedSteel = MaterialBuilder.material("malum", "soul_stained_steel")
-            .data(d -> d.tier(3).order(2).craftable(false))
+            .data(d -> d.tier(3).order(2).craftable(false)).excludeFromLoot()
             .lang("Soulstained Steel")
             .traits(t -> t.trait(TCModifiers.stained).trait(ARMOR, TCModifiers.warded).trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), TCModifiers.armorToughness_gem))
             .stats(s ->
@@ -40,7 +40,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId hallowedGold = MaterialBuilder.material("malum", "hallowed_gold")
-            .data(d -> d.tier(3).order(2).craftable(false))
+            .data(d -> d.tier(3).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.hallowed).trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), TCModifiers.armor_gem))
             .stats(s ->
                     s.stat(
@@ -55,7 +55,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId malignantPewter = MaterialBuilder.material("malum", "malignant_pewter")
-            .data(d -> d.tier(4).order(2).craftable(false))
+            .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(MalumInit.certainty).trait(ARMOR, TCModifiers.stronghold))
             .stats(s ->
                     s.stat(
@@ -86,7 +86,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId astralWeave = MaterialBuilder.material("malum", "astral_weave")
-            .data(d -> d.tier(1).order(20).craftable(true))
+            .data(d -> d.tier(1).order(20).craftable(true)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.cloaking))
             .stats(s ->
                     s.stat(

@@ -17,7 +17,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 public class CataclysmMaterials {
 
     public static final MaterialId ancientMetal = MaterialBuilder.material("cataclysm", "ancient_metal")
-            .data(d -> d.tier(4).order(2).craftable(false))
+            .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.sandstorm)
                     .trait(ARMOR, TCModifiers.cataclysmic)
@@ -62,7 +62,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId cursium = MaterialBuilder.material("cataclysm", "cursium")
-            .data(d -> d.tier(4).order(4).craftable(false))
+            .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(StatlessMaterialStats.MAILLE.getIdentifier(), TCModifiers.cataclysmic, TCModifiers.ghostly)
                     .trait(StatlessMaterialStats.BOWSTRING.getIdentifier(), CataclysmInit.phantasmic)
@@ -81,7 +81,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId lacrima = MaterialBuilder.material("cataclysm", "lacrima")
-            .data(d -> d.tier(3).order(2).craftable(true))
+            .data(d -> d.tier(3).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t
                     .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.tidal)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.swim_gem, 1))
@@ -101,7 +101,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId essenceOfTheStorm = MaterialBuilder.material("cataclysm", "essence_of_the_storm")
-            .data(d -> d.tier(1).order(20).craftable(true))
+            .data(d -> d.tier(1).order(20).craftable(true)).excludeFromLoot()
             .lang("Essence of the Storm")
             .traits(t -> t.trait(StatlessMaterialStats.BINDING, ModifierIds.deciduous))
             .stats(s -> s.stat(StatlessMaterialStats.BINDING))
@@ -110,7 +110,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId witherite = MaterialBuilder.material("cataclysm", "witherite")
-            .data(d -> d.tier(4).order(4).craftable(false))
+            .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(GripMaterialStats.ID, CataclysmInit.fluxed).trait(HandleMaterialStats.ID, TCModifiers.standstill))
             .stats(s ->
                     s.stat(
@@ -142,7 +142,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId voidJaw = MaterialBuilder.material("cataclysm", "void_jaw")
-            .data(d -> d.tier(1).order(4).craftable(true))
+            .data(d -> d.tier(1).order(4).craftable(true)).excludeFromLoot()
             .traits(t -> t.trait(StatlessMaterialStats.ARROW_HEAD.getIdentifier(), CataclysmInit.voidScatter))
             .stats(s ->
                     s.stat(StatlessMaterialStats.ARROW_HEAD)
@@ -152,7 +152,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId koboletonBone = MaterialBuilder.material("cataclysm", "koboleton_bone")
-            .data(d -> d.tier(1).order(2).craftable(true))
+            .data(d -> d.tier(1).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t.trait(HandleMaterialStats.ID, TCModifiers.archaeologist))
             .stats(s ->
                     s.stat(StatlessMaterialStats.MAILLE, HandleMaterialStats.multipliers().attackDamage(1.2f).build())

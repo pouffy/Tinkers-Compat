@@ -139,7 +139,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId fireDragonsteel = MaterialBuilder.material("iceandfire", "fire_dragonsteel")
-            .data(d -> d.tier(4).order(0).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.scorchborn))
             .stats(s ->
                     s.stat(
@@ -160,7 +160,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId iceDragonsteel = MaterialBuilder.material("iceandfire", "ice_dragonsteel")
-            .data(d -> d.tier(4).order(0).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.frostborn))
             .stats(s ->
                     s.stat(
@@ -181,7 +181,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId lightningDragonsteel = MaterialBuilder.material("iceandfire", "lightning_dragonsteel")
-            .data(d -> d.tier(4).order(0).craftable(false))
+            .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.voltborn))
             .stats(s ->
                     s.stat(

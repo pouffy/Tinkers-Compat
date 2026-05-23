@@ -48,6 +48,8 @@ public class MaterialBuilder {
     private String englishName;
     @Getter
     private final boolean isVariant;
+    @Getter
+    private boolean excludedFromLoot;
 
     @Getter
     private Data data;
@@ -77,6 +79,7 @@ public class MaterialBuilder {
         this.spriteInfo = SpriteInfo.fresh();
 
         this.englishName = TCLangProv.toEngStr(name);
+        this.excludedFromLoot = false;
     }
 
     public static MaterialBuilder material(String modid, String name) {
@@ -95,14 +98,31 @@ public class MaterialBuilder {
         return new MaterialBuilder(condition, name, variant);
     }
 
+    public static List<MaterialBuilder> getMaterials() {
+        List<MaterialBuilder> builders = new ArrayList<>();
+        for (var builder : materialBuilders) {
+            if (builder.isVariant()) continue;
+            builders.add(builder);
+        }
+        return builders;
+    }
+
     public MaterialBuilder lang(String englishName) {
         this.englishName = englishName;
+        return this;
+    }
+
+    public MaterialBuilder excludeFromLoot() {
+        this.excludedFromLoot = true;
         return this;
     }
 
     public MaterialBuilder data(Function<Data, Data> dataFunction) {
         this.assertNoVariant("data");
         this.data = dataFunction.apply(this.data);
+        if (this.data.isDeprecated()) {
+            return this.excludeFromLoot();
+        }
         return this;
     }
 

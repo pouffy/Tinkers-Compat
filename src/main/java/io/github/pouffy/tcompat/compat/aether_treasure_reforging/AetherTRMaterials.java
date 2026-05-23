@@ -16,7 +16,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.*;
 public class AetherTRMaterials {
 
     public static final MaterialId pyral = MaterialBuilder.material("aether_treasure_reforging", "pyral")
-            .data(d -> d.tier(4).order(4).craftable(false))
+            .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(TCModifiers.aetherForged)
                     .trait(ARMOR, ModifierIds.fireProtection)
@@ -37,7 +37,7 @@ public class AetherTRMaterials {
             .buildMaterial();
 
     public static final MaterialId valkyrum = MaterialBuilder.material("aether_treasure_reforging", "valkyrum")
-            .data(d -> d.tier(4).order(2).craftable(false))
+            .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(TCModifiers.aetherForged)
                     .trait(MELEE_HARVEST, ModifierIds.reach)
@@ -57,7 +57,7 @@ public class AetherTRMaterials {
             .buildMaterial();
 
     public static final MaterialId neptune = MaterialBuilder.material("aether_treasure_reforging", "neptune")
-            .data(d -> d.tier(2).order(3).craftable(false))
+            .data(d -> d.tier(2).order(3).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(ARMOR, ModifierIds.depthStrider))
             .stats(s ->
                     s.stat(StatlessMaterialStats.MAILLE)

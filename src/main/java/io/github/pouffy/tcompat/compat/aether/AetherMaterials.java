@@ -86,7 +86,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId gravitite = MaterialBuilder.material("aether", "gravitite")
-            .data(d -> d.tier(2).order(2).craftable(false))
+            .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.ascension, TCModifiers.aetherForged))
             .stats(s ->
                     s.stat(
@@ -105,7 +105,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId lightnum = MaterialBuilder.material("aether", "lightnum")
-            .data(d -> d.tier(2).order(2).craftable(false))
+            .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.thunderstruck))
             .stats(s ->
                     s.stat(
@@ -119,7 +119,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId draculite = MaterialBuilder.material("aether", "draculite")
-            .data(d -> d.tier(2).order(2).craftable(false))
+            .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.bloodsucking))
             .stats(s ->
                     s.stat(

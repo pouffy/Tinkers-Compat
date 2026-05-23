@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.datagen.tag;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
+import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxMaterials;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRMaterials;
@@ -57,6 +58,8 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
         tag(TCTags.Materials.WITHERITE_COMPANION).addOptional(
                 MaterialIds.iron
         );
+        var lootExclusion = tag(TinkerTags.Materials.EXCLUDE_FROM_LOOT);
+        MaterialBuilder.getMaterials().stream().filter(MaterialBuilder::isExcludedFromLoot).map(MaterialBuilder::materialId).forEach(lootExclusion::addOptional);
     }
 
     private static TagKey<IMaterial> materialTag(String name) {
