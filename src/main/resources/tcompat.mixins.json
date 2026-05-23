@@ -8,6 +8,7 @@
   "mixins": [
     "AbstractArrowMixin",
     "EnderManMixin",
+    "LivingEntityMixin",
     "ProjectileMixin",
     "ServerPlayerMixin",
     "aether.AbilityHooksMixin",

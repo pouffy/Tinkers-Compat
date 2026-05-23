@@ -1,0 +1,36 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "malum:void_salts"
+    },
+    {
+      "item": "malum:erosion_scepter"
+    },
+    {
+      "item": "malum:void_salts"
+    },
+    {
+      "tag": "forge:ingots/malignant_pewter"
+    },
+    {
+      "tag": "forge:ingots/malignant_pewter"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:erosion",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/staffs"
+  }
+}

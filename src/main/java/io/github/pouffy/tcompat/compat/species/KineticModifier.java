@@ -1,7 +1,8 @@
 package io.github.pouffy.tcompat.compat.species;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
+import io.github.pouffy.tcompat.common.cooldown.ClientModifierCooldowns;
+import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
@@ -52,7 +53,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
     @Override
     public void afterStopUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int useDuration, int timeLeft, ModifierEntry activeModifier) {
         var data = tool.getPersistentData();
-        if (data.contains(STORED_DAMAGE) && data.getFloat(STORED_DAMAGE) > 0.0F && !ModifierCooldowns.isOnCooldown(modifier.getId(), entity)) {
+        if (data.contains(STORED_DAMAGE) && data.getFloat(STORED_DAMAGE) > 0.0F && !ClientModifierCooldowns.getCooldowns().isOnCooldown(modifier.getId())) {
             this.damageTargets(tool, modifier, entity.level(), data.getFloat(STORED_DAMAGE), entity);
         }
     }
@@ -62,7 +63,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
         LivingEntity self = context.getEntity();
         var data = tool.getPersistentData();
         int max = tool.getStats().getInt(ToolStats.BLOCK_AMOUNT) / 2;
-        if (amount > 0.0F && self.isDamageSourceBlocked(source) && !ModifierCooldowns.isOnCooldown(modifier.getId(), self)) {
+        if (amount > 0.0F && self.isDamageSourceBlocked(source) && !ModifierCooldowns.getModifierCooldowns(context.getEntity()).isOnCooldown(modifier.getId())) {
             if (self instanceof Player player && amount > max) {
                 player.disableShield(true);
             }
@@ -117,7 +118,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
             }
         }
 
-        ModifierCooldowns.addCooldown(modifier.getId(), (int)(data.getFloat(STORED_DAMAGE) / 4.0F) * 20, player);
+        TCompat.COOLDOWN_HANDLER.addCooldown(player, modifier.getId(), (int)(data.getFloat(STORED_DAMAGE) / 4.0F) * 20);
 
         data.putFloat(STORED_DAMAGE, 0.0F);
     }

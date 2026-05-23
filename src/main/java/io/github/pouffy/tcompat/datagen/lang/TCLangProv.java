@@ -185,6 +185,9 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.runic", "It's just a tribute", "Adds one bonus Rune slot to the tool.");
         forModifier("modifier.tcompat.spirit_repair", "Late stage capitalism", "Collecting spirits repairs the tool.");
         forModifier("modifier.tcompat.deliverance", "2-3 business days", "Deal a weakened attack in order for your next attack to be doubled");
+        forModifier("modifier.tcompat.mnemonic", "Gonna cast a spell on you", "Charge up and launch hexed bolts.");
+        forModifier("modifier.tcompat.erosion", "You probably learned about this in geography class", "Charge up and launch draining bolts.");
+        forModifier("modifier.tcompat.auric_flame", "Fire", "Charge up and launch a volley of auric flame bolts.");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {

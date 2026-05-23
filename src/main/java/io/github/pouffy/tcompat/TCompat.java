@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat;
 import com.mojang.logging.LogUtils;
 import io.github.pouffy.tcompat.common.CompatModule;
 import io.github.pouffy.tcompat.common.TCFluids;
+import io.github.pouffy.tcompat.common.cooldown.CooldownHandler;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
@@ -35,6 +36,7 @@ import slimeknights.tconstruct.tools.TinkerTools;
 public class TCompat {
     public static final String MOD_ID = "tcompat";
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static CooldownHandler COOLDOWN_HANDLER;
     protected static final SynchronizedDeferredRegister<CreativeModeTab> CREATIVE_TABS = SynchronizedDeferredRegister.create(Registries.CREATIVE_MODE_TAB, TCompat.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> CREATIVE_TAB = CREATIVE_TABS.register("main", () -> CreativeModeTab.builder()
@@ -47,7 +49,7 @@ public class TCompat {
 
     public TCompat(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
-
+        COOLDOWN_HANDLER = new CooldownHandler();
         modEventBus.addListener(this::commonSetup);
         CompatHelper.init(modEventBus);
         modEventBus.register(new TCFluids());

@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.compat.malum.modifier;
+package io.github.pouffy.tcompat.compat.malum.modifier.melee;
 
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;

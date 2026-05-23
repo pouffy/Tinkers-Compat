@@ -125,6 +125,9 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(MalumInit.spiritRepair.getId(),            0x918496);
         addColor(MalumInit.certainty.getId(),               0x4d2450);
         addColor(MalumInit.deliverance.getId(),             0x8108e5);
+        addColor(MalumInit.mnemonic.getId(),                0xffec9f);
+        addColor(MalumInit.erosion.getId(),                 0x2f1329);
+        addColor(MalumInit.auricFlame.getId(),              0xfcadcf);
     }
 
     public void addColor(MaterialBuilder material) {

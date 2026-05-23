@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier;
 
-import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
+import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -28,7 +29,7 @@ public class FrostThornsModifier extends NoLevelsModifier implements OnAttackedM
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity attacker = (LivingEntity) source.getEntity();
         boolean canUse = false;
-        if (ModifierCooldowns.isOnCooldown(modifier.getId(), context.getEntity())) return;
+        if (ModifierCooldowns.getModifierCooldowns(context.getEntity()).isOnCooldown(modifier.getId())) return;
         if (attacker != null) {
             canUse = attacker.getRandom().nextIntBetweenInclusive(1, 16) < 3;
         }
@@ -40,7 +41,7 @@ public class FrostThornsModifier extends NoLevelsModifier implements OnAttackedM
             attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             attacker.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
             attacker.knockback(1.0, 0.0, 0.0);
-            ModifierCooldowns.addCooldown(modifier.getId(), Math.round((amount / 2) * 20), context.getEntity());
+            TCompat.COOLDOWN_HANDLER.addCooldown(user, modifier.getId(), Math.round((amount / 2) * 20));
         }
     }
 }

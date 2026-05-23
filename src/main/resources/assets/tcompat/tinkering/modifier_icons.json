@@ -19,5 +19,8 @@
   "tcompat:dreadbane":   "tcompat:gui/modifiers/dreadbane",
   "tcompat:dampening":   "tcompat:gui/modifiers/dampening",
 
-  "tcompat:deliverance":   "malum:mob_effect/imminent_deliverance"
+  "tcompat:deliverance":   "tcompat:gui/modifiers/deliverance",
+  "tcompat:mnemonic":   ["malum:item/mnemonic_fragment", "tconstruct:gui/modifiers/plus"],
+  "tcompat:erosion":   ["malum:item/void_salts", "tconstruct:gui/modifiers/plus"],
+  "tcompat:auric_flame":   ["malum:item/auric_embers", "tconstruct:gui/modifiers/plus"]
 }

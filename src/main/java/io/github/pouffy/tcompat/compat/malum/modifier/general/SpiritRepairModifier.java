@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.compat.malum.modifier;
+package io.github.pouffy.tcompat.compat.malum.modifier.general;
 
 import io.github.pouffy.tcompat.common.module.CollectSpiritModifierHook;
 import io.github.pouffy.tcompat.compat.GlobalInit;

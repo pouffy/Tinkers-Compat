@@ -1,6 +1,9 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier;
 
-import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
+import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.cooldown.ClientModifierCooldowns;
+import io.github.pouffy.tcompat.common.cooldown.CooldownHandler;
+import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.module.AbstractTeamUpModifier;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
@@ -30,12 +33,8 @@ public class TidalModifier extends AbstractTeamUpModifier implements GeneralInte
 
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifierEntry, Player player, InteractionHand interactionHand, InteractionSource source) {
-        if (!isValid(tool)) return InteractionResult.PASS;
+        if (!isValid(tool) || ClientModifierCooldowns.getCooldowns().isOnCooldown(modifierEntry.getId())) return InteractionResult.PASS;
         if (!tool.isBroken() && source == InteractionSource.RIGHT_CLICK && player.isCrouching()) {
-            if (ModifierCooldowns.isOnCooldown(modifierEntry.getId(), player)) {
-                CompatHelper.sendCooldownMessage(player, modifierEntry);
-                return InteractionResult.PASS;
-            }
             GeneralInteractionModifierHook.startUsing(tool, modifierEntry.getId(), player, interactionHand);
             return InteractionResult.CONSUME;
         }
@@ -46,9 +45,9 @@ public class TidalModifier extends AbstractTeamUpModifier implements GeneralInte
     public void onStoppedUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
         int i = this.getUseDuration(tool, modifier) - timeLeft;
         float f = getPowerForTime(i);
-        if (!tool.isBroken() && entity.isCrouching() && !ModifierCooldowns.isOnCooldown(modifier.getId(), entity)) {
+        if (!tool.isBroken() && entity.isCrouching() && !ClientModifierCooldowns.getCooldowns().isOnCooldown(modifier.getId())) {
             if (!((double)f < (double)0.5F) && !entity.level().isClientSide) {
-                ModifierCooldowns.addCooldown(modifier.getId(), 150, entity);
+                TCompat.COOLDOWN_HANDLER.addCooldown(entity, modifier.getId(), 150);
                 CataclysmHandler.tidalWave(entity.level(), entity);
             }
         }

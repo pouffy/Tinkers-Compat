@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.common.util;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
+import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
@@ -38,7 +38,6 @@ import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.tools.stats.*;
-import team.lodestar.lodestone.systems.item.IEventResponderItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -127,7 +126,7 @@ public class CompatHelper {
 
     public static void sendCooldownMessage(LivingEntity entity, ModifierEntry modifierEntry) {
         if (entity instanceof Player player) {
-            if (ModifierCooldowns.isOnCooldown(modifierEntry.getId(), player)) {
+            if (ModifierCooldowns.getModifierCooldowns(entity).isOnCooldown(modifierEntry.getId())) {
                 Component message = Component.translatable("notification.tcompat.modifier_cooldown", modifierEntry.getModifier().getDisplayName());
                 player.displayClientMessage(message, true);
             }

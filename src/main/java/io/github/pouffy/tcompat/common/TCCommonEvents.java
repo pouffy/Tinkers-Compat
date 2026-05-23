@@ -1,11 +1,11 @@
 package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
 import io.github.pouffy.tcompat.common.capability.projectile.void_scatter.VoidScatter;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
+import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.material.TCModifiers;
 import io.github.pouffy.tcompat.common.network.SwingClientArmPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
@@ -14,6 +14,7 @@ import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.modifier.ThunderstruckModifier;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
@@ -25,23 +26,21 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.mantle.util.OffhandCooldownTracker;
-import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.shared.TinkerCommons;
-import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -150,10 +149,33 @@ public class TCCommonEvents {
                 voidTouched.tick();
             }
         });
-        if (entity instanceof Player player) {
-            ModifierCooldowns.get(player).ifPresent(ModifierCooldowns::tick);
-        }
         VampireHealing.get(entity).ifPresent(VampireHealing::onUpdate);
+        TCompat.COOLDOWN_HANDLER.tickEntity(entity);
+    }
+
+    @SubscribeEvent
+    public static void onWorldTick(TickEvent.LevelTickEvent event) {
+        if (!event.level.isClientSide) {
+            if (event.phase != TickEvent.Phase.START) {
+                TCompat.COOLDOWN_HANDLER.tickPlayers(event.level);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+        if (event.getEntity() instanceof ServerPlayer serverPlayer) {
+            ModifierCooldowns.getModifierCooldowns(serverPlayer).syncToPlayer(serverPlayer);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerCloned(PlayerEvent.Clone event) {
+        if (event.getEntity() instanceof ServerPlayer newServerPlayer) {
+            ModifierCooldowns oldCooldowns = ModifierCooldowns.getModifierCooldowns(event.getOriginal());
+            ModifierCooldowns newCooldowns = ModifierCooldowns.getModifierCooldowns(newServerPlayer);
+            oldCooldowns.getModifierCooldowns().forEach((modifierId, cooldown) -> newCooldowns.getModifierCooldowns().put(modifierId, cooldown));
+        }
     }
 
     @SubscribeEvent

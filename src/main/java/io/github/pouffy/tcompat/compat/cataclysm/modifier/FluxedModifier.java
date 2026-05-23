@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.capability.cooldown.ModifierCooldowns;
+import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.module.AbstractTeamUpModifier;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
@@ -58,10 +58,7 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistantData, boolean primary) {
         if (!CompatHelper.isLoaded("cataclysm")) return;
         Level level = entity.level();
-        if (ModifierCooldowns.isOnCooldown(modifier.getId(), entity)) {
-            CompatHelper.sendCooldownMessage(entity, modifier);
-        }
-        if (isValid(tool) && !ModifierCooldowns.isOnCooldown(modifier.getId(), entity) && primary && arrow != null) {
+        if (isValid(tool) && !ModifierCooldowns.getModifierCooldowns(entity).isOnCooldown(modifier.getId()) && primary && arrow != null) {
             int i = 72000 - tool.getPersistentData().getInt(timeLeftKey);
             float f = getPowerForTime(i);
             if (arrow.isCritArrow()) {
@@ -72,7 +69,7 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                             appendModifiers(tool, entity, howitzer);
                             level.addFreshEntity(howitzer);
                             arrow.discard();
-                            ModifierCooldowns.addCooldown(modifier.getId(), 100, entity);
+                            TCompat.COOLDOWN_HANDLER.addCooldown(entity, modifier.getId(), 100);
                         }
                     } else {
                         float d7 = entity.getYRot();
@@ -94,7 +91,7 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                             appendModifiers(tool, entity, witherMissile);
                             level.addFreshEntity(witherMissile);
                             arrow.discard();
-                            ModifierCooldowns.addCooldown(modifier.getId(), 40, entity);
+                            TCompat.COOLDOWN_HANDLER.addCooldown(entity, modifier.getId(), 40);
                         }
                     }
                 }

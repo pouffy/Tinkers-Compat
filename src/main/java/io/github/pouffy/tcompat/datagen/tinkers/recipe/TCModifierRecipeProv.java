@@ -284,6 +284,42 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .saveSalvage(malumConsumer, prefix(MalumInit.deliverance, abilitySalvage))
                 .save(malumConsumer, prefix(MalumInit.deliverance, abilityFolder));
 
+        ModifierRecipeBuilder.modifier(MalumInit.mnemonic)
+                .setTools(TinkerTags.Items.STAFFS)
+                .addInput(ItemNameIngredient.from(malumId.apply("mnemonic_fragment")))
+                .addInput(ItemNameIngredient.from(malumId.apply("mnemonic_hex_staff")))
+                .addInput(ItemNameIngredient.from(malumId.apply("mnemonic_fragment")))
+                .addInput(TCTags.Items.SOUL_STAINED_STEEL_INGOTS)
+                .addInput(TCTags.Items.SOUL_STAINED_STEEL_INGOTS)
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(malumConsumer, prefix(MalumInit.mnemonic, abilitySalvage))
+                .save(malumConsumer, prefix(MalumInit.mnemonic, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(MalumInit.erosion)
+                .setTools(TinkerTags.Items.STAFFS)
+                .addInput(ItemNameIngredient.from(malumId.apply("void_salts")))
+                .addInput(ItemNameIngredient.from(malumId.apply("erosion_scepter")))
+                .addInput(ItemNameIngredient.from(malumId.apply("void_salts")))
+                .addInput(TCTags.Items.MALIGNANT_PEWTER_INGOTS)
+                .addInput(TCTags.Items.MALIGNANT_PEWTER_INGOTS)
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(malumConsumer, prefix(MalumInit.erosion, abilitySalvage))
+                .save(malumConsumer, prefix(MalumInit.erosion, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(MalumInit.auricFlame)
+                .setTools(TinkerTags.Items.STAFFS)
+                .addInput(ItemNameIngredient.from(malumId.apply("auric_embers")))
+                .addInput(ItemNameIngredient.from(malumId.apply("staff_of_the_auric_flame")))
+                .addInput(ItemNameIngredient.from(malumId.apply("auric_embers")))
+                .addInput(ItemNameIngredient.from(malumId.apply("void_salts")))
+                .addInput(ItemNameIngredient.from(malumId.apply("void_salts")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(malumConsumer, prefix(MalumInit.auricFlame, abilitySalvage))
+                .save(malumConsumer, prefix(MalumInit.auricFlame, abilityFolder));
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)
