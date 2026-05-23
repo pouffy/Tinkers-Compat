@@ -16,7 +16,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
@@ -28,11 +27,8 @@ import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInterac
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileLaunchModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
-import slimeknights.tconstruct.library.tools.capability.EntityModifierCapability;
-import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
-import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import java.util.function.Predicate;
 
@@ -69,7 +65,7 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                     if (entity.isShiftKeyDown()) {
                         var howitzer = CataclysmHandler.createHowitzer(entity, f);
                         if (howitzer != null) {
-                            appendModifiers(tool, entity, howitzer);
+                            ProjectileAbilityHooks.addModifiersToProjectile(tool, entity, howitzer, false);
                             level.addFreshEntity(howitzer);
                             ProjectileAbility.activate(arrow, ProjectileAbilityHooks.INSTANT_DISCARD);
                             TCompat.COOLDOWN_HANDLER.addCooldown(entity, modifier.getId(), 100);
@@ -91,7 +87,7 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                         float xRot = (float)(-(Mth.atan2(vec3.y, Math.sqrt(vec3.x * vec3.x + vec3.z * vec3.z)) * (180D / Math.PI)));
                         var witherMissile = CataclysmHandler.createWitherMissile(entity, vec3, x, Z, yRot, xRot);
                         if (witherMissile != null) {
-                            appendModifiers(tool, entity, witherMissile);
+                            ProjectileAbilityHooks.addModifiersToProjectile(tool, entity, witherMissile, false);
                             level.addFreshEntity(witherMissile);
                             ProjectileAbility.activate(arrow, ProjectileAbilityHooks.INSTANT_DISCARD);
                             TCompat.COOLDOWN_HANDLER.addCooldown(entity, modifier.getId(), 40);
@@ -99,15 +95,6 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
                     }
                 }
             }
-        }
-    }
-
-    private void appendModifiers(IToolStackView tool, LivingEntity shooter, Projectile projectile) {
-        ModifierNBT modifiers = tool.getModifiers();
-        EntityModifierCapability.getCapability(projectile).addModifiers(modifiers);
-        ModDataNBT arrowData = PersistentDataCapability.getOrWarn(projectile);
-        for(ModifierEntry entry : modifiers.getModifiers()) {
-            entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, entry, shooter, ItemStack.EMPTY, projectile, null, arrowData, false);
         }
     }
 

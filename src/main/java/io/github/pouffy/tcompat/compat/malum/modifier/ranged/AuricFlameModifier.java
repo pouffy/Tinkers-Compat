@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.ranged;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.modifier.base.MalumStaffModifier;
 import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
@@ -54,6 +55,10 @@ public class AuricFlameModifier extends MalumStaffModifier {
         float velocity = 2.0F;
         double magicDamage = ObjectRetriever.getAttribute("lodestone:magic_damage").map(attr -> entity.getAttributes().getValue(attr) * 0.3F).orElse(0.0D);
         Vec3 pos = this.getProjectileSpawnPos(entity, hand, 0.5F, 0.5F);
-        MalumHandler.createAuricFlame(entity, pos, pitchOffset, spawnDelay, velocity, (float) magicDamage, spread);
+        var auricFlame = MalumHandler.createAuricFlame(entity, pos, pitchOffset, spawnDelay, velocity, (float) magicDamage, spread);
+        if (auricFlame != null) {
+            ProjectileAbilityHooks.addModifiersToProjectile(tool, entity, auricFlame, count < (getProjectileCount(level, entity, chargePercentage) / 2));
+            level.addFreshEntity(auricFlame);
+        }
     }
 }

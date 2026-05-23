@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.ranged;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.modifier.base.MalumStaffModifier;
 import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
@@ -53,6 +54,10 @@ public class MnemonicModifier extends MalumStaffModifier {
         float velocity = 3.0F + 0.5F * (float)count;
         double magicDamage = ObjectRetriever.getAttribute("lodestone:magic_damage").map(attr -> entity.getAttributes().getValue(attr)).orElse(0.0D);
         Vec3 pos = this.getProjectileSpawnPos(entity, hand, 0.5F, 0.5F);
-        MalumHandler.createHexBolt(entity, pos, pitchOffset, spawnDelay, velocity, (float) magicDamage);
+        var hexBolt = MalumHandler.createHexBolt(entity, pos, pitchOffset, spawnDelay, velocity, (float) magicDamage);
+        if (hexBolt != null) {
+            ProjectileAbilityHooks.addModifiersToProjectile(tool, entity, hexBolt, count < (getProjectileCount(level, entity, chargePercentage) / 2));
+            level.addFreshEntity(hexBolt);
+        }
     }
 }

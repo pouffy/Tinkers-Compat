@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.ranged;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.modifier.base.MalumStaffModifier;
 import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
@@ -56,6 +57,15 @@ public class ErosionModifier extends MalumStaffModifier {
         float velocity = 4.0F;
         double magicDamage = ObjectRetriever.getAttribute("lodestone:magic_damage").map(attr -> entity.getAttributes().getValue(attr) - 2.0F).orElse(0.0D);
         Vec3 pos = this.getProjectileSpawnPos(entity, hand, 0.5F, 0.5F);
-        MalumHandler.createErosion(entity, pos, pitchOffset, spawnDelay, velocity, (float) magicDamage);
+        for(int i = 0; i < 4; ++i) {
+            var erosion = MalumHandler.createErosion(entity, pos, pitchOffset, spawnDelay, velocity, (float) magicDamage);
+            if (erosion != null) {
+                if (i > 1) {
+                    erosion.setSilent(true);
+                }
+                ProjectileAbilityHooks.addModifiersToProjectile(tool, entity, erosion, (count + i) < ((getProjectileCount(level, entity, chargePercentage) + 4) / 2));
+                level.addFreshEntity(erosion);
+            }
+        }
     }
 }

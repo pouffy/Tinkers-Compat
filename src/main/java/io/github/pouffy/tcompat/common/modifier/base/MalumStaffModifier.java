@@ -22,7 +22,6 @@ import slimeknights.tconstruct.library.modifiers.hook.interaction.UsingToolModif
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
-import slimeknights.tconstruct.library.tools.item.ranged.ModifiableLauncherItem;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
 
@@ -59,6 +58,7 @@ public abstract class MalumStaffModifier extends NoLevelsModifier implements Gen
     @Override
     public void beforeReleaseUsing(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int useDuration, int timeLeft, ModifierEntry activeModifier) {
         Level level = entity.level();
+        if (GeneralInteractionModifierHook.getActiveModifier(tool) != modifier) return;
         float chargePercentage = Math.min(this.chargeDuration, (float)(this.getUseDuration(tool, modifier) - timeLeft)) / this.chargeDuration;
         int projectileCount = this.getProjectileCount(level, entity, chargePercentage);
         if (projectileCount > 0) {
@@ -91,6 +91,7 @@ public abstract class MalumStaffModifier extends NoLevelsModifier implements Gen
 
     public void onUsingTick(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, int timeLeft) {
         int useDuration = this.getUseDuration(tool, modifier);
+        if (GeneralInteractionModifierHook.getActiveModifier(tool) != modifier) return;
         float chargePercentage = Math.min(this.chargeDuration, (float)(useDuration - timeLeft)) / this.chargeDuration;
         Level level = entity.level();
         if (level.isClientSide) {

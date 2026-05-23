@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.ranged;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.modifier.base.AbstractTeamUpModifier;
 import io.github.pouffy.tcompat.compat.cataclysm.modifier.CataclysmHandler;
@@ -106,6 +107,7 @@ public class PhantasmicModifier extends AbstractTeamUpModifier implements Projec
                     abstractArrow.setCritArrow(true);
                 }
 
+                ProjectileAbilityHooks.addModifiersToProjectile(tool, shooter, abstractArrow, false);
                 shooter.level().addFreshEntity(abstractArrow);
             }
         }

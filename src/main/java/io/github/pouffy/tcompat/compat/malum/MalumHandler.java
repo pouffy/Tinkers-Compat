@@ -28,6 +28,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -151,41 +152,33 @@ public class MalumHandler {
         }
     }
 
-    public static void createHexBolt(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage) {
-        if (!CompatHelper.isLoaded("malum")) return;
+    public static Projectile createHexBolt(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage) {
+        if (!CompatHelper.isLoaded("malum")) return null;
         HexBoltEntity entity = new HexBoltEntity(shooter.level(), pos.x, pos.y, pos.z);
         entity.setData(shooter, magicDamage, spawnDelay);
         entity.setItem(shooter.getUseItem());
         entity.shootFromRotation(shooter, shooter.getXRot(), shooter.getYRot(), -pitchOffset, velocity, 0.0F);
-        shooter.level().addFreshEntity(entity);
+        return entity;
     }
 
-    public static void createErosion(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage) {
-        if (!CompatHelper.isLoaded("malum")) return;
+    public static Projectile createErosion(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage) {
+        if (!CompatHelper.isLoaded("malum")) return null;
         Level level = shooter.level();
-        for(int i = 0; i < 4; ++i) {
-            float xSpread = RandomHelper.randomBetween(level.random, -0.125F, 0.125F);
-            float ySpread = RandomHelper.randomBetween(level.random, -0.025F, 0.025F);
-            DrainingBoltEntity entity = new DrainingBoltEntity(level, pos.x, pos.y, pos.z);
-            if (i > 1) {
-                entity.setSilent(true);
-            }
-
-            entity.setData(shooter, magicDamage, spawnDelay);
-            entity.setItem(shooter.getUseItem());
-            entity.shootFromRotation(shooter, shooter.getXRot(), shooter.getYRot(), -pitchOffset, velocity, 0.0F);
-            Vec3 projectileDirection = entity.getDeltaMovement();
-            float yRot = (float)(Mth.atan2(projectileDirection.x, projectileDirection.z) * (double)(180F / (float)Math.PI));
-            float yaw = (float)Math.toRadians(yRot);
-            Vec3 left = new Vec3(-Math.cos(yaw), 0.0F, Math.sin(yaw));
-            Vec3 up = left.cross(projectileDirection);
-            entity.setDeltaMovement(entity.getDeltaMovement().add(left.scale(xSpread)).add(up.scale(ySpread)));
-            level.addFreshEntity(entity);
-        }
+        DrainingBoltEntity entity = new DrainingBoltEntity(level, pos.x, pos.y, pos.z);
+        entity.setData(shooter, magicDamage, spawnDelay);
+        entity.setItem(shooter.getUseItem());
+        entity.shootFromRotation(shooter, shooter.getXRot(), shooter.getYRot(), -pitchOffset, velocity, 0.0F);
+        Vec3 projectileDirection = entity.getDeltaMovement();
+        float yRot = (float)(Mth.atan2(projectileDirection.x, projectileDirection.z) * (double)(180F / (float)Math.PI));
+        float yaw = (float)Math.toRadians(yRot);
+        Vec3 left = new Vec3(-Math.cos(yaw), 0.0F, Math.sin(yaw));
+        Vec3 up = left.cross(projectileDirection);
+        entity.setDeltaMovement(entity.getDeltaMovement().add(left.scale(RandomHelper.randomBetween(level.random, -0.125F, 0.125F))).add(up.scale(RandomHelper.randomBetween(level.random, -0.025F, 0.025F))));
+        return entity;
     }
 
-    public static void createAuricFlame(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage, float spread) {
-        if (!CompatHelper.isLoaded("malum")) return;
+    public static Projectile createAuricFlame(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage, float spread) {
+        if (!CompatHelper.isLoaded("malum")) return null;
         Level level = shooter.level();
         AuricFlameBoltEntity entity = new AuricFlameBoltEntity(level, pos.x, pos.y, pos.z);
         entity.setData(shooter, magicDamage, spawnDelay);
@@ -196,7 +189,7 @@ public class MalumHandler {
         float yaw = (float)Math.toRadians(yRot);
         Vec3 left = new Vec3(-Math.cos(yaw), 0.0F, Math.sin(yaw));
         entity.setDeltaMovement(entity.getDeltaMovement().add(left.scale(spread)));
-        level.addFreshEntity(entity);
+        return entity;
     }
 
     public static void staffHurtEvent(LivingHurtEvent event, LivingEntity attacker, LivingEntity target, ItemStack stack) {

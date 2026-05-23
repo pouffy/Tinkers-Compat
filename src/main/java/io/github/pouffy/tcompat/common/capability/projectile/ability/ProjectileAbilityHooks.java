@@ -5,10 +5,19 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.event.ForgeEventFactory;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.tools.capability.EntityModifierCapability;
+import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 public class ProjectileAbilityHooks {
 
@@ -45,6 +54,23 @@ public class ProjectileAbilityHooks {
      * @see VoidScatterAbility
      */
     public static final String VOID_SCATTER = "void_scatter";
+
+
+    /**
+     * Adds modifier data to launched projectiles. Used when summoning non-vanilla projectiles via modifiers.
+     * @param tool the current ToolStack
+     * @param shooter the shooting entity
+     * @param projectile the projectile to be modified
+     * @param primary if the projectile should be considered the "main" projectile
+     */
+    public static void addModifiersToProjectile(IToolStackView tool, LivingEntity shooter, Projectile projectile, boolean primary) {
+        ModifierNBT modifiers = tool.getModifiers();
+        EntityModifierCapability.getCapability(projectile).addModifiers(modifiers);
+        ModDataNBT arrowData = PersistentDataCapability.getOrWarn(projectile);
+        for(ModifierEntry entry : modifiers.getModifiers()) {
+            entry.getHook(ModifierHooks.PROJECTILE_LAUNCH).onProjectileLaunch(tool, entry, shooter, ItemStack.EMPTY, projectile, null, arrowData, primary);
+        }
+    }
 
     public static void damageShield(Player player, float damage) {
         ItemStack shield = player.getUseItem();
