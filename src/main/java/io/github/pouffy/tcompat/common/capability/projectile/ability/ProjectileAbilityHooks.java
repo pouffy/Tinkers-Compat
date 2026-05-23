@@ -1,35 +1,17 @@
-package io.github.pouffy.tcompat.common.capability.projectile.leeching;
+package io.github.pouffy.tcompat.common.capability.projectile.ability;
 
-import io.github.pouffy.tcompat.common.capability.TCompatCapabilities;
-import io.github.pouffy.tcompat.common.network.base.INBTSynchable;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.ToolActions;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.ForgeEventFactory;
 
-//TODO: Look over this. Some effects don't work properly.
-public interface ProjectileAbility extends INBTSynchable<CompoundTag> {
-    Projectile getProjectile();
+public class ProjectileAbilityHooks {
 
-    static LazyOptional<ProjectileAbility> get(Projectile projectile) {
-        return projectile.getCapability(TCompatCapabilities.PROJECTILE_ABILITY_CAPABILITY);
-    }
-
-    void setLeeching(boolean isLeeching);
-    boolean isLeeching();
-    void setAmphithere(boolean isAmphithere);
-    boolean isAmphithere();
-    void setStymphalian(boolean isStymphalian);
-    boolean isStymphalian();
-
-    static void damageShield(Player player, float damage) {
+    public static void damageShield(Player player, float damage) {
         ItemStack shield = player.getUseItem();
 
         if (damage < 3.0F || !player.isBlocking() || !shield.canPerformAction(ToolActions.SHIELD_BLOCK)) return;

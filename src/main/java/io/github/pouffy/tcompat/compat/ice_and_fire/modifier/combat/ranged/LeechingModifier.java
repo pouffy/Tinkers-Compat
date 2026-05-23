@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.combat.ranged;
 
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbility;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -36,7 +37,7 @@ public class LeechingModifier extends NoLevelsModifier implements ProjectileShoo
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         context.getAttacker().heal(damageDealt);
         if (context.getLivingTarget() instanceof Player player) {
-            ProjectileAbility.damageShield(player, damageDealt);
+            ProjectileAbilityHooks.damageShield(player, damageDealt);
         }
     }
 
@@ -44,19 +45,13 @@ public class LeechingModifier extends NoLevelsModifier implements ProjectileShoo
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow) {
             if (attacker != null) attacker.heal((float) arrow.getBaseDamage());
-            if (target instanceof Player player) ProjectileAbility.damageShield(player, (float) arrow.getBaseDamage());
+            if (target instanceof Player player) ProjectileAbilityHooks.damageShield(player, (float) arrow.getBaseDamage());
         }
         return false;
     }
 
-    private void leech(Projectile projectile, LivingEntity shooter) {
-        ProjectileAbility.get(projectile).ifPresent(leeching -> {
-            leeching.setLeeching(true);
-        });
-    }
-
     @Override
     public void onProjectileShoot(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, ItemStack ammo, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        leech(projectile, shooter);
+        ProjectileAbility.activate(projectile, "leeching");
     }
 }

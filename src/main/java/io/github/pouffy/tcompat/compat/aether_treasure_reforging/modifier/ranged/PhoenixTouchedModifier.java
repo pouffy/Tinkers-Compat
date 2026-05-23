@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.aether_treasure_reforging.modifier.ranged;
 
-import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.types.PhoenixTouchedAbility;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -27,10 +28,11 @@ public class PhoenixTouchedModifier extends Modifier implements ProjectileLaunch
     }
 
     private void touch(ModifierEntry modifier, Projectile projectile) {
-        PhoenixTouched.get(projectile).ifPresent(phoenixProjectile -> {
-            phoenixProjectile.setPhoenixProjectile(true);
-            int defaultTime = 20 * modifier.getLevel();
-            phoenixProjectile.setFireTime(defaultTime);
+        ProjectileAbility.get(projectile).ifPresent(ability -> {
+            if (ability.getAbility("phoenix_touched") instanceof PhoenixTouchedAbility phoenixTouched) {
+                phoenixTouched.setActive(true);
+                phoenixTouched.setFireTime(20 * modifier.getLevel());
+            }
         });
     }
 }

@@ -1,5 +1,8 @@
 package io.github.pouffy.tcompat.common.cooldown;
 
+import lombok.Getter;
+
+@Getter
 public class CooldownInstance {
     private int cooldownRemaining;
     private final int startCooldown;
@@ -20,14 +23,6 @@ public class CooldownInstance {
 
     public void decrementBy(int amount) {
         cooldownRemaining -= amount;
-    }
-
-    public int getCooldownRemaining() {
-        return cooldownRemaining;
-    }
-
-    public int getStartCooldown() {
-        return startCooldown;
     }
 
     public float getCooldownPercent() {

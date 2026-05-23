@@ -1,8 +1,7 @@
 package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.capability.projectile.phoenix_touched.PhoenixTouched;
-import io.github.pouffy.tcompat.common.capability.projectile.void_scatter.VoidScatter;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
@@ -24,8 +23,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
@@ -49,23 +46,14 @@ public class TCCommonEvents {
 
     @SubscribeEvent
     static void projectileHit(ProjectileImpactEvent event) {
-        HitResult hit = event.getRayTraceResult();
         if (event.getEntity() instanceof Projectile projectile) {
-            if (hit instanceof EntityHitResult entityHitResult) {
-                PhoenixTouched.get(projectile).ifPresent(phoenixTouched -> {
-                    if (phoenixTouched.isPhoenixProjectile() && phoenixTouched.getFireTime() > 0) {
-                        entityHitResult.getEntity().setSecondsOnFire(phoenixTouched.getFireTime());
-                    }
+            ProjectileAbility.get(projectile).ifPresent(projectileAbility -> {
+                Projectile innerProjectile = projectileAbility.projectile();
+                projectileAbility.getActiveAbilities().forEach((name, ability) -> {
+                    ability.impactEvent(event, innerProjectile);
                 });
-            }
-            VoidScatter.get(projectile).ifPresent(voidScatter -> {
-                if (voidScatter.shouldScatter()) {
-                    voidScatter.hit(projectile, event.getRayTraceResult());
-                    voidScatter.setScatter(false);
-                }
             });
         }
-
     }
 
     @SubscribeEvent

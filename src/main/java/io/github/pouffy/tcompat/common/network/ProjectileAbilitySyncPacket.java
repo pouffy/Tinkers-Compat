@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.common.network;
 
-import io.github.pouffy.tcompat.common.capability.projectile.leeching.ProjectileAbility;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.network.base.INBTSynchable;
 import io.github.pouffy.tcompat.common.network.base.SyncEntityPacket;
 import net.minecraft.network.FriendlyByteBuf;

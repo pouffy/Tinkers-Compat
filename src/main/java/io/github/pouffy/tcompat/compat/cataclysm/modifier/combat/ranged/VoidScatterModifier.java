@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.ranged;
 
-import io.github.pouffy.tcompat.common.capability.projectile.void_scatter.VoidScatter;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -23,12 +23,6 @@ public class VoidScatterModifier extends NoLevelsModifier implements ProjectileL
 
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        mark(projectile);
-    }
-
-    private void mark(Projectile projectile) {
-        VoidScatter.get(projectile).ifPresent(phoenixProjectile -> {
-            phoenixProjectile.setScatter(true);
-        });
+        ProjectileAbility.activate(projectile, "void_scatter");
     }
 }

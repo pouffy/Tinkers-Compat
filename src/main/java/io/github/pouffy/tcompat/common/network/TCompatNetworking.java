@@ -18,9 +18,7 @@ public class TCompatNetworking {
     private static int index;
 
     public static synchronized void register() {
-        register(PhoenixProjectileSyncPacket.class, PhoenixProjectileSyncPacket::decode);
         register(ProjectileAbilitySyncPacket.class, ProjectileAbilitySyncPacket::decode);
-        register(VoidScatterSyncPacket.class, VoidScatterSyncPacket::decode);
         register(VoidTouchedSyncPacket.class, VoidTouchedSyncPacket::decode);
         register(LightningOwnerSyncPacket.class, LightningOwnerSyncPacket::decode);
         register(VampireHealingSyncPacket.class, VampireHealingSyncPacket::decode);
