@@ -224,8 +224,11 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.NEPTUNE_MESH).addOptional(getResource("aether_treasure_reforging", "neptune_mesh"));
         this.tag(TCTags.Items.PYRAL_INGOTS).addOptional(getResource("aether_treasure_reforging", "pyral_ingot"));
         this.tag(TCTags.Items.PYRAL_BLOCKS).addOptional(getResource("aether_treasure_reforging", "pyral_block"));
-        this.tag(TCTags.Items.VALKYRUM_INGOTS).addOptional(getResource("aether_treasure_reforging", "valkyrum_ingot"));
+        this.tag(TCTags.Items.VALKYRUM_INGOTS).addOptional(getResource("aether_treasure_reforging", "valkyrum_ingot")).addOptional(getResource("ancient_aether", "valkyrum"));
         this.tag(TCTags.Items.VALKYRUM_BLOCKS).addOptional(getResource("aether_treasure_reforging", "valkyrum_block"));
+        this.tag(TCTags.Items.VALKYRUM_ORES).addOptional(getResource("ancient_aether", "valkyrum_ore"));
+        this.tag(TCTags.Items.RAW_VALKYRUM).addOptional(getResource("ancient_aether", "raw_valkyrum"));
+        this.tag(TCTags.Items.VALKYRUM_RAW_BLOCKS).addOptional(getResource("ancient_aether", "raw_valkyrum_block"));
         this.tag(TCTags.Items.THALLASIUM_INGOTS).addOptional(getResource("betterend", "thallasium_ingot"));
         this.tag(TCTags.Items.THALLASIUM_PLATES).addOptional(getResource("betterend", "thallasium_forged_plate"));
         this.tag(TCTags.Items.THALLASIUM_NUGGETS).addOptional(getResource("betterend", "thallasium_nugget"));

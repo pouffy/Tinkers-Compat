@@ -13,7 +13,8 @@
     "ServerPlayerMixin",
     "aether.AbilityHooksMixin",
     "aether.WeaponHooksMixin",
-    "malum.SpiritHarvestHandlerMixin"
+    "malum.SpiritHarvestHandlerMixin",
+    "malum.VoidConduitBlockEntityMixin"
   ],
   "client": [
     "LivingEntityRendererMixin",

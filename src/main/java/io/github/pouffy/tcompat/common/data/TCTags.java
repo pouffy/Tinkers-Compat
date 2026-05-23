@@ -129,6 +129,9 @@ public class TCTags {
         public static TagKey<Item> PYRAL_BLOCKS  = common("storage_blocks/pyral");
         public static TagKey<Item> VALKYRUM_INGOTS  = common("ingots/valkyrum");
         public static TagKey<Item> VALKYRUM_BLOCKS  = common("storage_blocks/valkyrum");
+        public static TagKey<Item> VALKYRUM_ORES  = common("ores/valkyrum");
+        public static TagKey<Item> RAW_VALKYRUM  = common("raw_materials/valkyrum");
+        public static TagKey<Item> VALKYRUM_RAW_BLOCKS = common("storage_blocks/raw_valkyrum");
         public static TagKey<Item> SENTRITE_STONE_BLOCKS = local("sentrite/stone_blocks");
         public static TagKey<Item> SENTRITE_STONE_SLABS = local("sentrite/stone_slabs");
 
