@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.deep_aether;
 
+import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.data.recipe.TCShapedRecipeBuilder;
 import io.github.pouffy.tcompat.common.data.recipe.TCShapelessRecipeBuilder;
@@ -14,16 +15,20 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
+import slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import java.util.function.Consumer;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
+import static slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe.getTemperature;
 
 public class DeepAetherSmeltery implements CompatSmeltery {
     @Override
@@ -76,6 +81,12 @@ public class DeepAetherSmeltery implements CompatSmeltery {
         glovesMelting(cConsumer, TCFluids.moltenStormforgedSteel, FluidValues.INGOT * 2, "stormforged_steel", ItemNameIngredient.from(compatId("stormforged_gloves")), gemFolder("melting"), true, new int[]{FluidValues.NUGGET});
 
         nugget(cConsumer, "stormforged_steel", TCTags.Items.STORMFORGED_STEEL_NUGGETS, TCTags.Items.STORMFORGED_STEEL_INGOTS);
+
+        ItemCastingRecipeBuilder.tableDuplication()
+                .setCast(ItemNameIngredient.from(compatId("stratus_smithing_template")), false)
+                .setCoolingTime(IMeltingRecipe.calcTime(getTemperature(TCFluids.moltenGravitite), IMeltingRecipe.calcTimeFactor(FluidValues.INGOT * 5)))
+                .setFluid(TCFluids.moltenGravitite.ingredient(FluidValues.INGOT * 5))
+                .save(consumer, location(metalFolder("casting") + "/gravitite/smithing_template"));
     }
 
     void nugget(Consumer<FinishedRecipe> consumer, String type, TagKey<Item> nugget, TagKey<Item> ingot) {

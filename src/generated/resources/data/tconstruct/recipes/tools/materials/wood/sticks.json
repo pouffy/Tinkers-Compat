@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "tcompat:recipe/non_aether_wooden_rods"
+  },
+  "material": "tconstruct:wood",
+  "needed": 2,
+  "value": 1
+}

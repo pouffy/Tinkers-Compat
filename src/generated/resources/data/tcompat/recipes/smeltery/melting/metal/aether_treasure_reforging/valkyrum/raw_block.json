@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 900,
+      "fluid": "tconstruct:molten_quartz",
+      "rate": "gem"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/raw_valkyrum"
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 810,
+    "fluid": "tcompat:molten_valkyrum"
+  },
+  "temperature": 1275,
+  "time": 445
+}

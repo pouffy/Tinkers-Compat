@@ -1,6 +1,7 @@
 {
   "color": "FF7C623E",
   "fallbacks": [
+    "alpha",
     "wood",
     "stick",
     "primitive"

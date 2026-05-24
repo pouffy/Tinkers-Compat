@@ -135,6 +135,8 @@ public class TCTags {
         public static TagKey<Item> SENTRITE_STONE_BLOCKS = local("sentrite/stone_blocks");
         public static TagKey<Item> SENTRITE_STONE_SLABS = local("sentrite/stone_slabs");
 
+        public static TagKey<Item> QUARTZ_ORES  = common("ores/quartz");
+
         public static TagKey<Item> THALLASIUM_INGOTS  = common("ingots/thallasium");
         public static TagKey<Item> THALLASIUM_NUGGETS  = common("nuggets/thallasium");
         public static TagKey<Item> THALLASIUM_PLATES = common("plates/thallasium");
@@ -239,7 +241,16 @@ public class TCTags {
         public static TagKey<Item> MALIGNANT_LEAD_GEMS = common("gems/malignant_lead");
         public static TagKey<Item> MALIGNANT_LEAD_BLOCKS = common("storage_blocks/malignant_lead");
 
+        public static TagKey<Item> DIAMOND_SMITHING_TEMPLATES  = local("recipe/diamond_smithing_templates");
+        public static TagKey<Item> NON_AETHER_WOODEN_RODS = local("recipe/non_aether_wooden_rods");
+        public static TagKey<Item> AETHER_WOODEN_RODS = local("recipe/aether_wooden_rods");
+
+        public static TagKey<Item> VALKYRUM_SMITHING_TEMPLATES  = local("recipe/valkyrum_smithing_templates");
+        public static TagKey<Item> TREASURE_SMITHING_TEMPLATES  = local("recipe/treasure_smithing_templates");
+
         public static TagKey<Item> DARTS = named("aether", "darts");
+
+        public static TagKey<Item> ALPHA_LOGS = named("regions_unexplored", "logs/alpha");
 
         public static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));

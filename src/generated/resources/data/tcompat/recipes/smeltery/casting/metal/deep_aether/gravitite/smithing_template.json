@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:table_duplication",
+  "cast": {
+    "item": "deep_aether:stratus_smithing_template"
+  },
+  "cooling_time": 153,
+  "fluid": {
+    "amount": 450,
+    "tag": "tcompat:molten_gravitite"
+  }
+}

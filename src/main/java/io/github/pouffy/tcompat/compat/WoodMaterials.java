@@ -50,7 +50,7 @@ public class WoodMaterials {
             witchHazel = woodVariant(TCWoods.WITCH_HAZEL,                   0xFF183A26, 0xFF1D442D, 0xFF214F34, 0xFF225337, 0xFF286240, 0xFF31774D, 0xFF3B8C5B),
             zelkova = woodVariant(TCWoods.ZELKOVA,                          0xFF4F2713, 0xFF592F17, 0xFF66351A, 0xFF824A23, 0xFF96582F, 0xFFAB6336, 0xFFBF6D36),
     // Regions Unexplored
-            alpha = woodVariant(TCWoods.ALPHA,                              0xFF4c3d26, 0xFF695433, 0xFF735e39, 0xFF7c623e, 0xFF9f844d, 0xFFb4905a, 0xFFbc9862),
+            alpha = alphaWoodVariant(TCWoods.ALPHA,                         0xFF4c3d26, 0xFF695433, 0xFF735e39, 0xFF7c623e, 0xFF9f844d, 0xFFb4905a, 0xFFbc9862),
             blackwood = woodVariant(TCWoods.BLACKWOOD,                      0xFF130f0c, 0xFF1b1510, 0xFF1f1813, 0xFF261e18, 0xFF2c241d, 0xFF372d27, 0xFF3d332c),
             blueBioshroom = woodVariant(TCWoods.BLUE_BIOSHROOM,             0xFF2a748d, 0xFF398b9f, 0xFF419aae, 0xFF4bacc2, 0xFF57bbd1, 0xFF65c9db, 0xFF82d9e7),
             brimwood = woodVariant(TCWoods.BRIMWOOD, transformerFromSprite(getResource("generator/brimwood"), 2, 0)),
@@ -119,6 +119,15 @@ public class WoodMaterials {
         var builder = MaterialBuilder.variant(woodType.makeCondition(), woodType.getSerializedName(), MaterialIds.wood)
                 .lang(TCLangProv.toEngStr(woodType.getSerializedName()) + " Wood")
                 .renderInfo(r -> r.color(c178).fallbacks("wood", "stick", "primitive"))
+                .spriteInfo(s -> s.planks().sevenColor(c63, c102, c140, c178, c216, c234, c255));
+        MaterialBuilder.woodMaterials.put(builder, woodType);
+        return builder.buildVariant();
+    }
+
+    private static MaterialVariantId alphaWoodVariant(TCWoods woodType, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
+        var builder = MaterialBuilder.variant(woodType.makeCondition(), woodType.getSerializedName(), MaterialIds.wood)
+                .lang(TCLangProv.toEngStr(woodType.getSerializedName()) + " Wood")
+                .renderInfo(r -> r.color(c178).fallbacks("alpha", "wood", "stick", "primitive"))
                 .spriteInfo(s -> s.planks().sevenColor(c63, c102, c140, c178, c216, c234, c255));
         MaterialBuilder.woodMaterials.put(builder, woodType);
         return builder.buildVariant();

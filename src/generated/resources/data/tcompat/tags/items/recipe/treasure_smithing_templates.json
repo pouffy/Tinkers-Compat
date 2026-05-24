@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "ancient_aether:mosaic_armor_trim_smithing_template",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:royal_armor_trim_smithing_template",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:solar_armor_trim_smithing_template",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:ancient_armor_trim_smithing_template",
+      "required": false
+    }
+  ]
+}

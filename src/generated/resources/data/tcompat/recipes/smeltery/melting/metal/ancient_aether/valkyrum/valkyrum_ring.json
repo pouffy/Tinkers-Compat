@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ancient_aether"
+    }
+  ],
+  "ingredient": {
+    "item": "ancient_aether:valkyrum_ring"
+  },
+  "result": {
+    "amount": 360,
+    "fluid": "tcompat:molten_valkyrum"
+  },
+  "temperature": 1275,
+  "time": 148
+}

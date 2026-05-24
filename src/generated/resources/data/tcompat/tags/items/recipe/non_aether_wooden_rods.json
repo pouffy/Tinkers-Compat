@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "#tcompat:recipe/aether_wooden_rods"
+  ],
+  "values": [
+    "#forge:rods/wooden"
+  ]
+}

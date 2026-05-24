@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ancient_aether"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:recipe/valkyrum_smithing_templates"
+  },
+  "result": {
+    "amount": 450,
+    "fluid": "tcompat:molten_valkyrum"
+  },
+  "temperature": 1275,
+  "time": 166
+}

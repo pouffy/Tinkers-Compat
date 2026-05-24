@@ -3,6 +3,10 @@
     {
       "id": "aether_treasure_reforging:valkyrum_block",
       "required": false
+    },
+    {
+      "id": "ancient_aether:valkyrum_block",
+      "required": false
     }
   ]
 }

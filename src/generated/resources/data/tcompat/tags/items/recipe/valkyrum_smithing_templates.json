@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "ancient_aether:wynd_armor_trim_smithing_template",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:whale_armor_trim_smithing_template",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:ascended_armor_trim_smithing_template",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:mysterious_armor_trim_smithing_template",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:mechanical_armor_trim_smithing_template",
+      "required": false
+    }
+  ]
+}

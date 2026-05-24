@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ancient_aether"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "ancient_aether:valkyrum_pickaxe"
+    },
+    {
+      "item": "ancient_aether:valkyrum_axe"
+    }
+  ],
+  "result": {
+    "amount": 270,
+    "fluid": "tcompat:molten_valkyrum",
+    "unit_size": 10
+  },
+  "temperature": 1275,
+  "time": 129
+}

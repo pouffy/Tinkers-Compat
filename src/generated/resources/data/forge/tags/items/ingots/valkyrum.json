@@ -3,6 +3,10 @@
     {
       "id": "aether_treasure_reforging:valkyrum_ingot",
       "required": false
+    },
+    {
+      "id": "ancient_aether:valkyrum",
+      "required": false
     }
   ]
 }

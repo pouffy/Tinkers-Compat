@@ -1,0 +1,9 @@
+{
+  "remove": [
+    "#tcompat:recipe/valkyrum_smithing_templates",
+    "#tcompat:recipe/treasure_smithing_templates"
+  ],
+  "values": [
+    "#minecraft:trim_templates"
+  ]
+}

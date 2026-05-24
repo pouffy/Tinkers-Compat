@@ -14,6 +14,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -196,6 +197,25 @@ public class TCItemTagProv extends ItemTagsProvider {
                 .addOptional(getResource("betternether", "cincinnasite_ore"))
                 .addOptional(getResource("betternether", "nether_ruby_ore"));
 
+        this.tag(TCTags.Items.VALKYRUM_SMITHING_TEMPLATES)
+                .addOptional(getResource("ancient_aether", "wynd_armor_trim_smithing_template"))
+                .addOptional(getResource("ancient_aether", "whale_armor_trim_smithing_template"))
+                .addOptional(getResource("ancient_aether", "ascended_armor_trim_smithing_template"))
+                .addOptional(getResource("ancient_aether", "mysterious_armor_trim_smithing_template"))
+                .addOptional(getResource("ancient_aether", "mechanical_armor_trim_smithing_template"));
+        this.tag(TCTags.Items.TREASURE_SMITHING_TEMPLATES)
+                .addOptional(getResource("ancient_aether", "mosaic_armor_trim_smithing_template"))
+                .addOptional(getResource("ancient_aether", "royal_armor_trim_smithing_template"))
+                .addOptional(getResource("ancient_aether", "solar_armor_trim_smithing_template"))
+                .addOptional(getResource("ancient_aether", "ancient_armor_trim_smithing_template"));
+        this.tag(TCTags.Items.DIAMOND_SMITHING_TEMPLATES)
+                .addTag(ItemTags.TRIM_TEMPLATES)
+                .remove(TCTags.Items.VALKYRUM_SMITHING_TEMPLATES)
+                .remove(TCTags.Items.TREASURE_SMITHING_TEMPLATES);
+
+        this.tag(TCTags.Items.AETHER_WOODEN_RODS).addOptional(getResource("aether", "skyroot_stick"));
+        this.tag(TCTags.Items.NON_AETHER_WOODEN_RODS).addTag(Tags.Items.RODS_WOODEN).remove(TCTags.Items.AETHER_WOODEN_RODS);
+
         // Specific Tags
         this.tag(TCTags.Items.ZANITE_GEMS).addOptional(getResource("aether", "zanite_gemstone"));
         this.tag(TCTags.Items.ZANITE_BLOCKS).addOptional(getResource("aether", "zanite_block"));
@@ -225,10 +245,11 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.PYRAL_INGOTS).addOptional(getResource("aether_treasure_reforging", "pyral_ingot"));
         this.tag(TCTags.Items.PYRAL_BLOCKS).addOptional(getResource("aether_treasure_reforging", "pyral_block"));
         this.tag(TCTags.Items.VALKYRUM_INGOTS).addOptional(getResource("aether_treasure_reforging", "valkyrum_ingot")).addOptional(getResource("ancient_aether", "valkyrum"));
-        this.tag(TCTags.Items.VALKYRUM_BLOCKS).addOptional(getResource("aether_treasure_reforging", "valkyrum_block"));
+        this.tag(TCTags.Items.VALKYRUM_BLOCKS).addOptional(getResource("aether_treasure_reforging", "valkyrum_block")).addOptional(getResource("ancient_aether", "valkyrum_block"));
         this.tag(TCTags.Items.VALKYRUM_ORES).addOptional(getResource("ancient_aether", "valkyrum_ore"));
-        this.tag(TCTags.Items.RAW_VALKYRUM).addOptional(getResource("ancient_aether", "raw_valkyrum"));
-        this.tag(TCTags.Items.VALKYRUM_RAW_BLOCKS).addOptional(getResource("ancient_aether", "raw_valkyrum_block"));
+        this.tag(TCTags.Items.RAW_VALKYRUM).addOptional(getResource("aether_redux", "raw_valkyrum"));
+        this.tag(TCTags.Items.VALKYRUM_RAW_BLOCKS).addOptional(getResource("aether_redux", "raw_valkyrum_block"));
+        this.tag(TCTags.Items.QUARTZ_ORES).addOptional(getResource("ancient_aether", "aether_quartz_ore"));
         this.tag(TCTags.Items.THALLASIUM_INGOTS).addOptional(getResource("betterend", "thallasium_ingot"));
         this.tag(TCTags.Items.THALLASIUM_PLATES).addOptional(getResource("betterend", "thallasium_forged_plate"));
         this.tag(TCTags.Items.THALLASIUM_NUGGETS).addOptional(getResource("betterend", "thallasium_nugget"));
@@ -305,6 +326,9 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.CTHONIC_GOLD_ORES).addOptional(getResource("malum", "cthonic_gold_ore"));
         this.tag(TCTags.Items.MALIGNANT_LEAD_GEMS).addOptional(getResource("malum", "malignant_lead"));
         this.tag(TCTags.Items.MALIGNANT_LEAD_BLOCKS).addOptional(getResource("malum", "block_of_malignant_lead"));
+
+
+        this.tag(TCTags.Items.ALPHA_LOGS).addOptional(getResource("regions_unexplored", "alpha_log"));
     }
 
     private void addMetals() {

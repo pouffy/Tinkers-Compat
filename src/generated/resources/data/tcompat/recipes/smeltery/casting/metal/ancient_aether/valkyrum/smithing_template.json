@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:table_duplication",
+  "cast": {
+    "tag": "tcompat:recipe/valkyrum_smithing_templates"
+  },
+  "cooling_time": 166,
+  "fluid": {
+    "amount": 450,
+    "tag": "tcompat:molten_valkyrum"
+  }
+}

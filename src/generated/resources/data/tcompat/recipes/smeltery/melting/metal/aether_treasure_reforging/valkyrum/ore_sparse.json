@@ -1,0 +1,41 @@
+{
+  "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 100,
+      "fluid": "tconstruct:molten_quartz",
+      "rate": "gem"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "mantle:tag_combination_filled",
+      "match": [
+        "forge:ores/valkyrum",
+        "forge:ore_rates/sparse"
+      ]
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether_treasure_reforging"
+    }
+  ],
+  "ingredient": {
+    "type": "forge:intersection",
+    "children": [
+      {
+        "tag": "forge:ores/valkyrum"
+      },
+      {
+        "tag": "forge:ore_rates/sparse"
+      }
+    ]
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_valkyrum"
+  },
+  "temperature": 1275,
+  "time": 111
+}

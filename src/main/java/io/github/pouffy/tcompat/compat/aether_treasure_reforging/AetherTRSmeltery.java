@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.aether_treasure_reforging;
 
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
+import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCByproduct;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
@@ -9,6 +10,7 @@ import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
+import slimeknights.tconstruct.smeltery.data.Byproduct;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -22,7 +24,7 @@ public class AetherTRSmeltery implements CompatSmeltery {
         Function<String, ResourceLocation> aetherId = name -> getResource("aether", name);
         Function<String, ResourceLocation> aetherReduxId = name -> getResource("aether_redux", name);
 
-        metal(cConsumer, TCFluids.moltenValkyrum, compatModId()).metal(true).optional();
+        metal(cConsumer, TCFluids.moltenValkyrum, compatModId()).ore(TCByproduct.QUARTZ).metal(true).optional();
         metal(cConsumer, TCFluids.moltenPyral, compatModId()).metal(true).optional();
         //Misc Items
         simpleMelting(withCondition(cConsumer, new ModLoadedCondition("aether_redux")), TCFluids.moltenValkyrum, FluidValues.INGOT, "valkyrie", ItemNameIngredient.from(aetherReduxId.apply("grand_victory_medal")), metalFolder("melting"), "grand_victory_medal");
