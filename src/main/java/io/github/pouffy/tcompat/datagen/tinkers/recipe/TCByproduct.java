@@ -20,7 +20,7 @@ public enum TCByproduct implements IByproduct {
     GRAVITITE("gravitite", false, TCFluids.moltenGravitite, FluidValues.INGOT, IMeltingContainer.OreRateType.METAL),
     VERIDIUM("veridium", false, TCFluids.moltenVeridium, FluidValues.INGOT, IMeltingContainer.OreRateType.METAL),
     REFINED_SENTRITE("refined_sentrite", false, TCFluids.moltenRefinedSentrite, FluidValues.INGOT, IMeltingContainer.OreRateType.METAL),
-    QUARTZ("quartz", true, TinkerFluids.moltenQuartz, FluidValues.GEM, IMeltingContainer.OreRateType.GEM),
+    QUARTZ("quartz", true, TinkerFluids.moltenQuartz, FluidValues.INGOT, IMeltingContainer.OreRateType.GEM),
     ;
 
     private final String name;

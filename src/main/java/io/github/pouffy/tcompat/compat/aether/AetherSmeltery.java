@@ -32,8 +32,8 @@ public class AetherSmeltery implements CompatSmeltery {
 
         //Generic Melting
         gem(cConsumer, TCFluids.moltenZanite, compatModId())
-                .baseUnit(FluidValues.INGOT).damageUnit(FluidValues.NUGGET).oreRate(IMeltingContainer.OreRateType.METAL)
-                .sparseOre(0.5f).singularOre(1).denseOre(3).ore(TCByproduct.QUARTZ)
+                .baseUnit(FluidValues.INGOT).damageUnit(FluidValues.NUGGET).oreRate(IMeltingContainer.OreRateType.METAL).ore(TCByproduct.QUARTZ)
+                .sparseOre(0.5f).singularOre(1).denseOre(3)
                 .melting(9, "block", "storage_blocks", (float)Math.sqrt(9), false, true)
                 .blockCasting(9, Ingredient.EMPTY, true)
                 .meltingCasting(1, TinkerSmeltery.gemCast, 1.0f, true);
