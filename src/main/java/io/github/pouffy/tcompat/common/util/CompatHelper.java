@@ -144,22 +144,26 @@ public class CompatHelper {
         return null;
     }
 
-    public static ArrayList<ItemStack> getModifiableStacks(LivingEntity attacker) {
+    public static ArrayList<ItemStack> getModifiableStacks(LivingEntity wearer) {
         ArrayList<ItemStack> itemStacks = new ArrayList<>();
 
-        ItemStack mainHeld = attacker.getMainHandItem();
-        ItemStack offHeld = attacker.getOffhandItem();
+        ItemStack mainHeld = wearer.getMainHandItem();
+        ItemStack offHeld = wearer.getOffhandItem();
         if (isTool(mainHeld)) itemStacks.add(mainHeld);
         if (isTool(offHeld)) itemStacks.add(offHeld);
-
-        attacker.getArmorSlots().forEach(stack -> {
+        wearer.getArmorSlots().forEach(stack -> {
             if (isTool(stack)) itemStacks.add(stack);
         });
+        itemStacks.addAll(getModifiableCurios(wearer));
 
+        return itemStacks;
+    }
+
+    public static ArrayList<ItemStack> getModifiableCurios(LivingEntity wearer) {
+        ArrayList<ItemStack> itemStacks = new ArrayList<>();
         if (isLoaded("curios")) {
-            itemStacks.addAll(CuriosHandler.getCurioTools(attacker));
+            itemStacks.addAll(CuriosHandler.getCurioTools(wearer));
         }
-
         return itemStacks;
     }
 

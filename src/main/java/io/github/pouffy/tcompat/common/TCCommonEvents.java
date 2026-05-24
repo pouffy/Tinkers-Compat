@@ -12,6 +12,7 @@ import io.github.pouffy.tcompat.common.network.base.PacketRelay;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.ThunderstruckModifier;
+import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
@@ -139,6 +140,9 @@ public class TCCommonEvents {
         });
         VampireHealing.get(entity).ifPresent(VampireHealing::onUpdate);
         TCompat.COOLDOWN_HANDLER.tickEntity(entity);
+        if (CompatHelper.isLoaded("curios")) {
+            CuriosHandler.tickHook(event);
+        }
     }
 
     @SubscribeEvent

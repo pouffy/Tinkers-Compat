@@ -2,10 +2,7 @@ package io.github.pouffy.tcompat.compat;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
-import io.github.pouffy.tcompat.common.modifier.hook.AetherForgedModifierHook;
-import io.github.pouffy.tcompat.common.modifier.hook.CollectSpiritModifierHook;
-import io.github.pouffy.tcompat.common.modifier.hook.SoulExposureModifierHook;
-import io.github.pouffy.tcompat.common.modifier.hook.ToolSwingModifierHook;
+import io.github.pouffy.tcompat.common.modifier.hook.*;
 import io.github.pouffy.tcompat.common.modifier.module.*;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
@@ -69,6 +66,7 @@ public class GlobalInit extends CompatInitializer {
         @Override
         public void pickupSpirit(IToolStackView toolStack, ModifierEntry modifierEntry, LivingEntity collector, double arcaneResonance, float effectiveness) {}
     });
+    public static final ModuleHook<CurioTickModifierHook> CURIO_TICK = ModifierHooks.register(getResource("curio_tick"), CurioTickModifierHook.class, CurioTickModifierHook.AllMerger::new, (tool, modifierEntry, slotId, slotIndex, wearer, stack) -> {});
 
 
     public static LivingEntityPredicate SUN_EXPOSED = SingletonLoader.singleton((loader) -> new LivingEntityPredicate() {
