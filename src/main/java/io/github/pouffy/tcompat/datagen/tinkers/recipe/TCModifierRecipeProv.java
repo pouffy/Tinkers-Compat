@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
+import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
@@ -30,6 +31,7 @@ import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.IncrementalModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
@@ -335,6 +337,15 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .saveSalvage(malumConsumer, prefix(TCModifiers.integral, upgradeSalvage))
                 .save(malumConsumer, prefix(TCModifiers.integral, upgradeFolder));
 
+        malumRune(malumConsumer, MalumInit.runeOfMotion.getId(),    Ingredient.of(TinkerTags.Items.BOOTS));
+        malumRune(malumConsumer, MalumInit.runeOfLoyalty.getId(),   Ingredient.of(TinkerTags.Items.HELD));
+        malumRune(malumConsumer, MalumInit.runeOfWarding.getId(),   Ingredient.of(TinkerTags.Items.ARMOR));
+        malumRune(malumConsumer, MalumInit.runeOfHaste.getId(),     ingredientFromTags(TinkerTags.Items.HARVEST, TinkerTags.Items.MELEE));
+        malumRune(malumConsumer, MalumInit.runeOfTheAether.getId(), Ingredient.of(TinkerTags.Items.LEGGINGS));
+        malumRune(malumConsumer, MalumInit.runeOfTheSeas.getId(),   Ingredient.of(TinkerTags.Items.FISHING_RODS));
+        malumRune(malumConsumer, MalumInit.runeOfTheArena.getId(),  Ingredient.of(TinkerTags.Items.MELEE));
+        malumRune(malumConsumer, MalumInit.runeOfTheHells.getId(),  Ingredient.of(TinkerTags.Items.ARMOR));
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)
@@ -378,6 +389,16 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         MaterialBuilder.woodMaterials.forEach((builder, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, builder.variantId()));
         woodTexture(TCWoods.RUNEWOOD.makeConsumer(consumer), TCWoods.RUNEWOOD, MalumMaterials.runewood);
         woodTexture(TCWoods.SOULWOOD.makeConsumer(consumer), TCWoods.SOULWOOD, MalumMaterials.soulwood);
+    }
+
+    private void malumRune(Consumer<FinishedRecipe> consumer, ModifierId modifierId, Ingredient acceptants) {
+        ModifierRecipeBuilder.modifier(modifierId)
+                .setTools(acceptants)
+                .addInput(ItemNameIngredient.from(TCompat.getResource("malum", modifierId.getPath())))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(MalumInit.RUNE_SLOT, 1)
+                .saveSalvage(consumer, prefix(modifierId, "tools/modifiers/salvage/rune/"))
+                .save(consumer, prefix(modifierId, "tools/modifiers/rune/"));
     }
 
     private void woodTexture(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

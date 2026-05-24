@@ -130,6 +130,14 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(MalumInit.mnemonic.getId(),                0x792cec);
         addColor(MalumInit.erosion.getId(),                 0x440B3D);
         addColor(MalumInit.auricFlame.getId(),              0xefd74b);
+        addColor(MalumInit.runeOfMotion.getId(),            0x7df0e7);
+        addColor(MalumInit.runeOfLoyalty.getId(),           0x63b1cc);
+        addColor(MalumInit.runeOfWarding.getId(),           0xa2cc66);
+        addColor(MalumInit.runeOfHaste.getId(),             0xffb437);
+        addColor(MalumInit.runeOfTheAether.getId(),         0x7df0e7);
+        addColor(MalumInit.runeOfTheSeas.getId(),           0x63b1cc);
+        addColor(MalumInit.runeOfTheArena.getId(),          0xa2cc66);
+        addColor(MalumInit.runeOfTheHells.getId(),          0xffb437);
     }
 
     public void addColor(MaterialBuilder material) {

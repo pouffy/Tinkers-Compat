@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.malum;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.modifier.base.TotemicRuneModifier;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
 import io.github.pouffy.tcompat.compat.malum.modifier.melee.CertaintyModifier;
 import io.github.pouffy.tcompat.compat.malum.modifier.melee.DeliveranceModifier;
@@ -27,6 +28,16 @@ public class MalumInit extends CompatInitializer {
     public static final StaticModifier<MnemonicModifier> mnemonic = MALUM_M.register("mnemonic", MnemonicModifier::new);
     public static final StaticModifier<ErosionModifier> erosion = MALUM_M.register("erosion", ErosionModifier::new);
     public static final StaticModifier<AuricFlameModifier> auricFlame = MALUM_M.register("auric_flame", AuricFlameModifier::new);
+
+    //Totemic Runes
+    public static final StaticModifier<TotemicRuneModifier> runeOfMotion = MALUM_M.register("rune_of_motion", () -> new TotemicRuneModifier("aerial", false));
+    public static final StaticModifier<TotemicRuneModifier> runeOfLoyalty = MALUM_M.register("rune_of_loyalty", () -> new TotemicRuneModifier("aqueous", false));
+    public static final StaticModifier<TotemicRuneModifier> runeOfWarding = MALUM_M.register("rune_of_warding", () -> new TotemicRuneModifier("earthen", false));
+    public static final StaticModifier<TotemicRuneModifier> runeOfHaste = MALUM_M.register("rune_of_haste", () -> new TotemicRuneModifier("infernal", false));
+    public static final StaticModifier<TotemicRuneModifier> runeOfTheAether = MALUM_M.register("rune_of_the_aether", () -> new TotemicRuneModifier("aerial", true));
+    public static final StaticModifier<TotemicRuneModifier> runeOfTheSeas = MALUM_M.register("rune_of_the_seas", () -> new TotemicRuneModifier("aqueous", true));
+    public static final StaticModifier<TotemicRuneModifier> runeOfTheArena = MALUM_M.register("rune_of_the_arena", () -> new TotemicRuneModifier("earthen", true));
+    public static final StaticModifier<TotemicRuneModifier> runeOfTheHells = MALUM_M.register("rune_of_the_hells", () -> new TotemicRuneModifier("infernal", true));
 
     public static final SlotType RUNE_SLOT = SlotType.getOrCreate("rune");
 

@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "malum:rune_of_haste"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:rune_of_haste",
+  "slots": {
+    "rune": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/harvest"
+    },
+    {
+      "tag": "tconstruct:modifiable/melee"
+    }
+  ]
+}

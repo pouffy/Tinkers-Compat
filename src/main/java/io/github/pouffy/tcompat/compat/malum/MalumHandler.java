@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.malum;
 
+import com.mojang.datafixers.util.Pair;
 import com.sammy.malum.common.capability.MalumPlayerDataCapability;
 import com.sammy.malum.common.enchantment.staff.ReplenishingEnchantment;
 import com.sammy.malum.common.entity.bolt.AbstractBoltProjectileEntity;
@@ -7,11 +8,14 @@ import com.sammy.malum.common.entity.bolt.AuricFlameBoltEntity;
 import com.sammy.malum.common.entity.bolt.DrainingBoltEntity;
 import com.sammy.malum.common.entity.bolt.HexBoltEntity;
 import com.sammy.malum.common.entity.nitrate.EthericNitrateEntity;
+import com.sammy.malum.common.spiritrite.PotionRiteEffect;
+import com.sammy.malum.common.spiritrite.TotemicRiteEffect;
 import com.sammy.malum.core.handlers.SoulDataHandler;
 import com.sammy.malum.core.helpers.ParticleHelper;
 import com.sammy.malum.registry.client.ParticleRegistry;
 import com.sammy.malum.registry.common.ParticleEffectTypeRegistry;
 import com.sammy.malum.registry.common.SoundRegistry;
+import com.sammy.malum.registry.common.SpiritRiteRegistry;
 import com.sammy.malum.registry.common.SpiritTypeRegistry;
 import com.sammy.malum.visual_effects.networked.ParticleEffectType;
 import io.github.pouffy.tcompat.TCompat;
@@ -24,6 +28,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -52,6 +57,8 @@ import team.lodestar.lodestone.systems.particle.world.behaviors.components.Direc
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 import static com.sammy.malum.common.item.curiosities.weapons.scythe.MalumScytheItem.canSweep;
 import static io.github.pouffy.tcompat.compat.malum.modifier.ranged.ErosionModifier.MALIGNANT_BLACK;
@@ -232,5 +239,19 @@ public class MalumHandler {
         if (!CompatHelper.isLoaded("malum")) return;
         SpinParticleData spinData = SpinParticleData.createRandomDirection(random, 0.25F, 0.5F).setSpinOffset(RandomHelper.randomBetween(random, 0.0F, 6.28F)).build();
         WorldParticleBuilder.create(ParticleRegistry.HEXAGON, new DirectionalBehaviorComponent(shooter.getLookAngle().normalize())).setRenderTarget(RenderHandler.LATE_DELAYED_RENDER).setTransparencyData(GenericParticleData.create(0.5F * chargePercentage, 0.0F).setEasing(Easing.SINE_IN_OUT, Easing.SINE_IN).build()).setScaleData(GenericParticleData.create(0.35F * chargePercentage, 0.0F).setEasing(Easing.SINE_IN_OUT).build()).setSpinData(spinData).setColorData(EthericNitrateEntity.AURIC_COLOR_DATA).setLifetime(5).setMotion(shooter.getLookAngle().normalize().scale((double)0.05F)).enableNoClip().enableForcedSpawn().setLifeDelay(2).spawn(shooter.level(), pos.x, pos.y, pos.z).setRenderType(LodestoneWorldParticleRenderType.LUMITRANSPARENT).spawn(shooter.level(), pos.x, pos.y, pos.z);
+    }
+
+    public static Pair<Supplier<MobEffect>, Predicate<LivingEntity>> getRiteEffect(String name, boolean corrupted) {
+        var riteType = name.equals("aerial") ? SpiritRiteRegistry.AERIAL_RITE : name.equals("aqueous") ? SpiritRiteRegistry.AQUEOUS_RITE : name.equals("earthen") ? SpiritRiteRegistry.EARTHEN_RITE : SpiritRiteRegistry.INFERNAL_RITE;
+        TotemicRiteEffect riteEffect = riteType.getRiteEffect(corrupted);
+        Supplier<MobEffect> mobEffectSupplier;
+        Predicate<LivingEntity> entityPredicate;
+        if (riteEffect instanceof PotionRiteEffect potionRiteEffect) {
+            mobEffectSupplier = potionRiteEffect.mobEffectSupplier;
+            entityPredicate = potionRiteEffect.getEntityPredicate();
+        } else {
+            throw new IllegalArgumentException("Supplied rite type must have an aura effect");
+        }
+        return Pair.of(mobEffectSupplier, entityPredicate);
     }
 }

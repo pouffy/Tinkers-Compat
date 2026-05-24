@@ -190,6 +190,22 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.auric_flame", "Fire", "Charge up and launch a volley of auric flame bolts.");
         forModifier("modifier.tcompat.spoiled", "Can I have some more?", "Increased Spirit Spoils");
         forModifier("modifier.tcompat.integral", "Well Warded", "Increased Soul Ward Integrity");
+
+        malumRune("motion", "Motion", "The zephyr propels you forward, increasing your movement speed.");
+        malumRune("loyalty", "Loyalty", "You reach out for further power, increasing your reach and item pickup distance.");
+        malumRune("warding", "Warding", "An earthen carapace surrounds your body, functioning as extra armor.");
+        malumRune("haste", "Haste", "Your tools are bolstered with radiance, increasing your mining and attack speed.");
+        malumRune("the_aether", "the Aether", "The heavens call for you, increasing jump height and decreasing gravity.");
+        malumRune("the_seas", "the Seas", "Let any fish who meets my gaze learn the true meaning of fear; for I am the harbinger of death. The bane of creatures sub-aqueous, my rod is true and unwavering as I cast into the aquatic abyss. A man, scorned by this uncaring Earth, finds solace in the sea. My only friend, the worm upon my hook. Wriggling, writhing, struggling to surmount the mortal pointlessness that permeates this barren world. I am alone. I am empty. And yet, I fish.");
+        malumRune("the_arena", "the Arena", "Your fists and tools are reinforced with earth, increasing your strength.");
+        malumRune("the_hells", "the Hells", "The warm embrace of fire coats your soul, mending your seared scars.");
+    }
+
+    private void malumRune(String type, String name, String description) {
+        String key = "modifier.tcompat.rune_of_%s".formatted(type);
+        add(key, "Rune of %s".formatted(name));
+        add(key+".flavor", "Runic");
+        add(key+".description", description);
     }
 
     private void forModifier(String key, String name, String flavor, String description) {
