@@ -22,5 +22,7 @@
   "tcompat:deliverance":   "tcompat:gui/modifiers/deliverance",
   "tcompat:mnemonic":   ["malum:item/mnemonic_fragment", "tconstruct:gui/modifiers/plus"],
   "tcompat:erosion":   ["malum:item/void_salts", "tconstruct:gui/modifiers/plus"],
-  "tcompat:auric_flame":   ["malum:item/auric_embers", "tconstruct:gui/modifiers/plus"]
+  "tcompat:auric_flame":   ["malum:item/auric_embers", "tconstruct:gui/modifiers/plus"],
+  "tcompat:spoiled":   ["malum:item/processed_soulstone", "tconstruct:gui/modifiers/plus"],
+  "tcompat:integral":   ["tcompat:gui/modifiers/integral", "tconstruct:gui/modifiers/plus"]
 }

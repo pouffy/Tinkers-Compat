@@ -35,6 +35,8 @@ public class TCModifiers {
     public static final ModifierId arcaneResonance = id("arcane_resonance");
     public static final ModifierId spiritHarvester = id("spirit_harvester");
     public static final ModifierId runic = id("runic");
+    public static final ModifierId spoiled = id("spoiled");
+    public static final ModifierId integral = id("integral");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");

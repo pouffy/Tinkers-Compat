@@ -1,0 +1,21 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "malum"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tcompat:optional_attribute",
+      "attribute": "malum:spirit_spoils",
+      "each_level": 1.0,
+      "operation": "addition",
+      "slots": [
+        "mainhand",
+        "offhand"
+      ],
+      "unique": "spoiled"
+    }
+  ],
+  "tooltip_display": "always"
+}

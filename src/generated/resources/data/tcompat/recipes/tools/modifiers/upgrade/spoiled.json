@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:incremental_modifier",
+  "allow_crystal": true,
+  "amount_per_item": 1,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "input": {
+    "item": "malum:processed_soulstone"
+  },
+  "level": {
+    "max": 4
+  },
+  "needed_per_level": 24,
+  "result": "tcompat:spoiled",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/weapon"
+    },
+    {
+      "tag": "tconstruct:modifiable/staffs"
+    }
+  ]
+}

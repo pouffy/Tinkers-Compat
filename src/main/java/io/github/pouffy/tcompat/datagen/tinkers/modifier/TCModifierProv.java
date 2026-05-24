@@ -35,6 +35,7 @@ import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
 import slimeknights.tconstruct.library.json.variable.tool.StatMultiplierVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
+import slimeknights.tconstruct.library.modifiers.impl.BasicModifier;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
@@ -254,6 +255,10 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TCModifiers.runic, modLoaded("malum"))
                 .addModule(ModifierSlotModule.slot(MalumInit.RUNE_SLOT).flat(1)).levelDisplay(ModifierLevelDisplay.NO_LEVELS).build();
+        buildModifier(TCModifiers.spoiled, modLoaded("malum"))
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:spirit_spoils"), AttributeModifier.Operation.ADDITION).slots(EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND).unique("spoiled").amount(0, 1));
+        buildModifier(TCModifiers.integral, modLoaded("malum"))
+                .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:soul_ward_integrity"), AttributeModifier.Operation.MULTIPLY_BASE).slots(EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET).unique("integral").amount(0f, 0.05f));
     }
 
     @Override

@@ -319,6 +319,22 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .saveSalvage(malumConsumer, prefix(MalumInit.auricFlame, abilitySalvage))
                 .save(malumConsumer, prefix(MalumInit.auricFlame, abilityFolder));
 
+        IncrementalModifierRecipeBuilder.modifier(TCModifiers.spoiled)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_WEAPON, TinkerTags.Items.STAFFS))
+                .setInput(ItemNameIngredient.from(malumId.apply("processed_soulstone")), 1, 24)
+                .setMaxLevel(4).checkTraitLevel()
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(malumConsumer, prefix(TCModifiers.spoiled, upgradeSalvage))
+                .save(malumConsumer, prefix(TCModifiers.spoiled, upgradeFolder));
+
+        IncrementalModifierRecipeBuilder.modifier(TCModifiers.integral)
+                .setTools(ingredientFromTags(TinkerTags.Items.ARMOR))
+                .setInput(ItemNameIngredient.from(malumId.apply("arcane_spirit")), 1, 16)
+                .setMaxLevel(4).checkTraitLevel()
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(malumConsumer, prefix(TCModifiers.integral, upgradeSalvage))
+                .save(malumConsumer, prefix(TCModifiers.integral, upgradeFolder));
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)

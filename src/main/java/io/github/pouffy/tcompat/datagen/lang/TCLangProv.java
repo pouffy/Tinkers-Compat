@@ -188,6 +188,8 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.mnemonic", "Gonna cast a spell on you", "Charge up and launch hexed bolts.");
         forModifier("modifier.tcompat.erosion", "You probably learned about this in geography class", "Charge up and launch draining bolts.");
         forModifier("modifier.tcompat.auric_flame", "Fire", "Charge up and launch a volley of auric flame bolts.");
+        forModifier("modifier.tcompat.spoiled", "Can I have some more?", "Increased Spirit Spoils");
+        forModifier("modifier.tcompat.integral", "Well Warded", "Increased Soul Ward Integrity");
     }
 
     private void forModifier(String key, String name, String flavor, String description) {
