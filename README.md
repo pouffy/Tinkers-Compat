@@ -188,6 +188,8 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 ## Planned
 
 - More Ice & Fire compat.
+- Hex Casting compat.
+- Create compat.
 
 
 
