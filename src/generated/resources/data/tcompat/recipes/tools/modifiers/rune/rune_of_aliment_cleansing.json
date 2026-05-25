@@ -10,17 +10,17 @@
   ],
   "inputs": [
     {
-      "item": "malum:rune_of_loyalty"
+      "item": "malum:rune_of_aliment_cleansing"
     }
   ],
   "level": 1,
-  "result": "tcompat:rune_of_loyalty",
+  "result": "tcompat:rune_of_aliment_cleansing",
   "slots": {
     "rune": 1
   },
   "tools": [
     {
-      "tag": "tconstruct:modifiable/held"
+      "tag": "tconstruct:modifiable/armor/helmets"
     },
     {
       "tag": "tinkersjewelry:modifiable/jewelry"

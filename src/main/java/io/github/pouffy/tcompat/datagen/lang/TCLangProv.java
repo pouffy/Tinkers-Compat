@@ -199,6 +199,14 @@ public class TCLangProv extends LanguageProvider {
         malumRune("the_seas", "the Seas", "Let any fish who meets my gaze learn the true meaning of fear; for I am the harbinger of death. The bane of creatures sub-aqueous, my rod is true and unwavering as I cast into the aquatic abyss. A man, scorned by this uncaring Earth, finds solace in the sea. My only friend, the worm upon my hook. Wriggling, writhing, struggling to surmount the mortal pointlessness that permeates this barren world. I am alone. I am empty. And yet, I fish.");
         malumRune("the_arena", "the Arena", "Your fists and tools are reinforced with earth, increasing your strength.");
         malumRune("the_hells", "the Hells", "The warm embrace of fire coats your soul, mending your seared scars.");
+        malumRune("idle_restoration", "Idle Restoration", "Passively heals the user.");
+        malumRune("culling", "Culling", "Increased Magic Proficiency and Spell Power.");
+        malumRune("reinforcement", "Reinforcement", "Increased Soul Ward Capacity and Integrity.");
+        malumRune("volatile_distortion", "Volatile Distortion", "Critical Strikes and Erratic Damage Output.");
+        malumRune("dexterity", "Dexterity", "Increased Speed at low health.");
+        malumRune("aliment_cleansing", "Aliment Cleansing", "Shortens negative effects.");
+        malumRune("reactive_shielding", "Reactive Shielding", "Damage resistance when attacked.");
+        malumRune("fervor", "Fervor", "Increased mining speed.");
     }
 
     private void malumRune(String type, String name, String description) {

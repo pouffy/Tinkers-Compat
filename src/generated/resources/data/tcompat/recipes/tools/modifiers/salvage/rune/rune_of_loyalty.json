@@ -10,7 +10,12 @@
   "slots": {
     "rune": 1
   },
-  "tools": {
-    "tag": "tconstruct:modifiable/held"
-  }
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/held"
+    },
+    {
+      "tag": "tinkersjewelry:modifiable/jewelry"
+    }
+  ]
 }

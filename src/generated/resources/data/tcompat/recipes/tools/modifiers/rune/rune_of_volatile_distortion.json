@@ -10,20 +10,20 @@
   ],
   "inputs": [
     {
-      "item": "malum:rune_of_loyalty"
+      "item": "malum:rune_of_volatile_distortion"
     }
   ],
   "level": 1,
-  "result": "tcompat:rune_of_loyalty",
+  "result": "tcompat:rune_of_volatile_distortion",
   "slots": {
     "rune": 1
   },
   "tools": [
     {
-      "tag": "tconstruct:modifiable/held"
+      "tag": "tconstruct:modifiable/melee/weapon"
     },
     {
-      "tag": "tinkersjewelry:modifiable/jewelry"
+      "tag": "tconstruct:modifiable/ranged"
     }
   ]
 }

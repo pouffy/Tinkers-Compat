@@ -4,13 +4,13 @@ import io.github.pouffy.tcompat.TCompat;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 
 public class TCModifiers {
+    //Aether
     public static final ModifierId aetherForged = id("aether_forged");
-    public static final ModifierId blighted = id("blighted");
     public static final ModifierId escarstay = id("escarstay");
-
     public static final ModifierId zanite = id("zanite");
     public static final ModifierId skyjade = id("skyjade");
 
+    //Ice & Fire
     public static final ModifierId dreadbane = id("dreadbane");
     public static final ModifierId dampening = id("dampening");
     public static final ModifierId scorchborn = id("scorchborn");
@@ -21,11 +21,13 @@ public class TCModifiers {
     public static final ModifierId petrifying = id("petrifying");
     public static final ModifierId allythropod = id("allythropod");
 
+    //Cataclysm
     public static final ModifierId cataclysmic = id("cataclysmic");
     public static final ModifierId ghostly = id("ghostly");
     public static final ModifierId archaeologist = id("archaeologist");
     public static final ModifierId standstill = id("standstill");
 
+    //Malum
     public static final ModifierId stained = id("stained");
     public static final ModifierId warded = id("warded");
     public static final ModifierId hallowed = id("hallowed");
@@ -37,6 +39,11 @@ public class TCModifiers {
     public static final ModifierId runic = id("runic");
     public static final ModifierId spoiled = id("spoiled");
     public static final ModifierId integral = id("integral");
+    public static final ModifierId runeOfIdleRestoration = id("rune_of_idle_restoration");
+    public static final ModifierId runeOfVolatileDistortion = id("rune_of_volatile_distortion");
+    public static final ModifierId runeOfAlimentCleansing = id("rune_of_aliment_cleansing");
+    public static final ModifierId runeOfReactiveShielding = id("rune_of_reactive_shielding");
+    public static final ModifierId runeOfFervor = id("rune_of_fervor");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");

@@ -6,16 +6,16 @@
       "modid": "malum"
     }
   ],
-  "modifier": "tcompat:rune_of_the_arena",
+  "modifier": "tcompat:rune_of_volatile_distortion",
   "slots": {
     "rune": 1
   },
   "tools": [
     {
-      "tag": "tconstruct:modifiable/melee"
+      "tag": "tconstruct:modifiable/melee/weapon"
     },
     {
-      "tag": "tinkersjewelry:modifiable/jewelry"
+      "tag": "tconstruct:modifiable/ranged"
     }
   ]
 }

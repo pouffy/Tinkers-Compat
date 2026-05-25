@@ -62,7 +62,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(AetherInit.autochant.getId(),              0xe5eb62);
         addColor(AetherInit.autofreeze.getId(),             0xc6e1e1);
         //Aether Redux
-        addColor(TCModifiers.blighted,                      0x8058f6);
+        addColor(AetherReduxInit.blighted.getId(),          0x8058f6);
         addColor(TCModifiers.escarstay,                     0x7178c2);
         addColor(AetherReduxInit.ambrofusion.getId(),       0x7fbedc);
         //Aether Treasure Reforging
@@ -138,6 +138,14 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(MalumInit.runeOfTheSeas.getId(),           0x63b1cc);
         addColor(MalumInit.runeOfTheArena.getId(),          0xa2cc66);
         addColor(MalumInit.runeOfTheHells.getId(),          0xffb437);
+        addColor(TCModifiers.runeOfIdleRestoration,         0xf74594);
+        addColor(MalumInit.runeOfCulling.getId(),           0xb125e6);
+        addColor(MalumInit.runeOfReinforcement.getId(),     0xf887ee);
+        addColor(TCModifiers.runeOfVolatileDistortion,      0x8108e5);
+        addColor(MalumInit.runeOfDexterity.getId(),         0xaef5ef);
+        addColor(TCModifiers.runeOfAlimentCleansing,        0x95f6f9);
+        addColor(TCModifiers.runeOfReactiveShielding,       0xd9ea75);
+        addColor(TCModifiers.runeOfFervor,                  0xffe65d);
     }
 
     public void addColor(MaterialBuilder material) {

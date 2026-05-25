@@ -18,7 +18,12 @@
   "slots": {
     "rune": 1
   },
-  "tools": {
-    "tag": "tconstruct:modifiable/melee"
-  }
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee"
+    },
+    {
+      "tag": "tinkersjewelry:modifiable/jewelry"
+    }
+  ]
 }

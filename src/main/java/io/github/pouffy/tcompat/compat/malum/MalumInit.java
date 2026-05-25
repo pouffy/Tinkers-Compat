@@ -9,6 +9,9 @@ import io.github.pouffy.tcompat.compat.malum.modifier.general.SpiritRepairModifi
 import io.github.pouffy.tcompat.compat.malum.modifier.ranged.AuricFlameModifier;
 import io.github.pouffy.tcompat.compat.malum.modifier.ranged.ErosionModifier;
 import io.github.pouffy.tcompat.compat.malum.modifier.ranged.MnemonicModifier;
+import io.github.pouffy.tcompat.compat.malum.modifier.rune.RuneOfCullingModifier;
+import io.github.pouffy.tcompat.compat.malum.modifier.rune.RuneOfDexterityModifier;
+import io.github.pouffy.tcompat.compat.malum.modifier.rune.RuneOfReinforcementModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -38,6 +41,10 @@ public class MalumInit extends CompatInitializer {
     public static final StaticModifier<TotemicRuneModifier> runeOfTheSeas = MALUM_M.register("rune_of_the_seas", () -> new TotemicRuneModifier("aqueous", true));
     public static final StaticModifier<TotemicRuneModifier> runeOfTheArena = MALUM_M.register("rune_of_the_arena", () -> new TotemicRuneModifier("earthen", true));
     public static final StaticModifier<TotemicRuneModifier> runeOfTheHells = MALUM_M.register("rune_of_the_hells", () -> new TotemicRuneModifier("infernal", true));
+
+    public static final StaticModifier<RuneOfCullingModifier> runeOfCulling = MALUM_M.register("rune_of_culling", RuneOfCullingModifier::new);
+    public static final StaticModifier<RuneOfReinforcementModifier> runeOfReinforcement = MALUM_M.register("rune_of_reinforcement", RuneOfReinforcementModifier::new);
+    public static final StaticModifier<RuneOfDexterityModifier> runeOfDexterity = MALUM_M.register("rune_of_dexterity", RuneOfDexterityModifier::new);
 
     public static final SlotType RUNE_SLOT = SlotType.getOrCreate("rune");
 

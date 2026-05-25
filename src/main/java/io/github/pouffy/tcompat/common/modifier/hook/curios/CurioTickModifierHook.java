@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.common.modifier.hook;
+package io.github.pouffy.tcompat.common.modifier.hook.curios;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;

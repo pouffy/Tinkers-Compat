@@ -13,36 +13,44 @@ import com.sammy.malum.common.spiritrite.TotemicRiteEffect;
 import com.sammy.malum.core.handlers.SoulDataHandler;
 import com.sammy.malum.core.helpers.ParticleHelper;
 import com.sammy.malum.registry.client.ParticleRegistry;
-import com.sammy.malum.registry.common.ParticleEffectTypeRegistry;
-import com.sammy.malum.registry.common.SoundRegistry;
-import com.sammy.malum.registry.common.SpiritRiteRegistry;
-import com.sammy.malum.registry.common.SpiritTypeRegistry;
+import com.sammy.malum.registry.common.*;
+import com.sammy.malum.registry.common.item.ItemRegistry;
 import com.sammy.malum.visual_effects.networked.ParticleEffectType;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
+import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import team.lodestar.lodestone.handlers.RenderHandler;
+import team.lodestar.lodestone.helpers.CurioHelper;
+import team.lodestar.lodestone.helpers.EntityHelper;
 import team.lodestar.lodestone.helpers.RandomHelper;
 import team.lodestar.lodestone.helpers.SoundHelper;
 import team.lodestar.lodestone.registry.common.tag.LodestoneDamageTypeTags;
@@ -253,5 +261,122 @@ public class MalumHandler {
             throw new IllegalArgumentException("Supplied rite type must have an aura effect");
         }
         return Pair.of(mobEffectSupplier, entityPredicate);
+    }
+
+    public static void idleRestoration(LivingEvent.LivingTickEvent event) {
+        if (!CompatHelper.isLoaded("malum")) return;
+        LivingEntity entity = event.getEntity();
+        boolean idleRestoration = false;
+        for (var stack : CompatHelper.getModifiableStacks(entity)) {
+            var tool = ToolStack.from(stack);
+            if (tool.isBroken()) continue;
+            if (tool.getModifiers().getEntry(TCModifiers.runeOfIdleRestoration) != ModifierEntry.EMPTY) {
+                idleRestoration = true;
+                break;
+            }
+        }
+        // No point running if the player has the actual rune
+        if (CuriosHandler.getCurioItems(entity).stream().map(ItemStack::getItem).toList().contains(ItemRegistry.RUNE_OF_IDLE_RESTORATION.get())) idleRestoration = false;
+        if (idleRestoration) {
+            if (entity.level().getGameTime() % 40L == 0L) {
+                entity.heal(1.0F);
+            }
+        }
+    }
+    public static void volatileDistortion(LivingHurtEvent event, LivingEntity attacker) {
+        if (!CompatHelper.isLoaded("malum")) return;
+        boolean volatileDistortion = false;
+        for (var stack : CompatHelper.getModifiableStacks(attacker)) {
+            var tool = ToolStack.from(stack);
+            if (tool.isBroken()) continue;
+            if (tool.getModifiers().getEntry(TCModifiers.runeOfVolatileDistortion) != ModifierEntry.EMPTY) {
+                volatileDistortion = true;
+                break;
+            }
+        }
+        // No point running if the player has the actual rune
+        if (CuriosHandler.getCurioItems(attacker).stream().map(ItemStack::getItem).toList().contains(ItemRegistry.RUNE_OF_VOLATILE_DISTORTION.get())) volatileDistortion = false;
+        if (volatileDistortion) {
+            RandomSource random = attacker.getRandom();
+            float multiplier = Mth.nextFloat(random, 0.9F, 1.2F);
+            if (random.nextFloat() < 0.1F) {
+                multiplier *= 2.0F;
+            }
+
+            event.setAmount(event.getAmount() * multiplier);
+        }
+    }
+
+    public static void reactiveShielding(LivingHurtEvent event, LivingEntity attacker) {
+        if (!CompatHelper.isLoaded("malum")) return;
+        boolean reactiveShielding = false;
+        for (var stack : CompatHelper.getModifiableStacks(attacker)) {
+            var tool = ToolStack.from(stack);
+            if (tool.isBroken()) continue;
+            if (tool.getModifiers().getEntry(TCModifiers.runeOfReactiveShielding) != ModifierEntry.EMPTY) {
+                reactiveShielding = true;
+                break;
+            }
+        }
+        // No point running if the player has the actual rune
+        if (CuriosHandler.getCurioItems(attacker).stream().map(ItemStack::getItem).toList().contains(ItemRegistry.RUNE_OF_REACTIVE_SHIELDING.get())) reactiveShielding = false;
+        if (reactiveShielding) {
+            MobEffect shielding = MobEffectRegistry.REACTIVE_SHIELDING.get();
+            MobEffectInstance effect = event.getEntity().getEffect(shielding);
+            if (effect == null) {
+                if (event.getEntity().level().random.nextFloat() < 0.5F) {
+                    event.getEntity().addEffect(new MobEffectInstance(shielding, 80, 0, true, true, true));
+                }
+            } else {
+                if (event.getEntity().level().random.nextFloat() < 0.5F) {
+                    EntityHelper.amplifyEffect(effect, event.getEntity(), 1, 3);
+                }
+                EntityHelper.extendEffect(effect, event.getEntity(), 40, 100);
+            }
+        }
+    }
+
+    public static void ailmentCleansing(MobEffectEvent.Added event) {
+        if (!CompatHelper.isLoaded("malum")) return;
+        LivingEntity entity = event.getEntity();
+        boolean ailmentCleansing = false;
+        for (var stack : CompatHelper.getModifiableStacks(entity)) {
+            var tool = ToolStack.from(stack);
+            if (tool.isBroken()) continue;
+            if (tool.getModifiers().getEntry(TCModifiers.runeOfAlimentCleansing) != ModifierEntry.EMPTY) {
+                ailmentCleansing = true;
+                break;
+            }
+        }
+        // No point running if the player has the actual rune
+        if (CuriosHandler.getCurioItems(entity).stream().map(ItemStack::getItem).toList().contains(ItemRegistry.RUNE_OF_ALIMENT_CLEANSING.get())) ailmentCleansing = false;
+        if (ailmentCleansing) {
+            if (event.getOldEffectInstance() == null && CurioHelper.hasCurioEquipped(entity, (Item)ItemRegistry.RUNE_OF_ALIMENT_CLEANSING.get())) {
+                MobEffectInstance effect = event.getEffectInstance();
+                MobEffect type = effect.getEffect();
+                if (type.getCategory().equals(MobEffectCategory.HARMFUL)) {
+                    EntityHelper.shortenEffect(effect, entity, effect.getDuration() / 4);
+                }
+            }
+        }
+    }
+
+    public static void fervor(PlayerEvent.BreakSpeed event) {
+        if (!CompatHelper.isLoaded("malum")) return;
+        LivingEntity entity = event.getEntity();
+        boolean fervor = false;
+        for (var stack : CompatHelper.getModifiableStacks(entity)) {
+            var tool = ToolStack.from(stack);
+            if (tool.isBroken()) continue;
+            if (tool.getModifiers().getEntry(TCModifiers.runeOfFervor) != ModifierEntry.EMPTY) {
+                fervor = true;
+                break;
+            }
+        }
+        // No point running if the player has the actual rune
+        if (CuriosHandler.getCurioItems(entity).stream().map(ItemStack::getItem).toList().contains(ItemRegistry.RUNE_OF_FERVOR.get())) fervor = false;
+        if (fervor) {
+            event.setNewSpeed(event.getOriginalSpeed() * 1.25F);
+        }
     }
 }

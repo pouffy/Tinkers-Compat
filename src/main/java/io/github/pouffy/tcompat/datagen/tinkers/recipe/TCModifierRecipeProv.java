@@ -337,14 +337,22 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .saveSalvage(malumConsumer, prefix(TCModifiers.integral, upgradeSalvage))
                 .save(malumConsumer, prefix(TCModifiers.integral, upgradeFolder));
 
-        malumRune(malumConsumer, MalumInit.runeOfMotion.getId(),    Ingredient.of(TinkerTags.Items.BOOTS));
-        malumRune(malumConsumer, MalumInit.runeOfLoyalty.getId(),   Ingredient.of(TinkerTags.Items.HELD));
-        malumRune(malumConsumer, MalumInit.runeOfWarding.getId(),   Ingredient.of(TinkerTags.Items.ARMOR));
-        malumRune(malumConsumer, MalumInit.runeOfHaste.getId(),     ingredientFromTags(TinkerTags.Items.HARVEST, TinkerTags.Items.MELEE));
-        malumRune(malumConsumer, MalumInit.runeOfTheAether.getId(), Ingredient.of(TinkerTags.Items.LEGGINGS));
-        malumRune(malumConsumer, MalumInit.runeOfTheSeas.getId(),   Ingredient.of(TinkerTags.Items.FISHING_RODS));
-        malumRune(malumConsumer, MalumInit.runeOfTheArena.getId(),  Ingredient.of(TinkerTags.Items.MELEE));
-        malumRune(malumConsumer, MalumInit.runeOfTheHells.getId(),  Ingredient.of(TinkerTags.Items.ARMOR));
+        malumRune(malumConsumer, MalumInit.runeOfMotion.getId(),            ingredientFromTags(TinkerTags.Items.BOOTS));
+        malumRune(malumConsumer, MalumInit.runeOfLoyalty.getId(),           ingredientFromTags(TinkerTags.Items.HELD, TCTags.Items.JEWELERY_MODIFIABLE));
+        malumRune(malumConsumer, MalumInit.runeOfWarding.getId(),           ingredientFromTags(TinkerTags.Items.ARMOR));
+        malumRune(malumConsumer, MalumInit.runeOfHaste.getId(),             ingredientFromTags(TinkerTags.Items.HARVEST, TinkerTags.Items.MELEE));
+        malumRune(malumConsumer, MalumInit.runeOfTheAether.getId(),         ingredientFromTags(TinkerTags.Items.LEGGINGS));
+        malumRune(malumConsumer, MalumInit.runeOfTheSeas.getId(),           ingredientFromTags(TinkerTags.Items.FISHING_RODS));
+        malumRune(malumConsumer, MalumInit.runeOfTheArena.getId(),          ingredientFromTags(TinkerTags.Items.MELEE, TCTags.Items.JEWELERY_MODIFIABLE));
+        malumRune(malumConsumer, MalumInit.runeOfTheHells.getId(),          ingredientFromTags(TinkerTags.Items.ARMOR));
+        malumRune(malumConsumer, TCModifiers.runeOfIdleRestoration,         ingredientFromTags(TinkerTags.Items.CHESTPLATES));
+        malumRune(malumConsumer, MalumInit.runeOfCulling.getId(),           ingredientFromTags(TinkerTags.Items.STAFFS, TCTags.Items.MAGIC_MODIFIABLE));
+        malumRune(malumConsumer, MalumInit.runeOfReinforcement.getId(),     ingredientFromTags(TinkerTags.Items.CHESTPLATES));
+        malumRune(malumConsumer, TCModifiers.runeOfVolatileDistortion,      ingredientFromTags(TinkerTags.Items.MELEE_WEAPON, TinkerTags.Items.RANGED));
+        malumRune(malumConsumer, MalumInit.runeOfDexterity.getId(),         ingredientFromTags(TinkerTags.Items.LEGGINGS));
+        malumRune(malumConsumer, TCModifiers.runeOfAlimentCleansing,        ingredientFromTags(TinkerTags.Items.HELMETS, TCTags.Items.JEWELERY_MODIFIABLE));
+        malumRune(malumConsumer, TCModifiers.runeOfReactiveShielding,       ingredientFromTags(TinkerTags.Items.ARMOR));
+        malumRune(malumConsumer, TCModifiers.runeOfFervor,                  ingredientFromTags(TinkerTags.Items.HARVEST_PRIMARY));
 
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));

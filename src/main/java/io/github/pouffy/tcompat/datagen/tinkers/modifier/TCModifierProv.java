@@ -8,8 +8,6 @@ import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
 import io.github.pouffy.tcompat.common.modifier.module.SoulExposureModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
-import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.datagen.tag.TCEntityTagProv;
 import net.minecraft.data.PackOutput;
@@ -35,7 +33,6 @@ import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
 import slimeknights.tconstruct.library.json.variable.tool.StatMultiplierVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
-import slimeknights.tconstruct.library.modifiers.impl.BasicModifier;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
@@ -67,14 +64,6 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
 
         buildModifier(TCModifiers.aetherForged, modLoaded("aether"))
                 .addModule(AetherForgedModule.INSTANCE).priority(200)
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
-        buildModifier(AetherInit.ambrogen.getId(), modLoaded("aether"))
-                .levelDisplay(ModifierLevelDisplay.DEFAULT);
-        buildModifier(AetherInit.ascension.getId(), modLoaded("aether"))
-                .levelDisplay(ModifierLevelDisplay.DEFAULT);
-        buildModifier(AetherReduxInit.ambrofusion.getId(), modLoaded("aether_redux"))
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
-        buildModifier(TCModifiers.blighted, modLoaded("aether_redux"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TCModifiers.escarstay, modLoaded("aether_redux"))
                 .addModule(StatBoostModule.add(ToolStats.KNOCKBACK_RESISTANCE).flat(2))
@@ -259,6 +248,16 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:spirit_spoils"), AttributeModifier.Operation.ADDITION).slots(EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND).unique("spoiled").amount(0, 1));
         buildModifier(TCModifiers.integral, modLoaded("malum"))
                 .addModule(OptionalAttributeModule.builder(TCompat.getResource("malum:soul_ward_integrity"), AttributeModifier.Operation.MULTIPLY_BASE).slots(EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET).unique("integral").amount(0f, 0.05f));
+        buildModifier(TCModifiers.runeOfIdleRestoration, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runeOfVolatileDistortion, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runeOfAlimentCleansing, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runeOfReactiveShielding, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runeOfFervor, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override

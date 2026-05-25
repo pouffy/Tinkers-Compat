@@ -1,8 +1,11 @@
 package io.github.pouffy.tcompat.compat;
 
+import com.google.common.collect.HashMultimap;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.modifier.hook.*;
+import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioAttributeHook;
+import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioTickModifierHook;
 import io.github.pouffy.tcompat.common.modifier.module.*;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
@@ -67,6 +70,8 @@ public class GlobalInit extends CompatInitializer {
         public void pickupSpirit(IToolStackView toolStack, ModifierEntry modifierEntry, LivingEntity collector, double arcaneResonance, float effectiveness) {}
     });
     public static final ModuleHook<CurioTickModifierHook> CURIO_TICK = ModifierHooks.register(getResource("curio_tick"), CurioTickModifierHook.class, CurioTickModifierHook.AllMerger::new, (tool, modifierEntry, slotId, slotIndex, wearer, stack) -> {});
+    public static final ModuleHook<CurioAttributeHook> CURIO_ATTRIBUTE = ModifierHooks.register(getResource("curio_attribute"), CurioAttributeHook.class, CurioAttributeHook.AllMerger::new, (tool, modifierEntry, slotId, slotIndex, wearer, uuid, stack) -> HashMultimap.create());
+    public static final ModuleHook<EntitySensitiveAttributesModifierHook> ENTITY_SENSITIVE_ATTRIBUTES = ModifierHooks.register(getResource("entity_sensitive_attributes"), EntitySensitiveAttributesModifierHook.class, EntitySensitiveAttributesModifierHook.AllMerger::new, (tool, modifierEntry, slot, wearer, attributes) -> {});
 
 
     public static LivingEntityPredicate SUN_EXPOSED = SingletonLoader.singleton((loader) -> new LivingEntityPredicate() {

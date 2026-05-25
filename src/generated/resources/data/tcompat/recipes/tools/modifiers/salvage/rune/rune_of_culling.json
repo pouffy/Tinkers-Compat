@@ -6,16 +6,16 @@
       "modid": "malum"
     }
   ],
-  "modifier": "tcompat:rune_of_the_arena",
+  "modifier": "tcompat:rune_of_culling",
   "slots": {
     "rune": 1
   },
   "tools": [
     {
-      "tag": "tconstruct:modifiable/melee"
+      "tag": "tconstruct:modifiable/staffs"
     },
     {
-      "tag": "tinkersjewelry:modifiable/jewelry"
+      "tag": "constructs_casting:modifiable_magic"
     }
   ]
 }

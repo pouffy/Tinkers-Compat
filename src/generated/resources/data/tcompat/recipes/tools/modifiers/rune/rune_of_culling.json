@@ -10,20 +10,20 @@
   ],
   "inputs": [
     {
-      "item": "malum:rune_of_loyalty"
+      "item": "malum:rune_of_culling"
     }
   ],
   "level": 1,
-  "result": "tcompat:rune_of_loyalty",
+  "result": "tcompat:rune_of_culling",
   "slots": {
     "rune": 1
   },
   "tools": [
     {
-      "tag": "tconstruct:modifiable/held"
+      "tag": "tconstruct:modifiable/staffs"
     },
     {
-      "tag": "tinkersjewelry:modifiable/jewelry"
+      "tag": "constructs_casting:modifiable_magic"
     }
   ]
 }

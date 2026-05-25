@@ -6,13 +6,13 @@
       "modid": "malum"
     }
   ],
-  "modifier": "tcompat:rune_of_the_arena",
+  "modifier": "tcompat:rune_of_aliment_cleansing",
   "slots": {
     "rune": 1
   },
   "tools": [
     {
-      "tag": "tconstruct:modifiable/melee"
+      "tag": "tconstruct:modifiable/armor/helmets"
     },
     {
       "tag": "tinkersjewelry:modifiable/jewelry"

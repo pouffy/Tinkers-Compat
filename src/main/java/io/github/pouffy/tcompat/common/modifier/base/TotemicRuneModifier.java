@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.common.modifier.base;
 
-import io.github.pouffy.tcompat.common.modifier.hook.CurioTickModifierHook;
+import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioTickModifierHook;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
