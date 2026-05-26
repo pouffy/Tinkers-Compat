@@ -44,6 +44,10 @@ public class TCModifiers {
     public static final ModifierId runeOfAlimentCleansing = id("rune_of_aliment_cleansing");
     public static final ModifierId runeOfReactiveShielding = id("rune_of_reactive_shielding");
     public static final ModifierId runeOfFervor = id("rune_of_fervor");
+    public static final ModifierId runeOfTheHeretic = id("rune_of_the_heretic");
+    public static final ModifierId runeOfIgneousSolace = id("rune_of_igneous_solace");
+    public static final ModifierId runeOfSacrificialEmpowerment = id("rune_of_sacrificial_empowerment");
+    public static final ModifierId runeOfTwinnedDuration = id("rune_of_twinned_duration");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");

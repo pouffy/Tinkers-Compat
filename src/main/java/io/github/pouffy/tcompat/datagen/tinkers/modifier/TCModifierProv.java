@@ -258,6 +258,14 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TCModifiers.runeOfFervor, modLoaded("malum"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runeOfTheHeretic, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runeOfIgneousSolace, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runeOfSacrificialEmpowerment, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.runeOfTwinnedDuration, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override

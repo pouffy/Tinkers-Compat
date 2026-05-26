@@ -6,6 +6,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
@@ -64,9 +65,9 @@ public class EquipmentHelper {
     public static ItemStack getModifiableHeld(LivingEntity wearer, boolean offhand) {
         ItemStack held = offhand ? wearer.getOffhandItem() : wearer.getMainHandItem();
         if (!isTool(held) || (held.getItem() instanceof ArmorItem armorItem && armorItem.getEquipmentSlot() != (offhand ? EquipmentSlot.OFFHAND : EquipmentSlot.MAINHAND))) {
-            return ItemStack.EMPTY;
+            return null;
         }
-        if (CuriosHandler.isCurio(held) && !held.is(TCTags.Items.HANDHELD_CURIO)) return ItemStack.EMPTY;
+        if (CuriosHandler.isCurio(held) && !held.is(TCTags.Items.HANDHELD_CURIO)) return null;
         return held;
     }
 
@@ -103,5 +104,16 @@ public class EquipmentHelper {
             }
         }
         return equipped;
+    }
+
+    public static LivingEntity getAttacker(LivingDeathEvent event) {
+        LivingEntity attacker = null;
+        if (event.getSource().getEntity() instanceof LivingEntity directAttacker) {
+            attacker = directAttacker;
+        }
+        if (attacker == null) {
+            attacker = event.getEntity().getLastHurtByMob();
+        }
+        return attacker;
     }
 }

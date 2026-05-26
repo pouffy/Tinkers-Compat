@@ -207,6 +207,14 @@ public class TCLangProv extends LanguageProvider {
         malumRune("aliment_cleansing", "Aliment Cleansing", "Shortens negative effects.");
         malumRune("reactive_shielding", "Reactive Shielding", "Damage resistance when attacked.");
         malumRune("fervor", "Fervor", "Increased mining speed.");
+        malumRune("bolstering", "Bolstering", "Increased max health.");
+        malumRune("sacrificial_empowerment", "Sacrificial Empowerment", "Enables scythe kill chaining.");
+        malumRune("spell_mastery", "Spell Mastery", "Bonus Staff Charges, increased Magic Proficiency and Spell Power.");
+        malumRune("the_heretic", "the Heretic", "Silences attackers");
+        malumRune("unnatural_stamina", "Unnatural Stamina", "Increased speed and sprinting is always available");
+        malumRune("twinned_duration", "Twinned Duration", "Extends positive effects.");
+        malumRune("toughness", "Toughness", "Increased armor toughness.");
+        malumRune("igneous_solace", "Igneous Solace", "Damage resistance while burning.");
     }
 
     private void malumRune(String type, String name, String description) {

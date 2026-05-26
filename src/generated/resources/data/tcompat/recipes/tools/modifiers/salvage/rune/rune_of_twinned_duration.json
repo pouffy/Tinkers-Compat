@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:modifier_salvage",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "modifier": "tcompat:rune_of_twinned_duration",
+  "slots": {
+    "rune": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/armor/helmets"
+    },
+    {
+      "tag": "tinkersjewelry:modifiable/jewelry"
+    }
+  ]
+}

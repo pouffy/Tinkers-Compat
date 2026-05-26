@@ -353,6 +353,14 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         malumRune(malumConsumer, TCModifiers.runeOfAlimentCleansing,        ingredientFromTags(TinkerTags.Items.HELMETS, TCTags.Items.JEWELERY_MODIFIABLE));
         malumRune(malumConsumer, TCModifiers.runeOfReactiveShielding,       ingredientFromTags(TinkerTags.Items.ARMOR));
         malumRune(malumConsumer, TCModifiers.runeOfFervor,                  ingredientFromTags(TinkerTags.Items.HARVEST_PRIMARY));
+        malumRune(malumConsumer, MalumInit.runeOfBolstering.getId(),        ingredientFromTags(TinkerTags.Items.CHESTPLATES, TCTags.Items.JEWELERY_MODIFIABLE));
+        malumRune(malumConsumer, TCModifiers.runeOfTheHeretic,              ingredientFromTags(TinkerTags.Items.CHESTPLATES, TCTags.Items.JEWELERY_MODIFIABLE));
+        malumRune(malumConsumer, TCModifiers.runeOfIgneousSolace,           ingredientFromTags(TinkerTags.Items.ARMOR, TCTags.Items.JEWELERY_MODIFIABLE));
+        malumRune(malumConsumer, TCModifiers.runeOfSacrificialEmpowerment,  ingredientFromTags(TinkerTags.Items.MELEE_WEAPON, TinkerTags.Items.RANGED));
+        malumRune(malumConsumer, MalumInit.runeOfSpellMastery.getId(),      ingredientFromTags(TinkerTags.Items.STAFFS, TCTags.Items.MAGIC_MODIFIABLE));
+        malumRune(malumConsumer, MalumInit.runeOfToughness.getId(),         ingredientFromTags(TinkerTags.Items.ARMOR, TCTags.Items.JEWELERY_MODIFIABLE));
+        malumRune(malumConsumer, MalumInit.runeOfUnnaturalStamina.getId(),  ingredientFromTags(TinkerTags.Items.LEGGINGS));
+        malumRune(malumConsumer, TCModifiers.runeOfTwinnedDuration,         ingredientFromTags(TinkerTags.Items.HELMETS, TCTags.Items.JEWELERY_MODIFIABLE));
 
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));

@@ -18,6 +18,7 @@
   ],
   "client": [
     "LivingEntityRendererMixin",
+    "LocalPlayerMixin",
     "PlayerRendererMixin"
   ],
   "injectors": {

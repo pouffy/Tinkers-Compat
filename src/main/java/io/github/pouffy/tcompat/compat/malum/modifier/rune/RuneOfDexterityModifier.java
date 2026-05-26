@@ -4,14 +4,18 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import io.github.pouffy.tcompat.common.modifier.hook.EntitySensitiveAttributesModifierHook;
 import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioAttributeHook;
+import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioTickModifierHook;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
@@ -20,7 +24,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import java.util.UUID;
 import java.util.function.BiConsumer;
 
-public class RuneOfDexterityModifier extends NoLevelsModifier implements CurioAttributeHook, EntitySensitiveAttributesModifierHook {
+public class RuneOfDexterityModifier extends NoLevelsModifier implements CurioAttributeHook, EntitySensitiveAttributesModifierHook, InventoryTickModifierHook, CurioTickModifierHook {
 
     public void registerHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, GlobalInit.ENTITY_SENSITIVE_ATTRIBUTES, GlobalInit.CURIO_ATTRIBUTE);
@@ -60,5 +64,27 @@ public class RuneOfDexterityModifier extends NoLevelsModifier implements CurioAt
                 }
             }
         });
+    }
+
+    @Override
+    public void curioTick(IToolStackView tool, ModifierEntry entry, String slotId, int slotIndex, LivingEntity wearer, ItemStack stack) {
+        if (tool.isBroken()) return;
+        if (wearer.level().getGameTime() % 5L == 0L) {
+            AttributeInstance attribute = wearer.getAttribute(Attributes.MOVEMENT_SPEED);
+            if (attribute != null) {
+                attribute.setDirty();
+            }
+        }
+    }
+
+    @Override
+    public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity living, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
+        if ((!isCorrectSlot && !isSelected) || tool.isBroken()) return;
+        if (living.level().getGameTime() % 5L == 0L) {
+            AttributeInstance attribute = living.getAttribute(Attributes.MOVEMENT_SPEED);
+            if (attribute != null) {
+                attribute.setDirty();
+            }
+        }
     }
 }

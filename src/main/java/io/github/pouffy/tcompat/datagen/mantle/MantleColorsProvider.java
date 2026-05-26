@@ -146,6 +146,14 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.runeOfAlimentCleansing,        0x95f6f9);
         addColor(TCModifiers.runeOfReactiveShielding,       0xd9ea75);
         addColor(TCModifiers.runeOfFervor,                  0xffe65d);
+        addColor(MalumInit.runeOfBolstering.getId(),        0xf74594);
+        addColor(TCModifiers.runeOfSacrificialEmpowerment,  0xca32d4);
+        addColor(MalumInit.runeOfSpellMastery.getId(),      0xf887ee);
+        addColor(TCModifiers.runeOfTheHeretic,              0xe857de);
+        addColor(MalumInit.runeOfUnnaturalStamina.getId(),  0x7fc1ec);
+        addColor(TCModifiers.runeOfTwinnedDuration,         0x6a76c5);
+        addColor(MalumInit.runeOfToughness.getId(),         0x6c9853);
+        addColor(TCModifiers.runeOfIgneousSolace,           0xeb6a61);
     }
 
     public void addColor(MaterialBuilder material) {

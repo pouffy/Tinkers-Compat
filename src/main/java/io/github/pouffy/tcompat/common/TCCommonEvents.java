@@ -157,6 +157,8 @@ public class TCCommonEvents {
         if (event.getSource().getEntity() instanceof LivingEntity attacker) {
             MalumHandler.volatileDistortion(event, attacker);
             MalumHandler.reactiveShielding(event, attacker);
+            MalumHandler.heretic(event);
+            MalumHandler.igneousSolace(event);
         }
         VoidTouched.get(event.getEntity()).ifPresent(voidTouched -> voidTouched.hurtEvent(event));
     }
@@ -179,10 +181,16 @@ public class TCCommonEvents {
     @SubscribeEvent
     static void effectAdded(MobEffectEvent.Added event) {
         MalumHandler.ailmentCleansing(event);
+        MalumHandler.twinnedDuration(event);
     }
 
     @SubscribeEvent
     static void breakSpeed(PlayerEvent.BreakSpeed event) {
         MalumHandler.fervor(event);
+    }
+
+    @SubscribeEvent
+    static void livingDeath(LivingDeathEvent event) {
+        MalumHandler.sacrificialEmpowerment(event);
     }
 }

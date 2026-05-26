@@ -9,9 +9,7 @@ import io.github.pouffy.tcompat.compat.malum.modifier.melee.DeliveranceModifier;
 import io.github.pouffy.tcompat.compat.malum.modifier.ranged.AuricFlameModifier;
 import io.github.pouffy.tcompat.compat.malum.modifier.ranged.ErosionModifier;
 import io.github.pouffy.tcompat.compat.malum.modifier.ranged.MnemonicModifier;
-import io.github.pouffy.tcompat.compat.malum.modifier.rune.RuneOfCullingModifier;
-import io.github.pouffy.tcompat.compat.malum.modifier.rune.RuneOfDexterityModifier;
-import io.github.pouffy.tcompat.compat.malum.modifier.rune.RuneOfReinforcementModifier;
+import io.github.pouffy.tcompat.compat.malum.modifier.rune.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -45,6 +43,11 @@ public class MalumInit extends CompatInitializer {
     public static final StaticModifier<RuneOfCullingModifier> runeOfCulling = MALUM_M.register("rune_of_culling", RuneOfCullingModifier::new);
     public static final StaticModifier<RuneOfReinforcementModifier> runeOfReinforcement = MALUM_M.register("rune_of_reinforcement", RuneOfReinforcementModifier::new);
     public static final StaticModifier<RuneOfDexterityModifier> runeOfDexterity = MALUM_M.register("rune_of_dexterity", RuneOfDexterityModifier::new);
+
+    public static final StaticModifier<RuneOfBolsteringModifier> runeOfBolstering = MALUM_M.register("rune_of_bolstering", RuneOfBolsteringModifier::new);
+    public static final StaticModifier<RuneOfSpellMastery> runeOfSpellMastery = MALUM_M.register("rune_of_spell_mastery", RuneOfSpellMastery::new);
+    public static final StaticModifier<RuneOfToughnessModifier> runeOfToughness = MALUM_M.register("rune_of_toughness", RuneOfToughnessModifier::new);
+    public static final StaticModifier<RuneOfUnnaturalStaminaModifier> runeOfUnnaturalStamina = MALUM_M.register("rune_of_unnatural_stamina", RuneOfUnnaturalStaminaModifier::new);
 
     public static final SlotType RUNE_SLOT = SlotType.getOrCreate("rune");
 

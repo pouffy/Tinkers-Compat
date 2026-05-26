@@ -12,6 +12,7 @@ import com.sammy.malum.core.handlers.SoulDataHandler;
 import com.sammy.malum.core.helpers.ParticleHelper;
 import com.sammy.malum.registry.client.ParticleRegistry;
 import com.sammy.malum.registry.common.*;
+import com.sammy.malum.registry.common.item.ItemRegistry;
 import com.sammy.malum.visual_effects.networked.ParticleEffectType;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
@@ -20,6 +21,7 @@ import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -30,15 +32,18 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import team.lodestar.lodestone.handlers.RenderHandler;
+import team.lodestar.lodestone.helpers.CurioHelper;
 import team.lodestar.lodestone.helpers.EntityHelper;
 import team.lodestar.lodestone.helpers.RandomHelper;
 import team.lodestar.lodestone.helpers.SoundHelper;
@@ -163,6 +168,37 @@ public class MalumHandler {
         if (EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfFervor) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_fervor")) {
             event.setNewSpeed(event.getOriginalSpeed() * 1.25F);
         }
+    }
+
+    public static void heretic(LivingHurtEvent event) {
+        // No point running if the player has the actual rune
+        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfTheHeretic) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_the_heretic")) {
+            LoadedOnly.heretic(event);
+        }
+    }
+
+    public static void igneousSolace(LivingHurtEvent event) {
+        if (EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfIgneousSolace) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_igneous_solace")) {
+            if (event.getEntity().isOnFire()) {
+                event.setAmount(event.getAmount() * 0.75F);
+            }
+        }
+    }
+
+    public static void sacrificialEmpowerment(LivingDeathEvent event) {
+        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfSacrificialEmpowerment) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_sacrificial_empowerment")) {
+            LoadedOnly.sacrificialEmpowerment(event);
+        }
+    }
+
+    public static void twinnedDuration(MobEffectEvent.Added event) {
+        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfTwinnedDuration) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_twinned_duration")) {
+            LoadedOnly.twinnedDuration(event);
+        }
+    }
+
+    public static boolean forceSprint(LivingEntity livingEntity) {
+        return CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(livingEntity, MalumInit.runeOfUnnaturalStamina.getId()) && !CuriosHandler.hasItem(livingEntity, "malum:rune_of_unnatural_stamina");
     }
 
     @SuppressWarnings("SuspiciousNameCombination")
@@ -320,6 +356,47 @@ public class MalumHandler {
                 MobEffect type = effect.getEffect();
                 if (type.getCategory().equals(MobEffectCategory.HARMFUL)) {
                     EntityHelper.shortenEffect(effect, event.getEntity(), effect.getDuration() / 4);
+                }
+            }
+        }
+
+        public static void heretic(LivingHurtEvent event) {
+            LivingEntity target = event.getEntity();
+            if (event.getSource().getEntity() instanceof LivingEntity attacker) {
+                MobEffect silenced = MobEffectRegistry.SILENCED.get();
+                MobEffectInstance effect = attacker.getEffect(silenced);
+                if (effect == null) {
+                    attacker.addEffect(new MobEffectInstance(silenced, 300, 0, true, true, true));
+                } else {
+                    EntityHelper.amplifyEffect(effect, attacker, 1, 9);
+                    EntityHelper.extendEffect(effect, attacker, 60, 600);
+                }
+
+                SoundHelper.playSound(target, SoundRegistry.DRAINING_MOTIF.get(), 1.0F, 1.5F);
+            }
+        }
+
+        public static void sacrificialEmpowerment(LivingDeathEvent event) {
+            MobEffect sacrificialEmpowerment = MobEffectRegistry.SACRIFICIAL_EMPOWERMENT.get();
+            LivingEntity attacker = EquipmentHelper.getAttacker(event);
+            if (attacker != null) {
+                MobEffectInstance effect = attacker.getEffect(sacrificialEmpowerment);
+                if (effect == null) {
+                    attacker.addEffect(new MobEffectInstance(sacrificialEmpowerment, 200, 0, true, true, true));
+                } else {
+                    EntityHelper.amplifyEffect(effect, attacker, 1, 3);
+                    EntityHelper.extendEffect(effect, attacker, 50, 200);
+                }
+            }
+        }
+
+        public static void twinnedDuration(MobEffectEvent.Added event) {
+            LivingEntity entity = event.getEntity();
+            if (event.getOldEffectInstance() == null) {
+                MobEffectInstance effect = event.getEffectInstance();
+                MobEffect type = effect.getEffect();
+                if (type.isBeneficial()) {
+                    EntityHelper.extendEffect(effect, entity, effect.getDuration());
                 }
             }
         }
