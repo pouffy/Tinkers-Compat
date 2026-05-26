@@ -14,8 +14,6 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-import java.util.Optional;
-
 public class ThunderstruckModifier extends NoLevelsModifier implements MeleeHitModifierHook {
 
     @Override
@@ -36,19 +34,5 @@ public class ThunderstruckModifier extends NoLevelsModifier implements MeleeHitM
                 attacker.level().addFreshEntity(lightningBolt);
             }
         }
-    }
-
-    //Copy of Aether hook to work with our compatibility data
-    public static boolean lightningTracking(Entity entity, LightningBolt lightning) {
-        if (entity instanceof LivingEntity livingEntity) {
-            Optional<LightningOwner> compatibilityOptional = LightningOwner.get(lightning).resolve();
-            if (compatibilityOptional.isPresent()) {
-                LightningOwner lightningTracker = compatibilityOptional.get();
-                if (lightningTracker.getLightningOwner() != null) {
-                    return livingEntity == lightningTracker.getLightningOwner() || livingEntity == lightningTracker.getLightningOwner().getVehicle() || lightningTracker.getLightningOwner().getPassengers().contains(livingEntity);
-                }
-            }
-        }
-        return false;
     }
 }

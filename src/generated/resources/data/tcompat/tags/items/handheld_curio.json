@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "constructs_casting:tinkerers_spellbook",
+      "required": false
+    },
+    {
+      "id": "constructs_casting:travellers_spellbook",
+      "required": false
+    },
+    {
+      "id": "constructs_casting:plated_spellbook",
+      "required": false
+    }
+  ]
+}

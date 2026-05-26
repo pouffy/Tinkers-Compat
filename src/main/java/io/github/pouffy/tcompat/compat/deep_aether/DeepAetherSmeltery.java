@@ -1,10 +1,9 @@
 package io.github.pouffy.tcompat.compat.deep_aether;
 
-import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.fluid.TCFluids;
+import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.data.recipe.TCShapedRecipeBuilder;
 import io.github.pouffy.tcompat.common.data.recipe.TCShapelessRecipeBuilder;
-import io.github.pouffy.tcompat.common.data.TCTags;
+import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCByproduct;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
@@ -15,7 +14,6 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.tconstruct.fluids.TinkerFluids;

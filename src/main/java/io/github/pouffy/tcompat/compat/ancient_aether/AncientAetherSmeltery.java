@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.compat.ancient_aether;
 
-import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;

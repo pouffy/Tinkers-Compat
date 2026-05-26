@@ -1,8 +1,7 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability.types;
 
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
-import io.github.pouffy.tcompat.compat.cataclysm.modifier.CataclysmHandler;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -52,10 +51,8 @@ public class VoidScatterAbility extends AbstractProjectileAbility {
                 }
                 vec = vec.scale(0.35F);
                 vec = mulPoseVector(vec, dir);
-                if (CompatHelper.isLoaded("cataclysm")) {
-                    var shard = CataclysmHandler.createVoidShard(projectile.level(), x, y, z, vec, projectile.getOwner(), target);
-                    if (shard != null) projectile.level().addFreshEntity(shard);
-                }
+                var shard = CataclysmHandler.createVoidShard(projectile.level(), x, y, z, vec, projectile.getOwner(), target);
+                if (shard != null) projectile.level().addFreshEntity(shard);
             }
             projectile.playSound(SoundEvents.GLASS_BREAK, 1.1F, 0.8F);
         }

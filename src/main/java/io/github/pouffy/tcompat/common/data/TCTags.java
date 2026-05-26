@@ -95,6 +95,8 @@ public class TCTags {
         public static TagKey<Item> MAGIC_MODIFIABLE = named("constructs_casting", "modifiable_magic");
         public static TagKey<Item> JEWELERY_MODIFIABLE = named("tinkersjewelry", "modifiable/jewelry");
 
+        public static TagKey<Item> HANDHELD_CURIO = local("handheld_curio");
+
         public static TagKey<Item> GEMS = common("gems");
         public static TagKey<Item> BLOCKS = common("storage_blocks");
         public static TagKey<Item> NUGGETS = common("nuggets");

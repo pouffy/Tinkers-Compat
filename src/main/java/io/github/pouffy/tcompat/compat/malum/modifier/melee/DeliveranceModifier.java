@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.melee;
 
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -24,7 +23,7 @@ public class DeliveranceModifier extends NoLevelsModifier implements MeleeDamage
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         var target = context.getLivingTarget();
-        if (!CompatHelper.isLoaded("malum") || target == null) return damage;
+        if (target == null) return damage;
         AtomicReference<Float> newDamage = new AtomicReference<>(damage);
         ObjectRetriever.getEffect("malum:imminent_deliverance").ifPresent(effect -> {
             if (target.hasEffect(effect)) {

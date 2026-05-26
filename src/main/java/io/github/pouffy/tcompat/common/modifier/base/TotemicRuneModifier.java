@@ -1,7 +1,6 @@
 package io.github.pouffy.tcompat.common.modifier.base;
 
 import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioTickModifierHook;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.world.effect.MobEffect;
@@ -39,14 +38,9 @@ public class TotemicRuneModifier extends NoLevelsModifier implements CurioTickMo
     }
 
     public TotemicRuneModifier(String riteName, boolean corrupted, int interval) {
-        if (CompatHelper.isLoaded("malum")) {
-            var rite = MalumHandler.getRiteEffect(riteName, corrupted);
-            this.mobEffectSupplier = rite.getFirst();
-            this.entityPredicate = rite.getSecond();
-        } else {
-            this.mobEffectSupplier = () -> null;
-            this.entityPredicate = (e) -> false;
-        }
+        var rite = MalumHandler.getRiteEffect(riteName, corrupted);
+        this.mobEffectSupplier = rite.getFirst();
+        this.entityPredicate = rite.getSecond();
         this.interval = interval;
     }
 

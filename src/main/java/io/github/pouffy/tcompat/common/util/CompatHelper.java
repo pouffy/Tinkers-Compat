@@ -1,8 +1,6 @@
 package io.github.pouffy.tcompat.common.util;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -12,42 +10,27 @@ import io.github.pouffy.tcompat.compat.ancient_aether.AncientAetherInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
-import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
-import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
-import slimeknights.tconstruct.library.tools.item.IModifiable;
-import slimeknights.tconstruct.library.tools.nbt.ToolStack;
-import slimeknights.tconstruct.tools.stats.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-
-import static net.minecraft.world.item.Tiers.STONE;
-import static net.minecraft.world.item.Tiers.WOOD;
 
 public class CompatHelper {
 
@@ -113,26 +96,6 @@ public class CompatHelper {
         return ResourceKey.create(reg, TCompat.getResource(location));
     }
 
-    /**
-     * Only run if the stack is a tool.
-     * @param stack the ItemStack being used.
-     * @param consumer the method  to run.
-     */
-    public static void asTool(ItemStack stack, Consumer<ToolStack> consumer) {
-        if (stack.getItem() instanceof IModifiable) {
-            consumer.accept(ToolStack.from(stack));
-        }
-    }
-
-    public static void sendCooldownMessage(LivingEntity entity, ModifierEntry modifierEntry) {
-        if (entity instanceof Player player) {
-            if (ModifierCooldowns.getModifierCooldowns(entity).isOnCooldown(modifierEntry.getId())) {
-                Component message = Component.translatable("notification.tcompat.modifier_cooldown", modifierEntry.getModifier().getDisplayName());
-                player.displayClientMessage(message, true);
-            }
-        }
-    }
-
     public static Entity getEntityByUUID(Level level, UUID uuid) {
         if (level instanceof ServerLevel serverLevel) {
             for (var entity : serverLevel.getEntities().getAll()) {
@@ -143,63 +106,4 @@ public class CompatHelper {
         }
         return null;
     }
-
-    public static ArrayList<ItemStack> getModifiableStacks(LivingEntity wearer) {
-        ArrayList<ItemStack> itemStacks = new ArrayList<>();
-
-        ItemStack mainHeld = wearer.getMainHandItem();
-        ItemStack offHeld = wearer.getOffhandItem();
-        if (isTool(mainHeld)) itemStacks.add(mainHeld);
-        if (isTool(offHeld)) itemStacks.add(offHeld);
-        wearer.getArmorSlots().forEach(stack -> {
-            if (isTool(stack)) itemStacks.add(stack);
-        });
-        itemStacks.addAll(getModifiableCurios(wearer));
-
-        return itemStacks;
-    }
-
-    public static ArrayList<ItemStack> getModifiableCurios(LivingEntity wearer) {
-        ArrayList<ItemStack> itemStacks = new ArrayList<>();
-        if (isLoaded("curios")) {
-            itemStacks.addAll(CuriosHandler.getCurioTools(wearer));
-        }
-        return itemStacks;
-    }
-
-    public static boolean isTool(ItemStack stack) {
-        return stack.getItem() instanceof IModifiable modifiable && modifiable.getToolDefinition() != ToolDefinition.EMPTY;
-    }
-
-    //Never datagenerated. Just used as fallbacks. Will always fallback to wood if the parent isn't defined here
-    public static MaterialBuilder woodStatsBuilder = MaterialBuilder.material("tconstruct", "wood")
-            .stats(s ->
-                    s.stat(
-                            new HeadMaterialStats(60, 2f, WOOD, 0f),
-                            HandleMaterialStats.percents().build(), // flat all around
-                            StatlessMaterialStats.BINDING,
-                            new LimbMaterialStats(60, 0, 0, 0),
-                            new GripMaterialStats(0f, 0, 0),
-                            StatlessMaterialStats.ARROW_SHAFT,
-                            StatlessMaterialStats.SHIELD_CORE
-                    )
-            );
-
-    public static MaterialBuilder rockStatsBuilder = MaterialBuilder.material("tconstruct", "rock")
-            .stats(s ->
-                    s.stat(
-                            new HeadMaterialStats(130, 4f, STONE, 1f),
-                            HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.05f).build(),
-                            StatlessMaterialStats.BINDING
-                    )
-            );
-
-    public static MaterialBuilder whitestoneStatsBuilder = MaterialBuilder.material("tconstruct", "whitestone")
-            .stats(s ->
-                    s.stat(
-                            new HeadMaterialStats(275, 6.0F, Tiers.IRON, 1.25F),
-                            HandleMaterialStats.multipliers().durability(0.95F).miningSpeed(1.1F).attackSpeed(0.95F).build(),
-                            StatlessMaterialStats.BINDING
-                    )
-            );
 }

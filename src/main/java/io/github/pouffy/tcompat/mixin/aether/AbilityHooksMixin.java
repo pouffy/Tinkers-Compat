@@ -2,7 +2,7 @@ package io.github.pouffy.tcompat.mixin.aether;
 
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.event.hooks.AbilityHooks;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -28,7 +28,7 @@ public class AbilityHooksMixin {
         if (debuffTools) {
             if (stack.getItem() instanceof ModifiableItem) {
                 if ((state.getBlock().getDescriptionId().startsWith("block.aether.") || state.is(AetherTags.Blocks.TREATED_AS_AETHER_BLOCK)) && !state.is(AetherTags.Blocks.TREATED_AS_VANILLA_BLOCK)) {
-                    CompatHelper.asTool(stack, (tool) -> {
+                    EquipmentHelper.asTool(stack, (tool) -> {
                         List<ModifierEntry> validList = new ArrayList<>();
                         for (ModifierEntry entry : tool.getModifierList()) {
                             if (entry.getModifier().getHooks().hasHook(GlobalInit.AETHER_FORGED)) {

@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.melee;
 
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -24,20 +23,19 @@ public class CertaintyModifier extends NoLevelsModifier implements MeleeDamageMo
 
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
-        if (!CompatHelper.isLoaded("malum")) return damage;
         return MalumHandler.weightOfWorlds(damage, context.getAttacker(), context.getTarget());
     }
 
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
-        if (!CompatHelper.isLoaded("malum") || target == null) return;
+        if (target == null) return;
         if (target.isDeadOrDying()) {
             ObjectRetriever.getEffect("malum:grim_certainty").ifPresent(effect -> context.getAttacker().addEffect(new MobEffectInstance(effect, 200)));
         }
     }
 
     public static void addEffect(LivingEntity attacker) {
-        if (!CompatHelper.isLoaded("malum") || attacker == null) return;
+        if (attacker == null) return;
         ObjectRetriever.getEffect("malum:grim_certainty").ifPresent(effect -> attacker.addEffect(new MobEffectInstance(effect, 200)));
     }
 }

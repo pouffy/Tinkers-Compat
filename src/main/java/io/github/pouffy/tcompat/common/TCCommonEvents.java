@@ -1,25 +1,23 @@
 package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
-import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.common.modifier.hook.EntitySensitiveAttributesModifierHook;
 import io.github.pouffy.tcompat.common.network.SwingClientArmPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.base.PacketRelay;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.ThunderstruckModifier;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -35,12 +33,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.mantle.util.OffhandCooldownTracker;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.tools.context.EquipmentContext;
-import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
-import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
-
-import java.util.concurrent.atomic.AtomicReference;
 
 @Mod.EventBusSubscriber(modid = TCompat.MOD_ID)
 public class TCCommonEvents {
@@ -73,7 +66,7 @@ public class TCCommonEvents {
     public static void onLeftClick(PlayerInteractEvent.LeftClickEmpty event) {
         Player player = event.getEntity();
         ItemStack rightItem = event.getEntity().getMainHandItem();
-        CompatHelper.asTool(rightItem, (tool) -> {
+        EquipmentHelper.asTool(rightItem, (tool) -> {
             boolean flag = false;
             if (!player.getItemInHand(InteractionHand.MAIN_HAND).is(rightItem.getItem())) return;
             for (ModifierEntry entry : tool.getModifiers()) {
@@ -87,7 +80,7 @@ public class TCCommonEvents {
         //Only swing off-hand if the main hand is empty.
         ItemStack leftItem = event.getEntity().getOffhandItem();
         if (rightItem.isEmpty()) {
-            CompatHelper.asTool(leftItem, (tool) -> {
+            EquipmentHelper.asTool(leftItem, (tool) -> {
                 boolean flag = false;
                 if (!player.getItemInHand(InteractionHand.OFF_HAND).is(leftItem.getItem())) return;
                 for (ModifierEntry entry : tool.getModifiers()) {
@@ -106,27 +99,7 @@ public class TCCommonEvents {
     public void onLivingAttack(LivingAttackEvent event) {
         LivingEntity entity = event.getEntity();
         if (!entity.level().isClientSide() && !entity.isDeadOrDying()) {
-            EquipmentContext context = new EquipmentContext(entity);
-            if (CompatHelper.isLoaded("cataclysm")) {
-                float dodgeChance = 0.0F;
-                boolean projectile = event.getSource().is(DamageTypeTags.IS_PROJECTILE);
-                boolean bypass = event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY);
-                if (context.hasModifiableArmor()) {
-                    for (EquipmentSlot slotType : EquipmentSlot.values()) {
-                        if (ModifierUtil.validArmorSlot(entity, slotType)) {
-                            IToolStackView toolStack = context.getToolInSlot(slotType);
-                            if (toolStack != null && !toolStack.isBroken()) {
-                                if (toolStack.getModifier(TCModifiers.ghostly) != ModifierEntry.EMPTY) {
-                                    dodgeChance += projectile ? 0.12F : 0.06F;
-                                }
-                            }
-                        }
-                    }
-                }
-                if ((dodgeChance != 0.0F && event.getEntity().getRandom().nextFloat() < dodgeChance) && !bypass) {
-                    event.setCanceled(true);
-                }
-            }
+            CataclysmHandler.ghostDodge(event);
         }
     }
 
@@ -140,12 +113,8 @@ public class TCCommonEvents {
         });
         VampireHealing.get(entity).ifPresent(VampireHealing::onUpdate);
         TCompat.COOLDOWN_HANDLER.tickEntity(entity);
-        if (CompatHelper.isLoaded("curios")) {
-            CuriosHandler.tickHook(event);
-        }
-        if (CompatHelper.isLoaded("malum")) {
-            MalumHandler.idleRestoration(event);
-        }
+        CuriosHandler.tickHook(event);
+        MalumHandler.idleRestoration(event);
     }
 
     @SubscribeEvent
@@ -177,31 +146,19 @@ public class TCCommonEvents {
     public static void onLightningStrike(EntityStruckByLightningEvent event) {
         Entity entity = event.getEntity();
         LightningBolt lightningBolt = event.getLightning();
-        if (!event.isCanceled() && ThunderstruckModifier.lightningTracking(entity, lightningBolt)) {
+        if (!event.isCanceled() && LightningOwner.lightningTracking(entity, lightningBolt)) {
             event.setCanceled(true);
         }
     }
 
     @SubscribeEvent
     static void hurt(LivingHurtEvent event) {
-        if (CompatHelper.isLoaded("malum")) MalumHandler.exposeSoul(event);
-        var entity = event.getEntity();
-        AtomicReference<Float> voidAmount = new AtomicReference<>(event.getAmount());
-        VoidTouched.get(entity).ifPresent(voidTouched -> {
-            if (voidTouched.isVoided()) {
-                float multiplier = ((voidTouched.getAmplifier()) * 0.05f);
-                voidAmount.updateAndGet(v -> v + (v * multiplier));
-            }
-        });
-        if (voidAmount.get() != event.getAmount()) {
-            event.setAmount(voidAmount.get());
-        }
+        MalumHandler.exposeSoul(event);
         if (event.getSource().getEntity() instanceof LivingEntity attacker) {
-            if (CompatHelper.isLoaded("malum")) {
-                MalumHandler.volatileDistortion(event, attacker);
-                MalumHandler.reactiveShielding(event, attacker);
-            }
+            MalumHandler.volatileDistortion(event, attacker);
+            MalumHandler.reactiveShielding(event, attacker);
         }
+        VoidTouched.get(event.getEntity()).ifPresent(voidTouched -> voidTouched.hurtEvent(event));
     }
 
     @SubscribeEvent
@@ -209,11 +166,11 @@ public class TCCommonEvents {
         LivingEntity wearer = event.getEntity();
         ItemStack from = event.getFrom();
         ItemStack to = event.getTo();
-        if (!from.isEmpty() && CompatHelper.isTool(from)) {
+        if (!from.isEmpty() && EquipmentHelper.isTool(from)) {
             ToolStack fromTool = ToolStack.from(from);
             wearer.getAttributes().removeAttributeModifiers(EntitySensitiveAttributesModifierHook.getAttributeModifiers(fromTool, event.getSlot(), wearer));
         }
-        if (!to.isEmpty() && CompatHelper.isTool(to)) {
+        if (!to.isEmpty() && EquipmentHelper.isTool(to)) {
             ToolStack toTool = ToolStack.from(to);
             wearer.getAttributes().addTransientAttributeModifiers(EntitySensitiveAttributesModifierHook.getAttributeModifiers(toTool, event.getSlot(), wearer));
         }
@@ -221,15 +178,11 @@ public class TCCommonEvents {
 
     @SubscribeEvent
     static void effectAdded(MobEffectEvent.Added event) {
-        if (CompatHelper.isLoaded("malum")) {
-            MalumHandler.ailmentCleansing(event);
-        }
+        MalumHandler.ailmentCleansing(event);
     }
 
     @SubscribeEvent
     static void breakSpeed(PlayerEvent.BreakSpeed event) {
-        if (CompatHelper.isLoaded("malum")) {
-            MalumHandler.fervor(event);
-        }
+        MalumHandler.fervor(event);
     }
 }

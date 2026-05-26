@@ -4,7 +4,6 @@ import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.modifier.base.MalumStaffModifier;
 import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.util.RandomSource;
@@ -35,7 +34,6 @@ public class ErosionModifier extends MalumStaffModifier {
 
     @Override
     public void spawnChargeParticles(Level level, LivingEntity entity, Vec3 pos, IToolStackView tool, float chargePercentage) {
-        if (!CompatHelper.isLoaded("malum")) return;
         RandomSource random = level.random;
         MalumHandler.erosionParticles(entity, random, pos, chargePercentage);
     }

@@ -4,7 +4,7 @@ import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.cooldown.ClientModifierCooldowns;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.modifier.base.AbstractTeamUpModifier;
-import io.github.pouffy.tcompat.compat.cataclysm.modifier.CataclysmHandler;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;

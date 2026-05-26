@@ -12,8 +12,6 @@ import slimeknights.tconstruct.library.recipe.FluidValues;
 
 import java.util.function.Consumer;
 
-import static io.github.pouffy.tcompat.TCompat.getResource;
-
 public class CataclysmSmeltery implements CompatSmeltery {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> consumer, String folder) {

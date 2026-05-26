@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability.types;
 
-import io.github.pouffy.tcompat.compat.ice_and_fire.modifier.IceFireHandler;
+import io.github.pouffy.tcompat.compat.ice_and_fire.IceFireHandler;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;

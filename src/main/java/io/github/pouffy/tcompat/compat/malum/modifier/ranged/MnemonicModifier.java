@@ -4,7 +4,6 @@ import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.modifier.base.MalumStaffModifier;
 import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.util.RandomSource;
@@ -31,7 +30,6 @@ public class MnemonicModifier extends MalumStaffModifier {
 
     @Override
     public void spawnChargeParticles(Level level, LivingEntity entity, Vec3 pos, IToolStackView tool, float chargePercentage) {
-        if (!CompatHelper.isLoaded("malum")) return;
         RandomSource random = level.random;
         MalumHandler.mnemonicParticles(entity, random, pos, chargePercentage);
     }
@@ -48,7 +46,6 @@ public class MnemonicModifier extends MalumStaffModifier {
 
     @Override
     public void fireProjectile(LivingEntity entity, IToolStackView tool, Level level, InteractionHand hand, float chargePercentage, int count) {
-        if (!CompatHelper.isLoaded("malum")) return;
         float pitchOffset = 3.0F + (float)count;
         int spawnDelay = count * 3;
         float velocity = 3.0F + 0.5F * (float)count;

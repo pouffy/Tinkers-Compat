@@ -6,8 +6,7 @@ import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileA
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.modifier.base.AbstractTeamUpModifier;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
-import io.github.pouffy.tcompat.compat.cataclysm.modifier.CataclysmHandler;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -55,7 +54,6 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
 
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity entity, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistantData, boolean primary) {
-        if (!CompatHelper.isLoaded("cataclysm")) return;
         Level level = entity.level();
         if (isValid(tool) && !ModifierCooldowns.getModifierCooldowns(entity).isOnCooldown(modifier.getId()) && primary && arrow != null) {
             int i = 72000 - tool.getPersistentData().getInt(timeLeftKey);

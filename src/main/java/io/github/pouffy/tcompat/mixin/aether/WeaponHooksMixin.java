@@ -3,7 +3,7 @@ package io.github.pouffy.tcompat.mixin.aether;
 import com.aetherteam.aether.AetherConfig;
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.event.hooks.AbilityHooks;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
+import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -41,7 +41,7 @@ public class WeaponHooksMixin {
                     if ((target.getType().getDescriptionId().startsWith("entity.aether") || target.getType().is(AetherTags.Entities.TREATED_AS_AETHER_ENTITY)) && !target.getType().is(AetherTags.Entities.TREATED_AS_VANILLA_ENTITY) && !stack.isEmpty() && !stack.getAttributeModifiers(EquipmentSlot.MAINHAND).isEmpty() && stack.getAttributeModifiers(EquipmentSlot.MAINHAND).containsKey(Attributes.ATTACK_DAMAGE) && !stack.getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE).isEmpty()) {
                         double value = stack.getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE).stream().mapToDouble(AttributeModifier::getAmount).sum();
                         if (value > livingEntity.getAttributeBaseValue(Attributes.ATTACK_DAMAGE) && !stack.getItem().getDescriptionId().startsWith("item.aether.") && !stack.is(AetherTags.Items.TREATED_AS_AETHER_ITEM)) {
-                            CompatHelper.asTool(stack, (tool) -> {
+                            EquipmentHelper.asTool(stack, (tool) -> {
                                 List<ModifierEntry> validList = new ArrayList<>();
                                 for (ModifierEntry entry : tool.getModifierList()) {
                                     if (entry.getModifier().getHooks().hasHook(GlobalInit.AETHER_FORGED)) {
@@ -84,7 +84,7 @@ public class WeaponHooksMixin {
                 if (stack.getItem() instanceof ModifiableArmorItem armorItem) {
                     if (!stack.getItem().getDescriptionId().startsWith("item.aether.") && !stack.is(AetherTags.Items.TREATED_AS_AETHER_ITEM) && !stack.getAttributeModifiers(armorItem.getEquipmentSlot()).isEmpty() && stack.getAttributeModifiers(armorItem.getEquipmentSlot()).containsKey(Attributes.ARMOR) && !stack.getAttributeModifiers(armorItem.getEquipmentSlot()).get(Attributes.ARMOR).isEmpty()) {
                         double value = stack.getAttributeModifiers(armorItem.getEquipmentSlot()).get(Attributes.ARMOR).stream().mapToDouble((attributeModifier) -> attributeModifier.getAmount() / (double)15.0F).sum();
-                        CompatHelper.asTool(stack, (tool) -> {
+                        EquipmentHelper.asTool(stack, (tool) -> {
                             List<ModifierEntry> validList = new ArrayList<>();
                             for (ModifierEntry entry : tool.getModifierList()) {
                                 if (entry.getModifier().getHooks().hasHook(GlobalInit.AETHER_FORGED)) {

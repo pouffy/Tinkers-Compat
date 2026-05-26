@@ -1,9 +1,8 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.melee;
 
 import io.github.pouffy.tcompat.common.modifier.hook.ToolSwingModifierHook;
-import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.cataclysm.modifier.CataclysmHandler;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -58,12 +57,10 @@ public class SandstormModifier extends NoLevelsModifier implements MeleeHitModif
                 double vecZ = Math.sin(theta);
                 double x = attacker.getX() + vecX;
                 double Z = attacker.getZ() + vecZ;
-                if (CompatHelper.isLoaded("cataclysm")) {
-                    var sandstorm = CataclysmHandler.createSandstorm(attacker, d1, d2, d3, x, Z);
-                    if (sandstorm != null) {
-                        worldIn.addFreshEntity(sandstorm);
-                        return true;
-                    }
+                var sandstorm = CataclysmHandler.createSandstorm(attacker, d1, d2, d3, x, Z);
+                if (sandstorm != null) {
+                    worldIn.addFreshEntity(sandstorm);
+                    return true;
                 }
             }
         }
