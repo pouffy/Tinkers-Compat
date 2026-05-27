@@ -1,11 +1,10 @@
 package io.github.pouffy.tcompat.datagen.tinkers.modifier;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.data.TCTags;
+import io.github.pouffy.tcompat.common.data.variable.GameEventEntry;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
-import io.github.pouffy.tcompat.common.modifier.module.AetherForgedModule;
-import io.github.pouffy.tcompat.common.modifier.module.MobEffectUserModule;
-import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
-import io.github.pouffy.tcompat.common.modifier.module.SoulExposureModule;
+import io.github.pouffy.tcompat.common.modifier.module.*;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
@@ -265,6 +264,21 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.runeOfSacrificialEmpowerment, modLoaded("malum"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TCModifiers.runeOfTwinnedDuration, modLoaded("malum"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
+        buildModifier(TCModifiers.warden, modLoaded("deeperdarker"))
+                .addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).flat(0.24f))
+                .addModule(StatBoostModule.add(ToolStats.ATTACK_DAMAGE).toolTag(TinkerTags.Items.HELD).flat(1))
+                .addModule(StatBoostModule.add(ToolStats.ARMOR).toolTag(TinkerTags.Items.WORN_ARMOR).flat(1))
+                .addModule(StatBoostModule.add(ToolStats.ARMOR_TOUGHNESS).toolTag(TinkerTags.Items.WORN_ARMOR).flat(1))
+                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.FEET_VIBRATION).build()).toolTag(TinkerTags.Items.BOOTS).build())
+                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.LEGS_VIBRATION).build()).toolTag(TinkerTags.Items.LEGGINGS).build())
+                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.CHEST_VIBRATION).build()).toolTag(TinkerTags.Items.CHESTPLATES).build())
+                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.WINGS_VIBRATION).build()).tool(GlobalInit.HAS_WINGS).build())
+                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.HEAD_VIBRATION).build()).toolTag(TinkerTags.Items.HELMETS).build())
+                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.RANGED_VIBRATION).build()).toolTag(TinkerTags.Items.RANGED).build())
+                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.COMBAT_VIBRATION).build()).toolTag(TinkerTags.Items.MELEE_PRIMARY).build())
+                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.HARVEST_VIBRATION).build()).toolTag(TinkerTags.Items.HARVEST_PRIMARY).build())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 

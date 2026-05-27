@@ -11,6 +11,7 @@ import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
@@ -51,7 +52,7 @@ public class CompatHelper {
         compatInitializers.put("iceandfire", IFInit::init);
         compatInitializers.put("malum", MalumInit::init);
         compatInitializers.put("species", SpeciesInit::init);
-
+        compatInitializers.put("deeperdarker", DarkerInit::init);
 
         compatEvents.put("ad_astra", (bus) -> bus.register(new AdAstraInit()));
         compatEvents.put("aether", (bus) -> bus.register(new AetherInit()));

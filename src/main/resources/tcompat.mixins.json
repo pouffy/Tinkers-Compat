@@ -11,6 +11,7 @@
     "LivingEntityMixin",
     "ProjectileMixin",
     "ServerPlayerMixin",
+    "VibrationListenerMixin",
     "aether.AbilityHooksMixin",
     "aether.WeaponHooksMixin",
     "malum.SpiritHarvestHandlerMixin",

@@ -1,0 +1,7 @@
+{
+  "values": [
+    "minecraft:block_destroy",
+    "minecraft:shear",
+    "minecraft:fluid_pickup"
+  ]
+}

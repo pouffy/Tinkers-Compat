@@ -84,6 +84,12 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Phoenix Touched Trait
 </details>
 <details>
+    <summary><a href="https://modrinth.com/mod/ancient-aether">Ancient Aether</a></summary>
+
+- **Aether Wood** Variants
+- Smeltery Melting Recipes
+</details>
+<details>
   <summary><a href="https://modrinth.com/mod/species">Species</a></summary>
 
 - Wicked Wax Binding Material
@@ -145,13 +151,27 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Dragonsteel Nuggets
 - Dragon Bone Material
 - Dragon Scales Material
+- Sea Serpent Scales Material
+- Hydra Fang Material
+- Amphithere Feather Material
+- Stymphalian Bird Feather Material
+- Troll Leather Material
+- Myrmex Chitin Material
+- Death Worm Chitin Material
+- Breathless Trait
+- Tide Guardian Trait
+- Leeching Trait
+- Aqua Shot Trait
+- Amphitheric Trait
+- Stymphalian Trait
+- Allythropod Trait
+- Petrifying Trait
 - Flamed Modifier
 - Iced Modifier
 - Lightning Modifier
 - Scorch Thorns Modifier
 - Frost Thorns Modifier
 - Volt Thorns Modifier
-- Breathless Trait
 - Dreadbane Modifier
 - Dampening Modifier
 - Smeltery Melting & Casting Recipes
@@ -184,12 +204,49 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Archaeologist Trait
 - Smeltery Melting & Casting Recipes
 </details>
+<details>
+    <summary><a href="https://modrinth.com/mod/malum">Malum</a></summary>
+
+- Soulstained Steel Material
+- Hallowed Gold Material
+- Malignant Pewter Material
+- Spirit Fabric Material
+- Astral Weave Material
+- Alchemical Calx Material
+- Soulstone Material
+- Runewood Material
+- Tainted Rock Material
+- Stained Trait
+- Warded Trait
+- Hallowed Trait
+- Stronghold Trait
+- Magic Proficiency Trait
+- Cloaking Trait
+- Arcane Resonance Trait
+- Spirit Harvester Trait
+- Runic Trait
+- Certainty Trait
+- Spirit Reaper Trait
+- Spoiled Modifier
+- Integral Modifier
+- Deliverance Modifier
+- Mnemonic Modifier
+- Erosion Modifier
+- Auric Flame Modifier
+- Totemic Rune Modifiers
+- Tainted Rune Modifiers
+- Madness Rune Modifiers
+- Smeltery Melting & Casting Recipes
+</details>
+<details>
+    <summary><a href="https://modrinth.com/mod/deeperdarker">Deeper and Darker</a></summary>
+
+</details>
 
 ## Planned
 
-- More Ice & Fire compat.
-- Hex Casting compat.
 - Create compat.
+- ROARING compat.
 
 
 

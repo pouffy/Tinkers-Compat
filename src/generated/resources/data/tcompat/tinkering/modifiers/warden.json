@@ -1,0 +1,46 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "deeperdarker"
+  },
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 0.24,
+      "operation": "multiply_base",
+      "stat": "tconstruct:durability"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 1.0,
+      "operation": "add",
+      "stat": "tconstruct:attack_damage",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/held"
+      }
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 1.0,
+      "operation": "add",
+      "stat": "tconstruct:armor",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/worn"
+      }
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 1.0,
+      "operation": "add",
+      "stat": "tconstruct:armor_toughness",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/worn"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

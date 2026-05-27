@@ -49,6 +49,9 @@ public class TCModifiers {
     public static final ModifierId runeOfSacrificialEmpowerment = id("rune_of_sacrificial_empowerment");
     public static final ModifierId runeOfTwinnedDuration = id("rune_of_twinned_duration");
 
+    //Deeper and Darker
+    public static final ModifierId warden = id("warden");
+
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");
     public static final ModifierId poison_gem = compatId("tinkersjewelry", "poison_gem");

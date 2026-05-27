@@ -43,7 +43,7 @@ public class TCDataGenerator {
         generator.addProvider(server, new TCItemTagProv(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
         generator.addProvider(server, new TCFluidTagProv(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(server, new TCEntityTagProv(packOutput, lookupProvider, existingFileHelper));
-
+        generator.addProvider(server, new TCGameEventTagProv(packOutput, lookupProvider, existingFileHelper));
 
         TCMaterialDataProv materials = new TCMaterialDataProv(packOutput);
         TCMaterialSpriteProv materialSprites = new TCMaterialSpriteProv();

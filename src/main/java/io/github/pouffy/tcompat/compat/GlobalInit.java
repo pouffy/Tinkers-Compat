@@ -30,6 +30,7 @@ import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
+import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
 import slimeknights.tconstruct.library.json.variable.entity.EntityVariable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -39,6 +40,7 @@ import slimeknights.tconstruct.library.tools.helper.ToolBuildHandler;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import java.util.function.Consumer;
 
@@ -72,6 +74,7 @@ public class GlobalInit extends CompatInitializer {
     public static final ModuleHook<CurioTickModifierHook> CURIO_TICK = ModifierHooks.register(getResource("curio_tick"), CurioTickModifierHook.class, CurioTickModifierHook.AllMerger::new, (tool, modifierEntry, slotId, slotIndex, wearer, stack) -> {});
     public static final ModuleHook<CurioAttributeHook> CURIO_ATTRIBUTE = ModifierHooks.register(getResource("curio_attribute"), CurioAttributeHook.class, CurioAttributeHook.AllMerger::new, (tool, modifierEntry, slotId, slotIndex, wearer, uuid, stack) -> HashMultimap.create());
     public static final ModuleHook<EntitySensitiveAttributesModifierHook> ENTITY_SENSITIVE_ATTRIBUTES = ModifierHooks.register(getResource("entity_sensitive_attributes"), EntitySensitiveAttributesModifierHook.class, EntitySensitiveAttributesModifierHook.AllMerger::new, (tool, modifierEntry, slot, wearer, attributes) -> {});
+    public static final ModuleHook<VibrationDampeningModifierHook> VIBRATION_DAMPENING = ModifierHooks.register(getResource("vibration_dampening"), VibrationDampeningModifierHook.class, VibrationDampeningModifierHook.AllMerger::new, (tool, modifierEntry, level, gameEvent, context, pos) -> true);
 
 
     public static LivingEntityPredicate SUN_EXPOSED = SingletonLoader.singleton((loader) -> new LivingEntityPredicate() {
@@ -112,6 +115,18 @@ public class GlobalInit extends CompatInitializer {
         }
     });
 
+    public static ToolStackPredicate HAS_WINGS = SingletonLoader.singleton((loader) -> new ToolStackPredicate() {
+        @Override
+        public boolean matches(IToolStackView tool) {
+            return tool.getModifier(ModifierIds.wings).getLevel() > 0;
+        }
+
+        @Override
+        public RecordLoadable<? extends IJsonPredicate<IToolStackView>> getLoader() {
+            return loader;
+        }
+    });
+
     @SubscribeEvent
     void commonSetup(final FMLCommonSetupEvent event) {
 
@@ -126,8 +141,10 @@ public class GlobalInit extends CompatInitializer {
             ModifierModule.LOADER.register(getResource("optional_attribute"), OptionalAttributeModule.LOADER);
             ModifierModule.LOADER.register(TCompat.getResource("autosmelt"), AutosmeltModule.LOADER);
             LivingEntityPredicate.LOADER.register(getResource("sun_exposed"), SUN_EXPOSED.getLoader());
+            ToolStackPredicate.LOADER.register(getResource("has_wings"), HAS_WINGS.getLoader());
             EntityVariable.LOADER.register(getResource("sky_light"), SKY_LIGHT.getLoader());
             EntityVariable.LOADER.register(getResource("player_stat"), StatEntityVariable.LOADER);
+            ModifierModule.LOADER.register(getResource("vibration_dampening"), VibrationDampeningModule.LOADER);
         }
     }
 

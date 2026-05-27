@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deeperdarker"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "deeperdarker:warden_upgrade_smithing_template"
+    },
+    {
+      "item": "deeperdarker:reinfoced_echo_shard"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:warden",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/durability"
+  }
+}

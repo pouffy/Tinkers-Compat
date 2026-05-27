@@ -154,6 +154,8 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.runeOfTwinnedDuration,         0x6a76c5);
         addColor(MalumInit.runeOfToughness.getId(),         0x6c9853);
         addColor(TCModifiers.runeOfIgneousSolace,           0xeb6a61);
+        //Deeper and Darker
+        addColor(TCModifiers.warden,                        0x62d9fc);
     }
 
     public void addColor(MaterialBuilder material) {

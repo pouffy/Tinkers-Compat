@@ -362,6 +362,14 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         malumRune(malumConsumer, MalumInit.runeOfUnnaturalStamina.getId(),  ingredientFromTags(TinkerTags.Items.LEGGINGS));
         malumRune(malumConsumer, TCModifiers.runeOfTwinnedDuration,         ingredientFromTags(TinkerTags.Items.HELMETS, TCTags.Items.JEWELERY_MODIFIABLE));
 
+        ModifierRecipeBuilder.modifier(TCModifiers.warden)
+                .setTools(ingredientFromTags(TinkerTags.Items.DURABILITY))
+                .addInput(ItemNameIngredient.from(getResource("deeperdarker:warden_upgrade_smithing_template")))
+                .addInput(ItemNameIngredient.from(getResource("deeperdarker:reinfoced_echo_shard")))
+                .setMaxLevel(1).setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(withCondition(consumer, modLoaded("deeperdarker")), prefix(TCModifiers.warden, upgradeSalvage))
+                .save(withCondition(consumer, modLoaded("deeperdarker")), prefix(TCModifiers.warden, upgradeFolder));
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)

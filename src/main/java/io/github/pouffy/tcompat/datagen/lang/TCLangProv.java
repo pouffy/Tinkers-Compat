@@ -73,6 +73,7 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.dreadbane.projectile_damage", "Dreadbane Ranged Damage");
 
         add("notification.tcompat.modifier_cooldown", "Modifier: %s is on cooldown");
+        add("notification.tcompat.dampens_vibrations", "Dampens Vibrations");
 
         add("modifier.tcompat.scorchborn.attack_damage", "Lightning & Ice Dragon Melee Damage");
         add("modifier.tcompat.scorchborn.projectile_damage", "Lightning & Ice Dragon Ranged Damage");
@@ -215,6 +216,8 @@ public class TCLangProv extends LanguageProvider {
         malumRune("twinned_duration", "Twinned Duration", "Extends positive effects.");
         malumRune("toughness", "Toughness", "Increased armor toughness.");
         malumRune("igneous_solace", "Igneous Solace", "Damage resistance while burning.");
+
+        forModifier("modifier.tcompat.warden", "Silence", "Utilise the power of the Warden to dampen vibrations and make the tool stronger.");
     }
 
     private void malumRune(String type, String name, String description) {

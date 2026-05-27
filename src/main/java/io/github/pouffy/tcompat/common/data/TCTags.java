@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TagsUpdatedEvent;
@@ -307,6 +308,22 @@ public class TCTags {
 
         private static TagKey<Modifier> local(String name) {
             return ModifierManager.getTag(getResource(name));
+        }
+    }
+
+    public static class GameEvents {
+
+        public static final TagKey<GameEvent> FEET_VIBRATION = local("vibrations/feet");
+        public static final TagKey<GameEvent> LEGS_VIBRATION = local("vibrations/legs");
+        public static final TagKey<GameEvent> CHEST_VIBRATION = local("vibrations/chest");
+        public static final TagKey<GameEvent> HEAD_VIBRATION = local("vibrations/head");
+        public static final TagKey<GameEvent> RANGED_VIBRATION = local("vibrations/ranged");
+        public static final TagKey<GameEvent> HARVEST_VIBRATION = local("vibrations/harvest");
+        public static final TagKey<GameEvent> COMBAT_VIBRATION = local("vibrations/combat");
+        public static final TagKey<GameEvent> WINGS_VIBRATION = local("vibrations/wings");
+
+        private static TagKey<GameEvent> local(String name) {
+            return TagKey.create(Registries.GAME_EVENT, getResource(name));
         }
     }
 }
