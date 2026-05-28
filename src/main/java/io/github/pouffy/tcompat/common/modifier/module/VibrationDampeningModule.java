@@ -1,7 +1,6 @@
 package io.github.pouffy.tcompat.common.modifier.module;
 
 import io.github.pouffy.tcompat.common.data.variable.GameEventEntry;
-import io.github.pouffy.tcompat.common.data.variable.GameEventLoadable;
 import io.github.pouffy.tcompat.common.modifier.hook.VibrationDampeningModifierHook;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.network.chat.Component;
@@ -36,7 +35,7 @@ import java.util.List;
 public record VibrationDampeningModule(GameEventEntry gameEvent, LevelingValue chance, IJsonPredicate<LivingEntity> user, IJsonPredicate<BlockState> block, ModifierCondition<IToolStackView> condition) implements ModifierModule, TooltipModifierHook, VibrationDampeningModifierHook, ModifierCondition.ConditionalModule<IToolStackView> {
 
     public static final RecordLoadable<VibrationDampeningModule> LOADER = RecordLoadable.create(
-            GameEventLoadable.INSTANCE.requiredField("event", VibrationDampeningModule::gameEvent),
+            GameEventEntry.LOADABLE.defaultField("events", GameEventEntry.EMPTY, VibrationDampeningModule::gameEvent),
             LevelingValue.LOADABLE.defaultField("chance", LevelingValue.flat(1.0F), false, VibrationDampeningModule::chance),
             LivingEntityPredicate.LOADER.defaultField("user", false, VibrationDampeningModule::user),
             BlockPredicate.LOADER.defaultField("block", false, VibrationDampeningModule::block),
@@ -102,6 +101,9 @@ public record VibrationDampeningModule(GameEventEntry gameEvent, LevelingValue c
 
         public Builder(GameEventEntry gameEvent) {
             this.gameEvent = gameEvent;
+            this.chance = LevelingValue.flat(1.0F);
+            this.user = LivingEntityPredicate.ANY;
+            this.block = BlockPredicate.ANY;
         }
 
         public Builder chance(LevelingValue chance) {

@@ -271,14 +271,14 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(StatBoostModule.add(ToolStats.ATTACK_DAMAGE).toolTag(TinkerTags.Items.HELD).flat(1))
                 .addModule(StatBoostModule.add(ToolStats.ARMOR).toolTag(TinkerTags.Items.WORN_ARMOR).flat(1))
                 .addModule(StatBoostModule.add(ToolStats.ARMOR_TOUGHNESS).toolTag(TinkerTags.Items.WORN_ARMOR).flat(1))
-                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.FEET_VIBRATION).build()).toolTag(TinkerTags.Items.BOOTS).build())
-                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.LEGS_VIBRATION).build()).toolTag(TinkerTags.Items.LEGGINGS).build())
-                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.CHEST_VIBRATION).build()).toolTag(TinkerTags.Items.CHESTPLATES).build())
-                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.WINGS_VIBRATION).build()).tool(GlobalInit.HAS_WINGS).build())
-                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.HEAD_VIBRATION).build()).toolTag(TinkerTags.Items.HELMETS).build())
-                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.RANGED_VIBRATION).build()).toolTag(TinkerTags.Items.RANGED).build())
-                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.COMBAT_VIBRATION).build()).toolTag(TinkerTags.Items.MELEE_PRIMARY).build())
-                //.addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.HARVEST_VIBRATION).build()).toolTag(TinkerTags.Items.HARVEST_PRIMARY).build())
+                .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.FEET_VIBRATION).build()).toolTag(TinkerTags.Items.BOOTS).build())
+                .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.LEGS_VIBRATION).build()).toolTag(TinkerTags.Items.LEGGINGS).build())
+                .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.CHEST_VIBRATION).build()).toolTag(TinkerTags.Items.CHESTPLATES).build())
+                .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.WINGS_VIBRATION).build()).tool(GlobalInit.HAS_WINGS).build())
+                .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.HEAD_VIBRATION).build()).toolTag(TinkerTags.Items.HELMETS).build())
+                .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.RANGED_VIBRATION).build()).toolTag(TinkerTags.Items.RANGED).build())
+                .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.COMBAT_VIBRATION).build()).toolTag(TinkerTags.Items.MELEE_PRIMARY).build())
+                .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.HARVEST_VIBRATION).build()).toolTag(TinkerTags.Items.HARVEST_PRIMARY).build())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 

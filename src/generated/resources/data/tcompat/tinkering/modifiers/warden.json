@@ -40,6 +40,115 @@
         "type": "mantle:tag",
         "tag": "tconstruct:modifiable/armor/worn"
       }
+    },
+    {
+      "type": "tcompat:vibration_dampening",
+      "events": {
+        "events": [
+          {
+            "tag": "tcompat:vibrations/feet"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/boots"
+      }
+    },
+    {
+      "type": "tcompat:vibration_dampening",
+      "events": {
+        "events": [
+          {
+            "tag": "tcompat:vibrations/legs"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/leggings"
+      }
+    },
+    {
+      "type": "tcompat:vibration_dampening",
+      "events": {
+        "events": [
+          {
+            "tag": "tcompat:vibrations/chest"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/chestplate"
+      }
+    },
+    {
+      "type": "tcompat:vibration_dampening",
+      "events": {
+        "events": [
+          {
+            "tag": "tcompat:vibrations/wings"
+          }
+        ]
+      },
+      "tool": "tcompat:has_wings"
+    },
+    {
+      "type": "tcompat:vibration_dampening",
+      "events": {
+        "events": [
+          {
+            "tag": "tcompat:vibrations/head"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/helmets"
+      }
+    },
+    {
+      "type": "tcompat:vibration_dampening",
+      "events": {
+        "events": [
+          {
+            "tag": "tcompat:vibrations/ranged"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/ranged"
+      }
+    },
+    {
+      "type": "tcompat:vibration_dampening",
+      "events": {
+        "events": [
+          {
+            "tag": "tcompat:vibrations/combat"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/melee/primary"
+      }
+    },
+    {
+      "type": "tcompat:vibration_dampening",
+      "events": {
+        "events": [
+          {
+            "tag": "tcompat:vibrations/harvest"
+          }
+        ]
+      },
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/harvest/primary"
+      }
     }
   ],
   "tooltip_display": "always"
