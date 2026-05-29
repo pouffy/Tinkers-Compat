@@ -1,11 +1,35 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:maple_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_maple_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:maple_logs",
       "required": false
     },
     {
+      "id": "biomesoplenty:maple_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:stripped_maple_log",
+      "required": false
+    },
+    {
       "id": "#biomesoplenty:maple_logs",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:maple_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_maple_log",
       "required": false
     },
     {

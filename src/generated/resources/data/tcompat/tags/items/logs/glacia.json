@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "aether_redux:glacia_log",
+      "required": false
+    },
+    {
+      "id": "aether_redux:stripped_glacia_log",
+      "required": false
+    },
+    {
       "id": "#aether_redux:glacia_logs",
       "required": false
     }

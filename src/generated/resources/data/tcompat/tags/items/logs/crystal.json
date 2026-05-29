@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "aether_redux:crystal_log",
+      "required": false
+    },
+    {
+      "id": "aether_redux:stripped_crystal_log",
+      "required": false
+    },
+    {
       "id": "#aether_redux:crystal_logs",
       "required": false
     }

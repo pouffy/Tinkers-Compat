@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:end_lotus_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_end_lotus_log",
+      "required": false
+    },
+    {
       "id": "#betterend:end_lotus_logs",
       "required": false
     }

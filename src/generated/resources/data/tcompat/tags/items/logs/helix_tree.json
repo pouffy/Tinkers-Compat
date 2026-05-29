@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:helix_tree_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_helix_tree_log",
+      "required": false
+    },
+    {
       "id": "#betterend:helix_tree_logs",
       "required": false
     }

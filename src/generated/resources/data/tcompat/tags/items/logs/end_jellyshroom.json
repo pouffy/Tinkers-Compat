@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:end_jellyshroom_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_end_jellyshroom_log",
+      "required": false
+    },
+    {
       "id": "#betterend:jellyshroom_logs",
       "required": false
     }

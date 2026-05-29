@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:skyris_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_skyris_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:skyris_logs",
       "required": false
     }

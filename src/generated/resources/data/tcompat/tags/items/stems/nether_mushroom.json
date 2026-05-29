@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betternether:nether_mushroom_stem",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_nether_mushroom_stem",
+      "required": false
+    },
+    {
       "id": "#betternether:nether_mushroom_stems",
       "required": false
     }

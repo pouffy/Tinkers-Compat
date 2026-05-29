@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:florus_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_florus_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:florus_logs",
       "required": false
     }

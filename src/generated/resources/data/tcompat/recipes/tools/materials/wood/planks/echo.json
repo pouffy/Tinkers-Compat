@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deeperdarker"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/echo"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/echo"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/echo"
+  },
+  "material": "tconstruct:wood#echo",
+  "needed": 1,
+  "value": 1
+}

@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:palo_verde_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_palo_verde_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:palo_verde_logs",
       "required": false
     }

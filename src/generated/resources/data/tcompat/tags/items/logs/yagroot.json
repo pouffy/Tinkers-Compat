@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "deep_aether:yagroot_log",
+      "required": false
+    },
+    {
+      "id": "deep_aether:stripped_yagroot_log",
+      "required": false
+    },
+    {
       "id": "#deep_aether:yagroot_logs",
       "required": false
     }

@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:socotra_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_socotra_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:socotra_logs",
       "required": false
     }

@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "aether_redux:blightwillow_log",
+      "required": false
+    },
+    {
+      "id": "aether_redux:stripped_blightwillow_log",
+      "required": false
+    },
+    {
       "id": "#aether_redux:blightwillow_logs",
       "required": false
     }

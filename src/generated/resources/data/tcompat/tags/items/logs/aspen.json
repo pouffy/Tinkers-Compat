@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:aspen_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_aspen_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:aspen_logs",
       "required": false
     }

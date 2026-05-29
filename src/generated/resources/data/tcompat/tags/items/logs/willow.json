@@ -1,11 +1,35 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:willow_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_willow_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:willow_logs",
       "required": false
     },
     {
+      "id": "biomesoplenty:willow_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:stripped_willow_log",
+      "required": false
+    },
+    {
       "id": "#biomesoplenty:willow_logs",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:willow_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_willow_log",
       "required": false
     },
     {

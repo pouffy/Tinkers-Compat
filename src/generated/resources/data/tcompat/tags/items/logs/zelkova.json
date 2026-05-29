@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:zelkova_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_zelkova_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:zelkova_logs",
       "required": false
     }

@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betternether:rubeus_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_rubeus_log",
+      "required": false
+    },
+    {
       "id": "#betternether:rubeus_logs",
       "required": false
     }

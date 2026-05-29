@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:mossy_glowshroom_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_mossy_glowshroom_log",
+      "required": false
+    },
+    {
       "id": "#betterend:mossy_glowshroom_logs",
       "required": false
     }

@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "deeperdarker:echo_log",
+      "required": false
+    },
+    {
+      "id": "deeperdarker:stripped_echo_log",
+      "required": false
+    },
+    {
+      "id": "#deeperdarker:echo_logs",
+      "required": false
+    }
+  ]
+}

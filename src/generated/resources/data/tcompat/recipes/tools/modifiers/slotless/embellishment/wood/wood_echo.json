@@ -1,0 +1,59 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deeperdarker"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/echo"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/echo"
+        }
+      ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deeperdarker"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/echo"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/echo"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:planks/echo"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "tcompat:planks/echo"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#echo"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

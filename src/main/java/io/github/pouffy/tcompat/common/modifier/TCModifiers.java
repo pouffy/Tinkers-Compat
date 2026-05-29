@@ -51,6 +51,7 @@ public class TCModifiers {
 
     //Deeper and Darker
     public static final ModifierId warden = id("warden");
+    public static final ModifierId brightness = id("brightness");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");

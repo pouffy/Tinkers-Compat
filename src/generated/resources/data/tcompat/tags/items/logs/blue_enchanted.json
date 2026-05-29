@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:blue_enchanted_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_blue_enchanted_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:blue_enchanted_logs",
       "required": false
     }

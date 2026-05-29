@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:ebony_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_ebony_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:ebony_logs",
       "required": false
     }

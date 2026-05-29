@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "quark:blossom_log",
+      "required": false
+    },
+    {
+      "id": "quark:stripped_blossom_log",
+      "required": false
+    },
+    {
       "id": "#quark:blossom_logs",
       "required": false
     }

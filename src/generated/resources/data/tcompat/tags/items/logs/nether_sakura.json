@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betternether:nether_sakura_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_nether_sakura_log",
+      "required": false
+    },
+    {
       "id": "#betternether:nether_sakura_logs",
       "required": false
     }

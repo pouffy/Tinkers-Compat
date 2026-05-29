@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betternether:stalagnate_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_stalagnate_log",
+      "required": false
+    },
+    {
       "id": "#betternether:stalagnate_logs",
       "required": false
     }

@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:cobalt_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_cobalt_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:cobalt_logs",
       "required": false
     }

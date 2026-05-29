@@ -1,7 +1,23 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:cypress_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_cypress_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:cypress_logs",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:cypress_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_cypress_log",
       "required": false
     },
     {

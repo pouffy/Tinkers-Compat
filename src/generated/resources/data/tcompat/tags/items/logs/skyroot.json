@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "aether:skyroot_log",
+      "required": false
+    },
+    {
+      "id": "aether:stripped_skyroot_log",
+      "required": false
+    },
+    {
       "id": "#aether:skyroot_logs",
       "required": false
     }

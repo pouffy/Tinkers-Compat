@@ -109,6 +109,7 @@
     "zanite": "#5B22B0"
   },
   "material.tconstruct": {
+    "flint.gloomslate": "#312523",
     "rock.chalk": "#D9D9D9",
     "rock.conglomerate": "#A97B6F",
     "rock.dacite": "#9F6B58",
@@ -121,6 +122,7 @@
     "rock.moon_stone": "#4F5C5D",
     "rock.permafrost": "#BCCCE9",
     "rock.red_rock": "#AD633E",
+    "rock.sculk_stone": "#164249",
     "rock.shale": "#617A7E",
     "rock.venus_stone": "#D5A664",
     "whitestone.azure_jadestone": "#40786C",
@@ -138,6 +140,7 @@
     "wood.azalea": "#99A654",
     "wood.baobab": "#87764E",
     "wood.blackwood": "#261E18",
+    "wood.blooming": "#6D8D8F",
     "wood.blue_bioshroom": "#4BACC2",
     "wood.blue_enchanted": "#4757A2",
     "wood.brimwood": "#FFFFFF",
@@ -146,6 +149,7 @@
     "wood.cypress": "#807B61",
     "wood.dragon_tree": "#2A1D3C",
     "wood.ebony": "#1F1F1F",
+    "wood.echo": "#98A07B",
     "wood.end_lotus": "#7CCCE4",
     "wood.eucalyptus": "#A66749",
     "wood.fir": "#794D3A",

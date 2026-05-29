@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:pythadendron_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_pythadendron_log",
+      "required": false
+    },
+    {
       "id": "#betterend:pythadendron_logs",
       "required": false
     }

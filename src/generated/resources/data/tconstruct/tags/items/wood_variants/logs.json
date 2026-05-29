@@ -387,6 +387,14 @@
     {
       "id": "#tcompat:logs/soulwood",
       "required": false
+    },
+    {
+      "id": "#tcompat:logs/echo",
+      "required": false
+    },
+    {
+      "id": "#tcompat:stems/blooming",
+      "required": false
     }
   ]
 }

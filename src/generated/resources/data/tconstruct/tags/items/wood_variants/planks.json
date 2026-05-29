@@ -387,6 +387,14 @@
     {
       "id": "#malum:soulwood_planks",
       "required": false
+    },
+    {
+      "id": "#tcompat:planks/echo",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/blooming",
+      "required": false
     }
   ]
 }

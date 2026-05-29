@@ -218,6 +218,7 @@ public class TCLangProv extends LanguageProvider {
         malumRune("igneous_solace", "Igneous Solace", "Damage resistance while burning.");
 
         forModifier("modifier.tcompat.warden", "Silence", "Utilise the power of the Warden to dampen vibrations and make the tool stronger.");
+        forModifier("modifier.tcompat.brightness", "Now I See You", "Pushes away the dark fog brought on by the warden's presence.");
     }
 
     private void malumRune(String type, String name, String description) {

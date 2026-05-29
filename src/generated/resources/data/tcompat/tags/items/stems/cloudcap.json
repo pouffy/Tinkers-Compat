@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "aether_redux:cloudcap_stem",
+      "required": false
+    },
+    {
+      "id": "aether_redux:stripped_cloudcap_stem",
+      "required": false
+    },
+    {
       "id": "#aether_redux:cloudcap_stems",
       "required": false
     }

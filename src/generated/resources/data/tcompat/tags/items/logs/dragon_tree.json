@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:dragon_tree_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_dragon_tree_log",
+      "required": false
+    },
+    {
       "id": "#betterend:dragon_tree_logs",
       "required": false
     }

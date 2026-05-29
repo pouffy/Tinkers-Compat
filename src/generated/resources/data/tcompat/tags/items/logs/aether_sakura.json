@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "ancient_aether:aether_sakura_log",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:stripped_aether_sakura_log",
+      "required": false
+    },
+    {
       "id": "#ancient_aether:sakura_logs",
       "required": false
     }

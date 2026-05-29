@@ -1,7 +1,15 @@
 {
   "values": [
     {
-      "id": "#betternether:nether_willow_logs",
+      "id": "betternether:nether_willow_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_nether_willow_log",
+      "required": false
+    },
+    {
+      "id": "#betternether:willow_logs",
       "required": false
     }
   ]

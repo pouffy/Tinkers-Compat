@@ -1,7 +1,23 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:fir_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_fir_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:fir_logs",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:fir_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:stripped_fir_log",
       "required": false
     },
     {

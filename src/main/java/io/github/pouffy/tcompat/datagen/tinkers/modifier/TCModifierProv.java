@@ -280,6 +280,8 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.COMBAT_VIBRATION).build()).toolTag(TinkerTags.Items.MELEE_PRIMARY).build())
                 .addModule(VibrationDampeningModule.event(GameEventEntry.builder().tagged(TCTags.GameEvents.HARVEST_VIBRATION).build()).toolTag(TinkerTags.Items.HARVEST_PRIMARY).build())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.brightness, modLoaded("deeperdarker"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override

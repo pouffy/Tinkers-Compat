@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "deeperdarker:gloomslate",
+      "required": false
+    },
+    {
+      "id": "#deeperdarker:gloomslate_rocks",
+      "required": false
+    }
+  ]
+}

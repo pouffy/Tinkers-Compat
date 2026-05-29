@@ -60,8 +60,13 @@ public enum TCRocks implements StringRepresentable {
     SANDY_JADESTONE(builder("betterend")),
     UMBRALITH(builder("betterend")),
 
+    //Malum
     TAINTED_ROCK(builder("malum")),
     TWISTED_ROCK(builder("malum")),
+
+    //Deeper and Darker
+    SCULK_STONE(builder("deeperdarker")),
+    GLOOMSLATE(builder("deeperdarker"))
     ;
 
     public final String name;
@@ -102,6 +107,10 @@ public enum TCRocks implements StringRepresentable {
 
     static RockVariantBuilder builder(String... namespaces) {
         return new RockVariantBuilder(namespaces);
+    }
+
+    static RockVariantBuilder builder(String namespace) {
+        return new RockVariantBuilder(namespace);
     }
 
     public TagKey<Item> externalRockTag(String namespace) {

@@ -353,8 +353,12 @@ public class TCItemTagProv extends ItemTagsProvider {
                             .addOptionalTag(wood.plankTag());
                 }
                 if (wood.hasLogs()) {
-                    this.tag(wood.logTag())
-                            .addOptionalTag(wood.externalLogTag(namespace));
+                    var logTag = this.tag(wood.logTag());
+                    String logFormat = wood.isStem() ? "%s_stem" : "%s_log";
+                    ResourceLocation logId = wood.getSpecialLogId(namespace) != null ? wood.getSpecialLogId(namespace) : getResource(namespace, logFormat.formatted(woodName));
+                    logTag.addOptional(logId);
+                    logTag.addOptional(logId.withPrefix("stripped_"));
+                    logTag.addOptionalTag(wood.externalLogTag(namespace));
                     this.tag(TinkerTags.Items.VARIANT_LOGS)
                             .addOptionalTag(wood.logTag());
                 }

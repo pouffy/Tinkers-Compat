@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:larch_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_larch_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:larch_logs",
       "required": false
     }

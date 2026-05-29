@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "ad_astra:aeronos_log",
+      "required": false
+    },
+    {
+      "id": "ad_astra:stripped_aeronos_log",
+      "required": false
+    },
+    {
       "id": "#ad_astra:aeronos_caps",
       "required": false
     }

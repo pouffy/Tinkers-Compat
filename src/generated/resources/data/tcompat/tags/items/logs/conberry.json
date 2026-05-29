@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "deep_aether:conberry_log",
+      "required": false
+    },
+    {
+      "id": "deep_aether:stripped_conberry_log",
+      "required": false
+    },
+    {
       "id": "#deep_aether:conberry_logs",
       "required": false
     }

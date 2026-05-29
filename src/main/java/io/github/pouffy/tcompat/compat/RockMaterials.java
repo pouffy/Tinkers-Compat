@@ -33,6 +33,9 @@ public class RockMaterials {
     azureJadestone = endStoneVariant(TCRocks.AZURE_JADESTONE,   0xFF214f54, 0xFF2b5a5e, 0xFF316361, 0xFF396a66, 0xFF40786c, 0xFF458576),
     sandyJadestone = endStoneVariant(TCRocks.SANDY_JADESTONE,   0xFF697335, 0xFF737d3c, 0xFF7b8648, 0xFF829653, 0xFF8fa45a, 0xFF95b264),
     umbralith = endStoneVariant(TCRocks.UMBRALITH,              0xFF07040d, 0xFF0c0816, 0xFF110f23, 0xFF282d41, 0xFF303c4d, 0xFF40535f),
+    //Deeper and Darker
+    sculkStone = rockVariant(TCRocks.SCULK_STONE,               0xFF061519, 0xFF091c21, 0xFF0a242d, 0xFF132f38, 0xFF164249, 0xFF185a63),
+    gloomslate = flintVariant(TCRocks.GLOOMSLATE,               0xFF130e0e, 0xFF1c1616, 0xFF211b1a, 0xFF2a2020, 0xFF312523, 0xFF3b2d29),
     // Vanilla
     dripstone = rockVariant(TCRocks.DRIPSTONE,                  0xFF543d3a, 0xFF634a47, 0xFF735450, 0xFF836356, 0xFF927965, 0xFFa08d71);
 
@@ -48,6 +51,22 @@ public class RockMaterials {
         var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.rock)
                 .renderInfo(r -> r.fallbacks("rock"))
                 .spriteInfo(s -> s.rock().fallbacks("rock").transformer(spriteTransformer));
+        MaterialBuilder.rockMaterials.put(builder, rockType);
+        return builder.buildVariant();
+    }
+
+    private static MaterialVariantId flintVariant(TCRocks rockType, int c63, int c102, int c140, int c178, int c216, int c255) {
+        var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.flint)
+                .renderInfo(r -> r.color(c216).fallbacks("crystal", "rock", "stick"))
+                .spriteInfo(s -> s.flint().sixColor(c63, c102, c140, c178, c216, c255));
+        MaterialBuilder.rockMaterials.put(builder, rockType);
+        return builder.buildVariant();
+    }
+
+    private static MaterialVariantId flintVariant(TCRocks rockType, ISpriteTransformer spriteTransformer) {
+        var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.flint)
+                .renderInfo(r -> r.fallbacks("crystal", "rock", "stick"))
+                .spriteInfo(s -> s.flint().transformer(spriteTransformer));
         MaterialBuilder.rockMaterials.put(builder, rockType);
         return builder.buildVariant();
     }

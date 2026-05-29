@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:ironwood_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_ironwood_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:ironwood_logs",
       "required": false
     }

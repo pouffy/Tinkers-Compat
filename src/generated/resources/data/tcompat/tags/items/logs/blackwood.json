@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:blackwood_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_blackwood_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:blackwood_logs",
       "required": false
     }

@@ -521,6 +521,10 @@ public class MaterialBuilder {
             return this.fallbacks("rock").meleeHarvest();
         }
 
+        public SpriteInfo flint() {
+            return this.fallbacks("crystal", "rock", "stick").meleeHarvest().arrowHead();
+        }
+
         public SpriteInfo scales() {
             return this.fallbacks("scales", "metal").armor();
         }

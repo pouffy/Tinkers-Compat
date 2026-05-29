@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deeperdarker"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:stems/blooming"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/blooming"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:planks/blooming"
+  },
+  "material": "tconstruct:wood#blooming",
+  "needed": 1,
+  "value": 1
+}

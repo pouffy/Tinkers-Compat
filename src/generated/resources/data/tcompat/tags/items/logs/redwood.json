@@ -1,11 +1,35 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:redwood_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_redwood_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:redwood_logs",
       "required": false
     },
     {
+      "id": "biomesoplenty:redwood_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:stripped_redwood_log",
+      "required": false
+    },
+    {
       "id": "#biomesoplenty:redwood_logs",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:redwood_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_redwood_log",
       "required": false
     },
     {

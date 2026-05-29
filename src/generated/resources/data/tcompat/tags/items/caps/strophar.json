@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "ad_astra:strophar_log",
+      "required": false
+    },
+    {
+      "id": "ad_astra:stripped_strophar_log",
+      "required": false
+    },
+    {
       "id": "#ad_astra:strophar_caps",
       "required": false
     }

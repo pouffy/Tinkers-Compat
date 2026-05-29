@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betternether:wart_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_wart_log",
+      "required": false
+    },
+    {
       "id": "#betternether:wart_logs",
       "required": false
     }

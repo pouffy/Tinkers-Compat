@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:sakura_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_sakura_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:sakura_logs",
       "required": false
     }

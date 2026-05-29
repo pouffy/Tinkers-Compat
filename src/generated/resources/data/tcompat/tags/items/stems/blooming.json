@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "deeperdarker:blooming_stem",
+      "required": false
+    },
+    {
+      "id": "deeperdarker:stripped_blooming_stem",
+      "required": false
+    },
+    {
+      "id": "#deeperdarker:bloom_stems",
+      "required": false
+    }
+  ]
+}

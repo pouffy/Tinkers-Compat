@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:tenanea_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_tenanea_log",
+      "required": false
+    },
+    {
       "id": "#betterend:tenanea_logs",
       "required": false
     }

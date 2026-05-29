@@ -1,7 +1,23 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:pine_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_pine_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:pine_logs",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:pine_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:stripped_pine_log",
       "required": false
     },
     {

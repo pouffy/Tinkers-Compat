@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deeperdarker"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/gloomslate"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:rocks/gloomslate"
+  },
+  "material": "tconstruct:flint#gloomslate",
+  "needed": 1,
+  "value": 1
+}

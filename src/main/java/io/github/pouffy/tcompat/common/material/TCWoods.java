@@ -112,7 +112,7 @@ public enum TCWoods implements StringRepresentable {
     // Betternether
     NETHER_REED(builder("betternether").noLogs()),
     STALAGNATE(builder("betternether")),
-    NETHER_WILLOW(builder("betternether").specialPlankId("betternether", "willow_planks")),
+    NETHER_WILLOW(builder("betternether").specialPlankId("betternether", "willow_planks").specialLogTag("betternether", "willow_logs")),
     WART(builder("betternether")),
     RUBEUS(builder("betternether")),
     MUSHROOM_FIR(builder("betternether")),
@@ -123,6 +123,10 @@ public enum TCWoods implements StringRepresentable {
     //Malum
     RUNEWOOD(builder("malum").redirectPlankTag("malum", "runewood_planks")),
     SOULWOOD(builder("malum").redirectPlankTag("malum", "soulwood_planks")),
+
+    //Deeper and Darker
+    ECHO(builder("deeperdarker")),
+    BLOOMING(builder("deeperdarker").stem().specialPlankId("deeperdarker", "bloom_planks").specialLogTag("deeperdarker", "bloom_stems"))
     ;
 
     public final String name;
@@ -150,6 +154,9 @@ public enum TCWoods implements StringRepresentable {
     }
     public ResourceLocation getSpecialPlankId(String namespace) {
         return this.builder.specialPlankId.get(namespace);
+    }
+    public ResourceLocation getSpecialLogId(String namespace) {
+        return this.builder.specialLogId.get(namespace);
     }
 
     // Creates a consumer that can only works if the required mods are loaded OR if the tags are filled.

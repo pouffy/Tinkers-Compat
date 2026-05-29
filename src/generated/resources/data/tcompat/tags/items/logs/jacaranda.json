@@ -1,7 +1,23 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:jacaranda_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_jacaranda_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:jacaranda_logs",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:jacaranda_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:stripped_jacaranda_log",
       "required": false
     },
     {

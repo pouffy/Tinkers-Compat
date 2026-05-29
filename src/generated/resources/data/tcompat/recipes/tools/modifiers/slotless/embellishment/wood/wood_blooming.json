@@ -1,0 +1,59 @@
+{
+  "type": "tconstruct:swappable_modifier",
+  "allow_crystal": false,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deeperdarker"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:stems/blooming"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/blooming"
+        }
+      ]
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deeperdarker"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:stems/blooming"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/blooming"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "tcompat:planks/blooming"
+    },
+    {
+      "item": "tconstruct:pattern"
+    },
+    {
+      "tag": "tcompat:planks/blooming"
+    }
+  ],
+  "result": {
+    "name": "tconstruct:embellishment",
+    "value": "tconstruct:wood#blooming"
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/embellishment/wood"
+  },
+  "variant_formatter": "tconstruct:material"
+}

@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:lacugrove_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_lacugrove_log",
+      "required": false
+    },
+    {
       "id": "#betterend:lacugrove_logs",
       "required": false
     }

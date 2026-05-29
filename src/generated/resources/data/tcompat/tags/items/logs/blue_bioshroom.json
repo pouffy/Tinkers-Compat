@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:blue_bioshroom_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_blue_bioshroom_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:blue_bioshroom_logs",
       "required": false
     }

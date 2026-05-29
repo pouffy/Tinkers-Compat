@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "ancient_aether:highsproot_log",
+      "required": false
+    },
+    {
+      "id": "ancient_aether:stripped_highsproot_log",
+      "required": false
+    },
+    {
       "id": "#ancient_aether:highsproot_logs",
       "required": false
     }

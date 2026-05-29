@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betternether:mushroom_fir_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_mushroom_fir_log",
+      "required": false
+    },
+    {
       "id": "#betternether:mushroom_fir_logs",
       "required": false
     }

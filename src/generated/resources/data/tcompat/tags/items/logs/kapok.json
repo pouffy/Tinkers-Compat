@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:kapok_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_kapok_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:kapok_logs",
       "required": false
     }

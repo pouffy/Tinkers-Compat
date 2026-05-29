@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:mauve_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_mauve_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:mauve_logs",
       "required": false
     }

@@ -19,6 +19,7 @@ public class WoodVariantBuilder {
     public Map<String, TagKey<Item>> specialLogTag = new HashMap<>();
     public TagKey<Item> redirectPlankTag = null;
     public Map<String, ResourceLocation> specialPlankId = new HashMap<>();
+    public Map<String, ResourceLocation> specialLogId = new HashMap<>();
 
     public WoodVariantBuilder(String... namespaces) {
         Collection<String> namespaceList = new ArrayList<>(List.of());
@@ -66,6 +67,12 @@ public class WoodVariantBuilder {
     public WoodVariantBuilder specialPlankId(String namespace, String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(namespace, name);
         this.specialPlankId.put(namespace, id);
+        return this;
+    }
+
+    public WoodVariantBuilder specialLogId(String namespace, String name) {
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(namespace, name);
+        this.specialLogId.put(namespace, id);
         return this;
     }
 }

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "deeperdarker:sculk_stone",
+      "required": false
+    },
+    {
+      "id": "#deeperdarker:sculk_stone_rocks",
+      "required": false
+    }
+  ]
+}

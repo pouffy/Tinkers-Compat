@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:brimwood_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_brimwood_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:brimwood_logs",
       "required": false
     }

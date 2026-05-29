@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:white_mangrove_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_white_mangrove_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:white_mangrove_logs",
       "required": false
     }

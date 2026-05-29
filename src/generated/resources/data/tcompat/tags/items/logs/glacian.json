@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "ad_astra:glacian_log",
+      "required": false
+    },
+    {
+      "id": "ad_astra:stripped_glacian_log",
+      "required": false
+    },
+    {
       "id": "#ad_astra:glacian_logs",
       "required": false
     }

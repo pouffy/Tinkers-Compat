@@ -1,7 +1,23 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:baobab_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_baobab_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:baobab_logs",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:baobab_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_baobab_log",
       "required": false
     },
     {

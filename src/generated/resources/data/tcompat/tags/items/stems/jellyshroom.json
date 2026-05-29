@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "aether_redux:jellyshroom_stem",
+      "required": false
+    },
+    {
+      "id": "aether_redux:stripped_jellyshroom_stem",
+      "required": false
+    },
+    {
       "id": "#aether_redux:jellyshroom_stems",
       "required": false
     }

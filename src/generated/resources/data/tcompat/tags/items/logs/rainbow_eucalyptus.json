@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:rainbow_eucalyptus_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_rainbow_eucalyptus_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:rainbow_eucalyptus_logs",
       "required": false
     }

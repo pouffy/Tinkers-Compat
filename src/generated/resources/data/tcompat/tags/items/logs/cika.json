@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "biomeswevegone:cika_log",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:stripped_cika_log",
+      "required": false
+    },
+    {
       "id": "#biomeswevegone:cika_logs",
       "required": false
     }

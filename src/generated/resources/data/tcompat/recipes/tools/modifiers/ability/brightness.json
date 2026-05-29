@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deeperdarker"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "deeperdarker:warden_carapace"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "deeperdarker:warden_carapace"
+    },
+    {
+      "item": "minecraft:glow_ink_sac"
+    },
+    {
+      "item": "minecraft:glow_ink_sac"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:brightness",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/helmets"
+  }
+}

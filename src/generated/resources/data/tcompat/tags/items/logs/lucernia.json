@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betterend:lucernia_log",
+      "required": false
+    },
+    {
+      "id": "betterend:stripped_lucernia_log",
+      "required": false
+    },
+    {
       "id": "#betterend:lucernia_logs",
       "required": false
     }

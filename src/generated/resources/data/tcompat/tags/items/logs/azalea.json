@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "quark:azalea_log",
+      "required": false
+    },
+    {
+      "id": "quark:stripped_azalea_log",
+      "required": false
+    },
+    {
       "id": "#quark:azalea_logs",
       "required": false
     }

@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:eucalyptus_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_eucalyptus_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:eucalyptus_logs",
       "required": false
     }

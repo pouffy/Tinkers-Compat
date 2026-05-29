@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "betternether:anchor_tree_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_anchor_tree_log",
+      "required": false
+    },
+    {
       "id": "#betternether:anchor_tree_logs",
       "required": false
     }

@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "malum:soulwood_log",
+      "required": false
+    },
+    {
+      "id": "malum:stripped_soulwood_log",
+      "required": false
+    },
+    {
       "id": "#malum:soulwood_logs",
       "required": false
     }

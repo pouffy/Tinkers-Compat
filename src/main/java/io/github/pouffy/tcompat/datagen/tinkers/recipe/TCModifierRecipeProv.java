@@ -370,6 +370,18 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .saveSalvage(withCondition(consumer, modLoaded("deeperdarker")), prefix(TCModifiers.warden, upgradeSalvage))
                 .save(withCondition(consumer, modLoaded("deeperdarker")), prefix(TCModifiers.warden, upgradeFolder));
 
+        ModifierRecipeBuilder.modifier(TCModifiers.brightness)
+                .setTools(ingredientFromTags(TinkerTags.Items.HELMETS))
+                .addInput(ItemNameIngredient.from(getResource("deeperdarker:warden_carapace")))
+                .addInput(Items.GLOW_BERRIES)
+                .addInput(ItemNameIngredient.from(getResource("deeperdarker:warden_carapace")))
+                .addInput(Items.GLOW_INK_SAC)
+                .addInput(Items.GLOW_INK_SAC)
+                .setMaxLevel(1).setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(withCondition(consumer, modLoaded("deeperdarker")), prefix(TCModifiers.brightness, abilitySalvage))
+                .save(withCondition(consumer, modLoaded("deeperdarker")), prefix(TCModifiers.brightness, abilityFolder));
+
+
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)
                 .save(aetherConsumer, location(slotlessFolder + "ambrofusion/ambrosium_shard"));
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_block")), 36)

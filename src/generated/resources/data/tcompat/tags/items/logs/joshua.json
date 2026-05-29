@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "regions_unexplored:joshua_log",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:stripped_joshua_log",
+      "required": false
+    },
+    {
       "id": "#regions_unexplored:joshua_logs",
       "required": false
     }
