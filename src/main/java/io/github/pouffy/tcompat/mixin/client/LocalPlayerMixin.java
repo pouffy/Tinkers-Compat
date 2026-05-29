@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.mixin;
+package io.github.pouffy.tcompat.mixin.client;
 
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.client.player.LocalPlayer;

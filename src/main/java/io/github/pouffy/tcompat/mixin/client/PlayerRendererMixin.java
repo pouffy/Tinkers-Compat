@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.mixin;
+package io.github.pouffy.tcompat.mixin.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.mixin;
+package io.github.pouffy.tcompat.mixin.client;
 
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.common.util.EquipmentHelper;
