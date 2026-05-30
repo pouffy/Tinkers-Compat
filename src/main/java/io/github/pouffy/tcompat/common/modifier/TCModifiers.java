@@ -52,6 +52,7 @@ public class TCModifiers {
     //Deeper and Darker
     public static final ModifierId warden = id("warden");
     public static final ModifierId brightness = id("brightness");
+    public static final ModifierId heartbeat = id("heartbeat");
 
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");
@@ -63,6 +64,7 @@ public class TCModifiers {
     public static final ModifierId flame_gem = compatId("tinkersjewelry", "flame_gem");
     public static final ModifierId precious = compatId("tinkersjewelry", "precious");
     public static final ModifierId ductile = compatId("tinkersjewelry", "ductile");
+    public static final ModifierId darkness_gem = compatId("tinkersjewelry", "darkness_gem");
     public static final ModifierId armorToughness_gem = id("armor_toughness_gem");
 
     //Construct's Casting
@@ -75,6 +77,7 @@ public class TCModifiers {
     public static final ModifierId holyUpgrade = compatId("constructs_casting", "holy_upgrade");
     public static final ModifierId fireDispulsion = compatId("constructs_casting", "fire_dispulsion");
     public static final ModifierId regrowth = compatId("constructs_casting", "regrowth");
+    public static final ModifierId eldritchUpgrade = compatId("constructs_casting", "eldritch_upgrade");
 
     private TCModifiers() {}
 

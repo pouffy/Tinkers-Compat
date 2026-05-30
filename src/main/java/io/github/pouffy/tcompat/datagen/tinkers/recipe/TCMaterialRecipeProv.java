@@ -15,6 +15,7 @@ import io.github.pouffy.tcompat.compat.betterend.BetterendMaterials;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmMaterials;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
+import io.github.pouffy.tcompat.compat.deeperdarker.DarkerMaterials;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFMaterials;
 import io.github.pouffy.tcompat.compat.malum.MalumMaterials;
 import io.github.pouffy.tcompat.compat.species.SpeciesMaterials;
@@ -169,6 +170,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.deathwormWhite,          ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_white"             )), 1, 1, folder + "deathworm_chitin/white");
         materialRecipe(iceandfire, IFMaterials.deathwormRed,            ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_red"               )), 1, 1, folder + "deathworm_chitin/red");
         materialRecipe(iceandfire, IFMaterials.deathwormYellow,         ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_yellow"            )), 1, 1, folder + "deathworm_chitin/yellow");
+        materialRecipe(iceandfire, DarkerMaterials.sculkBone,           ItemNameIngredient.from(TCompat.getResource("deeperdarker:sculk_bone"                       )), 1, 1, folder + "sculk_bone/bone");
+
 
         metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);
         metalMaterialRecipe(cataclysm, CataclysmMaterials.blackSteel, folder, "black_steel", true);

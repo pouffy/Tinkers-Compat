@@ -156,6 +156,8 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.runeOfIgneousSolace,           0xeb6a61);
         //Deeper and Darker
         addColor(TCModifiers.warden,                        0x62d9fc);
+        addColor(TCModifiers.brightness,                    0x9abbb7);
+        addColor(TCModifiers.heartbeat,                     0x819988);
     }
 
     public void addColor(MaterialBuilder material) {

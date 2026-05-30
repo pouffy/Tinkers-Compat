@@ -282,6 +282,8 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TCModifiers.brightness, modLoaded("deeperdarker"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TCModifiers.heartbeat, modLoaded("deeperdarker"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override

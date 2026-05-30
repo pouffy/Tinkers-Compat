@@ -1,0 +1,22 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tcompat:heartbeat"
+    }
+  ],
+  "perStat": {
+    "constructs_casting:magic_base": [
+      {
+        "level": 1,
+        "name": "constructs_casting:eldritch_upgrade"
+      }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:darkness_gem"
+      }
+    ]
+  }
+}

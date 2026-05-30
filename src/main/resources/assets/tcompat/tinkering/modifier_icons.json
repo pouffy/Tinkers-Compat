@@ -24,5 +24,8 @@
   "tcompat:erosion":   ["malum:item/void_salts", "tconstruct:gui/modifiers/plus"],
   "tcompat:auric_flame":   ["malum:item/auric_embers", "tconstruct:gui/modifiers/plus"],
   "tcompat:spoiled":   ["malum:item/processed_soulstone", "tconstruct:gui/modifiers/plus"],
-  "tcompat:integral":   ["tcompat:gui/modifiers/integral", "tconstruct:gui/modifiers/plus"]
+  "tcompat:integral":   ["tcompat:gui/modifiers/integral", "tconstruct:gui/modifiers/plus"],
+
+  "tcompat:brightness":   "tcompat:gui/modifiers/brightness",
+  "tcompat:warden":   ["deeperdarker:item/reinforced_echo_shard", "tconstruct:gui/modifiers/plus"]
 }

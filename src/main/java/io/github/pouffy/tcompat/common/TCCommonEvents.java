@@ -14,6 +14,7 @@ import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
+import io.github.pouffy.tcompat.compat.deeperdarker.DarkerHandler;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -115,6 +116,7 @@ public class TCCommonEvents {
         TCompat.COOLDOWN_HANDLER.tickEntity(entity);
         CuriosHandler.tickHook(event);
         MalumHandler.idleRestoration(event);
+        DarkerHandler.heartbeat(event);
     }
 
     @SubscribeEvent
