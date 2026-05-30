@@ -241,6 +241,11 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 <details>
     <summary><a href="https://modrinth.com/mod/deeperdarker">Deeper and Darker</a></summary>
 
+- **Wood** Material Variants
+- Sculk Stone Rock Variant
+- Gloomslate Flint Variant
+- Warden Modifier
+- Brightness Modifier
 </details>
 
 ## Planned
