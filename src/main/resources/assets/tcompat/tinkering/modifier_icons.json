@@ -19,6 +19,8 @@
   "tcompat:dreadbane":   "tcompat:gui/modifiers/dreadbane",
   "tcompat:dampening":   "tcompat:gui/modifiers/dampening",
 
+  "tcompat:ignitium":   ["cataclysm:item/ignitium_ingot", "tconstruct:gui/modifiers/plus"],
+
   "tcompat:deliverance":   "tcompat:gui/modifiers/deliverance",
   "tcompat:mnemonic":   ["malum:item/mnemonic_fragment", "tconstruct:gui/modifiers/plus"],
   "tcompat:erosion":   ["malum:item/void_salts", "tconstruct:gui/modifiers/plus"],
@@ -27,5 +29,6 @@
   "tcompat:integral":   ["tcompat:gui/modifiers/integral", "tconstruct:gui/modifiers/plus"],
 
   "tcompat:brightness":   "tcompat:gui/modifiers/brightness",
-  "tcompat:warden":   ["deeperdarker:item/reinforced_echo_shard", "tconstruct:gui/modifiers/plus"]
+  "tcompat:warden":   ["deeperdarker:item/reinforced_echo_shard", "tconstruct:gui/modifiers/plus"],
+  "tcompat:sonorous":   ["deeperdarker:item/soul_crystal", "tconstruct:gui/modifiers/plus"]
 }

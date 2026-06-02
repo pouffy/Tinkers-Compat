@@ -1,0 +1,62 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "cataclysm"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:requirements",
+      "display_modifiers": [
+        {
+          "level": 1,
+          "name": "tconstruct:netherite"
+        }
+      ],
+      "requirement": {
+        "type": "tconstruct:has_modifier",
+        "check": "all",
+        "modifier": {
+          "type": "tconstruct:single",
+          "modifier": "tconstruct:netherite"
+        }
+      },
+      "translation_key": "recipe.tcompat.requirement.ignitium"
+    },
+    {
+      "type": "tconstruct:reduce_tool_damage",
+      "flat": 1.0
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 3.0,
+      "operation": "add",
+      "stat": "tconstruct:armor",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/worn"
+      }
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 1.0,
+      "operation": "add",
+      "stat": "tconstruct:armor_toughness",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/worn"
+      }
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 0.05,
+      "operation": "add",
+      "stat": "tconstruct:knockback_resistance",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor/worn"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

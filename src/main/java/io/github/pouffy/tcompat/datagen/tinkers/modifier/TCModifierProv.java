@@ -36,6 +36,7 @@ import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ReduceToolDamageModule;
+import slimeknights.tconstruct.library.modifiers.modules.build.ModifierRequirementsModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.ModifierSlotModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
@@ -46,6 +47,7 @@ import slimeknights.tconstruct.library.modifiers.modules.display.DurabilityBarCo
 import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -221,6 +223,12 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.standstill, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(300)
                 .addModule(KnockbackModule.builder().formula().constant(0.0f).build());
+        buildModifier(TCModifiers.ignitium, modLoaded("cataclysm"))
+                .addModule(ModifierRequirementsModule.builder().requireModifier(ModifierIds.netherite, 1).translationKey("recipe.tcompat.requirement.ignitium").build())
+                .addModule(ReduceToolDamageModule.builder().flat(1))
+                .addModule(StatBoostModule.add(ToolStats.ARMOR).toolTag(TinkerTags.Items.WORN_ARMOR).flat(3))
+                .addModule(StatBoostModule.add(ToolStats.ARMOR_TOUGHNESS).toolTag(TinkerTags.Items.WORN_ARMOR).flat(1))
+                .addModule(StatBoostModule.add(ToolStats.KNOCKBACK_RESISTANCE).toolTag(TinkerTags.Items.WORN_ARMOR).flat(0.05f));
 
         // Some of these only use attributes provided by lodestone so we can just require lodestone there.
         buildModifier(TCModifiers.stained, modLoaded("lodestone"))

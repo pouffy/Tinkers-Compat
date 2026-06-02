@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipeBuilder;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.malum.MalumMaterials;
@@ -273,6 +274,14 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .exactLevel(3)
                 .save(iceandfireConsumer, wrap(TCModifiers.dampening, abilityFolder, "_level_3"));
 
+        ModifierRecipeBuilder.modifier(TCModifiers.ignitium)
+                .setTools(ingredientFromTags(TinkerTags.Items.WORN_ARMOR))
+                .addInput(ItemNameIngredient.from(getResource("cataclysm:ignitium_upgrade_smithing_template")))
+                .addInput(ItemNameIngredient.from(getResource("cataclysm:ignitium_ingot")))
+                .setMaxLevel(1).checkTraitLevel().setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(withCondition(consumer, modLoaded("cataclysm")), prefix(TCModifiers.ignitium, upgradeSalvage))
+                .save(withCondition(consumer, modLoaded("cataclysm")), prefix(TCModifiers.ignitium, upgradeFolder));
+
         ModifierRecipeBuilder.modifier(MalumInit.deliverance)
                 .setTools(TinkerTags.Items.MELEE_WEAPON)
                 .addInput(TCTags.Items.MALIGNANT_PEWTER_INGOTS)
@@ -380,6 +389,18 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setMaxLevel(1).setSlots(SlotType.ABILITY, 1)
                 .saveSalvage(withCondition(consumer, modLoaded("deeperdarker")), prefix(TCModifiers.brightness, abilitySalvage))
                 .save(withCondition(consumer, modLoaded("deeperdarker")), prefix(TCModifiers.brightness, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(DarkerInit.sonorous)
+                .setTools(TinkerTags.Items.STAFFS)
+                .addInput(Items.ECHO_SHARD)
+                .addInput(ItemNameIngredient.from(getResource("deeperdarker:soul_crystal")))
+                .addInput(Items.ECHO_SHARD)
+                .addInput(ItemNameIngredient.from(getResource("deeperdarker:sculk_bone")))
+                .addInput(ItemNameIngredient.from(getResource("deeperdarker:sculk_bone")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.ABILITY, 1)
+                .saveSalvage(malumConsumer, prefix(DarkerInit.sonorous, abilitySalvage))
+                .save(malumConsumer, prefix(DarkerInit.sonorous, abilityFolder));
 
 
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)

@@ -12,6 +12,7 @@ import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
+import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
@@ -105,6 +106,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.cataclysmic,                   0xfb6b1d);
         addColor(TCModifiers.ghostly,                       0x56eccc);
         addColor(TCModifiers.standstill,                    0x6e7786);
+        addColor(TCModifiers.ignitium,                      0xfb6b1d);
         addColor(CataclysmInit.voidScatter.getId(),         0x8219ff);
         addColor(CataclysmInit.aquatic.getId(),             0xc62a37);
         addColor(CataclysmInit.sandstorm.getId(),           0xdbb86a);
@@ -158,6 +160,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.warden,                        0x62d9fc);
         addColor(TCModifiers.brightness,                    0x9abbb7);
         addColor(TCModifiers.heartbeat,                     0x819988);
+        addColor(DarkerInit.sonorous.getId(),               0x26c6fc);
     }
 
     public void addColor(MaterialBuilder material) {

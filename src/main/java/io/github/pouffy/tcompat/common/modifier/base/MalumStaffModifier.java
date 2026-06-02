@@ -48,7 +48,7 @@ public abstract class MalumStaffModifier extends NoLevelsModifier implements Gen
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
         if (!tool.isBroken() && source == InteractionSource.RIGHT_CLICK && !ClientModifierCooldowns.getCooldowns().isOnCooldown(modifier.getId())) {
-            GeneralInteractionModifierHook.startUsingWithDrawtime(tool, modifier.getId(), player, hand, 1.5F);
+            GeneralInteractionModifierHook.startUsingWithDrawtime(tool, modifier.getId(), player, hand, 1.0F);
             return InteractionResult.SUCCESS;
         } else {
             return InteractionResult.PASS;

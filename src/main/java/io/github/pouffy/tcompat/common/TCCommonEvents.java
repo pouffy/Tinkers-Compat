@@ -97,14 +97,6 @@ public class TCCommonEvents {
     }
 
     @SubscribeEvent
-    public void onLivingAttack(LivingAttackEvent event) {
-        LivingEntity entity = event.getEntity();
-        if (!entity.level().isClientSide() && !entity.isDeadOrDying()) {
-            CataclysmHandler.ghostDodge(event);
-        }
-    }
-
-    @SubscribeEvent
     static void livingTick(LivingEvent.LivingTickEvent event) {
         var entity = event.getEntity();
         VoidTouched.get(entity).ifPresent(voidTouched -> {
@@ -117,6 +109,7 @@ public class TCCommonEvents {
         CuriosHandler.tickHook(event);
         MalumHandler.idleRestoration(event);
         DarkerHandler.heartbeat(event);
+        CataclysmHandler.gazeOfHeat(event);
     }
 
     @SubscribeEvent
@@ -156,11 +149,16 @@ public class TCCommonEvents {
     @SubscribeEvent
     static void hurt(LivingHurtEvent event) {
         MalumHandler.exposeSoul(event);
+        LivingEntity target = event.getEntity();
         if (event.getSource().getEntity() instanceof LivingEntity attacker) {
             MalumHandler.volatileDistortion(event, attacker);
             MalumHandler.reactiveShielding(event, attacker);
             MalumHandler.heretic(event);
             MalumHandler.igneousSolace(event);
+            if (!target.level().isClientSide() && !target.isDeadOrDying()) {
+                CataclysmHandler.ghostDodge(event);
+            }
+            CataclysmHandler.flameReflex(event, target);
         }
         VoidTouched.get(event.getEntity()).ifPresent(voidTouched -> voidTouched.hurtEvent(event));
     }

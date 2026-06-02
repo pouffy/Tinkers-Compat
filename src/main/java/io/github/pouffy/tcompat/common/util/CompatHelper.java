@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.ancient_aether.AncientAetherInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
@@ -77,11 +78,16 @@ public class CompatHelper {
                 consumer.accept(eventBus);
         });
         GlobalInit.init(eventBus);
-        //Initialising the event bus for these does not matter during datagen.
-        compatEvents.forEach((mod, consumer) -> {
-            if (CompatHelper.isLoaded(mod))
-                consumer.accept(eventBus);
-        });
+        //Initialising the event bus for these cannot happen during datagen.
+        if (!DatagenModLoader.isRunningDataGen()) {
+            compatEvents.forEach((mod, consumer) -> {
+                if (CompatHelper.isLoaded(mod))
+                    consumer.accept(eventBus);
+            });
+            if (isLoaded("cataclysm")) {
+                CataclysmHandler.instance.init();
+            }
+        }
         eventBus.register(new GlobalInit());
     }
 

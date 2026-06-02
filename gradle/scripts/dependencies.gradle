@@ -16,14 +16,15 @@ dependencies {
     jarJar("io.github.llamalad7:mixinextras-forge:0.2.0")
 
     //API's & Recipe Viewers
-    modCompileOnly("mezz.jei:jei-1.20.1-common-api:15.20.0.105")
-    modExtraRuntimeOnly("mezz.jei:jei-1.20.1-common-api:15.20.0.105")
-    modCompileOnly("mezz.jei:jei-1.20.1-forge-api:15.20.0.105")
-    modExtraRuntimeOnly("mezz.jei:jei-1.20.1-forge-api:15.20.0.105")
-    modCompileOnly("mezz.jei:jei-1.20.1-forge:15.20.0.105")
-    modExtraRuntimeOnly("mezz.jei:jei-1.20.1-forge:15.20.0.105")
-    modCompileOnly("dev.emi:emi-forge:1.1.13+1.20.1")
-    modRuntimeOnly("dev.emi:emi-forge:1.1.13+1.20.1")
+    //modCompileOnly("mezz.jei:jei-1.20.1-common-api:15.20.0.105")
+    //modExtraRuntimeOnly("mezz.jei:jei-1.20.1-common-api:15.20.0.105")
+    //modCompileOnly("mezz.jei:jei-1.20.1-forge-api:15.20.0.105")
+    //modExtraRuntimeOnly("mezz.jei:jei-1.20.1-forge-api:15.20.0.105")
+    //modCompileOnly("mezz.jei:jei-1.20.1-forge:15.20.0.105")
+    //modExtraRuntimeOnly("mezz.jei:jei-1.20.1-forge:15.20.0.105")
+    modCompileOnly("dev.emi:emi-forge:1.1.24+1.20.1")
+    modRuntimeOnly("dev.emi:emi-forge:1.1.24+1.20.1")
+    modExtraRuntimeOnly("maven.modrinth:tmrv:0.8.1+mc.20.1")
 
     // Aether
     modCompileOnly("com.aetherteam.aether:aether:1.20.1-1.5.1-neoforge")

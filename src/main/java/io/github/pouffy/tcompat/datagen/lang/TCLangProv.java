@@ -110,6 +110,7 @@ public class TCLangProv extends LanguageProvider {
         add("stat.tconstruct.slot.display.rune", "rune");
         add("modifier.tconstruct.rebalanced.rune", "Rune");
         add("recipe.tconstruct.remove_modifier.rune", "Extract Rune");
+        add("recipe.tcompat.requirement.ignitium", "Ignitium requires Netherite to apply");
     }
 
     private void modifiers() {
@@ -172,6 +173,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.archaeologist", "Belongs in a museum", "Bonus damage and protection against ancient remnants.");
         forModifier("modifier.tcompat.standstill", "Stay right there", "Removes all knockback.");
         forModifier("modifier.tcompat.fluxed", "Industrial Grade Combat", "Fully charged shots fire a heavy-duty Wither Rocket.");
+        forModifier("modifier.tcompat.ignitium", "Flamin' Hot", "Ignis' rage fills your armor, strengthening stats and providing special abilities.");
         //Malum
         forModifier("modifier.tcompat.stained", "Iron's cooler sibling", "Tool deals extra magic damage.");
         forModifier("modifier.tcompat.warded", "Safe enough", "Increased Soul Ward capacity and recovery rate.");
@@ -220,6 +222,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.warden", "Silence", "Utilise the power of the Warden to dampen vibrations and make the tool stronger.");
         forModifier("modifier.tcompat.brightness", "Now I See You", "Pushes away the dark fog brought on by the warden's presence.");
         forModifier("modifier.tcompat.heartbeat", "I'm Feeling Romantical", "Something within the tool occasionally beats.");
+        forModifier("modifier.tcompat.sonorous", "Did you hear that?", "Charge up and release a sonic boom.");
     }
 
     private void malumRune(String type, String name, String description) {

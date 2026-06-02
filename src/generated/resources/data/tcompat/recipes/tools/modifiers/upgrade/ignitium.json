@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "cataclysm:ignitium_upgrade_smithing_template"
+    },
+    {
+      "item": "cataclysm:ignitium_ingot"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:ignitium",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/worn"
+  }
+}

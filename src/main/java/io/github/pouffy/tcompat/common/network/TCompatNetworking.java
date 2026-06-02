@@ -25,6 +25,7 @@ public class TCompatNetworking {
         register(SwingClientArmPacket.class, SwingClientArmPacket::decode);
         register(SyncModifierCooldownsPacket.class, SyncModifierCooldownsPacket::decode);
         register(SyncModifierCooldownPacket.class, SyncModifierCooldownPacket::decode);
+        register(GazeOfHeatPacket.class, (buf) -> new GazeOfHeatPacket());
     }
 
     private static <MSG extends BasePacket> void register(final Class<MSG> packet, Function<FriendlyByteBuf, MSG> decoder) {

@@ -2,28 +2,44 @@ package io.github.pouffy.tcompat.compat.cataclysm;
 
 import com.github.L_Ender.cataclysm.entity.effect.Wave_Entity;
 import com.github.L_Ender.cataclysm.entity.projectile.*;
-import com.github.L_Ender.cataclysm.init.ModEntities;
-import com.github.L_Ender.cataclysm.init.ModSounds;
+import com.github.L_Ender.cataclysm.init.*;
+import com.github.L_Ender.lionfishapi.server.event.StandOnFluidEvent;
+import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
+import io.github.pouffy.tcompat.common.network.GazeOfHeatPacket;
+import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import slimeknights.tconstruct.common.TinkerTags;
 
 import javax.annotation.Nullable;
 
 public class CataclysmHandler {
+
+    public static final CataclysmHandler instance = new CataclysmHandler();
+
+    public void init() {
+        if (!CompatHelper.isLoaded("cataclysm")) return;
+        MinecraftForge.EVENT_BUS.register(new LoadedOnly());
+    }
 
     public static Entity createSandstorm(LivingEntity owner, double x, double y, double z, double X, double Z) {
         if (!CompatHelper.isLoaded("cataclysm")) return null;
@@ -55,21 +71,48 @@ public class CataclysmHandler {
         return LoadedOnly.createWitherMissile(entity, vec3, x, z, yRot, xRot);
     }
 
-    public static void ghostDodge(LivingAttackEvent event) {
-        float dodgeChance = 0.0F;
+    public static void ghostDodge(LivingHurtEvent event) {
+        float dodgeChance;
         boolean projectile = event.getSource().is(DamageTypeTags.IS_PROJECTILE);
         boolean bypass = event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY);
-        //for (ToolStack armour : EquipmentHelper.getModifiableArmour(event.getEntity()).stream().map(ToolStack::from).toList()) {
-        //    if (armour.isBroken() || EquipmentHelper.hasModifier(armour, TCModifiers.ghostly)) continue;
-        //    dodgeChance += projectile ? 0.12F : 0.06F;
-        //}
         dodgeChance = EquipmentHelper.getEffectiveLevel(event.getEntity(), TCModifiers.ghostly, (stack) -> stack.is(TCTags.Items.JEWELERY_MODIFIABLE) || stack.is(TinkerTags.Items.WORN_ARMOR)) * (projectile ? 0.12F : 0.06F);
         if ((dodgeChance != 0.0F && event.getEntity().getRandom().nextFloat() < dodgeChance) && !bypass) {
             event.setCanceled(true);
         }
     }
 
+    public static void flameReflex(LivingHurtEvent event, LivingEntity attacker) {
+        if (!CompatHelper.isLoaded("cataclysm")) return;
+        boolean canUse = EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.ignitium, (stack) -> stack.is(TinkerTags.Items.LEGGINGS));
+        if (canUse) {
+            TCompat.LOGGER.info("Flame Reflex Success");
+            LoadedOnly.flameReflex(event, attacker);
+        }
+    }
+
+    public static void gazeOfHeat(LivingEvent.LivingTickEvent event) {
+        if (!CompatHelper.isLoaded("cataclysm")) return;
+        boolean canUse = EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.ignitium, (stack) -> stack.is(TinkerTags.Items.HELMETS)) && !ModifierCooldowns.getModifierCooldowns(event.getEntity()).isOnCooldown(TCModifiers.ignitium);
+        if (canUse) {
+            LoadedOnly.gazeOfHeat(event);
+        }
+    }
+
+    public static void gazeOfHeatUse(LivingEntity user) {
+        if (!CompatHelper.isLoaded("cataclysm")) return;
+        LoadedOnly.gazeOfHeatUse(user);
+    }
+
     public static class LoadedOnly {
+
+        @SubscribeEvent
+        public void lavaWalker(StandOnFluidEvent event) {
+            boolean canUse = EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.ignitium, (stack) -> stack.is(TinkerTags.Items.BOOTS));
+            if (canUse && !event.getEntity().isShiftKeyDown() && (event.getFluidState().is(Fluids.LAVA) || event.getFluidState().is(Fluids.FLOWING_LAVA))) {
+                event.setCanceled(true);
+            }
+        }
+
         public static Entity createSandstorm(LivingEntity owner, double x, double y, double z, double X, double Z) {
             Sandstorm_Projectile sandstorm = new Sandstorm_Projectile(owner, x, y, z, owner.level(), 6.0F);
             sandstorm.setState(1);
@@ -126,6 +169,61 @@ public class CataclysmHandler {
                 WaveEntity.setState(1);
                 WaveEntity.setYRot(-((float)(Mth.atan2(dx, dz) * (180D / Math.PI))));
                 shooter.level().addFreshEntity(WaveEntity);
+            }
+        }
+
+        public static void flameReflex(LivingHurtEvent event, LivingEntity attacker) {
+            if (event.getSource() != null && attacker != null) {
+                if (attacker != event.getEntity() && event.getEntity().getRandom().nextFloat() < 0.5F) {
+                    MobEffectInstance existingBrand = attacker.getEffect(ModEffect.EFFECTBLAZING_BRAND.get());
+                    int amplifier = 1;
+                    if (existingBrand != null) {
+                        amplifier += existingBrand.getAmplifier();
+                        attacker.removeEffectNoUpdate(ModEffect.EFFECTBLAZING_BRAND.get());
+                    } else {
+                        --amplifier;
+                    }
+
+                    amplifier = Mth.clamp(amplifier, 0, 4);
+                    MobEffectInstance blazingBrand = new MobEffectInstance(ModEffect.EFFECTBLAZING_BRAND.get(), 100, amplifier, false, false, true);
+                    attacker.addEffect(blazingBrand);
+                    if (!attacker.isOnFire()) {
+                        attacker.setSecondsOnFire(5);
+                    }
+                }
+            }
+        }
+
+        public static void gazeOfHeat(LivingEvent.LivingTickEvent event) {
+            LivingEntity user = event.getEntity();
+            if (ModKeybind.HELMET_KEY_ABILITY.consumeClick()) {
+                gazeOfHeatUse(user);
+                TCompatNetworking.INSTANCE.sendToServer(new GazeOfHeatPacket());
+            }
+        }
+
+        public static void gazeOfHeatUse(LivingEntity user) {
+            boolean flag = false;
+
+            for(Entity entity : user.level().getEntities(user, user.getBoundingBox().inflate(16.0F))) {
+                if (entity instanceof LivingEntity target) {
+                    MobEffectInstance existingBrand = target.getEffect(ModEffect.EFFECTBLAZING_BRAND.get());
+                    int amplifier = 1;
+                    if (existingBrand != null) {
+                        amplifier += existingBrand.getAmplifier();
+                        target.removeEffectNoUpdate(ModEffect.EFFECTBLAZING_BRAND.get());
+                    } else {
+                        --amplifier;
+                    }
+
+                    amplifier = Mth.clamp(amplifier, 0, 2);
+                    MobEffectInstance blazingBrand = new MobEffectInstance(ModEffect.EFFECTBLAZING_BRAND.get(), 160, amplifier, true, true, true);
+                    flag = target.addEffect(blazingBrand);
+                }
+
+                if (flag) {
+                    ModifierCooldowns.getModifierCooldowns(user).addCooldown(TCModifiers.ignitium, 300);
+                }
             }
         }
     }
