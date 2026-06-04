@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "tcompat:item/terracube_in_a_bucket_excited",
+      "predicate": {
+        "tcompat:excited": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "tcompat:item/quark/terracube_in_a_bucket"
+  }
+}

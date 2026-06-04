@@ -15,6 +15,7 @@ import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
+import io.github.pouffy.tcompat.compat.quark.QuarkInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -54,6 +55,7 @@ public class CompatHelper {
         compatInitializers.put("malum", MalumInit::init);
         compatInitializers.put("species", SpeciesInit::init);
         compatInitializers.put("deeperdarker", DarkerInit::init);
+        compatInitializers.put("quark", QuarkInit::init);
 
         compatEvents.put("ad_astra", (bus) -> bus.register(new AdAstraInit()));
         compatEvents.put("aether", (bus) -> bus.register(new AetherInit()));
@@ -65,10 +67,12 @@ public class CompatHelper {
         compatEvents.put("deep_aether", (bus) -> bus.register(new DeepAetherInit()));
         compatEvents.put("iceandfire", (bus) -> bus.register(new IFInit()));
         compatEvents.put("malum", (bus) -> bus.register(new MalumInit()));
+        compatEvents.put("quark", (bus) -> bus.register(new QuarkInit()));
 
         compatItems.put("aether", AetherInit::addCommonTabItems);
         compatItems.put("deep_aether", DeepAetherInit::addCommonTabItems);
         compatItems.put("iceandfire", IFInit::addCommonTabItems);
+        compatItems.put("quark", QuarkInit::addCommonTabItems);
     }
 
     public static void init(IEventBus eventBus) {

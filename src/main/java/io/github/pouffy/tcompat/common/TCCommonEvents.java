@@ -16,6 +16,7 @@ import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerHandler;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
+import io.github.pouffy.tcompat.compat.quark.QuarkHandler;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
@@ -192,5 +193,10 @@ public class TCCommonEvents {
     @SubscribeEvent
     static void livingDeath(LivingDeathEvent event) {
         MalumHandler.sacrificialEmpowerment(event);
+    }
+
+    @SubscribeEvent
+    static void entityInteract(PlayerInteractEvent.EntityInteract event) {
+        QuarkHandler.pickupSlime(event);
     }
 }

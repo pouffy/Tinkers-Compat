@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.datagen.TCDataGenerator;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -29,6 +30,8 @@ import org.slf4j.Logger;
 import slimeknights.mantle.client.model.NBTKeyModel;
 import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
 import slimeknights.tconstruct.TConstruct;
+
+import java.util.Optional;
 
 @Mod(TCompat.MOD_ID)
 public class TCompat {
@@ -88,6 +91,7 @@ public class TCompat {
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemProperties.registerGeneric(getResource("excited"), (stack, world, e, id) -> Optional.of(stack.getOrCreateTag().getBoolean("excited")).orElse(false) ? 1 : 0);
         }
     }
 }

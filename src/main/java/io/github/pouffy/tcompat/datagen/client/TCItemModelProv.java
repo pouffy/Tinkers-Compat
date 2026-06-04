@@ -35,6 +35,10 @@ public class TCItemModelProv extends ItemModelProvider {
         generated(getResource("fire_dragonsteel_nugget"), "item/fire_dragonsteel_nugget");
         generated(getResource("ice_dragonsteel_nugget"), "item/ice_dragonsteel_nugget");
         generated(getResource("lightning_dragonsteel_nugget"), "item/lightning_dragonsteel_nugget");
+
+        excited(getResource("sky_slime_in_a_bucket"), getResource("item/quark/sky_slime_in_a_bucket"));
+        excited(getResource("ender_slime_in_a_bucket"), getResource("item/quark/ender_slime_in_a_bucket"));
+        excited(getResource("terracube_in_a_bucket"), getResource("item/quark/terracube_in_a_bucket"));
     }
 
     @SuppressWarnings("deprecation") // no its not
@@ -67,6 +71,9 @@ public class TCItemModelProv extends ItemModelProvider {
         return basicItem(id(item), texture);
     }
 
+    private ItemModelBuilder excited(ResourceLocation item, ResourceLocation texture) {
+        return getBuilder(item.toString()).parent(GENERATED).texture("layer0", texture).override().predicate(TCompat.getResource("excited"), 1).model(getBuilder(item + "_excited").parent(GENERATED).texture("layer0", texture.withSuffix("_excited"))).end();
+    }
 
     /* Parts */
 

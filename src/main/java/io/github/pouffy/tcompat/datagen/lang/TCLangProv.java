@@ -45,6 +45,9 @@ public class TCLangProv extends LanguageProvider {
         toEng("item.tcompat.ice_dragonsteel_nugget");
         toEng("item.tcompat.lightning_dragonsteel_nugget");
         add("item.tconstruct.slime_helmet.material.tcompat.dragon_bone", "Dragon Slimeskull");
+        add("item.tcompat.sky_slime_in_a_bucket", "Sky Slime in a Bucket");
+        add("item.tcompat.ender_slime_in_a_bucket", "Ender Slime in a Bucket");
+        add("item.tcompat.terracube_in_a_bucket", "Terracube in a Bucket");
     }
 
     private void fluids() {
