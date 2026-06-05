@@ -28,7 +28,7 @@ public class AetherReduxSmeltery implements CompatSmeltery {
         simpleMelting(cConsumer, TCFluids.moltenRefinedSentrite, FluidValues.INGOT, "refined_sentrite", Ingredient.of(TCTags.Items.SENTRITE_STONE_BLOCKS), metalFolder("melting"), "stone_blocks");
         simpleMelting(cConsumer, TCFluids.moltenRefinedSentrite, FluidValues.INGOT / 2, "refined_sentrite", Ingredient.of(TCTags.Items.SENTRITE_STONE_SLABS), metalFolder("melting"), "stone_slabs");
         simpleMelting(cConsumer, TCFluids.moltenVeridium, (FluidValues.INGOT * 2) + (FluidValues.NUGGET * 6), "veridium", ItemNameIngredient.from(compatId("veridium_lantern")), metalFolder("melting"), "lantern");
-        simpleMelting(cConsumer, TCFluids.moltenRefinedSentrite, FluidValues.INGOT * 4, "refined_sentrite", ItemNameIngredient.from(getResource("aether", "sentry_boots")), metalFolder("melting"), "boots");
+        simpleMelting(cConsumer, TCFluids.moltenRefinedSentrite, FluidValues.INGOT * 4, "refined_sentrite", ItemNameIngredient.from(getResource("aether", "sentry_boots")), metalFolder("melting"), "boots", new int[]{FluidValues.NUGGET});
 
         simpleMelting(cConsumer, TCFluids.moltenVeridium, FluidValues.INGOT, "veridium", ItemNameIngredient.from(compatId("veridium_dart_shooter")), metalFolder("melting"), "dart_shooter");
         simpleMelting(cConsumer, TCFluids.moltenVeridium, FluidValues.METAL_BLOCK * 4, "veridium", ItemNameIngredient.from(compatId("feather_of_warding")), metalFolder("melting"), "feather_of_warding");

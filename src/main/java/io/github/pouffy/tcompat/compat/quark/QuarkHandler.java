@@ -27,6 +27,7 @@ public class QuarkHandler {
     }
 
     public static void pickupSlime(PlayerInteractEvent.EntityInteract event) {
+        if (!CompatHelper.isLoaded("quark")) return;
         if(event.getTarget() != null && canPickUp(event.getTarget())) {
             Player player = event.getEntity();
             InteractionHand hand = InteractionHand.MAIN_HAND;

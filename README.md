@@ -103,6 +103,7 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 
 - **Wood** Material Variants
 - **Rock** Material Variants
+- Slime in a Bucket variants for Terracube, Sky Slime & Ender Slime.
 </details>
 <details>
   <summary><a href="https://modrinth.com/mod/regions-unexplored">Regions Unexplored</a></summary>
@@ -202,6 +203,7 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Aquatic Trait
 - Void Scatter Trait
 - Archaeologist Trait
+- Ignitium Armour Modifier
 - Smeltery Melting & Casting Recipes
 </details>
 <details>
@@ -246,6 +248,21 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Gloomslate Flint Variant
 - Warden Modifier
 - Brightness Modifier
+- Sonorous Modifier
+</details>
+
+## Small Compatibility
+<details>
+    <summary><a href="https://modrinth.com/mod/constructs-casting">Construct's Casting</a></summary>
+
+- Some materials support stats from Construct's Casting.
+- All missing part textures are now included in mod resources (Flamberge, Battlestaff).
+</details>
+<details>
+    <summary><a href="https://modrinth.com/mod/tinkers-jewelry">Tinkers' Jewelry</a></summary>
+
+- Some materials support stats from Tinkers' Jewelry.
+- Added "Armor Toughness" jewelry trait for Soulstained Steel.
 </details>
 
 ## Planned
