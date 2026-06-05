@@ -130,6 +130,7 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TinkerTags.Items.BONUS_SLOTS).addOptional(glaive);
         this.tag(ItemTags.create(getResource("forge:tools"))).addOptional(glaive);
         this.tag(ItemTags.create(getResource("minecraft:tools"))).addOptional(glaive);
+        this.tag(ItemTags.create(getResource("tleveling:levelable"))).addOptional(glaive);
 
         this.tag(TCTags.Items.HANDHELD_CURIO)
                 .addOptional(getResource("constructs_casting", "tinkerers_spellbook"))
