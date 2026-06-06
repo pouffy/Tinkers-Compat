@@ -21,9 +21,7 @@
     "client.DarknessFogFunctionMixin",
     "client.LevelRendererMixin",
     "client.LightTextureMixin",
-    "client.LivingEntityRendererMixin",
-    "client.LocalPlayerMixin",
-    "client.PlayerRendererMixin"
+    "client.LocalPlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -8,11 +8,17 @@ import io.github.pouffy.tcompat.common.cooldown.CooldownInstance;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.model.PlayerModel;
+import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringUtil;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.CustomizeGuiOverlayEvent;
@@ -31,9 +37,6 @@ import java.util.Map;
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(modid = TCompat.MOD_ID, value = Dist.CLIENT)
 public class TComClientEvents {
-
-    @SubscribeEvent
-    public static void onPostRenderLiving(RenderLivingEvent.Post event) {}
 
     @SubscribeEvent
     static void clientSetup(FMLClientSetupEvent event) {
