@@ -12,7 +12,6 @@ import com.sammy.malum.core.handlers.SoulDataHandler;
 import com.sammy.malum.core.helpers.ParticleHelper;
 import com.sammy.malum.registry.client.ParticleRegistry;
 import com.sammy.malum.registry.common.*;
-import com.sammy.malum.registry.common.item.ItemRegistry;
 import com.sammy.malum.visual_effects.networked.ParticleEffectType;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
@@ -21,7 +20,6 @@ import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -32,7 +30,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -43,7 +40,6 @@ import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import team.lodestar.lodestone.handlers.RenderHandler;
-import team.lodestar.lodestone.helpers.CurioHelper;
 import team.lodestar.lodestone.helpers.EntityHelper;
 import team.lodestar.lodestone.helpers.RandomHelper;
 import team.lodestar.lodestone.helpers.SoundHelper;
@@ -108,17 +104,17 @@ public class MalumHandler {
     }
 
     public static void mnemonicParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-        if (!CompatHelper.isLoaded("malum")) return;
+        if (!CompatHelper.isLoaded("malum") || !shooter.level().isClientSide()) return;
         LoadedOnly.mnemonicParticles(shooter, random, pos, chargePercentage);
     }
 
     public static void erosionParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-        if (!CompatHelper.isLoaded("malum")) return;
+        if (!CompatHelper.isLoaded("malum") || !shooter.level().isClientSide()) return;
         LoadedOnly.erosionParticles(shooter, random, pos, chargePercentage);
     }
 
     public static void auricFlameParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-        if (!CompatHelper.isLoaded("malum")) return;
+        if (!CompatHelper.isLoaded("malum") || !shooter.level().isClientSide()) return;
         LoadedOnly.auricFlameParticles(shooter, random, pos, chargePercentage);
     }
 
