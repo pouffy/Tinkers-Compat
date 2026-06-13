@@ -27,19 +27,19 @@ dependencies {
     modExtraRuntimeOnly("maven.modrinth:tmrv:0.8.1+mc.20.1")
 
     // Aether
-    modCompileOnly("com.aetherteam.aether:aether:1.20.1-1.5.1-neoforge")
-    modExtraRuntimeOnly("com.aetherteam.aether:aether:1.20.1-1.5.1-neoforge")
-    modCompileOnly("com.aetherteam.nitrogen:nitrogen_internals:1.20.1-1.0.11-neoforge")
-    modExtraRuntimeOnly("com.aetherteam.nitrogen:nitrogen_internals:1.20.1-1.0.11-neoforge")
+    modCompileOnly("maven.modrinth:aether:1.20.1-1.5.2-neoforge")
+    modExtraRuntimeOnly("maven.modrinth:aether:1.20.1-1.5.2-neoforge")
+    modCompileOnly("com.aetherteam.nitrogen:nitrogen_internals:1.20.1-1.0.12-neoforge")
+    modExtraRuntimeOnly("com.aetherteam.nitrogen:nitrogen_internals:1.20.1-1.0.12-neoforge")
     modCompileOnly("com.aetherteam.cumulus:cumulus_menus:1.20.1-1.0.1-neoforge")
     modExtraRuntimeOnly("com.aetherteam.cumulus:cumulus_menus:1.20.1-1.0.1-neoforge")
     modCompileOnly("local:aeroblender:1.20.1-1.0.2-rc1-neoforge")
     modExtraRuntimeOnly("local:aeroblender:1.20.1-1.0.2-rc1-neoforge")
     // Aether Addons
-    modCompileOnly("maven.modrinth:deep-aether:1.20.1-1.1.4")
-    modExtraRuntimeOnly("maven.modrinth:deep-aether:1.20.1-1.1.4")
-    modCompileOnly("maven.modrinth:the-aether-redux:2.0.18-1.20.1")
-    modExtraRuntimeOnly("maven.modrinth:the-aether-redux:2.0.18-1.20.1")
+    modCompileOnly("maven.modrinth:deep-aether:1.20.1-1.1.7")
+    modExtraRuntimeOnly("maven.modrinth:deep-aether:1.20.1-1.1.7")
+    modCompileOnly("maven.modrinth:the-aether-redux:2.0.19-1.20.1")
+    modExtraRuntimeOnly("maven.modrinth:the-aether-redux:2.0.19-1.20.1")
     modCompileOnly("maven.modrinth:ancient-aether:0.9.10")
     modExtraRuntimeOnly("maven.modrinth:ancient-aether:0.9.10")
 
@@ -71,8 +71,8 @@ dependencies {
     modExtraRuntimeOnly("maven.modrinth:species:3.5")
 
     // Better {Dimension Here}
-    modCompileOnly("maven.modrinth:betterend-forge:20.0.7")
-    modExtraRuntimeOnly("maven.modrinth:betterend-forge:20.0.7")
+    modCompileOnly("maven.modrinth:betterend-forge:20.0.8")
+    modExtraRuntimeOnly("maven.modrinth:betterend-forge:20.0.8")
     modCompileOnly("maven.modrinth:betternether-forge:20.0.10")
     modExtraRuntimeOnly("maven.modrinth:betternether-forge:20.0.10")
     modCompileOnly("maven.modrinth:wunderlib-forge:20.0.1")
@@ -118,12 +118,12 @@ dependencies {
     // Other Tinker Addons
     modExtraRuntimeOnly("dev.shadowsoffire:Placebo:1.20.1-8.6.0")
     modExtraRuntimeOnly("dev.shadowsoffire:ApothicAttributes:1.20.1-1.3.5")
-    modExtraRuntimeOnly("maven.modrinth:irons-spells-n-spellbooks:1.20.1-3.15.6")
+    modExtraRuntimeOnly("maven.modrinth:irons-spells-n-spellbooks:1.20.1-3.16.0")
     modExtraRuntimeOnly("maven.modrinth:caelus:3.2.0+1.20.1")
     modExtraRuntimeOnly("maven.modrinth:playeranimator:1.0.2-rc1+1.20-forge")
     modExtraRuntimeOnly("maven.modrinth:irons-lib:1.20.1-1.0.2")
 
     modExtraRuntimeOnly("curse.maven:tinkers-jewelry-1191965:6328912")
     modExtraRuntimeOnly("curse.maven:tinkers-jewelry-ex-1268977:7658337")
-    modExtraRuntimeOnly("maven.modrinth:constructs-casting:2.2.4")
+    modExtraRuntimeOnly("maven.modrinth:constructs-casting:2.2.5")
 }
