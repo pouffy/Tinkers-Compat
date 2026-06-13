@@ -19,13 +19,17 @@ public class QuarkInit extends CompatInitializer {
     public static final ItemObject<TCSlimeInABucketItem.Terra> terracubeInABucket = itemForMod("quark", "terracube_in_a_bucket", () -> new TCSlimeInABucketItem.Terra(new Item.Properties()), QUARK_I);
 
     public static void addCommonTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
-        output.accept(skySlimeInABucket);
-        output.accept(enderSlimeInABucket);
-        output.accept(terracubeInABucket);
+        if (QuarkHandler.isSlimeInABucketEnabled()) {
+            output.accept(skySlimeInABucket);
+            output.accept(enderSlimeInABucket);
+            output.accept(terracubeInABucket);
+        }
     }
 
     public static void init(IEventBus eventBus) {
         QUARK_M.register(eventBus);
-        QUARK_I.register(eventBus);
+        if (QuarkHandler.isSlimeInABucketEnabled()) {
+            QUARK_I.register(eventBus);
+        }
     }
 }

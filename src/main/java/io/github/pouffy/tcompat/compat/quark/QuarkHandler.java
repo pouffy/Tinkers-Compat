@@ -13,6 +13,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import org.violetmoon.quark.base.Quark;
+import org.violetmoon.quark.content.tools.module.SlimeInABucketModule;
 import org.violetmoon.zeta.registry.CreativeTabManager;
 import slimeknights.tconstruct.world.TinkerWorld;
 import slimeknights.tconstruct.world.entity.EnderSlimeEntity;
@@ -27,7 +29,7 @@ public class QuarkHandler {
     }
 
     public static void pickupSlime(PlayerInteractEvent.EntityInteract event) {
-        if (!CompatHelper.isLoaded("quark")) return;
+        if (!isSlimeInABucketEnabled()) return;
         if(event.getTarget() != null && canPickUp(event.getTarget())) {
             Player player = event.getEntity();
             InteractionHand hand = InteractionHand.MAIN_HAND;
@@ -60,7 +62,7 @@ public class QuarkHandler {
     }
 
     private static boolean canPickUp(Entity entity) {
-        if (!entity.isAlive()) return false;
+        if (!entity.isAlive() || !isSlimeInABucketEnabled()) return false;
         if (entity.getType() == TinkerWorld.skySlimeEntity.get() && ((SkySlimeEntity) entity).getSize() == 1) {
             return true;
         }
@@ -75,7 +77,7 @@ public class QuarkHandler {
 
     private static ItemStack pickupResult(Entity entity) {
         ItemStack result = ItemStack.EMPTY;
-        if (!entity.isAlive()) return result;
+        if (!entity.isAlive() || !isSlimeInABucketEnabled()) return result;
         if (entity.getType() == TinkerWorld.skySlimeEntity.get() && ((SkySlimeEntity) entity).getSize() == 1) {
             result = new ItemStack(QuarkInit.skySlimeInABucket);
         }
@@ -92,9 +94,18 @@ public class QuarkHandler {
         return result;
     }
 
+    public static boolean isSlimeInABucketEnabled() {
+        if (!CompatHelper.isLoaded("quark")) return false;
+        return LoadedOnly.isSlimeInABucketEnabled();
+    }
+
     public static class LoadedOnly {
         public static void addToTab(Item item, Item nextTo, boolean behind, ResourceKey<CreativeModeTab> tab) {
             CreativeTabManager.addToCreativeTabNextTo(tab, item, nextTo, behind);
+        }
+
+        public static boolean isSlimeInABucketEnabled() {
+            return Quark.ZETA.modules.isEnabled(SlimeInABucketModule.class);
         }
     }
 }
