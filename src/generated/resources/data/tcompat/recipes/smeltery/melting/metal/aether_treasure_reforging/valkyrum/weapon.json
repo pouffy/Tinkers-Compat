@@ -1,10 +1,9 @@
 {
-  "type": "tconstruct:damagable_melting",
+  "type": "tconstruct:melting",
   "byproducts": [
     {
       "amount": 180,
-      "fluid": "tcompat:molten_gravitite",
-      "unit_size": 10
+      "fluid": "tcompat:molten_gravitite"
     }
   ],
   "conditions": [
@@ -15,17 +14,16 @@
   ],
   "ingredient": [
     {
-      "item": "aether:valkyrie_hoe"
+      "item": "aether_treasure_reforging:valkyrum_lance"
     },
     {
-      "item": "aether:valkyrie_sword"
+      "item": "aether_treasure_reforging:valkyrum_hoe"
     }
   ],
   "result": {
     "amount": 90,
-    "fluid": "tcompat:molten_valkyrum",
-    "unit_size": 10
+    "fluid": "tcompat:molten_valkyrum"
   },
   "temperature": 1275,
-  "time": 105
+  "time": 74
 }

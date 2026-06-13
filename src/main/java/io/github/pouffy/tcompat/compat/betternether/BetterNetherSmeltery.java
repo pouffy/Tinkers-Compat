@@ -52,7 +52,7 @@ public class BetterNetherSmeltery implements CompatSmeltery {
                 "cincinnasite_wall",
                 "roof_tile_cincinnasite"
         ), metalFolder("melting"), "ingot_4");
-        simpleMelting(cConsumer, TCFluids.moltenCincinnasite, 112, "cincinnasite", ItemNameIngredient.from(compatId("cincinnasite_small_lantern")), metalFolder("melting"), "small_lantern");
+        simpleMelting(cConsumer, TCFluids.moltenCincinnasite, 112, "cincinnasite", ItemNameIngredient.from(compatId("cincinnasite_lantern_small")), metalFolder("melting"), "small_lantern");
         simpleMelting(cConsumer, TCFluids.moltenCincinnasite, 144, "cincinnasite", ItemNameIngredient.from(compatId("cincinnasite_brick_plate")), metalFolder("melting"), "brick_plate");
         simpleMelting(cConsumer, TCFluids.moltenCincinnasite, FluidValues.INGOT * 16, "cincinnasite", listedInput("cincinnasite_forge", "cincinnasite_anvil", "chest_of_drawers"), metalFolder("melting"), "ingot_16");
         simpleMelting(cConsumer, TCFluids.moltenCincinnasite, FluidValues.INGOT * 6, "cincinnasite", listedInput("cincinnasite_stairs", "roof_tile_cincinnasite_stairs"), metalFolder("melting"), "stairs");

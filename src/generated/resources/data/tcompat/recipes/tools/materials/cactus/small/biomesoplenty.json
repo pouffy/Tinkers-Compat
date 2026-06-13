@@ -7,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "item": "biomesoplenty:barrel_cactus"
+    "item": "biomesoplenty:tiny_cactus"
   },
   "material": "tconstruct:cactus",
   "needed": 2,

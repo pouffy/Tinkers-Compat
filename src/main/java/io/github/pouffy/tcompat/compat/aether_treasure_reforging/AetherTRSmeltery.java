@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
+import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 
@@ -36,9 +37,13 @@ public class AetherTRSmeltery implements CompatSmeltery {
         glovesMelting(cConsumer, TCFluids.moltenPyral, FluidValues.INGOT, "phoenix", ItemNameIngredient.from(aetherId.apply("phoenix_gloves")), metalFolder("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, TCFluids.moltenGravitite.result(FluidValues.INGOT * 2));
         glovesMelting(cConsumer, TCFluids.moltenNeptune, FluidValues.INGOT, "neptune", ItemNameIngredient.from(aetherId.apply("neptune_gloves")), metalFolder("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, TCFluids.moltenZanite.result(FluidValues.INGOT * 2));
         //Salvaging
-        salvageAll(cConsumer, aetherId, TCFluids.moltenValkyrum, TCFluids.moltenGravitite, FluidValues.INGOT, "valkyrie", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
+        salvageAll(cConsumer, aetherId, TCFluids.moltenValkyrum, TCFluids.moltenGravitite, FluidValues.INGOT, "valkyrie", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"), SalvageType.WEAPON);
         salvageArmor(cConsumer, aetherId, TCFluids.moltenPyral, TCFluids.moltenGravitite, FluidValues.INGOT, "phoenix", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
         salvageArmor(cConsumer, aetherId, TCFluids.moltenNeptune, TCFluids.moltenZanite, FluidValues.INGOT, "neptune", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
+
+        simpleMelting(TCFluids.moltenValkyrum, FluidValues.INGOT, listedInput("valkyrum_lance", "valkyrum_hoe"))
+                .addByproduct(TCFluids.moltenGravitite.result(FluidValues.INGOT * 2))
+                .save(cConsumer, location(metalFolder("melting") + "/valkyrum/weapon"));
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("neptune_mesh")))
                 .setFluidAndTime(TCFluids.moltenNeptune, FluidValues.INGOT)
