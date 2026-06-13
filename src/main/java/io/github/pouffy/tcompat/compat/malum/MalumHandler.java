@@ -5,12 +5,10 @@ import com.sammy.malum.common.capability.MalumPlayerDataCapability;
 import com.sammy.malum.common.entity.bolt.AuricFlameBoltEntity;
 import com.sammy.malum.common.entity.bolt.DrainingBoltEntity;
 import com.sammy.malum.common.entity.bolt.HexBoltEntity;
-import com.sammy.malum.common.entity.nitrate.EthericNitrateEntity;
 import com.sammy.malum.common.spiritrite.PotionRiteEffect;
 import com.sammy.malum.common.spiritrite.TotemicRiteEffect;
 import com.sammy.malum.core.handlers.SoulDataHandler;
 import com.sammy.malum.core.helpers.ParticleHelper;
-import com.sammy.malum.registry.client.ParticleRegistry;
 import com.sammy.malum.registry.common.*;
 import com.sammy.malum.visual_effects.networked.ParticleEffectType;
 import io.github.pouffy.tcompat.TCompat;
@@ -39,17 +37,9 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import team.lodestar.lodestone.handlers.RenderHandler;
 import team.lodestar.lodestone.helpers.EntityHelper;
 import team.lodestar.lodestone.helpers.RandomHelper;
 import team.lodestar.lodestone.helpers.SoundHelper;
-import team.lodestar.lodestone.systems.easing.Easing;
-import team.lodestar.lodestone.systems.particle.builder.WorldParticleBuilder;
-import team.lodestar.lodestone.systems.particle.data.GenericParticleData;
-import team.lodestar.lodestone.systems.particle.data.color.ColorParticleData;
-import team.lodestar.lodestone.systems.particle.data.spin.SpinParticleData;
-import team.lodestar.lodestone.systems.particle.render_types.LodestoneWorldParticleRenderType;
-import team.lodestar.lodestone.systems.particle.world.behaviors.components.DirectionalBehaviorComponent;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -58,7 +48,6 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 import static com.sammy.malum.common.item.curiosities.weapons.scythe.MalumScytheItem.canSweep;
-import static io.github.pouffy.tcompat.compat.malum.modifier.ranged.ErosionModifier.MALIGNANT_BLACK;
 
 public class MalumHandler {
 
@@ -101,21 +90,6 @@ public class MalumHandler {
     public static Projectile createAuricFlame(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage, float spread) {
         if (!CompatHelper.isLoaded("malum")) return null;
         return LoadedOnly.createAuricFlame(shooter, pos, pitchOffset, spawnDelay, velocity, magicDamage, spread);
-    }
-
-    public static void mnemonicParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-        if (!CompatHelper.isLoaded("malum") || !shooter.level().isClientSide()) return;
-        LoadedOnly.mnemonicParticles(shooter, random, pos, chargePercentage);
-    }
-
-    public static void erosionParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-        if (!CompatHelper.isLoaded("malum") || !shooter.level().isClientSide()) return;
-        LoadedOnly.erosionParticles(shooter, random, pos, chargePercentage);
-    }
-
-    public static void auricFlameParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-        if (!CompatHelper.isLoaded("malum") || !shooter.level().isClientSide()) return;
-        LoadedOnly.auricFlameParticles(shooter, random, pos, chargePercentage);
     }
 
     public static Pair<Supplier<MobEffect>, Predicate<LivingEntity>> getRiteEffect(String name, boolean corrupted) {
@@ -273,11 +247,6 @@ public class MalumHandler {
             return entity;
         }
 
-        public static void mnemonicParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-            SpinParticleData spinData = SpinParticleData.createRandomDirection(random, 0.25F, 0.5F).setSpinOffset(RandomHelper.randomBetween(random, 0.0F, 6.28F)).build();
-            WorldParticleBuilder.create(ParticleRegistry.HEXAGON, new DirectionalBehaviorComponent(shooter.getLookAngle().normalize())).setRenderTarget(RenderHandler.LATE_DELAYED_RENDER).setTransparencyData(GenericParticleData.create(0.6F * chargePercentage, 0.0F).setEasing(Easing.SINE_IN_OUT, Easing.SINE_IN).build()).setSpinData(spinData).setScaleData(GenericParticleData.create(0.3F * chargePercentage, 0.0F).setEasing(Easing.SINE_IN_OUT).build()).setColorData(SpiritTypeRegistry.WICKED_SPIRIT.createColorData().build()).setLifetime(5).setLifeDelay(2).setMotion(shooter.getLookAngle().normalize().scale(0.05F)).enableNoClip().enableForcedSpawn().spawn(shooter.level(), pos.x, pos.y, pos.z).setRenderType(LodestoneWorldParticleRenderType.LUMITRANSPARENT).spawn(shooter.level(), pos.x, pos.y, pos.z);
-        }
-
         public static Projectile createErosion(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage) {
             Level level = shooter.level();
             DrainingBoltEntity entity = new DrainingBoltEntity(level, pos.x, pos.y, pos.z);
@@ -293,11 +262,6 @@ public class MalumHandler {
             return entity;
         }
 
-        public static void erosionParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-            SpinParticleData spinData = SpinParticleData.createRandomDirection(random, 0.25F, 0.5F).setSpinOffset(RandomHelper.randomBetween(random, 0.0F, 6.28F)).build();
-            WorldParticleBuilder.create(ParticleRegistry.CIRCLE, new DirectionalBehaviorComponent(shooter.getLookAngle().normalize())).setRenderTarget(RenderHandler.LATE_DELAYED_RENDER).setTransparencyData(GenericParticleData.create(0.8F * chargePercentage, 0.0F).setEasing(Easing.SINE_IN_OUT, Easing.SINE_IN).build()).setSpinData(spinData).setScaleData(GenericParticleData.create(0.3F * chargePercentage, 0.0F).setEasing(Easing.SINE_IN_OUT).build()).setColorData(ColorParticleData.create(MALIGNANT_BLACK, MALIGNANT_BLACK).build()).setLifetime(5).setLifeDelay(2).setMotion(shooter.getLookAngle().normalize().scale(0.05F)).enableNoClip().enableForcedSpawn().setRenderType(LodestoneWorldParticleRenderType.LUMITRANSPARENT).spawn(shooter.level(), pos.x, pos.y, pos.z);
-        }
-
         public static Projectile createAuricFlame(LivingEntity shooter, Vec3 pos, float pitchOffset, int spawnDelay, float velocity, float magicDamage, float spread) {
             Level level = shooter.level();
             AuricFlameBoltEntity entity = new AuricFlameBoltEntity(level, pos.x, pos.y, pos.z);
@@ -310,11 +274,6 @@ public class MalumHandler {
             Vec3 left = new Vec3(-Math.cos(yaw), 0.0F, Math.sin(yaw));
             entity.setDeltaMovement(entity.getDeltaMovement().add(left.scale(spread)));
             return entity;
-        }
-
-        public static void auricFlameParticles(LivingEntity shooter, RandomSource random, Vec3 pos, float chargePercentage) {
-            SpinParticleData spinData = SpinParticleData.createRandomDirection(random, 0.25F, 0.5F).setSpinOffset(RandomHelper.randomBetween(random, 0.0F, 6.28F)).build();
-            WorldParticleBuilder.create(ParticleRegistry.HEXAGON, new DirectionalBehaviorComponent(shooter.getLookAngle().normalize())).setRenderTarget(RenderHandler.LATE_DELAYED_RENDER).setTransparencyData(GenericParticleData.create(0.5F * chargePercentage, 0.0F).setEasing(Easing.SINE_IN_OUT, Easing.SINE_IN).build()).setScaleData(GenericParticleData.create(0.35F * chargePercentage, 0.0F).setEasing(Easing.SINE_IN_OUT).build()).setSpinData(spinData).setColorData(EthericNitrateEntity.AURIC_COLOR_DATA).setLifetime(5).setMotion(shooter.getLookAngle().normalize().scale((double)0.05F)).enableNoClip().enableForcedSpawn().setLifeDelay(2).spawn(shooter.level(), pos.x, pos.y, pos.z).setRenderType(LodestoneWorldParticleRenderType.LUMITRANSPARENT).spawn(shooter.level(), pos.x, pos.y, pos.z);
         }
 
         public static Pair<Supplier<MobEffect>, Predicate<LivingEntity>> getRiteEffect(String name, boolean corrupted) {

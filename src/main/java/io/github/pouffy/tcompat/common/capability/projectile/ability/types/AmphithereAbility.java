@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability.types;
 
+import io.github.pouffy.tcompat.client.compat.IceFireClientHandler;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IceFireHandler;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
@@ -17,7 +18,7 @@ public class AmphithereAbility extends AbstractProjectileAbility {
     public void tickArrow(AbstractArrow arrow, Projectile innerProjectile, boolean inGround, int inGroundTime) {
         if (!inGround) {
             if ((arrow.tickCount == 1 || arrow.tickCount % 70 == 0) && !arrow.onGround()) {
-                IceFireHandler.amphithereGust(arrow);
+                IceFireClientHandler.amphithereGust(arrow);
             }
             this.particles(innerProjectile);
         }
@@ -26,7 +27,7 @@ public class AmphithereAbility extends AbstractProjectileAbility {
     @Override
     public void tickProjectile(Projectile projectile, Projectile innerProjectile) {
         if ((projectile.tickCount == 1 || projectile.tickCount % 70 == 0) && !projectile.onGround()) {
-            IceFireHandler.amphithereGust(projectile);
+            IceFireClientHandler.amphithereGust(projectile);
         }
         this.particles(innerProjectile);
     }

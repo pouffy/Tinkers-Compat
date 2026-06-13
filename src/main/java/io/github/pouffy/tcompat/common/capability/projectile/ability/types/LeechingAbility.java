@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability.types;
 
+import io.github.pouffy.tcompat.client.compat.IceFireClientHandler;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IceFireHandler;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -36,7 +37,7 @@ public class LeechingAbility extends AbstractProjectileAbility {
             double d2 = random.nextGaussian() * 0.02;
             double xRatio = projectile.getDeltaMovement().x * (double)projectile.getBbHeight();
             double zRatio = projectile.getDeltaMovement().z * (double)projectile.getBbHeight();
-            IceFireHandler.hydraParticles(projectile, xRatio, zRatio, d0, d1, d2);
+            IceFireClientHandler.hydraParticles(projectile, xRatio, zRatio, d0, d1, d2);
         }
     }
 }

@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.ranged;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.client.compat.MalumClientHandler;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.modifier.base.MalumStaffModifier;
 import io.github.pouffy.tcompat.common.modifier.module.OptionalAttributeModule;
@@ -31,7 +32,7 @@ public class AuricFlameModifier extends MalumStaffModifier {
     @Override
     public void spawnChargeParticles(Level level, LivingEntity entity, Vec3 pos, IToolStackView tool, float chargePercentage) {
         RandomSource random = level.random;
-        MalumHandler.auricFlameParticles(entity, random, pos, chargePercentage);
+        MalumClientHandler.auricFlameParticles(entity, random, pos, chargePercentage);
     }
 
     @Override
