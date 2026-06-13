@@ -84,6 +84,8 @@ public class TCLangProv extends LanguageProvider {
         tag(TCTags.Items.TREASURE_SMITHING_TEMPLATES, "Unmeltable Smithing Templates");
         tag(TCTags.Items.NON_AETHER_WOODEN_RODS, "Non-Aether Wooden Rods");
         tag(TCTags.Items.AETHER_WOODEN_RODS, "Aether Wooden Rods");
+
+        tagFluid(TCTags.Fluids.SMALLER_GEM_TOOLTIPS, "Smaller Gem");
     }
 
     private void items() {
