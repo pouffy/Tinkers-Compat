@@ -105,7 +105,9 @@ public class QuarkHandler {
         }
 
         public static boolean isSlimeInABucketEnabled() {
-            return Quark.ZETA.modules.isEnabled(SlimeInABucketModule.class);
+            var module = Quark.ZETA.modules.get(SlimeInABucketModule.class);
+            if (module == null) return true;
+            return module.isEnabled();
         }
     }
 }
