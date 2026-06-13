@@ -5,7 +5,19 @@
       "required": false
     },
     {
+      "id": "quark:vertical_cypress_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_cypress_planks",
+      "required": false
+    },
+    {
       "id": "regions_unexplored:cypress_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_cypress_planks",
       "required": false
     }
   ]

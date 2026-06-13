@@ -3,6 +3,14 @@
     {
       "id": "betterend:mossy_glowshroom_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_mossy_glowshroom_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_mossy_glowshroom_planks",
+      "required": false
     }
   ]
 }

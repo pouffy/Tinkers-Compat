@@ -3,6 +3,14 @@
     {
       "id": "betterend:jellyshroom_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_jellyshroom_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_jellyshroom_planks",
+      "required": false
     }
   ]
 }

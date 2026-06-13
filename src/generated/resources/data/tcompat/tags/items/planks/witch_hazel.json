@@ -3,6 +3,14 @@
     {
       "id": "biomeswevegone:witch_hazel_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_witch_hazel_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_witch_hazel_planks",
+      "required": false
     }
   ]
 }

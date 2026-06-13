@@ -3,6 +3,14 @@
     {
       "id": "regions_unexplored:cobalt_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_cobalt_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_cobalt_planks",
+      "required": false
     }
   ]
 }

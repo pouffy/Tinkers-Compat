@@ -3,6 +3,14 @@
     {
       "id": "ad_astra:strophar_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_strophar_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/ad_astra/vertical_strophar_planks",
+      "required": false
     }
   ]
 }

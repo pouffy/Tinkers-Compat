@@ -3,6 +3,14 @@
     {
       "id": "betterend:lacugrove_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_lacugrove_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_lacugrove_planks",
+      "required": false
     }
   ]
 }

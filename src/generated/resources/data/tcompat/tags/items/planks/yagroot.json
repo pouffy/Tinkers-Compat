@@ -3,6 +3,14 @@
     {
       "id": "deep_aether:yagroot_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_yagroot_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/deep_aether/vertical_yagroot_planks",
+      "required": false
     }
   ]
 }

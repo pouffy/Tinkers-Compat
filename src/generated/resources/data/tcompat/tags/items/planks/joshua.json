@@ -3,6 +3,14 @@
     {
       "id": "regions_unexplored:joshua_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_joshua_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_joshua_planks",
+      "required": false
     }
   ]
 }

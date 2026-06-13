@@ -3,6 +3,14 @@
     {
       "id": "betterend:end_lotus_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_end_lotus_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_end_lotus_planks",
+      "required": false
     }
   ]
 }

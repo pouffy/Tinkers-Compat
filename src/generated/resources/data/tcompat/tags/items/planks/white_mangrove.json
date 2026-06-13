@@ -3,6 +3,14 @@
     {
       "id": "biomeswevegone:white_mangrove_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_white_mangrove_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_white_mangrove_planks",
+      "required": false
     }
   ]
 }

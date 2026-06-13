@@ -3,6 +3,14 @@
     {
       "id": "biomeswevegone:holly_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_holly_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_holly_planks",
+      "required": false
     }
   ]
 }

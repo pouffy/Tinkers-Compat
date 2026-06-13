@@ -3,6 +3,14 @@
     {
       "id": "deep_aether:sunroot_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_sunroot_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/deep_aether/vertical_sunroot_planks",
+      "required": false
     }
   ]
 }

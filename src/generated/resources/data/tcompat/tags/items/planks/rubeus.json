@@ -3,6 +3,14 @@
     {
       "id": "betternether:rubeus_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_rubeus_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betternether/vertical_rubeus_planks",
+      "required": false
     }
   ]
 }

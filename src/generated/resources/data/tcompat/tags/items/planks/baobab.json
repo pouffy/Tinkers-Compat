@@ -5,7 +5,19 @@
       "required": false
     },
     {
+      "id": "quark:vertical_baobab_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_baobab_planks",
+      "required": false
+    },
+    {
       "id": "regions_unexplored:baobab_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_baobab_planks",
       "required": false
     }
   ]

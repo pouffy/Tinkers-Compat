@@ -3,6 +3,14 @@
     {
       "id": "betterend:pythadendron_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_pythadendron_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_pythadendron_planks",
+      "required": false
     }
   ]
 }

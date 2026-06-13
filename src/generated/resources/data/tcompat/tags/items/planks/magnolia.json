@@ -3,6 +3,14 @@
     {
       "id": "regions_unexplored:magnolia_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_magnolia_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_magnolia_planks",
+      "required": false
     }
   ]
 }

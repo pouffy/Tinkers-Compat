@@ -3,6 +3,14 @@
     {
       "id": "quark:blossom_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_blossom_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/quark/vertical_blossom_planks",
+      "required": false
     }
   ]
 }

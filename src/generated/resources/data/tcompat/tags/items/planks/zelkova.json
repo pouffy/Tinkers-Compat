@@ -3,6 +3,14 @@
     {
       "id": "biomeswevegone:zelkova_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_zelkova_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_zelkova_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "regions_unexplored:eucalyptus_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_eucalyptus_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_eucalyptus_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "aether:skyroot_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_skyroot_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/aether/vertical_skyroot_planks",
+      "required": false
     }
   ]
 }

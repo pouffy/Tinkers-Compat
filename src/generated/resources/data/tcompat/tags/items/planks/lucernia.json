@@ -3,6 +3,14 @@
     {
       "id": "betterend:lucernia_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_lucernia_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_lucernia_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "betternether:wart_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_wart_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betternether/vertical_wart_planks",
+      "required": false
     }
   ]
 }

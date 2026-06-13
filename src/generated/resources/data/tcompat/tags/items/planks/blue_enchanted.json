@@ -3,6 +3,14 @@
     {
       "id": "biomeswevegone:blue_enchanted_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_blue_enchanted_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_blue_enchanted_planks",
+      "required": false
     }
   ]
 }

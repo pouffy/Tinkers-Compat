@@ -3,6 +3,14 @@
     {
       "id": "betternether:willow_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_willow_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betternether/vertical_willow_planks",
+      "required": false
     }
   ]
 }

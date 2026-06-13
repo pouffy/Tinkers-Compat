@@ -3,6 +3,14 @@
     {
       "id": "deep_aether:cruderoot_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_cruderoot_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/deep_aether/vertical_cruderoot_planks",
+      "required": false
     }
   ]
 }

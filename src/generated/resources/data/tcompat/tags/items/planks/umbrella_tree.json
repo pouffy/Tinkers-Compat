@@ -3,6 +3,14 @@
     {
       "id": "betterend:umbrella_tree_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_umbrella_tree_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_umbrella_tree_planks",
+      "required": false
     }
   ]
 }

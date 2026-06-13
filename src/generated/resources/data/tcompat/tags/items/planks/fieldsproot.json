@@ -3,6 +3,14 @@
     {
       "id": "aether_redux:fieldsproot_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_fieldsproot_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/aether_redux/vertical_fieldsproot_planks",
+      "required": false
     }
   ]
 }

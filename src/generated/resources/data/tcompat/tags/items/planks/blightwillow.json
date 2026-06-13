@@ -3,6 +3,14 @@
     {
       "id": "aether_redux:blightwillow_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_blightwillow_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/aether_redux/vertical_blightwillow_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "betternether:anchor_tree_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_anchor_tree_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betternether/vertical_anchor_tree_planks",
+      "required": false
     }
   ]
 }

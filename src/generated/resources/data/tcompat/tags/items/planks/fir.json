@@ -5,7 +5,19 @@
       "required": false
     },
     {
+      "id": "quark:vertical_fir_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_fir_planks",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:fir_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomesoplenty/vertical_fir_planks",
       "required": false
     }
   ]

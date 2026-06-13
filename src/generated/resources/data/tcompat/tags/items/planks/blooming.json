@@ -3,6 +3,14 @@
     {
       "id": "deeperdarker:bloom_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_bloom_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/deeperdarker/vertical_bloom_planks",
+      "required": false
     }
   ]
 }

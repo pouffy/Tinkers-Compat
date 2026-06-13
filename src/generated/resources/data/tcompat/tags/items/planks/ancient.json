@@ -3,6 +3,14 @@
     {
       "id": "quark:ancient_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_ancient_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/quark/vertical_ancient_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "regions_unexplored:blackwood_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_blackwood_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_blackwood_planks",
+      "required": false
     }
   ]
 }

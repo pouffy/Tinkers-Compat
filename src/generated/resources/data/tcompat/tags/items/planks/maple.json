@@ -5,11 +5,27 @@
       "required": false
     },
     {
+      "id": "quark:vertical_maple_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_maple_planks",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:maple_planks",
       "required": false
     },
     {
+      "id": "everycompat:q/biomesoplenty/vertical_maple_planks",
+      "required": false
+    },
+    {
       "id": "regions_unexplored:maple_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_maple_planks",
       "required": false
     }
   ]

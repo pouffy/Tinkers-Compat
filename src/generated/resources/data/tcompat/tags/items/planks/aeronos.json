@@ -3,6 +3,14 @@
     {
       "id": "ad_astra:aeronos_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_aeronos_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/ad_astra/vertical_aeronos_planks",
+      "required": false
     }
   ]
 }

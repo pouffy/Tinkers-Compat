@@ -3,6 +3,14 @@
     {
       "id": "ad_astra:glacian_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_glacian_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/ad_astra/vertical_glacian_planks",
+      "required": false
     }
   ]
 }

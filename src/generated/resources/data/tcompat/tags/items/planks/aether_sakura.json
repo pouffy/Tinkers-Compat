@@ -3,6 +3,14 @@
     {
       "id": "ancient_aether:sakura_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_sakura_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/ancient_aether/vertical_sakura_planks",
+      "required": false
     }
   ]
 }

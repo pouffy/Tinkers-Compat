@@ -3,6 +3,14 @@
     {
       "id": "aether_redux:crystal_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_crystal_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/aether_redux/vertical_crystal_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "deep_aether:conberry_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_conberry_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/deep_aether/vertical_conberry_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "deeperdarker:echo_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_echo_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/deeperdarker/vertical_echo_planks",
+      "required": false
     }
   ]
 }

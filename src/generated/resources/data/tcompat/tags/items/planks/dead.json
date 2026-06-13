@@ -5,7 +5,19 @@
       "required": false
     },
     {
+      "id": "quark:vertical_dead_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomesoplenty/vertical_dead_planks",
+      "required": false
+    },
+    {
       "id": "regions_unexplored:dead_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_dead_planks",
       "required": false
     }
   ]

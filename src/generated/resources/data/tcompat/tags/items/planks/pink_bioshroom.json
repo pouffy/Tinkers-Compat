@@ -3,6 +3,14 @@
     {
       "id": "regions_unexplored:pink_bioshroom_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_pink_bioshroom_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_pink_bioshroom_planks",
+      "required": false
     }
   ]
 }

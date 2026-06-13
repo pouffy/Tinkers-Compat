@@ -3,6 +3,14 @@
     {
       "id": "regions_unexplored:alpha_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_alpha_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_alpha_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "regions_unexplored:kapok_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_kapok_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_kapok_planks",
+      "required": false
     }
   ]
 }

@@ -5,11 +5,27 @@
       "required": false
     },
     {
+      "id": "quark:vertical_redwood_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_redwood_planks",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:redwood_planks",
       "required": false
     },
     {
+      "id": "everycompat:q/biomesoplenty/vertical_redwood_planks",
+      "required": false
+    },
+    {
       "id": "regions_unexplored:redwood_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_redwood_planks",
       "required": false
     }
   ]

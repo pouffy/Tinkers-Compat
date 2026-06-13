@@ -5,11 +5,27 @@
       "required": false
     },
     {
+      "id": "quark:vertical_willow_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_willow_planks",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:willow_planks",
       "required": false
     },
     {
+      "id": "everycompat:q/biomesoplenty/vertical_willow_planks",
+      "required": false
+    },
+    {
       "id": "regions_unexplored:willow_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/regions_unexplored/vertical_willow_planks",
       "required": false
     }
   ]

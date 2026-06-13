@@ -3,6 +3,14 @@
     {
       "id": "betterend:tenanea_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_tenanea_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_tenanea_planks",
+      "required": false
     }
   ]
 }

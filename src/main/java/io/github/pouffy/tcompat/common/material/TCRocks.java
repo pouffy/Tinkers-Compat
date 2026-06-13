@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common.material;
 
 import io.github.pouffy.tcompat.common.util.RockVariantBuilder;
+import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -40,7 +41,7 @@ public enum TCRocks implements StringRepresentable {
     HOLYSTONE(builder("aether")),
     ASETERITE(builder("deep_aether")),
     CLORITE(builder("deep_aether")),
-    DIVINITE(builder("aether_redux")),
+    DIVINITE(builder("aether_redux").specialLang("angilite")),
     DRIFTSHALE(builder("aether_redux")),
 
     // Ad Astra
@@ -79,6 +80,15 @@ public enum TCRocks implements StringRepresentable {
 
     public boolean hasRockRedirect() {
         return this.builder.redirectRockTag != null;
+    }
+
+    public boolean hasSpecialLang() {
+        return !Objects.equals(this.builder.specialLang, "");
+    }
+
+    public String englishName() {
+        if (hasSpecialLang()) return TCLangProv.toEngStr(this.builder.specialLang);
+        return TCLangProv.toEngStr(this.name);
     }
 
     public List<String> getNamespaces() {
@@ -140,6 +150,9 @@ public enum TCRocks implements StringRepresentable {
 
     @Override
     public @NotNull String getSerializedName() {
+        if (!this.builder.alias.isEmpty()) {
+            return this.builder.alias;
+        }
         return this.name().toLowerCase();
     }
 }

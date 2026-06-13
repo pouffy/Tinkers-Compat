@@ -3,6 +3,14 @@
     {
       "id": "ancient_aether:highsproot_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_highsproot_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/ancient_aether/vertical_highsproot_planks",
+      "required": false
     }
   ]
 }

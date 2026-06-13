@@ -19,6 +19,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerTags;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
@@ -344,11 +346,19 @@ public class TCItemTagProv extends ItemTagsProvider {
     private void addPlanks() {
         for (TCWoods wood : TCWoods.values()) {
             String woodName = wood.name;
+
+            List<TCWoods> verticalType = new ArrayList<>();
             for (String namespace : wood.getNamespaces()) {
                 if (wood.hasPlanks()) {
                     if (!wood.hasPlankRedirect()) {
                         ResourceLocation plankId = wood.getSpecialPlankId(namespace) != null ? wood.getSpecialPlankId(namespace) : getResource(namespace, "%s_planks".formatted(woodName));
-                        this.tag(wood.plankTag()).addOptional(plankId);
+                        var plankTag = this.tag(wood.plankTag());
+                        plankTag.addOptional(plankId);
+                        if (!verticalType.contains(wood)) {
+                            plankTag.addOptional(getResource("quark", plankId.withPrefix("vertical_").getPath()));
+                            verticalType.add(wood);
+                        }
+                        plankTag.addOptional(getResource("everycompat", plankId.withPrefix("q/" + namespace + "/vertical_").getPath()));
                     }
                     this.tag(TinkerTags.Items.VARIANT_PLANKS)
                             .addOptionalTag(wood.plankTag());

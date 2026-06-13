@@ -3,6 +3,14 @@
     {
       "id": "quark:azalea_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_azalea_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/quark/vertical_azalea_planks",
+      "required": false
     }
   ]
 }

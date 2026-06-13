@@ -3,6 +3,14 @@
     {
       "id": "deep_aether:roseroot_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_roseroot_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/deep_aether/vertical_roseroot_planks",
+      "required": false
     }
   ]
 }

@@ -3,6 +3,14 @@
     {
       "id": "betterend:dragon_tree_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_dragon_tree_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betterend/vertical_dragon_tree_planks",
+      "required": false
     }
   ]
 }

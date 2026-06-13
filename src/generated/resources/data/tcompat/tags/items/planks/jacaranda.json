@@ -5,7 +5,19 @@
       "required": false
     },
     {
+      "id": "quark:vertical_jacaranda_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomeswevegone/vertical_jacaranda_planks",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:jacaranda_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/biomesoplenty/vertical_jacaranda_planks",
       "required": false
     }
   ]

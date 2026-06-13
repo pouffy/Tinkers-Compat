@@ -3,6 +3,14 @@
     {
       "id": "aether_redux:cloudcap_planks",
       "required": false
+    },
+    {
+      "id": "quark:vertical_cloudcap_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/aether_redux/vertical_cloudcap_planks",
+      "required": false
     }
   ]
 }
