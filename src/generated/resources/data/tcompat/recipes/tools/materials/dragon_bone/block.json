@@ -9,7 +9,7 @@
   "ingredient": {
     "item": "iceandfire:dragon_bone_block"
   },
-  "leftover": "iceandfire:dragon_bone",
+  "leftover": "iceandfire:dragonbone",
   "material": "tcompat:dragon_bone",
   "needed": 1,
   "value": 9
