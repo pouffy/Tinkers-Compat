@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import org.violetmoon.quark.base.Quark;
 import org.violetmoon.quark.content.tools.module.SlimeInABucketModule;
@@ -96,6 +97,7 @@ public class QuarkHandler {
 
     public static boolean isSlimeInABucketEnabled() {
         if (!CompatHelper.isLoaded("quark")) return false;
+        if (DatagenModLoader.isRunningDataGen()) return true;
         return LoadedOnly.isSlimeInABucketEnabled();
     }
 
