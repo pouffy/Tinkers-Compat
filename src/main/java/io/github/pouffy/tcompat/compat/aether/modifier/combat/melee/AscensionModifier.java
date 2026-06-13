@@ -1,28 +1,8 @@
 package io.github.pouffy.tcompat.compat.aether.modifier.combat.melee;
 
-import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.util.ObjectRetriever;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtUtils;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.InteractionHand;
+import io.github.pouffy.tcompat.compat.aether.AetherHandler;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.phys.Vec3;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -30,7 +10,6 @@ import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHoo
 import slimeknights.tconstruct.library.modifiers.hook.interaction.BlockInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
-import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -44,77 +23,14 @@ public class AscensionModifier extends NoLevelsModifier implements BlockInteract
     }
 
     @Override
-    public Component getDisplayName(int level) {
-        return ModifierLevelDisplay.NO_LEVELS.nameForLevel(this, level);
-    }
-
-    @Override
     public InteractionResult beforeBlockUse(IToolStackView tool, ModifierEntry modifier, UseOnContext context, InteractionSource source) {
-        Level level = context.getLevel();
-        BlockPos blockPos = context.getClickedPos();
-        ItemStack itemStack = context.getItemInHand();
-        BlockState blockState = level.getBlockState(blockPos);
-        Player player = context.getPlayer();
-        InteractionHand hand = context.getHand();
-        if (player != null && !player.isSpectator()) {
-            if ((itemStack.isCorrectToolForDrops(blockState)) && isFree(level.getBlockState(blockPos.above()))) {
-                if (level.getBlockEntity(blockPos) == null && blockState.getDestroySpeed(level, blockPos) >= 0.0F && !blockState.hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF) && !blockState.is(BlockTags.create(TCompat.getResource("aether:gravitite_ability_blacklist")))) {
-                    if (!level.isClientSide()) {
-                        Entity entity = createEntity(level, blockPos, blockState);
-                        if (entity != null) {
-                            level.addFreshEntity(entity);
-                            level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
-                            itemStack.hurtAndBreak(4, player, (p) -> p.broadcastBreakEvent(hand));
-                        }
-                    } else {
-                        player.swing(hand);
-                    }
-                    return InteractionResult.SUCCESS;
-                }
-            }
-        }
-        return InteractionResult.PASS;
+        return AetherHandler.floatBlock(context) ? InteractionResult.sidedSuccess(context.getLevel().isClientSide()) : InteractionResult.PASS;
     }
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (tool.hasTag(TinkerTags.Items.MELEE_WEAPON)) {
-            var target = context.getTarget();
-            if (!target.getType().is(TagKey.create(Registries.ENTITY_TYPE, TCompat.getResource("aether:unlaunchable"))) && (target.onGround() || target.isInFluidType())) {
-                target.push(0.0, 1.0, 0.0);
-                if (target instanceof ServerPlayer serverPlayer) {
-                    serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
-                }
-            }
+            AetherHandler.launchEntity(context.getLivingTarget(), context.getAttacker());
         }
-    }
-
-    public static boolean isFree(BlockState state) {
-        return state.isAir() || state.is(BlockTags.FIRE) || state.liquid() || state.canBeReplaced();
-    }
-
-    public static Entity createEntity(Level level, BlockPos pos, BlockState blockState) {
-        var floatingBlock = ObjectRetriever.getEntity("aether:floating_block");
-        if (floatingBlock.isPresent()) {
-            var type = floatingBlock.get().builtInRegistryHolder();
-            CompoundTag compoundtag = new CompoundTag();
-            compoundtag.putString("id", type.key().location().toString());
-            compoundtag.put("BlockState", NbtUtils.writeBlockState(blockState));
-            compoundtag.putBoolean("Natural", false);
-            if (blockState.is(BlockTags.ANVIL)) {
-                compoundtag.putBoolean("HurtEntities", true);
-                compoundtag.putFloat("FallHurtAmount", 2.0F);
-                compoundtag.putInt("FallHurtMax", 40);
-            }
-            Entity entity = EntityType.loadEntityRecursive(compoundtag, level, (e) -> {
-                e.moveTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, e.getYRot(), e.getXRot());
-                return e;
-            });
-            entity.blocksBuilding = true;
-            entity.setPos(entity.getX(), entity.getY() + (double) ((1.0F - entity.getBbHeight()) / 2.0F), entity.getZ());
-            entity.setDeltaMovement(Vec3.ZERO);
-            return entity;
-        }
-        return null;
     }
 }

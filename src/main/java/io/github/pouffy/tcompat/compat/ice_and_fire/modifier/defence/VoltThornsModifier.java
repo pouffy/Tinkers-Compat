@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.defence;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
+import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;

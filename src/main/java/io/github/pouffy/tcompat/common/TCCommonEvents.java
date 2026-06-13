@@ -1,9 +1,8 @@
 package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
+import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
-import io.github.pouffy.tcompat.common.capability.vampire_healing.VampireHealing;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.modifier.hook.EntitySensitiveAttributesModifierHook;
@@ -105,7 +104,6 @@ public class TCCommonEvents {
                 voidTouched.tick();
             }
         });
-        VampireHealing.get(entity).ifPresent(VampireHealing::onUpdate);
         TCompat.COOLDOWN_HANDLER.tickEntity(entity);
         CuriosHandler.tickHook(event);
         MalumHandler.idleRestoration(event);

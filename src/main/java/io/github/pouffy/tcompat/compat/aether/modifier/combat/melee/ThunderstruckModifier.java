@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether.modifier.combat.melee;
 
-import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
+import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;

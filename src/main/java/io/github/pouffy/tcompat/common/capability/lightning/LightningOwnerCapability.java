@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.common.capability.compatible;
+package io.github.pouffy.tcompat.common.capability.lightning;
 
 import io.github.pouffy.tcompat.common.network.LightningOwnerSyncPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;

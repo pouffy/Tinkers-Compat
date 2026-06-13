@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.combat;
 
-import io.github.pouffy.tcompat.common.capability.compatible.LightningOwner;
+import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
