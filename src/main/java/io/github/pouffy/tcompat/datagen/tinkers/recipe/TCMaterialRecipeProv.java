@@ -177,12 +177,12 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(cataclysm, CataclysmMaterials.blackSteel, folder, "black_steel", true);
         metalMaterialRecipe(cataclysm, CataclysmMaterials.cursium, folder, "cursium", true);
         metalMaterialRecipe(cataclysm, CataclysmMaterials.witherite, folder, "witherite", true);
-        materialRecipe(iceandfire, CataclysmMaterials.lacrima, ItemNameIngredient.from(TCompat.getResource("cataclysm:lacrima")), 1, 1, folder + "lacrima");
-        materialRecipe(iceandfire, CataclysmMaterials.essenceOfTheStorm, ItemNameIngredient.from(TCompat.getResource("cataclysm:essence_of_the_storm")), 1, 1, folder + "essence_of_the_storm");
-        materialRecipe(iceandfire, CataclysmMaterials.coral, ItemNameIngredient.from(TCompat.getResource("cataclysm:coral_chunk")), 1, 1, folder + "coral");
-        materialRecipe(iceandfire, CataclysmMaterials.voidJaw, ItemNameIngredient.from(TCompat.getResource("cataclysm:void_jaw")), 1, 1, folder + "void_jaw");
-        materialRecipe(iceandfire, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:koboleton_bone")), 1, 1, folder + "koboleton_bone/bone");
-        materialRecipe(iceandfire, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:kobolediator_skull")), 8, 1, folder + "koboleton_bone/skull");
+        materialRecipe(cataclysm, CataclysmMaterials.lacrima, ItemNameIngredient.from(TCompat.getResource("cataclysm:lacrima")), 1, 1, folder + "lacrima");
+        materialRecipe(cataclysm, CataclysmMaterials.essenceOfTheStorm, ItemNameIngredient.from(TCompat.getResource("cataclysm:essence_of_the_storm")), 1, 1, folder + "essence_of_the_storm");
+        materialRecipe(cataclysm, CataclysmMaterials.coral, ItemNameIngredient.from(TCompat.getResource("cataclysm:coral_chunk")), 1, 1, folder + "coral");
+        materialRecipe(cataclysm, CataclysmMaterials.voidJaw, ItemNameIngredient.from(TCompat.getResource("cataclysm:void_jaw")), 1, 1, folder + "void_jaw");
+        materialRecipe(cataclysm, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:koboleton_bone")), 1, 1, folder + "koboleton_bone/bone");
+        materialRecipe(cataclysm, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:kobolediator_skull")), 8, 1, folder + "koboleton_bone/skull");
 
         metalMaterialRecipe(malum, MalumMaterials.soulStainedSteel, folder, "soul_stained_steel", true);
         metalMaterialRecipe(malum, MalumMaterials.hallowedGold, folder, "hallowed_gold", true);
