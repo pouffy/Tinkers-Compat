@@ -267,8 +267,12 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 
 ## Planned
 
-- Create compat.
-- ROARING compat.
+- Create (v2.1.0)
+- ROARING (v2.1.0)
+- Fossils & Archaeology (v2.1.0)
+- Caverns & Chasms (v2.1.0)
+- Botania (v2.1.0)
+- Farmer's Delight (v2.1.0/v2.2.0)
 
 
 
