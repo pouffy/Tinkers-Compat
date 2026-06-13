@@ -27,9 +27,7 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void materials() {
-        MaterialBuilder.materialBuilders.forEach((builder) -> {
-            this.add(builder.getTranslationKey(), builder.getEnglishName());
-        });
+        MaterialBuilder.materialBuilders.forEach((builder) -> this.add(builder.getTranslationKey(), builder.getEnglishName()));
     }
 
     private void items() {

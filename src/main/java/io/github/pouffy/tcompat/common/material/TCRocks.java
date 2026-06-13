@@ -71,10 +71,12 @@ public enum TCRocks implements StringRepresentable {
     ;
 
     public final String name;
+    public final String langName;
     public final RockVariantBuilder builder;
 
     TCRocks(RockVariantBuilder builder) {
         this.name = this.name().toLowerCase();
+        this.langName = builder.specialLang == null ? builder.alias.isEmpty() ? name : builder.alias : builder.specialLang;
         this.builder = builder;
     }
 
@@ -82,13 +84,8 @@ public enum TCRocks implements StringRepresentable {
         return this.builder.redirectRockTag != null;
     }
 
-    public boolean hasSpecialLang() {
-        return !Objects.equals(this.builder.specialLang, "");
-    }
-
     public String englishName() {
-        if (hasSpecialLang()) return TCLangProv.toEngStr(this.builder.specialLang);
-        return TCLangProv.toEngStr(this.name);
+        return TCLangProv.toEngStr(this.langName);
     }
 
     public List<String> getNamespaces() {

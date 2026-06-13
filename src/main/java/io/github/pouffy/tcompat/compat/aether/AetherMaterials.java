@@ -146,6 +146,7 @@ public class AetherMaterials {
 
     public static MaterialVariantId aetherRockVariant(TCRocks rockType, int c63, int c102, int c140, int c178, int c216, int c255) {
         var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), AetherMaterials.aetherRock)
+                .lang(rockType.englishName())
                 .renderInfo(r -> r.color(c216).fallbacks("rock"))
                 .spriteInfo(s -> s.rock().sixColor(c63, c102, c140, c178, c216, c255));
         MaterialBuilder.rockMaterials.put(builder, rockType);

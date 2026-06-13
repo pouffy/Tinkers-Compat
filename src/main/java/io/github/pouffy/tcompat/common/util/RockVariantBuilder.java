@@ -10,6 +10,8 @@ import static io.github.pouffy.tcompat.common.data.TCTags.Items.named;
 
 public class RockVariantBuilder {
     public List<String> namespaces = List.of();
+    public String alias = "";
+    public String specialLang = null;
     public Map<String, TagKey<Item>> specialRockTag = new HashMap<>();
     public TagKey<Item> redirectRockTag = null;
     public Map<String, ResourceLocation> specialRockId = new HashMap<>();
@@ -18,6 +20,16 @@ public class RockVariantBuilder {
         Collection<String> namespaceList = new ArrayList<>(List.of());
         namespaceList.addAll(Arrays.asList(namespaces));
         this.namespaces = namespaceList.stream().toList();
+    }
+
+    public RockVariantBuilder alias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    public RockVariantBuilder specialLang(String specialLang) {
+        this.specialLang = specialLang;
+        return this;
     }
 
     public RockVariantBuilder specialRockTag(String namespace, String name) {
