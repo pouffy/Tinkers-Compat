@@ -93,27 +93,15 @@ public class BetterNetherSmeltery implements CompatSmeltery {
                 .addByproduct(TCFluids.moltenNetherRuby.result(FluidValues.GEM))
                 .save(cConsumer, location(gemFolder("melting") + "/diamond/flaming_ruby_upgrade_smithing_template"));
 
-        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(compatId("cincinnite_helmet_diamond")))
-                .addByproduct(TCFluids.moltenCincinnasite.result(FluidValues.INGOT * 5))
-                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnite_diamond_helmet"));
-        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(compatId("cincinnite_chestplate_diamond")))
-                .addByproduct(TCFluids.moltenCincinnasite.result(FluidValues.INGOT * 8))
-                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnite_diamond_chestplate"));
-        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(compatId("cincinnite_leggings_diamond")))
-                .addByproduct(TCFluids.moltenCincinnasite.result(FluidValues.INGOT * 7))
-                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnite_diamond_leggings"));
-        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(compatId("cincinnite_boots_diamond")))
-                .addByproduct(TCFluids.moltenCincinnasite.result(FluidValues.INGOT * 4))
-                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnite_diamond_boots"));
-        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, listedInput("cincinnite_pickaxe_diamond", "cincinnite_axe_diamond"))
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, listedInput("cincinnasite_pickaxe_diamond", "cincinnasite_axe_diamond"))
                 .addByproduct(TCFluids.moltenCincinnasite.result(FluidValues.INGOT * 3))
-                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnite_diamond_axes"));
-        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, listedInput("cincinnite_sword_diamond", "cincinnite_hoe_diamond"))
+                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnasite_diamond_axes"));
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, listedInput("cincinnasite_sword_diamond", "cincinnasite_hoe_diamond"))
                 .addByproduct(TCFluids.moltenCincinnasite.result(FluidValues.INGOT * 2))
-                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnite_diamond_weapons"));
-        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(compatId("cincinnite_shovel_diamond")))
+                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnasite_diamond_weapons"));
+        simpleMelting(TinkerFluids.moltenDiamond, FluidValues.GEM, ItemNameIngredient.from(compatId("cincinnasite_shovel_diamond")))
                 .addByproduct(TCFluids.moltenCincinnasite.result(FluidValues.INGOT))
-                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnite_diamond_shovel"));
+                .save(cConsumer, location(gemFolder("melting") + "/diamond/cincinnasite_diamond_shovel"));
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("cincinnasite_bars")))
                 .setFluidAndTime(TCFluids.moltenCincinnasite, FluidValues.NUGGET * 3)

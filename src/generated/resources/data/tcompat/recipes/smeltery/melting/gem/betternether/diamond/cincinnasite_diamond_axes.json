@@ -2,7 +2,7 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 630,
+      "amount": 270,
       "fluid": "tcompat:molten_cincinnasite"
     }
   ],
@@ -12,9 +12,14 @@
       "modid": "betternether"
     }
   ],
-  "ingredient": {
-    "item": "betternether:cincinnite_leggings_diamond"
-  },
+  "ingredient": [
+    {
+      "item": "betternether:cincinnasite_pickaxe_diamond"
+    },
+    {
+      "item": "betternether:cincinnasite_axe_diamond"
+    }
+  ],
   "result": {
     "amount": 100,
     "fluid": "tconstruct:molten_diamond"
