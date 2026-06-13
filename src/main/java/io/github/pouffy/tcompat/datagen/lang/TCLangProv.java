@@ -1,9 +1,16 @@
 package io.github.pouffy.tcompat.datagen.lang;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.TCRocks;
+import io.github.pouffy.tcompat.common.material.TCWoods;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
 import slimeknights.mantle.registration.object.FluidObject;
@@ -20,6 +27,7 @@ public class TCLangProv extends LanguageProvider {
     @Override
     protected void addTranslations() {
         materials();
+        tags();
         items();
         fluids();
         misc();
@@ -28,6 +36,54 @@ public class TCLangProv extends LanguageProvider {
 
     private void materials() {
         MaterialBuilder.materialBuilders.forEach((builder) -> this.add(builder.getTranslationKey(), builder.getEnglishName()));
+    }
+
+    private void tags() {
+        for (TCWoods wood : TCWoods.values()) {
+            if (wood.hasPlanks() && !wood.hasPlankRedirect()) {
+                tag(wood.plankTag(), toEngStr(wood.getSerializedName()+"_planks"));
+            }
+            if (wood.hasLogs()) {
+                tag(wood.logTag(), toEngStr(wood.getSerializedName()+"_"+wood.builder.logType));
+            }
+        }
+        for (TCRocks rock : TCRocks.values()) {
+            if (!rock.hasRockRedirect()) {
+                tag(rock.rockTag(), toEngStr(rock.langName+"_rocks"));
+            }
+        }
+        for (var fluid : TCFluids.tags.entrySet()) {
+            String translatedName = toEnglishName(fluid.getKey().getId().getPath());
+            for (var tag : fluid.getValue()) {
+                tagFluid(tag, translatedName);
+            }
+        }
+        tag(TCTags.Items.MAGIC_MODIFIABLE, "Magic Modifiable");
+        tag(TCTags.Items.JEWELERY_MODIFIABLE, "Jewelry Modifiable");
+        tag(TCTags.Items.HANDHELD_CURIO, "Handheld Curio");
+
+        tag(TCTags.Items.SENTRITE_STONE_BLOCKS, "Sentrite Stone Blocks");
+        tag(TCTags.Items.SENTRITE_STONE_SLABS, "Sentrite Stone Slabs");
+
+        tag(TCTags.Items.THALLASIUM_BULB_LANTERNS, "Thallasium Bulb Lanterns");
+        tag(TCTags.Items.TERMINITE_BULB_LANTERNS, "Terminite Bulb Lanterns");
+        tag(TCTags.Items.IRON_BULB_LANTERNS, "Iron Bulb Lanterns");
+
+        tag(TCTags.Items.QUARTZ_GLASS, "Quartz Glass");
+        tag(TCTags.Items.QUARTZ_GLASS_PANES, "Quartz Glass Panes");
+        tag(TCTags.Items.FRAMED_QUARTZ_GLASS, "Framed Quartz Glass");
+        tag(TCTags.Items.FRAMED_QUARTZ_GLASS_PANES, "Framed Quartz Glass Panes");
+
+        tag(TCTags.Items.AUTOCHANT_LEFT, "Left Autochant Input");
+        tag(TCTags.Items.AUTOCHANT_RIGHT, "Right Autochant Input");
+        tag(TCTags.Items.AUTOFREEZE_LEFT, "Left Autofreeze Input");
+        tag(TCTags.Items.AUTOFREEZE_RIGHT, "Right Autofreeze Input");
+
+        tag(TCTags.Items.DIAMOND_SMITHING_TEMPLATES, "Diamond Smithing Templates");
+        tag(TCTags.Items.VALKYRUM_SMITHING_TEMPLATES, "Valkyrum Smithing Templates");
+        tag(TCTags.Items.TREASURE_SMITHING_TEMPLATES, "Unmeltable Smithing Templates");
+        tag(TCTags.Items.NON_AETHER_WOODEN_RODS, "Non-Aether Wooden Rods");
+        tag(TCTags.Items.AETHER_WOODEN_RODS, "Aether Wooden Rods");
     }
 
     private void items() {
@@ -224,6 +280,18 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.brightness", "Now I See You", "Pushes away the dark fog brought on by the warden's presence.");
         forModifier("modifier.tcompat.heartbeat", "I'm Feeling Romantical", "Something within the tool occasionally beats.");
         forModifier("modifier.tcompat.sonorous", "Did you hear that?", "Charge up and release a sonic boom.");
+    }
+
+    private void tag(TagKey<Item> tag, String name) {
+        ResourceLocation tagId = tag.location();
+        String tagNamespace = tagId.getNamespace().equals("forge") ? "c" : tagId.getNamespace();
+        super.add("tag.item.%s.%s".formatted(tagNamespace, tagId.getPath().replace('/', '.')), name);
+    }
+
+    private void tagFluid(TagKey<Fluid> tag, String name) {
+        ResourceLocation tagId = tag.location();
+        String tagNamespace = tagId.getNamespace().equals("forge") ? "c" : tagId.getNamespace();
+        super.add("tag.fluid.%s.%s".formatted(tagNamespace, tagId.getPath().replace('/', '.')), name);
     }
 
     private void malumRune(String type, String name, String description) {

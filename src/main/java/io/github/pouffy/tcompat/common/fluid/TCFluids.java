@@ -13,11 +13,13 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
@@ -42,6 +44,7 @@ import java.util.Map;
 import static io.github.pouffy.tcompat.datagen.lang.TCLangProv.toEngStr;
 
 public class TCFluids extends CompatModule {
+    public static final Map<FluidObject<?>, List<TagKey<Fluid>>> tags = new HashMap<>();
 
     public static final Map<ResourceLocation, RegisteredFluid<?>> registeredFluids = new HashMap<>();
 
@@ -197,21 +200,25 @@ public class TCFluids extends CompatModule {
 
     public static <T extends FluidObject<?>> T register(ResourceLocation owner, String parentMod, T object) {
         registeredFluids.put(object.getId(), RegisteredFluid.create(object, parentMod, Either.left(owner)));
+        tags.put(object, object.getCommonTag() != null ? List.of(object.getCommonTag(), FluidTags.create(object.getId())) : List.of(FluidTags.create(object.getId())));
         return object;
     }
 
     public static <T extends FluidObject<?>> T register(TagKey<Item> owner, String parentMod, T object) {
         registeredFluids.put(object.getId(), RegisteredFluid.create(object, parentMod, Either.right(owner)));
+        tags.put(object, object.getCommonTag() != null ? List.of(object.getCommonTag(), FluidTags.create(object.getId())) : List.of(FluidTags.create(object.getId())));
         return object;
     }
 
     public static <T extends FluidObject<?>> T register(ResourceLocation owner, String parentMod, String lang, T object) {
         registeredFluids.put(object.getId(), RegisteredFluid.create(object, parentMod, lang, Either.left(owner)));
+        tags.put(object, object.getCommonTag() != null ? List.of(object.getCommonTag(), FluidTags.create(object.getId())) : List.of(FluidTags.create(object.getId())));
         return object;
     }
 
     public static <T extends FluidObject<?>> T register(TagKey<Item> owner, String parentMod, String lang, T object) {
         registeredFluids.put(object.getId(), RegisteredFluid.create(object, parentMod, lang, Either.right(owner)));
+        tags.put(object, object.getCommonTag() != null ? List.of(object.getCommonTag(), FluidTags.create(object.getId())) : List.of(FluidTags.create(object.getId())));
         return object;
     }
 
