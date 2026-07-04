@@ -1,18 +1,23 @@
 # Tinkers' Compatibility Changelog
 
-## 1.4.1
+## 2.0.2
 
 ### Changes
-- Flamed, Iced & Lightning now require fully charged attacks to apply effects.
-- Scorchthorns, Frostthorns & Voltthorns now apply a cooldown after use and cannot be used until the cooldown completes.
-- Nerfed stats of Dragonsteel.
-- Dragonsteel now has Armour stats.
-- Flamed, Iced & Lightning are now craft-only and are no longer native to dragonsteel.
-- Ice & Fire materials are now Tier 4.
+- Updated Credits.
+- Updated dependencies.
+- Fixed L_Ender's Cataclysm recipe conditions.
+- Fixed incorrectly spelled or misformatted item ids in some recipes.
+- Fixed a locale issue related to putting wood or rock names into lowercase for tags.
+- Slime in a Bucket variants now only register if Quark's Slime in a Bucket module is enabled.
+- Renamed Divinite to Angilite.
+- Renamed LightningOwner's folder to lightning.
+- `salvageAll` can now exclude certain salvage types.
 
 ### Additions
-- Scorchborn, Frostborn & Voltborn Traits for Dragonsteel that provide stacking damage bonuses & protection against dragons.
+- Added a proper handler for Aether methods.
+- Added Client-Only handlers for methods that are only for the client.
+- Wood tags now support vertical planks from Quark (& Every Compat).
+- Added translations for all item & fluid tags.
 
 ### Removals
-- Flamed, Iced & Lightning no longer provide bonus damage to Dragons.
-- Scorchthorns, Frostthorns & Voltthorns no longer provide bonus damage to Dragons.
+- Removed `tcompat:vampire_healing` capability as it can now be managed through the handler.
