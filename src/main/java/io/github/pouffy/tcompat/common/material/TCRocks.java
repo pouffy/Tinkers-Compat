@@ -16,6 +16,7 @@ import slimeknights.mantle.recipe.data.ConsumerWrapperBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -75,7 +76,7 @@ public enum TCRocks implements StringRepresentable {
     public final RockVariantBuilder builder;
 
     TCRocks(RockVariantBuilder builder) {
-        this.name = this.name().toLowerCase();
+        this.name = this.name().toLowerCase(Locale.ROOT);
         this.langName = builder.specialLang == null ? builder.alias.isEmpty() ? name : builder.alias : builder.specialLang;
         this.builder = builder;
     }
@@ -121,16 +122,16 @@ public enum TCRocks implements StringRepresentable {
     }
 
     public TagKey<Item> externalRockTag(String namespace) {
-        return Objects.requireNonNullElseGet(getSpecialRockTag(namespace), () -> named(namespace, this.name().toLowerCase() + "_rocks"));
+        return Objects.requireNonNullElseGet(getSpecialRockTag(namespace), () -> named(namespace, this.name().toLowerCase(Locale.ROOT) + "_rocks"));
     }
 
     public TagKey<Item> rockTag() {
-        return local("rocks/" + this.name().toLowerCase());
+        return local("rocks/" + this.name().toLowerCase(Locale.ROOT));
     }
 
     public static TagKey<Item> rockTag(String name) {
         for (TCRocks rock : values()) {
-            if (rock.name().toLowerCase().equals(name)) {
+            if (rock.name().toLowerCase(Locale.ROOT).equals(name)) {
                 return rock.rockTag();
             }
         }
@@ -150,6 +151,6 @@ public enum TCRocks implements StringRepresentable {
         if (!this.builder.alias.isEmpty()) {
             return this.builder.alias;
         }
-        return this.name().toLowerCase();
+        return this.name().toLowerCase(Locale.ROOT);
     }
 }

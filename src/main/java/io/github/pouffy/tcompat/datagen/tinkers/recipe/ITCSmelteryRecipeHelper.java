@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.IntFunction;
@@ -445,13 +446,13 @@ public interface ITCSmelteryRecipeHelper extends ICastCreationHelper {
 
         SalvageType(int salvageAmount) {
             this.salvageAmount = salvageAmount;
-            this.types = List.of(this.name().toLowerCase());
+            this.types = List.of(this.name().toLowerCase(Locale.ROOT));
         }
 
         SalvageType(int salvageAmount, boolean includeInSalvageAll) {
             this.salvageAmount = salvageAmount;
             this.includeInSalvageAll = includeInSalvageAll;
-            this.types = List.of(this.name().toLowerCase());
+            this.types = List.of(this.name().toLowerCase(Locale.ROOT));
         }
 
         SalvageType(int salvageAmount, String... types) {
@@ -467,7 +468,7 @@ public interface ITCSmelteryRecipeHelper extends ICastCreationHelper {
         }
 
         public String recipeSuffix() {
-            return this.name().toLowerCase();
+            return this.name().toLowerCase(Locale.ROOT);
         }
 
         public int getSalvageAmount(int singularUnit) {

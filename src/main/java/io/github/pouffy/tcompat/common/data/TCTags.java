@@ -19,6 +19,8 @@ import slimeknights.tconstruct.library.materials.definition.MaterialManager;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierManager;
 
+import java.util.Locale;
+
 import static io.github.pouffy.tcompat.TCompat.getResource;
 import static slimeknights.mantle.Mantle.commonResource;
 
@@ -67,10 +69,10 @@ public class TCTags {
             ;
 
             public TagKey<Block> plankTag() {
-                return local(this.name().toLowerCase() + "_planks");
+                return local(this.name().toLowerCase(Locale.ROOT) + "_planks");
             }
             public TagKey<Block> logTag() {
-                return local(this.name().toLowerCase() + "_logs");
+                return local(this.name().toLowerCase(Locale.ROOT) + "_logs");
             }
             public static TagKey<Block> plankTag(String name) {
                 return local(name + "_planks");

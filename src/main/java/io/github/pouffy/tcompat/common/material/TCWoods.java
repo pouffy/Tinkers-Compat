@@ -15,6 +15,7 @@ import slimeknights.mantle.recipe.data.ConsumerWrapperBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -134,7 +135,7 @@ public enum TCWoods implements StringRepresentable {
 
     TCWoods(WoodVariantBuilder builder) {
         this.builder = builder;
-        this.name = this.name().toLowerCase();
+        this.name = this.name().toLowerCase(Locale.ROOT);
     }
 
     public boolean isStem() {
@@ -177,20 +178,20 @@ public enum TCWoods implements StringRepresentable {
     }
 
     public TagKey<Item> externalLogTag(String namespace) {
-        return Objects.requireNonNullElseGet(getSpecialLogTag(namespace), () -> named(namespace, this.name().toLowerCase() + "_" + this.builder.logType));
+        return Objects.requireNonNullElseGet(getSpecialLogTag(namespace), () -> named(namespace, this.name().toLowerCase(Locale.ROOT) + "_" + this.builder.logType));
     }
 
     public TagKey<Item> plankTag() {
-        return Objects.requireNonNullElseGet(this.builder.redirectPlankTag, () -> local("planks/" + this.name().toLowerCase()));
+        return Objects.requireNonNullElseGet(this.builder.redirectPlankTag, () -> local("planks/" + this.name().toLowerCase(Locale.ROOT)));
     }
 
     public TagKey<Item> logTag() {
-        return local(this.builder.logType + "/" + this.name().toLowerCase());
+        return local(this.builder.logType + "/" + this.name().toLowerCase(Locale.ROOT));
     }
 
     public static TagKey<Item> plankTag(String name) {
         for (TCWoods wood : values()) {
-            if (wood.name().toLowerCase().equals(name)) {
+            if (wood.name().toLowerCase(Locale.ROOT).equals(name)) {
                 return wood.plankTag();
             }
         }
@@ -198,7 +199,7 @@ public enum TCWoods implements StringRepresentable {
     }
     public static TagKey<Item> logTag(String name) {
         for (TCWoods wood : values()) {
-            if (wood.name().toLowerCase().equals(name)) {
+            if (wood.name().toLowerCase(Locale.ROOT).equals(name)) {
                 return wood.logTag();
             }
         }
@@ -231,6 +232,6 @@ public enum TCWoods implements StringRepresentable {
         if (!this.builder.alias.isEmpty()) {
             return this.builder.alias;
         }
-        return this.name().toLowerCase();
+        return this.name().toLowerCase(Locale.ROOT);
     }
 }
