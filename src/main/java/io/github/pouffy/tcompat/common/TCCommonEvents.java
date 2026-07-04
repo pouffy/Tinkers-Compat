@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.client.compat.CataclysmClientHandler;
 import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
@@ -98,6 +99,7 @@ public class TCCommonEvents {
 
     @SubscribeEvent
     static void livingTick(LivingEvent.LivingTickEvent event) {
+        boolean client = event.getEntity().level().isClientSide();
         var entity = event.getEntity();
         VoidTouched.get(entity).ifPresent(voidTouched -> {
             if (voidTouched.isVoided()) {
@@ -108,7 +110,9 @@ public class TCCommonEvents {
         CuriosHandler.tickHook(event);
         MalumHandler.idleRestoration(event);
         DarkerHandler.heartbeat(event);
-        CataclysmHandler.gazeOfHeat(event);
+        if (client) {
+            CataclysmClientHandler.gazeOfHeat(event);
+        }
     }
 
     @SubscribeEvent

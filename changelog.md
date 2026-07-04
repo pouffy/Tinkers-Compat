@@ -9,6 +9,7 @@
 - Fixed incorrectly spelled or misformatted item ids in some recipes.
 - Fixed a locale issue related to putting wood or rock names into lowercase for tags.
 - Slime in a Bucket variants now only register if Quark's Slime in a Bucket module is enabled.
+- Gaze of Heat is now handled on the client.
 - Renamed Divinite to Angilite.
 - Renamed LightningOwner's folder to lightning.
 - `salvageAll` can now exclude certain salvage types.

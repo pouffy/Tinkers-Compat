@@ -90,14 +90,6 @@ public class CataclysmHandler {
         }
     }
 
-    public static void gazeOfHeat(LivingEvent.LivingTickEvent event) {
-        if (!CompatHelper.isLoaded("cataclysm")) return;
-        boolean canUse = EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.ignitium, (stack) -> stack.is(TinkerTags.Items.HELMETS)) && !ModifierCooldowns.getModifierCooldowns(event.getEntity()).isOnCooldown(TCModifiers.ignitium);
-        if (canUse) {
-            LoadedOnly.gazeOfHeat(event);
-        }
-    }
-
     public static void gazeOfHeatUse(LivingEntity user) {
         if (!CompatHelper.isLoaded("cataclysm")) return;
         LoadedOnly.gazeOfHeatUse(user);
@@ -191,14 +183,6 @@ public class CataclysmHandler {
                         attacker.setSecondsOnFire(5);
                     }
                 }
-            }
-        }
-
-        public static void gazeOfHeat(LivingEvent.LivingTickEvent event) {
-            LivingEntity user = event.getEntity();
-            if (ModKeybind.HELMET_KEY_ABILITY.consumeClick()) {
-                gazeOfHeatUse(user);
-                TCompatNetworking.INSTANCE.sendToServer(new GazeOfHeatPacket());
             }
         }
 
