@@ -20,8 +20,11 @@ String buildNumber = System.getenv("GITHUB_RUN_NUMBER")
 version = "${mod_version}${nightly ? "-build.${buildNumber}" : ""}"
 
 sourceSets {
-    main.resources {
-        srcDir 'src/generated/resources'
+    main {
+        resources {
+            srcDirs 'src/generated/resources'
+            exclude '.cache'
+        }
     }
 
     client {

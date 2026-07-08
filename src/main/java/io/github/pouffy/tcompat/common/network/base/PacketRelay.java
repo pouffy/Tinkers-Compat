@@ -5,6 +5,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
+import net.minecraftforge.server.ServerLifecycleHooks;
 
 public class PacketRelay {
     public static <MSG> void sendToPlayer(SimpleChannel handler, MSG message, ServerPlayer player) {
@@ -16,6 +17,10 @@ public class PacketRelay {
     }
 
     public static <MSG> void sendToAll(SimpleChannel handler, MSG message) {
+        //Essential's fault
+        if (ServerLifecycleHooks.getCurrentServer() == null) {
+            return;
+        }
         handler.send(PacketDistributor.ALL.noArg(), message); // Clientbound
     }
 
