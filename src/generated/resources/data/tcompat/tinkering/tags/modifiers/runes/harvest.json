@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "tcompat:rune_of_fervor",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_haste",
+      "required": false
+    }
+  ]
+}

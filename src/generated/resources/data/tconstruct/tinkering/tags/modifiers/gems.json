@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "tcompat:zanite",
+      "required": false
+    },
+    {
+      "id": "tcompat:skyjade",
+      "required": false
+    },
+    {
+      "id": "tcompat:spoiled",
+      "required": false
+    },
+    {
+      "id": "tcompat:ambrofusion",
+      "required": false
+    }
+  ]
+}

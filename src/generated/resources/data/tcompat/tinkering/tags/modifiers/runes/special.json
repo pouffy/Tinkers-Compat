@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": "tcompat:rune_of_dexterity",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_loyalty",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_motion",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_the_aether",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_the_seas",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_twinned_duration",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_unnatural_stamina",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "tcompat:rubys_fire",
+      "required": false
+    },
+    {
+      "id": "tcompat:autochant",
+      "required": false
+    },
+    {
+      "id": "tcompat:autofreeze",
+      "required": false
+    }
+  ]
+}

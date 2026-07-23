@@ -310,6 +310,12 @@ public class TCTags {
         private static void init() {
         }
 
+        public static final TagKey<Modifier> RUNES = local("runes");
+        public static final TagKey<Modifier> DEFENCE_RUNES = local("runes/defence");
+        public static final TagKey<Modifier> HARVEST_RUNES = local("runes/harvest");
+        public static final TagKey<Modifier> COMBAT_RUNES = local("runes/combat");
+        public static final TagKey<Modifier> SPECIAL_RUNES = local("runes/special");
+
         private static TagKey<Modifier> local(String name) {
             return ModifierManager.getTag(getResource(name));
         }

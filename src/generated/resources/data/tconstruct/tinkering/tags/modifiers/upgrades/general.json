@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "tcompat:zanite",
+      "required": false
+    },
+    {
+      "id": "tcompat:skyjade",
+      "required": false
+    },
+    {
+      "id": "tcompat:warden",
+      "required": false
+    }
+  ]
+}

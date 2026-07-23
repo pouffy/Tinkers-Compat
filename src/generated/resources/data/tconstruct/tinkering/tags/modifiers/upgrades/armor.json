@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "tcompat:integral",
+      "required": false
+    },
+    {
+      "id": "tcompat:ignitium",
+      "required": false
+    }
+  ]
+}

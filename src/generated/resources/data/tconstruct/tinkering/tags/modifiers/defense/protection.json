@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "tcompat:scorch_thorns",
+      "required": false
+    },
+    {
+      "id": "tcompat:frost_thorns",
+      "required": false
+    },
+    {
+      "id": "tcompat:volt_thorns",
+      "required": false
+    }
+  ]
+}

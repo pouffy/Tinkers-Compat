@@ -78,5 +78,6 @@ public class TCDataGenerator {
         generator.addProvider(server, new TCMaterialStatsProv(packOutput, materials));
         generator.addProvider(server, new TCMaterialTraitsProv(packOutput, materials));
         generator.addProvider(server, new TCMaterialTagProv(packOutput, existingFileHelper));
+        generator.addProvider(server, new TCModifierTagProv(packOutput, existingFileHelper));
     }
 }

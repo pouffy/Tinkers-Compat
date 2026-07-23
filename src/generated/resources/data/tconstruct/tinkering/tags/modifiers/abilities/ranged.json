@@ -1,0 +1,40 @@
+{
+  "values": [
+    {
+      "id": "tcompat:erosion",
+      "required": false
+    },
+    {
+      "id": "tcompat:auric_flame",
+      "required": false
+    },
+    {
+      "id": "tcompat:mnemonic",
+      "required": false
+    },
+    {
+      "id": "tcompat:sonorous",
+      "required": false
+    },
+    {
+      "id": "tcompat:swapping",
+      "required": false
+    },
+    {
+      "id": "tcompat:flamed",
+      "required": false
+    },
+    {
+      "id": "tcompat:iced",
+      "required": false
+    },
+    {
+      "id": "tcompat:lightning",
+      "required": false
+    },
+    {
+      "id": "tcompat:dampening",
+      "required": false
+    }
+  ]
+}

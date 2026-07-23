@@ -1,0 +1,44 @@
+{
+  "values": [
+    {
+      "id": "tcompat:rune_of_aliment_cleansing",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_bolstering",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_idle_restoration",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_igneous_solace",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_reactive_shielding",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_reinforcement",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_the_hells",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_the_heretic",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_toughness",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_warding",
+      "required": false
+    }
+  ]
+}

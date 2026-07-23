@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "tcompat:deliverance",
+      "required": false
+    },
+    {
+      "id": "tcompat:flamed",
+      "required": false
+    },
+    {
+      "id": "tcompat:iced",
+      "required": false
+    },
+    {
+      "id": "tcompat:lightning",
+      "required": false
+    },
+    {
+      "id": "tcompat:dampening",
+      "required": false
+    },
+    {
+      "id": "tcompat:birt",
+      "required": false
+    }
+  ]
+}

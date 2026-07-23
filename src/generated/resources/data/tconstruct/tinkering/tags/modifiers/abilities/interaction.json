@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "tcompat:erosion",
+      "required": false
+    },
+    {
+      "id": "tcompat:auric_flame",
+      "required": false
+    },
+    {
+      "id": "tcompat:mnemonic",
+      "required": false
+    },
+    {
+      "id": "tcompat:sonorous",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "tcompat:rune_of_culling",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_haste",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_sacrificial_empowerment",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_spell_mastery",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_the_arena",
+      "required": false
+    },
+    {
+      "id": "tcompat:rune_of_volatile_distortion",
+      "required": false
+    }
+  ]
+}
