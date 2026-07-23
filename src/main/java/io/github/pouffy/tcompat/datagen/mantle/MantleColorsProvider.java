@@ -53,6 +53,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(MalumInit.RUNE_SLOT,                       0xd200cb);
         //Ad Astra
         addColor(AdAstraInit.oxygenated.getId(),            0xa9b4ed);
+        addColor(AdAstraInit.discharge.getId(),             0xd68d4d);
         //Aether
         addColor(TCModifiers.aetherForged,                  0x7df0e7);
         addColor(TCModifiers.zanite,                        0xaf7ff6);

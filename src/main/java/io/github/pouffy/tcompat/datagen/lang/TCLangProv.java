@@ -174,6 +174,8 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.skyjade.mining_speed", "Skyjade Mining Speed");
         add("modifier.tcompat.skyjade.armor", "Skyjade Armor");
 
+        add("modifier.tcompat.discharge.current", "Dischargable: ");
+
         add("item.tconstruct.creative_slot.rune", "Creative Rune Slot");
         add("stat.tconstruct.slot.prefix.rune", "Rune Slots: ");
         add("stat.tconstruct.slot.display.rune", "rune");
@@ -208,6 +210,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.swapping", "Take their place", "Struck targets will switch places with the shooter.");
         forModifier("modifier.tcompat.birt", "Birt", "Birt");
         //Ad Astra
+        forModifier("modifier.tcompat.discharge", "It's electrifying", "Using the tool generates energy that can be discharged into blocks or items.");
         forModifier("modifier.tcompat.oxygenated", "Breathe in...", "Using the tool replenishes air by consuming Oxygen.");
         //Betterend
         forModifier("modifier.tcompat.void_touched", "All Consuming", "Increased efficiency against end stone blocks.\nApplies a stacking damage multiplier to targets.");

@@ -13,11 +13,10 @@ import static net.minecraft.world.item.Tiers.NETHERITE;
 public class AdAstraMaterials {
 
     public static final MaterialId desh = MaterialBuilder.material("ad_astra", "desh").excludeFromLoot()
-            .flavor("Electrifyingly mundane.")
+            .flavor("A very confusing battery.")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
-                    .trait(AdAstraInit.oxygenated)
-                    .trait(PlainRingMaterialStats.ID, new ModifierEntry[] {})
+                    .trait(AdAstraInit.discharge)
             )
             .stats(s ->
                     s.stat(
