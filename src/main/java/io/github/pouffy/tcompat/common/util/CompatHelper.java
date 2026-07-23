@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.ancient_aether.AncientAetherInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.bwg.BWGInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
@@ -49,6 +50,7 @@ public class CompatHelper {
         compatInitializers.put("ancient_aether", AncientAetherInit::init);
         compatInitializers.put("betterend", BetterendInit::init);
         compatInitializers.put("betternether", BetternetherInit::init);
+        compatInitializers.put("biomeswevegone", BWGInit::init);
         compatInitializers.put("cataclysm", CataclysmInit::init);
         compatInitializers.put("deep_aether", DeepAetherInit::init);
         compatInitializers.put("iceandfire", IFInit::init);

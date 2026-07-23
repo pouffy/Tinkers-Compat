@@ -529,6 +529,10 @@ public class MaterialBuilder {
             return this.fallbacks("scales", "metal").armor();
         }
 
+        public SpriteInfo vines() {
+            return this.fallbacks("primitive", "cloth").binding().bowstring().maille();
+        }
+
         public SpriteInfo sixColor(int c63, int c102, int c140, int c178, int c216, int c255) {
             return this.colorMapper(GreyToColorMapping.builderFromBlack()
                     .addARGB(63, c63)

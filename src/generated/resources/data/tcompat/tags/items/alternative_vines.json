@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:kapok_vines",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:willow_vine",
+      "required": false
+    }
+  ]
+}

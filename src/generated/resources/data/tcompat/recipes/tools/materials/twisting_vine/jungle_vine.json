@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:jungle_vine"
+  },
+  "material": "tconstruct:twisting_vine#jungle_vine",
+  "needed": 1,
+  "value": 1
+}

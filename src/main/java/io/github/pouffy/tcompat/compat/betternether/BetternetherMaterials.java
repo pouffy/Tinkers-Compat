@@ -5,7 +5,9 @@ import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.DIAMOND;
@@ -65,6 +67,27 @@ public class BetternetherMaterials {
                     .meleeHarvest()
                     .ranged()
                     .sixColor(0xFF4c000b, 0xFF6a000f, 0xFFce1425, 0xFFeb4150, 0xFFf0747f, 0xFFf8c0c5))
+            .buildMaterial();
+
+    public static final MaterialVariantId blackVine = MaterialBuilder.variant("betternether", "black_vine", MaterialIds.weepingVine)
+            .renderInfo(r -> r.color(0xFF36343c).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFF010101, 0xFF151516, 0xFF26242b, 0xFF36343c, 0xFF4f4b59, 0xFF635f6e))
+            .buildVariant();
+
+    public static final MaterialId goldenVine = MaterialBuilder.material("betternether", "golden_vine")
+            .data(d -> d.tier(2).order(0).craftable(true))
+            .traits(t -> t.trait(ModifierIds.glowing))
+            .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
+            .renderInfo(r -> r.color(0xFFffcb00).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFFfa7e06, 0xFFff9a00, 0xFFffb800, 0xFFffcb00, 0xFFfcdd3a, 0xFFf8f17d))
+            .buildMaterial();
+
+    public static final MaterialId bloomingVine = MaterialBuilder.material("betternether", "blooming_vine")
+            .data(d -> d.tier(2).order(0).craftable(true))
+            .traits(t -> t.trait(ModifierIds.deciduous))
+            .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
+            .renderInfo(r -> r.color(0xFF363e6a).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFF1a1a24, 0xFF262945, 0xFF2a2e5b, 0xFF363e6a, 0xFF4e5d88, 0xFF5d6f9e))
             .buildMaterial();
 
     public static void staticInit() {}

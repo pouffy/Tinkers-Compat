@@ -224,6 +224,10 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TCTags.Items.AETHER_WOODEN_RODS).addOptional(getResource("aether", "skyroot_stick"));
         this.tag(TCTags.Items.NON_AETHER_WOODEN_RODS).addTag(Tags.Items.RODS_WOODEN).remove(TCTags.Items.AETHER_WOODEN_RODS);
 
+        this.tag(TCTags.Items.ALTERNATIVE_VINES)
+                .addOptional(getResource("regions_unexplored", "kapok_vines"))
+                .addOptional(getResource("biomesoplenty", "willow_vine"));
+
         // Specific Tags
         this.tag(TCTags.Items.ZANITE_GEMS).addOptional(getResource("aether", "zanite_gemstone"));
         this.tag(TCTags.Items.ZANITE_BLOCKS).addOptional(getResource("aether", "zanite_block"));

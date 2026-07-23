@@ -4,7 +4,10 @@ import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.*;
@@ -72,6 +75,32 @@ public class BetterendMaterials {
             )
             .renderInfo(r -> r.color(0x6d8883).fallbacks("metal"))
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF0c100f, 0xFF282f2d, 0xFF495e5a, 0xFF697876, 0xFF8d9a96, 0xFFbdcbc9))
+            .buildMaterial();
+
+    public static final MaterialVariantId twistedVine = MaterialBuilder.variant("betterend", "twisted_vine", MaterialIds.twistingVine)
+            .renderInfo(r -> r.color(0xFF4b4b4b).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFF101010, 0xFF2b2b2b, 0xFF323232, 0xFF4b4b4b, 0xFF5e5e5e, 0xFF6b6b6b))
+            .buildVariant();
+
+    public static final MaterialVariantId jungleVine = MaterialBuilder.variant("betterend", "jungle_vine", MaterialIds.twistingVine)
+            .renderInfo(r -> r.color(0xFF238278).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFF174c60, 0xFF195a6c, 0xFF1f6c7f, 0xFF238278, 0xFF34998b, 0xFF49aa8f))
+            .buildVariant();
+
+    public static final MaterialId bulbVine = MaterialBuilder.material("betterend", "bulb_vine")
+            .data(d -> d.tier(4).order(0).craftable(true))
+            .traits(t -> t.trait(ModifierIds.glowing))
+            .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
+            .renderInfo(r -> r.color(0xFF9b3b81).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFF5d2c54, 0xFF64335b, 0xFF6c3b63, 0xFF9b3b81, 0xFFb24e8e, 0xFFc55a9f))
+            .buildMaterial();
+
+    public static final MaterialId denseVine = MaterialBuilder.material("betterend", "dense_vine")
+            .data(d -> d.tier(4).order(0).craftable(true))
+            .traits(t -> t.trait(ModifierIds.dense))
+            .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
+            .renderInfo(r -> r.color(0xFF26bbb1).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFF0c5453, 0xFF0c7271, 0xFF118c8a, 0xFF26bbb1, 0xFF58e2cf, 0xFF7ff0dd))
             .buildMaterial();
 
     public static void staticInit() {}

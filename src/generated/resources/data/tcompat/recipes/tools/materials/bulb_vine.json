@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterend"
+    }
+  ],
+  "ingredient": {
+    "item": "betterend:bulb_vine"
+  },
+  "material": "tcompat:bulb_vine",
+  "needed": 1,
+  "value": 1
+}

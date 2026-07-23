@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betternether"
+    }
+  ],
+  "ingredient": {
+    "item": "betternether:golden_vine"
+  },
+  "material": "tcompat:golden_vine",
+  "needed": 1,
+  "value": 1
+}

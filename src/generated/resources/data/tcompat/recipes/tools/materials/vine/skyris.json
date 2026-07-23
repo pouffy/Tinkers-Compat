@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
+  "ingredient": {
+    "item": "biomeswevegone:skyris_vine"
+  },
+  "material": "tconstruct:vine#skyris_vine",
+  "needed": 1,
+  "value": 1
+}

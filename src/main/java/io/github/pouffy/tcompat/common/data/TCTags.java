@@ -254,6 +254,8 @@ public class TCTags {
         public static TagKey<Item> VALKYRUM_SMITHING_TEMPLATES  = local("recipe/valkyrum_smithing_templates");
         public static TagKey<Item> TREASURE_SMITHING_TEMPLATES  = local("recipe/treasure_smithing_templates");
 
+        public static TagKey<Item> ALTERNATIVE_VINES = local("alternative_vines");
+
         public static TagKey<Item> DARTS = named("aether", "darts");
 
         public static TagKey<Item> ALPHA_LOGS = named("regions_unexplored", "logs/alpha");

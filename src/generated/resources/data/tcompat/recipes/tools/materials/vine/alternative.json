@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "tcompat:alternative_vines"
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:alternative_vines"
+  },
+  "material": "tconstruct:vine",
+  "needed": 1,
+  "value": 1
+}

@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.material.TCRocks;
@@ -13,6 +14,7 @@ import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxMaterials;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRMaterials;
 import io.github.pouffy.tcompat.compat.betterend.BetterendMaterials;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
+import io.github.pouffy.tcompat.compat.bwg.BWGMaterials;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmMaterials;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerMaterials;
@@ -28,6 +30,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.crafting.conditions.ICondition;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.mantle.recipe.helper.ItemOutput;
@@ -102,6 +107,15 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(withCondition(consumer, modLoaded("biomeswevegone")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomeswevegone:mini_cactus"), getResource("biomeswevegone:prickly_pear_cactus"), getResource("biomeswevegone:golden_spined_cactus")), 1, 2, folder + "cactus/small/biomeswevegone");
         materialRecipe(withCondition(consumer, modLoaded("biomesoplenty")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomesoplenty:tiny_cactus")), 1, 2, folder + "cactus/small/biomesoplenty");
 
+        materialRecipe(withCondition(consumer, tagFilled(TCTags.Items.ALTERNATIVE_VINES)), MaterialIds.vine, Ingredient.of(TCTags.Items.ALTERNATIVE_VINES), 1, 1, folder + "vine/alternative");
+        materialRecipe(withCondition(consumer, modLoaded("biomeswevegone")), BWGMaterials.skyrisVine, ItemNameIngredient.from(TCompat.getResource("biomeswevegone:skyris_vine")), 1, 1, folder + "vine/skyris");
+        materialRecipe(withCondition(consumer, modLoaded("betternether")), BetternetherMaterials.blackVine, ItemNameIngredient.from(TCompat.getResource("betternether:black_vine")), 1, 1, folder + "weeping_vine/black_vine");
+        materialRecipe(withCondition(consumer, modLoaded("betternether")), BetternetherMaterials.goldenVine, ItemNameIngredient.from(TCompat.getResource("betternether:golden_vine")), 1, 1, folder + "golden_vine");
+        materialRecipe(withCondition(consumer, modLoaded("betternether")), BetternetherMaterials.bloomingVine, ItemNameIngredient.from(TCompat.getResource("betternether:blooming_vine")), 1, 1, folder + "blooming_vine");
+        materialRecipe(withCondition(consumer, modLoaded("betterend")), BetterendMaterials.twistedVine, ItemNameIngredient.from(TCompat.getResource("betterend:twisted_vine")), 1, 1, folder + "twisting_vine/twisted_vine");
+        materialRecipe(withCondition(consumer, modLoaded("betterend")), BetterendMaterials.jungleVine, ItemNameIngredient.from(TCompat.getResource("betterend:jungle_vine")), 1, 1, folder + "twisting_vine/jungle_vine");
+        materialRecipe(withCondition(consumer, modLoaded("betterend")), BetterendMaterials.bulbVine, ItemNameIngredient.from(TCompat.getResource("betterend:bulb_vine")), 1, 1, folder + "bulb_vine");
+        materialRecipe(withCondition(consumer, modLoaded("betterend")), BetterendMaterials.denseVine, ItemNameIngredient.from(TCompat.getResource("betterend:dense_vine")), 1, 1, folder + "dense_vine");
 
         materialRecipe(aetherConsumer, AetherMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
 
@@ -171,6 +185,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.deathwormRed,            ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_red"               )), 1, 1, folder + "deathworm_chitin/red");
         materialRecipe(iceandfire, IFMaterials.deathwormYellow,         ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_yellow"            )), 1, 1, folder + "deathworm_chitin/yellow");
         materialRecipe(iceandfire, DarkerMaterials.sculkBone,           ItemNameIngredient.from(TCompat.getResource("deeperdarker:sculk_bone"                       )), 1, 1, folder + "sculk_bone/bone");
+
 
 
         metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);
@@ -321,5 +336,9 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
 
     private static TagKey<Item> itemTag(String name) {
         return TagKey.create(Registries.ITEM, ResourceLocation.parse(name));
+    }
+
+    private static <T> ICondition tagFilled(TagKey<T> tag) {
+        return new TagFilledCondition<>(tag);
     }
 }
