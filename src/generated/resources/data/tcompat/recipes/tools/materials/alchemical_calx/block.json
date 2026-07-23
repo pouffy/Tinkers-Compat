@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "ingredient": {
+    "item": "malum:block_of_alchemical_calx"
+  },
+  "material": "tcompat:alchemical_calx",
+  "needed": 1,
+  "value": 9
+}

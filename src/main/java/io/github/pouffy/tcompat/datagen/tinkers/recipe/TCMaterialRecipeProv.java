@@ -209,11 +209,15 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(malum, MalumMaterials.soulStainedSteel, folder, "soul_stained_steel", true);
         metalMaterialRecipe(malum, MalumMaterials.hallowedGold, folder, "hallowed_gold", true);
         metalMaterialRecipe(malum, MalumMaterials.malignantPewter, folder, "malignant_pewter", true);
-        materialRecipe(malum, MalumMaterials.spiritFabric, ItemNameIngredient.from(TCompat.getResource("malum:spirit_fabric")), 1, 1, folder + "spirit_fabric");
-        materialRecipe(malum, MalumMaterials.astralWeave, ItemNameIngredient.from(TCompat.getResource("malum:astral_weave")), 1, 1, folder + "astral_weave");
-        materialRecipe(malum, MalumMaterials.alchemicalCalx, ItemNameIngredient.from(TCompat.getResource("malum:alchemical_calx")), 1, 1, folder + "alchemical_calx");
-        materialRecipe(malum, MalumMaterials.soulstone, ItemNameIngredient.from(TCompat.getResource("malum:processed_soulstone")), 1, 1, folder + "soulstone");
-        materialRecipe(malum, MalumMaterials.nullSlate, ItemNameIngredient.from(TCompat.getResource("malum:null_slate")), 1, 1, folder + "null_slate");
+        materialRecipe(malum, MalumMaterials.spiritFabric, ItemNameIngredient.from(TCompat.getResource("malum:spirit_fabric")), 1, 1, folder + "spirit_fabric/cloth");
+        materialRecipe(malum, MalumMaterials.astralWeave, ItemNameIngredient.from(TCompat.getResource("malum:astral_weave")), 1, 1, folder + "astral_weave/cloth");
+        materialRecipe(malum, MalumMaterials.astralWeave, ItemNameIngredient.from(TCompat.getResource("malum:block_of_astral_weave")), 9, 1, folder + "astral_weave/block");
+        materialRecipe(malum, MalumMaterials.alchemicalCalx, ItemNameIngredient.from(TCompat.getResource("malum:alchemical_calx")), 1, 1, folder + "alchemical_calx/gem");
+        materialRecipe(malum, MalumMaterials.alchemicalCalx, ItemNameIngredient.from(TCompat.getResource("malum:block_of_alchemical_calx")), 9, 1, folder + "alchemical_calx/block");
+        materialRecipe(malum, MalumMaterials.soulstone, ItemNameIngredient.from(TCompat.getResource("malum:processed_soulstone")), 1, 1, folder + "soulstone/gem");
+        materialRecipe(malum, MalumMaterials.soulstone, ItemNameIngredient.from(TCompat.getResource("malum:block_of_soulstone")), 9, 1, folder + "soulstone/block");
+        materialRecipe(malum, MalumMaterials.nullSlate, ItemNameIngredient.from(TCompat.getResource("malum:null_slate")), 1, 1, folder + "null_slate/gem");
+        materialRecipe(malum, MalumMaterials.nullSlate, ItemNameIngredient.from(TCompat.getResource("malum:block_of_null_slate")), 9, 1, folder + "null_slate/block");
 
         gemMaterialRecipe(deepAetherConsumer, DeepAetherMaterials.skyjade, folder, "skyjade", true, true, true);
         metalMaterialRecipe(deepAetherConsumer, DeepAetherMaterials.stormforgedSteel, folder, "stormforged_steel", true);
