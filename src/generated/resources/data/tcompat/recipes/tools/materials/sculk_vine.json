@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deeperdarker"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "deeperdarker:sculk_vines"
+    },
+    {
+      "item": "deeperdarker:sculk_tendrils"
+    }
+  ],
+  "material": "tcompat:sculk_vine",
+  "needed": 1,
+  "value": 1
+}

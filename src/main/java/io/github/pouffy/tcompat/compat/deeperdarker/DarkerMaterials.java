@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.compat.deeperdarker;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
+import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -36,6 +37,16 @@ public class DarkerMaterials {
             )
             .renderInfo(r -> r.color(0xc6cda7).fallbacks("bone", "rock"))
             .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).statType(MagicBaseMaterialStats.ID).arrowShaft().ranged().fallbacks("bone", "rock").sixColor(0xFF6e757b, 0xFF819988, 0xFFa2af86, 0xFFc6cda7, 0xFFdbe0c1, 0xFFecefda))
+            .buildMaterial();
+
+
+    public static final MaterialId sculkVine = MaterialBuilder.material("deeperdarker", "sculk_vine")
+            .flavor("A parasitic bond.")
+            .data(d -> d.tier(1).order(0).craftable(true))
+            .traits(t -> t.trait(DarkerInit.sculkAffinity))
+            .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
+            .renderInfo(r -> r.color(0xFF074756).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFF080c0f, 0xFF111b21, 0xFF052931, 0xFF074756, 0xFF057072, 0xFF009093))
             .buildMaterial();
 
     public static void staticInit() {}

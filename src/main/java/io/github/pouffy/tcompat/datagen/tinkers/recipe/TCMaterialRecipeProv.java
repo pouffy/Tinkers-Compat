@@ -31,7 +31,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
@@ -101,14 +100,17 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         logRecipe(TCWoods.HELLBARK.makeConsumer(consumer), TCWoods.HELLBARK, WoodMaterials.hellbark);
         materialRecipe(consumer, RockMaterials.dripstone, ItemNameIngredient.from(getResource("minecraft:pointed_dripstone")), 1, 1, folder + "rock/%s".formatted("pointed_dripstone"));
 
+        // Cacti
         materialRecipe(withCondition(consumer, modLoaded("quark")), MaterialIds.cactus, ItemNameIngredient.from(getResource("quark:cactus_block")), 9, 1, folder + "cactus/block");
         materialRecipe(withCondition(consumer, modLoaded("regions_unexplored")), MaterialIds.cactus, ItemNameIngredient.from(getResource("regions_unexplored:barrel_cactus"), getResource("regions_unexplored:saguaro_cactus")), 1, 1, folder + "cactus/regions_unexplored");
         materialRecipe(withCondition(consumer, modLoaded("biomeswevegone")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomeswevegone:barrel_cactus"), getResource("biomeswevegone:flowering_barrel_cactus")), 1, 1, folder + "cactus/biomeswevegone");
         materialRecipe(withCondition(consumer, modLoaded("biomeswevegone")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomeswevegone:mini_cactus"), getResource("biomeswevegone:prickly_pear_cactus"), getResource("biomeswevegone:golden_spined_cactus")), 1, 2, folder + "cactus/small/biomeswevegone");
         materialRecipe(withCondition(consumer, modLoaded("biomesoplenty")), MaterialIds.cactus, ItemNameIngredient.from(getResource("biomesoplenty:tiny_cactus")), 1, 2, folder + "cactus/small/biomesoplenty");
 
+        // Vines
         materialRecipe(withCondition(consumer, tagFilled(TCTags.Items.ALTERNATIVE_VINES)), MaterialIds.vine, Ingredient.of(TCTags.Items.ALTERNATIVE_VINES), 1, 1, folder + "vine/alternative");
         materialRecipe(withCondition(consumer, modLoaded("biomeswevegone")), BWGMaterials.skyrisVine, ItemNameIngredient.from(TCompat.getResource("biomeswevegone:skyris_vine")), 1, 1, folder + "vine/skyris");
+        materialRecipe(withCondition(consumer, modLoaded("deep_aether")), DeepAetherMaterials.yagrootVine, ItemNameIngredient.from(TCompat.getResource("deep_aether:yagroot_vine")), 1, 1, folder + "vine/yagroot");
         materialRecipe(withCondition(consumer, modLoaded("betternether")), BetternetherMaterials.blackVine, ItemNameIngredient.from(TCompat.getResource("betternether:black_vine")), 1, 1, folder + "weeping_vine/black_vine");
         materialRecipe(withCondition(consumer, modLoaded("betternether")), BetternetherMaterials.goldenVine, ItemNameIngredient.from(TCompat.getResource("betternether:golden_vine")), 1, 1, folder + "golden_vine");
         materialRecipe(withCondition(consumer, modLoaded("betternether")), BetternetherMaterials.bloomingVine, ItemNameIngredient.from(TCompat.getResource("betternether:blooming_vine")), 1, 1, folder + "blooming_vine");
@@ -116,6 +118,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(withCondition(consumer, modLoaded("betterend")), BetterendMaterials.jungleVine, ItemNameIngredient.from(TCompat.getResource("betterend:jungle_vine")), 1, 1, folder + "twisting_vine/jungle_vine");
         materialRecipe(withCondition(consumer, modLoaded("betterend")), BetterendMaterials.bulbVine, ItemNameIngredient.from(TCompat.getResource("betterend:bulb_vine")), 1, 1, folder + "bulb_vine");
         materialRecipe(withCondition(consumer, modLoaded("betterend")), BetterendMaterials.denseVine, ItemNameIngredient.from(TCompat.getResource("betterend:dense_vine")), 1, 1, folder + "dense_vine");
+        materialRecipe(withCondition(consumer, modLoaded("aether_redux")), AetherReduxMaterials.corruptedVine, ItemNameIngredient.from(TCompat.getResource("aether_redux:corrupted_vines")), 1, 1, folder + "corrupted_vine");
+        materialRecipe(withCondition(consumer, modLoaded("aether_redux")), AetherReduxMaterials.goldVine, ItemNameIngredient.from(TCompat.getResource("aether_redux:golden_vines")), 1, 1, folder + "gold_vine");
+        materialRecipe(withCondition(consumer, modLoaded("deeperdarker")), DarkerMaterials.sculkVine, ItemNameIngredient.from(TCompat.getResource("deeperdarker:sculk_vines"), TCompat.getResource("deeperdarker:sculk_tendrils")), 1, 1, folder + "sculk_vine");
+
 
         materialRecipe(aetherConsumer, AetherMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
 

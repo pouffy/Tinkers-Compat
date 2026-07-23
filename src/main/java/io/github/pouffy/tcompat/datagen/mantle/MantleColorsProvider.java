@@ -161,6 +161,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.brightness,                    0x9abbb7);
         addColor(TCModifiers.heartbeat,                     0x819988);
         addColor(DarkerInit.sonorous.getId(),               0x26c6fc);
+        addColor(DarkerInit.sculkAffinity.getId(),          0x074756);
     }
 
     public void addColor(MaterialBuilder material) {

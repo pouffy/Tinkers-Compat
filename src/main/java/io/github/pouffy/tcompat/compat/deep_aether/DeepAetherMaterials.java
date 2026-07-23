@@ -11,6 +11,7 @@ import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
@@ -62,6 +63,11 @@ public class DeepAetherMaterials {
             .renderInfo(r -> r.color(0xb8c5d1).fallbacks("metal"))
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().statType(INGOT).sixColor(0xFF353a3f, 0xFF58606c, 0xFF9198a9, 0xFFb8c5d1, 0xFFd6e7f1, 0xFFdeffff))
             .buildMaterial();
+
+    public static final MaterialVariantId yagrootVine = MaterialBuilder.variant("deep_aether", "yagroot_vines", MaterialIds.vine)
+            .renderInfo(r -> r.color(0xFF745886).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.vines().sixColor(0xFF382e45, 0xFF43344e, 0xFF5a4469, 0xFF745886, 0xFF86679d, 0xFF9b80ac))
+            .buildVariant();
 
     public static void staticInit() {}
 }

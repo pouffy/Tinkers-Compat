@@ -188,7 +188,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.phoenix_touched", "Flamin' Hot", "Launched projectiles are lit with an immortal flame.");
         forModifier("modifier.tcompat.ambrogen", "Snack Generator", "Small chance to dislodge Ambrosium from broken blocks.");
         forModifier("modifier.tcompat.ascension", "Up You Go!", "Interacting with a block will cause it to ascend to a higher plane.");
-        forModifier("modifier.tcompat.blighted", "Intoxicating", "Hitting targets inflicts them with Inebriation");
+        forModifier("modifier.tcompat.blighted", "Intoxicating", "Targets and attackers are inflicted with Inebriation");
         forModifier("modifier.tcompat.ambrofusion", "Fuel For Thought", "Tool can have it's stats buffed with Ambrosium but durability depletes faster.");
         forModifier("modifier.tcompat.dulling", "Dull their Sparkle", "Gradually loses effectiveness.");
         forModifier("modifier.tcompat.skyjade", "Dull their Sparkle", "Gradually loses effectiveness.");
@@ -292,6 +292,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.brightness", "Now I See You", "Pushes away the dark fog brought on by the warden's presence.");
         forModifier("modifier.tcompat.heartbeat", "I'm Feeling Romantical", "Something within the tool occasionally beats.");
         forModifier("modifier.tcompat.sonorous", "Did you hear that?", "Charge up and release a sonic boom.");
+        forModifier("modifier.tcompat.sculk_affinity", "One with the tendrils", "Using the tool inflicts Sculk Affinity.");
     }
 
     private void tag(TagKey<Item> tag, String name) {

@@ -1,7 +1,7 @@
 {
   "condition": {
     "type": "forge:mod_loaded",
-    "modid": "deep_aether"
+    "modid": "aether_redux"
   },
   "craftable": true,
   "hidden": false,

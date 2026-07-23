@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ],
+  "ingredient": {
+    "item": "deep_aether:yagroot_vine"
+  },
+  "material": "tconstruct:vine#yagroot_vines",
+  "needed": 1,
+  "value": 1
+}
