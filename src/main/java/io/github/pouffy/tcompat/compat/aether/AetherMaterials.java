@@ -91,12 +91,18 @@ public class AetherMaterials {
     public static final MaterialId gravitite = MaterialBuilder.material("aether", "gravitite")
             .flavor("Really raises the roof.")
             .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
-            .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.ascension, TCModifiers.aetherForged))
+            .traits(t -> t.trait(TCModifiers.aetherForged)
+                    .trait(HeadMaterialStats.ID, AetherInit.ascension, TCModifiers.aetherForged)
+                    .trait(LimbMaterialStats.ID, AetherInit.ascension, TCModifiers.aetherForged)
+                    .trait(GripMaterialStats.ID, AetherInit.ascension, TCModifiers.aetherForged)
+            )
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(1562, 3f, DIAMOND, 3f),
                             HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.12f).build(),
-                            StatlessMaterialStats.BINDING
+                            StatlessMaterialStats.BINDING,
+                            new LimbMaterialStats(60, 0.1f, -0.2f, -0.2f),
+                            new GripMaterialStats(-0.15f, -0.25f, 3f)
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 8, 3).toughness(2f),
                             StatlessMaterialStats.MAILLE

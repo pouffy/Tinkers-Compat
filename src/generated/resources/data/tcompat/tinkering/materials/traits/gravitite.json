@@ -6,7 +6,27 @@
     }
   ],
   "perStat": {
+    "tconstruct:grip": [
+      {
+        "level": 1,
+        "name": "tcompat:ascension"
+      },
+      {
+        "level": 1,
+        "name": "tcompat:aether_forged"
+      }
+    ],
     "tconstruct:head": [
+      {
+        "level": 1,
+        "name": "tcompat:ascension"
+      },
+      {
+        "level": 1,
+        "name": "tcompat:aether_forged"
+      }
+    ],
+    "tconstruct:limb": [
       {
         "level": 1,
         "name": "tcompat:ascension"

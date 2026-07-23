@@ -31,6 +31,11 @@ public class AetherHandler {
         LoadedOnly.launchEntity(target, attacker);
     }
 
+    public static void launchEntity(LivingEntity target, boolean fullStrength) {
+        if (!CompatHelper.isLoaded("aether")) return;
+        LoadedOnly.launchEntity(target, fullStrength);
+    }
+
     public static void vampireHealing(LivingEntity attacker) {
         if (!CompatHelper.isLoaded("aether")) return;
         LoadedOnly.vampireHealing(attacker);
@@ -74,7 +79,11 @@ public class AetherHandler {
         }
 
         public static void launchEntity(LivingEntity target, LivingEntity attacker) {
-            if (EquipmentUtil.isFullStrength(attacker) && !target.getType().is(AetherTags.Entities.UNLAUNCHABLE) && (target.onGround() || target.isInFluidType())) {
+            launchEntity(target, EquipmentUtil.isFullStrength(attacker));
+        }
+
+        public static void launchEntity(LivingEntity target, boolean fullStrength) {
+            if (fullStrength && !target.getType().is(AetherTags.Entities.UNLAUNCHABLE) && (target.onGround() || target.isInFluidType())) {
                 target.push(0.0F, 1.0F, 0.0F);
                 if (target instanceof ServerPlayer serverPlayer) {
                     serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
