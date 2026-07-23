@@ -35,14 +35,13 @@
       "type": "tconstruct:base_stats",
       "stats": {
         "tconstruct:attack_damage": 3.0,
-        "tconstruct:attack_speed": 1.0
+        "tconstruct:attack_speed": 1.1
       }
     },
     {
       "type": "tconstruct:multiply_stats",
       "multipliers": {
-        "tconstruct:attack_damage": 1.5,
-        "tconstruct:durability": 1.5,
+        "tconstruct:durability": 1.2,
         "tconstruct:mining_speed": 0.25
       }
     },
@@ -87,7 +86,7 @@
     },
     {
       "type": "tconstruct:sweep_melee",
-      "range": 3.0
+      "range": 4.0
     }
   ]
 }

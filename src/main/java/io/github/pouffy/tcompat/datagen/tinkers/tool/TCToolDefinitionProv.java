@@ -52,11 +52,10 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
                 // stats
                 .module(new SetStatsModule(StatsNBT.builder()
                         .set(ToolStats.ATTACK_DAMAGE, 3.0f)
-                        .set(ToolStats.ATTACK_SPEED, 1.0f).build()))
+                        .set(ToolStats.ATTACK_SPEED, 1.1f).build()))
                 .module(new MultiplyStatsModule(MultiplierNBT.builder()
-                        .set(ToolStats.ATTACK_DAMAGE, 1.5f)
                         .set(ToolStats.MINING_SPEED, 0.25f)
-                        .set(ToolStats.DURABILITY, 1.5f).build()))
+                        .set(ToolStats.DURABILITY, 1.2f).build()))
                 .largeToolStartingSlots()
                 // traits
                 .module(ToolTraitsModule.builder()
@@ -65,7 +64,7 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
                 // behavior
                 .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
                 .module(swordHarvest)
-                .module(new SweepWeaponAttack(3));
+                .module(new SweepWeaponAttack(4));
     }
 
     @Override
