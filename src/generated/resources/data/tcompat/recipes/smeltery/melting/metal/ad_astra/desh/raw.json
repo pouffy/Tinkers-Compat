@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "rate": "metal",
+      "tag": "forge:molten_iron"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:raw_materials/desh"
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_desh"
+  },
+  "temperature": 975,
+  "time": 98
+}

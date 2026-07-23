@@ -9,6 +9,7 @@ import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.smeltery.data.Byproduct;
 
 import java.util.List;
 import java.util.Map;
@@ -91,9 +92,9 @@ public class AdAstraSmeltery implements CompatSmeltery {
                 .addByproduct(TinkerFluids.moltenGlass.result(92))
                 .save(cConsumer, location(metalFolder("melting") + "/desh/fluid_pipe_duct"));
 
-        metal(cConsumer, TCFluids.moltenDesh, compatModId()).metal(true).optional();
-        metal(cConsumer, TCFluids.moltenOstrum, compatModId()).metal(true).optional();
-        metal(cConsumer, TCFluids.moltenCalorite, compatModId()).metal(true).optional();
+        metal(cConsumer, TCFluids.moltenDesh, compatModId()).ore(Byproduct.IRON).metal(true).optional();
+        metal(cConsumer, TCFluids.moltenOstrum, compatModId()).ore(Byproduct.SMALL_DIAMOND).metal(true).optional();
+        metal(cConsumer, TCFluids.moltenCalorite, compatModId()).ore(Byproduct.GOLD).metal(true).optional();
 
         simpleMelting(cConsumer, TCFluids.moltenDesh, FluidValues.INGOT, "desh", ItemNameIngredient.from(compatId("desh_plate")), metalFolder("melting"), "plate");
         simpleMelting(cConsumer, TCFluids.moltenOstrum, FluidValues.INGOT, "ostrum", ItemNameIngredient.from(compatId("ostrum_plate")), metalFolder("melting"), "plate");
