@@ -16,6 +16,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 public class MalumMaterials {
 
     public static final MaterialId soulStainedSteel = MaterialBuilder.material("malum", "soul_stained_steel")
+            .flavor("Are you telling me, a soul stained this steel?")
             .data(d -> d.tier(3).order(2).craftable(false)).excludeFromLoot()
             .lang("Soulstained Steel")
             .traits(t -> t.trait(TCModifiers.stained).trait(ARMOR, TCModifiers.warded).trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), TCModifiers.armorToughness_gem))
@@ -36,6 +37,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId hallowedGold = MaterialBuilder.material("malum", "hallowed_gold")
+            .flavor("Hallowed be thy ween.")
             .data(d -> d.tier(3).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.hallowed).trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), TCModifiers.armor_gem))
             .stats(s ->
@@ -51,6 +53,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId malignantPewter = MaterialBuilder.material("malum", "malignant_pewter")
+            .flavor("Are you certain whatever you're doing is worth it?")
             .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(MalumInit.certainty).trait(ARMOR, TCModifiers.stronghold))
             .stats(s ->
@@ -68,6 +71,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId spiritFabric = MaterialBuilder.material("malum", "spirit_fabric")
+            .flavor("I'm here to buy your strongest potions.")
             .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(TCModifiers.magicProficiency))
             .stats(s ->
@@ -82,6 +86,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId astralWeave = MaterialBuilder.material("malum", "astral_weave")
+            .flavor("You need to calm down.")
             .data(d -> d.tier(1).order(20).craftable(true)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.cloaking))
             .stats(s ->
@@ -95,6 +100,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId alchemicalCalx = MaterialBuilder.material("malum", "alchemical_calx")
+            .flavor("Really resonates with you.")
             .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(TCModifiers.arcaneResonance))
             .stats(s -> s.stat(StatlessMaterialStats.BINDING))
@@ -103,6 +109,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId soulstone = MaterialBuilder.material("malum", "soulstone")
+            .flavor("No, this isn't an infinity stone.")
             .data(d -> d.tier(1).order(1).craftable(true))
             .traits(t -> t.trait(TCModifiers.spiritHarvester))
             .stats(s ->
@@ -117,6 +124,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId runewood = MaterialBuilder.material("malum", "runewood")
+            .flavor("The runes reveal all.")
             .data(d -> d.tier(0).order(1).craftable(true))
             .traits(t -> t
                     .trait(TCModifiers.runic, ModifierIds.cultivated)
@@ -141,6 +149,7 @@ public class MalumMaterials {
             .buildMaterial();
 
     public static final MaterialId taintedRock = MaterialBuilder.material("malum", "tainted_rock")
+            .flavor("Tainted by your search history.")
             .data(d -> d.tier(1).order(1).craftable(true))
             .traits(t -> t.trait(MalumInit.spiritRepair))
             .stats(s ->

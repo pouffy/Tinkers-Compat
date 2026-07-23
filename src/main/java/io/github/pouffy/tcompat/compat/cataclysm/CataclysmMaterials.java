@@ -17,6 +17,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 public class CataclysmMaterials {
 
     public static final MaterialId ancientMetal = MaterialBuilder.material("cataclysm", "ancient_metal")
+            .flavor("Koboleton's go-to.")
             .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.sandstorm)
@@ -40,6 +41,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId blackSteel = MaterialBuilder.material("cataclysm", "black_steel")
+            .flavor("Why do they all end with 'gr'?")
             .data(d -> d.tier(2).order(2).craftable(false))
             .traits(t -> t
                     .trait(ModifierIds.ductile)
@@ -62,6 +64,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId cursium = MaterialBuilder.material("cataclysm", "cursium")
+            .flavor("I've got friends on the other side.")
             .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(StatlessMaterialStats.MAILLE.getIdentifier(), TCModifiers.cataclysmic, TCModifiers.ghostly)
@@ -81,6 +84,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId lacrima = MaterialBuilder.material("cataclysm", "lacrima")
+            .flavor("Tears of the sea.")
             .data(d -> d.tier(3).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t
                     .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.tidal)
@@ -101,6 +105,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId essenceOfTheStorm = MaterialBuilder.material("cataclysm", "essence_of_the_storm")
+            .flavor("Strike me down Zeus!")
             .data(d -> d.tier(1).order(20).craftable(true)).excludeFromLoot()
             .lang("Essence of the Storm")
             .traits(t -> t.trait(StatlessMaterialStats.BINDING, ModifierIds.deciduous))
@@ -110,6 +115,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId witherite = MaterialBuilder.material("cataclysm", "witherite")
+            .flavor("A marvel of ancient mechanics.")
             .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(GripMaterialStats.ID, CataclysmInit.fluxed).trait(HandleMaterialStats.ID, TCModifiers.standstill))
             .stats(s ->
@@ -125,6 +131,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId coral = MaterialBuilder.material("cataclysm", "coral")
+            .flavor("I'll handle this!")
             .data(d -> d.tier(1).order(2).craftable(true))
             .traits(t -> t
                     .trait(HandleMaterialStats.ID, CataclysmInit.aquatic)
@@ -142,6 +149,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId voidJaw = MaterialBuilder.material("cataclysm", "void_jaw")
+            .flavor("Nom nom nom.")
             .data(d -> d.tier(1).order(4).craftable(true)).excludeFromLoot()
             .traits(t -> t.trait(StatlessMaterialStats.ARROW_HEAD.getIdentifier(), CataclysmInit.voidScatter))
             .stats(s ->
@@ -152,6 +160,7 @@ public class CataclysmMaterials {
             .buildMaterial();
 
     public static final MaterialId koboletonBone = MaterialBuilder.material("cataclysm", "koboleton_bone")
+            .flavor("Dusty bones :3")
             .data(d -> d.tier(1).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t.trait(HandleMaterialStats.ID, TCModifiers.archaeologist))
             .stats(s ->
@@ -160,29 +169,6 @@ public class CataclysmMaterials {
             .renderInfo(r -> r.color(0x7e675e).fallbacks("bone", "metal"))
             .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().maille().handle().sixColor(0xFF200e07, 0xFF3e291b, 0xFF5f473f, 0xFF7e675e, 0xFF9a887c, 0xFFdbcca7))
             .buildMaterial();
-
-    //TODO:
-    //  Materials:
-    //   - Cursium [Head, Bowstring] x
-    //   - Essence of the Storm [Binding] x
-    //   - Lacrima [Handle, Head] x
-    //   - Witherite [Handle, Binding] x
-    //   - Coral Chunk [Handle] x
-    //   - Void Jaw [Arrow Head] x
-    //   - Koboleton Bone [Maille, Handle] x
-    //  Traits:
-    //   - Phantasmic [Cursium, Black Steel (Team Up)] x
-    //   - Tidal [Essence of the Storm, Lacrima (Team Up)] x
-    //   - Fluxed [Witherite, Iron (Team Up)] x
-    //   - Void Scatter [Void Jaw] x
-    //   - Archaeologist [Koboleton Bone] x
-    //  Modifiers:
-    //   - Ignited [Armor, Req. Netherite]
-    //  Recipes:
-    //   - Melting
-    //   - Misc Casting
-    //   - Modifiers
-
 
     public static void staticInit() {}
 }

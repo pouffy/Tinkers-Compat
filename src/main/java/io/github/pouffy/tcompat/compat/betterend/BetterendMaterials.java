@@ -15,6 +15,7 @@ import static net.minecraft.world.item.Tiers.*;
 public class BetterendMaterials {
 
     public static final MaterialId thallasium = MaterialBuilder.material("betterend", "thallasium")
+            .flavor("Some people have a phobia of it.")
             .data(d -> d.tier(2).order(0).craftable(false))
             .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
@@ -36,6 +37,7 @@ public class BetterendMaterials {
             .buildMaterial();
 
     public static final MaterialId terminite = MaterialBuilder.material("betterend", "terminite")
+            .flavor("Special iron.")
             .data(d -> d.tier(2).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
@@ -57,6 +59,7 @@ public class BetterendMaterials {
             .buildMaterial();
 
     public static final MaterialId aeternium = MaterialBuilder.material("betterend", "aeternium")
+            .flavor("The netherite of the void.")
             .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(BetterendInit.voidTouched).trait(PlainRingMaterialStats.ID, new ModifierEntry[] {}))
             .stats(s ->
@@ -88,6 +91,7 @@ public class BetterendMaterials {
             .buildVariant();
 
     public static final MaterialId bulbVine = MaterialBuilder.material("betterend", "bulb_vine")
+            .flavor("You're positively glowing!")
             .data(d -> d.tier(4).order(0).craftable(true))
             .traits(t -> t.trait(ModifierIds.glowing))
             .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
@@ -96,6 +100,7 @@ public class BetterendMaterials {
             .buildMaterial();
 
     public static final MaterialId denseVine = MaterialBuilder.material("betterend", "dense_vine")
+            .flavor("Are you being intentionally dense?")
             .data(d -> d.tier(4).order(0).craftable(true))
             .traits(t -> t.trait(ModifierIds.dense))
             .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))

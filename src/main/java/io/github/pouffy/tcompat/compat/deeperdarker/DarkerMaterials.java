@@ -15,6 +15,7 @@ import static net.minecraft.world.item.Tiers.IRON;
 public class DarkerMaterials {
 
     public static final MaterialId sculkBone = MaterialBuilder.material("deeperdarker", "sculk_bone")
+            .flavor("Did you hear that?")
             .data(d -> d.tier(1).order(2).craftable(true))
             .traits(t -> t
                     .trait(TCModifiers.heartbeat)

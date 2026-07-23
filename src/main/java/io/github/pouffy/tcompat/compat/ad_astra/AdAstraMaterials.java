@@ -12,31 +12,8 @@ import static net.minecraft.world.item.Tiers.NETHERITE;
 
 public class AdAstraMaterials {
 
-    public static final MaterialId calorite = MaterialBuilder.material("ad_astra", "calorite").excludeFromLoot()
-            .data(d -> d.tier(3).order(1).craftable(false))
-            .traits(t -> t
-                    .trait(AdAstraInit.oxygenated)
-                    .trait(PlainRingMaterialStats.ID, new ModifierEntry[] {})
-            )
-            .stats(s ->
-                    s.stat(
-                            new HeadMaterialStats(1840, 6f, NETHERITE, 4.5f),
-                            HandleMaterialStats.multipliers().durability(0.85f).miningSpeed(1.25f).attackDamage(1.15f).build(),
-                            StatlessMaterialStats.BINDING,
-                            new LimbMaterialStats(1840, 0.1f, 0.2f, 0.05f),
-                            new GripMaterialStats(0f, -0.1f, 4.5f)
-                    ).armorShieldStats(
-                            PlatingMaterialStats.builder().durabilityFactor(36).armor(4, 9, 7, 4).toughness(2.5f).knockbackResistance(0.1f),
-                            StatlessMaterialStats.MAILLE
-                    ).statOptional(
-                            CompatToolStats.plainRing(1840, 1.1f)
-                    )
-            )
-            .renderInfo(r -> r.color(0xb83145).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF470d2f, 0xFF6a1534, 0xFF9e1f3f, 0xFFb83145, 0xFFcb4e4f, 0xFFdf6d5c))
-            .buildMaterial();
-
     public static final MaterialId desh = MaterialBuilder.material("ad_astra", "desh").excludeFromLoot()
+            .flavor("Electrifyingly mundane.")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
                     .trait(AdAstraInit.oxygenated)
@@ -62,6 +39,7 @@ public class AdAstraMaterials {
             .buildMaterial();
 
     public static final MaterialId ostrum = MaterialBuilder.material("ad_astra", "ostrum").excludeFromLoot()
+            .flavor("Like netherite except it really isn't.")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
                     .trait(AdAstraInit.oxygenated)
@@ -83,6 +61,31 @@ public class AdAstraMaterials {
             )
             .renderInfo(r -> r.color(0x925e64).fallbacks("metal"))
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF42313d, 0xFF553e4b, 0xFF775360, 0xFF925e64, 0xFFa86c73, 0xFFbf7a82))
+            .buildMaterial();
+
+    public static final MaterialId calorite = MaterialBuilder.material("ad_astra", "calorite").excludeFromLoot()
+            .flavor("You better watch your calorite.")
+            .data(d -> d.tier(3).order(1).craftable(false))
+            .traits(t -> t
+                    .trait(AdAstraInit.oxygenated)
+                    .trait(PlainRingMaterialStats.ID, new ModifierEntry[] {})
+            )
+            .stats(s ->
+                    s.stat(
+                            new HeadMaterialStats(1840, 6f, NETHERITE, 4.5f),
+                            HandleMaterialStats.multipliers().durability(0.85f).miningSpeed(1.25f).attackDamage(1.15f).build(),
+                            StatlessMaterialStats.BINDING,
+                            new LimbMaterialStats(1840, 0.1f, 0.2f, 0.05f),
+                            new GripMaterialStats(0f, -0.1f, 4.5f)
+                    ).armorShieldStats(
+                            PlatingMaterialStats.builder().durabilityFactor(36).armor(4, 9, 7, 4).toughness(2.5f).knockbackResistance(0.1f),
+                            StatlessMaterialStats.MAILLE
+                    ).statOptional(
+                            CompatToolStats.plainRing(1840, 1.1f)
+                    )
+            )
+            .renderInfo(r -> r.color(0xb83145).fallbacks("metal"))
+            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF470d2f, 0xFF6a1534, 0xFF9e1f3f, 0xFFb83145, 0xFFcb4e4f, 0xFFdf6d5c))
             .buildMaterial();
 
     public static void staticInit() {}

@@ -32,6 +32,7 @@ public class DeepAetherMaterials {
     public static final MaterialVariantId clorite = aetherRockVariant(TCRocks.CLORITE, 0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
 
     public static final MaterialId skyjade = MaterialBuilder.material("deep_aether", "skyjade")
+            .flavor("Incredibly brittle.")
             .data(d -> d.tier(2).order(25).deprecate())
             .traits(t -> t
                     .trait(TCModifiers.aetherForged, TCModifiers.skyjade).trait(MaterialRegistry.AMMO, ModifierIds.punch)
@@ -52,6 +53,7 @@ public class DeepAetherMaterials {
             .buildMaterial();
 
     public static final MaterialId stormforgedSteel = MaterialBuilder.material("deep_aether", "stormforged_steel")
+            .flavor("Only he who is worthy.")
             .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, DeepAetherInit.gale))
             .stats(s ->

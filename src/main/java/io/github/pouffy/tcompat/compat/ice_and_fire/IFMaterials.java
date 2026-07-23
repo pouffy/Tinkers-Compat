@@ -28,6 +28,7 @@ public class IFMaterials {
     public static final MaterialId dragonScaleLightning = dragonScales("lightning", 0xFF090909, 0xFF151515, 0xFF292929, 0xFF2f2f2f, 0xFF484848, 0xFF636363);
 
     public static final MaterialId seaSerpentScale = MaterialBuilder.material("iceandfire", "sea_serpent_scale")
+            .flavor("Torn from a fish that likes to be on land.")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(ARMOR, TCModifiers.tideGuardian).trait(StatlessMaterialStats.FLETCHING.getIdentifier(), ModifierIds.finsAmmo))
             .stats(s ->
@@ -42,6 +43,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId trollLeather = MaterialBuilder.material("iceandfire", "troll_leather")
+            .flavor("The light!")
             .data(d -> d.tier(1).order(3).craftable(true))
             .traits(t -> t
                     .trait(TCModifiers.petrifying)
@@ -57,6 +59,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId myrmexChitin = MaterialBuilder.material("iceandfire", "myrmex_chitin")
+            .flavor("Ew... bugs!")
             .data(d -> d.tier(1).order(3).craftable(true))
             .traits(t -> t.trait(TCModifiers.allythropod))
             .stats(s ->
@@ -71,6 +74,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId deathwormChitin = MaterialBuilder.material("iceandfire", "deathworm_chitin")
+            .flavor("It's got me! It's got me!")
             .lang("Death Worm Chitin")
             .data(d -> d.tier(1).order(3).craftable(true))
             .stats(s -> s.armorStats(PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 7, 3).toughness(1.5F)))
@@ -114,6 +118,7 @@ public class IFMaterials {
             deathwormYellow = deathwormChitinVariant("yellow", "Tan",       0xFF63462e, 0xFF7d5a4c, 0xFFb68773, 0xFFc2a58e, 0xFFdec0af, 0xFFe5dbbb, 0xFFffefc3);
 
     public static final MaterialId dragonBone = MaterialBuilder.material("iceandfire", "dragon_bone")
+            .flavor("Flamin' hot bones.")
             .data(d -> d.tier(1).order(2).craftable(true))
             .traits(t -> t
                     .trait(TinkerModifiers.firestarter)
@@ -138,6 +143,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId fireDragonsteel = MaterialBuilder.material("iceandfire", "fire_dragonsteel")
+            .flavor("Overwhelmingly hot.")
             .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.scorchborn))
             .stats(s ->
@@ -159,6 +165,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId iceDragonsteel = MaterialBuilder.material("iceandfire", "ice_dragonsteel")
+            .flavor("Overwhelmingly cold.")
             .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.frostborn))
             .stats(s ->
@@ -180,6 +187,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId lightningDragonsteel = MaterialBuilder.material("iceandfire", "lightning_dragonsteel")
+            .flavor("The secret third option.")
             .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.voltborn))
             .stats(s ->
@@ -201,6 +209,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId seaSerpentFang = MaterialBuilder.material("iceandfire", "sea_serpent_fang")
+            .flavor("Cuts right through the tides.")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(TCModifiers.aquaShot))
             .stats(s -> s.stat(StatlessMaterialStats.ARROW_HEAD))
@@ -209,6 +218,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId hydraFang = MaterialBuilder.material("iceandfire", "hydra_fang")
+            .flavor("Saps the life right outta ya!")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.leeching))
             .stats(s -> s.stat(StatlessMaterialStats.ARROW_HEAD))
@@ -217,6 +227,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId amphithereFeather = MaterialBuilder.material("iceandfire", "amphithere_feather")
+            .flavor("Evacuate the area!")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.amphitheric))
             .stats(s -> s.stat(StatlessMaterialStats.FLETCHING))
@@ -225,6 +236,7 @@ public class IFMaterials {
             .buildMaterial();
 
     public static final MaterialId stymphalianBirdFeather = MaterialBuilder.material("iceandfire", "stymphalian_bird_feather")
+            .flavor("Fly straight.")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.stymphalian))
             .stats(s -> s.stat(StatlessMaterialStats.FLETCHING))
@@ -234,6 +246,7 @@ public class IFMaterials {
 
     private static MaterialId dragonScales(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
         var builder = MaterialBuilder.material("iceandfire", type+"_dragon_scale")
+                .flavor("Comes in (almost) all colors of the rainbow!")
                 .data(d -> d.tier(4).order(5).craftable(true))
                 .traits(t -> {
                     t.trait(ARMOR, IFInit.breathless);

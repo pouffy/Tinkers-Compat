@@ -22,6 +22,7 @@ import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider
 public class AetherMaterials {
 
     public static final MaterialId aetherWood = MaterialBuilder.material("aether", "aether_wood")
+            .flavor("I thought we had skyroot already.")
             .data(d -> d.tier(0).order(1).craftable(true))
             .traits(t -> t
                     .trait(TCModifiers.aetherForged, ModifierIds.cultivated)
@@ -46,6 +47,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId aetherRock = MaterialBuilder.material("aether", "aether_rock")
+            .flavor("#holy")
             .data(d -> d.tier(1).order(1).craftable(true))
             .traits(t -> t
                     .trait(TCModifiers.aetherForged, AetherInit.ambrogen, ModifierIds.stonebound)
@@ -65,6 +67,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId zanite = MaterialBuilder.material("aether", "zanite")
+            .flavor("Everyone's favourite non-metal metal.")
             .data(d -> d.tier(2).order(25).deprecate())
             .traits(t -> t
                     .trait(TCModifiers.aetherForged, TCModifiers.zanite).trait(MaterialRegistry.AMMO, ModifierIds.crystalbound)
@@ -86,6 +89,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId gravitite = MaterialBuilder.material("aether", "gravitite")
+            .flavor("Really raises the roof.")
             .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.ascension, TCModifiers.aetherForged))
             .stats(s ->
@@ -105,6 +109,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId lightnum = MaterialBuilder.material("aether", "lightnum")
+            .flavor("An unknown alloy from long ago.")
             .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.thunderstruck))
             .stats(s ->
@@ -119,6 +124,7 @@ public class AetherMaterials {
             .buildMaterial();
 
     public static final MaterialId draculite = MaterialBuilder.material("aether", "draculite")
+            .flavor("I vant to suck your blood.")
             .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, AetherInit.bloodsucking))
             .stats(s ->

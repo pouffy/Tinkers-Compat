@@ -16,6 +16,7 @@ import static net.minecraft.world.item.Tiers.IRON;
 public class BetternetherMaterials {
 
     public static final MaterialId cincinnasite = MaterialBuilder.material("betternether", "cincinnasite")
+            .flavor("Cinnamonasite")
             .data(d -> d.tier(4).order(0).craftable(false))
             .traits(t -> t.trait(ModifierIds.worldbound).trait(HeadMaterialStats.ID, BetternetherInit.obsidianBreaker))
             .stats(s ->
@@ -37,6 +38,7 @@ public class BetternetherMaterials {
             .buildMaterial();
 
     public static final MaterialId netherRuby = MaterialBuilder.material("betternether", "nether_ruby")
+            .flavor("Lamp oil, rope, bombs...")
             .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(ModifierIds.worldbound)
@@ -75,6 +77,7 @@ public class BetternetherMaterials {
             .buildVariant();
 
     public static final MaterialId goldenVine = MaterialBuilder.material("betternether", "golden_vine")
+            .flavor("I can't believe it's not gold.")
             .data(d -> d.tier(2).order(0).craftable(true))
             .traits(t -> t.trait(ModifierIds.glowing))
             .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
@@ -83,6 +86,7 @@ public class BetternetherMaterials {
             .buildMaterial();
 
     public static final MaterialId bloomingVine = MaterialBuilder.material("betternether", "blooming_vine")
+            .flavor("Howdy!")
             .data(d -> d.tier(2).order(0).craftable(true))
             .traits(t -> t.trait(ModifierIds.deciduous))
             .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))

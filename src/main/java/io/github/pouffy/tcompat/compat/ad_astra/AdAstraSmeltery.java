@@ -95,6 +95,10 @@ public class AdAstraSmeltery implements CompatSmeltery {
         metal(cConsumer, TCFluids.moltenOstrum, compatModId()).metal(true).optional();
         metal(cConsumer, TCFluids.moltenCalorite, compatModId()).metal(true).optional();
 
+        simpleMelting(cConsumer, TCFluids.moltenDesh, FluidValues.INGOT, "desh", ItemNameIngredient.from(compatId("desh_plate")), metalFolder("melting"), "plate");
+        simpleMelting(cConsumer, TCFluids.moltenOstrum, FluidValues.INGOT, "ostrum", ItemNameIngredient.from(compatId("ostrum_plate")), metalFolder("melting"), "plate");
+        simpleMelting(cConsumer, TCFluids.moltenCalorite, FluidValues.INGOT, "calorite", ItemNameIngredient.from(compatId("calorite_plate")), metalFolder("melting"), "plate");
+
         TCMeltingInfo.AdAstra.adAstraGroup.saveAll(cConsumer);
         //Deco
         simpleMelting(cConsumer, TinkerFluids.moltenSteel, rod * 3, "steel", Ingredient.of(compatTag("flags")), metalFolder("melting"), "space_flags");

@@ -7,6 +7,7 @@ import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 public class SpeciesMaterials {
 
     public static final MaterialId wickedWax = MaterialBuilder.material("species", "wicked_wax")
+            .flavor("No one mourns the wicked.")
             .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(SpeciesInit.wicked))
             .stats(s ->

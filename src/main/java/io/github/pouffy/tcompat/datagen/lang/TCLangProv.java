@@ -35,7 +35,12 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void materials() {
-        MaterialBuilder.materialBuilders.forEach((builder) -> this.add(builder.getTranslationKey(), builder.getEnglishName()));
+        MaterialBuilder.materialBuilders.forEach((builder) -> {
+            this.add(builder.getTranslationKey(), builder.getEnglishName());
+            if (builder.getFlavorText() != null) {
+                this.add(builder.getTranslationKey() + ".flavor", builder.getFlavorText());
+            }
+        });
     }
 
     private void tags() {
@@ -84,6 +89,11 @@ public class TCLangProv extends LanguageProvider {
         tag(TCTags.Items.TREASURE_SMITHING_TEMPLATES, "Unmeltable Smithing Templates");
         tag(TCTags.Items.NON_AETHER_WOODEN_RODS, "Non-Aether Wooden Rods");
         tag(TCTags.Items.AETHER_WOODEN_RODS, "Aether Wooden Rods");
+
+        tag(TCTags.Items.ALTERNATIVE_VINES, "Alternative Vines");
+        tag(TCTags.Items.FIRE_DRAGON_SCALES, "Fire Dragon Scales");
+        tag(TCTags.Items.ICE_DRAGON_SCALES, "Ice Dragon Scales");
+        tag(TCTags.Items.LIGHTNING_DRAGON_SCALES, "Lightning Dragon Scales");
 
         tagFluid(TCTags.Fluids.SMALLER_GEM_TOOLTIPS, "Smaller Gem");
     }

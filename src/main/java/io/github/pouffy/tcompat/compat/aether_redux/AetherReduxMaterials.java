@@ -29,6 +29,7 @@ public class AetherReduxMaterials {
     public static final MaterialVariantId driftshale = aetherRockVariant(TCRocks.DRIFTSHALE, 0xFFAA9A5D, 0xFFBEB06C, 0xFFCEC277, 0xFFD9CE81, 0xFFDFDA95, 0xFFE3E2A8);
 
     public static final MaterialId veridium = MaterialBuilder.material("aether_redux", "veridium")
+            .flavor("Very close friends with Ambrosium.")
             .data(d -> d.tier(2).order(1).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged, AetherReduxInit.ambrofusion))
             .stats(s ->
@@ -47,6 +48,7 @@ public class AetherReduxMaterials {
             .buildMaterial();
 
     public static final MaterialId refinedSentrite = MaterialBuilder.material("aether_redux", "refined_sentrite")
+            .flavor("Also makes a nice set of bricks.")
             .data(d -> d.tier(2).order(1).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged))
             .stats(s ->
@@ -64,6 +66,7 @@ public class AetherReduxMaterials {
             .buildMaterial();
 
     public static final MaterialId blightbunnyFang = MaterialBuilder.material("deep_aether", "blightbunny_fang")
+            .flavor("Big pointy teeth.")
             .data(d -> d.tier(1).order(4).craftable(true)).excludeFromLoot()
             .traits(t -> t
                     .trait(AetherReduxInit.blighted)
@@ -77,6 +80,7 @@ public class AetherReduxMaterials {
             .buildMaterial();
 
     public static final MaterialId mykapodShell = MaterialBuilder.material("deep_aether", "mykapod_shell")
+            .flavor("Stoppable force meets immovable shield.")
             .data(d -> d.tier(1).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t
                     .trait(StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay)

@@ -47,6 +47,8 @@ public class MaterialBuilder {
     @Getter
     private String englishName;
     @Getter
+    private String flavorText;
+    @Getter
     private final boolean isVariant;
     @Getter
     private boolean excludedFromLoot;
@@ -109,6 +111,11 @@ public class MaterialBuilder {
 
     public MaterialBuilder lang(String englishName) {
         this.englishName = englishName;
+        return this;
+    }
+
+    public MaterialBuilder flavor(String flavorText) {
+        this.flavorText = flavorText;
         return this;
     }
 

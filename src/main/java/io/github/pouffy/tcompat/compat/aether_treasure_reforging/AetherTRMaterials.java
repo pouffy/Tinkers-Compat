@@ -16,6 +16,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.*;
 public class AetherTRMaterials {
 
     public static final MaterialId pyral = MaterialBuilder.material("aether_treasure_reforging", "pyral")
+            .flavor("From the ash it rises and to the ash it will one day return.")
             .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(TCModifiers.aetherForged)
@@ -37,6 +38,7 @@ public class AetherTRMaterials {
             .buildMaterial();
 
     public static final MaterialId valkyrum = MaterialBuilder.material("aether_treasure_reforging", "valkyrum")
+            .flavor("The secrets of refining Valkyrum is a well guarded one.")
             .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(TCModifiers.aetherForged)
@@ -57,6 +59,7 @@ public class AetherTRMaterials {
             .buildMaterial();
 
     public static final MaterialId neptune = MaterialBuilder.material("aether_treasure_reforging", "neptune")
+            .flavor("Ocean man...")
             .data(d -> d.tier(2).order(3).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(ARMOR, ModifierIds.depthStrider))
             .stats(s ->
