@@ -56,9 +56,9 @@ public interface ITCMaterialRecipeHelper extends IRecipeHelper {
     default void gemMaterialRecipe(Consumer<FinishedRecipe> consumer, MaterialVariantId material, String folder, String name, boolean largeGem, boolean nugget, boolean optional) {
         Consumer<FinishedRecipe> wrapped = optional ? withCondition(consumer, tagCondition("gems/" + name)) : consumer;
         String matName = material.getLocation('/').getPath();
-        // ingot
-        TagKey<Item> ingotTag = getItemTag(COMMON, "gems/" + name);
-        materialRecipe(wrapped, material, Ingredient.of(ingotTag), 1, 1, folder + matName + "/gem");
+        // gem
+        TagKey<Item> gemTag = getItemTag(COMMON, "gems/" + name);
+        materialRecipe(wrapped, material, Ingredient.of(gemTag), 1, 1, folder + matName + "/gem");
         // nugget
         if (nugget) {
             wrapped = optional ? withCondition(consumer, tagCondition("nuggets/" + name)) : consumer;
@@ -66,7 +66,7 @@ public interface ITCMaterialRecipeHelper extends IRecipeHelper {
         }
         // block
         wrapped = optional ? withCondition(consumer, tagCondition("storage_blocks/" + name)) : consumer;
-        materialRecipe(wrapped, material, Ingredient.of(getItemTag(COMMON, "storage_blocks/" + name)), largeGem ? 9 : 4, 1, ItemOutput.fromTag(ingotTag), folder + matName + "/block");
+        materialRecipe(wrapped, material, Ingredient.of(getItemTag(COMMON, "storage_blocks/" + name)), largeGem ? 9 : 4, 1, ItemOutput.fromTag(gemTag), folder + matName + "/block");
     }
 
     default void materialMelting(Consumer<FinishedRecipe> consumer, MaterialVariantId material, Fluid fluid, int fluidAmount, String folder) {

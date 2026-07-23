@@ -126,6 +126,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(aetherConsumer, AetherMaterials.skyroot, ItemNameIngredient.from(TCompat.getResource("aether:skyroot_stick")), 1, 2, folder + "wood/skyroot_stick");
 
         //Material Parts
+        gemMaterialRecipe(aetherConsumer, AetherMaterials.zanite, folder, "zanite", true, false, true);
         metalMaterialRecipe(aetherConsumer, AetherMaterials.gravitite, folder, "gravitite", true);
         metalMaterialRecipe(aetherConsumer, AetherMaterials.lightnum, folder, "lightnum", true);
         metalMaterialRecipe(aetherConsumer, AetherMaterials.draculite, folder, "draculite", true);
@@ -214,7 +215,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(malum, MalumMaterials.soulstone, ItemNameIngredient.from(TCompat.getResource("malum:processed_soulstone")), 1, 1, folder + "soulstone");
         materialRecipe(malum, MalumMaterials.nullSlate, ItemNameIngredient.from(TCompat.getResource("malum:null_slate")), 1, 1, folder + "null_slate");
 
-        //gemMaterialRecipe(deepAetherConsumer, TCMaterials.skyjade, folder, "skyjade", true, true, true);
+        gemMaterialRecipe(deepAetherConsumer, DeepAetherMaterials.skyjade, folder, "skyjade", true, true, true);
         metalMaterialRecipe(deepAetherConsumer, DeepAetherMaterials.stormforgedSteel, folder, "stormforged_steel", true);
 
         metalMaterialRecipe(aetherReduxConsumer, AetherReduxMaterials.veridium, folder, "veridium", true);

@@ -68,7 +68,7 @@ public class AetherMaterials {
 
     public static final MaterialId zanite = MaterialBuilder.material("aether", "zanite")
             .flavor("Everyone's favourite non-metal metal.")
-            .data(d -> d.tier(2).order(25).deprecate())
+            .data(d -> d.tier(2).order(25)).excludeFromLoot()
             .traits(t -> t
                     .trait(TCModifiers.aetherForged, TCModifiers.zanite).trait(MaterialRegistry.AMMO, ModifierIds.crystalbound)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.mining_speed_gem, 2))

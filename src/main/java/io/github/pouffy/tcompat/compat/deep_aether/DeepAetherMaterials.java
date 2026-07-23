@@ -34,7 +34,7 @@ public class DeepAetherMaterials {
 
     public static final MaterialId skyjade = MaterialBuilder.material("deep_aether", "skyjade")
             .flavor("Incredibly brittle.")
-            .data(d -> d.tier(2).order(25).deprecate())
+            .data(d -> d.tier(2).order(25)).excludeFromLoot()
             .traits(t -> t
                     .trait(TCModifiers.aetherForged, TCModifiers.skyjade).trait(MaterialRegistry.AMMO, ModifierIds.punch)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.health_gem, 2))
