@@ -11,6 +11,7 @@
     "LivingEntityMixin",
     "ProjectileMixin",
     "ServerPlayerMixin",
+    "ToolEnergyCapabilityMixin",
     "VibrationListenerMixin",
     "aether.AbilityHooksMixin",
     "aether.WeaponHooksMixin",
