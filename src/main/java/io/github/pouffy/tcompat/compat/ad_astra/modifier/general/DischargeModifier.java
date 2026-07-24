@@ -47,7 +47,7 @@ public class DischargeModifier extends Modifier implements BlockInteractionModif
 
     @Override
     public Component getDisplayName(IToolStackView tool, ModifierEntry entry, @Nullable RegistryAccess access) {
-        return Component.translatable(this.getTranslationKey() + ".current").append(ToolEnergyCapability.MAX_STAT.formatContents(ToolEnergyCapability.getEnergy(tool), ToolEnergyCapability.getMaxEnergy(tool)));
+        return entry.getModifier().applyStyle(Component.translatable(this.getTranslationKey() + ".current")).append(ToolEnergyCapability.MAX_STAT.formatContents(ToolEnergyCapability.getEnergy(tool), ToolEnergyCapability.getMaxEnergy(tool)));
     }
 
     public int getPriority() {

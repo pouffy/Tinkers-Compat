@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.common.capability;
+package io.github.pouffy.tcompat.common;
 
 import io.github.pouffy.tcompat.TCompat;
 import lombok.Getter;
@@ -14,7 +14,8 @@ import java.util.Locale;
 @Mod.EventBusSubscriber(modid = TCompat.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public enum TCSounds {
     VOID_TOUCHED_ACTIVATE("void_touched.activate"),
-    VOID_TOUCHED_DEACTIVATE("void_touched.deactivate")
+    VOID_TOUCHED_DEACTIVATE("void_touched.deactivate"),
+    ICESHOCK("iceshock")
     ;
 
     @Getter
@@ -29,7 +30,7 @@ public enum TCSounds {
     }
 
     TCSounds() {
-        sound = createEvent(name().toLowerCase(Locale.US));
+        sound = createEvent(name().toLowerCase(Locale.ROOT));
     }
 
     @SubscribeEvent

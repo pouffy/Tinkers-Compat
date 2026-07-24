@@ -17,5 +17,11 @@
       "tcompat:void_touched_deactivate_3"
     ],
     "subtitle": "subtitles.tcompat.void_touched.deactivate"
+  },
+  "iceshock": {
+    "sounds": [
+      "tcompat:iceshock"
+    ],
+    "subtitle": "subtitles.tcompat.iceshock"
   }
 }

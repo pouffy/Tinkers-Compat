@@ -1,12 +1,15 @@
 package io.github.pouffy.tcompat.compat.ad_astra.modifier.general;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.TCSounds;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
+import io.github.pouffy.tcompat.common.capability.projectile.ability.types.CryogenicAbility;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraHandler;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -18,7 +21,6 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
-import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -49,7 +51,7 @@ public class CryogenicModifier extends Modifier implements ValidateModifierHook,
 
     @Override
     public Component getDisplayName(IToolStackView tool, ModifierEntry entry, @javax.annotation.Nullable RegistryAccess access) {
-        return Component.translatable(this.getTranslationKey() + ".current").append(MAX_STAT.formatContents(getFuel(tool), getMaxFuel(tool)));
+        return entry.getModifier().applyStyle(Component.translatable(this.getTranslationKey() + ".current")).append(MAX_STAT.formatContents(getFuel(tool), getMaxFuel(tool)));
     }
 
     @Override
@@ -66,24 +68,39 @@ public class CryogenicModifier extends Modifier implements ValidateModifierHook,
     }
 
     @Override
-    public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifierEntry, LivingEntity livingEntity, Projectile projectile, @Nullable AbstractArrow abstractArrow, ModDataNBT modDataNBT, boolean b) {
-        if (extractFuel(tool, 50, true) == 50) {
-            ProjectileAbility.activate(projectile, ProjectileAbilityHooks.CRYOGENIC);
-            extractFuel(tool, 50, false);
+    public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
+        float base = primary ? 50 : 25;
+        int toExtract = Mth.clamp(Math.round(base * (arrow != null ? (float) (arrow.getBaseDamage()) : 1.0f)), 0, getFuel(tool));
+        if (extractFuel(tool, toExtract, true) == toExtract) {
+            ProjectileAbility.get(projectile).ifPresent(ability -> {
+                if (ability.getAbility(ProjectileAbilityHooks.CRYOGENIC) instanceof CryogenicAbility cryogenic) {
+                    cryogenic.setActive(true);
+                    cryogenic.setDuration(toExtract * modifier.getLevel());
+                }
+            });
+            extractFuel(tool, toExtract, false);
         }
     }
 
     @Override
-    public void onAttacked(IToolStackView tool, ModifierEntry modifierEntry, EquipmentContext equipmentContext, EquipmentSlot equipmentSlot, DamageSource damageSource, float v, boolean b) {
+    public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
+        int base = isDirectDamage ? 50 : 25;
+        int toExtract = Mth.clamp(Math.round(base * amount), 0, getFuel(tool));
         if (extractFuel(tool, 50, true) == 50) {
-            extractFuel(tool, 50, false);
+            if (source.getEntity() instanceof LivingEntity attacker) {
+                freezeTarget(attacker, toExtract * modifier.getLevel());
+                extractFuel(tool, toExtract, false);
+            }
         }
     }
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        if (extractFuel(tool, 50, true) == 50) {
-            extractFuel(tool, 50, false);
+        int base = context.isFullyCharged() ? 50 : 25;
+        int toExtract = Mth.clamp(Math.round(base * damageDealt), 0, getFuel(tool));
+        if (extractFuel(tool, toExtract, true) == toExtract) {
+            freezeTarget(context.getLivingTarget(), toExtract * modifier.getLevel());
+            extractFuel(tool, toExtract, false);
         }
     }
 
@@ -165,5 +182,9 @@ public class CryogenicModifier extends Modifier implements ValidateModifierHook,
                 return drained;
             }
         }
+    }
+
+    public static void freezeTarget(LivingEntity target, int time) {
+        target.level().playSound(null, target.blockPosition(), TCSounds.ICESHOCK.getSound(), SoundSource.PLAYERS);
     }
 }

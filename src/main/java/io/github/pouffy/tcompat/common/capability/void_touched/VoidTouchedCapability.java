@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.common.capability.void_touched;
 
-import io.github.pouffy.tcompat.common.capability.TCSounds;
+import io.github.pouffy.tcompat.common.TCSounds;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.VoidTouchedSyncPacket;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;

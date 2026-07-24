@@ -1,14 +1,38 @@
 package io.github.pouffy.tcompat.common.capability.projectile.ability.types;
 
+import io.github.pouffy.tcompat.compat.ad_astra.modifier.general.CryogenicModifier;
+import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraftforge.event.entity.ProjectileImpactEvent;
 
 public class CryogenicAbility extends AbstractProjectileAbility {
+
+    @Getter
+    @Setter
+    private int duration;
+
     @Override
     String serializedName() {
         return "cryogenic";
+    }
+
+    @Override
+    public CompoundTag serializeNBT() {
+        CompoundTag tag = new CompoundTag();
+        tag.putInt("duration", this.getDuration());
+        return tag;
+    }
+
+    @Override
+    public void deserializeNBT(CompoundTag tag) {
+        this.setDuration(tag.getInt("duration"));
     }
 
     @Override
@@ -21,6 +45,13 @@ public class CryogenicAbility extends AbstractProjectileAbility {
     @Override
     public void tickProjectile(Projectile projectile, Projectile innerProjectile) {
         this.particles(innerProjectile);
+    }
+
+    @Override
+    public void impactEvent(ProjectileImpactEvent event, Projectile projectile) {
+        if (event.getRayTraceResult() instanceof EntityHitResult entityHitResult && entityHitResult.getEntity() instanceof LivingEntity livingEntity) {
+            CryogenicModifier.freezeTarget(livingEntity, this.getDuration());
+        }
     }
 
     private void particles(Projectile projectile) {
