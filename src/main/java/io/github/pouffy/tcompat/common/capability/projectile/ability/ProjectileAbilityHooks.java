@@ -54,7 +54,11 @@ public class ProjectileAbilityHooks {
      * @see VoidScatterAbility
      */
     public static final String VOID_SCATTER = "void_scatter";
-
+    /**
+     * Projectile cryogenically freezes the target.
+     * @see CryogenicAbility
+     */
+    public static final String CRYOGENIC = "cryogenic";
 
     /**
      * Adds modifier data to launched projectiles. Used when summoning non-vanilla projectiles via modifiers.

@@ -519,6 +519,10 @@
   "modifier.tcompat.cloaking": "Cloaking",
   "modifier.tcompat.cloaking.description": "Reduces enemy aggression",
   "modifier.tcompat.cloaking.flavor": "Now you see me",
+  "modifier.tcompat.cryogenic": "Cryogenic",
+  "modifier.tcompat.cryogenic.current": "Cryo Fuel: ",
+  "modifier.tcompat.cryogenic.description": "Feeding the tool Cryogenic fuels imbues your attacks with a frosty twist.",
+  "modifier.tcompat.cryogenic.flavor": "Really quite chilling",
   "modifier.tcompat.dampening": "Dampening",
   "modifier.tcompat.dampening.attack_damage": "Dampening Melee Damage",
   "modifier.tcompat.dampening.description": "Deals extra damage to mystical creatures.",
@@ -1079,5 +1083,6 @@
   "tag.item.tcompat.stems.cloudcap": "Cloudcap Stems",
   "tag.item.tcompat.stems.jellyshroom": "Jellyshroom Stems",
   "tag.item.tcompat.stems.nether_mushroom": "Nether Mushroom Stems",
-  "tag.item.tinkersjewelry.modifiable.jewelry": "Jewelry Modifiable"
+  "tag.item.tinkersjewelry.modifiable.jewelry": "Jewelry Modifiable",
+  "tool_stat.tcompat.cryogenic_fuel": "%s CR"
 }

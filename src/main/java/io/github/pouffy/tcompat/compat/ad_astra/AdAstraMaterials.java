@@ -41,7 +41,7 @@ public class AdAstraMaterials {
             .flavor("Like netherite except it really isn't.")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
-                    .trait(AdAstraInit.oxygenated)
+                    .trait(AdAstraInit.cryogenic)
                     .trait(PlainRingMaterialStats.ID, new ModifierEntry[] {})
             )
             .stats(s ->
