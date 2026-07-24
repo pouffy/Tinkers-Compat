@@ -9,6 +9,8 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraHandler;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
@@ -185,6 +187,8 @@ public class CryogenicModifier extends Modifier implements ValidateModifierHook,
     }
 
     public static void freezeTarget(LivingEntity target, int time) {
-        target.level().playSound(null, target.blockPosition(), TCSounds.ICESHOCK.getSound(), SoundSource.PLAYERS);
+        boolean useIceshock = target.getRandom().nextFloat() < 0.01f;
+        SoundEvent sound = useIceshock ? TCSounds.ICESHOCK.getSound() : SoundEvents.PLAYER_HURT_FREEZE;
+        target.level().playSound(null, target.blockPosition(), sound, SoundSource.PLAYERS, useIceshock ? 0.5F : 1.0F, 1.0F);
     }
 }
