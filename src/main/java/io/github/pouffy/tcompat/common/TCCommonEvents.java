@@ -3,8 +3,8 @@ package io.github.pouffy.tcompat.common;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.client.compat.CataclysmClientHandler;
 import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
+import io.github.pouffy.tcompat.common.capability.living.status.LivingStatus;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
-import io.github.pouffy.tcompat.common.capability.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.modifier.hook.EntitySensitiveAttributesModifierHook;
 import io.github.pouffy.tcompat.common.network.SwingClientArmPacket;
@@ -101,11 +101,6 @@ public class TCCommonEvents {
     static void livingTick(LivingEvent.LivingTickEvent event) {
         boolean client = event.getEntity().level().isClientSide();
         var entity = event.getEntity();
-        VoidTouched.get(entity).ifPresent(voidTouched -> {
-            if (voidTouched.isVoided()) {
-                voidTouched.tick();
-            }
-        });
         TCompat.COOLDOWN_HANDLER.tickEntity(entity);
         CuriosHandler.tickHook(event);
         MalumHandler.idleRestoration(event);
@@ -113,6 +108,10 @@ public class TCCommonEvents {
         if (client) {
             CataclysmClientHandler.gazeOfHeat(event);
         }
+        LivingStatus.get(event.getEntity()).ifPresent(livingStatus -> {
+            LivingEntity innerEntity = livingStatus.entity();
+            livingStatus.getActiveStatuses().forEach((name, status) -> status.tick(entity, innerEntity));
+        });
     }
 
     @SubscribeEvent
@@ -163,7 +162,10 @@ public class TCCommonEvents {
             }
             CataclysmHandler.flameReflex(event, target);
         }
-        VoidTouched.get(event.getEntity()).ifPresent(voidTouched -> voidTouched.hurtEvent(event));
+        LivingStatus.get(event.getEntity()).ifPresent(livingStatus -> {
+            LivingEntity innerEntity = livingStatus.entity();
+            livingStatus.getActiveStatuses().forEach((name, status) -> status.hurtEvent(event, innerEntity));
+        });
     }
 
     @SubscribeEvent
