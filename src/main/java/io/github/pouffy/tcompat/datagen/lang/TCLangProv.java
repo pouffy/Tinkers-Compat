@@ -123,6 +123,9 @@ public class TCLangProv extends LanguageProvider {
     private void misc() {
         add("itemGroup.tcompat.tcompat", "Tinkers' Compatibility");
 
+        add("pack.tcompat.addon_compat.title", "Tinkers' Compatibility Addon Compatibility");
+        add("pack.tcompat.addon_compat.description", "Pre-generated assets for addon tools and materials.");
+
         add("gui.tcompat.fluid.gem", "%s gems");
         add("gui.tcompat.fluid.block", "%s blocks");
         add("gui.tcompat.fluid.shard", "%s fragments");

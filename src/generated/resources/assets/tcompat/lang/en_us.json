@@ -795,6 +795,8 @@
   "modifier.tconstruct.rebalanced.rune": "Rune",
   "notification.tcompat.dampens_vibrations": "Dampens Vibrations",
   "notification.tcompat.modifier_cooldown": "Modifier: %s is on cooldown",
+  "pack.tcompat.addon_compat.description": "Pre-generated assets for addon tools and materials.",
+  "pack.tcompat.addon_compat.title": "Tinkers' Compatibility Addon Compatibility",
   "recipe.tcompat.modifier.dampening.level_2": "Dampening requires a different recipe for the first level.",
   "recipe.tcompat.modifier.dampening.level_3": "Dampening requires a different recipe for the first two levels.",
   "recipe.tcompat.requirement.ignitium": "Ignitium requires Netherite to apply",
