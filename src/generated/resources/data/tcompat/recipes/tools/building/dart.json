@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:tool_building",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "result": "tcompat:dart",
+  "result_count": 1
+}

@@ -3,9 +3,11 @@ package io.github.pouffy.tcompat.datagen.client;
 import com.google.gson.JsonObject;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.GlobalInit;
+import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.library.data.AbstractToolItemModelProvider;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.io.IOException;
 
@@ -21,6 +23,7 @@ public class TCToolItemModelProv extends AbstractToolItemModelProvider {
         JsonObject toolBlocking = readJson(getResource("tconstruct", "base/tool_blocking"));
 
         tool(GlobalInit.glaive, toolBlocking, "head");
+        tool(GlobalInit.dartShooter, toolBlocking);
     }
 
     @Override

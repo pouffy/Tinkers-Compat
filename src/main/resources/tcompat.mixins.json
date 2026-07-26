@@ -13,6 +13,7 @@
     "ServerPlayerMixin",
     "ToolEnergyCapabilityMixin",
     "VibrationListenerMixin",
+    "accessor.PlayerAccessor",
     "aether.AbilityHooksMixin",
     "aether.WeaponHooksMixin",
     "malum.SpiritHarvestHandlerMixin",

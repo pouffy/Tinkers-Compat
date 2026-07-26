@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -118,7 +119,9 @@ public class TCItemTagProv extends ItemTagsProvider {
         }
 
         var glaive = getResource("glaive");
-        this.tag(TinkerTags.Items.MODIFIABLE).addOptional(glaive);
+        var dart = getResource("dart");
+        var dartShooter = getResource("dart_shooter");
+        this.tag(TinkerTags.Items.MODIFIABLE).addOptional(glaive).addOptional(dart).addOptional(dartShooter);
         this.tag(TinkerTags.Items.BROAD_TOOLS).addOptional(glaive);
         this.tag(TinkerTags.Items.HELD).addOptional(glaive);
         this.tag(TinkerTags.Items.MELEE).addOptional(glaive);
@@ -126,18 +129,24 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TinkerTags.Items.MELEE_WEAPON).addOptional(glaive);
         this.tag(TinkerTags.Items.AOE).addOptional(glaive);
         this.tag(TinkerTags.Items.HARVEST).addOptional(glaive);
-        this.tag(TinkerTags.Items.DURABILITY).addOptional(glaive);
+        this.tag(TinkerTags.Items.DURABILITY).addOptional(glaive).addOptional(dartShooter);
         this.tag(TinkerTags.Items.BALLISTA_AMMO).addOptional(glaive);
-        this.tag(TinkerTags.Items.MULTIPART_TOOL).addOptional(glaive);
+        this.tag(TinkerTags.Items.MULTIPART_TOOL).addOptional(glaive).addOptional(dartShooter).addOptional(dart);
         this.tag(TinkerTags.Items.BONUS_SLOTS).addOptional(glaive);
+        this.tag(TinkerTags.Items.SMALL_RANGED).addOptional(dartShooter);
+        this.tag(TinkerTags.Items.AMMO).addOptional(dart);
+        this.tag(TinkerTags.Items.DYEABLE).addOptional(dart);
         this.tag(ItemTags.create(getResource("forge:tools"))).addOptional(glaive);
         this.tag(ItemTags.create(getResource("minecraft:tools"))).addOptional(glaive);
-        this.tag(ItemTags.create(getResource("tleveling:levelable"))).addOptional(glaive);
+        this.tag(ItemTags.create(getResource("tleveling:levelable"))).addOptional(glaive).addOptional(dartShooter);
 
         this.tag(TCTags.Items.HANDHELD_CURIO)
                 .addOptional(getResource("constructs_casting", "tinkerers_spellbook"))
                 .addOptional(getResource("constructs_casting", "travellers_spellbook"))
                 .addOptional(getResource("constructs_casting", "plated_spellbook"));
+
+        this.tag(TCTags.Items.DARTS)
+                .add(GlobalInit.dart.get());
     }
 
     private void addForge() {

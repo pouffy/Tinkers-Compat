@@ -101,6 +101,8 @@ public class TCLangProv extends LanguageProvider {
     private void items() {
         toEng("item.tcompat.glaive");
         add("item.tcompat.glaive.description", "The Glaive is a high reach, large radius polearm. Good for crowd control and long distance targets.");
+        toEng("item.tcompat.dart");
+        toEng("item.tcompat.dart_shooter");
         toEng("item.tcompat.lightnum_ingot");
         toEng("item.tcompat.draculite_ingot");
         toEng("item.tcompat.stormforged_steel_ingot");

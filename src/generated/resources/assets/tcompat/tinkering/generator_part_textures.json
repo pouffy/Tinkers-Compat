@@ -39,6 +39,26 @@
     {
       "path": "tcompat:item/tool/glaive/large/accessory",
       "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "tcompat:item/tool/dart_shooter/grip",
+      "stat_type": "tconstruct:grip"
+    },
+    {
+      "path": "tcompat:item/tool/dart_shooter/limb",
+      "stat_type": "tconstruct:limb"
+    },
+    {
+      "path": "tcompat:item/tool/ammo/dart_head",
+      "stat_type": "tconstruct:arrow_head"
+    },
+    {
+      "path": "tcompat:item/tool/ammo/dart_shaft",
+      "stat_type": "tconstruct:arrow_shaft"
+    },
+    {
+      "path": "tcompat:item/tool/ammo/dart_feather",
+      "stat_type": "tconstruct:fletching"
     }
   ],
   "replace": false

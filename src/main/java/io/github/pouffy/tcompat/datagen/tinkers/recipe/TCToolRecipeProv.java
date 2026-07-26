@@ -51,6 +51,9 @@ public class TCToolRecipeProv extends TCBaseRecipeProvider implements IMaterialR
                 .save(iceandfireConsumer, location(partFolder + "builder/" + getResource("tconstruct", "boots_plating").getPath()));
 
         toolBuilding(consumer, GlobalInit.glaive, folder);
+
+        toolBuilding(withCondition(consumer, modLoaded("aether")), GlobalInit.dartShooter, folder);
+        toolBuilding(withCondition(consumer, modLoaded("aether")), GlobalInit.dart, folder);
     }
 
     @Override

@@ -2,29 +2,50 @@ package io.github.pouffy.tcompat.compat.aether;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.GlobalInit;
+import io.github.pouffy.tcompat.compat.aether.entity.ModifiableDart;
+import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartItem;
+import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartShooter;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.AscensionModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.BloodsuckingModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.ThunderstruckModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AmbrogenModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AutochantModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AutofreezeModifier;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
+import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.helper.ToolBuildHandler;
+import slimeknights.tconstruct.tools.TinkerTools;
+import slimeknights.tconstruct.tools.ToolDefinitions;
+import slimeknights.tconstruct.tools.client.material.ThrownToolRenderer;
+
+import java.util.function.Consumer;
 
 public class AetherInit extends CompatInitializer {
     public static final ModifierDeferredRegister AETHER_M = ModifierDeferredRegister.create(TCompat.MOD_ID);
     public static final ItemDeferredRegister AETHER_I = new ItemDeferredRegister(TCompat.MOD_ID);
+    public static final EntityTypeDeferredRegister AETHER_E = new EntityTypeDeferredRegister(TCompat.MOD_ID);
 
     //Traits
     public static final StaticModifier<AmbrogenModifier> ambrogen = AETHER_M.register("ambrogen", AmbrogenModifier::new); // Holystone
     public static final StaticModifier<AscensionModifier> ascension = AETHER_M.register("ascension", AscensionModifier::new); // Gravitite
     public static final StaticModifier<ThunderstruckModifier> thunderstruck = AETHER_M.register("thunderstruck", ThunderstruckModifier::new); // Lightnum
     public static final StaticModifier<BloodsuckingModifier> bloodsucking = AETHER_M.register("bloodsucking", BloodsuckingModifier::new); // Draculite
+
+
 
     //Craftable Modifiers
     public static final StaticModifier<AutochantModifier> autochant = AETHER_M.register("autochant", AutochantModifier::new);
@@ -45,6 +66,7 @@ public class AetherInit extends CompatInitializer {
     public static void init(IEventBus eventBus) {
         AETHER_M.register(eventBus);
         AETHER_I.register(eventBus);
+        AETHER_E.register(eventBus);
         AetherMaterials.staticInit();
     }
 }

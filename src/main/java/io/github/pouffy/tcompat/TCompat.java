@@ -22,6 +22,7 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -40,6 +41,7 @@ import org.slf4j.Logger;
 import slimeknights.mantle.client.model.NBTKeyModel;
 import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
 import slimeknights.tconstruct.TConstruct;
+import slimeknights.tconstruct.tools.client.material.ThrownToolRenderer;
 
 import java.nio.file.Path;
 import java.util.Optional;
@@ -125,6 +127,11 @@ public class TCompat {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemProperties.registerGeneric(getResource("excited"), (stack, world, e, id) -> Optional.of(stack.getOrCreateTag().getBoolean("excited")).orElse(false) ? 1 : 0);
+        }
+
+        @SubscribeEvent
+        static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(GlobalInit.modifiableDart.get(), ThrownToolRenderer::new);
         }
     }
 }

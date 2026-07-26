@@ -9,10 +9,16 @@ import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioTickModifierHoo
 import io.github.pouffy.tcompat.common.modifier.module.*;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.aether.AetherInit;
+import io.github.pouffy.tcompat.compat.aether.entity.ModifiableDart;
+import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartItem;
+import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartShooter;
 import io.github.pouffy.tcompat.compat.ice_and_fire.item.ModifiableGlaiveItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -23,11 +29,13 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.RegisterEvent;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
+import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
@@ -48,8 +56,14 @@ import static io.github.pouffy.tcompat.TCompat.getResource;
 
 public class GlobalInit extends CompatInitializer {
     public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(TCompat.MOD_ID);
+    public static final EntityTypeDeferredRegister ENTITIES = new EntityTypeDeferredRegister(TCompat.MOD_ID);
+
+    public static final RegistryObject<EntityType<ModifiableDart>> modifiableDart = ENTITIES.register("dart", () -> EntityType.Builder.<ModifiableDart>of(ModifiableDart::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 
     public static final ItemObject<ModifiableGlaiveItem> glaive = ITEMS.register("glaive", () -> new ModifiableGlaiveItem(new Item.Properties().stacksTo(1), GlobalDefinitions.glaive));
+
+    public static final ItemObject<ModifiableDartShooter> dartShooter = ITEMS.register("dart_shooter", () -> new ModifiableDartShooter(new Item.Properties().stacksTo(1), GlobalDefinitions.dartShooter, false));
+    public static final ItemObject<ModifiableDartItem> dart = ITEMS.register("dart", () -> new ModifiableDartItem(new Item.Properties(), GlobalDefinitions.dart));
 
     public static final ModuleHook<AetherForgedModifierHook> AETHER_FORGED = ModifierHooks.register(getResource("aether_forged"), AetherForgedModifierHook.class, new AetherForgedModifierHook() {
         @Override
@@ -151,10 +165,15 @@ public class GlobalInit extends CompatInitializer {
     public static void addToolTabItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output tab) {
         Consumer<ItemStack> output = tab::accept;
         ToolBuildHandler.addVariants(output, glaive.get(), "");
+        if (CompatHelper.isLoaded("aether")) {
+            ToolBuildHandler.addVariants(output, dartShooter.get(), "");
+            ToolBuildHandler.addVariants(output, dart.get(), "");
+        }
     }
 
     public static void init(IEventBus eventBus) {
         ITEMS.register(eventBus);
+        ENTITIES.register(eventBus);
         WoodMaterials.staticInit();
         RockMaterials.staticInit();
     }

@@ -1,9 +1,11 @@
 package io.github.pouffy.tcompat.datagen.tinkers.tool;
 
 import io.github.pouffy.tcompat.compat.GlobalInit;
+import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.tinkering.AbstractStationSlotLayoutProvider;
 import slimeknights.tconstruct.tools.TinkerToolParts;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 public class TCStationLayoutProv extends AbstractStationSlotLayoutProvider {
     public TCStationLayoutProv(PackOutput packOutput) {
@@ -19,6 +21,10 @@ public class TCStationLayoutProv extends AbstractStationSlotLayoutProvider {
                 .addInputItem(TinkerToolParts.toughHandle, 27, 44)
                 .addInputItem(TinkerToolParts.toolBinding,  45, 44)
                 .build();
+
+        defineModifiable(GlobalInit.dartShooter).sortIndex(SORT_RANGED).addInputItem(TinkerToolParts.bowGrip, 15, 60).addInputItem(TinkerToolParts.bowLimb, 53, 22).build();
+        defineModifiable(GlobalInit.dart).sortIndex(SORT_AMMO).addInputItem(TinkerToolParts.arrowHead, 53, 22).addInputItem(TinkerToolParts.arrowShaft, 33, 42).addInputItem(TinkerToolParts.fletching, 15, 60).build();
+
     }
 
     @Override
