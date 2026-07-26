@@ -399,8 +399,8 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .addInput(ItemNameIngredient.from(getResource("deeperdarker:sculk_bone")))
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.ABILITY, 1)
-                .saveSalvage(malumConsumer, prefix(DarkerInit.sonorous, abilitySalvage))
-                .save(malumConsumer, prefix(DarkerInit.sonorous, abilityFolder));
+                .saveSalvage(withCondition(consumer, modLoaded("deeperdarker")), prefix(DarkerInit.sonorous, abilitySalvage))
+                .save(withCondition(consumer, modLoaded("deeperdarker")), prefix(DarkerInit.sonorous, abilityFolder));
 
 
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)

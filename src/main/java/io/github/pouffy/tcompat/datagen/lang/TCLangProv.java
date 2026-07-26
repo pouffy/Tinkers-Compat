@@ -177,6 +177,8 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.discharge.current", "Dischargable: ");
         add("modifier.tcompat.cryogenic.current", "Cryo Fuel: ");
         add("tool_stat.tcompat.cryogenic_fuel", "%s CR");
+        add("death.attack.tcompat.cryogenic", "%1$s was cryogenically frozen");
+        add("death.attack.tcompat.cryogenic.player", "%1$s was cryogenically frozen whilst trying to escape %2$s");
 
         add("item.tconstruct.creative_slot.rune", "Creative Rune Slot");
         add("stat.tconstruct.slot.prefix.rune", "Rune Slots: ");

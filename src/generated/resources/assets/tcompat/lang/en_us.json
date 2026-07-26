@@ -49,6 +49,8 @@
   "block.tcompat.umbrella_cluster_juice_fluid": "Umbrella Cluster Juice",
   "block.tcompat.wart_soup_fluid": "Wart Soup",
   "block.tcompat.white_puffball_stew_fluid": "White Puffball Stew",
+  "death.attack.tcompat.cryogenic": "%1$s was cryogenically frozen",
+  "death.attack.tcompat.cryogenic.player": "%1$s was cryogenically frozen whilst trying to escape %2$s",
   "fluid.tcompat.agave_medicine": "Agave Medicine",
   "fluid.tcompat.allium_oddion_soup": "Allium Oddion Soup",
   "fluid.tcompat.aloe_vera_juice": "Aloe Vera Juice",

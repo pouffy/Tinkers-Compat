@@ -3,7 +3,8 @@ package io.github.pouffy.tcompat.common;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.client.compat.CataclysmClientHandler;
 import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
-import io.github.pouffy.tcompat.common.capability.living.status.LivingStatus;
+import io.github.pouffy.tcompat.common.capability.living.cryogenic.Cryogenic;
+import io.github.pouffy.tcompat.common.capability.living.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.modifier.hook.EntitySensitiveAttributesModifierHook;
@@ -108,10 +109,8 @@ public class TCCommonEvents {
         if (client) {
             CataclysmClientHandler.gazeOfHeat(event);
         }
-        LivingStatus.get(event.getEntity()).ifPresent(livingStatus -> {
-            LivingEntity innerEntity = livingStatus.entity();
-            livingStatus.getActiveStatuses().forEach((name, status) -> status.tick(entity, innerEntity));
-        });
+        VoidTouched.get(event.getEntity()).ifPresent(VoidTouched::tick);
+        Cryogenic.get(event.getEntity()).ifPresent(Cryogenic::tick);
     }
 
     @SubscribeEvent
@@ -162,10 +161,8 @@ public class TCCommonEvents {
             }
             CataclysmHandler.flameReflex(event, target);
         }
-        LivingStatus.get(event.getEntity()).ifPresent(livingStatus -> {
-            LivingEntity innerEntity = livingStatus.entity();
-            livingStatus.getActiveStatuses().forEach((name, status) -> status.hurtEvent(event, innerEntity));
-        });
+        VoidTouched.get(event.getEntity()).ifPresent(cap -> cap.hurtEvent(event));
+        Cryogenic.get(event.getEntity()).ifPresent(cap -> cap.hurtEvent(event));
     }
 
     @SubscribeEvent

@@ -1,9 +1,7 @@
 package io.github.pouffy.tcompat.compat.betterend.modifier.combat;
 
 import io.github.pouffy.tcompat.common.TCSounds;
-import io.github.pouffy.tcompat.common.capability.living.status.LivingStatus;
-import io.github.pouffy.tcompat.common.capability.living.status.LivingStatusHooks;
-import io.github.pouffy.tcompat.common.capability.living.status.types.VoidTouchedStatus;
+import io.github.pouffy.tcompat.common.capability.living.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
@@ -48,19 +46,17 @@ public class VoidTouchedModifier extends Modifier implements ProjectileHitModifi
     }
 
     private void voidTarget(LivingEntity target, int modifierLevel) {
-        LivingStatus.get(target).ifPresent(livingStatus -> {
-            if (livingStatus.getStatus(LivingStatusHooks.VOID_TOUCHED) instanceof VoidTouchedStatus touched) {
-                if (touched.isActive()) {
-                    int amplifier = touched.getAmplifier();
-                    int duration = touched.getDuration();
-                    target.level().playSound(null, target.blockPosition(), TCSounds.VOID_TOUCHED_ACTIVATE.getSound(), SoundSource.PLAYERS, 1.0f, 1.0f + (0.001f * duration));
-                    touched.setAmplifier(amplifier + modifierLevel);
-                    touched.setDuration(duration + modifierLevel * 20);
-                } else {
-                    touched.voidTarget(target, true);
-                    touched.setAmplifier(modifierLevel);
-                    touched.setDuration(modifierLevel * 60);
-                }
+        VoidTouched.get(target).ifPresent(touched -> {
+            if (touched.isVoided()) {
+                int amplifier = touched.getAmplifier();
+                int duration = touched.getDuration();
+                target.level().playSound(null, target.blockPosition(), TCSounds.VOID_TOUCHED_ACTIVATE.getSound(), SoundSource.PLAYERS, 1.0f, 1.0f + (0.001f * duration));
+                touched.setAmplifier(amplifier + modifierLevel);
+                touched.setDuration(duration + modifierLevel * 20);
+            } else {
+                touched.voidTarget(true);
+                touched.setAmplifier(modifierLevel);
+                touched.setDuration(modifierLevel * 60);
             }
         });
     }

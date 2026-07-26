@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.ad_astra.modifier.general;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.TCSounds;
+import io.github.pouffy.tcompat.common.capability.living.cryogenic.Cryogenic;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.types.CryogenicAbility;
@@ -187,8 +188,14 @@ public class CryogenicModifier extends Modifier implements ValidateModifierHook,
     }
 
     public static void freezeTarget(LivingEntity target, int time) {
-        boolean useIceshock = target.getRandom().nextFloat() < 0.01f;
-        SoundEvent sound = useIceshock ? TCSounds.ICESHOCK.getSound() : SoundEvents.PLAYER_HURT_FREEZE;
-        target.level().playSound(null, target.blockPosition(), sound, SoundSource.PLAYERS, useIceshock ? 0.5F : 1.0F, 1.0F);
+        Cryogenic.get(target).ifPresent(cryogenic -> {
+            if (cryogenic.isFrozen()) {
+                int duration = cryogenic.getDuration();
+                cryogenic.setDuration(duration + time);
+            } else {
+                cryogenic.freezeTarget(true);
+                cryogenic.setDuration(time);
+            }
+        });
     }
 }
