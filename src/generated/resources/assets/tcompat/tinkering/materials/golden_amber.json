@@ -8,7 +8,9 @@
     "supported_stats": [
       "tconstruct:repair_kit",
       "tcompat:lip_guard",
-      "constructs_casting:magic_cloth"
+      "tconstruct:arrow_head",
+      "constructs_casting:adornment",
+      "tinkersjewelry:gem"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",
