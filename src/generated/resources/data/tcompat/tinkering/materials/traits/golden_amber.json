@@ -1,23 +1,27 @@
 {
-  "default": [
-    {
-      "level": 1,
-      "name": "tconstruct:attractive"
-    },
-    {
-      "level": 1,
-      "name": "tinkersjewelry:precious"
-    },
-    {
-      "level": 1,
-      "name": "constructs_casting:holy_upgrade"
-    }
-  ],
   "perStat": {
+    "constructs_casting:adornment": [
+      {
+        "level": 1,
+        "name": "constructs_casting:holy_upgrade"
+      }
+    ],
     "tcompat:lip_guard": [
       {
         "level": 1,
         "name": "tconstruct:lightweight"
+      }
+    ],
+    "tconstruct:arrow_head": [
+      {
+        "level": 1,
+        "name": "tconstruct:attractive"
+      }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:precious"
       }
     ]
   }

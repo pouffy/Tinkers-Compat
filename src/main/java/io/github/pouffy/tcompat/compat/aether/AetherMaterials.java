@@ -169,10 +169,10 @@ public class AetherMaterials {
             .flavor("Ooh shiny")
             .data(d -> d.tier(2).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t
-                    .trait(StatlessMaterialStats.ARROW_HEAD, ModifierIds.attractive)
+                    .trait(StatlessMaterialStats.ARROW_HEAD.getIdentifier(), ModifierIds.attractive)
                     .trait(LipGuardMaterialStats.ID, ModifierIds.lightweight)
-                    .trait(CompatToolStats.Statless.CUT_GEM, TCModifiers.precious)
-                    .trait(CompatToolStats.Statless.ADORNMENT, TCModifiers.holyUpgrade)
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), TCModifiers.precious)
+                    .trait(CompatToolStats.Statless.ADORNMENT.getIdentifier(), TCModifiers.holyUpgrade)
             )
             .stats(s ->
                     s.stat(
@@ -183,8 +183,8 @@ public class AetherMaterials {
                             CompatToolStats.Statless.ADORNMENT
                     )
             )
-            .renderInfo(r -> r.color(0xe79025).fallbacks("primitive", "cloth"))
-            .spriteInfo(s -> s.fallbacks("primitive", "cloth").repairKit().lipGuard().arrowHead().statType(CompatToolStats.Statless.ADORNMENT).statType(CompatToolStats.Statless.CUT_GEM).sixColor(0xFFbe520e, 0xFFd06d15, 0xFFe79025, 0xFFfcd54c, 0xFFfceaab, 0xFFfcfcfc))
+            .renderInfo(r -> r.color(0xf09a24).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.fallbacks("primitive", "cloth").repairKit().lipGuard().arrowHead().statType(CompatToolStats.Statless.ADORNMENT).statType(CompatToolStats.Statless.CUT_GEM).sixColor(0xFF873509, 0xFFbe520e, 0xFFd36e15, 0xFFf09a24, 0xFFf8b52f, 0xFFffd84d))
             .buildMaterial();
 
     public static final MaterialVariantId skyroot = aetherWoodVariant(TCWoods.SKYROOT, 0xFF333122, 0xFF403D2A, 0xFF4F4D36, 0xFF5C5B41, 0xFF63634A, 0xFF737558, 0xFF7B7E61);

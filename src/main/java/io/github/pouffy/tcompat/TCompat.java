@@ -108,8 +108,8 @@ public class TCompat {
         TCompatNetworking.register();
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> NBTKeyModel.registerExtraTexture(TConstruct.getResource("creative_slot"), "rune", getResource("gui/modifiers/rune")));
 
-        MaterialRegistry.getInstance().registerStatType(DartBarrelMaterialStats.TYPE);
-        MaterialRegistry.getInstance().registerStatType(LipGuardMaterialStats.TYPE);
+        MaterialRegistry.getInstance().registerStatType(DartBarrelMaterialStats.TYPE, MaterialRegistry.RANGED);
+        MaterialRegistry.getInstance().registerStatType(LipGuardMaterialStats.TYPE, MaterialRegistry.RANGED);
     }
 
     public static ResourceLocation getResource(String name) {
