@@ -5,6 +5,7 @@
   ],
   "generator": {
     "supported_stats": [
+      "tcompat:dart_barrel",
       "tconstruct:repair_kit",
       "tinkersjewelry:plain_ring",
       "tconstruct:grip",

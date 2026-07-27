@@ -3,6 +3,12 @@
     "constructs_casting:adornment": {
       "optional": true
     },
+    "tcompat:lip_guard": {
+      "draw_speed": -0.2,
+      "durability": 0.15,
+      "optional": true,
+      "velocity": 0.1
+    },
     "tconstruct:binding": {},
     "tconstruct:grip": {
       "accuracy": 0.1,

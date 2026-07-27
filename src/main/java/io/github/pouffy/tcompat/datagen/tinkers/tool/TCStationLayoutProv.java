@@ -22,7 +22,7 @@ public class TCStationLayoutProv extends AbstractStationSlotLayoutProvider {
                 .addInputItem(TinkerToolParts.toolBinding,  45, 44)
                 .build();
 
-        defineModifiable(GlobalInit.dartShooter).sortIndex(SORT_RANGED).addInputItem(TinkerToolParts.bowGrip, 15, 60).addInputItem(TinkerToolParts.bowLimb, 53, 22).build();
+        defineModifiable(GlobalInit.dartShooter).sortIndex(SORT_RANGED).addInputItem(GlobalInit.lipGuard, 46, 56).addInputItem(GlobalInit.dartBarrel, 28, 38).build();
         defineModifiable(GlobalInit.dart).sortIndex(SORT_AMMO).addInputItem(TinkerToolParts.arrowHead, 53, 22).addInputItem(TinkerToolParts.arrowShaft, 33, 42).addInputItem(TinkerToolParts.fletching, 15, 60).build();
 
     }

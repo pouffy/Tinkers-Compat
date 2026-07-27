@@ -3,6 +3,22 @@
     {
       "id": "tconstruct:iron",
       "required": false
+    },
+    {
+      "id": "tconstruct:steel",
+      "required": false
+    },
+    {
+      "id": "tconstruct:magnetite",
+      "required": false
+    },
+    {
+      "id": "tconstruct:ironwood",
+      "required": false
+    },
+    {
+      "id": "tconstruct:pig_iron",
+      "required": false
     }
   ]
 }

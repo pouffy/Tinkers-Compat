@@ -15,7 +15,8 @@
       "tconstruct:grip",
       "tconstruct:shield_core",
       "tconstruct:arrow_shaft",
-      "tconstruct:wood"
+      "tconstruct:wood",
+      "constructs_casting:magic_base"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

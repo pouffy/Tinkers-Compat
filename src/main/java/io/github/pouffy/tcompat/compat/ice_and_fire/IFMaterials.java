@@ -306,7 +306,7 @@ public class IFMaterials {
         var builder = MaterialBuilder.variant("iceandfire", type, parent)
                 .lang(TCLangProv.toEngStr(type) + " Dragon Scale")
                 .renderInfo(r -> r.color(c178).fallbacks("scales", "metal"))
-                .spriteInfo(s -> s.repairKit().armor().fallbacks("scales", "metal").sixColor(c63, c102, c140, c178, c216, c255));
+                .spriteInfo(s -> s.repairKit().armor().statType(MagicBaseMaterialStats.ID).fallbacks("scales", "metal").sixColor(c63, c102, c140, c178, c216, c255));
         return builder.buildVariant();
     }
 

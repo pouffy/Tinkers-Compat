@@ -51,6 +51,30 @@
     {
       "id": "tcompat:draculite",
       "required": false
+    },
+    {
+      "id": "tcompat:aechor",
+      "required": false
+    },
+    {
+      "id": "tcompat:golden_amber",
+      "required": false
+    },
+    {
+      "id": "tcompat:corrupted_vine",
+      "required": false
+    },
+    {
+      "id": "tcompat:gold_vine",
+      "required": false
+    },
+    {
+      "id": "tcompat:mykapod_shell",
+      "required": false
+    },
+    {
+      "id": "tcompat:blightbunny_fang",
+      "required": false
     }
   ]
 }

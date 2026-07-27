@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "tcompat:force_enabled_dart_shooters"
+        }
+      ]
+    }
+  ],
+  "pattern": "tcompat:lip_guard",
+  "pattern_item": {
+    "tag": "tconstruct:casts/red_sand"
+  },
+  "result": "tcompat:lip_guard_red_sand_cast"
+}

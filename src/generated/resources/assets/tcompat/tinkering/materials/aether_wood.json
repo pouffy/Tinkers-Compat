@@ -11,6 +11,7 @@
       "tconstruct:handle",
       "tconstruct:binding",
       "tconstruct:repair_kit",
+      "tcompat:dart_barrel",
       "tconstruct:limb",
       "tconstruct:grip",
       "tconstruct:shield_core",

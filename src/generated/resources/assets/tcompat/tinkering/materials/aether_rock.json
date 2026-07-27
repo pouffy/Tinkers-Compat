@@ -3,6 +3,7 @@
   "color": "FFCCCCCC",
   "generator": {
     "supported_stats": [
+      "tcompat:dart_barrel",
       "tinkersjewelry:gem",
       "tconstruct:head",
       "tconstruct:handle",

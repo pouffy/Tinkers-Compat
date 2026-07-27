@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:table_casting_material",
+  "cast": {
+    "tag": "tcompat:casts/single_use/dart_barrel"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "tcompat:force_enabled_dart_shooters"
+        }
+      ]
+    }
+  ],
+  "item_cost": 2,
+  "result": "tcompat:dart_barrel"
+}

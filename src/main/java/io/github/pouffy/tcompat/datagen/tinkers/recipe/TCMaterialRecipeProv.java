@@ -130,6 +130,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(aetherConsumer, AetherMaterials.gravitite, folder, "gravitite", true);
         metalMaterialRecipe(aetherConsumer, AetherMaterials.lightnum, folder, "lightnum", true);
         metalMaterialRecipe(aetherConsumer, AetherMaterials.draculite, folder, "draculite", true);
+        materialRecipe(aetherConsumer, AetherMaterials.aechor, ItemNameIngredient.from(TCompat.getResource("aether:aechor_petal")), 1, 1, folder + "aechor_petal");
+        materialRecipe(aetherConsumer, AetherMaterials.goldenAmber, ItemNameIngredient.from(TCompat.getResource("aether:golden_amber")), 1, 1, folder + "golden_amber");
 
         metalMaterialRecipe(iceandfire, IFMaterials.fireDragonsteel, folder, "fire_dragonsteel", true);
         metalMaterialRecipe(iceandfire, IFMaterials.iceDragonsteel, folder, "ice_dragonsteel", true);

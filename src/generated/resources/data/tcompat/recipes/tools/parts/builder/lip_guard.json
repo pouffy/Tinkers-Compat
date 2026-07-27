@@ -1,0 +1,30 @@
+{
+  "type": "tconstruct:part_builder",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "tcompat:force_enabled_dart_shooters"
+        }
+      ]
+    }
+  ],
+  "cost": 1,
+  "pattern": "tcompat:lip_guard",
+  "pattern_item": [
+    {
+      "tag": "tconstruct:patterns/default"
+    },
+    {
+      "item": "tcompat:lip_guard_cast"
+    }
+  ],
+  "result": {
+    "item": "tcompat:lip_guard"
+  }
+}

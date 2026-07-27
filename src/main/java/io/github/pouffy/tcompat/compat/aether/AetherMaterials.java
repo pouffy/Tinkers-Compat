@@ -6,7 +6,10 @@ import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
+import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
+import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
+import io.github.pouffy.tcompat.compat.constructs_casting.MagicClothMaterialStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
@@ -37,13 +40,14 @@ public class AetherMaterials {
                             new LimbMaterialStats(60, 0, 0, 0),
                             new GripMaterialStats(0f, 0, 0),
                             StatlessMaterialStats.ARROW_SHAFT,
-                            StatlessMaterialStats.SHIELD_CORE
+                            StatlessMaterialStats.SHIELD_CORE,
+                            new DartBarrelMaterialStats(60, 1, 1)
                     ).statOptional(
                             CompatToolStats.magicBase(100, 0.0f)
                     )
             )
             .renderInfo(r -> r.color(0x5C5B41).fallbacks("wood", "stick", "primitive"))
-            .spriteInfo(s -> s.meleeHarvest().ranged().shieldCore().arrowShaft().statType(MagicBaseMaterialStats.ID).fallbacks("wood", "stick", "primitive").sixColor(0xFF333122, 0xFF403D2A, 0xFF4F4D36, 0xFF5C5B41, 0xFF63634A, 0xFF7B7E61))
+            .spriteInfo(s -> s.meleeHarvest().dartBarrel().ranged().shieldCore().arrowShaft().statType(MagicBaseMaterialStats.ID).fallbacks("wood", "stick", "primitive").sixColor(0xFF333122, 0xFF403D2A, 0xFF4F4D36, 0xFF5C5B41, 0xFF63634A, 0xFF7B7E61))
             .buildMaterial();
 
     public static final MaterialId aetherRock = MaterialBuilder.material("aether", "aether_rock")
@@ -57,13 +61,14 @@ public class AetherMaterials {
                     s.stat(
                             new HeadMaterialStats(130, 4f, STONE, 1f),
                             HandleMaterialStats.multipliers().durability(0.9f).miningSpeed(1.05f).build(),
-                            StatlessMaterialStats.BINDING
+                            StatlessMaterialStats.BINDING,
+                            new DartBarrelMaterialStats(130, 0.75f, 2)
                     ).statOptional(
                             CompatToolStats.Statless.CUT_GEM
                     )
             )
             .renderInfo(r -> r.parent(TCompat.getResource("aether_rock/holystone")))
-            .spriteInfo(s -> s.fallbacks("rock").statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).meleeHarvest().sixColor(0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2))
+            .spriteInfo(s -> s.fallbacks("rock").dartBarrel().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).meleeHarvest().sixColor(0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2))
             .buildMaterial();
 
     public static final MaterialId zanite = MaterialBuilder.material("aether", "zanite")
@@ -144,6 +149,44 @@ public class AetherMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().statType(INGOT).sixColor(0xFF3b0303, 0xFF630505, 0xFF700606, 0xFFd11e1e, 0xFFf56262, 0xFFffadad))
             .buildMaterial();
 
+
+    public static final MaterialId aechor = MaterialBuilder.material("aether", "aechor")
+            .flavor("Toxic")
+            .data(d -> d.tier(2).order(2).craftable(true)).excludeFromLoot()
+            .traits(t -> t.trait(AetherInit.blighted))
+            .stats(s ->
+                    s.stat(
+                            new LipGuardMaterialStats(0.1f, -0.1f, 0.15f)
+                    ).statOptional(
+                            CompatToolStats.magicCloth(5, 0.1f)
+                    )
+            )
+            .renderInfo(r -> r.color(0xa87ad8).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.fallbacks("primitive", "cloth").repairKit().lipGuard().statType(MagicClothMaterialStats.ID).sixColor(0xFF644387, 0xFF724f97, 0xFF9364c5, 0xFFa87ad8, 0xFFc495f4, 0xFFcfa4fc))
+            .buildMaterial();
+
+    public static final MaterialId goldenAmber = MaterialBuilder.material("aether", "golden_amber")
+            .flavor("Ooh shiny")
+            .data(d -> d.tier(2).order(2).craftable(true)).excludeFromLoot()
+            .traits(t -> t
+                    .trait(StatlessMaterialStats.ARROW_HEAD, ModifierIds.attractive)
+                    .trait(LipGuardMaterialStats.ID, ModifierIds.lightweight)
+                    .trait(CompatToolStats.Statless.CUT_GEM, TCModifiers.precious)
+                    .trait(CompatToolStats.Statless.ADORNMENT, TCModifiers.holyUpgrade)
+            )
+            .stats(s ->
+                    s.stat(
+                            new LipGuardMaterialStats(0.1f, -0.1f, 0.15f),
+                            StatlessMaterialStats.ARROW_HEAD
+                    ).statOptional(
+                            CompatToolStats.Statless.CUT_GEM,
+                            CompatToolStats.Statless.ADORNMENT
+                    )
+            )
+            .renderInfo(r -> r.color(0xe79025).fallbacks("primitive", "cloth"))
+            .spriteInfo(s -> s.fallbacks("primitive", "cloth").repairKit().lipGuard().statType(MagicClothMaterialStats.ID).sixColor(0xFFbe520e, 0xFFd06d15, 0xFFe79025, 0xFFfcd54c, 0xFFfceaab, 0xFFfcfcfc))
+            .buildMaterial();
+
     public static final MaterialVariantId skyroot = aetherWoodVariant(TCWoods.SKYROOT, 0xFF333122, 0xFF403D2A, 0xFF4F4D36, 0xFF5C5B41, 0xFF63634A, 0xFF737558, 0xFF7B7E61);
     public static final MaterialVariantId holystone = aetherRockVariant(TCRocks.HOLYSTONE, 0xFF808080, 0xFF8F8F8F, 0xFF9C9C9C, 0xFFADADAD, 0xFFCCCCCC, 0xFFE2E2E2);
 
@@ -151,7 +194,7 @@ public class AetherMaterials {
         var builder = MaterialBuilder.variant(woodType.makeCondition(), woodType.getSerializedName(), aetherWood)
                 .lang(TCLangProv.toEngStr(woodType.getSerializedName()) + " Wood")
                 .renderInfo(r -> r.color(c178).fallbacks("wood", "stick", "primitive"))
-                .spriteInfo(s -> s.planks().sevenColor(c63, c102, c140, c178, c216, c234, c255));
+                .spriteInfo(s -> s.planks().statType(MagicBaseMaterialStats.ID).sevenColor(c63, c102, c140, c178, c216, c234, c255));
         MaterialBuilder.woodMaterials.put(builder, woodType);
         return builder.buildVariant();
     }

@@ -1,5 +1,10 @@
 {
   "stats": {
+    "tcompat:lip_guard": {
+      "draw_speed": 1.25,
+      "durability": 0.85,
+      "velocity": 0.95
+    },
     "tconstruct:binding": {},
     "tconstruct:handle": {
       "durability": -0.15,

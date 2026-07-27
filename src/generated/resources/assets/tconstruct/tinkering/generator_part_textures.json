@@ -1,6 +1,14 @@
 {
   "parts": [
     {
+      "path": "tcompat:item/tool/parts/dart_barrel",
+      "stat_type": "tcompat:dart_barrel"
+    },
+    {
+      "path": "tcompat:item/tool/parts/lip_guard",
+      "stat_type": "tcompat:lip_guard"
+    },
+    {
       "path": "tcompat:item/tool/glaive/head",
       "stat_type": "tconstruct:head"
     },
@@ -41,12 +49,12 @@
       "stat_type": "tconstruct:binding"
     },
     {
-      "path": "tcompat:item/tool/dart_shooter/grip",
-      "stat_type": "tconstruct:grip"
+      "path": "tcompat:item/tool/dart_shooter/barrel",
+      "stat_type": "tcompat:dart_barrel"
     },
     {
-      "path": "tcompat:item/tool/dart_shooter/limb",
-      "stat_type": "tconstruct:limb"
+      "path": "tcompat:item/tool/dart_shooter/guard",
+      "stat_type": "tcompat:lip_guard"
     },
     {
       "path": "tcompat:item/tool/ammo/dart_head",

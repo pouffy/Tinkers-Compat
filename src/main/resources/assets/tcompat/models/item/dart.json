@@ -6,7 +6,7 @@
     "shaft":   "tcompat:item/tool/ammo/dart_shaft",
     "feather": "tcompat:item/tool/ammo/dart_feather"
   },
-  "modifier_maps": ["tconstruct:arrow"],
+  "modifier_maps": ["tcompat:dart"],
   "first_modifiers": [ "tconstruct:dyed" ],
   "parts": [
     { "name": "shaft",   "index": 1 },

@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:table_casting_material",
+  "cast": {
+    "tag": "tcompat:casts/multi_use/lip_guard"
+  },
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "tcompat:force_enabled_dart_shooters"
+        }
+      ]
+    }
+  ],
+  "item_cost": 1,
+  "result": "tcompat:lip_guard"
+}

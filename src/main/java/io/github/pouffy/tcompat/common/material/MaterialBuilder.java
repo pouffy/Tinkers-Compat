@@ -3,6 +3,8 @@ package io.github.pouffy.tcompat.common.material;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
+import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
 import io.github.pouffy.tcompat.datagen.lang.TCLangProv;
 import lombok.Getter;
 import net.minecraft.resources.ResourceLocation;
@@ -700,6 +702,16 @@ public class MaterialBuilder {
 
         public SpriteInfo fletching() {
             this.statType(StatlessMaterialStats.FLETCHING);
+            return this;
+        }
+
+        public SpriteInfo dartBarrel() {
+            this.statType(DartBarrelMaterialStats.ID);
+            return this;
+        }
+
+        public SpriteInfo lipGuard() {
+            this.statType(LipGuardMaterialStats.ID);
             return this;
         }
 

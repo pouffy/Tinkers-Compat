@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.client;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -35,6 +36,13 @@ public class TCItemModelProv extends ItemModelProvider {
         generated(getResource("fire_dragonsteel_nugget"), "item/fire_dragonsteel_nugget");
         generated(getResource("ice_dragonsteel_nugget"), "item/ice_dragonsteel_nugget");
         generated(getResource("lightning_dragonsteel_nugget"), "item/lightning_dragonsteel_nugget");
+
+        generated(GlobalInit.dartBarrelCast.get(), "item/cast/dart_barrel");
+        generated(GlobalInit.dartBarrelCast.getRedSand(), "item/red_sand_cast/dart_barrel");
+        generated(GlobalInit.dartBarrelCast.getSand(), "item/sand_cast/dart_barrel");
+        generated(GlobalInit.lipGuardCast.get(), "item/cast/lip_guard");
+        generated(GlobalInit.lipGuardCast.getRedSand(), "item/red_sand_cast/lip_guard");
+        generated(GlobalInit.lipGuardCast.getSand(), "item/sand_cast/lip_guard");
 
         excited(getResource("sky_slime_in_a_bucket"), getResource("item/quark/sky_slime_in_a_bucket"));
         excited(getResource("ender_slime_in_a_bucket"), getResource("item/quark/ender_slime_in_a_bucket"));

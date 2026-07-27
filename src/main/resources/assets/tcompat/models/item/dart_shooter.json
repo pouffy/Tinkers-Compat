@@ -2,14 +2,14 @@
   "loader": "tconstruct:tool",
   "parent": "tconstruct:item/base/bow",
   "textures": {
-    "limb":   "tcompat:item/tool/dart_shooter/limb",
-    "grip": "tcompat:item/tool/dart_shooter/grip"
+    "guard":   "tcompat:item/tool/dart_shooter/guard",
+    "barrel": "tcompat:item/tool/dart_shooter/barrel"
   },
-  "modifier_maps": ["tconstruct:bow"],
-  "modifier_roots": [ "tconstruct:item/tool/dart_shooter/modifiers/" ],
+  "modifier_maps": ["tcompat:dart_shooter"],
+  "modifier_roots": [ "tcompat:item/tool/dart_shooter/modifiers/" ],
   "parts": [
-    { "name": "limb", "index": 1 },
-    { "name": "grip",   "index": 0 }
+    { "name": "guard", "index": 0 },
+    { "name": "barrel",   "index": 1 }
   ],
   "display": {
     "thirdperson_lefthand": {

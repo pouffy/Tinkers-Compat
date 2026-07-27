@@ -7,6 +7,14 @@
     {
       "id": "tcompat:nether_ruby",
       "required": false
+    },
+    {
+      "id": "tcompat:golden_vine",
+      "required": false
+    },
+    {
+      "id": "tcompat:blooming_vine",
+      "required": false
     }
   ]
 }

@@ -103,6 +103,16 @@ public class TCLangProv extends LanguageProvider {
         add("item.tcompat.glaive.description", "The Glaive is a high reach, large radius polearm. Good for crowd control and long distance targets.");
         toEng("item.tcompat.dart");
         toEng("item.tcompat.dart_shooter");
+
+        toEng("item.tcompat.dart_barrel");
+        add("item.tcompat.dart_barrel_cast", "Dart Barrel Gold Cast");
+        toEng("item.tcompat.dart_barrel_sand_cast");
+        toEng("item.tcompat.dart_barrel_red_sand_cast");
+        toEng("item.tcompat.lip_guard");
+        add("item.tcompat.lip_guard_cast", "Lip Guard Gold Cast");
+        toEng("item.tcompat.lip_guard_sand_cast");
+        toEng("item.tcompat.lip_guard_red_sand_cast");
+
         toEng("item.tcompat.lightnum_ingot");
         toEng("item.tcompat.draculite_ingot");
         toEng("item.tcompat.stormforged_steel_ingot");
@@ -123,7 +133,9 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void misc() {
-        add("itemGroup.tcompat.tcompat", "Tinkers' Compatibility");
+        add("itemGroup.tcompat.general", "Tinkers' Compat General Items");
+        add("itemGroup.tcompat.tools", "Tinkers' Compat Tools");
+        add("itemGroup.tcompat.parts", "Tinkers' Compat Tool Parts");
 
         add("pack.tcompat.addon_compat.title", "Tinkers' Compatibility Addon Compatibility");
         add("pack.tcompat.addon_compat.description", "Pre-generated assets for addon tools and materials.");
@@ -191,6 +203,9 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tconstruct.rebalanced.rune", "Rune");
         add("recipe.tconstruct.remove_modifier.rune", "Extract Rune");
         add("recipe.tcompat.requirement.ignitium", "Ignitium requires Netherite to apply");
+
+        add("stat.tcompat.dart_barrel", "Dart Barrel");
+        add("stat.tcompat.lip_guard", "Lip Guard");
     }
 
     private void modifiers() {

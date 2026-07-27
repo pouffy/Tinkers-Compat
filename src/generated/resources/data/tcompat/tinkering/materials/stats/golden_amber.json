@@ -1,0 +1,16 @@
+{
+  "stats": {
+    "constructs_casting:adornment": {
+      "optional": true
+    },
+    "tcompat:lip_guard": {
+      "draw_speed": -0.1,
+      "durability": 0.1,
+      "velocity": 0.15
+    },
+    "tconstruct:arrow_head": {},
+    "tinkersjewelry:gem": {
+      "optional": true
+    }
+  }
+}

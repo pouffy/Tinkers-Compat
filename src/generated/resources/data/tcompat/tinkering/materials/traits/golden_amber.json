@@ -1,0 +1,24 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tconstruct:attractive"
+    },
+    {
+      "level": 1,
+      "name": "tinkersjewelry:precious"
+    },
+    {
+      "level": 1,
+      "name": "constructs_casting:holy_upgrade"
+    }
+  ],
+  "perStat": {
+    "tcompat:lip_guard": [
+      {
+        "level": 1,
+        "name": "tconstruct:lightweight"
+      }
+    ]
+  }
+}

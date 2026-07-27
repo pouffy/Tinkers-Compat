@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.datagen.tinkers.tool;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.GlobalDefinitions;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Blocks;
@@ -15,6 +16,9 @@ import slimeknights.tconstruct.library.tools.definition.module.build.SetStatsMod
 import slimeknights.tconstruct.library.tools.definition.module.build.ToolActionsModule;
 import slimeknights.tconstruct.library.tools.definition.module.build.ToolTraitsModule;
 import slimeknights.tconstruct.library.tools.definition.module.display.FixedMaterialToolName;
+import slimeknights.tconstruct.library.tools.definition.module.display.MaterialToolNameModule;
+import slimeknights.tconstruct.library.tools.definition.module.display.StatTypesToolNameModule;
+import slimeknights.tconstruct.library.tools.definition.module.display.ToolNameHook;
 import slimeknights.tconstruct.library.tools.definition.module.material.DefaultMaterialsModule;
 import slimeknights.tconstruct.library.tools.definition.module.material.PartStatsModule;
 import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveModule;
@@ -71,11 +75,10 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
                 .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
                 .module(swordHarvest)
                 .module(new SweepWeaponAttack(4));
-
         define(GlobalDefinitions.dartShooter)
                 .module(PartStatsModule.parts()
-                        .part(bowGrip)
-                        .part(bowLimb)
+                        .part(GlobalInit.lipGuard)
+                        .part(GlobalInit.dartBarrel)
                         .build())
                 .module(defaultTwoParts)
                 .module(new SetStatsModule(StatsNBT.builder()
@@ -86,6 +89,7 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
                 .module(new MultiplyStatsModule(MultiplierNBT.builder()
                         .set(ToolStats.DURABILITY, 1.5F)
                         .build()))
+                .module(MaterialToolNameModule.ALL)
                 .smallToolStartingSlots();
 
         define(GlobalDefinitions.dart)

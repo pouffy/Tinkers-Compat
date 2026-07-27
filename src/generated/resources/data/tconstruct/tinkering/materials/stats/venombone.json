@@ -1,0 +1,10 @@
+{
+  "stats": {
+    "tcompat:dart_barrel": {
+      "accuracy": -0.1,
+      "durability": 175,
+      "melee_damage": 2.25,
+      "optional": true
+    }
+  }
+}

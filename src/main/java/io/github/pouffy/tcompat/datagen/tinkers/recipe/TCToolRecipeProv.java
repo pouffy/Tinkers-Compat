@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
+import io.github.pouffy.tcompat.common.data.condition.DartShooterCondition;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -10,8 +11,12 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
 import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.partbuilder.recycle.PartBuilderToolRecycleBuilder;
+import slimeknights.tconstruct.library.recipe.tinkerstation.building.ToolBuildingRecipeBuilder;
+import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.tools.TinkerToolParts;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.function.Consumer;
 
@@ -26,6 +31,7 @@ public class TCToolRecipeProv extends TCBaseRecipeProvider implements IMaterialR
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         String folder = "tools/building/";
         String partFolder = "tools/parts/";
+        String castFolder = "smeltery/casts/";
 
         Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, modLoaded("iceandfire"));
 
@@ -50,10 +56,15 @@ public class TCToolRecipeProv extends TCBaseRecipeProvider implements IMaterialR
                 .setCost(2)
                 .save(iceandfireConsumer, location(partFolder + "builder/" + getResource("tconstruct", "boots_plating").getPath()));
 
+        this.partRecipes(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), GlobalInit.dartBarrel, GlobalInit.dartBarrelCast, 2, partFolder, castFolder);
+        this.partRecipes(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), GlobalInit.lipGuard, GlobalInit.lipGuardCast, 1, partFolder, castFolder);
+
+
         toolBuilding(consumer, GlobalInit.glaive, folder);
 
-        toolBuilding(withCondition(consumer, modLoaded("aether")), GlobalInit.dartShooter, folder);
-        toolBuilding(withCondition(consumer, modLoaded("aether")), GlobalInit.dart, folder);
+        toolBuilding(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), GlobalInit.dartShooter, folder);
+        ToolBuildingRecipeBuilder.toolBuildingRecipe(GlobalInit.dart.get()).outputSize(4).save(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), this.prefix(GlobalInit.dart, folder));
+
     }
 
     @Override

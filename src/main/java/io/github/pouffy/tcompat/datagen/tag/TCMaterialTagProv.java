@@ -43,11 +43,19 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
                 AetherTRMaterials.neptune,
                 AetherMaterials.lightnum,
                 DeepAetherMaterials.stormforgedSteel,
-                AetherMaterials.draculite
+                AetherMaterials.draculite,
+                AetherMaterials.aechor,
+                AetherMaterials.goldenAmber,
+                AetherReduxMaterials.corruptedVine,
+                AetherReduxMaterials.goldVine,
+                AetherReduxMaterials.mykapodShell,
+                AetherReduxMaterials.blightbunnyFang
         );
         tag(TinkerTags.Materials.NETHER_GATED).addOptional(
                 BetternetherMaterials.cincinnasite,
-                BetternetherMaterials.netherRuby
+                BetternetherMaterials.netherRuby,
+                BetternetherMaterials.goldenVine,
+                BetternetherMaterials.bloomingVine
         );
         tag(TCTags.Materials.CURSIUM_COMPANION).addOptional(
                 CataclysmMaterials.blackSteel
@@ -56,7 +64,7 @@ public class TCMaterialTagProv extends AbstractMaterialTagProvider {
                 CataclysmMaterials.essenceOfTheStorm
         );
         tag(TCTags.Materials.WITHERITE_COMPANION).addOptional(
-                MaterialIds.iron
+                MaterialIds.iron, MaterialIds.steel, MaterialIds.magnetite, MaterialIds.ironwood, MaterialIds.pigIron
         );
         var lootExclusion = tag(TinkerTags.Materials.EXCLUDE_FROM_LOOT);
         MaterialBuilder.getMaterials().stream().filter(MaterialBuilder::isExcludedFromLoot).map(MaterialBuilder::materialId).forEach(lootExclusion::addOptional);

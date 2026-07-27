@@ -5,6 +5,9 @@ import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
+import io.github.pouffy.tcompat.compat.aether.AetherInit;
+import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
+import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -37,7 +40,8 @@ public class AetherReduxMaterials {
                     s.stat(
                             new HeadMaterialStats(750, 2.25f, IRON, 3.5f),
                             HandleMaterialStats.multipliers().durability(0.85f).miningSpeed(0.95f).build(),
-                            StatlessMaterialStats.BINDING
+                            StatlessMaterialStats.BINDING,
+                            new LipGuardMaterialStats(0.85f, 1.25f, 0.95f)
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(19).armor(4, 6, 7, 4).toughness(0.5f), StatlessMaterialStats.MAILLE
                     ).statOptional(
@@ -45,7 +49,7 @@ public class AetherReduxMaterials {
                     )
             )
             .renderInfo(r -> r.color(0x5a90bd).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().sixColor(0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb))
+            .spriteInfo(s -> s.fallbacks("metal").lipGuard().repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().sixColor(0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb))
             .buildMaterial();
 
     public static final MaterialId refinedSentrite = MaterialBuilder.material("aether_redux", "refined_sentrite")
@@ -55,7 +59,8 @@ public class AetherReduxMaterials {
             .stats(s ->
                     s.stat(
                             new HeadMaterialStats(1126, 5f, DIAMOND, 3.5f),
-                            new GripMaterialStats(0.02f, 0.15f, 3.5f)
+                            new GripMaterialStats(0.02f, 0.15f, 3.5f),
+                            new DartBarrelMaterialStats(1126, 0.15f, 3.5f)
                     ).armorShieldStats(
                             PlatingMaterialStats.builder().durabilityFactor(26).armor(5.2f, 7.2f, 8.2f, 5.2f).knockbackResistance(1).toughness(0.8f), StatlessMaterialStats.MAILLE
                     ).statOptional(
@@ -63,14 +68,14 @@ public class AetherReduxMaterials {
                     )
             )
             .renderInfo(r -> r.color(0x5c5c61).fallbacks("metal"))
-            .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).statType(GripMaterialStats.ID, HeadMaterialStats.ID).armor().sixColor(0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1))
+            .spriteInfo(s -> s.fallbacks("metal").dartBarrel().repairKit().statType(PlainRingMaterialStats.ID).statType(GripMaterialStats.ID, HeadMaterialStats.ID).armor().sixColor(0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1))
             .buildMaterial();
 
     public static final MaterialId blightbunnyFang = MaterialBuilder.material("aether_redux", "blightbunny_fang")
             .flavor("Big pointy teeth.")
             .data(d -> d.tier(1).order(4).craftable(true)).excludeFromLoot()
             .traits(t -> t
-                    .trait(AetherReduxInit.blighted)
+                    .trait(AetherInit.blighted)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.poison_gem, 3))
             )
             .stats(s ->
@@ -97,7 +102,7 @@ public class AetherReduxMaterials {
     public static final MaterialId corruptedVine = MaterialBuilder.material("aether_redux", "corrupted_vine")
             .flavor("Why are you so toxic?")
             .data(d -> d.tier(2).order(0).craftable(true))
-            .traits(t -> t.trait(AetherReduxInit.blighted))
+            .traits(t -> t.trait(AetherInit.blighted))
             .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
             .renderInfo(r -> r.color(0xFF6072b1).fallbacks("primitive", "cloth"))
             .spriteInfo(s -> s.vines().sixColor(0xFF3f365f, 0xFF584876, 0xFF705685, 0xFF6072b1, 0xFF6da4bf, 0xFF61cfba))

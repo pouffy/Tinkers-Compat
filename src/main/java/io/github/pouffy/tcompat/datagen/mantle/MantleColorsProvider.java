@@ -65,7 +65,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(AetherInit.autochant.getId(),              0xe5eb62);
         addColor(AetherInit.autofreeze.getId(),             0xc6e1e1);
         //Aether Redux
-        addColor(AetherReduxInit.blighted.getId(),          0x8058f6);
+        addColor(AetherInit.blighted.getId(),               0x8058f6);
         addColor(TCModifiers.escarstay,                     0x7178c2);
         addColor(AetherReduxInit.ambrofusion.getId(),       0x7fbedc);
         //Aether Treasure Reforging

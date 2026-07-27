@@ -1,0 +1,10 @@
+{
+  "stats": {
+    "tcompat:lip_guard": {
+      "draw_speed": 0.1,
+      "durability": 0.2,
+      "optional": true,
+      "velocity": -0.1
+    }
+  }
+}

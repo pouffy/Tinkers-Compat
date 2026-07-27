@@ -41,6 +41,14 @@
       "required": false
     },
     {
+      "id": "tcompat:aechor",
+      "required": false
+    },
+    {
+      "id": "tcompat:golden_amber",
+      "required": false
+    },
+    {
       "id": "tcompat:nether_ruby",
       "required": false
     },

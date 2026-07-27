@@ -6,6 +6,7 @@ import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.entity.ModifiableDart;
 import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartItem;
 import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartShooter;
+import io.github.pouffy.tcompat.compat.aether.modifier.combat.BlightedModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.AscensionModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.BloodsuckingModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.ThunderstruckModifier;
@@ -44,6 +45,7 @@ public class AetherInit extends CompatInitializer {
     public static final StaticModifier<AscensionModifier> ascension = AETHER_M.register("ascension", AscensionModifier::new); // Gravitite
     public static final StaticModifier<ThunderstruckModifier> thunderstruck = AETHER_M.register("thunderstruck", ThunderstruckModifier::new); // Lightnum
     public static final StaticModifier<BloodsuckingModifier> bloodsucking = AETHER_M.register("bloodsucking", BloodsuckingModifier::new); // Draculite
+    public static final StaticModifier<BlightedModifier> blighted = AETHER_M.register("blighted", BlightedModifier::new);
 
 
 

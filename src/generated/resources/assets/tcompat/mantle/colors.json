@@ -1,5 +1,6 @@
 {
   "material.tcompat": {
+    "aechor": "#A87AD8",
     "aeternium": "#6D8883",
     "aether_rock": "#FFFFFF",
     "aether_rock.aseterite": "#A296A1",
@@ -51,6 +52,7 @@
     "fire_dragon_scale.red": "#891E3D",
     "fire_dragonsteel": "#774153",
     "gold_vine": "#D3AE32",
+    "golden_amber": "#E79025",
     "golden_vine": "#FFCB00",
     "gravitite": "#B643A0",
     "hallowed_gold": "#F7D85A",

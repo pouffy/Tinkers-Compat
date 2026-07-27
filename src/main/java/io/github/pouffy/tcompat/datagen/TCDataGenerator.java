@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen;
 
 import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.datagen.client.TCItemModelProv;
 import io.github.pouffy.tcompat.datagen.client.TCToolItemModelProv;
 import io.github.pouffy.tcompat.datagen.fluid.TCFluidTooltipProv;
@@ -60,7 +61,7 @@ public class TCDataGenerator {
         //For Tinkers' Tools
         generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, new TinkerPartSpriteProvider(), materialSprites));
         //For TCompat Tools
-        generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, partSprites, materialSprites, new TinkerMaterialSpriteProvider()));
+        generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, partSprites, GlobalInit.getStatOverrides(), materialSprites, new TinkerMaterialSpriteProvider()));
         generator.addProvider(client, new GeneratorPartTextureJsonGenerator(packOutput, TCompat.MOD_ID, partSprites));
         generator.addProvider(client, new GeneratorPartTextureJsonGenerator(packOutput, TConstruct.MOD_ID, partSprites));
         generator.addProvider(server, new TCModifierProv(packOutput));

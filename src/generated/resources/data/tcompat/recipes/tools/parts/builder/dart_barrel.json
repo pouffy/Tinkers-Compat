@@ -1,0 +1,30 @@
+{
+  "type": "tconstruct:part_builder",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "tcompat:force_enabled_dart_shooters"
+        }
+      ]
+    }
+  ],
+  "cost": 2,
+  "pattern": "tcompat:dart_barrel",
+  "pattern_item": [
+    {
+      "tag": "tconstruct:patterns/default"
+    },
+    {
+      "item": "tcompat:dart_barrel_cast"
+    }
+  ],
+  "result": {
+    "item": "tcompat:dart_barrel"
+  }
+}

@@ -54,6 +54,14 @@ public abstract class TCSlimeInABucketItem extends Item {
         }
     }
 
+    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
+        ItemStack oldWithoutExcited = oldStack.copy();
+        oldWithoutExcited.getOrCreateTag().remove("excited");
+        ItemStack newWithoutExcited = newStack.copy();
+        newWithoutExcited.getOrCreateTag().remove("excited");
+        return !oldWithoutExcited.equals(newWithoutExcited);
+    }
+
     abstract Vec3 createSlime(Level worldIn, CompoundTag data, double x, double y, double z);
 
     public @NotNull InteractionResult useOn(UseOnContext context) {

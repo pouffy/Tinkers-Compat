@@ -25,6 +25,8 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static io.github.pouffy.tcompat.TCompat.getResource;
+import static slimeknights.tconstruct.common.TinkerTags.Items.SMALL_TOOLS;
+import static slimeknights.tconstruct.common.TinkerTags.Items.TOOL_PARTS;
 
 @SuppressWarnings("SameParameterValue")
 public class TCItemTagProv extends ItemTagsProvider {
@@ -136,6 +138,7 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TinkerTags.Items.SMALL_RANGED).addOptional(dartShooter);
         this.tag(TinkerTags.Items.AMMO).addOptional(dart);
         this.tag(TinkerTags.Items.DYEABLE).addOptional(dart);
+        this.tag(SMALL_TOOLS).addOptional(dartShooter);
         this.tag(ItemTags.create(getResource("forge:tools"))).addOptional(glaive);
         this.tag(ItemTags.create(getResource("minecraft:tools"))).addOptional(glaive);
         this.tag(ItemTags.create(getResource("tleveling:levelable"))).addOptional(glaive).addOptional(dartShooter);
@@ -147,6 +150,19 @@ public class TCItemTagProv extends ItemTagsProvider {
 
         this.tag(TCTags.Items.DARTS)
                 .add(GlobalInit.dart.get());
+
+        this.tag(GlobalInit.dartBarrelCast.getMultiUseTag())
+                .add(GlobalInit.dartBarrelCast.get());
+        this.tag(GlobalInit.dartBarrelCast.getSingleUseTag())
+                .add(GlobalInit.dartBarrelCast.getSand(), GlobalInit.dartBarrelCast.getRedSand());
+
+        this.tag(GlobalInit.lipGuardCast.getMultiUseTag())
+                .add(GlobalInit.lipGuardCast.get());
+        this.tag(GlobalInit.lipGuardCast.getSingleUseTag())
+                .add(GlobalInit.lipGuardCast.getSand(), GlobalInit.lipGuardCast.getRedSand());
+
+        this.tag(TOOL_PARTS).add(GlobalInit.lipGuard.get(), GlobalInit.dartBarrel.get());
+
     }
 
     private void addForge() {

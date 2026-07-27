@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 //TODO: Parts:
-// Blowpipe: 2x material value | Wood and rock (maybe some metals?)
+// Dart Barrel: 2x material value | Wood and rock (maybe some metals?)
 // Lip Guard: 1x material value | Metal and Gem
 public class ModifiableDartItem extends Item implements IModifiableDisplay {
     @Getter

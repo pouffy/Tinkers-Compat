@@ -2,10 +2,18 @@
   "type": "tconstruct:tool_building",
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "aether"
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "tcompat:force_enabled_dart_shooters"
+        }
+      ]
     }
   ],
   "result": "tcompat:dart",
-  "result_count": 1
+  "result_count": 4
 }

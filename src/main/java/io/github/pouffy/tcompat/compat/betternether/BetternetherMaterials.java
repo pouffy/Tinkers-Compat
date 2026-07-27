@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.compat.betternether;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
+import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -57,12 +58,14 @@ public class BetternetherMaterials {
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
                             CompatToolStats.Statless.CUT_GEM,
-                            CompatToolStats.Statless.ADORNMENT
+                            CompatToolStats.Statless.ADORNMENT,
+                            new LipGuardMaterialStats(0.15f, -0.2f, 0.1f)
                     )
             )
             .renderInfo(r -> r.color(0xeb4150).fallbacks("gem", "metal"))
             .spriteInfo(s -> s.fallbacks("gem", "metal")
                     .repairKit()
+                    .lipGuard()
                     .statType(CompatToolStats.Statless.CUT_GEM.getIdentifier())
                     .statType(CompatToolStats.Statless.ADORNMENT.getIdentifier())
                     .armor()

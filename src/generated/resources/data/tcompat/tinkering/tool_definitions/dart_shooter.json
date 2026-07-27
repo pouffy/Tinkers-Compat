@@ -3,8 +3,8 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
-        "tconstruct:bow_grip",
-        "tconstruct:bow_limb"
+        "tcompat:lip_guard",
+        "tcompat:dart_barrel"
       ],
       "primary_part": 0
     },
@@ -34,6 +34,10 @@
       "multipliers": {
         "tconstruct:durability": 1.5
       }
+    },
+    {
+      "type": "tconstruct:material_name",
+      "filter": "all"
     },
     {
       "type": "tconstruct:modifier_slots",
