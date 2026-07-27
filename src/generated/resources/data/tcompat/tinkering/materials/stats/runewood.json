@@ -5,6 +5,11 @@
       "optional": true,
       "spell_power": 0.25
     },
+    "tcompat:dart_barrel": {
+      "accuracy": 0.95,
+      "durability": 80,
+      "melee_damage": 1.0
+    },
     "tconstruct:arrow_shaft": {},
     "tconstruct:binding": {},
     "tconstruct:grip": {

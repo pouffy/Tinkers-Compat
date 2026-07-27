@@ -3,6 +3,8 @@ package io.github.pouffy.tcompat.compat.deeperdarker;
 import io.github.pouffy.tcompat.common.material.MaterialBuilder;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
+import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
+import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
@@ -29,14 +31,15 @@ public class DarkerMaterials {
                             HandleMaterialStats.multipliers().durability(1.05f).attackSpeed(1.25f).build(),
                             StatlessMaterialStats.BINDING,
                             new LimbMaterialStats(200, 0.07f, -0.07f, 0.07f),
-                            new GripMaterialStats(1.0f, 0.15f, 1.5f), StatlessMaterialStats.ARROW_SHAFT
+                            new GripMaterialStats(1.0f, 0.15f, 1.5f), StatlessMaterialStats.ARROW_SHAFT,
+                            new DartBarrelMaterialStats(200, 0.75f, 1.2f)
                     ).statOptional(
                             CompatToolStats.Statless.CUT_GEM,
                             CompatToolStats.magicBase(90, -0.05f)
                     )
             )
             .renderInfo(r -> r.color(0xc6cda7).fallbacks("bone", "rock"))
-            .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).statType(MagicBaseMaterialStats.ID).arrowShaft().ranged().fallbacks("bone", "rock").sixColor(0xFF6e757b, 0xFF819988, 0xFFa2af86, 0xFFc6cda7, 0xFFdbe0c1, 0xFFecefda))
+            .spriteInfo(s -> s.meleeHarvest().dartBarrel().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).statType(MagicBaseMaterialStats.ID).arrowShaft().ranged().fallbacks("bone", "rock").sixColor(0xFF6e757b, 0xFF819988, 0xFFa2af86, 0xFFc6cda7, 0xFFdbe0c1, 0xFFecefda))
             .buildMaterial();
 
 
@@ -44,9 +47,9 @@ public class DarkerMaterials {
             .flavor("A parasitic bond.")
             .data(d -> d.tier(1).order(0).craftable(true))
             .traits(t -> t.trait(DarkerInit.sculkAffinity))
-            .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE))
+            .stats(s -> s.stat(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING, StatlessMaterialStats.MAILLE, new LipGuardMaterialStats(0.1f, -0.1f, 0.15f)))
             .renderInfo(r -> r.color(0xFF074756).fallbacks("primitive", "cloth"))
-            .spriteInfo(s -> s.vines().sixColor(0xFF080c0f, 0xFF111b21, 0xFF052931, 0xFF074756, 0xFF057072, 0xFF009093))
+            .spriteInfo(s -> s.vines().lipGuard().sixColor(0xFF080c0f, 0xFF111b21, 0xFF052931, 0xFF074756, 0xFF057072, 0xFF009093))
             .buildMaterial();
 
     public static void staticInit() {}

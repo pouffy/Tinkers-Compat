@@ -183,8 +183,8 @@ public class AetherMaterials {
                             CompatToolStats.Statless.ADORNMENT
                     )
             )
-            .renderInfo(r -> r.color(0xf09a24).fallbacks("primitive", "cloth"))
-            .spriteInfo(s -> s.fallbacks("primitive", "cloth").repairKit().lipGuard().arrowHead().statType(CompatToolStats.Statless.ADORNMENT).statType(CompatToolStats.Statless.CUT_GEM).sixColor(0xFF873509, 0xFFbe520e, 0xFFd36e15, 0xFFf09a24, 0xFFf8b52f, 0xFFffd84d))
+            .renderInfo(r -> r.color(0xf09a24).fallbacks("gem"))
+            .spriteInfo(s -> s.fallbacks("gem").repairKit().lipGuard().arrowHead().statType(CompatToolStats.Statless.ADORNMENT).statType(CompatToolStats.Statless.CUT_GEM).sixColor(0xFF873509, 0xFFbe520e, 0xFFd36e15, 0xFFf09a24, 0xFFf8b52f, 0xFFffd84d))
             .buildMaterial();
 
     public static final MaterialVariantId skyroot = aetherWoodVariant(TCWoods.SKYROOT, 0xFF333122, 0xFF403D2A, 0xFF4F4D36, 0xFF5C5B41, 0xFF63634A, 0xFF737558, 0xFF7B7E61);
