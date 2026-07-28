@@ -3,10 +3,6 @@
     {
       "id": "tcompat:glaive",
       "required": false
-    },
-    {
-      "id": "tcompat:dart_shooter",
-      "required": false
     }
   ]
 }

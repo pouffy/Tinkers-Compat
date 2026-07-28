@@ -11,7 +11,6 @@ import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
 import io.github.pouffy.tcompat.compat.betterend.BetterendInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
-import io.github.pouffy.tcompat.compat.create.CreateInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
@@ -165,8 +164,6 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.heartbeat,                     0x819988);
         addColor(DarkerInit.sonorous.getId(),               0x26c6fc);
         addColor(DarkerInit.sculkAffinity.getId(),          0x074756);
-        //Create
-        addColor(CreateInit.clockwork.getId(),              0xb57849);
     }
 
     public void addColor(MaterialBuilder material) {

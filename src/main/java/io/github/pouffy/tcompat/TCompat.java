@@ -16,7 +16,6 @@ import net.minecraft.SharedConstants;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
@@ -126,10 +125,6 @@ public class TCompat {
 
     public static String makeDescriptionId(String type, String name) {
         return type + "." + MOD_ID + "." + name;
-    }
-
-    public static MutableComponent makeTranslation(String base, String name) {
-        return Component.translatable(makeDescriptionId(base, name));
     }
 
     @SubscribeEvent

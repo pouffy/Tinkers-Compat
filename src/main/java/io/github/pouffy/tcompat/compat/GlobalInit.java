@@ -20,8 +20,6 @@ import io.github.pouffy.tcompat.compat.ice_and_fire.item.ModifiableGlaiveItem;
 import io.github.pouffy.tcompat.config.TCompatConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
@@ -44,11 +42,8 @@ import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
-import slimeknights.mantle.registration.deferred.EnumDeferredRegister;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
-import slimeknights.mantle.registration.object.EnumObject;
 import slimeknights.mantle.registration.object.ItemObject;
-import slimeknights.tconstruct.common.TinkerEffect;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
@@ -65,8 +60,6 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 import slimeknights.tconstruct.tools.data.ModifierIds;
-import slimeknights.tconstruct.tools.modifiers.effect.NoMilkEffect;
-import slimeknights.tconstruct.tools.stats.ToolType;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -76,7 +69,6 @@ import static io.github.pouffy.tcompat.TCompat.getResource;
 public class GlobalInit extends CompatInitializer {
     public static final ItemDeferredRegisterExtension ITEMS = new ItemDeferredRegisterExtension(TCompat.MOD_ID);
     public static final EntityTypeDeferredRegister ENTITIES = new EntityTypeDeferredRegister(TCompat.MOD_ID);
-    public static final EnumDeferredRegister<MobEffect> MOB_EFFECTS = new EnumDeferredRegister<>(Registries.MOB_EFFECT, TCompat.MOD_ID);
 
     public static final RegistryObject<EntityType<ModifiableDart>> modifiableDart = ENTITIES.register("dart", () -> EntityType.Builder.<ModifiableDart>of(ModifiableDart::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 
@@ -90,8 +82,6 @@ public class GlobalInit extends CompatInitializer {
 
     public static final CastItemObject dartBarrelCast = ITEMS.registerCast(dartBarrel, new Item.Properties());
     public static final CastItemObject lipGuardCast = ITEMS.registerCast(lipGuard, new Item.Properties());
-
-    public static final EnumObject<ToolType, TinkerEffect> clockworkEffect = MOB_EFFECTS.registerEnum("momentum", new ToolType[]{ToolType.HARVEST, ToolType.RANGED, ToolType.MELEE}, (type) -> new NoMilkEffect(MobEffectCategory.BENEFICIAL, 6310251, true));
 
     public static final ModuleHook<AetherForgedModifierHook> AETHER_FORGED = ModifierHooks.register(getResource("aether_forged"), AetherForgedModifierHook.class, new AetherForgedModifierHook() {
         @Override
@@ -219,7 +209,6 @@ public class GlobalInit extends CompatInitializer {
     public static void init(IEventBus eventBus) {
         ITEMS.register(eventBus);
         ENTITIES.register(eventBus);
-        MOB_EFFECTS.register(eventBus);
         WoodMaterials.staticInit();
         RockMaterials.staticInit();
     }
