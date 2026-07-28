@@ -13,6 +13,7 @@ import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.base.PacketRelay;
 import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
+import io.github.pouffy.tcompat.compat.aether.entity.ModifiableDart;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerHandler;
@@ -26,6 +27,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
@@ -50,6 +53,11 @@ public class TCCommonEvents {
                     ability.impactEvent(event, innerProjectile);
                 });
             });
+        }
+        if (event.getEntity() instanceof ModifiableDart dart) {
+            if (event.getRayTraceResult().getType() != HitResult.Type.MISS) {
+                dart.setNoGravity(false);
+            }
         }
     }
 
