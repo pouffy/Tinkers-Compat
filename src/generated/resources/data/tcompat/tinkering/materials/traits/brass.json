@@ -1,0 +1,16 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tcompat:clockwork"
+    }
+  ],
+  "perStat": {
+    "tinkersjewelry:plain_ring": [
+      {
+        "level": 1,
+        "name": "tcompat:armor_toughness_gem"
+      }
+    ]
+  }
+}

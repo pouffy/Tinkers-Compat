@@ -16,6 +16,7 @@ import io.github.pouffy.tcompat.compat.betterend.BetterendMaterials;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
 import io.github.pouffy.tcompat.compat.bwg.BWGMaterials;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmMaterials;
+import io.github.pouffy.tcompat.compat.create.CreateMaterials;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerMaterials;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFMaterials;
@@ -35,6 +36,7 @@ import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.data.ItemNameOutput;
 import slimeknights.mantle.recipe.helper.ItemOutput;
+import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.recipe.FluidValues;
@@ -78,6 +80,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
         Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
         Consumer<FinishedRecipe> malum = withCondition(consumer, modLoaded("malum"));
+        Consumer<FinishedRecipe> create = withCondition(consumer, modLoaded("create"));
 
         // Streamline variant recipes
         MaterialBuilder.woodMaterials.forEach((builder, woodType) -> {
@@ -245,6 +248,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         gemMaterialRecipe(betterend, BetternetherMaterials.netherRuby, folder, "nether_ruby", true, false, true);
 
         materialRecipe(speciesConsumer, SpeciesMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
+
+        metalMaterialRecipe(create, CreateMaterials.brass, folder, "brass", true);
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
@@ -259,6 +264,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> iceandfire = withCondition(consumer, modLoaded("iceandfire"));
         Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
         Consumer<FinishedRecipe> malum = withCondition(consumer, modLoaded("malum"));
+        Consumer<FinishedRecipe> create = withCondition(consumer, modLoaded("create"));
 
         //materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
         materialMelting(aetherConsumer, AetherMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
@@ -300,6 +306,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingCasting(malum, MalumMaterials.malignantPewter, TCFluids.moltenMalignantPewter, folder);
 
         materialComposite(cataclysm, MaterialIds.string, CataclysmMaterials.cursium, TCFluids.moltenCursium, FluidValues.INGOT, folder);
+
+        materialMeltingCasting(create, CreateMaterials.brass, TinkerFluids.moltenBrass, FluidValues.INGOT, folder);
     }
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

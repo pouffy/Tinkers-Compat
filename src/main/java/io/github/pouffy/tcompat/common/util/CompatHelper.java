@@ -12,6 +12,7 @@ import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
 import io.github.pouffy.tcompat.compat.bwg.BWGInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmInit;
+import io.github.pouffy.tcompat.compat.create.CreateInit;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherInit;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
@@ -52,6 +53,7 @@ public class CompatHelper {
         compatInitializers.put("betternether", BetternetherInit::init);
         compatInitializers.put("biomeswevegone", BWGInit::init);
         compatInitializers.put("cataclysm", CataclysmInit::init);
+        compatInitializers.put("create", CreateInit::init);
         compatInitializers.put("deep_aether", DeepAetherInit::init);
         compatInitializers.put("iceandfire", IFInit::init);
         compatInitializers.put("malum", MalumInit::init);
@@ -66,6 +68,7 @@ public class CompatHelper {
         compatEvents.put("betterend", (bus) -> bus.register(new BetterendInit()));
         compatEvents.put("betternether", (bus) -> bus.register(new BetternetherInit()));
         compatEvents.put("cataclysm", (bus) -> bus.register(new CataclysmInit()));
+        compatEvents.put("create", (bus) -> bus.register(new CreateInit()));
         compatEvents.put("deep_aether", (bus) -> bus.register(new DeepAetherInit()));
         compatEvents.put("iceandfire", (bus) -> bus.register(new IFInit()));
         compatEvents.put("malum", (bus) -> bus.register(new MalumInit()));
