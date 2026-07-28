@@ -3,11 +3,11 @@
   "byproducts": [
     {
       "amount": 90,
-      "tag": "forge:molten_iron"
+      "tag": "forge:molten_gold"
     },
     {
-      "amount": 65,
-      "tag": "forge:molten_copper"
+      "amount": 50,
+      "tag": "forge:molten_iron"
     }
   ],
   "conditions": [
@@ -17,12 +17,12 @@
     }
   ],
   "ingredient": {
-    "item": "create:smart_fluid_pipe"
+    "item": "create:mechanical_arm"
   },
   "result": {
-    "amount": 90,
+    "amount": 360,
     "tag": "forge:molten_brass"
   },
   "temperature": 605,
-  "time": 54
+  "time": 107
 }

@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:redstone_contact"
+    },
+    {
+      "item": "create:display_board"
+    },
+    {
+      "item": "create:nixie_tube"
+    }
+  ],
+  "result": {
+    "amount": 45,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 43
+}

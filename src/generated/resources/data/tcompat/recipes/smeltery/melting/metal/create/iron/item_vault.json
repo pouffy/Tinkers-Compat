@@ -8,16 +8,16 @@
   ],
   "ingredient": [
     {
-      "item": "create:fluid_pipe"
+      "item": "create:item_vault"
     },
     {
-      "item": "create:mechanical_pump"
+      "item": "create:package_frogport"
     }
   ],
   "result": {
-    "amount": 65,
-    "tag": "forge:molten_copper"
+    "amount": 180,
+    "tag": "forge:molten_iron"
   },
-  "temperature": 500,
-  "time": 42
+  "temperature": 800,
+  "time": 85
 }

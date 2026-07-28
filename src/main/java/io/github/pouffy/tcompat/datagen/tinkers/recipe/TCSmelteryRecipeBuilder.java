@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.errorprone.annotations.CheckReturnValue;
+import com.mojang.datafixers.util.Either;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

@@ -12,13 +12,18 @@
       "modid": "create"
     }
   ],
-  "ingredient": {
-    "item": "create:portable_fluid_interface"
-  },
+  "ingredient": [
+    {
+      "item": "create:industrial_iron_window"
+    },
+    {
+      "item": "create:weathered_iron_window"
+    }
+  ],
   "result": {
-    "amount": 90,
-    "tag": "forge:molten_copper"
+    "amount": 500,
+    "fluid": "tconstruct:molten_glass"
   },
-  "temperature": 500,
-  "time": 50
+  "temperature": 750,
+  "time": 138
 }

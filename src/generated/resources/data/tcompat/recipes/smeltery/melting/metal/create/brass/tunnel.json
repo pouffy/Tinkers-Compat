@@ -1,15 +1,5 @@
 {
   "type": "tconstruct:melting",
-  "byproducts": [
-    {
-      "amount": 90,
-      "tag": "forge:molten_iron"
-    },
-    {
-      "amount": 65,
-      "tag": "forge:molten_copper"
-    }
-  ],
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -17,7 +7,7 @@
     }
   ],
   "ingredient": {
-    "item": "create:smart_fluid_pipe"
+    "item": "create:brass_tunnel"
   },
   "result": {
     "amount": 90,

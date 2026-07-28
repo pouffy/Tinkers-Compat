@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:framed_glass_door"
+    },
+    {
+      "item": "create:framed_glass_trapdoor"
+    },
+    {
+      "item": "create:tiled_glass"
+    },
+    {
+      "item": "create:framed_glass"
+    },
+    {
+      "item": "create:horizontal_framed_glass"
+    },
+    {
+      "item": "create:vertical_framed_glass"
+    }
+  ],
+  "result": {
+    "amount": 1000,
+    "fluid": "tconstruct:molten_glass"
+  },
+  "temperature": 750,
+  "time": 195
+}

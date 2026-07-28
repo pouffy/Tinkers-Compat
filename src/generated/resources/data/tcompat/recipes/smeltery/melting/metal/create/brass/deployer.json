@@ -4,10 +4,6 @@
     {
       "amount": 90,
       "tag": "forge:molten_iron"
-    },
-    {
-      "amount": 65,
-      "tag": "forge:molten_copper"
     }
   ],
   "conditions": [
@@ -17,12 +13,12 @@
     }
   ],
   "ingredient": {
-    "item": "create:smart_fluid_pipe"
+    "item": "create:deployer"
   },
   "result": {
-    "amount": 90,
+    "amount": 360,
     "tag": "forge:molten_brass"
   },
   "temperature": 605,
-  "time": 54
+  "time": 107
 }

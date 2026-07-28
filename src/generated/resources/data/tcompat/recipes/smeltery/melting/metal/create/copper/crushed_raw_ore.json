@@ -1,9 +1,10 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:ore_melting",
   "byproducts": [
     {
-      "amount": 65,
-      "tag": "forge:molten_iron"
+      "amount": 30,
+      "rate": "metal",
+      "tag": "forge:molten_gold"
     }
   ],
   "conditions": [
@@ -13,8 +14,9 @@
     }
   ],
   "ingredient": {
-    "item": "create:portable_fluid_interface"
+    "item": "create:crushed_raw_copper"
   },
+  "rate": "metal",
   "result": {
     "amount": 90,
     "tag": "forge:molten_copper"

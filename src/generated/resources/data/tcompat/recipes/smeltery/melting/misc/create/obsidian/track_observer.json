@@ -2,8 +2,8 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 65,
-      "tag": "forge:molten_iron"
+      "amount": 45,
+      "tag": "forge:molten_brass"
     }
   ],
   "conditions": [
@@ -13,12 +13,12 @@
     }
   ],
   "ingredient": {
-    "item": "create:portable_fluid_interface"
+    "item": "create:track_observer"
   },
   "result": {
-    "amount": 90,
-    "tag": "forge:molten_copper"
+    "amount": 125,
+    "fluid": "tconstruct:molten_obsidian"
   },
-  "temperature": 500,
-  "time": 50
+  "temperature": 1000,
+  "time": 78
 }

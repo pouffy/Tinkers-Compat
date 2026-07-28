@@ -1,24 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "byproducts": [
-    {
-      "amount": 90,
-      "tag": "forge:molten_iron"
-    },
-    {
-      "amount": 65,
-      "tag": "forge:molten_copper"
-    }
-  ],
   "conditions": [
     {
       "type": "forge:mod_loaded",
       "modid": "create"
     }
   ],
-  "ingredient": {
-    "item": "create:smart_fluid_pipe"
-  },
+  "ingredient": [
+    {
+      "item": "create:brass_casing"
+    },
+    {
+      "item": "create:brass_door"
+    }
+  ],
   "result": {
     "amount": 90,
     "tag": "forge:molten_brass"

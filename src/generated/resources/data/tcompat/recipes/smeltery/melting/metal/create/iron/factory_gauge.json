@@ -2,7 +2,15 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 65,
+      "amount": 135,
+      "tag": "forge:molten_copper"
+    },
+    {
+      "amount": 45,
+      "tag": "forge:molten_gold"
+    },
+    {
+      "amount": 20,
       "tag": "forge:molten_iron"
     }
   ],
@@ -13,12 +21,12 @@
     }
   ],
   "ingredient": {
-    "item": "create:portable_fluid_interface"
+    "item": "create:factory_gauge"
   },
   "result": {
     "amount": 90,
-    "tag": "forge:molten_copper"
+    "tag": "forge:molten_iron"
   },
-  "temperature": 500,
-  "time": 50
+  "temperature": 800,
+  "time": 60
 }

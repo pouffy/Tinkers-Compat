@@ -1,11 +1,5 @@
 {
   "type": "tconstruct:melting",
-  "byproducts": [
-    {
-      "amount": 65,
-      "tag": "forge:molten_copper"
-    }
-  ],
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -13,12 +7,12 @@
     }
   ],
   "ingredient": {
-    "item": "create:fluid_valve"
+    "item": "create:metal_bracket"
   },
   "result": {
-    "amount": 90,
+    "amount": 50,
     "tag": "forge:molten_iron"
   },
   "temperature": 800,
-  "time": 60
+  "time": 45
 }

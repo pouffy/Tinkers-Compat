@@ -6,18 +6,13 @@
       "modid": "create"
     }
   ],
-  "ingredient": [
-    {
-      "item": "create:fluid_pipe"
-    },
-    {
-      "item": "create:mechanical_pump"
-    }
-  ],
+  "ingredient": {
+    "item": "create:transmitter"
+  },
   "result": {
-    "amount": 65,
+    "amount": 540,
     "tag": "forge:molten_copper"
   },
   "temperature": 500,
-  "time": 42
+  "time": 122
 }

@@ -2,12 +2,8 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 90,
-      "tag": "forge:molten_iron"
-    },
-    {
-      "amount": 65,
-      "tag": "forge:molten_copper"
+      "amount": 100,
+      "fluid": "tconstruct:molten_amethyst"
     }
   ],
   "conditions": [
@@ -17,7 +13,7 @@
     }
   ],
   "ingredient": {
-    "item": "create:smart_fluid_pipe"
+    "item": "create:pulse_timer"
   },
   "result": {
     "amount": 90,

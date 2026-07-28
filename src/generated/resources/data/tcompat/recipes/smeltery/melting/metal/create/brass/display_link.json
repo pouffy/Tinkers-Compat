@@ -2,11 +2,7 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 90,
-      "tag": "forge:molten_iron"
-    },
-    {
-      "amount": 65,
+      "amount": 540,
       "tag": "forge:molten_copper"
     }
   ],
@@ -17,7 +13,7 @@
     }
   ],
   "ingredient": {
-    "item": "create:smart_fluid_pipe"
+    "item": "create:display_link"
   },
   "result": {
     "amount": 90,

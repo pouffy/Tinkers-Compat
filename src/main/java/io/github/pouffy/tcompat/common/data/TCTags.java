@@ -282,7 +282,7 @@ public class TCTags {
 
         public static final TagKey<Fluid> SMALLER_GEM_TOOLTIPS = local("tooltips/smaller_gem");
 
-        private static TagKey<Fluid> common(String name) {
+        public static TagKey<Fluid> common(String name) {
             return TagKey.create(Registries.FLUID, commonResource(name));
         }
 

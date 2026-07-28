@@ -2,11 +2,7 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 90,
-      "tag": "forge:molten_iron"
-    },
-    {
-      "amount": 65,
+      "amount": 540,
       "tag": "forge:molten_copper"
     }
   ],
@@ -17,12 +13,12 @@
     }
   ],
   "ingredient": {
-    "item": "create:smart_fluid_pipe"
+    "item": "create:redstone_requester"
   },
   "result": {
-    "amount": 90,
-    "tag": "forge:molten_brass"
+    "amount": 270,
+    "tag": "forge:molten_iron"
   },
-  "temperature": 605,
-  "time": 54
+  "temperature": 800,
+  "time": 104
 }

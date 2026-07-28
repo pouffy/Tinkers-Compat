@@ -4,10 +4,6 @@
     {
       "amount": 90,
       "tag": "forge:molten_iron"
-    },
-    {
-      "amount": 65,
-      "tag": "forge:molten_copper"
     }
   ],
   "conditions": [
@@ -16,9 +12,14 @@
       "modid": "create"
     }
   ],
-  "ingredient": {
-    "item": "create:smart_fluid_pipe"
-  },
+  "ingredient": [
+    {
+      "item": "create:clockwork_bearing"
+    },
+    {
+      "item": "create:elevator_pulley"
+    }
+  ],
   "result": {
     "amount": 90,
     "tag": "forge:molten_brass"

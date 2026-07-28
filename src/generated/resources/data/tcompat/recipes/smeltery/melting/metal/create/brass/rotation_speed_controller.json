@@ -3,11 +3,11 @@
   "byproducts": [
     {
       "amount": 90,
-      "tag": "forge:molten_iron"
+      "tag": "forge:molten_gold"
     },
     {
-      "amount": 65,
-      "tag": "forge:molten_copper"
+      "amount": 50,
+      "tag": "forge:molten_iron"
     }
   ],
   "conditions": [
@@ -17,7 +17,7 @@
     }
   ],
   "ingredient": {
-    "item": "create:smart_fluid_pipe"
+    "item": "create:rotation_speed_controller"
   },
   "result": {
     "amount": 90,

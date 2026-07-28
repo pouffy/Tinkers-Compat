@@ -8,16 +8,16 @@
   ],
   "ingredient": [
     {
-      "item": "create:fluid_pipe"
+      "item": "create:copycat_step"
     },
     {
-      "item": "create:mechanical_pump"
+      "item": "create:copycat_panel"
     }
   ],
   "result": {
-    "amount": 65,
-    "tag": "forge:molten_copper"
+    "amount": 20,
+    "tag": "forge:molten_zinc"
   },
-  "temperature": 500,
-  "time": 42
+  "temperature": 420,
+  "time": 22
 }

@@ -8,16 +8,16 @@
   ],
   "ingredient": [
     {
-      "item": "create:fluid_pipe"
+      "item": "create:cuckoo_clock"
     },
     {
-      "item": "create:mechanical_pump"
+      "item": "create:mysterious_cuckoo_clock"
     }
   ],
   "result": {
-    "amount": 65,
-    "tag": "forge:molten_copper"
+    "amount": 360,
+    "tag": "forge:molten_gold"
   },
-  "temperature": 500,
-  "time": 42
+  "temperature": 700,
+  "time": 114
 }
