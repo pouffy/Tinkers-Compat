@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.combat;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -19,6 +20,10 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class LightningModifier extends NoLevelsModifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
 
     @Override
@@ -37,6 +42,7 @@ public class LightningModifier extends NoLevelsModifier implements MeleeHitModif
         boolean flag = !(attacker instanceof Player) || !((double) attacker.attackAnim > 0.2);
         if (!attacker.level().isClientSide && flag && context.isFullyCharged()) {
             LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(target.level());
+            if (lightningBolt == null) return;
             lightningBolt.moveTo(target.position());
             LightningOwner.get(lightningBolt).ifPresent(compatibility -> compatibility.setLightningOwner(attacker));
             if (!target.level().isClientSide) {
@@ -48,11 +54,12 @@ public class LightningModifier extends NoLevelsModifier implements MeleeHitModif
 
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target, boolean notBlocked) {
-        if (target != null && notBlocked) {
+        if (target != null && notBlocked && attacker != null) {
             boolean flag = !(attacker instanceof Player) || !((double) attacker.attackAnim > 0.2);
             if (projectile instanceof AbstractArrow arrow && !arrow.isCritArrow()) flag = false;
             if (!attacker.level().isClientSide && flag) {
                 LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(target.level());
+                if (lightningBolt == null) return true;
                 lightningBolt.moveTo(target.position());
                 LightningOwner.get(lightningBolt).ifPresent(compatibility -> compatibility.setLightningOwner(attacker));
                 if (!target.level().isClientSide) {

@@ -87,7 +87,7 @@ public class AetherHandler {
                 if ((itemStack.isCorrectToolForDrops(blockState)) && isFree(level.getBlockState(blockPos.above()))) {
                     if (level.getBlockEntity(blockPos) == null && blockState.getDestroySpeed(level, blockPos) >= 0.0F && !blockState.hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF) && !blockState.is(AetherTags.Blocks.GRAVITITE_ABILITY_BLACKLIST)) {
                         if (!level.isClientSide()) {
-                            FloatingBlockEntity entity = new FloatingBlockEntity(level, (double)blockPos.getX() + (double)0.5F, (double)blockPos.getY(), (double)blockPos.getZ() + (double)0.5F, blockState);
+                            FloatingBlockEntity entity = new FloatingBlockEntity(level, (double)blockPos.getX() + (double)0.5F, blockPos.getY(), (double)blockPos.getZ() + (double)0.5F, blockState);
                             entity.setNatural(false);
                             if (blockState.is(BlockTags.ANVIL)) {
                                 entity.setHurtsEntities(2.0F, 40);

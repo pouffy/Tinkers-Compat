@@ -57,7 +57,7 @@ public class TCShapedRecipeBuilder extends CraftingRecipeBuilder implements Reci
     }
 
     public TCShapedRecipeBuilder define(Character symbol, ItemLike item) {
-        return this.define(symbol, Ingredient.of(new ItemLike[]{item}));
+        return this.define(symbol, Ingredient.of(item));
     }
 
     public TCShapedRecipeBuilder define(Character symbol, Ingredient ingredient) {
@@ -72,7 +72,7 @@ public class TCShapedRecipeBuilder extends CraftingRecipeBuilder implements Reci
     }
 
     public TCShapedRecipeBuilder pattern(String pattern) {
-        if (!this.rows.isEmpty() && pattern.length() != ((String)this.rows.get(0)).length()) {
+        if (!this.rows.isEmpty() && pattern.length() != this.rows.get(0).length()) {
             throw new IllegalArgumentException("Pattern must be the same width on every line!");
         } else {
             this.rows.add(pattern);
@@ -175,7 +175,7 @@ public class TCShapedRecipeBuilder extends CraftingRecipeBuilder implements Reci
             JsonObject jsonobject = new JsonObject();
 
             for(Map.Entry<Character, Ingredient> entry : this.key.entrySet()) {
-                jsonobject.add(String.valueOf(entry.getKey()), ((Ingredient)entry.getValue()).toJson());
+                jsonobject.add(String.valueOf(entry.getKey()), entry.getValue().toJson());
             }
 
             json.add("key", jsonobject);

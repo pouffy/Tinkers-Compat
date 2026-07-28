@@ -15,9 +15,7 @@ public class IceFireHandler {
     public static class LoadedOnly {
         public static void freeze(Entity entity, int frozenTicks) {
             if (entity instanceof LivingEntity living) {
-                EntityDataProvider.getCapability(living).ifPresent(provider -> {
-                    provider.frozenData.setFrozen(living, frozenTicks);
-                });
+                EntityDataProvider.getCapability(living).ifPresent(provider -> provider.frozenData.setFrozen(living, frozenTicks));
             }
         }
     }

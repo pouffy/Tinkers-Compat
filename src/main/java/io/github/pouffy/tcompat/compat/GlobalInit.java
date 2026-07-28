@@ -15,7 +15,6 @@ import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
 import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
 import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartItem;
 import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartShooter;
-import io.github.pouffy.tcompat.compat.constructs_casting.MagicClothMaterialStats;
 import io.github.pouffy.tcompat.compat.ice_and_fire.item.ModifiableGlaiveItem;
 import io.github.pouffy.tcompat.config.TCompatConfig;
 import net.minecraft.core.BlockPos;
@@ -42,7 +41,6 @@ import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
-import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
@@ -58,7 +56,6 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
-import slimeknights.tconstruct.tools.TinkerToolParts;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import java.util.function.Consumer;
@@ -129,9 +126,9 @@ public class GlobalInit extends CompatInitializer {
     public static EntityVariable SKY_LIGHT = SingletonLoader.singleton((loader) -> new EntityVariable() {
 
         @Override
-        public float getValue(LivingEntity living) {
+        public float getValue(@NotNull LivingEntity living) {
             Level level = living.level();
-            int light = 0;
+            int light;
             BlockPos blockpos = living.getVehicle() instanceof Boat ? (new BlockPos(living.getBlockX(), living.getBlockY(), living.getBlockZ())).above() : new BlockPos(living.getBlockX(), living.getBlockY(), living.getBlockZ());
             if (level.canSeeSky(blockpos)) {
                 light = living.level().getBrightness(LightLayer.SKY, living.blockPosition());
@@ -142,19 +139,19 @@ public class GlobalInit extends CompatInitializer {
         }
 
         @Override
-        public RecordLoadable<? extends EntityVariable> getLoader() {
+        public @NotNull RecordLoadable<? extends EntityVariable> getLoader() {
             return loader;
         }
     });
 
     public static ToolStackPredicate HAS_WINGS = SingletonLoader.singleton((loader) -> new ToolStackPredicate() {
         @Override
-        public boolean matches(IToolStackView tool) {
+        public boolean matches(@NotNull IToolStackView tool) {
             return tool.getModifier(ModifierIds.wings).getLevel() > 0;
         }
 
         @Override
-        public RecordLoadable<? extends IJsonPredicate<IToolStackView>> getLoader() {
+        public @NotNull RecordLoadable<? extends IJsonPredicate<IToolStackView>> getLoader() {
             return loader;
         }
     });

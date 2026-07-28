@@ -137,7 +137,7 @@ public class TCFluids extends CompatModule {
     }
 
     private static FluidType.Properties hot(String name) {
-        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000).descriptionId(TCompat.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA).motionScale(0.0023333333333333335).canSwim(false).canDrown(false).pathType(BlockPathTypes.LAVA).adjacentPathType((BlockPathTypes)null);
+        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000).descriptionId(TCompat.makeDescriptionId("fluid", name)).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA).motionScale(0.0023333333333333335).canSwim(false).canDrown(false).pathType(BlockPathTypes.LAVA).adjacentPathType(null);
     }
 
     @SubscribeEvent

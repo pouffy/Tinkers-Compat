@@ -3,7 +3,6 @@ package io.github.pouffy.tcompat.compat.deeperdarker;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.deeperdarker.modifier.SculkAffinityModifier;
 import io.github.pouffy.tcompat.compat.deeperdarker.modifier.ranged.SonorousModifier;
-import io.github.pouffy.tcompat.compat.malum.modifier.ranged.ErosionModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;

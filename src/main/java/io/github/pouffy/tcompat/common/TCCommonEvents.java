@@ -27,7 +27,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
@@ -49,9 +48,7 @@ public class TCCommonEvents {
         if (event.getEntity() instanceof Projectile projectile) {
             ProjectileAbility.get(projectile).ifPresent(projectileAbility -> {
                 Projectile innerProjectile = projectileAbility.projectile();
-                projectileAbility.getActiveAbilities().forEach((name, ability) -> {
-                    ability.impactEvent(event, innerProjectile);
-                });
+                projectileAbility.getActiveAbilities().forEach((name, ability) -> ability.impactEvent(event, innerProjectile));
             });
         }
         if (event.getEntity() instanceof ModifiableDart dart) {
@@ -64,7 +61,7 @@ public class TCCommonEvents {
     @SubscribeEvent
     public static void livingVisibility(LivingEvent.LivingVisibilityEvent event) {
         Entity entity = event.getLookingEntity();
-        if (entity instanceof LivingEntity watcher) {
+        if (entity instanceof LivingEntity) {
             LivingEntity target = event.getEntity();
             if (MalumHandler.isCloaking(target)) {
                 float visibilityModifier = 0.25f;

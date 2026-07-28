@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.defence;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IceFireHandler;
@@ -17,6 +18,10 @@ import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class FrostThornsModifier extends NoLevelsModifier implements OnAttackedModifierHook {
 
     @Override

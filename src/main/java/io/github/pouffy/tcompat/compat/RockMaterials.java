@@ -6,6 +6,7 @@ import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTran
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
+@SuppressWarnings("SameParameterValue")
 public class RockMaterials {
     public static final MaterialVariantId
     // Ad Astra

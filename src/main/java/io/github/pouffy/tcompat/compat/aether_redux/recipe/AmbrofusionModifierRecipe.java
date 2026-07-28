@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_redux.recipe;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_redux.modifier.general.AmbrofusionModifier;
 import lombok.Getter;
@@ -29,12 +30,15 @@ import slimeknights.tconstruct.library.recipe.tinkerstation.ITinkerStationRecipe
 import slimeknights.tconstruct.library.tools.nbt.LazyToolStack;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import static slimeknights.tconstruct.library.recipe.modifiers.adding.IDisplayModifierRecipe.withModifiers;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class AmbrofusionModifierRecipe implements ITinkerStationRecipe, IDisplayModifierRecipe {
     private static final RecipeResult<LazyToolStack> AT_CAPACITY = RecipeResult.failure(TConstruct.makeTranslationKey("recipe", "ambrofusion.at_capacity"));
     public static final RecordLoadable<AmbrofusionModifierRecipe> LOADER = RecordLoadable.create(

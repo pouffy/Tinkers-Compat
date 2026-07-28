@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.melee;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.modifier.hook.ToolSwingModifierHook;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
@@ -16,6 +17,10 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class SandstormModifier extends NoLevelsModifier implements MeleeHitModifierHook, ToolSwingModifierHook {
 
     @Override
@@ -37,7 +42,7 @@ public class SandstormModifier extends NoLevelsModifier implements MeleeHitModif
         return true;
     }
 
-    public boolean launch(ItemStack stack, LivingEntity attacker) {
+    public void launch(ItemStack stack, LivingEntity attacker) {
         boolean charged = true;
         if (attacker instanceof Player player) {
             charged = player.getAttackStrengthScale(0.5F) > 0.9F;
@@ -60,11 +65,9 @@ public class SandstormModifier extends NoLevelsModifier implements MeleeHitModif
                 var sandstorm = CataclysmHandler.createSandstorm(attacker, d1, d2, d3, x, Z);
                 if (sandstorm != null) {
                     worldIn.addFreshEntity(sandstorm);
-                    return true;
                 }
             }
         }
-        return false;
     }
 
 

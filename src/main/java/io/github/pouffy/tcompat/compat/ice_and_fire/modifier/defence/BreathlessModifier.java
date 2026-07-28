@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.defence;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -11,6 +12,10 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class BreathlessModifier extends NoLevelsModifier implements ProtectionModifierHook {
 
     @Override

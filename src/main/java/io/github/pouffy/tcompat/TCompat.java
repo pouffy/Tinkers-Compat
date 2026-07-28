@@ -1,7 +1,6 @@
 package io.github.pouffy.tcompat;
 
 import com.mojang.logging.LogUtils;
-import earth.terrarium.adastra.client.screens.base.ConfigurationScreen;
 import io.github.pouffy.tcompat.common.CompatModule;
 import io.github.pouffy.tcompat.common.cooldown.CooldownHandler;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
@@ -25,7 +24,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -40,7 +38,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.resource.PathPackResources;
-import org.betterx.betternether.config.screen.ConfigScreen;
 import org.slf4j.Logger;
 import slimeknights.mantle.client.model.NBTKeyModel;
 import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
@@ -48,7 +45,6 @@ import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.tools.helper.ToolBuildHandler;
-import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.client.material.ThrownToolRenderer;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 

@@ -3,7 +3,6 @@ package io.github.pouffy.tcompat.common.capability.living.cryogenic;
 import io.github.pouffy.tcompat.common.TCSounds;
 import io.github.pouffy.tcompat.common.network.CryogenicSyncPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
-import io.github.pouffy.tcompat.common.network.VoidTouchedSyncPacket;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;
 import io.github.pouffy.tcompat.common.network.base.INBTSynchable;
 import net.minecraft.nbt.CompoundTag;

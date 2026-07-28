@@ -2,14 +2,12 @@ package io.github.pouffy.tcompat.compat.aether.entity;
 
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.AetherHandler;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -106,7 +104,7 @@ public class ModifiableDart extends AbstractArrow implements ToolProjectile {
         this.setStack(stack);
         IToolStackView tool = this.getTool();
         EntityModifierCapability.getCapability(this).addModifiers(tool.getModifiers());
-        this.setBaseDamage((double) ConditionalStatModifierHook.getModifiedStat(tool, shooter, ToolStats.PROJECTILE_DAMAGE));
+        this.setBaseDamage(ConditionalStatModifierHook.getModifiedStat(tool, shooter, ToolStats.PROJECTILE_DAMAGE));
         this.entityData.set(WATER_INERTIA, ConditionalStatModifierHook.getModifiedStat(tool, shooter, ToolStats.WATER_INERTIA));
         return tool;
     }
@@ -189,7 +187,7 @@ public class ModifiableDart extends AbstractArrow implements ToolProjectile {
     }
 
     public ItemStack getDisplayTool() {
-        return (ItemStack)this.entityData.get(STACK);
+        return this.entityData.get(STACK);
     }
 
     public Component getDisplayName() {
@@ -199,7 +197,7 @@ public class ModifiableDart extends AbstractArrow implements ToolProjectile {
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.put("stack", this.stack.save(new CompoundTag()));
-        tag.putFloat("water_inertia", (Float)this.entityData.get(WATER_INERTIA));
+        tag.putFloat("water_inertia", this.entityData.get(WATER_INERTIA));
         tag.putBoolean("dealt_damage", this.dealtDamage);
         if (!this.tasks.isEmpty()) {
             tag.put("tasks", this.tasks.serialize());
@@ -226,12 +224,12 @@ public class ModifiableDart extends AbstractArrow implements ToolProjectile {
         WATER_INERTIA = SynchedEntityData.defineId(ModifiableDart.class, EntityDataSerializers.FLOAT);
     }
 
-    private static enum CaptureDiscard {
+    private enum CaptureDiscard {
         NOT_CAPTURING,
         CAPTURING,
         DISCARDED;
 
-        private CaptureDiscard() {
+        CaptureDiscard() {
         }
     }
 }

@@ -17,6 +17,7 @@ import static io.github.pouffy.tcompat.TCompat.getResource;
 import static io.github.pouffy.tcompat.datagen.tinkers.material.TCMaterialSpriteProv.transformerFromSprite;
 import static net.minecraft.world.item.Tiers.WOOD;
 
+@SuppressWarnings("SameParameterValue")
 public class WoodMaterials {
     public static final MaterialVariantId
     // Ad Astra

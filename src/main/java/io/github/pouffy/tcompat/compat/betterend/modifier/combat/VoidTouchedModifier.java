@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.betterend.modifier.combat;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.TCSounds;
 import io.github.pouffy.tcompat.common.capability.living.void_touched.VoidTouched;
 import io.github.pouffy.tcompat.common.data.TCTags;
@@ -22,7 +23,10 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class VoidTouchedModifier extends Modifier implements ProjectileHitModifierHook, MeleeHitModifierHook, BreakSpeedModifierHook {
 
     @Override

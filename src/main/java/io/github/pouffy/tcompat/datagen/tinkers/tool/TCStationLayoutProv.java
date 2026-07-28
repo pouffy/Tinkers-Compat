@@ -1,11 +1,9 @@
 package io.github.pouffy.tcompat.datagen.tinkers.tool;
 
 import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.tinkering.AbstractStationSlotLayoutProvider;
 import slimeknights.tconstruct.tools.TinkerToolParts;
-import slimeknights.tconstruct.tools.TinkerTools;
 
 public class TCStationLayoutProv extends AbstractStationSlotLayoutProvider {
     public TCStationLayoutProv(PackOutput packOutput) {

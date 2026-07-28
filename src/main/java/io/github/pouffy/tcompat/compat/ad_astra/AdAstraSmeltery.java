@@ -21,7 +21,6 @@ public class AdAstraSmeltery implements CompatSmeltery {
     public void addRecipes(Consumer<FinishedRecipe> consumer, String folder) {
         var cConsumer = compatConsumer(consumer);
 
-        int plating = 7;
         int rod = 45;
 
         Map<String, FluidObject<?>> decorativeMetals = Map.of(

@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.deeperdarker.modifier.ranged;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.cooldown.ClientModifierCooldowns;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import net.minecraft.core.BlockPos;
@@ -27,6 +28,10 @@ import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class SonorousModifier extends NoLevelsModifier implements GeneralInteractionModifierHook, UsingToolModifierHook {
     public double dropOffFactor = 0.3333333333333333;
 
@@ -67,7 +72,7 @@ public class SonorousModifier extends NoLevelsModifier implements GeneralInterac
             AABB aabb = (new AABB(targetPos)).inflate(0.4);
             for(LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, aabb)) {
                 if (!entity.is(user)) {
-                    int finalDamage = (int)((double)damage * ((double)1.0F - this.dropOffFactor * Math.pow((double)i / (double)range, (double)2.0F)));
+                    int finalDamage = (int)((double)damage * ((double)1.0F - this.dropOffFactor * Math.pow((double)i / (double)range, 2.0F)));
                     entity.hurt(level.damageSources().sonicBoom(user), (float)finalDamage);
                     double horizontalResistance = (double)1.0F - entity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE);
                     double verticalResistance = (double)1.0F - entity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE);

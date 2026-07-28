@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.betternether.modifier.harvest;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import net.minecraft.core.Direction;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -12,6 +13,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+@MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class ObsidianBreakerModifier extends Modifier implements BreakSpeedModifierHook {
 

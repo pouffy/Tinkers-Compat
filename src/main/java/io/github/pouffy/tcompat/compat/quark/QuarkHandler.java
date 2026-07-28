@@ -70,10 +70,7 @@ public class QuarkHandler {
         if (entity.getType() == TinkerWorld.enderSlimeEntity.get() && ((EnderSlimeEntity) entity).getSize() == 1) {
             return true;
         }
-        if (entity.getType() == TinkerWorld.terracubeEntity.get() && ((TerracubeEntity) entity).getSize() == 1) {
-            return true;
-        }
-        return false;
+        return entity.getType() == TinkerWorld.terracubeEntity.get() && ((TerracubeEntity) entity).getSize() == 1;
     }
 
     private static ItemStack pickupResult(Entity entity) {

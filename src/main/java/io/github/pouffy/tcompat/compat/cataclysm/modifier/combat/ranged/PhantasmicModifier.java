@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.ranged;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.data.TCTags;
@@ -35,10 +36,13 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class PhantasmicModifier extends AbstractTeamUpModifier implements ProjectileLaunchModifierHook, GeneralInteractionModifierHook {
     private final ResourceLocation timeLeftKey = TCompat.getResource("time_left");
 
@@ -120,7 +124,7 @@ public class PhantasmicModifier extends AbstractTeamUpModifier implements Projec
         Vec3 lookVec = living.getViewVector(1.0F);
         Vec3 destVec = srcVec.add(lookVec.x() * range, lookVec.y() * range, lookVec.z() * range);
         float var9 = 2.0F;
-        List<Entity> possibleList = level.getEntities(living, living.getBoundingBox().expandTowards(lookVec.x() * range, lookVec.y() * range, lookVec.z() * range).inflate((double)var9, (double)var9, (double)var9));
+        List<Entity> possibleList = level.getEntities(living, living.getBoundingBox().expandTowards(lookVec.x() * range, lookVec.y() * range, lookVec.z() * range).inflate(var9, var9, var9));
         double hitDist = 0.0F;
 
         for(Entity possibleEntity : possibleList) {

@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.ranged;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
@@ -7,6 +8,7 @@ import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.modifier.base.AbstractTeamUpModifier;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
+import io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.melee.TidalModifier;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -29,8 +31,11 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Predicate;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class FluxedModifier extends AbstractTeamUpModifier implements ProjectileLaunchModifierHook, GeneralInteractionModifierHook {
     private final ResourceLocation timeLeftKey = TCompat.getResource("time_left");
 
@@ -97,13 +102,7 @@ public class FluxedModifier extends AbstractTeamUpModifier implements Projectile
     }
 
     public static float getPowerForTime(int time) {
-        float f = (float)time / 20.0F;
-        f = (f * f + f * 2.0F) / 3.0F;
-        if (f > 1.0F) {
-            f = 1.0F;
-        }
-
-        return f;
+        return TidalModifier.getPowerForTime(time);
     }
 
     @Override

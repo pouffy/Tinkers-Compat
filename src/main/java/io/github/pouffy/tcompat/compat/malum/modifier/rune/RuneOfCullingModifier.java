@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.malum.modifier.rune;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioAttributeHook;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
@@ -22,6 +23,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.UUID;
 import java.util.function.BiConsumer;
 
+@MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class RuneOfCullingModifier extends NoLevelsModifier implements CurioAttributeHook, AttributesModifierHook {
 

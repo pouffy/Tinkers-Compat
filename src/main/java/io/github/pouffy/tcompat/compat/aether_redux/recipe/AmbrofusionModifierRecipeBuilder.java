@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_redux.recipe;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import lombok.RequiredArgsConstructor;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -9,8 +10,11 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import slimeknights.mantle.recipe.data.AbstractRecipeBuilder;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 @RequiredArgsConstructor(staticName = "modifier")
 public class AmbrofusionModifierRecipeBuilder extends AbstractRecipeBuilder<AmbrofusionModifierRecipeBuilder> {
     private final Ingredient ingredient;

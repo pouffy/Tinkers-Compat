@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.combat.ranged;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import net.minecraft.core.particles.ParticleTypes;
@@ -23,8 +24,11 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Predicate;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class AmphithericModifier extends NoLevelsModifier implements ProjectileLaunchModifierHook, ProjectileHitModifierHook {
 
     @Override
@@ -60,9 +64,7 @@ public class AmphithericModifier extends NoLevelsModifier implements ProjectileL
             ignored = hitEntity;
             launchEntity(hitEntity, xRatio, zRatio);
         }
-        projectile.level().getEntities(ignored, bb, selector).forEach(entity -> {
-            launchEntity(entity, xRatio, zRatio);
-        });
+        projectile.level().getEntities(ignored, bb, selector).forEach(entity -> launchEntity(entity, xRatio, zRatio));
         if (projectile.level().isClientSide) {
             for(int height = 0; height < 1 + random.nextInt(2); ++height) {
                 for(int i = 0; i < 20; ++i) {

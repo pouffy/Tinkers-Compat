@@ -11,11 +11,10 @@ import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
-
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierTagProvider;
 
-import static slimeknights.tconstruct.common.TinkerTags.Modifiers.*;
 import static io.github.pouffy.tcompat.common.data.TCTags.Modifiers.*;
+import static slimeknights.tconstruct.common.TinkerTags.Modifiers.*;
 
 public class TCModifierTagProv extends AbstractModifierTagProvider {
     public TCModifierTagProv(PackOutput packOutput, ExistingFileHelper existingFileHelper) {

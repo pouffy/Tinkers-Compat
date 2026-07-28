@@ -12,9 +12,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -81,6 +79,7 @@ public abstract class TCSlimeInABucketItem extends Item {
         }
 
         worldIn.playSound(playerIn, pos, SoundEvents.BUCKET_EMPTY, SoundSource.NEUTRAL, 1.0F, 1.0F);
+        if (playerIn == null) return InteractionResult.FAIL;
         if (!playerIn.getAbilities().instabuild) {
             playerIn.setItemInHand(hand, new ItemStack(Items.BUCKET));
         }
