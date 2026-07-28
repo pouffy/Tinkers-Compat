@@ -18,6 +18,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MonsterMeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BlockBreakModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedContext;
@@ -36,14 +37,14 @@ import slimeknights.tconstruct.tools.stats.ToolType;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ClockworkModifier extends Modifier implements ProjectileLaunchModifierHook, ConditionalStatModifierHook, BlockBreakModifierHook, BreakSpeedModifierHook, SlingLaunchModifierHook, TooltipModifierHook, MeleeHitModifierHook {
+public class ClockworkModifier extends Modifier implements ProjectileLaunchModifierHook, ConditionalStatModifierHook, BlockBreakModifierHook, BreakSpeedModifierHook, SlingLaunchModifierHook, TooltipModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
     private static final Component SPEED = TCompat.makeTranslation("modifier", "clockwork.speed");
 
     public ClockworkModifier() {
     }
 
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.CONDITIONAL_STAT, ModifierHooks.PROJECTILE_LAUNCH, ModifierHooks.BLOCK_BREAK, ModifierHooks.BREAK_SPEED, ModifierHooks.SLING_LAUNCH, ModifierHooks.TOOLTIP, ModifierHooks.MELEE_HIT);
+        hookBuilder.addHook(this, ModifierHooks.CONDITIONAL_STAT, ModifierHooks.PROJECTILE_LAUNCH, ModifierHooks.BLOCK_BREAK, ModifierHooks.BREAK_SPEED, ModifierHooks.SLING_LAUNCH, ModifierHooks.TOOLTIP, ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_HIT);
     }
 
     public int getPriority() {
@@ -93,7 +94,7 @@ public class ClockworkModifier extends Modifier implements ProjectileLaunchModif
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        if (context.isFullyCharged()) {
+        if (!context.isExtraAttack() && context.isFullyCharged()) {
             applyEffect(context.getAttacker(), ToolType.MELEE, 200, 9);
         }
     }
