@@ -91,7 +91,7 @@ public class GlobalInit extends CompatInitializer {
     public static final CastItemObject dartBarrelCast = ITEMS.registerCast(dartBarrel, new Item.Properties());
     public static final CastItemObject lipGuardCast = ITEMS.registerCast(lipGuard, new Item.Properties());
 
-    public static final EnumObject<ToolType, TinkerEffect> clockworkEffect = MOB_EFFECTS.registerEnum("clockwork", new ToolType[]{ToolType.HARVEST, ToolType.RANGED, ToolType.MELEE}, (type) -> new NoMilkEffect(MobEffectCategory.BENEFICIAL, 0xd3a155, true));
+    public static final EnumObject<ToolType, TinkerEffect> clockworkEffect = MOB_EFFECTS.registerEnum("clockwork", new ToolType[]{ToolType.HARVEST, ToolType.RANGED, ToolType.MELEE}, (type) -> new NoMilkEffect(MobEffectCategory.BENEFICIAL, 6310251, true));
 
     public static final ModuleHook<AetherForgedModifierHook> AETHER_FORGED = ModifierHooks.register(getResource("aether_forged"), AetherForgedModifierHook.class, new AetherForgedModifierHook() {
         @Override
