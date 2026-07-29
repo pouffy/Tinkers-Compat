@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.compat.ad_astra.modifier.general;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.TCSounds;
 import io.github.pouffy.tcompat.common.capability.living.cryogenic.Cryogenic;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
@@ -10,9 +10,6 @@ import io.github.pouffy.tcompat.compat.ad_astra.AdAstraHandler;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -42,6 +39,11 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.stat.CapacityStat;
 import slimeknights.tconstruct.library.tools.stat.ToolStatId;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@SuppressWarnings("unused")
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class CryogenicModifier extends Modifier implements ValidateModifierHook, ModifierRemovalHook, ProjectileLaunchModifierHook, MeleeHitModifierHook, OnAttackedModifierHook, SlotStackModifierHook {
     public static final String FUEL_FORMAT = TCompat.makeDescriptionId("tool_stat", "cryogenic_fuel");
     public static final ResourceLocation CRYO_FUEL = TCompat.getResource("cryogenic_fuel");
@@ -99,6 +101,9 @@ public class CryogenicModifier extends Modifier implements ValidateModifierHook,
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+        if (context.getLivingTarget() == null) {
+            return;
+        }
         int base = context.isFullyCharged() ? 50 : 25;
         int toExtract = Mth.clamp(Math.round(base * damageDealt), 0, getFuel(tool));
         if (extractFuel(tool, toExtract, true) == toExtract) {
@@ -173,10 +178,7 @@ public class CryogenicModifier extends Modifier implements ValidateModifierHook,
             if (current <= 0) {
                 return 0;
             } else {
-                int drained = maxExtract;
-                if (current < maxExtract) {
-                    drained = current;
-                }
+                int drained = Math.min(current, maxExtract);
 
                 if (!simulate) {
                     setFuelRaw(tool, current - drained);

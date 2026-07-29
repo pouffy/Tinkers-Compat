@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.species.modifier.combat;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Difficulty;
@@ -20,7 +21,10 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class WickedModifier extends Modifier implements ProjectileHitModifierHook, MeleeHitModifierHook {
 
     @Override
@@ -40,7 +44,8 @@ public class WickedModifier extends Modifier implements ProjectileHitModifierHoo
             ObjectRetriever.getEffect("species:combustion").ifPresent(effect -> {
                 if (target != null) {
                     int amplifier = 0;
-                    if (target.hasEffect(effect)) amplifier = target.getEffect(effect).getAmplifier() + 1;
+                    MobEffectInstance existingEffect = target.getEffect(effect);
+                    if (existingEffect != null) amplifier = existingEffect.getAmplifier() + 1;
                     if (target.level().getDifficulty() == Difficulty.HARD) amplifier += 1;
                     target.addEffect(new MobEffectInstance(effect, 600, amplifier));
                 }
@@ -55,7 +60,8 @@ public class WickedModifier extends Modifier implements ProjectileHitModifierHoo
         if (target != null && context.isFullyCharged() && target.isAlive()) {
             ObjectRetriever.getEffect("species:combustion").ifPresent(effect -> {
                 int amplifier = 0;
-                if (target.hasEffect(effect)) amplifier = target.getEffect(effect).getAmplifier() + 1;
+                MobEffectInstance existingEffect = target.getEffect(effect);
+                if (existingEffect != null) amplifier = existingEffect.getAmplifier() + 1;
                 if (target.level().getDifficulty() == Difficulty.HARD) amplifier += 1;
                 target.addEffect(new MobEffectInstance(effect, 600, amplifier));
             });

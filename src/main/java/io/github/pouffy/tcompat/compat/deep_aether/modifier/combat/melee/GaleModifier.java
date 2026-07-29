@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.deep_aether.modifier.combat.melee;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -11,6 +12,10 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class GaleModifier extends NoLevelsModifier implements MeleeHitModifierHook {
 
     @Override

@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.deeperdarker.modifier;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -22,6 +23,10 @@ import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class SculkAffinityModifier extends NoLevelsModifier implements ProjectileLaunchModifierHook, MeleeHitModifierHook, OnAttackedModifierHook, BlockBreakModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {

@@ -13,7 +13,7 @@ public interface ToolSwingModifierHook {
 
     default boolean swingOffHand(IToolStackView toolStackView, ModifierEntry modifierEntry, ItemStack stack, LivingEntity playerIn) {
         return false;
-    };
+    }
 
     record AllMerger(Collection<ToolSwingModifierHook> modules) implements ToolSwingModifierHook {
         @Override

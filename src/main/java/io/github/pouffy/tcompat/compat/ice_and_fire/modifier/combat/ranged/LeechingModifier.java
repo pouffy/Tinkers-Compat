@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.combat.ranged;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import net.minecraft.world.effect.MobEffects;
@@ -24,6 +25,10 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class LeechingModifier extends NoLevelsModifier implements ProjectileShootModifierHook, MeleeHitModifierHook, ProjectileHitModifierHook {
 
     @Override
@@ -51,7 +56,7 @@ public class LeechingModifier extends NoLevelsModifier implements ProjectileShoo
     }
 
     @Override
-    public void onProjectileShoot(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, ItemStack ammo, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
+    public void onProjectileShoot(IToolStackView tool, ModifierEntry modifier, @SuppressWarnings("NullableProblems") LivingEntity shooter, ItemStack ammo, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
         ProjectileAbility.activate(projectile, ProjectileAbilityHooks.LEECHING);
     }
 }

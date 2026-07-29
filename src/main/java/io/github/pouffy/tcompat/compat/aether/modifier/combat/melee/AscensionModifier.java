@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether.modifier.combat.melee;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.compat.aether.AetherHandler;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +22,11 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
+@SuppressWarnings("deprecation")
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class AscensionModifier extends NoLevelsModifier implements BlockInteractionModifierHook, MeleeHitModifierHook, ProjectileHitModifierHook {
 
     @Override

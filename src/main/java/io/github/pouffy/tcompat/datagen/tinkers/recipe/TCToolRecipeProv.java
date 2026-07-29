@@ -11,12 +11,9 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
 import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
-import slimeknights.tconstruct.library.recipe.partbuilder.recycle.PartBuilderToolRecycleBuilder;
 import slimeknights.tconstruct.library.recipe.tinkerstation.building.ToolBuildingRecipeBuilder;
-import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.tools.TinkerToolParts;
-import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.function.Consumer;
 

@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_redux.modifier.general;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxMaterials;
 import net.minecraft.core.RegistryAccess;
@@ -30,6 +31,10 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStatId;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class AmbrofusionModifier extends Modifier implements ToolDamageModifierHook, ModifierRemovalHook, ToolStatsModifierHook, ValidateModifierHook, DurabilityDisplayModifierHook, InventoryTickModifierHook {
     public static final ResourceLocation shouldAddStatsKey = TCompat.getResource("should_add_stats");
     public static boolean shouldAddStats = false;

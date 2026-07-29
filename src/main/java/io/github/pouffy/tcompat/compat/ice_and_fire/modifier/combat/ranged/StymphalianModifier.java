@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.combat.ranged;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,6 +15,10 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class StymphalianModifier extends NoLevelsModifier implements ProjectileLaunchModifierHook {
 
     @Override

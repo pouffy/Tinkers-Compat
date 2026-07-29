@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.common.modifier.base;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
@@ -10,8 +11,11 @@ import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Predicate;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public abstract class AbstractTeamUpModifier extends NoLevelsModifier {
 
     protected abstract Predicate<IMaterial> getRequiredMaterials();

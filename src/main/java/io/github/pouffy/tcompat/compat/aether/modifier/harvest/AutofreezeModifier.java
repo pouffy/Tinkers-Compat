@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether.modifier.harvest;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.modifier.module.AutosmeltModule;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
@@ -10,6 +11,11 @@ import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@SuppressWarnings("unchecked")
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class AutofreezeModifier extends Modifier {
     @Override
     public Component getDisplayName(int level) {

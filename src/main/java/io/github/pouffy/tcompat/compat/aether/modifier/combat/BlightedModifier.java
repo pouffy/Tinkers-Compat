@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether.modifier.combat;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -21,7 +22,10 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class BlightedModifier extends NoLevelsModifier implements ProjectileHitModifierHook, MeleeHitModifierHook, OnAttackedModifierHook {
 
     @Override

@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.malum.modifier.melee;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -14,6 +15,10 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class CertaintyModifier extends NoLevelsModifier implements MeleeDamageModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, MeleeHitModifierHook {
 
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
@@ -35,7 +40,6 @@ public class CertaintyModifier extends NoLevelsModifier implements MeleeDamageMo
     }
 
     public static void addEffect(LivingEntity attacker) {
-        if (attacker == null) return;
         ObjectRetriever.getEffect("malum:grim_certainty").ifPresent(effect -> attacker.addEffect(new MobEffectInstance(effect, 200)));
     }
 }

@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire.modifier.defence;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
@@ -18,6 +19,10 @@ import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class VoltThornsModifier extends NoLevelsModifier implements OnAttackedModifierHook {
 
     @Override
@@ -40,6 +45,7 @@ public class VoltThornsModifier extends NoLevelsModifier implements OnAttackedMo
             boolean flag = !(user instanceof Player) || !((double) user.attackAnim > 0.2);
             if (!user.level().isClientSide && flag) {
                 LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(attacker.level());
+                if (lightningBolt == null) return;
                 lightningBolt.moveTo(attacker.position());
                 LightningOwner.get(lightningBolt).ifPresent(compatibility -> compatibility.setLightningOwner(attacker));
                 if (!attacker.level().isClientSide) {

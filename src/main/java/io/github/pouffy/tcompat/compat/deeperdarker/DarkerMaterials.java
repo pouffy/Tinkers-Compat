@@ -5,12 +5,8 @@ import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
 import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
-import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
-import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.tools.TinkerModifiers;
-import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.IRON;

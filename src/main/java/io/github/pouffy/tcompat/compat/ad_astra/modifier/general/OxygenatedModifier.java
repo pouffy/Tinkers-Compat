@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ad_astra.modifier.general;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -10,12 +11,15 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.DamageDealtModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BlockBreakModifierHook;
-import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class OxygenatedModifier extends Modifier implements BlockBreakModifierHook, OnAttackedModifierHook, DamageDealtModifierHook {
 
     @Override
@@ -41,11 +45,12 @@ public class OxygenatedModifier extends Modifier implements BlockBreakModifierHo
     @Override
     public void afterBlockBreak(IToolStackView tool, ModifierEntry modifier, ToolHarvestContext context) {
         final ServerPlayer player = context.getPlayer();
+        if (player == null) return;
         replenish(player);
     }
 
     private void replenish(LivingEntity holder) {
-        if (holder != null && !holder.level().isClientSide) {
+        if (!holder.level().isClientSide) {
             holder.setAirSupply(Math.min(holder.getMaxAirSupply(), holder.getAirSupply() + 2));
         }
     }

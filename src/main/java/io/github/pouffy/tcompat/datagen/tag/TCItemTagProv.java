@@ -136,12 +136,11 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TinkerTags.Items.MULTIPART_TOOL).addOptional(glaive).addOptional(dartShooter).addOptional(dart);
         this.tag(TinkerTags.Items.BONUS_SLOTS).addOptional(glaive);
         this.tag(TinkerTags.Items.SMALL_RANGED).addOptional(dartShooter);
-        this.tag(TinkerTags.Items.MELEE).addOptional(dartShooter);
         this.tag(TinkerTags.Items.AMMO).addOptional(dart);
         this.tag(TinkerTags.Items.DYEABLE).addOptional(dart);
         this.tag(SMALL_TOOLS).addOptional(dartShooter);
-        this.tag(ItemTags.create(getResource("forge:tools"))).addOptional(glaive).addOptional(dartShooter);
-        this.tag(ItemTags.create(getResource("minecraft:tools"))).addOptional(glaive).addOptional(dartShooter);
+        this.tag(ItemTags.create(getResource("forge:tools"))).addOptional(glaive);
+        this.tag(ItemTags.create(getResource("minecraft:tools"))).addOptional(glaive);
         this.tag(ItemTags.create(getResource("tleveling:levelable"))).addOptional(glaive).addOptional(dartShooter);
 
         this.tag(TCTags.Items.HANDHELD_CURIO)

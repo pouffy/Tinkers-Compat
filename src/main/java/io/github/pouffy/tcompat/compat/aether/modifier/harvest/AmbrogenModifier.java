@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether.modifier.harvest;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
@@ -20,8 +21,11 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Optional;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class AmbrogenModifier extends Modifier implements BlockBreakModifierHook {
 
     @Override
@@ -32,6 +36,7 @@ public class AmbrogenModifier extends Modifier implements BlockBreakModifierHook
 
     @Override
     public void afterBlockBreak(IToolStackView tool, ModifierEntry modifier, ToolHarvestContext context) {
+        if (context.getPlayer() == null) return;
         dropAmbrosium(tool, context.getPlayer(), context.getWorld(), context.getPos(), context.canHarvest(), context.getState(), modifier.getLevel());
     }
 

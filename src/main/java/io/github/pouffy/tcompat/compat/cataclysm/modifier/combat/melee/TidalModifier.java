@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.combat.melee;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.cooldown.ClientModifierCooldowns;
 import io.github.pouffy.tcompat.common.data.TCTags;
@@ -19,8 +20,11 @@ import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSou
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Predicate;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class TidalModifier extends AbstractTeamUpModifier implements GeneralInteractionModifierHook {
 
     @Override

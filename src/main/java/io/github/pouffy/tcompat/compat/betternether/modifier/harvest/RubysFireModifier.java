@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.betternether.modifier.harvest;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -29,6 +30,7 @@ import java.util.ListIterator;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
+@MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class RubysFireModifier extends NoLevelsModifier implements MeleeHitModifierHook, ProcessLootModifierHook {
     private final Cache<Item,Optional<BlastingRecipe>> recipeCache = CacheBuilder

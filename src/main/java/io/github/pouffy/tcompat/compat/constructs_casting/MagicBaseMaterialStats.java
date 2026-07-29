@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.constructs_casting;
 
 import com.google.common.collect.Lists;
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import net.minecraft.network.chat.Component;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
@@ -10,8 +11,11 @@ import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public record MagicBaseMaterialStats(float maxMana, float spellPower) implements IRepairableMaterialStats {
     public static final MaterialStatsId ID = new MaterialStatsId(TCompat.getResource("constructs_casting", "magic_base"));
     public static final MaterialStatType<MagicBaseMaterialStats> TYPE = new MaterialStatType<>(ID, new MagicBaseMaterialStats(0, 0), RecordLoadable.create(

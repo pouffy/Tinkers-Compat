@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.compat.malum.modifier.rune;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.modifier.hook.EntitySensitiveAttributesModifierHook;
 import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioAttributeHook;
 import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioTickModifierHook;
@@ -21,9 +22,12 @@ import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModul
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.UUID;
 import java.util.function.BiConsumer;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class RuneOfDexterityModifier extends NoLevelsModifier implements CurioAttributeHook, EntitySensitiveAttributesModifierHook, InventoryTickModifierHook, CurioTickModifierHook {
 
     public void registerHooks(ModuleHookMap.Builder builder) {
@@ -36,14 +40,10 @@ public class RuneOfDexterityModifier extends NoLevelsModifier implements CurioAt
         map.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, "Curio Movement Speed", 0.2F, AttributeModifier.Operation.MULTIPLY_TOTAL) {
             public double getAmount() {
                 double amount = super.getAmount();
-                if (wearer != null) {
-                    float health = wearer.getHealth();
-                    float maxHealth = wearer.getMaxHealth();
-                    float pct = health / maxHealth;
-                    return amount * (double)(2.0F - pct);
-                } else {
-                    return amount;
-                }
+                float health = wearer.getHealth();
+                float maxHealth = wearer.getMaxHealth();
+                float pct = health / maxHealth;
+                return amount * (double)(2.0F - pct);
             }
         });
         return map;
@@ -54,14 +54,10 @@ public class RuneOfDexterityModifier extends NoLevelsModifier implements CurioAt
         biConsumer.accept(Attributes.MOVEMENT_SPEED, new AttributeModifier(AttributeModule.getUUID("rune_of_dexterity.movement_speed", equipmentSlot), "Movement Speed", 0.2F, AttributeModifier.Operation.MULTIPLY_TOTAL) {
             public double getAmount() {
                 double amount = super.getAmount();
-                if (wearer != null) {
-                    float health = wearer.getHealth();
-                    float maxHealth = wearer.getMaxHealth();
-                    float pct = health / maxHealth;
-                    return amount * (double)(2.0F - pct);
-                } else {
-                    return amount;
-                }
+                float health = wearer.getHealth();
+                float maxHealth = wearer.getMaxHealth();
+                float pct = health / maxHealth;
+                return amount * (double)(2.0F - pct);
             }
         });
     }

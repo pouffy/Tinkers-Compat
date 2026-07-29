@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.cataclysm.modifier.general;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntitySelector;
@@ -21,6 +22,10 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class AquaticModifier extends NoLevelsModifier implements ToolStatsModifierHook, InventoryTickModifierHook {
     private final ResourceLocation fishCount = TCompat.getResource("fish_count");
 

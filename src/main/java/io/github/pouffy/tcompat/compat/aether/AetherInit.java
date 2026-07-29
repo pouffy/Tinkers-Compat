@@ -2,10 +2,6 @@ package io.github.pouffy.tcompat.compat.aether;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
-import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.aether.entity.ModifiableDart;
-import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartItem;
-import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartShooter;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.BlightedModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.AscensionModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.BloodsuckingModifier;
@@ -13,28 +9,16 @@ import io.github.pouffy.tcompat.compat.aether.modifier.combat.melee.Thunderstruc
 import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AmbrogenModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AutochantModifier;
 import io.github.pouffy.tcompat.compat.aether.modifier.harvest.AutofreezeModifier;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.registries.RegistryObject;
 import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
-import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
-import slimeknights.tconstruct.library.tools.helper.ToolBuildHandler;
-import slimeknights.tconstruct.tools.TinkerTools;
-import slimeknights.tconstruct.tools.ToolDefinitions;
-import slimeknights.tconstruct.tools.client.material.ThrownToolRenderer;
 
-import java.util.function.Consumer;
-
+@SuppressWarnings("unused")
 public class AetherInit extends CompatInitializer {
     public static final ModifierDeferredRegister AETHER_M = ModifierDeferredRegister.create(TCompat.MOD_ID);
     public static final ItemDeferredRegister AETHER_I = new ItemDeferredRegister(TCompat.MOD_ID);

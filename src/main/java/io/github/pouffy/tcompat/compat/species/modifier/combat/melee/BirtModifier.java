@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.species.modifier.combat.melee;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -13,6 +14,10 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class BirtModifier extends Modifier implements MeleeHitModifierHook {
 
     @Override
@@ -30,9 +35,7 @@ public class BirtModifier extends Modifier implements MeleeHitModifierHook {
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
         if (target != null && context.isFullyCharged() && target.isAlive()) {
-            ObjectRetriever.getEffect("species:birtd").ifPresent(effect -> {
-                target.addEffect(new MobEffectInstance(effect, 300));
-            });
+            ObjectRetriever.getEffect("species:birtd").ifPresent(effect -> target.addEffect(new MobEffectInstance(effect, 300)));
         }
     }
 }

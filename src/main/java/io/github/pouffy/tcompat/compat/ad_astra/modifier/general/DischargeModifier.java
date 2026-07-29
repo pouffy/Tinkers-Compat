@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.ad_astra.modifier.general;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
@@ -36,8 +37,11 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class DischargeModifier extends Modifier implements BlockInteractionModifierHook, ValidateModifierHook, ModifierRemovalHook, BlockBreakModifierHook, OnAttackedModifierHook, MeleeHitModifierHook, SlotStackModifierHook, ProjectileLaunchModifierHook {
 
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
@@ -87,12 +91,10 @@ public class DischargeModifier extends Modifier implements BlockInteractionModif
         int toolEnergy = ToolEnergyCapability.getEnergy(heldTool);
         if (toolEnergy > 0 && !slotStack.isEmpty()) {
             var energyCap = slotStack.getCapability(ForgeCapabilities.ENERGY);
-            AtomicInteger recieved = new AtomicInteger(0);
-            energyCap.ifPresent((energy) -> {
-                recieved.set(energy.receiveEnergy(toolEnergy, false));
-            });
-            if (recieved.get() > 0) {
-                ToolEnergyCapability.setEnergy(heldTool, Math.max(0, toolEnergy - recieved.get()));
+            AtomicInteger received = new AtomicInteger(0);
+            energyCap.ifPresent((energy) -> received.set(energy.receiveEnergy(toolEnergy, false)));
+            if (received.get() > 0) {
+                ToolEnergyCapability.setEnergy(heldTool, Math.max(0, toolEnergy - received.get()));
             }
             return true;
         }

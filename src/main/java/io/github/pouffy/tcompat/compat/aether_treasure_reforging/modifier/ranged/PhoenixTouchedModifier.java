@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_treasure_reforging.modifier.ranged;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbilityHooks;
 import io.github.pouffy.tcompat.common.capability.projectile.ability.types.PhoenixTouchedAbility;
@@ -15,6 +16,10 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class PhoenixTouchedModifier extends Modifier implements ProjectileLaunchModifierHook {
 
     @Override

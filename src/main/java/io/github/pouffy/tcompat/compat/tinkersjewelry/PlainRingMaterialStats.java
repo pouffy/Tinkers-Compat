@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat.tinkersjewelry;
 
 import com.google.common.collect.Lists;
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import net.minecraft.network.chat.Component;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
@@ -10,8 +11,11 @@ import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public record PlainRingMaterialStats(int durability, float amplification) implements IRepairableMaterialStats {
 
     public static final MaterialStatsId ID = new MaterialStatsId(TCompat.getResource("tinkersjewelry", "plain_ring"));

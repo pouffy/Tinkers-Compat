@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.species.modifier.defence;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.cooldown.ClientModifierCooldowns;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
@@ -34,8 +35,11 @@ import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class KineticModifier extends Modifier implements UsingToolModifierHook, OnAttackedModifierHook, TooltipModifierHook {
 
     public static final ResourceLocation STORED_DAMAGE = TCompat.getResource("stored_damage");
@@ -69,9 +73,7 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
                 player.disableShield(true);
             }
             data.putFloat(STORED_DAMAGE, Math.min(data.getFloat(STORED_DAMAGE) + amount, max));
-            ObjectRetriever.getSound("species:item.ricoshield.absorb").ifPresent(sound -> {
-                self.level().playSound(null, self.blockPosition(), sound, SoundSource.PLAYERS, 1F, data.getFloat(STORED_DAMAGE) * 0.05F);
-            });
+            ObjectRetriever.getSound("species:item.ricoshield.absorb").ifPresent(sound -> self.level().playSound(null, self.blockPosition(), sound, SoundSource.PLAYERS, 1F, data.getFloat(STORED_DAMAGE) * 0.05F));
         }
     }
 
@@ -82,14 +84,11 @@ public class KineticModifier extends Modifier implements UsingToolModifierHook, 
             serverLevel.sendParticles(SpeciesInit.SMALL_KINETIC_ENERGY.get(), player.position().x, player.position().y + 0.01, player.position().z, 1, 0.0F, 0.0F, 0.0F, 0.5F);
         }
 
-        ObjectRetriever.getSound("species:item.ricoshield.attack").ifPresent(sound -> {
-            level.playSound(player, player.blockPosition(), sound, SoundSource.PLAYERS, 1.0F, 1.0F);
-        });
+        ObjectRetriever.getSound("species:item.ricoshield.attack").ifPresent(sound -> level.playSound(player, player.blockPosition(), sound, SoundSource.PLAYERS, 1.0F, 1.0F));
 
         for(LivingEntity target : list) {
             if (target != player) {
-                if (target instanceof TamableAnimal) {
-                    TamableAnimal tamableAnimal = (TamableAnimal)target;
+                if (target instanceof TamableAnimal tamableAnimal) {
                     if (tamableAnimal.getOwner() == player) {
                         continue;
                     }

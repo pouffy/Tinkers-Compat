@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.betternether.modifier.defence;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -23,6 +24,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+@MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class CinderspineModifier extends Modifier implements ProjectileLaunchModifierHook, SlingLaunchModifierHook, ToolStatsModifierHook {
 

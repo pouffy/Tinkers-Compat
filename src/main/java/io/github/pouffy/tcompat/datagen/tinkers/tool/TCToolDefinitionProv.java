@@ -3,7 +3,6 @@ package io.github.pouffy.tcompat.datagen.tinkers.tool;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.GlobalDefinitions;
 import io.github.pouffy.tcompat.compat.GlobalInit;
-import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ToolActions;
@@ -17,8 +16,6 @@ import slimeknights.tconstruct.library.tools.definition.module.build.ToolActions
 import slimeknights.tconstruct.library.tools.definition.module.build.ToolTraitsModule;
 import slimeknights.tconstruct.library.tools.definition.module.display.FixedMaterialToolName;
 import slimeknights.tconstruct.library.tools.definition.module.display.MaterialToolNameModule;
-import slimeknights.tconstruct.library.tools.definition.module.display.StatTypesToolNameModule;
-import slimeknights.tconstruct.library.tools.definition.module.display.ToolNameHook;
 import slimeknights.tconstruct.library.tools.definition.module.material.DefaultMaterialsModule;
 import slimeknights.tconstruct.library.tools.definition.module.material.PartStatsModule;
 import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveModule;
@@ -29,7 +26,6 @@ import slimeknights.tconstruct.library.tools.nbt.StatsNBT;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.TinkerToolParts;
-import slimeknights.tconstruct.tools.ToolDefinitions;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import static slimeknights.tconstruct.tools.TinkerToolParts.*;

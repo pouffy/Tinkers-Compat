@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.compat;
 
 import com.google.common.collect.Lists;
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicClothMaterialStats;
@@ -13,8 +14,11 @@ import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStatId;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 public class CompatToolStats {
 
     public enum Statless implements IMaterialStats {
