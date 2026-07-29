@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
 import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
+import io.github.pouffy.tcompat.compat.create.CreateHandler;
 import io.github.pouffy.tcompat.config.TCompatConfig;
 import io.github.pouffy.tcompat.datagen.TCDataGenerator;
 import net.minecraft.SharedConstants;
@@ -35,6 +36,7 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.resource.PathPackResources;
@@ -90,7 +92,7 @@ public class TCompat {
     public TCompat(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         COOLDOWN_HANDLER = new CooldownHandler();
-        modEventBus.addListener(this::commonSetup);
+        modEventBus.register(Listeners.class);
         CompatHelper.init(modEventBus);
         modEventBus.register(new TCFluids());
         CompatModule.initRegisters(context);
@@ -100,13 +102,7 @@ public class TCompat {
         TCompatConfig.register(context);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        TCompatNetworking.register();
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> NBTKeyModel.registerExtraTexture(TConstruct.getResource("creative_slot"), "rune", getResource("gui/modifiers/rune")));
 
-        MaterialRegistry.getInstance().registerStatType(DartBarrelMaterialStats.TYPE, MaterialRegistry.RANGED);
-        MaterialRegistry.getInstance().registerStatType(LipGuardMaterialStats.TYPE, MaterialRegistry.RANGED);
-    }
 
     public static ResourceLocation getResource(String name) {
         if (name.contains(":")) {
@@ -147,6 +143,23 @@ public class TCompat {
                             PackSource.BUILT_IN)
                     )
             );
+        }
+    }
+
+    public static final class Listeners {
+
+        @SubscribeEvent
+        public static void commonSetup(final FMLCommonSetupEvent event) {
+            TCompatNetworking.register();
+            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> NBTKeyModel.registerExtraTexture(TConstruct.getResource("creative_slot"), "rune", getResource("gui/modifiers/rune")));
+
+            MaterialRegistry.getInstance().registerStatType(DartBarrelMaterialStats.TYPE, MaterialRegistry.RANGED);
+            MaterialRegistry.getInstance().registerStatType(LipGuardMaterialStats.TYPE, MaterialRegistry.RANGED);
+        }
+
+        @SubscribeEvent
+        public static void imcEnqueue(final InterModEnqueueEvent event) {
+            CreateHandler.registerGoggles();
         }
     }
 

@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 45,
+      "tag": "forge:molten_brass"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "item": "create:track_observer"
+  },
+  "result": {
+    "amount": 125,
+    "fluid": "tconstruct:molten_obsidian"
+  },
+  "temperature": 1000,
+  "time": 78
+}

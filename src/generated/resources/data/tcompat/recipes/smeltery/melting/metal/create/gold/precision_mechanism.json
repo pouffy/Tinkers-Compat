@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 50,
+      "tag": "forge:molten_iron"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "item": "create:precision_mechanism"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_gold"
+  },
+  "temperature": 700,
+  "time": 57
+}

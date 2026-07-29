@@ -3,6 +3,10 @@
     {
       "id": "tcompat:brightness",
       "required": false
+    },
+    {
+      "id": "tcompat:goggles",
+      "required": false
     }
   ]
 }

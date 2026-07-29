@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "item": "create:metal_bracket"
+  },
+  "result": {
+    "amount": 50,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 45
+}

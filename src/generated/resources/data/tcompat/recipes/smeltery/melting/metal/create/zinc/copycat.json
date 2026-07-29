@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:copycat_step"
+    },
+    {
+      "item": "create:copycat_panel"
+    }
+  ],
+  "result": {
+    "amount": 20,
+    "tag": "forge:molten_zinc"
+  },
+  "temperature": 420,
+  "time": 22
+}

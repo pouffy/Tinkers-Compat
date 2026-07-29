@@ -251,6 +251,7 @@
     "frostborn": "#5EFFFF",
     "gale": "#9CD9E6",
     "ghostly": "#56ECCC",
+    "goggles": "#6093A0",
     "hallowed": "#E4AB38",
     "heartbeat": "#819988",
     "iced": "#5EFFFF",
@@ -316,6 +317,7 @@
     "warded": "#CE7CEE",
     "warden": "#62D9FC",
     "wicked": "#FFA342",
+    "wrenching": "#853836",
     "zanite": "#AF7FF6"
   },
   "stat.tconstruct.slot": {

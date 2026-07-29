@@ -89,6 +89,10 @@ public class TCTags {
         private static TagKey<Block> common(String name) {
             return TagKey.create(Registries.BLOCK, commonResource(name));
         }
+
+        public static TagKey<Block> named(String namespace, String name) {
+            return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(namespace, name));
+        }
     }
 
     public static class Items {
@@ -282,7 +286,7 @@ public class TCTags {
 
         public static final TagKey<Fluid> SMALLER_GEM_TOOLTIPS = local("tooltips/smaller_gem");
 
-        private static TagKey<Fluid> common(String name) {
+        public static TagKey<Fluid> common(String name) {
             return TagKey.create(Registries.FLUID, commonResource(name));
         }
 

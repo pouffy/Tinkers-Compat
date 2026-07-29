@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:mechanical_mixer"
+    },
+    {
+      "item": "create:whisk"
+    }
+  ],
+  "result": {
+    "amount": 450,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 134
+}

@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 100,
+      "fluid": "tconstruct:molten_amethyst"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "item": "create:pulse_timer"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_brass"
+  },
+  "temperature": 605,
+  "time": 54
+}

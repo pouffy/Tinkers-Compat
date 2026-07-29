@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:item_hatch"
+    },
+    {
+      "item": "create:packager"
+    },
+    {
+      "item": "create:repackager"
+    }
+  ],
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 120
+}

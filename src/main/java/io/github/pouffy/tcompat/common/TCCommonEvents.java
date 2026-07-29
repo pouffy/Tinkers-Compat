@@ -15,6 +15,7 @@ import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.entity.ModifiableDart;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
+import io.github.pouffy.tcompat.compat.create.modifier.harvest.WrenchingModifier;
 import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerHandler;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
@@ -32,6 +33,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.*;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -56,6 +58,11 @@ public class TCCommonEvents {
                 dart.setNoGravity(false);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void attackEntity(AttackEntityEvent event) {
+        WrenchingModifier.wrenchInstaKillsMinecarts(event);
     }
 
     @SubscribeEvent

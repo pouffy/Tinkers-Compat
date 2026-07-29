@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:brass_ladder"
+    },
+    {
+      "item": "create:brass_scaffolding"
+    },
+    {
+      "item": "create:brass_table_cloth"
+    }
+  ],
+  "result": {
+    "amount": 45,
+    "tag": "forge:molten_brass"
+  },
+  "temperature": 605,
+  "time": 38
+}

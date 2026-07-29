@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:peculiar_bell"
+    },
+    {
+      "item": "create:haunted_bell"
+    }
+  ],
+  "result": {
+    "amount": 900,
+    "tag": "forge:molten_brass"
+  },
+  "temperature": 605,
+  "time": 170
+}

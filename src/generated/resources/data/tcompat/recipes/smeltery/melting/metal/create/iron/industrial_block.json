@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:industrial_iron_block"
+    },
+    {
+      "item": "create:weathered_iron_block"
+    }
+  ],
+  "result": {
+    "amount": 45,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 43
+}

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "item": "create:flywheel"
+  },
+  "result": {
+    "amount": 720,
+    "tag": "forge:molten_brass"
+  },
+  "temperature": 605,
+  "time": 152
+}

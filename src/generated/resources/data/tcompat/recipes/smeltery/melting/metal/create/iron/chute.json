@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:chute"
+    },
+    {
+      "item": "create:portable_storage_interface"
+    }
+  ],
+  "result": {
+    "amount": 65,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 51
+}

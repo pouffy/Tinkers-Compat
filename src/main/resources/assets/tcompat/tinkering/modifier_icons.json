@@ -30,5 +30,8 @@
 
   "tcompat:brightness":   "tcompat:gui/modifiers/brightness",
   "tcompat:warden":   ["deeperdarker:item/reinforced_echo_shard", "tconstruct:gui/modifiers/plus"],
-  "tcompat:sonorous":   ["deeperdarker:item/soul_crystal", "tconstruct:gui/modifiers/plus"]
+  "tcompat:sonorous":   ["deeperdarker:item/soul_crystal", "tconstruct:gui/modifiers/plus"],
+
+  "tcompat:wrenching":   "tcompat:gui/modifiers/wrenching",
+  "tcompat:goggles":   ["create:item/goggles", "tconstruct:gui/modifiers/plus"]
 }

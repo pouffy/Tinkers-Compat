@@ -5,6 +5,7 @@ import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.create.CreateInit;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
@@ -31,7 +32,7 @@ public class TCModifierTagProv extends AbstractModifierTagProvider {
         this.tag(DAMAGE_UPGRADES).addOptional(TCModifiers.dreadbane);
         this.tag(HARVEST_UPGRADES).addOptional(TCModifiers.spoiled);
         this.tag(INTERACTION_ABILITIES).addOptional(MalumInit.erosion.getId(), MalumInit.auricFlame.getId(), MalumInit.mnemonic.getId(), DarkerInit.sonorous.getId());
-        this.tag(HELMET_ABILITIES).addOptional(TCModifiers.brightness);
+        this.tag(HELMET_ABILITIES).addOptional(TCModifiers.brightness, TCModifiers.goggles);
         this.tag(RANGED_ABILITIES)
                 .addOptional(MalumInit.erosion.getId(), MalumInit.auricFlame.getId(), MalumInit.mnemonic.getId(), DarkerInit.sonorous.getId(), SpeciesInit.swapping.getId())
                 .addOptional(IFInit.flamed.getId(), IFInit.iced.getId(), IFInit.lightning.getId())
@@ -43,6 +44,7 @@ public class TCModifierTagProv extends AbstractModifierTagProvider {
                 .addOptional(SpeciesInit.birt.getId());
         this.tag(HARVEST_ABILITIES)
                 .addOptional(BetternetherInit.rubysFire.getId())
+                .addOptional(CreateInit.wrenching.getId())
                 .addOptional(AetherInit.autochant.getId(), AetherInit.autofreeze.getId());
         this.tag(PROTECTION_DEFENSE)
                 .addOptional(IFInit.scorchThorns.getId(), IFInit.frostThorns.getId(), IFInit.voltThorns.getId());

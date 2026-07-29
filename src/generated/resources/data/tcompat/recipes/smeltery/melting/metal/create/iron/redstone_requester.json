@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 540,
+      "tag": "forge:molten_copper"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "item": "create:redstone_requester"
+  },
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 104
+}

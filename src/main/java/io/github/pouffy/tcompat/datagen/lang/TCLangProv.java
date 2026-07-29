@@ -191,6 +191,11 @@ public class TCLangProv extends LanguageProvider {
         add("modifier.tcompat.skyjade.mining_speed", "Skyjade Mining Speed");
         add("modifier.tcompat.skyjade.armor", "Skyjade Armor");
 
+        add("modifier.tcompat.clockwork.speed", "Clockwork Speed");
+        add("effect.tcompat.clockwork_harvest", "Clockwork");
+        add("effect.tcompat.clockwork_melee", "Clockwork");
+        add("effect.tcompat.clockwork_ranged", "Clockwork");
+
         add("modifier.tcompat.discharge.current", "Dischargable: ");
         add("modifier.tcompat.cryogenic.current", "Cryo Fuel: ");
         add("tool_stat.tcompat.cryogenic_fuel", "%s CR");
@@ -209,6 +214,7 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void modifiers() {
+        // Aether-related
         forModifier("modifier.tcompat.escarstay", "Tough as Snails", "Large flat increase in knockback resistance.");
         forModifier("modifier.tcompat.aether_forged", "Heavenly!", "Allows your tool to use it's full effectiveness in The Aether.");
         forModifier("modifier.tcompat.phoenix_touched", "Flamin' Hot", "Launched projectiles are lit with an immortal flame.");
@@ -225,21 +231,26 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.thunderstruck", "Strike me down!", "Charged attacks smite targets with lightning.");
         forModifier("modifier.tcompat.bloodsucking", "Revitalizing", "Charged attacks heal the user.");
         forModifier("modifier.tcompat.gale", "Blown away", "Charged attacks push targets away.");
-        //Betternether
+
+        // Betternether
         forModifier("modifier.tcompat.obsidian_breaker", "Shattering", "Increased mining speed against obsidian and similar blocks.");
         forModifier("modifier.tcompat.rubys_fire", "Ruby's Fire", "Heatstroke on demand", "Causes targets to ignite and drops to be blasted.");
-        //Species
+
+        // Species
         forModifier("modifier.tcompat.ricoshield", "It's gonna blow!", "Lower your shield to release a burst of absorbed damage.");
         forModifier("modifier.tcompat.wicked", "Look to the western sky", "Inflict targets with a stacking Combustion effect.");
         forModifier("modifier.tcompat.swapping", "Take their place", "Struck targets will switch places with the shooter.");
         forModifier("modifier.tcompat.birt", "Birt", "Birt");
-        //Ad Astra
+
+        // Ad Astra
         forModifier("modifier.tcompat.discharge", "It's electrifying", "Using the tool generates energy that can be discharged into blocks or items.");
         forModifier("modifier.tcompat.cryogenic", "Really quite chilling", "Feeding the tool Cryogenic fuels imbues your attacks with a frosty twist.");
         forModifier("modifier.tcompat.oxygenated", "Breathe in...", "Using the tool replenishes air by consuming Oxygen.");
-        //Betterend
+
+        // Betterend
         forModifier("modifier.tcompat.void_touched", "All Consuming", "Increased efficiency against end stone blocks.\nApplies a stacking damage multiplier to targets.");
-        //Ice and Fire
+
+        // Ice and Fire
         forModifier("modifier.tcompat.scorch_thorns", "Burns with the fires of hell!", "Ignites and knocks back attackers.");
         forModifier("modifier.tcompat.flamed", "Burns with the fires of hell!", "Ignites and knocks back targets.");
         forModifier("modifier.tcompat.frost_thorns", "Freezes the blood in your veins!", "Freezes attackers.");
@@ -259,7 +270,8 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.stymphalian", "Soar", "The metallic fletching enables the arrow to soar like a bird");
         forModifier("modifier.tcompat.petrifying", "Pretty Solid", "The troll's hide petrifies in sunlight, strengthening your tool");
         forModifier("modifier.tcompat.allythropod", "Why not be friends?", "Bonus damage to non-arthropods and deathworms");
-        //Cataclysm
+
+        // Cataclysm
         forModifier("modifier.tcompat.cataclysmic", "Nigh Unstoppable", "The spirits of ancient gods try to hold your tool together.");
         forModifier("modifier.tcompat.void_scatter", "Scatter!", "Upon hitting a target, the arrow shatters into multiple void shards.");
         forModifier("modifier.tcompat.aquatic", "Sleeping with the fishes", "Your tool stats are buffed based on the amount of aquatic creatures nearby.");
@@ -271,7 +283,8 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.standstill", "Stay right there", "Removes all knockback.");
         forModifier("modifier.tcompat.fluxed", "Industrial Grade Combat", "Fully charged shots fire a heavy-duty Wither Rocket.");
         forModifier("modifier.tcompat.ignitium", "Flamin' Hot", "Ignis' rage fills your armor, strengthening stats and providing special abilities.");
-        //Malum
+
+        // Malum
         forModifier("modifier.tcompat.stained", "Iron's cooler sibling", "Tool deals extra magic damage.");
         forModifier("modifier.tcompat.warded", "Safe enough", "Increased Soul Ward capacity and recovery rate.");
         forModifier("modifier.tcompat.hallowed", "It's just a tribute", "Adds one bonus Rune slot to the tool.");
@@ -290,7 +303,6 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.auric_flame", "Fire", "Charge up and launch a volley of auric flame bolts.");
         forModifier("modifier.tcompat.spoiled", "Can I have some more?", "Increased Spirit Spoils");
         forModifier("modifier.tcompat.integral", "Well Warded", "Increased Soul Ward Integrity");
-
         malumRune("motion", "Motion", "The zephyr propels you forward, increasing your movement speed.");
         malumRune("loyalty", "Loyalty", "You reach out for further power, increasing your reach and item pickup distance.");
         malumRune("warding", "Warding", "An earthen carapace surrounds your body, functioning as extra armor.");
@@ -316,11 +328,17 @@ public class TCLangProv extends LanguageProvider {
         malumRune("toughness", "Toughness", "Increased armor toughness.");
         malumRune("igneous_solace", "Igneous Solace", "Damage resistance while burning.");
 
+        // Deeper & Darker
         forModifier("modifier.tcompat.warden", "Silence", "Utilise the power of the Warden to dampen vibrations and make the tool stronger.");
         forModifier("modifier.tcompat.brightness", "Now I See You", "Pushes away the dark fog brought on by the warden's presence.");
         forModifier("modifier.tcompat.heartbeat", "I'm Feeling Romantical", "Something within the tool occasionally beats.");
         forModifier("modifier.tcompat.sonorous", "Did you hear that?", "Charge up and release a sonic boom.");
         forModifier("modifier.tcompat.sculk_affinity", "One with the tendrils", "Using the tool inflicts Sculk Affinity.");
+
+        // Create
+        forModifier("modifier.tcompat.clockwork", "You're really winding me up", "Using the tool increases its speed as long as you keep going.");
+        forModifier("modifier.tcompat.wrenching", "At the block straight up wrenching it", "Your tool can instantly pick up certain appliances.");
+        forModifier("modifier.tcompat.goggles", "Meet the Engineer", "The goggles allow you to view information on certain appliances.");
     }
 
     private void tag(TagKey<Item> tag, String name) {

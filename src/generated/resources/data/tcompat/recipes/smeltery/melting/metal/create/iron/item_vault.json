@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "create:item_vault"
+    },
+    {
+      "item": "create:package_frogport"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_iron"
+  },
+  "temperature": 800,
+  "time": 85
+}
