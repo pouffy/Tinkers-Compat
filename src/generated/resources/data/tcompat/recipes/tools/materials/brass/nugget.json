@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/brass"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/brass"
+  },
+  "material": "tcompat:brass",
+  "needed": 9,
+  "value": 1
+}

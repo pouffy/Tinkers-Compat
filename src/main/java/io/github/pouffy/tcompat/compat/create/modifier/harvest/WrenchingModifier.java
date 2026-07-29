@@ -47,42 +47,4 @@ public class WrenchingModifier extends NoLevelsModifier implements BlockInteract
             return InteractionResult.PASS;
         }
     }
-
-    public static boolean canWrenchPickup(BlockState state) {
-        return state.is(TCTags.Blocks.named("create", "wrench_pickup"));
-    }
-
-    public static InteractionResult onItemUseOnOther(UseOnContext context) {
-        Player player = context.getPlayer();
-        Level world = context.getLevel();
-        BlockPos pos = context.getClickedPos();
-        BlockState state = world.getBlockState(pos);
-        if (!(world instanceof ServerLevel)) {
-            return InteractionResult.SUCCESS;
-        } else {
-            if (player != null && !player.isCreative()) {
-                Block.getDrops(state, (ServerLevel)world, pos, world.getBlockEntity(pos), player, context.getItemInHand()).forEach((itemStack) -> player.getInventory().placeItemBackInInventory(itemStack));
-            }
-
-            state.spawnAfterBreak((ServerLevel)world, pos, ItemStack.EMPTY, true);
-            CreateHandler.wrenchSound(world, pos);
-            world.destroyBlock(pos, false);
-            return InteractionResult.SUCCESS;
-        }
-    }
-
-    public static void wrenchInstaKillsMinecarts(AttackEntityEvent event) {
-        Entity target = event.getTarget();
-        if (target instanceof AbstractMinecart minecart) {
-            Player player = event.getEntity();
-            ItemStack heldItem = player.getMainHandItem();
-            if (!player.isCreative()) {
-                EquipmentHelper.asTool(heldItem, (tool) -> {
-                    if (tool.getModifier(CreateInit.wrenching.getId()) != ModifierEntry.EMPTY) {
-                        minecart.hurt(minecart.damageSources().playerAttack(player), 100.0F);
-                    }
-                });
-            }
-        }
-    }
 }

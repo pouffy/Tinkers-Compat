@@ -11,6 +11,7 @@ import io.github.pouffy.tcompat.compat.betterend.BetterEndSmeltery;
 import io.github.pouffy.tcompat.compat.betternether.BetterNetherSmeltery;
 import io.github.pouffy.tcompat.compat.bwg.BWGSmeltery;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmSmeltery;
+import io.github.pouffy.tcompat.compat.create.CreateSmeltery;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherSmeltery;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFSmeltery;
 import io.github.pouffy.tcompat.compat.malum.MalumSmeltery;
@@ -58,6 +59,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         new BWGSmeltery().toData(consumer);
         new CataclysmSmeltery().toData(consumer);
         new MalumSmeltery().toData(consumer);
+        new CreateSmeltery().toData(consumer);
         recipeOverwrites(consumer);
     }
 

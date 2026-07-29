@@ -57,4 +57,6 @@ repositories {
         name = "BlameJared maven"
         url = uri("https://maven.blamejared.com/")
     }
+    maven { url = uri("https://maven.createmod.net") } // Create, Ponder, Flywheel
+    maven { url = uri("https://maven.tterrag.com") } // Registrate
 }
