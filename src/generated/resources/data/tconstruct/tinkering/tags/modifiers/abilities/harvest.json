@@ -5,6 +5,10 @@
       "required": false
     },
     {
+      "id": "tcompat:wrenching",
+      "required": false
+    },
+    {
       "id": "tcompat:autochant",
       "required": false
     },

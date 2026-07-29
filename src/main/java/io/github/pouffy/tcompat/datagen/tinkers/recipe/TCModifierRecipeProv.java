@@ -8,6 +8,7 @@ import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.recipe.AmbrofusionModifierRecipeBuilder;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherInit;
+import io.github.pouffy.tcompat.compat.create.CreateInit;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerInit;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFInit;
 import io.github.pouffy.tcompat.compat.malum.MalumInit;
@@ -401,6 +402,26 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setSlots(SlotType.ABILITY, 1)
                 .saveSalvage(withCondition(consumer, modLoaded("deeperdarker")), prefix(DarkerInit.sonorous, abilitySalvage))
                 .save(withCondition(consumer, modLoaded("deeperdarker")), prefix(DarkerInit.sonorous, abilityFolder));
+
+        ModifierRecipeBuilder.modifier(CreateInit.wrenching)
+                .setTools(TinkerTags.Items.HARVEST_PRIMARY)
+                .addInput(ItemNameIngredient.from(getResource("create:andesite_alloy")))
+                .addInput(ItemNameIngredient.from(getResource("create:wrench")))
+                .addInput(ItemNameIngredient.from(getResource("create:andesite_alloy")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(withCondition(consumer, modLoaded("create")), prefix(CreateInit.wrenching, upgradeSalvage))
+                .save(withCondition(consumer, modLoaded("create")), prefix(CreateInit.wrenching, upgradeFolder));
+
+        ModifierRecipeBuilder.modifier(TCModifiers.goggles)
+                .setTools(TinkerTags.Items.HELMETS)
+                .addInput(ItemNameIngredient.from(getResource("create:golden_sheet")))
+                .addInput(ItemNameIngredient.from(getResource("create:goggles")))
+                .addInput(ItemNameIngredient.from(getResource("create:golden_sheet")))
+                .setMaxLevel(1).checkTraitLevel()
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(withCondition(consumer, modLoaded("create")), prefix(TCModifiers.goggles, upgradeSalvage))
+                .save(withCondition(consumer, modLoaded("create")), prefix(TCModifiers.goggles, upgradeFolder));
 
 
         AmbrofusionModifierRecipeBuilder.modifier(ItemNameIngredient.from(aetherId.apply("ambrosium_shard")), 4)

@@ -55,6 +55,9 @@ public class TCModifiers {
     public static final ModifierId brightness = id("brightness");
     public static final ModifierId heartbeat = id("heartbeat");
 
+    //Create
+    public static final ModifierId goggles = id("goggles");
+
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");
     public static final ModifierId poison_gem = compatId("tinkersjewelry", "poison_gem");

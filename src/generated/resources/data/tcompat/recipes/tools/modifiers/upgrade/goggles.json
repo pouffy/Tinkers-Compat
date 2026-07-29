@@ -1,0 +1,30 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "inputs": [
+    {
+      "item": "create:golden_sheet"
+    },
+    {
+      "item": "create:goggles"
+    },
+    {
+      "item": "create:golden_sheet"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:goggles",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/helmets"
+  }
+}

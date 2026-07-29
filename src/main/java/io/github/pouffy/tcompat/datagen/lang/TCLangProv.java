@@ -337,6 +337,8 @@ public class TCLangProv extends LanguageProvider {
 
         // Create
         forModifier("modifier.tcompat.clockwork", "You're really winding me up", "Using the tool increases its speed as long as you keep going.");
+        forModifier("modifier.tcompat.wrenching", "At the block straight up wrenching it", "Your tool can instantly pick up certain appliances.");
+        forModifier("modifier.tcompat.goggles", "Meet the Engineer", "The goggles allow you to view information on certain appliances.");
     }
 
     private void tag(TagKey<Item> tag, String name) {

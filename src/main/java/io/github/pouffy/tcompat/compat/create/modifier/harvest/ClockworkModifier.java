@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.compat.create.modifier.harvest;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.core.Direction;
@@ -35,8 +36,11 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.stats.ToolType;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 public class ClockworkModifier extends Modifier implements ProjectileLaunchModifierHook, ConditionalStatModifierHook, BlockBreakModifierHook, BreakSpeedModifierHook, SlingLaunchModifierHook, TooltipModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
     private static final Component SPEED = TCompat.makeTranslation("modifier", "clockwork.speed");
 

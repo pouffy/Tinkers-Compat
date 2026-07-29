@@ -89,6 +89,10 @@ public class TCTags {
         private static TagKey<Block> common(String name) {
             return TagKey.create(Registries.BLOCK, commonResource(name));
         }
+
+        public static TagKey<Block> named(String namespace, String name) {
+            return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(namespace, name));
+        }
     }
 
     public static class Items {
