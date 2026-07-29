@@ -9,7 +9,7 @@ import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
 import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
-import io.github.pouffy.tcompat.compat.create.CreateHandler;
+import io.github.pouffy.tcompat.compat.create.GogglesPredicate;
 import io.github.pouffy.tcompat.config.TCompatConfig;
 import io.github.pouffy.tcompat.datagen.TCDataGenerator;
 import net.minecraft.SharedConstants;
@@ -159,7 +159,9 @@ public class TCompat {
 
         @SubscribeEvent
         public static void imcEnqueue(final InterModEnqueueEvent event) {
-            CreateHandler.registerGoggles();
+            if (CompatHelper.isLoaded("create")) {
+                GogglesPredicate.registerGoggles();
+            }
         }
     }
 

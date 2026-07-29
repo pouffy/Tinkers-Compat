@@ -1,6 +1,5 @@
 package io.github.pouffy.tcompat.compat.create;
 
-import com.simibubi.create.AllFluids;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -21,8 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-
-import static slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe.getTemperature;
 
 public class CreateSmeltery implements CompatSmeltery {
 
