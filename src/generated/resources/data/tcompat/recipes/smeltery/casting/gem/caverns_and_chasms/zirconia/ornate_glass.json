@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "tag": "forge:glass/silica"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 23,
+  "fluid": {
+    "amount": 10,
+    "tag": "tcompat:molten_zirconia"
+  },
+  "result": "caverns_and_chasms:ornate_glass"
+}

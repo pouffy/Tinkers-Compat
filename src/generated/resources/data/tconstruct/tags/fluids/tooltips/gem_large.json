@@ -15,6 +15,10 @@
     {
       "id": "#tcompat:molten_turquoise",
       "required": false
+    },
+    {
+      "id": "#tcompat:molten_zirconia",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:zirconia_lamp"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "tcompat:molten_zirconia"
+  },
+  "temperature": 1050,
+  "time": 143
+}

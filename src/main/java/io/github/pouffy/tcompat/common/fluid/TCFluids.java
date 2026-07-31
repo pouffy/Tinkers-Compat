@@ -58,7 +58,7 @@ public class TCFluids extends CompatModule {
     public static final FlowingFluidObject<ForgeFlowingFluid> fireBlood, iceBlood, lightningBlood, moltenFireDragonsteel, moltenIceDragonsteel, moltenLightningDragonsteel; // Ice and Fire
     public static final FlowingFluidObject<ForgeFlowingFluid> moltenAncientMetal, moltenBlackSteel, moltenCursium, moltenWitherite, moltenIgnitium, moltenLacrima; // Cataclysm
     public static final FlowingFluidObject<ForgeFlowingFluid> runicSap, cursedSap, moltenSoulStainedSteel, moltenMalignantPewter, moltenHallowedGold, moltenBlazingQuartz, moltenCthonicGold, moltenMalignantLead; // Malum
-    public static final FlowingFluidObject<ForgeFlowingFluid> moltenNecromium, moltenSpinel, moltenTurquoise; // Caverns and Chasms
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenNecromium, moltenSpinel, moltenTurquoise, moltenZirconia; // Caverns and Chasms
 
 
     public static FlowingFluidObject<ForgeFlowingFluid> fireLilyMixture, frostLilyMixture, lightningLilyMixture, ambrosia;
@@ -120,6 +120,7 @@ public class TCFluids extends CompatModule {
         moltenNecromium = register(TCTags.Items.ingot("necromium"), "caverns_and_chasms", FLUIDS.registerMetal("molten_necromium").type(hot("molten_necromium").temperature(1525).lightLevel(4)).block(BurningLiquidBlock.createBurning(MapColor.TERRACOTTA_GREEN, 4, 6, 2.5F)).bucket().flowing());
         moltenSpinel = register(TCTags.Items.gem("spinel"), "caverns_and_chasms", FLUIDS.registerGem("molten_spinel").type(hot("molten_spinel").temperature(1175).lightLevel(9)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_PINK, 9, 12, 1.5F)).bucket().flowing());
         moltenTurquoise = register(TCTags.Items.gem("turquoise"), "caverns_and_chasms", FLUIDS.registerGem("molten_turquoise").type(hot("molten_turquoise").temperature(1250).lightLevel(9)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_LIGHT_BLUE, 9, 16, 2.0F)).bucket().flowing());
+        moltenZirconia = register(TCTags.Items.gem("zirconia"), "caverns_and_chasms", FLUIDS.registerGem("molten_zirconia").type(hot("molten_zirconia").temperature(1350).lightLevel(7)).block(BurningLiquidBlock.createBurning(MapColor.COLOR_YELLOW, 7, 16, 2.0F)).bucket().flowing());
 
         fireLilyMixture = register(TCompat.getResource("iceandfire:fire_stew"), "iceandfire", FLUIDS.register("fire_lily_mixture").type(cool("fire_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_ORANGE, 0).commonTag().flowing());
         frostLilyMixture = register(TCompat.getResource("iceandfire:frost_stew"), "iceandfire", FLUIDS.register("frost_lily_mixture").type(cool("frost_lily_mixture").temperature(400)).bucket().block(MapColor.COLOR_LIGHT_BLUE, 0).commonTag().flowing());

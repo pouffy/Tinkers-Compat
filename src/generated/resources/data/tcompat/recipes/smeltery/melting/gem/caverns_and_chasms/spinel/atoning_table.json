@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 200,
+      "fluid": "tconstruct:molten_diamond"
+    },
+    {
+      "amount": 4000,
+      "fluid": "tconstruct:molten_obsidian"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "item": "caverns_and_chasms:atoning_table"
+  },
+  "result": {
+    "amount": 800,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 186
+}

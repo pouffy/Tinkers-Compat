@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:spinel_bricks"
+    },
+    {
+      "item": "caverns_and_chasms:spinel_pillar"
+    },
+    {
+      "item": "caverns_and_chasms:spinel_brick_wall"
+    }
+  ],
+  "result": {
+    "amount": 400,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 132
+}

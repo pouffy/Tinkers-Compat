@@ -280,7 +280,7 @@ public class TCTags {
             return group("gems", type);
         }
 
-        private static TagKey<Item> common(String name) {
+        public static TagKey<Item> common(String name) {
             return TagKey.create(Registries.ITEM, commonResource(name));
         }
 

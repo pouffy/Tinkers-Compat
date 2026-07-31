@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 360,
+      "tag": "forge:molten_gold"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "item": "caverns_and_chasms:bejeweled_apple"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 132
+}

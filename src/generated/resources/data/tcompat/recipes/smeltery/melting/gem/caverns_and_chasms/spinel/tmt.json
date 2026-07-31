@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:tmt"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 66
+}

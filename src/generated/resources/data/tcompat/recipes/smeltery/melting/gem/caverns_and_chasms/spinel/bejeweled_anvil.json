@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 1395,
+      "tag": "forge:molten_iron"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "item": "caverns_and_chasms:bejeweled_anvil"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 132
+}

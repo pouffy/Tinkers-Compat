@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 180,
+      "tag": "forge:molten_iron"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "item": "caverns_and_chasms:dismantling_table"
+  },
+  "result": {
+    "amount": 800,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 186
+}

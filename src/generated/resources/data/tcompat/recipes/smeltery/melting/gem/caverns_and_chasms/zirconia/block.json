@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/zirconia"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/zirconia"
+  },
+  "result": {
+    "amount": 900,
+    "fluid": "tcompat:molten_zirconia"
+  },
+  "temperature": 1050,
+  "time": 203
+}

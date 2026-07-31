@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:table_duplication",
+  "cast": {
+    "item": "caverns_and_chasms:trim_modifier_smithing_template"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 186,
+  "fluid": {
+    "amount": 500,
+    "tag": "tconstruct:molten_diamond"
+  }
+}

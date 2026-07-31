@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:music_disc_copy"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "tcompat:molten_zirconia"
+  },
+  "temperature": 1050,
+  "time": 71
+}

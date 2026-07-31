@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:trim_modifier_smithing_template"
+  },
+  "result": {
+    "amount": 800,
+    "fluid": "tcompat:molten_turquoise"
+  },
+  "temperature": 950,
+  "time": 193
+}

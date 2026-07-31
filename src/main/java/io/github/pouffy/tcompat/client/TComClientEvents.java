@@ -45,6 +45,7 @@ public class TComClientEvents {
         setTranslucent(TCFluids.cursedSap);
         setTranslucent(TCFluids.moltenSpinel);
         setTranslucent(TCFluids.moltenTurquoise);
+        setTranslucent(TCFluids.moltenZirconia);
     }
 
     private static void setTranslucent(FlowingFluidObject<?> fluid) {

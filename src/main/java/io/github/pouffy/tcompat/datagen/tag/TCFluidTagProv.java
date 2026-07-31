@@ -81,6 +81,7 @@ public class TCFluidTagProv extends FluidTagsProvider {
         fluidTag(TCFluids.moltenNecromium);
         fluidTag(TCFluids.moltenSpinel);
         fluidTag(TCFluids.moltenTurquoise);
+        fluidTag(TCFluids.moltenZirconia);
 
         var metals = this.tag(TinkerTags.Fluids.METAL_TOOLTIPS);
         // Aether
@@ -131,6 +132,7 @@ public class TCFluidTagProv extends FluidTagsProvider {
         // Caverns and Chasms
         largeGems.addOptionalTag(TCFluids.moltenSpinel.getTag());
         largeGems.addOptionalTag(TCFluids.moltenTurquoise.getTag());
+        largeGems.addOptionalTag(TCFluids.moltenZirconia.getTag());
 
         var smallerGems = this.tag(TCTags.Fluids.SMALLER_GEM_TOOLTIPS);
         // Malum

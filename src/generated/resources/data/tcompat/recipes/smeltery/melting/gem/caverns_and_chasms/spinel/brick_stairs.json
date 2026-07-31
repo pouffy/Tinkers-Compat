@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:spinel_brick_stairs"
+  },
+  "result": {
+    "amount": 600,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 161
+}
