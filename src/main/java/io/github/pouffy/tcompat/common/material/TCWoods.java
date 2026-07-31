@@ -74,7 +74,7 @@ public enum TCWoods implements StringRepresentable {
 
     // Quark
     ANCIENT(builder("quark").alias("ashen")),
-    AZALEA(builder("quark")),
+    AZALEA(builder("quark", "caverns_and_chasms")),
     BLOSSOM(builder("quark").alias("trumpet")),
 
     // Aether

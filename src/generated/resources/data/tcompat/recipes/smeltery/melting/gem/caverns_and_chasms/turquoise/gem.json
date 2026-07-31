@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/turquoise"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/turquoise"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "tcompat:molten_turquoise"
+  },
+  "temperature": 950,
+  "time": 65
+}

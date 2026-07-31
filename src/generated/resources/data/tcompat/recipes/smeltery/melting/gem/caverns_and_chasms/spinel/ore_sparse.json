@@ -1,0 +1,41 @@
+{
+  "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 125,
+      "rate": "none",
+      "tag": "forge:ender"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "mantle:tag_combination_filled",
+      "match": [
+        "forge:ores/spinel",
+        "forge:ore_rates/sparse"
+      ]
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "type": "forge:intersection",
+    "children": [
+      {
+        "tag": "forge:ores/spinel"
+      },
+      {
+        "tag": "forge:ore_rates/sparse"
+      }
+    ]
+  },
+  "rate": "gem",
+  "result": {
+    "amount": 50,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 94
+}

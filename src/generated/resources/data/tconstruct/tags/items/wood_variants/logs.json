@@ -13,10 +13,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:logs/baobab",
-      "required": false
-    },
-    {
       "id": "#tcompat:logs/blackwood",
       "required": false
     },
@@ -45,14 +41,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:logs/cypress",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/dead",
-      "required": false
-    },
-    {
       "id": "#tcompat:logs/dead",
       "required": false
     },
@@ -62,10 +50,6 @@
     },
     {
       "id": "#tcompat:logs/eucalyptus",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/fir",
       "required": false
     },
     {
@@ -97,10 +81,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:logs/jacaranda",
-      "required": false
-    },
-    {
       "id": "#tcompat:logs/joshua",
       "required": false
     },
@@ -121,31 +101,11 @@
       "required": false
     },
     {
-      "id": "#tcompat:logs/mahogany",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/maple",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/maple",
-      "required": false
-    },
-    {
       "id": "#tcompat:logs/maple",
       "required": false
     },
     {
       "id": "#tcompat:logs/mauve",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/palm",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/palm",
       "required": false
     },
     {
@@ -161,23 +121,11 @@
       "required": false
     },
     {
-      "id": "#tcompat:logs/pine",
-      "required": false
-    },
-    {
       "id": "#tcompat:logs/pink_bioshroom",
       "required": false
     },
     {
       "id": "#tcompat:logs/rainbow_eucalyptus",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/redwood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/redwood",
       "required": false
     },
     {
@@ -198,14 +146,6 @@
     },
     {
       "id": "#tcompat:logs/white_mangrove",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/willow",
-      "required": false
-    },
-    {
-      "id": "#tcompat:logs/willow",
       "required": false
     },
     {

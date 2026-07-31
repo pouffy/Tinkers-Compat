@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gem"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/spinel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 66,
+  "fluid": {
+    "amount": 100,
+    "tag": "tcompat:molten_spinel"
+  },
+  "result": {
+    "tag": "forge:gems/spinel"
+  }
+}

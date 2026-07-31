@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/spinel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/spinel"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 63
+}

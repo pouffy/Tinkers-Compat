@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/necromium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/necromium"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tcompat:molten_necromium"
+  },
+  "temperature": 1225,
+  "time": 218
+}

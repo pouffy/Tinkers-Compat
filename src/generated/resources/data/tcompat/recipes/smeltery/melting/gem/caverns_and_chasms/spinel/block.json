@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/spinel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/spinel"
+  },
+  "result": {
+    "amount": 900,
+    "fluid": "tcompat:molten_spinel"
+  },
+  "temperature": 875,
+  "time": 188
+}

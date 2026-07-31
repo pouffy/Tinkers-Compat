@@ -7,6 +7,14 @@
     {
       "id": "#tcompat:molten_lacrima",
       "required": false
+    },
+    {
+      "id": "#tcompat:molten_spinel",
+      "required": false
+    },
+    {
+      "id": "#tcompat:molten_turquoise",
+      "required": false
     }
   ]
 }

@@ -43,6 +43,8 @@ public class TComClientEvents {
         setTranslucent(TCFluids.moltenBlazingQuartz);
         setTranslucent(TCFluids.runicSap);
         setTranslucent(TCFluids.cursedSap);
+        setTranslucent(TCFluids.moltenSpinel);
+        setTranslucent(TCFluids.moltenTurquoise);
     }
 
     private static void setTranslucent(FlowingFluidObject<?> fluid) {

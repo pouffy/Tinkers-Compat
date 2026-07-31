@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/spinel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 198,
+  "fluid": {
+    "amount": 900,
+    "tag": "tcompat:molten_spinel"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/spinel"
+  }
+}

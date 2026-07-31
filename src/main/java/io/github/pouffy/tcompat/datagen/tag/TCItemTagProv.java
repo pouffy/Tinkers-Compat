@@ -390,8 +390,6 @@ public class TCItemTagProv extends ItemTagsProvider {
                         }
                         plankTag.addOptional(getResource("everycompat", plankId.withPrefix("q/" + namespace + "/vertical_").getPath()));
                     }
-                    this.tag(TinkerTags.Items.VARIANT_PLANKS)
-                            .addOptionalTag(wood.plankTag());
                 }
                 if (wood.hasLogs()) {
                     var logTag = this.tag(wood.logTag());
@@ -400,9 +398,15 @@ public class TCItemTagProv extends ItemTagsProvider {
                     logTag.addOptional(logId);
                     logTag.addOptional(logId.withPrefix("stripped_"));
                     logTag.addOptionalTag(wood.externalLogTag(namespace));
-                    this.tag(TinkerTags.Items.VARIANT_LOGS)
-                            .addOptionalTag(wood.logTag());
                 }
+            }
+            if (wood.hasPlanks()) {
+                this.tag(TinkerTags.Items.VARIANT_PLANKS)
+                        .addOptionalTag(wood.plankTag());
+            }
+            if (wood.hasLogs()) {
+                this.tag(TinkerTags.Items.VARIANT_LOGS)
+                        .addOptionalTag(wood.logTag());
             }
         }
         for (TCRocks rock : TCRocks.values()) {

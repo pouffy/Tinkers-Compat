@@ -12,33 +12,44 @@ import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 
 import java.util.Locale;
 
-@RequiredArgsConstructor
 @Getter
 public enum TCByproduct implements IByproduct {
-    ZANITE("zanite",false, TCFluids.moltenZanite, FluidValues.GEM, IMeltingContainer.OreRateType.GEM),
-    SKYJADE("skyjade", false, TCFluids.moltenSkyjade, FluidValues.GEM, IMeltingContainer.OreRateType.GEM),
-    GRAVITITE("gravitite", false, TCFluids.moltenGravitite, FluidValues.INGOT, IMeltingContainer.OreRateType.METAL),
-    VERIDIUM("veridium", false, TCFluids.moltenVeridium, FluidValues.INGOT, IMeltingContainer.OreRateType.METAL),
-    REFINED_SENTRITE("refined_sentrite", false, TCFluids.moltenRefinedSentrite, FluidValues.INGOT, IMeltingContainer.OreRateType.METAL),
-    QUARTZ("quartz", true, TinkerFluids.moltenQuartz, FluidValues.GEM, IMeltingContainer.OreRateType.GEM),
+    ZANITE(false, TCFluids.moltenZanite, FluidValues.GEM, 25, IMeltingContainer.OreRateType.GEM),
+    SKYJADE(false, TCFluids.moltenSkyjade, FluidValues.GEM, 25, IMeltingContainer.OreRateType.GEM),
+    GRAVITITE(false, TCFluids.moltenGravitite),
+    VERIDIUM(false, TCFluids.moltenVeridium),
+    REFINED_SENTRITE(false, TCFluids.moltenRefinedSentrite),
+    QUARTZ(true, TinkerFluids.moltenQuartz, FluidValues.GEM, 25, IMeltingContainer.OreRateType.GEM),
+    ENDER(true, TinkerFluids.moltenEnder, FluidValues.SLIMEBALL, 50, IMeltingContainer.OreRateType.NONE),
     ;
 
     private final String name;
     private final boolean alwaysPresent;
     private final FluidObject<?> fluid;
     private final int amount;
+    private final int damageUnit;
     private final IMeltingContainer.OreRateType oreRate;
 
-    TCByproduct(boolean alwaysPresent, FluidObject<?> fluid, int amount, IMeltingContainer.OreRateType oreRate) {
-        this.name = name().toLowerCase(Locale.ROOT);
+    private TCByproduct(boolean alwaysPresent, FluidObject<?> fluid, int amount, int damageUnit, IMeltingContainer.OreRateType oreRate) {
+        this.name = this.name().toLowerCase(Locale.ROOT);
         this.alwaysPresent = alwaysPresent;
         this.fluid = fluid;
         this.amount = amount;
+        this.damageUnit = damageUnit;
         this.oreRate = oreRate;
     }
 
-    TCByproduct(boolean alwaysPresent, FluidObject<?> fluid) {
-        this(alwaysPresent, fluid, FluidValues.INGOT, IMeltingContainer.OreRateType.METAL);
+    private TCByproduct(boolean alwaysPresent, FluidObject<?> fluid) {
+        this(alwaysPresent, fluid, 90, 10, IMeltingContainer.OreRateType.METAL);
+    }
+
+    private TCByproduct(String name, boolean alwaysPresent, FluidObject<?> fluid, int amount, int damageUnit, IMeltingContainer.OreRateType oreRate) {
+        this.name = name;
+        this.alwaysPresent = alwaysPresent;
+        this.fluid = fluid;
+        this.amount = amount;
+        this.damageUnit = damageUnit;
+        this.oreRate = oreRate;
     }
 
     @Override

@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/necromium"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 24,
+  "fluid": {
+    "amount": 10,
+    "tag": "tcompat:molten_necromium"
+  },
+  "result": {
+    "tag": "forge:nuggets/necromium"
+  }
+}

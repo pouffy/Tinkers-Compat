@@ -9,6 +9,10 @@
           "modid": "quark"
         },
         {
+          "type": "forge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        },
+        {
           "type": "mantle:tag_filled",
           "tag": "tcompat:logs/azalea"
         },

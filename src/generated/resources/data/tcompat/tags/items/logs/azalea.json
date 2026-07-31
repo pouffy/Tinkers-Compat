@@ -11,6 +11,18 @@
     {
       "id": "#quark:azalea_logs",
       "required": false
+    },
+    {
+      "id": "caverns_and_chasms:azalea_log",
+      "required": false
+    },
+    {
+      "id": "caverns_and_chasms:stripped_azalea_log",
+      "required": false
+    },
+    {
+      "id": "#caverns_and_chasms:azalea_logs",
+      "required": false
     }
   ]
 }

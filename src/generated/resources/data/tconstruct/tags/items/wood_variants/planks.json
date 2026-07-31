@@ -13,10 +13,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:planks/baobab",
-      "required": false
-    },
-    {
       "id": "#tcompat:planks/blackwood",
       "required": false
     },
@@ -45,14 +41,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:planks/cypress",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/dead",
-      "required": false
-    },
-    {
       "id": "#tcompat:planks/dead",
       "required": false
     },
@@ -62,10 +50,6 @@
     },
     {
       "id": "#tcompat:planks/eucalyptus",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/fir",
       "required": false
     },
     {
@@ -97,10 +81,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:planks/jacaranda",
-      "required": false
-    },
-    {
       "id": "#tcompat:planks/joshua",
       "required": false
     },
@@ -121,18 +101,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:planks/mahogany",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/maple",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/maple",
-      "required": false
-    },
-    {
       "id": "#tcompat:planks/maple",
       "required": false
     },
@@ -145,18 +113,6 @@
       "required": false
     },
     {
-      "id": "#tcompat:planks/palm",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/palm",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/pine",
-      "required": false
-    },
-    {
       "id": "#tcompat:planks/pine",
       "required": false
     },
@@ -166,14 +122,6 @@
     },
     {
       "id": "#tcompat:planks/rainbow_eucalyptus",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/redwood",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/redwood",
       "required": false
     },
     {
@@ -194,14 +142,6 @@
     },
     {
       "id": "#tcompat:planks/white_mangrove",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/willow",
-      "required": false
-    },
-    {
-      "id": "#tcompat:planks/willow",
       "required": false
     },
     {
