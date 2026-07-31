@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "item": "minecraft:glowstone"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 115,
+  "fluid": {
+    "amount": 400,
+    "tag": "tconstruct:molten_quartz"
+  },
+  "result": "caverns_and_chasms:quartz_lamp"
+}

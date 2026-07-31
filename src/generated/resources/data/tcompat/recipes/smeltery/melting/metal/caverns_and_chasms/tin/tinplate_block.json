@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:tinplate_block"
+  },
+  "result": {
+    "amount": 45,
+    "tag": "forge:molten_tin"
+  },
+  "temperature": 225,
+  "time": 28
+}

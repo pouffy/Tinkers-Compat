@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:quartz_lamp"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "tconstruct:molten_quartz"
+  },
+  "temperature": 637,
+  "time": 115
+}

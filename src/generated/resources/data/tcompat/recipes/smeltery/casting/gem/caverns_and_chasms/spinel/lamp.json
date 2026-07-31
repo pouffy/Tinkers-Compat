@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "item": "minecraft:glowstone"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 132,
+  "fluid": {
+    "amount": 400,
+    "tag": "tcompat:molten_spinel"
+  },
+  "result": "caverns_and_chasms:spinel_lamp"
+}

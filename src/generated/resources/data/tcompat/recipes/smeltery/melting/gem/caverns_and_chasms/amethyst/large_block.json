@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:amethyst_block"
+  },
+  "result": {
+    "amount": 900,
+    "fluid": "tconstruct:molten_amethyst"
+  },
+  "temperature": 950,
+  "time": 205
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:turquoise_tile_stairs"
+  },
+  "result": {
+    "amount": 15,
+    "fluid": "tcompat:molten_turquoise"
+  },
+  "temperature": 950,
+  "time": 26
+}

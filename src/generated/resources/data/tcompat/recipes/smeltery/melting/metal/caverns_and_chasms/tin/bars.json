@@ -1,8 +1,13 @@
 {
   "type": "tconstruct:melting",
-  "ingredient": {
-    "item": "caverns_and_chasms:tin_bars"
-  },
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:tin_bars"
+    },
+    {
+      "item": "caverns_and_chasms:tin_chain"
+    }
+  ],
   "result": {
     "amount": 30,
     "tag": "forge:molten_tin"

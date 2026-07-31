@@ -61,18 +61,54 @@ public class CavernsChasmsSmeltery implements CompatSmeltery {
         simpleMelting(consumer, TinkerFluids.moltenCopper, FluidValues.NUGGET * 8, "copper", oxidised("copper_lantern", false), metalFolder("melting"), "lantern");
         simpleMelting(consumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 30, "copper", oxidised("toolbox", false), metalFolder("melting"), "toolbox");
         simpleMelting(consumer, TinkerFluids.moltenCopper, FluidValues.NUGGET * 2, "copper", oxidised("copper_rail", false), metalFolder("melting"), "rail");
+        simpleMelting(TinkerFluids.moltenCopper, FluidValues.INGOT * 4, oxidised("floodlight", false))
+                .addByproduct(TinkerFluids.moltenAmethyst.result(FluidValues.GEM))
+                .save(cConsumer, location(metalFolder("melting") + "/copper/floodlight"));
+        simpleMelting(consumer, TinkerFluids.moltenCopper, 20, "copper", listedInput("cupric_torch"), metalFolder("melting"), "torch");
+        simpleMelting(TinkerFluids.moltenCopper, 20, listedInput("cupric_lantern"))
+                .addByproduct(TinkerFluids.moltenIron.result(FluidValues.NUGGET * 8))
+                .save(cConsumer, location(metalFolder("melting") + "/copper/cupric_lantern"));
+        simpleMelting(consumer, TinkerFluids.moltenCopper, FluidValues.INGOT, "copper", listedInput("cupric_campfire"), metalFolder("melting"), "campfire");
 
         platedBricks(cConsumer, TinkerFluids.moltenIron, "iron");
-        platedBricks(cConsumer, TinkerFluids.moltenTin, "tin");
-        platedBricks(cConsumer, TinkerFluids.moltenGold, "gold");
-        platedBricks(cConsumer, TinkerFluids.moltenSilver, "silver");
+
+        simpleMelting(consumer, TCFluids.moltenTurquoise, 10, "turquoise", listedInput("turquoise_tiles", "turquoise_pillar", "turquoise_tile_wall"), gemFolder("melting"), "tiles");
+        simpleMelting(consumer, TCFluids.moltenTurquoise, 15, "turquoise", listedInput("turquoise_tile_stairs"), gemFolder("melting"), "tile_stairs");
+        simpleMelting(consumer, TCFluids.moltenTurquoise, 5, "turquoise", listedInput("turquoise_tile_slab"), gemFolder("melting"), "tile_slab");
+
+        simpleMelting(consumer, TinkerFluids.moltenAmethyst, FluidValues.LARGE_GEM_BLOCK, "amethyst", listedInput("amethyst_block"), gemFolder("melting"), "large_block");
+        simpleMelting(consumer, TinkerFluids.moltenAmethyst, FluidValues.SMALL_GEM_BLOCK, "amethyst", listedInput("cut_amethyst", "cut_amethyst_bricks", "cut_amethyst_brick_wall"), gemFolder("melting"), "cut");
+        simpleMelting(consumer, TinkerFluids.moltenAmethyst, FluidValues.GEM * 2, "amethyst", listedInput("cut_amethyst_brick_slab"), gemFolder("melting"), "cut_slab");
+        simpleMelting(consumer, TinkerFluids.moltenAmethyst, FluidValues.GEM * 6, "amethyst", listedInput("cut_amethyst_brick_stairs"), gemFolder("melting"), "cut_stairs");
+
+        simpleMelting(consumer, TCFluids.moltenTurquoise, FluidValues.SMALL_GEM_BLOCK, "turquoise", listedInput("turquoise_lamp"), gemFolder("melting"), "lamp");
+        simpleMelting(consumer, TCFluids.moltenSpinel, FluidValues.SMALL_GEM_BLOCK, "spinel", listedInput("spinel_lamp"), gemFolder("melting"), "lamp");
+        simpleMelting(consumer, TinkerFluids.moltenAmethyst, FluidValues.SMALL_GEM_BLOCK, "amethyst", listedInput("amethyst_lamp"), gemFolder("melting"), "lamp");
+        simpleMelting(consumer, TinkerFluids.moltenEmerald, FluidValues.SMALL_GEM_BLOCK, "emerald", listedInput("emerald_lamp"), gemFolder("melting"), "lamp");
+        simpleMelting(consumer, TinkerFluids.moltenDiamond, FluidValues.SMALL_GEM_BLOCK, "diamond", listedInput("diamond_lamp"), gemFolder("melting"), "lamp");
+        simpleMelting(consumer, TinkerFluids.moltenQuartz, FluidValues.SMALL_GEM_BLOCK, "quartz", listedInput("quartz_lamp"), gemFolder("melting"), "lamp");
 
         simpleMelting(consumer, TinkerFluids.moltenTin, FluidValues.INGOT, "tin", listedInput("saddled_egg", "hold_button"), metalFolder("melting"), "egg");
         simpleMelting(consumer, TinkerFluids.moltenTin, FluidValues.INGOT * 2, "tin", listedInput("roller_door", "roller_window", "hold_plate"), metalFolder("melting"), "roller");
+        simpleMelting(consumer, TinkerFluids.moltenTin, 5, "tin", listedInput("tinplate"), metalFolder("melting"), "tinplate");
+        simpleMelting(consumer, TinkerFluids.moltenTin, 45, "tin", listedInput("tinplate_block"), metalFolder("melting"), "tinplate_block");
+        simpleMelting(consumer, TinkerFluids.moltenTin, FluidValues.NUGGET * 3, "tin", listedInput("tin_bars", "tin_chain"), metalFolder("melting"), "bars");
+        platedBricks(cConsumer, TinkerFluids.moltenTin, "tin");
+        simpleMelting(consumer, TinkerFluids.moltenTin, 65, "tin", listedInput("tin_bulb"), metalFolder("melting"), "bulb");
 
-        simpleMelting(consumer, TinkerFluids.moltenTin, FluidValues.NUGGET * 3, "tin", listedInput("tin_bars"), metalFolder("melting"), "bars");
+        simpleMelting(consumer, TinkerFluids.moltenSilver, FluidValues.INGOT * 2, "silver", listedInput("medium_weighted_pressure_plate"), metalFolder("melting"), "medium_weighted_pressure_plate");
         simpleMelting(consumer, TinkerFluids.moltenSilver, FluidValues.NUGGET * 3, "silver", listedInput("silver_bars"), metalFolder("melting"), "bars");
+        platedBricks(cConsumer, TinkerFluids.moltenSilver, "silver");
+        simpleMelting(consumer, TinkerFluids.moltenSilver, FluidValues.INGOT * 3, "silver", listedInput("brazier"), metalFolder("melting"), "brazier");
+        simpleMelting(TinkerFluids.moltenSilver, FluidValues.INGOT * 3, listedInput("soul_brazier"))
+                .addByproduct(TinkerFluids.liquidSoul.result(FluidValues.GLASS_BLOCK))
+                .save(cConsumer, location(metalFolder("melting") + "/silver/soul_brazier"));
+        simpleMelting(TinkerFluids.moltenSilver, FluidValues.INGOT * 3, listedInput("cupric_brazier"))
+                .addByproduct(TinkerFluids.moltenCopper.result(FluidValues.INGOT))
+                .save(cConsumer, location(metalFolder("melting") + "/silver/cupric_brazier"));
+
         simpleMelting(consumer, TinkerFluids.moltenGold, FluidValues.NUGGET * 3, "gold", listedInput("golden_bars"), metalFolder("melting"), "bars");
+        platedBricks(cConsumer, TinkerFluids.moltenGold, "gold");
 
         casting(cConsumer);
     }
@@ -99,6 +135,32 @@ public class CavernsChasmsSmeltery implements CompatSmeltery {
                 .setCast(Items.STONE_BRICKS, true)
                 .setFluidAndTime(TCFluids.moltenTurquoise, 10)
                 .save(consumer, location(gemFolder("casting") + "/turquoise/tiles"));
+
+        //Lamps
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("turquoise_lamp")))
+                .setCast(Items.GLOWSTONE, true)
+                .setFluidAndTime(TCFluids.moltenTurquoise, FluidValues.SMALL_GEM_BLOCK)
+                .save(consumer, location(gemFolder("casting") + "/turquoise/lamp"));
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("spinel_lamp")))
+                .setCast(Items.GLOWSTONE, true)
+                .setFluidAndTime(TCFluids.moltenSpinel, FluidValues.SMALL_GEM_BLOCK)
+                .save(consumer, location(gemFolder("casting") + "/spinel/lamp"));
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("emerald_lamp")))
+                .setCast(Items.GLOWSTONE, true)
+                .setFluidAndTime(TinkerFluids.moltenEmerald, FluidValues.SMALL_GEM_BLOCK)
+                .save(consumer, location(gemFolder("casting") + "/emerald/lamp"));
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("diamond_lamp")))
+                .setCast(Items.GLOWSTONE, true)
+                .setFluidAndTime(TinkerFluids.moltenDiamond, FluidValues.SMALL_GEM_BLOCK)
+                .save(consumer, location(gemFolder("casting") + "/diamond/lamp"));
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("quartz_lamp")))
+                .setCast(Items.GLOWSTONE, true)
+                .setFluidAndTime(TinkerFluids.moltenQuartz, FluidValues.SMALL_GEM_BLOCK)
+                .save(consumer, location(gemFolder("casting") + "/quartz/lamp"));
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("amethyst_lamp")))
+                .setCast(Items.GLOWSTONE, true)
+                .setFluidAndTime(TinkerFluids.moltenAmethyst, FluidValues.SMALL_GEM_BLOCK)
+                .save(consumer, location(gemFolder("casting") + "/amethyst/lamp"));
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("tin_bars")))
                 .setFluidAndTime(TinkerFluids.moltenTin, FluidValues.NUGGET * 3)

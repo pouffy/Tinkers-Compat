@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:medium_weighted_pressure_plate"
+  },
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_silver"
+  },
+  "temperature": 790,
+  "time": 85
+}

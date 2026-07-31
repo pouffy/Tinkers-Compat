@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:turquoise_tiles"
+    },
+    {
+      "item": "caverns_and_chasms:turquoise_pillar"
+    },
+    {
+      "item": "caverns_and_chasms:turquoise_tile_wall"
+    }
+  ],
+  "result": {
+    "amount": 10,
+    "fluid": "tcompat:molten_turquoise"
+  },
+  "temperature": 950,
+  "time": 22
+}

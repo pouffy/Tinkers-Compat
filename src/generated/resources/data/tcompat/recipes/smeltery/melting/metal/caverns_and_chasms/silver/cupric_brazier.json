@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "tag": "forge:molten_copper"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "item": "caverns_and_chasms:cupric_brazier"
+  },
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_silver"
+  },
+  "temperature": 790,
+  "time": 104
+}

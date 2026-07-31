@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:tin_bulb"
+  },
+  "result": {
+    "amount": 65,
+    "tag": "forge:molten_tin"
+  },
+  "temperature": 225,
+  "time": 33
+}

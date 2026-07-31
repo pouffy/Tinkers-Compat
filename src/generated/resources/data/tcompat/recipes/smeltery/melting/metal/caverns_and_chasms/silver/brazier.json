@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:brazier"
+  },
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_silver"
+  },
+  "temperature": 790,
+  "time": 104
+}
