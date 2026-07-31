@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:chiseled_copper"
+    },
+    {
+      "item": "caverns_and_chasms:exposed_chiseled_copper"
+    },
+    {
+      "item": "caverns_and_chasms:weathered_chiseled_copper"
+    },
+    {
+      "item": "caverns_and_chasms:oxidized_chiseled_copper"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_chiseled_copper"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_exposed_chiseled_copper"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_weathered_chiseled_copper"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_oxidized_chiseled_copper"
+    }
+  ],
+  "result": {
+    "amount": 110,
+    "tag": "forge:molten_copper"
+  },
+  "temperature": 500,
+  "time": 55
+}

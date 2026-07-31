@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:exposed_copper_ingot"
+    },
+    {
+      "item": "caverns_and_chasms:weathered_copper_ingot"
+    },
+    {
+      "item": "caverns_and_chasms:oxidized_copper_ingot"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_copper_ingot"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_exposed_copper_ingot"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_weathered_copper_ingot"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_oxidized_copper_ingot"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_copper"
+  },
+  "temperature": 500,
+  "time": 50
+}

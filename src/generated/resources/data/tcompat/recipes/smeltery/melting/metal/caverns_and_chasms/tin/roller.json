@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:roller_door"
+    },
+    {
+      "item": "caverns_and_chasms:roller_window"
+    },
+    {
+      "item": "caverns_and_chasms:hold_plate"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_tin"
+  },
+  "temperature": 225,
+  "time": 55
+}

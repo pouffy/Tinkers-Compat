@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:toolbox"
+    },
+    {
+      "item": "caverns_and_chasms:exposed_toolbox"
+    },
+    {
+      "item": "caverns_and_chasms:weathered_toolbox"
+    },
+    {
+      "item": "caverns_and_chasms:oxidized_toolbox"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_toolbox"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_exposed_toolbox"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_weathered_toolbox"
+    },
+    {
+      "item": "caverns_and_chasms:waxed_oxidized_toolbox"
+    }
+  ],
+  "result": {
+    "amount": 2700,
+    "tag": "forge:molten_copper"
+  },
+  "temperature": 500,
+  "time": 273
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "caverns_and_chasms:silver_bars"
+  },
+  "result": {
+    "amount": 30,
+    "tag": "forge:molten_silver"
+  },
+  "temperature": 790,
+  "time": 35
+}

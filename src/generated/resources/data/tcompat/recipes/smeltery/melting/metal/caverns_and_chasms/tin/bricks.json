@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:tin_bricks"
+    },
+    {
+      "item": "caverns_and_chasms:tin_brick_wall"
+    },
+    {
+      "item": "caverns_and_chasms:chiseled_tin_bricks"
+    }
+  ],
+  "result": {
+    "amount": 45,
+    "tag": "forge:molten_tin"
+  },
+  "temperature": 225,
+  "time": 28
+}
