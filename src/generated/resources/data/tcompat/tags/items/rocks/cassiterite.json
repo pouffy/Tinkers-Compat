@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "caverns_and_chasms:cassiterite",
+      "required": false
+    },
+    {
+      "id": "#caverns_and_chasms:cassiterite_rocks",
+      "required": false
+    }
+  ]
+}

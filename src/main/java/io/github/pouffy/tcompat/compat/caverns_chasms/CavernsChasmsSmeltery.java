@@ -4,12 +4,21 @@ import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.util.CompatSmeltery;
 import io.github.pouffy.tcompat.datagen.tinkers.recipe.TCByproduct;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import slimeknights.mantle.recipe.data.ItemNameIngredient;
+import slimeknights.mantle.recipe.data.ItemNameOutput;
+import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class CavernsChasmsSmeltery implements CompatSmeltery {
@@ -36,6 +45,26 @@ public class CavernsChasmsSmeltery implements CompatSmeltery {
                 .blockCasting(9, Ingredient.EMPTY, true)
                 .meltingCasting(1, TinkerSmeltery.gemCast, 1.0f, true)
                 .sparseOre(0.5f).singularOre(1).denseOre(3);
+        casting(cConsumer);
+    }
+    private void casting(Consumer<FinishedRecipe> consumer) {
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("sugilite")))
+                .setCast(Items.GRANITE, true)
+                .setFluidAndTime(TCFluids.moltenSpinel, FluidValues.GEM)
+                .save(consumer, location(gemFolder("casting") + "/spinel/sugilite"));
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("cassiterite")))
+                .setCast(Items.GRANITE, true)
+                .setFluidAndTime(TinkerFluids.moltenTin, FluidValues.INGOT)
+                .save(consumer, location(metalFolder("casting") + "/tin/cassiterite"));
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("cylindrite")))
+                .setCast(Items.DEEPSLATE, true)
+                .setFluidAndTime(TinkerFluids.moltenTin, FluidValues.INGOT)
+                .save(consumer, location(metalFolder("casting") + "/tin/cylindrite"));
+
+        ItemCastingRecipeBuilder.basinRecipe(ItemNameOutput.fromName(compatId("magmatic_rhyolite")))
+                .setCast(ItemNameIngredient.from(compatId("rhyolite")), true)
+                .setFluidAndTime(TinkerFluids.magma, FluidValues.SLIMEBALL)
+                .save(consumer, location(miscFolder("casting") + "/magma/magmatic_rhyolite"));
     }
 
     @Override

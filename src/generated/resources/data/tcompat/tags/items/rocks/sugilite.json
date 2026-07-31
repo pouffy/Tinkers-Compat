@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "caverns_and_chasms:sugilite",
+      "required": false
+    },
+    {
+      "id": "#caverns_and_chasms:sugilite_rocks",
+      "required": false
+    }
+  ]
+}

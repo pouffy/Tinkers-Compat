@@ -68,7 +68,13 @@ public enum TCRocks implements StringRepresentable {
 
     //Deeper and Darker
     SCULK_STONE(builder("deeperdarker")),
-    GLOOMSLATE(builder("deeperdarker"))
+    GLOOMSLATE(builder("deeperdarker")),
+
+    //Caverns and Chasms
+    SUGILITE(builder("caverns_and_chasms")),
+    CASSITERITE(builder("caverns_and_chasms")),
+    RHYOLITE(builder("caverns_and_chasms")),
+    CYLINDRITE(builder("caverns_and_chasms"))
     ;
 
     public final String name;

@@ -2,7 +2,7 @@
   "type": "tconstruct:ore_melting",
   "byproducts": [
     {
-      "amount": 250,
+      "amount": 50,
       "rate": "none",
       "tag": "forge:ender"
     }

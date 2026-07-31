@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/cassiterite"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:rocks/cassiterite"
+  },
+  "material": "tconstruct:rock#cassiterite",
+  "needed": 1,
+  "value": 1
+}

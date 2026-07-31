@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "caverns_and_chasms:rhyolite",
+      "required": false
+    },
+    {
+      "id": "#caverns_and_chasms:rhyolite_rocks",
+      "required": false
+    }
+  ]
+}

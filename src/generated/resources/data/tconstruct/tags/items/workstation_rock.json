@@ -131,6 +131,22 @@
     {
       "id": "deeperdarker:gloomslate",
       "required": false
+    },
+    {
+      "id": "caverns_and_chasms:sugilite",
+      "required": false
+    },
+    {
+      "id": "caverns_and_chasms:cassiterite",
+      "required": false
+    },
+    {
+      "id": "caverns_and_chasms:rhyolite",
+      "required": false
+    },
+    {
+      "id": "caverns_and_chasms:cylindrite",
+      "required": false
     }
   ]
 }

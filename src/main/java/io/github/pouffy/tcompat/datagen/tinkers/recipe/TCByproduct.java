@@ -20,7 +20,7 @@ public enum TCByproduct implements IByproduct {
     VERIDIUM(false, TCFluids.moltenVeridium),
     REFINED_SENTRITE(false, TCFluids.moltenRefinedSentrite),
     QUARTZ(true, TinkerFluids.moltenQuartz, FluidValues.GEM, 25, IMeltingContainer.OreRateType.GEM),
-    ENDER(true, TinkerFluids.moltenEnder, FluidValues.SLIMEBALL, 50, IMeltingContainer.OreRateType.NONE),
+    ENDER(true, TinkerFluids.moltenEnder, 50, 25, IMeltingContainer.OreRateType.NONE),
     ;
 
     private final String name;

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "caverns_and_chasms:cylindrite",
+      "required": false
+    },
+    {
+      "id": "#caverns_and_chasms:cylindrite_rocks",
+      "required": false
+    }
+  ]
+}

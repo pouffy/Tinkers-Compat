@@ -37,6 +37,12 @@ public class RockMaterials {
     //Deeper and Darker
     sculkStone = rockVariant(TCRocks.SCULK_STONE,               0xFF061519, 0xFF091c21, 0xFF0a242d, 0xFF132f38, 0xFF164249, 0xFF185a63),
     gloomslate = flintVariant(TCRocks.GLOOMSLATE,               0xFF130e0e, 0xFF1c1616, 0xFF211b1a, 0xFF2a2020, 0xFF312523, 0xFF3b2d29),
+
+    //Caverns and Chasms
+    sugilite = rockVariant(TCRocks.SUGILITE,                    0xFF343547, 0xFF3b3f4c, 0xFF3e435e, 0xFF4e446b, 0xFF644166, 0xFF7d5791),
+    cassiterite = rockVariant(TCRocks.CASSITERITE,              0xFF0a0a0a, 0xFF0f0e0d, 0xFF101010, 0xFF171513, 0xFF1c1a14, 0xFF1d1d1c),
+    rhyolite = rockVariant(TCRocks.RHYOLITE,                    0xFF493733, 0xFF5e473d, 0xFF685148, 0xFF6b5854, 0xFF7f6256, 0xFF887473),
+    cylindrite = flintVariant(TCRocks.CYLINDRITE,               0xFF1a1a1a, 0xFF232222, 0xFF272828, 0xFF302e30, 0xFF383330, 0xFF3f3e3e),
     // Vanilla
     dripstone = rockVariant(TCRocks.DRIPSTONE,                  0xFF543d3a, 0xFF634a47, 0xFF735450, 0xFF836356, 0xFF927965, 0xFFa08d71);
 

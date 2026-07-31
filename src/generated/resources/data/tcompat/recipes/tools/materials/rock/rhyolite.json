@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:rocks/rhyolite"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:rocks/rhyolite"
+  },
+  "material": "tconstruct:rock#rhyolite",
+  "needed": 1,
+  "value": 1
+}
