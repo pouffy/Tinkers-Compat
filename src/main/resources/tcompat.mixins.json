@@ -11,13 +11,18 @@
     "LivingEntityMixin",
     "ProjectileMixin",
     "ServerPlayerMixin",
-    "ToolEnergyCapabilityMixin",
     "VibrationListenerMixin",
     "accessor.PlayerAccessor",
     "aether.AbilityHooksMixin",
     "aether.WeaponHooksMixin",
     "malum.SpiritHarvestHandlerMixin",
-    "malum.VoidConduitBlockEntityMixin"
+    "malum.VoidConduitBlockEntityMixin",
+    "tconstruct.CraftingTableRepairKitRecipeMixin",
+    "tconstruct.MaterialRepairModuleMixin",
+    "tconstruct.MaterialStatsModuleMixin",
+    "tconstruct.StatlessPartRepairModuleMixin",
+    "tconstruct.TinkerStationRepairRecipeMixin",
+    "tconstruct.ToolEnergyCapabilityMixin"
   ],
   "client": [
     "client.DarknessFogFunctionMixin",

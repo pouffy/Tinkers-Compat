@@ -16,6 +16,7 @@ import io.github.pouffy.tcompat.compat.betterend.BetterendMaterials;
 import io.github.pouffy.tcompat.compat.betternether.BetternetherMaterials;
 import io.github.pouffy.tcompat.compat.bwg.BWGMaterials;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmMaterials;
+import io.github.pouffy.tcompat.compat.caverns_chasms.CavernsChasmsMaterials;
 import io.github.pouffy.tcompat.compat.create.CreateMaterials;
 import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerMaterials;
@@ -250,6 +251,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(speciesConsumer, SpeciesMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
 
         metalMaterialRecipe(create, CreateMaterials.brass, folder, "brass", true);
+
+        gemMaterialRecipe(withCondition(consumer, modLoaded("caverns_and_chasms")), CavernsChasmsMaterials.zirconia, folder, "zirconia", true, false, true);
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
@@ -266,12 +269,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> malum = withCondition(consumer, modLoaded("malum"));
         Consumer<FinishedRecipe> create = withCondition(consumer, modLoaded("create"));
 
-        //materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
         materialMelting(aetherConsumer, AetherMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherConsumer, AetherMaterials.gravitite, TCFluids.moltenGravitite, folder);
         materialMeltingCasting(aetherConsumer, AetherMaterials.lightnum, TCFluids.moltenLightnum, folder);
         materialMeltingCasting(aetherConsumer, AetherMaterials.draculite, TCFluids.moltenDraculite, folder);
-        //materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
         materialMelting(deepAetherConsumer, DeepAetherMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
         materialMeltingCasting(deepAetherConsumer, DeepAetherMaterials.stormforgedSteel, TCFluids.moltenStormforgedSteel, folder);
         materialMeltingCasting(aetherReduxConsumer, AetherReduxMaterials.veridium, TCFluids.moltenVeridium, folder);
@@ -308,6 +309,8 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialComposite(cataclysm, MaterialIds.string, CataclysmMaterials.cursium, TCFluids.moltenCursium, FluidValues.INGOT, folder);
 
         materialMeltingCasting(create, CreateMaterials.brass, TinkerFluids.moltenBrass, FluidValues.INGOT, folder);
+
+        materialMeltingCasting(withCondition(consumer, modLoaded("caverns_and_chasms")), CavernsChasmsMaterials.zirconia, TCFluids.moltenZirconia, FluidValues.GEM, folder);
     }
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

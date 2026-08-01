@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "type": "forge:partial_nbt",
+    "item": "minecraft:goat_horn",
+    "nbt": "{instrument:\"minecraft:ponder_goat_horn\"}"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 86,
+  "fluid": {
+    "amount": 270,
+    "tag": "forge:molten_copper"
+  },
+  "result": {
+    "item": "caverns_and_chasms:copper_horn",
+    "nbt": {
+      "bass_instrument": "caverns_and_chasms:falling_copper_horn",
+      "harmony_instrument": "caverns_and_chasms:great_copper_horn",
+      "melody_instrument": "caverns_and_chasms:sky_copper_horn"
+    }
+  }
+}

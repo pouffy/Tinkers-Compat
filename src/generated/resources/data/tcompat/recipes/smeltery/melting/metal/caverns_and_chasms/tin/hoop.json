@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 100,
+      "fluid": "tconstruct:molten_quartz"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "item": "caverns_and_chasms:hoop"
+  },
+  "result": {
+    "amount": 720,
+    "tag": "forge:molten_tin"
+  },
+  "temperature": 225,
+  "time": 110
+}

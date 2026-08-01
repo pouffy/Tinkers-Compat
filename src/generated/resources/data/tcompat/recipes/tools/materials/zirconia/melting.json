@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "input": "tcompat:zirconia",
+  "result": {
+    "amount": 100,
+    "fluid": "tcompat:molten_zirconia"
+  },
+  "temperature": 1050
+}

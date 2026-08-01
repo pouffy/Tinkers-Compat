@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:spyglass"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "cooling_time": 193,
+  "fluid": {
+    "amount": 800,
+    "tag": "tcompat:molten_turquoise"
+  },
+  "result": "caverns_and_chasms:monocle"
+}

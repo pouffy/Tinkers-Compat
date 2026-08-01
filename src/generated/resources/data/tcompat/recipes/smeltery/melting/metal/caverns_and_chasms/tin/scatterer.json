@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:scatterer"
+    },
+    {
+      "item": "caverns_and_chasms:splurter"
+    }
+  ],
+  "result": {
+    "amount": 720,
+    "tag": "forge:molten_tin"
+  },
+  "temperature": 225,
+  "time": 110
+}

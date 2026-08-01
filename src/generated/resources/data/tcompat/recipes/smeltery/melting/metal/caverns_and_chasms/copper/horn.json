@@ -1,0 +1,61 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:falling_copper_horn\",harmony_instrument:\"caverns_and_chasms:great_copper_horn\",melody_instrument:\"caverns_and_chasms:sky_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:resting_copper_horn\",harmony_instrument:\"caverns_and_chasms:old_copper_horn\",melody_instrument:\"caverns_and_chasms:hymn_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:desire_copper_horn\",harmony_instrument:\"caverns_and_chasms:pure_copper_horn\",melody_instrument:\"caverns_and_chasms:water_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:memory_copper_horn\",harmony_instrument:\"caverns_and_chasms:humble_copper_horn\",melody_instrument:\"caverns_and_chasms:fire_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:anger_copper_horn\",harmony_instrument:\"caverns_and_chasms:dry_copper_horn\",melody_instrument:\"caverns_and_chasms:urge_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:journey_copper_horn\",harmony_instrument:\"caverns_and_chasms:clear_copper_horn\",melody_instrument:\"caverns_and_chasms:temper_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:thought_copper_horn\",harmony_instrument:\"caverns_and_chasms:fresh_copper_horn\",melody_instrument:\"caverns_and_chasms:nest_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:tear_copper_horn\",harmony_instrument:\"caverns_and_chasms:secret_copper_horn\",melody_instrument:\"caverns_and_chasms:lake_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:gift_copper_horn\",harmony_instrument:\"caverns_and_chasms:fearless_copper_horn\",melody_instrument:\"caverns_and_chasms:river_copper_horn\"}"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "caverns_and_chasms:copper_horn",
+      "nbt": "{bass_instrument:\"caverns_and_chasms:love_copper_horn\",harmony_instrument:\"caverns_and_chasms:sweet_copper_horn\",melody_instrument:\"caverns_and_chasms:moon_copper_horn\"}"
+    }
+  ],
+  "result": {
+    "amount": 270,
+    "tag": "forge:molten_copper"
+  },
+  "temperature": 500,
+  "time": 86
+}

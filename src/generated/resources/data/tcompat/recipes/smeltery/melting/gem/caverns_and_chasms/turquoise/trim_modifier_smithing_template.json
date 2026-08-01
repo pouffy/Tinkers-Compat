@@ -1,8 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "ingredient": {
-    "item": "caverns_and_chasms:trim_modifier_smithing_template"
-  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:trim_modifier_smithing_template"
+    },
+    {
+      "item": "caverns_and_chasms:unicorn_horn"
+    }
+  ],
   "result": {
     "amount": 800,
     "fluid": "tcompat:molten_turquoise"

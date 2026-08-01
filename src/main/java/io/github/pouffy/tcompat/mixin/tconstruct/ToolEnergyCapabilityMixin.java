@@ -1,4 +1,4 @@
-package io.github.pouffy.tcompat.mixin;
+package io.github.pouffy.tcompat.mixin.tconstruct;
 
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import org.spongepowered.asm.mixin.Final;

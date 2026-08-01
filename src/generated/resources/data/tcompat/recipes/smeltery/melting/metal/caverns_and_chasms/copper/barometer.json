@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:barometer"
+    },
+    {
+      "item": "caverns_and_chasms:tuning_fork"
+    }
+  ],
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_copper"
+  },
+  "temperature": 500,
+  "time": 100
+}

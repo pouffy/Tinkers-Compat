@@ -26,6 +26,9 @@ public class TCompatMixinPlugin implements IMixinConfigPlugin {
         if (mixinClassName.contains("io.github.pouffy.tcompat.mixin.malum")) {
             return isClassFound("com.sammy.malum.MalumMod");
         }
+        if (mixinClassName.contains("io.github.pouffy.tcompat.mixin.tconstruct")) {
+            return isClassFound("slimeknights.tconstruct.TinkerConstruct");
+        }
         return true;
     }
 

@@ -117,7 +117,8 @@
     "void_jaw": "#8219FF",
     "wicked_wax": "#F93985",
     "witherite": "#6E7786",
-    "zanite": "#5B22B0"
+    "zanite": "#5B22B0",
+    "zirconia": "#B0D18D"
   },
   "material.tconstruct": {
     "flint.cylindrite": "#383330",

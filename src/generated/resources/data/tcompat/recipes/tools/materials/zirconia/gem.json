@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/zirconia"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/zirconia"
+  },
+  "material": "tcompat:zirconia",
+  "needed": 1,
+  "value": 1
+}
