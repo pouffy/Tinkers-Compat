@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "byproducts": [
+    {
+      "amount": 300,
+      "fluid": "tconstruct:molten_diamond",
+      "unit_size": 25
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:necromium_axe"
+    },
+    {
+      "item": "caverns_and_chasms:necromium_pickaxe"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "tcompat:molten_necromium",
+    "unit_size": 10
+  },
+  "temperature": 1225,
+  "time": 126
+}

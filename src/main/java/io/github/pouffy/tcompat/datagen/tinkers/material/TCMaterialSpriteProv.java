@@ -34,8 +34,9 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
 
     @Override
     protected void addAllMaterials() {
+        int count = 0;
+        int variantCount = 0;
         for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            TCompat.LOGGER.info("Adding sprite info for material: {}", builder.getId());
             var sBuilder = buildMaterial(builder.getId());
             var fallbacks = builder.getRenderInfo().getFallbacks();
             if (!Arrays.equals(fallbacks, new String[0])) {
@@ -52,7 +53,12 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
                 TCompat.LOGGER.warn("Missing sprite transformer for material: {}! This will cause render info issues!", builder.getId());
             }
             sBuilder.variant(builder.isVariant());
+            if (builder.isVariant()) {
+                variantCount++;
+            } else count++;
         }
+        TCompat.LOGGER.info("Added sprite info for {} materials", count);
+        TCompat.LOGGER.info("Added sprite info for {} material variants", variantCount);
     }
 
     public static ISpriteTransformer transformerFromSprite(ResourceLocation texture, int frames, int highlightColor) {

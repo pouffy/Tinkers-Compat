@@ -30,6 +30,12 @@
     },
     {
       "item": "caverns_and_chasms:waxed_oxidized_copper_trapdoor"
+    },
+    {
+      "item": "caverns_and_chasms:barometer"
+    },
+    {
+      "item": "caverns_and_chasms:tuning_fork"
     }
   ],
   "result": {

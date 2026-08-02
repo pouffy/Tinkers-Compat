@@ -65,15 +65,40 @@ public class CavernsChasmsSmeltery implements CompatSmeltery {
                 .blockCasting(9, Ingredient.EMPTY, true)
                 .meltingCasting(1, TinkerSmeltery.gemCast, 1.0f, true);
 
-        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT, "copper", oxidised("copper_ingot", true), metalFolder("melting"), "oxidised_ingot");
+        salvageAll(cConsumer, this::compatId, TinkerFluids.moltenCopper, FluidValues.METAL_BLOCK, "copper", new int[]{FluidValues.INGOT}, metalFolder("melting"));
+        salvageAll(cConsumer, this::compatId, TinkerFluids.moltenSilver, FluidValues.INGOT, "silver", new int[]{FluidValues.NUGGET}, metalFolder("melting"));
+        salvageAll(cConsumer, this::compatId, TCFluids.moltenNecromium, TinkerFluids.moltenDiamond, FluidValues.INGOT, FluidValues.GEM, "necromium", new int[]{FluidValues.NUGGET, FluidValues.GEM_SHARD}, metalFolder("melting"));
+
+        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT, "copper", CompoundIngredient.of(
+                oxidised("copper_ingot", true),
+                oxidised("copper_button", false),
+                listedInput("cupric_campfire")
+        ), metalFolder("melting"), "ingot_1");
+        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 2, "copper", CompoundIngredient.of(
+                oxidised("copper_door", false)
+        ), metalFolder("melting"), "ingot_2");
+        simpleMelting(consumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 3, "copper", CompoundIngredient.of(
+                makeCopperHorn(CavernsChasmsInit.GREAT_SKY_FALLING_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.OLD_HYMN_RESTING_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.PURE_WATER_DESIRE_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.HUMBLE_FIRE_MEMORY_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.DRY_URGE_ANGER_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.CLEAR_TEMPER_JOURNEY_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.FRESH_NEST_THOUGHT_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.SECRET_LAKE_TEAR_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.FEARLESS_RIVER_GIFT_COPPER_HORN),
+                makeCopperHorn(CavernsChasmsInit.SWEET_MOON_LOVE_COPPER_HORN)
+        ), metalFolder("melting"), "ingot_3");
+        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 4, "copper", CompoundIngredient.of(
+                oxidised("copper_trapdoor", false),
+                listedInput("barometer", "tuning_fork")
+        ), metalFolder("melting"), "ingot_4");
+
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.NUGGET * 11, "copper", oxidised("chiseled_copper", false), metalFolder("melting"), "chiseled");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.METAL_BLOCK, "copper", oxidised("copper_grate", false), metalFolder("melting"), "grate");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT / 2, "copper", CompoundIngredient.of(oxidised("copper_bricks", false), oxidised("copper_brick_wall", false), oxidised("chiseled_copper_bricks", false)), metalFolder("melting"), "bricks");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, 65, "copper", oxidised("copper_brick_stairs", false), metalFolder("melting"), "brick_stairs");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, 20, "copper", oxidised("copper_brick_slab", false), metalFolder("melting"), "brick_slab");
-        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT, "copper", oxidised("copper_button", false), metalFolder("melting"), "button");
-        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 2, "copper", oxidised("copper_door", false), metalFolder("melting"), "door");
-        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 4, "copper", oxidised("copper_trapdoor", false), metalFolder("melting"), "trapdoor");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.NUGGET * 3, "copper", CompoundIngredient.of(oxidised("copper_bars", false), oxidised("copper_chain", false)), metalFolder("melting"), "bars");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, 605, "copper", oxidised("copper_bulb", false), metalFolder("melting"), "bulb");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.NUGGET * 8, "copper", oxidised("copper_lantern", false), metalFolder("melting"), "lantern");
@@ -86,8 +111,6 @@ public class CavernsChasmsSmeltery implements CompatSmeltery {
         simpleMelting(TinkerFluids.moltenCopper, 20, listedInput("cupric_lantern"))
                 .addByproduct(TinkerFluids.moltenIron.result(FluidValues.NUGGET * 8))
                 .save(cConsumer, location(metalFolder("melting") + "/copper/cupric_lantern"));
-        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT, "copper", listedInput("cupric_campfire"), metalFolder("melting"), "campfire");
-        simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 4, "copper", listedInput("barometer", "tuning_fork"), metalFolder("melting"), "barometer");
         simpleMelting(cConsumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 7, "copper", oxidised("copper_horse_armor", false), metalFolder("melting"), "horse_armor");
 
         platedBricks(cConsumer, TinkerFluids.moltenIron, "iron");
@@ -187,20 +210,6 @@ public class CavernsChasmsSmeltery implements CompatSmeltery {
         platedBricks(cConsumer, TinkerFluids.moltenGold, "gold");
         simpleMelting(cConsumer, TinkerFluids.moltenGold, FluidValues.METAL_BLOCK * 3, "gold", listedInput("golden_bucket"), metalFolder("melting"), "bucket");
         simpleMelting(cConsumer, TinkerFluids.moltenGold, FluidValues.INGOT * 6, "gold", listedInput("lava_lamp"), metalFolder("melting"), "lava_lamp");
-
-
-        simpleMelting(consumer, TinkerFluids.moltenCopper, FluidValues.INGOT * 3, "copper", CompoundIngredient.of(
-                makeCopperHorn(CavernsChasmsInit.GREAT_SKY_FALLING_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.OLD_HYMN_RESTING_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.PURE_WATER_DESIRE_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.HUMBLE_FIRE_MEMORY_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.DRY_URGE_ANGER_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.CLEAR_TEMPER_JOURNEY_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.FRESH_NEST_THOUGHT_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.SECRET_LAKE_TEAR_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.FEARLESS_RIVER_GIFT_COPPER_HORN),
-                makeCopperHorn(CavernsChasmsInit.SWEET_MOON_LOVE_COPPER_HORN)
-        ), metalFolder("melting"), "horn");
 
 
         simpleMelting(TinkerFluids.moltenGlass, FluidValues.GLASS_PANE * 2, listedInput("frosted_glass"))

@@ -36,7 +36,7 @@ public class AetherTRSmeltery implements CompatSmeltery {
         glovesMelting(cConsumer, TCFluids.moltenPyral, FluidValues.INGOT, "phoenix", ItemNameIngredient.from(aetherId.apply("phoenix_gloves")), metalFolder("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, TCFluids.moltenGravitite.result(FluidValues.INGOT * 2));
         glovesMelting(cConsumer, TCFluids.moltenNeptune, FluidValues.INGOT, "neptune", ItemNameIngredient.from(aetherId.apply("neptune_gloves")), metalFolder("melting"), true, new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, TCFluids.moltenZanite.result(FluidValues.INGOT * 2));
         //Salvaging
-        salvageAll(cConsumer, aetherId, TCFluids.moltenValkyrum, TCFluids.moltenGravitite, FluidValues.INGOT, "valkyrie", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"), SalvageType.WEAPON);
+        salvageAll(cConsumer, aetherId, TCFluids.moltenValkyrum, TCFluids.moltenGravitite, FluidValues.INGOT, FluidValues.INGOT, "valkyrie", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"), SalvageType.WEAPON);
         salvageArmor(cConsumer, aetherId, TCFluids.moltenPyral, TCFluids.moltenGravitite, FluidValues.INGOT, "phoenix", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
         salvageArmor(cConsumer, aetherId, TCFluids.moltenNeptune, TCFluids.moltenZanite, FluidValues.INGOT, "neptune", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
 

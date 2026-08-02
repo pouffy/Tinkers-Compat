@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "item": "caverns_and_chasms:silver_leggings"
+  },
+  "result": {
+    "amount": 630,
+    "tag": "forge:molten_silver",
+    "unit_size": 10
+  },
+  "temperature": 790,
+  "time": 158
+}

@@ -19,11 +19,12 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
 
     @Override
     protected void addMaterialRenderInfo() {
+        int count = 0;
+        int variantCount = 0;
         for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
             if (builder.getSpriteInfo().getTransformer() == null) {
                 continue;
             }
-            TCompat.LOGGER.info("Adding render info for material: {}", builder.getId());
             var riBuilder = buildRenderInfo(builder.getId());
             var color = builder.getRenderInfo().getColor();
             if (color != -1) {
@@ -49,7 +50,12 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
             if (generator != null) {
                 riBuilder.generator(generator);
             }
+            if (builder.isVariant()) {
+                variantCount++;
+            } else count++;
         }
+        TCompat.LOGGER.info("Added render info for {} materials", count);
+        TCompat.LOGGER.info("Added render info for {} material variants", variantCount);
     }
 
     @Override

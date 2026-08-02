@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": [
+    {
+      "item": "caverns_and_chasms:copper_axe"
+    },
+    {
+      "item": "caverns_and_chasms:copper_pickaxe"
+    }
+  ],
+  "result": {
+    "amount": 2430,
+    "tag": "forge:molten_copper",
+    "unit_size": 90
+  },
+  "temperature": 500,
+  "time": 259
+}

@@ -59,7 +59,7 @@ public class DeepAetherSmeltery implements CompatSmeltery {
         ringMelting(cConsumer, TCFluids.moltenStratus, FluidValues.INGOT, "stratus", ItemNameIngredient.from(compatId("stratus_ring")), metalFolder("melting"), true, TCFluids.moltenGravitite.result(FluidValues.INGOT * 4));
         //Salvaging
         salvageAll(cConsumer, this::compatId, TCFluids.moltenSkyjade, FluidValues.INGOT, "skyjade", new int[]{FluidValues.GEM_SHARD}, gemFolder("melting"));
-        salvageAll(cConsumer, this::compatId, TCFluids.moltenStratus, TCFluids.moltenGravitite, FluidValues.INGOT, "stratus", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
+        salvageAll(cConsumer, this::compatId, TCFluids.moltenStratus, TCFluids.moltenGravitite, FluidValues.INGOT, FluidValues.INGOT, "stratus", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
 
         simpleMelting(cConsumer, TCFluids.moltenStormforgedSteel, FluidValues.INGOT * 2, "stormforged_steel", ItemNameIngredient.from(compatId("storm_sword")), metalFolder("melting"), "sword");
         simpleMelting(cConsumer, TCFluids.moltenStormforgedSteel, FluidValues.INGOT * 3, "stormforged_steel", ItemNameIngredient.from(compatId("storm_bow")), metalFolder("melting"), "bow");

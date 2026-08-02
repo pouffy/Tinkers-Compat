@@ -392,13 +392,14 @@ public interface ITCSmelteryRecipeHelper extends ICastCreationHelper {
             MeltingRecipeBuilder.melting(salvage.input(idFunc, name), fluidOut.apply(salvage.getSalvageAmount(singularUnit)), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(salvage.getSalvageAmount(singularUnit))).setDamagable(damageSizes).save(consumer, location(prefix + salvage.recipeSuffix()));
         }
     }
-    default void salvageAll(Consumer<FinishedRecipe> consumer, Function<String, ResourceLocation> idFunc, FluidObject<?> fluid, FluidObject<?> byproductFluid, int singularUnit, String name, int[] damageSizes, String folder, SalvageType... exclude) {
+
+    default void salvageAll(Consumer<FinishedRecipe> consumer, Function<String, ResourceLocation> idFunc, FluidObject<?> fluid, FluidObject<?> byproductFluid, int singularUnit, int byproductUnit, String name, int[] damageSizes, String folder, SalvageType... exclude) {
         String prefix = folder + "/" + name + "/";
         IntFunction<FluidOutput> fluidOut = fluid::result;
         IntFunction<FluidOutput> fluidByOut = byproductFluid::result;
         for (SalvageType salvage : SalvageType.values()) {
             if (!salvage.includeInSalvageAll || Arrays.asList(exclude).contains(salvage)) continue;
-            MeltingRecipeBuilder.melting(salvage.input(idFunc, name), fluidOut.apply(singularUnit), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(salvage.getSalvageAmount(singularUnit))).setDamagable(damageSizes).addByproduct(fluidByOut.apply(salvage.getSalvageAmount(singularUnit))).save(consumer, location(prefix + salvage.recipeSuffix()));
+            MeltingRecipeBuilder.melting(salvage.input(idFunc, name), fluidOut.apply(singularUnit), getTemperature(fluid), IMeltingRecipe.calcTimeFactor(salvage.getSalvageAmount(singularUnit))).setDamagable(damageSizes).addByproduct(fluidByOut.apply(salvage.getSalvageAmount(byproductUnit))).save(consumer, location(prefix + salvage.recipeSuffix()));
         }
     }
 
