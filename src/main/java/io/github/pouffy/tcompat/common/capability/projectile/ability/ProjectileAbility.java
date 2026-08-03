@@ -76,4 +76,14 @@ public interface ProjectileAbility extends INBTSynchable<CompoundTag> {
             ability.sendClient(ability.getAbility(name));
         });
     }
+
+    /**
+     * Checks if the ability is active in a given projectile.
+     * @param projectile projectile to check the ability for
+     * @param name name of the ability to check
+     * @return true if the ability is active, false otherwise
+     */
+    static boolean isActive(Projectile projectile, String name) {
+        return ProjectileAbility.get(projectile).map(ability -> ability.getAbility(name).isActive()).orElse(false);
+    }
 }

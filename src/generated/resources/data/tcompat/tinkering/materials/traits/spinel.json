@@ -1,0 +1,22 @@
+{
+  "perStat": {
+    "constructs_casting:adornment": [
+      {
+        "level": 1,
+        "name": "tcompat:nullification"
+      }
+    ],
+    "tconstruct:arrow_head": [
+      {
+        "level": 1,
+        "name": "tcompat:blunt"
+      }
+    ],
+    "tinkersjewelry:gem": [
+      {
+        "level": 1,
+        "name": "tcompat:blunt_hands"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "stats": {
+    "constructs_casting:adornment": {
+      "optional": true
+    },
+    "tconstruct:arrow_head": {},
+    "tinkersjewelry:gem": {
+      "optional": true
+    }
+  }
+}

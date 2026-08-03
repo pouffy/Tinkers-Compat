@@ -3,14 +3,21 @@ package io.github.pouffy.tcompat.compat.caverns_chasms;
 import com.google.common.collect.ImmutableList;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.util.CompatInitializer;
+import io.github.pouffy.tcompat.compat.caverns_chasms.modifier.combat.NullificationModifier;
+import io.github.pouffy.tcompat.compat.caverns_chasms.modifier.combat.ranged.BluntModifier;
+import io.github.pouffy.tcompat.compat.ice_and_fire.modifier.combat.ranged.LeechingModifier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Instrument;
 import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
+import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 public class CavernsChasmsInit extends CompatInitializer {
     public static final ModifierDeferredRegister C_M = ModifierDeferredRegister.create(TCompat.MOD_ID);
+
+    public static final StaticModifier<BluntModifier> blunt = C_M.register("blunt", BluntModifier::new);
+    public static final StaticModifier<NullificationModifier> nullification = C_M.register("nullification", NullificationModifier::new);
 
     public static void init(IEventBus eventBus) {
         C_M.register(eventBus);

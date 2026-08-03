@@ -15,6 +15,7 @@ import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.aether.entity.ModifiableDart;
 import io.github.pouffy.tcompat.compat.cataclysm.CataclysmHandler;
+import io.github.pouffy.tcompat.compat.caverns_chasms.modifier.combat.ranged.BluntModifier;
 import io.github.pouffy.tcompat.compat.create.CreateHandler;
 import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerHandler;
@@ -36,6 +37,7 @@ import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.mantle.util.OffhandCooldownTracker;
@@ -110,6 +112,11 @@ public class TCCommonEvents {
         }
     }
 
+    @SubscribeEvent(priority = EventPriority.LOW)
+    static void livingAttacked(LivingAttackEvent event) {
+        CuriosHandler.handleAttack(event);
+    }
+
     @SubscribeEvent
     static void livingTick(LivingEvent.LivingTickEvent event) {
         boolean client = event.getEntity().level().isClientSide();
@@ -157,6 +164,12 @@ public class TCCommonEvents {
         if (!event.isCanceled() && LightningOwner.lightningTracking(entity, lightningBolt)) {
             event.setCanceled(true);
         }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    static void hurtHighest(LivingHurtEvent event) {
+        BluntModifier.negateDamage(event);
+        BluntModifier.negateMeleeDamage(event);
     }
 
     @SubscribeEvent

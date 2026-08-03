@@ -6,6 +6,7 @@ import io.github.pouffy.tcompat.common.data.condition.DartShooterCondition;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.modifier.hook.*;
 import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioAttributeHook;
+import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioOnAttackedHook;
 import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioTickModifierHook;
 import io.github.pouffy.tcompat.common.modifier.module.*;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
@@ -112,6 +113,8 @@ public class GlobalInit extends CompatInitializer {
     });
     public static final ModuleHook<CurioTickModifierHook> CURIO_TICK = ModifierHooks.register(getResource("curio_tick"), CurioTickModifierHook.class, CurioTickModifierHook.AllMerger::new, (tool, modifierEntry, slotId, slotIndex, wearer, stack) -> {});
     public static final ModuleHook<CurioAttributeHook> CURIO_ATTRIBUTE = ModifierHooks.register(getResource("curio_attribute"), CurioAttributeHook.class, CurioAttributeHook.AllMerger::new, (tool, modifierEntry, slotId, slotIndex, wearer, uuid, stack) -> HashMultimap.create());
+    public static final ModuleHook<CurioOnAttackedHook> CURIO_ON_ATTACKED = ModifierHooks.register(getResource("curio_on_attacked"), CurioOnAttackedHook.class, CurioOnAttackedHook.AllMerger::new, (tool, modifier, context, slotId, slotIndex, source, amount, isDirectDamage) -> {});
+
     public static final ModuleHook<EntitySensitiveAttributesModifierHook> ENTITY_SENSITIVE_ATTRIBUTES = ModifierHooks.register(getResource("entity_sensitive_attributes"), EntitySensitiveAttributesModifierHook.class, EntitySensitiveAttributesModifierHook.AllMerger::new, (tool, modifierEntry, slot, wearer, attributes) -> {});
     public static final ModuleHook<VibrationDampeningModifierHook> VIBRATION_DAMPENING = ModifierHooks.register(getResource("vibration_dampening"), VibrationDampeningModifierHook.class, VibrationDampeningModifierHook.AllMerger::new, (tool, modifierEntry, level, gameEvent, context, pos) -> true);
 

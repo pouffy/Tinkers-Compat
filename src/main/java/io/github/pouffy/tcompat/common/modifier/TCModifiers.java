@@ -58,6 +58,9 @@ public class TCModifiers {
     //Create
     public static final ModifierId goggles = id("goggles");
 
+    //Caverns and Chasms
+    public static final ModifierId bluntHands = id("blunt_hands");
+
     //Tinkers' Jewelry
     public static final ModifierId mining_speed_gem = compatId("tinkersjewelry", "mining_speed_gem");
     public static final ModifierId poison_gem = compatId("tinkersjewelry", "poison_gem");

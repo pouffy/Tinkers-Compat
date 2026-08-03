@@ -1,11 +1,14 @@
 {
-  "color": "FFF6A181",
+  "color": "FFAC6CB2",
   "fallbacks": [
-    "gem"
+    "gem",
+    "spinel"
   ],
   "generator": {
     "supported_stats": [
-      "tconstruct:repair_kit"
+      "tconstruct:arrow_head",
+      "tinkersjewelry:gem",
+      "constructs_casting:adornment"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",
@@ -17,27 +20,27 @@
             "grey": 0
           },
           {
-            "color": "FF134341",
+            "color": "FF6B302E",
             "grey": 63
           },
           {
-            "color": "FF63618E",
+            "color": "FF822E66",
             "grey": 102
           },
           {
-            "color": "FF9E55A0",
+            "color": "FFBC5186",
             "grey": 140
           },
           {
-            "color": "FFF6A181",
+            "color": "FFAC6CB2",
             "grey": 178
           },
           {
-            "color": "FFFFF1A9",
+            "color": "FFD684AC",
             "grey": 216
           },
           {
-            "color": "FFFFFFFF",
+            "color": "FFE6D2F7",
             "grey": 255
           }
         ]

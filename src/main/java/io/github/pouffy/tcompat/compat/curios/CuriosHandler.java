@@ -3,17 +3,21 @@ package io.github.pouffy.tcompat.compat.curios;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.mojang.datafixers.util.Pair;
+import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioOnAttackedHook;
 import io.github.pouffy.tcompat.common.util.CompatHelper;
 import io.github.pouffy.tcompat.common.util.EquipmentHelper;
 import io.github.pouffy.tcompat.common.util.ObjectRetriever;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.core.NonNullList;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotAttribute;
@@ -23,6 +27,7 @@ import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CuriosHandler {
 
@@ -50,10 +55,56 @@ public class CuriosHandler {
         return LoadedOnly.isCurio(stack);
     }
 
+    public static void handleAttack(LivingAttackEvent event) {
+        if (!CompatHelper.isLoaded("curios")) return;
+        LivingEntity entity = event.getEntity();
+        if (entity.level().isClientSide() || entity.isDeadOrDying()) {
+            return;
+        }
+        DamageSource source = event.getSource();
+        if (entity.isInvulnerableTo(source)) {
+            return;
+        }
+        float amount = event.getAmount();
+        event.setCanceled(LoadedOnly.handleAttack(entity, source, amount));
+    }
+
     public static class LoadedOnly {
 
         public static boolean isCurio(ItemStack stack) {
             return stack.getItem() instanceof ICurioItem;
+        }
+
+        public static boolean handleAttack(LivingEntity wearer, DamageSource source, float amount) {
+            EquipmentContext context = new EquipmentContext(wearer);
+            AtomicBoolean shouldCancel = new AtomicBoolean(false);
+            CuriosApi.getCuriosInventory(wearer).ifPresent((handler) -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for(Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    String identifier = entry.getKey();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for(int i = 0; i < stacksHandler.getSlots(); ++i) {
+                        NonNullList<Boolean> renderStates = stacksHandler.getRenders();
+                        SlotContext slotContext = new SlotContext(identifier, wearer, i, false, renderStates.size() > i && renderStates.get(i));
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!EquipmentHelper.isTool(stack)) return;
+                        if (!stack.isEmpty()) {
+                            ToolStack tool = ToolStack.from(stack);
+                            if (tool.isBroken()) {
+                                return;
+                            }
+                            for (ModifierEntry modifierEntry: tool.getModifierList()) {
+                                if (modifierEntry.getHook(GlobalInit.CURIO_ON_ATTACKED).isDamageBlocked(tool, modifierEntry, context, identifier, i, source, amount, CurioOnAttackedHook.isDirectDamage(source))) {
+                                    shouldCancel.set(true);
+                                }
+                                modifierEntry.getHook(GlobalInit.CURIO_ON_ATTACKED).onAttacked(tool, modifierEntry, context, identifier, i, source, amount, CurioOnAttackedHook.isDirectDamage(source));
+                            }
+                        }
+                    }
+                }
+            });
+            return shouldCancel.get();
         }
 
         public static ArrayList<ItemStack> getCurioItems(LivingEntity wearer) {

@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/spinel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/spinel"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:gems/spinel"
+  },
+  "material": "tcompat:spinel",
+  "needed": 1,
+  "value": 9
+}

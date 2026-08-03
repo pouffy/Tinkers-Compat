@@ -295,6 +295,9 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
 
         buildModifier(TCModifiers.goggles, modLoaded("create"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
+        buildModifier(TCModifiers.bluntHands, modLoaded("caverns_and_chasms"))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override

@@ -253,6 +253,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         metalMaterialRecipe(create, CreateMaterials.brass, folder, "brass", true);
 
         gemMaterialRecipe(withCondition(consumer, modLoaded("caverns_and_chasms")), CavernsChasmsMaterials.zirconia, folder, "zirconia", true, false, true);
+        gemMaterialRecipe(withCondition(consumer, modLoaded("caverns_and_chasms")), CavernsChasmsMaterials.spinel, folder, "spinel", true, false, true);
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
@@ -311,6 +312,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialMeltingCasting(create, CreateMaterials.brass, TinkerFluids.moltenBrass, FluidValues.INGOT, folder);
 
         materialMeltingCasting(withCondition(consumer, modLoaded("caverns_and_chasms")), CavernsChasmsMaterials.zirconia, TCFluids.moltenZirconia, FluidValues.GEM, folder);
+        materialMeltingCasting(withCondition(consumer, modLoaded("caverns_and_chasms")), CavernsChasmsMaterials.spinel, TCFluids.moltenSpinel, FluidValues.GEM, folder);
     }
 
     private void planksVariantRecipe(Consumer<FinishedRecipe> consumer, TCWoods woodType, MaterialVariantId material) {

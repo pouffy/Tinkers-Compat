@@ -339,6 +339,11 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.clockwork", "You're really winding me up", "Using the tool increases its speed as long as you keep going.");
         forModifier("modifier.tcompat.wrenching", "At the block straight up wrenching it", "Your tool can instantly pick up certain appliances.");
         forModifier("modifier.tcompat.goggles", "Meet the Engineer", "The goggles allow you to view information on certain appliances.");
+
+        //Caverns and Chasms
+        forModifier("modifier.tcompat.blunt", "Gimme an arrow with nothin'", "Fired projectiles cannot directly cause any damage.");
+        forModifier("modifier.tcompat.nullification", "Gimme a spell with nothin'", "Spell power is reduced to nothing.");
+        forModifier("modifier.tcompat.blunt_hands", "Gimme a fist with nothin'", "Melee weapons are incapable of causing direct harm to targets.");
     }
 
     private void tag(TagKey<Item> tag, String name) {

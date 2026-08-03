@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "caverns_and_chasms"
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 4,
+  "tier": 1
+}

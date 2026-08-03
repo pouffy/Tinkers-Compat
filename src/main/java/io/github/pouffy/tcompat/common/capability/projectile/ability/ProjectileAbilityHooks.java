@@ -59,6 +59,11 @@ public class ProjectileAbilityHooks {
      * @see CryogenicAbility
      */
     public static final String CRYOGENIC = "cryogenic";
+    /**
+     * Damage caused by the projectile is completely negated.
+     * @see BluntAbility
+     */
+    public static final String BLUNT = "blunt";
 
     /**
      * Adds modifier data to launched projectiles. Used when summoning non-vanilla projectiles via modifiers.

@@ -29,7 +29,8 @@ public class ProjectileAbilityCapability implements ProjectileAbility {
                 AbstractProjectileAbility.makeEntry(new StymphalianAbility()),
                 AbstractProjectileAbility.makeEntry(new VoidScatterAbility()),
                 AbstractProjectileAbility.makeEntry(new InstantDiscardAbility()),
-                AbstractProjectileAbility.makeEntry(new CryogenicAbility())
+                AbstractProjectileAbility.makeEntry(new CryogenicAbility()),
+                AbstractProjectileAbility.makeEntry(new BluntAbility())
         );
     }
 
