@@ -4,6 +4,7 @@ import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import io.github.pouffy.tcompat.compat.aether.AetherHandler;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.phys.EntityHitResult;
@@ -24,6 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+//TODO: Fix projectiles not working
 @SuppressWarnings("deprecation")
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
@@ -49,9 +51,11 @@ public class AscensionModifier extends NoLevelsModifier implements BlockInteract
 
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
-        if (notBlocked && target != null) {
+        boolean flag = notBlocked;
+        if (projectile instanceof AbstractArrow arrow && !arrow.isCritArrow()) flag = false;
+        if (flag && target != null) {
             AetherHandler.launchEntity(target, true);
         }
-        return notBlocked && this.onProjectileHitEntity(modifiers, persistentData, modifier, projectile, hit, attacker, target);
+        return false;
     }
 }

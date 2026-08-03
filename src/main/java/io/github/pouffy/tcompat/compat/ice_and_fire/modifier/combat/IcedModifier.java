@@ -52,7 +52,8 @@ public class IcedModifier extends NoLevelsModifier implements MeleeHitModifierHo
             IceFireHandler.freeze(target, 200);
             target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             target.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
+            target.knockback(1.0, projectile.getX() - target.getX(), projectile.getZ() - target.getZ());
         }
-        return notBlocked;
+        return false;
     }
 }

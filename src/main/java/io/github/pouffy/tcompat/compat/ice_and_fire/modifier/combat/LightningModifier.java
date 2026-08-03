@@ -66,7 +66,8 @@ public class LightningModifier extends NoLevelsModifier implements MeleeHitModif
                     target.level().addFreshEntity(lightningBolt);
                 }
             }
+            target.knockback(1.0, projectile.getX() - target.getX(), projectile.getZ() - target.getZ());
         }
-        return notBlocked;
+        return false;
     }
 }

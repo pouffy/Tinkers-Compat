@@ -105,7 +105,8 @@ public class CryogenicModifier extends Modifier implements ValidateModifierHook,
             return;
         }
         int base = context.isFullyCharged() ? 50 : 25;
-        int toExtract = Mth.clamp(Math.round(base * damageDealt), 0, getFuel(tool));
+        float damage = damageDealt <= 0 ? 1 : damageDealt;
+        int toExtract = Mth.clamp(Math.round(base * damage), 0, getFuel(tool));
         if (extractFuel(tool, toExtract, true) == toExtract) {
             freezeTarget(context.getLivingTarget(), toExtract * modifier.getLevel());
             extractFuel(tool, toExtract, false);
