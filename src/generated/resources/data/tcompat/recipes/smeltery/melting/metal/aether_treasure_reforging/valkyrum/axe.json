@@ -2,7 +2,7 @@
   "type": "tconstruct:melting",
   "byproducts": [
     {
-      "amount": 180,
+      "amount": 270,
       "fluid": "tcompat:molten_gravitite"
     }
   ],
@@ -14,10 +14,10 @@
   ],
   "ingredient": [
     {
-      "item": "aether:valkyrie_lance"
+      "item": "aether:valkyrie_pickaxe"
     },
     {
-      "item": "aether:valkyrie_hoe"
+      "item": "aether:valkyrie_axe"
     }
   ],
   "result": {

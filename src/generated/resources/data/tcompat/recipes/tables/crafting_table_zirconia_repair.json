@@ -1,0 +1,9 @@
+{
+  "type": "tcompat:crafting_table_zirconia_repair",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ]
+}

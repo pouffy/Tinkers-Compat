@@ -9,12 +9,12 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.tools.definition.module.material.MaterialRepairModule;
 import slimeknights.tconstruct.library.tools.definition.module.material.MaterialStatsModule;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import java.util.List;
 
@@ -31,7 +31,7 @@ public abstract class MaterialStatsModuleMixin {
     @Inject(method = "isRepairMaterial(Lslimeknights/tconstruct/library/tools/nbt/IToolStackView;Lslimeknights/tconstruct/library/materials/definition/MaterialId;)Z", at = @At("HEAD"), cancellable = true)
     public void isRepairMaterial(IToolStackView tool, MaterialId material, CallbackInfoReturnable<Boolean> cir) {
         if (CompatHelper.isLoaded("caverns_and_chasms")) {
-            if (material == CavernsChasmsMaterials.zirconia) {
+            if (CavernsChasmsMaterials.zirconia.matches(MaterialRegistry.getMaterial(material))) {
                 cir.setReturnValue(true);
             }
         }
@@ -42,7 +42,7 @@ public abstract class MaterialStatsModuleMixin {
         ResourceLocation toolId = tool.getDefinition().getId();
         if (CompatHelper.isLoaded("caverns_and_chasms")) {
             for(int i : this.getRepairIndices()) {
-                if (material.getId().equals(CavernsChasmsMaterials.zirconia)) {
+                if (CavernsChasmsMaterials.zirconia.matches(MaterialRegistry.getMaterial(material))) {
                     cir.setReturnValue((float) MaterialRepairModule.getDurability(toolId, tool.getMaterial(i).getId(), this.statTypes.get(i)));
                 }
             }

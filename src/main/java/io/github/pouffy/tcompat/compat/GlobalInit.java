@@ -3,6 +3,8 @@ package io.github.pouffy.tcompat.compat;
 import com.google.common.collect.HashMultimap;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.condition.DartShooterCondition;
+import io.github.pouffy.tcompat.common.data.recipe.CraftingTableZirconiaRepairKitRecipe;
+import io.github.pouffy.tcompat.common.data.recipe.TinkerStationZirconiaRepairRecipe;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
 import io.github.pouffy.tcompat.common.modifier.hook.*;
 import io.github.pouffy.tcompat.common.modifier.hook.curios.CurioAttributeHook;
@@ -29,6 +31,7 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
@@ -36,6 +39,7 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
@@ -43,8 +47,10 @@ import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
+import slimeknights.mantle.recipe.helper.SimpleRecipeSerializer;
 import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
 import slimeknights.mantle.registration.deferred.EnumDeferredRegister;
+import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
 import slimeknights.mantle.registration.object.EnumObject;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.TinkerEffect;
@@ -62,6 +68,8 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
+import slimeknights.tconstruct.tables.recipe.CraftingTableRepairKitRecipe;
+import slimeknights.tconstruct.tables.recipe.TinkerStationRepairRecipe;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.modifiers.effect.NoMilkEffect;
 import slimeknights.tconstruct.tools.stats.ToolType;
@@ -75,6 +83,7 @@ public class GlobalInit extends CompatInitializer {
     public static final ItemDeferredRegisterExtension ITEMS = new ItemDeferredRegisterExtension(TCompat.MOD_ID);
     public static final EntityTypeDeferredRegister ENTITIES = new EntityTypeDeferredRegister(TCompat.MOD_ID);
     public static final EnumDeferredRegister<MobEffect> MOB_EFFECTS = new EnumDeferredRegister<>(Registries.MOB_EFFECT, TCompat.MOD_ID);
+    protected static final SynchronizedDeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = SynchronizedDeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, TCompat.MOD_ID);
 
     public static final RegistryObject<EntityType<ModifiableDart>> modifiableDart = ENTITIES.register("dart", () -> EntityType.Builder.<ModifiableDart>of(ModifiableDart::new, MobCategory.MISC).sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 
@@ -118,6 +127,9 @@ public class GlobalInit extends CompatInitializer {
     public static final ModuleHook<EntitySensitiveAttributesModifierHook> ENTITY_SENSITIVE_ATTRIBUTES = ModifierHooks.register(getResource("entity_sensitive_attributes"), EntitySensitiveAttributesModifierHook.class, EntitySensitiveAttributesModifierHook.AllMerger::new, (tool, modifierEntry, slot, wearer, attributes) -> {});
     public static final ModuleHook<VibrationDampeningModifierHook> VIBRATION_DAMPENING = ModifierHooks.register(getResource("vibration_dampening"), VibrationDampeningModifierHook.class, VibrationDampeningModifierHook.AllMerger::new, (tool, modifierEntry, level, gameEvent, context, pos) -> true);
 
+
+    public static final RegistryObject<SimpleRecipeSerializer<TinkerStationZirconiaRepairRecipe>> tinkerStationZirconiaRepairSerializer = RECIPE_SERIALIZERS.register("tinker_station_zirconia_repair", () -> new SimpleRecipeSerializer<>(TinkerStationZirconiaRepairRecipe::new));
+    public static final RegistryObject<SimpleRecipeSerializer<CraftingTableZirconiaRepairKitRecipe>> craftingTableZirconiaRepairSerializer = RECIPE_SERIALIZERS.register("crafting_table_zirconia_repair", () -> new SimpleRecipeSerializer<>(CraftingTableZirconiaRepairKitRecipe::new));
 
     public static LivingEntityPredicate SUN_EXPOSED = SingletonLoader.singleton((loader) -> new LivingEntityPredicate() {
         @Override
@@ -220,6 +232,7 @@ public class GlobalInit extends CompatInitializer {
         ITEMS.register(eventBus);
         ENTITIES.register(eventBus);
         MOB_EFFECTS.register(eventBus);
+        RECIPE_SERIALIZERS.register(eventBus);
         WoodMaterials.staticInit();
         RockMaterials.staticInit();
     }

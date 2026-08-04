@@ -40,9 +40,13 @@ public class AetherTRSmeltery implements CompatSmeltery {
         salvageArmor(cConsumer, aetherId, TCFluids.moltenPyral, TCFluids.moltenGravitite, FluidValues.INGOT, "phoenix", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
         salvageArmor(cConsumer, aetherId, TCFluids.moltenNeptune, TCFluids.moltenZanite, FluidValues.INGOT, "neptune", new int[]{FluidValues.NUGGET, FluidValues.NUGGET}, metalFolder("melting"));
 
-        simpleMelting(TCFluids.moltenValkyrum, FluidValues.INGOT, listedInput("valkyrum_lance", "valkyrum_hoe"))
+        simpleMelting(TCFluids.moltenValkyrum, FluidValues.INGOT, listedInput("aether:valkyrie_lance", "aether:valkyrie_hoe"))
                 .addByproduct(TCFluids.moltenGravitite.result(FluidValues.INGOT * 2))
                 .save(cConsumer, location(metalFolder("melting") + "/valkyrum/weapon"));
+
+        simpleMelting(TCFluids.moltenValkyrum, FluidValues.INGOT, listedInput("aether:valkyrie_pickaxe", "aether:valkyrie_axe"))
+                .addByproduct(TCFluids.moltenGravitite.result(FluidValues.INGOT * 3))
+                .save(cConsumer, location(metalFolder("melting") + "/valkyrum/axe"));
 
         ItemCastingRecipeBuilder.tableRecipe(ItemNameOutput.fromName(compatId("neptune_mesh")))
                 .setFluidAndTime(TCFluids.moltenNeptune, FluidValues.INGOT)

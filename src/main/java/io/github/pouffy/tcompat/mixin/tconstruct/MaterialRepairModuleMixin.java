@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.tools.definition.module.material.MaterialRepairModule;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -20,7 +21,7 @@ public class MaterialRepairModuleMixin {
     @Inject(method = "isRepairMaterial(Lslimeknights/tconstruct/library/tools/nbt/IToolStackView;Lslimeknights/tconstruct/library/materials/definition/MaterialId;)Z", at = @At("HEAD"), cancellable = true)
     private void isRepairMaterial(IToolStackView tool, MaterialId material, CallbackInfoReturnable<Boolean> cir) {
         if (CompatHelper.isLoaded("caverns_and_chasms")) {
-            if (material == CavernsChasmsMaterials.zirconia) {
+            if (CavernsChasmsMaterials.zirconia.matches(MaterialRegistry.getMaterial(material))) {
                 cir.setReturnValue(true);
             }
         }
@@ -29,7 +30,7 @@ public class MaterialRepairModuleMixin {
     @Inject(method = "getRepairAmount(Lslimeknights/tconstruct/library/tools/nbt/IToolStackView;Lslimeknights/tconstruct/library/materials/definition/MaterialId;)F", at = @At("HEAD"), cancellable = true)
     private void getRepairAmount(IToolStackView tool, MaterialId material, CallbackInfoReturnable<Float> cir) {
         if (CompatHelper.isLoaded("caverns_and_chasms")) {
-            if (material.getId().equals(CavernsChasmsMaterials.zirconia)) {
+            if (CavernsChasmsMaterials.zirconia.matches(MaterialRegistry.getMaterial(material))) {
                 cir.setReturnValue((float) this.repairAmount);
             }
         }

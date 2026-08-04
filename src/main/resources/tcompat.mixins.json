@@ -17,11 +17,10 @@
     "aether.WeaponHooksMixin",
     "malum.SpiritHarvestHandlerMixin",
     "malum.VoidConduitBlockEntityMixin",
-    "tconstruct.CraftingTableRepairKitRecipeMixin",
     "tconstruct.MaterialRepairModuleMixin",
     "tconstruct.MaterialStatsModuleMixin",
+    "tconstruct.RepairKitItemMixin",
     "tconstruct.StatlessPartRepairModuleMixin",
-    "tconstruct.TinkerStationRepairRecipeMixin",
     "tconstruct.ToolEnergyCapabilityMixin"
   ],
   "client": [

@@ -6,13 +6,16 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.crafting.CompoundIngredient;
+import slimeknights.mantle.recipe.helper.SimpleFinishedRecipe;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
 import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.tinkerstation.building.ToolBuildingRecipeBuilder;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
+import slimeknights.tconstruct.tables.TinkerTables;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 
 import java.util.function.Consumer;
@@ -29,6 +32,8 @@ public class TCToolRecipeProv extends TCBaseRecipeProvider implements IMaterialR
         String folder = "tools/building/";
         String partFolder = "tools/parts/";
         String castFolder = "smeltery/casts/";
+
+        String tables = "tables/";
 
         Consumer<FinishedRecipe> iceandfireConsumer = withCondition(consumer, modLoaded("iceandfire"));
 
@@ -62,6 +67,8 @@ public class TCToolRecipeProv extends TCBaseRecipeProvider implements IMaterialR
         toolBuilding(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), GlobalInit.dartShooter, folder);
         ToolBuildingRecipeBuilder.toolBuildingRecipe(GlobalInit.dart.get()).outputSize(4).save(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), this.prefix(GlobalInit.dart, folder));
 
+        withCondition(consumer, modLoaded("caverns_and_chasms")).accept(new SimpleFinishedRecipe(this.location(tables + "tinker_station_zirconia_repair"), GlobalInit.tinkerStationZirconiaRepairSerializer.get()));
+        withCondition(consumer, modLoaded("caverns_and_chasms")).accept(new SimpleFinishedRecipe(this.location(tables + "crafting_table_zirconia_repair"), GlobalInit.craftingTableZirconiaRepairSerializer.get()));
     }
 
     @Override
