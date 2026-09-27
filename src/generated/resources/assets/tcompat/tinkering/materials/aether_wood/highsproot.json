@@ -22,40 +22,16 @@
       "type": "tconstruct:recolor_sprite",
       "color_mapping": {
         "type": "tconstruct:grey_to_color",
-        "palette": [
-          {
-            "color": "FF000000",
-            "grey": 0
-          },
-          {
-            "color": "FF26211C",
-            "grey": 63
-          },
-          {
-            "color": "FF302A23",
-            "grey": 102
-          },
-          {
-            "color": "FF3A332A",
-            "grey": 140
-          },
-          {
-            "color": "FF494036",
-            "grey": 178
-          },
-          {
-            "color": "FF52483B",
-            "grey": 216
-          },
-          {
-            "color": "FF5B5142",
-            "grey": 234
-          },
-          {
-            "color": "FF65594A",
-            "grey": 255
-          }
-        ]
+        "palette": {
+          "000": "FF000000",
+          "063": "FF26211C",
+          "102": "FF302A23",
+          "140": "FF3A332A",
+          "178": "FF494036",
+          "216": "FF52483B",
+          "234": "FF5B5142",
+          "255": "FF65594A"
+        }
       }
     },
     "variant": true

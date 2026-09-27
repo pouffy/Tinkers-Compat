@@ -31,5 +31,6 @@ public class QuarkInit extends CompatInitializer {
         if (QuarkHandler.isSlimeInABucketEnabled()) {
             QUARK_I.register(eventBus);
         }
+        QuarkMaterials.staticInit();
     }
 }

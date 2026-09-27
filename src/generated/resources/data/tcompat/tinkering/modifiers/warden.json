@@ -150,6 +150,5 @@
         "tag": "tconstruct:modifiable/harvest/primary"
       }
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

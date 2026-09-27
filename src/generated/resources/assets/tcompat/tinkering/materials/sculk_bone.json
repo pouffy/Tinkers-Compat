@@ -14,6 +14,7 @@
       "tinkersjewelry:gem",
       "constructs_casting:magic_base",
       "tconstruct:arrow_shaft",
+      "tconstruct:ribcage",
       "tconstruct:limb",
       "tconstruct:grip"
     ],
@@ -21,36 +22,15 @@
       "type": "tconstruct:recolor_sprite",
       "color_mapping": {
         "type": "tconstruct:grey_to_color",
-        "palette": [
-          {
-            "color": "FF000000",
-            "grey": 0
-          },
-          {
-            "color": "FF6E757B",
-            "grey": 63
-          },
-          {
-            "color": "FF819988",
-            "grey": 102
-          },
-          {
-            "color": "FFA2AF86",
-            "grey": 140
-          },
-          {
-            "color": "FFC6CDA7",
-            "grey": 178
-          },
-          {
-            "color": "FFDBE0C1",
-            "grey": 216
-          },
-          {
-            "color": "FFECEFDA",
-            "grey": 255
-          }
-        ]
+        "palette": {
+          "000": "FF000000",
+          "063": "FF6E757B",
+          "102": "FF819988",
+          "140": "FFA2AF86",
+          "178": "FFC6CDA7",
+          "216": "FFDBE0C1",
+          "255": "FFECEFDA"
+        }
       }
     }
   }

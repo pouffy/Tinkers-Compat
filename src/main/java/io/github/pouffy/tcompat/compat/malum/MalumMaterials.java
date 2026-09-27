@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.malum;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
@@ -16,7 +16,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 
 public class MalumMaterials {
 
-    public static final MaterialId soulStainedSteel = MaterialBuilder.material("malum", "soul_stained_steel")
+    public static final MaterialId soulStainedSteel = MaterialCreator.material("malum", "soul_stained_steel")
             .flavor("Are you telling me, a soul stained this steel?")
             .data(d -> d.tier(3).order(2).craftable(false)).excludeFromLoot()
             .lang("Soulstained Steel")
@@ -37,7 +37,7 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).armor().meleeHarvest().sixColor(0xFF40365b, 0xFF593b7c, 0xFF8a5eae, 0xFFce7cee, 0xFFee8fff, 0xFFffc5e4))
             .buildMaterial();
 
-    public static final MaterialId hallowedGold = MaterialBuilder.material("malum", "hallowed_gold")
+    public static final MaterialId hallowedGold = MaterialCreator.material("malum", "hallowed_gold")
             .flavor("Hallowed be thy ween.")
             .data(d -> d.tier(3).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.hallowed).trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), TCModifiers.armor_gem))
@@ -53,7 +53,7 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).head().maille().sixColor(0xFF772923, 0xFFa94f2d, 0xFFd97f28, 0xFFf7d85a, 0xFFfff394, 0xFFfffde9))
             .buildMaterial();
 
-    public static final MaterialId malignantPewter = MaterialBuilder.material("malum", "malignant_pewter")
+    public static final MaterialId malignantPewter = MaterialCreator.material("malum", "malignant_pewter")
             .flavor("Are you certain whatever you're doing is worth it?")
             .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(MalumInit.certainty).trait(ARMOR, TCModifiers.stronghold))
@@ -71,7 +71,7 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().armor().meleeHarvest().sixColor(0xFF38204d, 0xFF4a385c, 0xFF705b7c, 0xFFc9a1d0, 0xFFeccef6, 0xFFffeaf7))
             .buildMaterial();
 
-    public static final MaterialId spiritFabric = MaterialBuilder.material("malum", "spirit_fabric")
+    public static final MaterialId spiritFabric = MaterialCreator.material("malum", "spirit_fabric")
             .flavor("I'm here to buy your strongest potions.")
             .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(TCModifiers.magicProficiency))
@@ -86,7 +86,7 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("cloth").repairKit().binding().bowstring().maille().sixColor(0xFF1d1c20, 0xFF272429, 0xFF312c31, 0xFF3e2e3e, 0xFF463652, 0xFF5e367a))
             .buildMaterial();
 
-    public static final MaterialId astralWeave = MaterialBuilder.material("malum", "astral_weave")
+    public static final MaterialId astralWeave = MaterialCreator.material("malum", "astral_weave")
             .flavor("You need to calm down.")
             .data(d -> d.tier(1).order(20).craftable(true)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.cloaking))
@@ -100,7 +100,7 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("cloth").repairKit().binding().bowstring().sixColor(0xFF534276, 0xFF665b89, 0xFF6672b2, 0xFF779ec3, 0xFF7ccdc7, 0xFFbbf1f4))
             .buildMaterial();
 
-    public static final MaterialId alchemicalCalx = MaterialBuilder.material("malum", "alchemical_calx")
+    public static final MaterialId alchemicalCalx = MaterialCreator.material("malum", "alchemical_calx")
             .flavor("Really resonates with you.")
             .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(TCModifiers.arcaneResonance))
@@ -109,7 +109,7 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("rock").repairKit().binding().sixColor(0xFF6f5d51, 0xFF857164, 0xFF928773, 0xFFc9b586, 0xFFe1d1a2, 0xFFf6ecce))
             .buildMaterial();
 
-    public static final MaterialId soulstone = MaterialBuilder.material("malum", "soulstone")
+    public static final MaterialId soulstone = MaterialCreator.material("malum", "soulstone")
             .flavor("No, this isn't an infinity stone.")
             .data(d -> d.tier(1).order(1).craftable(true))
             .traits(t -> t.trait(TCModifiers.spiritHarvester))
@@ -124,7 +124,7 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("rock").repairKit().meleeHarvest().sixColor(0xFF261628, 0xFF382d47, 0xFF5f3c61, 0xFF723e6b, 0xFF933da1, 0xFFc341c9))
             .buildMaterial();
 
-    public static final MaterialId runewood = MaterialBuilder.material("malum", "runewood")
+    public static final MaterialId runewood = MaterialCreator.material("malum", "runewood")
             .flavor("The runes reveal all.")
             .data(d -> d.tier(0).order(1).craftable(true))
             .traits(t -> t
@@ -150,7 +150,7 @@ public class MalumMaterials {
             .spriteInfo(s -> s.meleeHarvest().dartBarrel().ranged().shieldCore().arrowShaft().statType(MagicBaseMaterialStats.ID).fallbacks("wood", "stick", "primitive").sevenColor(0xFF261a1e, 0xFF2d2024, 0xFF372727, 0xFF412e2b, 0xFF522f35, 0xFF593535, 0xFF643b3b))
             .buildMaterial();
 
-    public static final MaterialId taintedRock = MaterialBuilder.material("malum", "tainted_rock")
+    public static final MaterialId taintedRock = MaterialCreator.material("malum", "tainted_rock")
             .flavor("Tainted by your search history.")
             .data(d -> d.tier(1).order(1).craftable(true))
             .traits(t -> t.trait(MalumInit.spiritRepair))
@@ -168,17 +168,17 @@ public class MalumMaterials {
             .spriteInfo(s -> s.fallbacks("rock").dartBarrel().repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).meleeHarvest().sixColor(0xFF625b66, 0xFF6f6774, 0xFF797081, 0xFF857a8c, 0xFF918496, 0xFFa091ab))
             .buildMaterial();
 
-    public static final MaterialVariantId nullSlate = MaterialBuilder.variant("malum", "null_slate", soulstone)
+    public static final MaterialVariantId nullSlate = MaterialCreator.variant("malum", "null_slate", soulstone)
             .renderInfo(r -> r.color(0xa500ca).fallbacks("rock"))
             .spriteInfo(s -> s.fallbacks("rock").repairKit().meleeHarvest().sixColor(0xFF172036, 0xFF38204d, 0xFF7e195f, 0xFFa500ca, 0xFFff33c3, 0xFFfe66d1))
             .buildVariant();
 
-    public static final MaterialVariantId soulwood = MaterialBuilder.variant("malum", "soulwood", runewood)
+    public static final MaterialVariantId soulwood = MaterialCreator.variant("malum", "soulwood", runewood)
             .renderInfo(r -> r.color(0x4b3e53).fallbacks("wood", "stick", "primitive"))
             .spriteInfo(s -> s.fallbacks("wood", "stick", "primitive").dartBarrel().repairKit().meleeHarvest().sevenColor(0xFF291d30, 0xFF302338, 0xFF3b2a45, 0xFF40374a, 0xFF4b3e53, 0xFF594353, 0xFF65495e))
             .buildVariant();
 
-    public static final MaterialVariantId twistedRock = MaterialBuilder.variant("malum", "twisted_rock", taintedRock)
+    public static final MaterialVariantId twistedRock = MaterialCreator.variant("malum", "twisted_rock", taintedRock)
             .renderInfo(r -> r.color(0x3a364f).fallbacks("rock"))
             .spriteInfo(s -> s.fallbacks("rock").dartBarrel().repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).meleeHarvest().sixColor(0xFF212638, 0xFF262b3e, 0xFF2f3045, 0xFF3a364f, 0xFF453a58, 0xFF514063))
             .buildVariant();

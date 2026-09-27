@@ -35,7 +35,7 @@ public class LeechingModifier extends NoLevelsModifier implements ProjectileShoo
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.PROJECTILE_SHOT, ModifierHooks.PROJECTILE_THROWN, ModifierHooks.MELEE_HIT, ModifierHooks.PROJECTILE_HIT);
-        hookBuilder.addModule(MobEffectModule.builder(MobEffects.POISON).time(RandomLevelingValue.flat(300)).build());
+        hookBuilder.addModule(MobEffectModule.builder(MobEffects.POISON).time(RandomLevelingValue.flat(300)).buildWeapon());
     }
 
     @Override

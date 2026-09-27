@@ -105,6 +105,10 @@
       "required": false
     },
     {
+      "id": "tcompat:bloom_stone",
+      "required": false
+    },
+    {
       "id": "tcompat:terminite",
       "required": false
     },

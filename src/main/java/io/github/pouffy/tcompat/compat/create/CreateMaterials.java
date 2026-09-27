@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.create;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
@@ -11,7 +11,7 @@ import static net.minecraft.world.item.Tiers.DIAMOND;
 
 public class CreateMaterials {
 
-    public static final MaterialId brass = MaterialBuilder.material("create", "brass")
+    public static final MaterialId brass = MaterialCreator.material("create", "brass")
             .flavor("Smart alloys")
             .data(d -> d.tier(2).order(1).craftable(false))
             .traits(t -> t

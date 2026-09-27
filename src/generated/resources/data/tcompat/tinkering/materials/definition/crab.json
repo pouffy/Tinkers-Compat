@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "quark"
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 2,
+  "tier": 1
+}

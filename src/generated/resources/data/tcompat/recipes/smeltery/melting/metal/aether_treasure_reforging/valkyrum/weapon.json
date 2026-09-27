@@ -14,10 +14,10 @@
   ],
   "ingredient": [
     {
-      "item": "aether_treasure_reforging:valkyrum_lance"
+      "item": "aether:valkyrie_lance"
     },
     {
-      "item": "aether_treasure_reforging:valkyrum_hoe"
+      "item": "aether:valkyrie_hoe"
     }
   ],
   "result": {

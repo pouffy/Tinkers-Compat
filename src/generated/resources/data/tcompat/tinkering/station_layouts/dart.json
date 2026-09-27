@@ -6,10 +6,10 @@
   "input_slots": [
     {
       "filter": {
-        "item": "tconstruct:arrow_head"
+        "item": "tconstruct:fletching"
       },
-      "icon": "tconstruct:arrow_head",
-      "translation_key": "item.tconstruct.arrow_head",
+      "icon": "tconstruct:fletching",
+      "translation_key": "item.tconstruct.fletching",
       "x": 53,
       "y": 22
     },
@@ -24,10 +24,10 @@
     },
     {
       "filter": {
-        "item": "tconstruct:fletching"
+        "item": "tconstruct:arrow_head"
       },
-      "icon": "tconstruct:fletching",
-      "translation_key": "item.tconstruct.fletching",
+      "icon": "tconstruct:arrow_head",
+      "translation_key": "item.tconstruct.arrow_head",
       "x": 15,
       "y": 60
     }

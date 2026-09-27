@@ -1,10 +1,8 @@
 {
-  "perStat": {
-    "tconstruct:handle": [
-      {
-        "level": 1,
-        "name": "tcompat:archaeologist"
-      }
-    ]
-  }
+  "default": [
+    {
+      "level": 1,
+      "name": "tcompat:archaeologist"
+    }
+  ]
 }

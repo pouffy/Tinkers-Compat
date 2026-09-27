@@ -20,6 +20,7 @@ import net.minecraftforge.common.crafting.conditions.AndCondition;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.damage.DamageTypePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
@@ -104,17 +105,17 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                         .variable(1).multiply()
                         .build()
                 )
-                .addModule(ConditionalStatModule.stat(ToolStats.ARMOR).tool(ToolStackPredicate.tag(TinkerTags.Items.ARMOR)).percent().formula()
-                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
-                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
-                        .divide()
-                        .sqrt()
-                        .variable(0).multiply()
-                        .constant(0.005F).multiply()
-                        .constant(1.0F).add()
-                        .variable(1).multiply()
-                        .build()
-                )
+                //.addModule(ConditionalStatModule.stat(ToolStats.ARMOR).tool(ToolStackPredicate.tag(TinkerTags.Items.ARMOR)).percent().formula()
+                //        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                //        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                //        .divide()
+                //        .sqrt()
+                //        .variable(0).multiply()
+                //        .constant(0.005F).multiply()
+                //        .constant(1.0F).add()
+                //        .variable(1).multiply()
+                //        .build()
+                //)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
 
         buildModifier(TCModifiers.skyjade, modLoaded("deep_aether"))
@@ -151,17 +152,17 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                         .variable(1).multiply()
                         .build()
                 )
-                .addModule(ConditionalStatModule.stat(ToolStats.ARMOR).tool(ToolStackPredicate.tag(TinkerTags.Items.ARMOR)).percent().formula()
-                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
-                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
-                        .divide()
-                        .sqrt()
-                        .variable(0).multiply()
-                        .constant(-0.01F).multiply()
-                        .constant(1.0F).add()
-                        .variable(1).multiply()
-                        .build()
-                )
+                //.addModule(ConditionalStatModule.stat(ToolStats.ARMOR).tool(ToolStackPredicate.tag(TinkerTags.Items.ARMOR)).percent().formula()
+                //        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                //        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                //        .divide()
+                //        .sqrt()
+                //        .variable(0).multiply()
+                //        .constant(-0.01F).multiply()
+                //        .constant(1.0F).add()
+                //        .variable(1).multiply()
+                //        .build()
+                //)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
 
 
@@ -169,13 +170,13 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
         buildModifier(TCModifiers.dreadbane, modLoaded("iceandfire"))
                 .addModule(ConditionalMeleeDamageModule.builder().target(dreadPredicate).eachLevel(1.5f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(dreadPredicate).eachLevel(1.75f))
-                .addModule(MobEffectModule.builder(MobEffects.WITHER).target(dreadPredicate).level(RandomLevelingValue.flat(1)).time(RandomLevelingValue.random(20, 10)).chance(LevelingValue.flat(1)).build())
+                .addModule(MobEffectModule.builder(MobEffects.WITHER).target(dreadPredicate).level(RandomLevelingValue.flat(1)).time(RandomLevelingValue.random(20, 10)).chance(LevelingValue.flat(1)).buildWeapon())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         IJsonPredicate<LivingEntity> dampeningPredicate = LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:mythical"));
         buildModifier(TCModifiers.dampening, modLoaded("iceandfire"))
                 .addModule(ConditionalMeleeDamageModule.builder().target(dampeningPredicate).eachLevel(2.5f))
                 .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(dampeningPredicate).eachLevel(1.75f))
-                .addModule(MobEffectModule.builder(MobEffects.WEAKNESS).target(dampeningPredicate).level(RandomLevelingValue.flat(4)).time(RandomLevelingValue.random(20, 10)).chance(LevelingValue.flat(1)).build())
+                .addModule(MobEffectModule.builder(MobEffects.WEAKNESS).target(dampeningPredicate).level(RandomLevelingValue.flat(4)).time(RandomLevelingValue.random(20, 10)).chance(LevelingValue.flat(1)).buildWeapon())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         IJsonPredicate<LivingEntity> scorchbornPredicate = LivingEntityPredicate.or(LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:lightning_dragons")), LivingEntityPredicate.tag(TCEntityTagProv.create("tcompat:ice_dragons")));
         buildModifier(TCModifiers.scorchborn, modLoaded("iceandfire"))
@@ -229,6 +230,9 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(StatBoostModule.add(ToolStats.ARMOR).toolTag(TinkerTags.Items.WORN_ARMOR).flat(3))
                 .addModule(StatBoostModule.add(ToolStats.ARMOR_TOUGHNESS).toolTag(TinkerTags.Items.WORN_ARMOR).flat(1))
                 .addModule(StatBoostModule.add(ToolStats.KNOCKBACK_RESISTANCE).toolTag(TinkerTags.Items.WORN_ARMOR).flat(0.05f));
+        buildModifier(TCModifiers.crabsBlessing, modLoaded("cataclysm"))
+                .addModule(new OptionalEffectImmunityModule(TCompat.getResource("cataclysm:abyssal_burn")))
+                .addModule(new OptionalEffectImmunityModule(TCompat.getResource("cataclysm:abyssal_fear")));
 
         // Some of these only use attributes provided by lodestone so we can just require lodestone there.
         buildModifier(TCModifiers.stained, modLoaded("lodestone"))
@@ -298,7 +302,7 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "Tinker's Compatability Modifiers";
     }
 

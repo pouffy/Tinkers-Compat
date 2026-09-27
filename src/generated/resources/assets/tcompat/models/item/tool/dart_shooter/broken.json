@@ -6,6 +6,7 @@
     "barrel": "tcompat:item/tool/dart_shooter/barrel"
   },
   "modifier_maps": [
+    "tcompat:dart_shooter_broken",
     "tcompat:dart_shooter"
   ],
   "modifier_roots": [

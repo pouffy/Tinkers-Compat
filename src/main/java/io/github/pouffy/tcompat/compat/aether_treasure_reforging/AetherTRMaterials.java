@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_treasure_reforging;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
@@ -15,7 +15,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.*;
 
 public class AetherTRMaterials {
 
-    public static final MaterialId pyral = MaterialBuilder.material("aether_treasure_reforging", "pyral")
+    public static final MaterialId pyral = MaterialCreator.material("aether_treasure_reforging", "pyral")
             .flavor("From the ash it rises and to the ash it will one day return.")
             .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t
@@ -37,7 +37,7 @@ public class AetherTRMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().ranged().sixColor(0xFF6b130b, 0xFFb7420c, 0xFFd86a0b, 0xFFffb326, 0xFFfeda87, 0xFFffeec5))
             .buildMaterial();
 
-    public static final MaterialId valkyrum = MaterialBuilder.material("aether_treasure_reforging", "valkyrum")
+    public static final MaterialId valkyrum = MaterialCreator.material("aether_treasure_reforging", "valkyrum")
             .flavor("The secrets of refining Valkyrum is a well guarded one.")
             .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t
@@ -58,7 +58,7 @@ public class AetherTRMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().transformer(transformerFromSprite(getResource("generator/valkyrum"), 1, 0)))
             .buildMaterial();
 
-    public static final MaterialId neptune = MaterialBuilder.material("aether_treasure_reforging", "neptune")
+    public static final MaterialId neptune = MaterialCreator.material("aether_treasure_reforging", "neptune")
             .flavor("Ocean man...")
             .data(d -> d.tier(2).order(3).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(ARMOR, ModifierIds.depthStrider))

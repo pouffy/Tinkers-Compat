@@ -140,8 +140,8 @@ public class TCItemTagProv extends ItemTagsProvider {
         this.tag(TinkerTags.Items.AMMO).addOptional(dart);
         this.tag(TinkerTags.Items.DYEABLE).addOptional(dart);
         this.tag(SMALL_TOOLS).addOptional(dartShooter);
-        this.tag(ItemTags.create(getResource("forge:tools"))).addOptional(glaive).addOptional(dartShooter);;
-        this.tag(ItemTags.create(getResource("minecraft:tools"))).addOptional(glaive).addOptional(dartShooter);;
+        this.tag(ItemTags.create(getResource("forge:tools"))).addOptional(glaive).addOptional(dartShooter);
+        this.tag(ItemTags.create(getResource("minecraft:tools"))).addOptional(glaive).addOptional(dartShooter);
         this.tag(ItemTags.create(getResource("tleveling:levelable"))).addOptional(glaive).addOptional(dartShooter);
 
         this.tag(TCTags.Items.HANDHELD_CURIO)
@@ -390,8 +390,6 @@ public class TCItemTagProv extends ItemTagsProvider {
                         }
                         plankTag.addOptional(getResource("everycompat", plankId.withPrefix("q/" + namespace + "/vertical_").getPath()));
                     }
-                    this.tag(TinkerTags.Items.VARIANT_PLANKS)
-                            .addOptionalTag(wood.plankTag());
                 }
                 if (wood.hasLogs()) {
                     var logTag = this.tag(wood.logTag());
@@ -400,9 +398,15 @@ public class TCItemTagProv extends ItemTagsProvider {
                     logTag.addOptional(logId);
                     logTag.addOptional(logId.withPrefix("stripped_"));
                     logTag.addOptionalTag(wood.externalLogTag(namespace));
-                    this.tag(TinkerTags.Items.VARIANT_LOGS)
-                            .addOptionalTag(wood.logTag());
                 }
+            }
+            if (wood.hasPlanks()) {
+                this.tag(TinkerTags.Items.VARIANT_PLANKS)
+                        .addOptionalTag(wood.plankTag());
+            }
+            if (wood.hasLogs()) {
+                this.tag(TinkerTags.Items.VARIANT_LOGS)
+                        .addOptionalTag(wood.logTag());
             }
         }
         for (TCRocks rock : TCRocks.values()) {
@@ -412,11 +416,9 @@ public class TCItemTagProv extends ItemTagsProvider {
                     ResourceLocation plankId = rock.getSpecialRockId(namespace) != null ? rock.getSpecialRockId(namespace) : getResource(namespace, "%s".formatted(rockName));
                     this.tag(rock.rockTag()).addOptional(plankId);
                 }
-                this.tag(rock.rockTag())
-                        .addOptionalTag(rock.externalRockTag(namespace));
-                this.tag(TinkerTags.Items.WORKSTATION_ROCK)
-                        .addOptional(getResource(namespace, rockName));
+                this.tag(rock.rockTag()).addOptionalTag(rock.externalRockTag(namespace));
             }
+            this.tag(TinkerTags.Items.WORKSTATION_ROCK).addOptionalTag(rock.rockTag());
         }
         this.tag(TinkerTags.Items.PLANKLIKE).addOptionalTag(itemTag("aether:planks_crafting"));
     }

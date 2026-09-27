@@ -103,6 +103,7 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 
 - **Wood** Material Variants
 - **Rock** Material Variants
+- Crab Material
 - Slime in a Bucket variants for Terracube, Sky Slime & Ender Slime.
 </details>
 <details>
@@ -193,6 +194,7 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Coral Material
 - Void Jaw Material
 - Koboleton Bone Material
+- Bloom Stone Material
 - Cataclysmic Trait
 - Sandstorm Trait
 - Ghostly Trait
@@ -203,6 +205,7 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Aquatic Trait
 - Void Scatter Trait
 - Archaeologist Trait
+- Crab's Blessing Trait
 - Ignitium Armour Modifier
 - Smeltery Melting & Casting Recipes
 </details>
@@ -250,6 +253,15 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Brightness Modifier
 - Sonorous Modifier
 </details>
+<details>
+    <summary><a href="https://modrinth.com/mod/create">Create</a></summary>
+
+- Brass Material
+- Clockwork Trait
+- Wrenching Modifier
+- Goggles Modifier
+- Smeltery Melting & Casting Recipes
+</details>
 
 ## Small Compatibility
 <details>
@@ -267,12 +279,13 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 
 ## Planned
 
-- Create (v2.1.0)
-- ROARING (v2.1.0)
-- Fossils & Archaeology (v2.1.0)
-- Caverns & Chasms (v2.1.0)
-- Botania (v2.1.0)
-- Farmer's Delight (v2.1.0/v2.2.0)
+- Slimeboot Laces (v2.1.1)
+- ROARING (v2.1.1)
+- Fossils & Archaeology (v2.2.0)
+- Caverns & Chasms (v2.2.0)
+- Farmer's Delight (v2.2.0/v2.3.0)
+- Botania (~v2.3.0)
+- Ars (~v2.3.0)
 
 
 

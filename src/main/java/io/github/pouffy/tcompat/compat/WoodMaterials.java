@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
@@ -95,7 +95,7 @@ public class WoodMaterials {
             echo = woodVariant(TCWoods.ECHO,                                0xFF708b78, 0xFF78907f, 0xFF819988, 0xFF98a07b, 0xFFa5b287, 0xFFb0ba99, 0xFFb7c1a1),
             blooming = woodVariant(TCWoods.BLOOMING,                        0xFF556f70, 0xFF597779, 0xFF617d83, 0xFF6d8d8f, 0xFF83a2a0, 0xFF90aaa8, 0xFF97b3b1);
 
-    public static final MaterialId hellbark = MaterialBuilder.material(TCWoods.HELLBARK.makeCondition(), "hellbark")
+    public static final MaterialId hellbark = MaterialCreator.material(TCWoods.HELLBARK.makeCondition(), "hellbark")
             .data(d -> d.tier(1).order(1).craftable(true))
             .traits(t -> t
                     .trait(ModifierIds.fiery)
@@ -120,30 +120,30 @@ public class WoodMaterials {
             .buildMaterial();
 
     private static MaterialVariantId woodVariant(TCWoods woodType, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
-        var builder = MaterialBuilder.variant(woodType.makeCondition(), woodType.getSerializedName(), MaterialIds.wood)
+        var creator = MaterialCreator.variant(woodType.makeCondition(), woodType.getSerializedName(), MaterialIds.wood)
                 .lang(TCLangProv.toEngStr(woodType.getSerializedName()) + " Wood")
                 .renderInfo(r -> r.color(c178).fallbacks("wood", "stick", "primitive"))
                 .spriteInfo(s -> s.planks().sevenColor(c63, c102, c140, c178, c216, c234, c255));
-        MaterialBuilder.woodMaterials.put(builder, woodType);
-        return builder.buildVariant();
+        MaterialCreator.woodMaterials.put(creator, woodType);
+        return creator.buildVariant();
     }
 
     private static MaterialVariantId alphaWoodVariant(TCWoods woodType, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
-        var builder = MaterialBuilder.variant(woodType.makeCondition(), woodType.getSerializedName(), MaterialIds.wood)
+        var creator = MaterialCreator.variant(woodType.makeCondition(), woodType.getSerializedName(), MaterialIds.wood)
                 .lang(TCLangProv.toEngStr(woodType.getSerializedName()) + " Wood")
                 .renderInfo(r -> r.color(c178).fallbacks("alpha", "wood", "stick", "primitive"))
                 .spriteInfo(s -> s.planks().sevenColor(c63, c102, c140, c178, c216, c234, c255));
-        MaterialBuilder.woodMaterials.put(builder, woodType);
-        return builder.buildVariant();
+        MaterialCreator.woodMaterials.put(creator, woodType);
+        return creator.buildVariant();
     }
 
     private static MaterialVariantId woodVariant(TCWoods woodType, ISpriteTransformer spriteTransformer) {
-        var builder = MaterialBuilder.variant(woodType.makeCondition(), woodType.getSerializedName(), MaterialIds.wood)
+        var creator = MaterialCreator.variant(woodType.makeCondition(), woodType.getSerializedName(), MaterialIds.wood)
                 .lang(TCLangProv.toEngStr(woodType.getSerializedName()) + " Wood")
                 .renderInfo(r -> r.fallbacks("wood", "stick", "primitive"))
                 .spriteInfo(s -> s.planks().transformer(spriteTransformer));
-        MaterialBuilder.woodMaterials.put(builder, woodType);
-        return builder.buildVariant();
+        MaterialCreator.woodMaterials.put(creator, woodType);
+        return creator.buildVariant();
     }
 
     public static void staticInit() {}

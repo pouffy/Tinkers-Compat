@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -19,37 +19,44 @@ public class TCMaterialRenderInfoProv extends AbstractMaterialRenderInfoProvider
 
     @Override
     protected void addMaterialRenderInfo() {
-        for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            if (builder.getSpriteInfo().getTransformer() == null) {
+        int count = 0;
+        int variantCount = 0;
+        for (MaterialCreator creator : MaterialCreator.materialCreators) {
+            if (creator.getSpriteInfo().getTransformer() == null) {
                 continue;
             }
-            TCompat.LOGGER.info("Adding render info for material: {}", builder.getId());
-            var riBuilder = buildRenderInfo(builder.getId());
-            var color = builder.getRenderInfo().getColor();
+            TCompat.LOGGER.info("Adding render info for material: {}", creator.getId());
+            var riBuilder = buildRenderInfo(creator.getId());
+            var color = creator.getRenderInfo().getColor();
             if (color != -1) {
                 riBuilder.color(color);
             }
-            var fallbacks = builder.getRenderInfo().getFallbacks();
+            var fallbacks = creator.getRenderInfo().getFallbacks();
             if (!Arrays.equals(fallbacks, new String[0])) {
                 riBuilder.fallbacks(fallbacks);
             }
-            var texture = builder.getRenderInfo().getTexture();
+            var texture = creator.getRenderInfo().getTexture();
             if (texture != null) {
                 riBuilder.texture(texture);
             }
-            var luminosity = builder.getRenderInfo().getLuminosity();
+            var luminosity = creator.getRenderInfo().getLuminosity();
             if (luminosity != 0) {
                 riBuilder.luminosity(luminosity);
             }
-            var parent = builder.getRenderInfo().getParent();
+            var parent = creator.getRenderInfo().getParent();
             if (parent != null) {
                 riBuilder.parent(parent);
             }
-            var generator = builder.getRenderInfo().getGenerator();
+            var generator = creator.getRenderInfo().getGenerator();
             if (generator != null) {
                 riBuilder.generator(generator);
             }
+            if (creator.isVariant()) {
+                variantCount++;
+            } else count++;
         }
+        TCompat.LOGGER.info("Added render info for {} materials", count);
+        TCompat.LOGGER.info("Added render info for {} material variants", variantCount);
     }
 
     @Override

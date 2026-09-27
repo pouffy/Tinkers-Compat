@@ -30,6 +30,9 @@
       "durability": 200,
       "velocity": -0.07
     },
+    "tconstruct:ribcage": {
+      "repair_amount": 200
+    },
     "tinkersjewelry:gem": {
       "optional": true
     }

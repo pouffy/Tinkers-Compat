@@ -1,10 +1,9 @@
 {
-  "type": "tconstruct:damagable_melting",
+  "type": "tconstruct:melting",
   "byproducts": [
     {
       "amount": 270,
-      "fluid": "tcompat:molten_gravitite",
-      "unit_size": 10
+      "fluid": "tcompat:molten_gravitite"
     }
   ],
   "conditions": [
@@ -15,17 +14,16 @@
   ],
   "ingredient": [
     {
-      "item": "aether:valkyrie_axe"
+      "item": "aether:valkyrie_pickaxe"
     },
     {
-      "item": "aether:valkyrie_pickaxe"
+      "item": "aether:valkyrie_axe"
     }
   ],
   "result": {
     "amount": 90,
-    "fluid": "tcompat:molten_valkyrum",
-    "unit_size": 10
+    "fluid": "tcompat:molten_valkyrum"
   },
   "temperature": 1275,
-  "time": 129
+  "time": 74
 }

@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
@@ -44,8 +44,8 @@ public class GlobalDefinitions {
         dartBarrelMaterials.add(MaterialIds.venombone);
 
         //My variants
-        MaterialBuilder.woodMaterials.forEach((builder, wood) -> dartBarrelMaterials.add(builder.variantId()));
-        MaterialBuilder.rockMaterials.forEach((builder, wood) -> dartBarrelMaterials.add(builder.variantId()));
+        MaterialCreator.woodMaterials.forEach((creator, wood) -> dartBarrelMaterials.add(creator.variantId()));
+        MaterialCreator.rockMaterials.forEach((creator, wood) -> dartBarrelMaterials.add(creator.variantId()));
 
         //Integration (might add more here?)
         //Use this as a template for any non-tinkers existing variants.

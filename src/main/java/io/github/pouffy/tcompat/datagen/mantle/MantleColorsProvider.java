@@ -2,7 +2,7 @@ package io.github.pouffy.tcompat.datagen.mantle;
 
 import com.google.gson.JsonObject;
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -19,6 +19,7 @@ import io.github.pouffy.tcompat.compat.malum.MalumInit;
 import io.github.pouffy.tcompat.compat.species.SpeciesInit;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.PackOutput;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.GenericDataProvider;
 import slimeknights.mantle.util.JsonHelper;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
@@ -36,7 +37,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         super(packOutput, PackOutput.Target.RESOURCE_PACK, "mantle", JsonHelper.DEFAULT_GSON);
     }
 
-    public final CompletableFuture<?> run(CachedOutput cache) {
+    public final @NotNull CompletableFuture<?> run(@NotNull CachedOutput cache) {
         ensureColorsAdded();
         return allOf(Collections.singleton(this.saveJson(cache, TCompat.getResource("colors"), this.serialise())));
     }
@@ -48,8 +49,8 @@ public class MantleColorsProvider extends GenericDataProvider {
     }
 
     private void addColors() {
-        for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            addColor(builder);
+        for (MaterialCreator creator : MaterialCreator.materialCreators) {
+            addColor(creator);
         }
         addColor(MalumInit.RUNE_SLOT,                       0xd200cb);
         //Ad Astra
@@ -110,6 +111,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.ghostly,                       0x56eccc);
         addColor(TCModifiers.standstill,                    0x6e7786);
         addColor(TCModifiers.ignitium,                      0xfb6b1d);
+        addColor(TCModifiers.crabsBlessing,                 0x6c8031);
         addColor(CataclysmInit.voidScatter.getId(),         0x8219ff);
         addColor(CataclysmInit.aquatic.getId(),             0xc62a37);
         addColor(CataclysmInit.sandstorm.getId(),           0xdbb86a);
@@ -171,7 +173,7 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(TCModifiers.goggles,                       0x6093a0);
     }
 
-    public void addColor(MaterialBuilder material) {
+    public void addColor(MaterialCreator material) {
         String namespace = material.getId().getId().getNamespace();
         String path = material.getId().getLocation('.').getPath();
         this.materialColors.compute(namespace, (n, l) -> {
@@ -210,7 +212,7 @@ public class MantleColorsProvider extends GenericDataProvider {
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "Tinkers' Compatibility Color Provider";
     }
 

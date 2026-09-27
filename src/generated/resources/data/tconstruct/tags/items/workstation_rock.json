@@ -1,135 +1,123 @@
 {
   "values": [
     {
-      "id": "biomeswevegone:red_rock",
+      "id": "#tcompat:rocks/red_rock",
       "required": false
     },
     {
-      "id": "biomeswevegone:dacite",
+      "id": "#tcompat:rocks/dacite",
       "required": false
     },
     {
-      "id": "regions_unexplored:chalk",
+      "id": "#tcompat:rocks/chalk",
       "required": false
     },
     {
-      "id": "quark:limestone",
+      "id": "#tcompat:rocks/limestone",
       "required": false
     },
     {
-      "id": "create:limestone",
+      "id": "#tcompat:rocks/jasper",
       "required": false
     },
     {
-      "id": "alexscaves:limestone",
+      "id": "#tcompat:rocks/shale",
       "required": false
     },
     {
-      "id": "quark:jasper",
+      "id": "#tcompat:rocks/permafrost",
       "required": false
     },
     {
-      "id": "quark:shale",
+      "id": "#tcompat:rocks/dripstone",
       "required": false
     },
     {
-      "id": "quark:permafrost",
+      "id": "#tcompat:rocks/holystone",
       "required": false
     },
     {
-      "id": "ad_astra:permafrost",
+      "id": "#tcompat:rocks/aseterite",
       "required": false
     },
     {
-      "id": "minecraft:dripstone",
+      "id": "#tcompat:rocks/clorite",
       "required": false
     },
     {
-      "id": "aether:holystone",
+      "id": "#tcompat:rocks/divinite",
       "required": false
     },
     {
-      "id": "deep_aether:aseterite",
+      "id": "#tcompat:rocks/driftshale",
       "required": false
     },
     {
-      "id": "deep_aether:clorite",
+      "id": "#tcompat:rocks/moon_stone",
       "required": false
     },
     {
-      "id": "aether_redux:divinite",
+      "id": "#tcompat:rocks/conglomerate",
       "required": false
     },
     {
-      "id": "aether_redux:driftshale",
+      "id": "#tcompat:rocks/mars_stone",
       "required": false
     },
     {
-      "id": "ad_astra:moon_stone",
+      "id": "#tcompat:rocks/venus_stone",
       "required": false
     },
     {
-      "id": "ad_astra:conglomerate",
+      "id": "#tcompat:rocks/mercury_stone",
       "required": false
     },
     {
-      "id": "ad_astra:mars_stone",
+      "id": "#tcompat:rocks/glacio_stone",
       "required": false
     },
     {
-      "id": "ad_astra:venus_stone",
+      "id": "#tcompat:rocks/flavolite",
       "required": false
     },
     {
-      "id": "ad_astra:mercury_stone",
+      "id": "#tcompat:rocks/violecite",
       "required": false
     },
     {
-      "id": "ad_astra:glacio_stone",
+      "id": "#tcompat:rocks/sulphuric_rock",
       "required": false
     },
     {
-      "id": "betterend:flavolite",
+      "id": "#tcompat:rocks/virid_jadestone",
       "required": false
     },
     {
-      "id": "betterend:violecite",
+      "id": "#tcompat:rocks/azure_jadestone",
       "required": false
     },
     {
-      "id": "betterend:sulphuric_rock",
+      "id": "#tcompat:rocks/sandy_jadestone",
       "required": false
     },
     {
-      "id": "betterend:virid_jadestone",
+      "id": "#tcompat:rocks/umbralith",
       "required": false
     },
     {
-      "id": "betterend:azure_jadestone",
+      "id": "#tcompat:rocks/tainted_rock",
       "required": false
     },
     {
-      "id": "betterend:sandy_jadestone",
+      "id": "#tcompat:rocks/twisted_rock",
       "required": false
     },
     {
-      "id": "betterend:umbralith",
+      "id": "#tcompat:rocks/sculk_stone",
       "required": false
     },
     {
-      "id": "malum:tainted_rock",
-      "required": false
-    },
-    {
-      "id": "malum:twisted_rock",
-      "required": false
-    },
-    {
-      "id": "deeperdarker:sculk_stone",
-      "required": false
-    },
-    {
-      "id": "deeperdarker:gloomslate",
+      "id": "#tcompat:rocks/gloomslate",
       "required": false
     }
   ]

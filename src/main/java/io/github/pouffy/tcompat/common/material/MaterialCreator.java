@@ -35,12 +35,12 @@ import java.util.function.Function;
 
 import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.WOOD;
 
-public class MaterialBuilder {
-    public static final Map<MaterialVariantId, MaterialBuilder> variants = new HashMap<>();
-    public static final Map<MaterialVariantId, MaterialBuilder> materials = new HashMap<>();
-    public static final List<MaterialBuilder> materialBuilders = new ArrayList<>();
-    public static final Map<MaterialBuilder, TCWoods> woodMaterials = new HashMap<>();
-    public static final Map<MaterialBuilder, TCRocks> rockMaterials = new HashMap<>();
+public class MaterialCreator {
+    public static final Map<MaterialVariantId, MaterialCreator> variants = new HashMap<>();
+    public static final Map<MaterialVariantId, MaterialCreator> materials = new HashMap<>();
+    public static final List<MaterialCreator> materialCreators = new ArrayList<>();
+    public static final Map<MaterialCreator, TCWoods> woodMaterials = new HashMap<>();
+    public static final Map<MaterialCreator, TCRocks> rockMaterials = new HashMap<>();
 
     @Getter
     private final MaterialVariantId id;
@@ -66,7 +66,7 @@ public class MaterialBuilder {
     @Getter
     private SpriteInfo spriteInfo;
 
-    private MaterialBuilder(ICondition condition, String name, @Nullable MaterialId parent) {
+    private MaterialCreator(ICondition condition, String name, @Nullable MaterialId parent) {
         if (parent != null) {
             this.id = MaterialVariantId.create(parent, name);
             this.translationKey = "material.%s.%s.%s".formatted(parent.getNamespace(), parent.getPath(), name);
@@ -86,47 +86,47 @@ public class MaterialBuilder {
         this.excludedFromLoot = false;
     }
 
-    public static MaterialBuilder material(String modid, String name) {
+    public static MaterialCreator material(String modid, String name) {
         return material(new ModLoadedCondition(modid), name);
     }
 
-    public static MaterialBuilder variant(String modid, String name, MaterialId variant) {
+    public static MaterialCreator variant(String modid, String name, MaterialId variant) {
         return variant(new ModLoadedCondition(modid), name, variant);
     }
 
-    public static MaterialBuilder material(ICondition condition, String name) {
-        return new MaterialBuilder(condition, name, null);
+    public static MaterialCreator material(ICondition condition, String name) {
+        return new MaterialCreator(condition, name, null);
     }
 
-    public static MaterialBuilder variant(ICondition condition, String name, MaterialId variant) {
-        return new MaterialBuilder(condition, name, variant);
+    public static MaterialCreator variant(ICondition condition, String name, MaterialId variant) {
+        return new MaterialCreator(condition, name, variant);
     }
 
-    public static List<MaterialBuilder> getMaterials() {
-        List<MaterialBuilder> builders = new ArrayList<>();
-        for (var builder : materialBuilders) {
+    public static List<MaterialCreator> getMaterials() {
+        List<MaterialCreator> builders = new ArrayList<>();
+        for (var builder : materialCreators) {
             if (builder.isVariant()) continue;
             builders.add(builder);
         }
         return builders;
     }
 
-    public MaterialBuilder lang(String englishName) {
+    public MaterialCreator lang(String englishName) {
         this.englishName = englishName;
         return this;
     }
 
-    public MaterialBuilder flavor(String flavorText) {
+    public MaterialCreator flavor(String flavorText) {
         this.flavorText = flavorText;
         return this;
     }
 
-    public MaterialBuilder excludeFromLoot() {
+    public MaterialCreator excludeFromLoot() {
         this.excludedFromLoot = true;
         return this;
     }
 
-    public MaterialBuilder data(Function<Data, Data> dataFunction) {
+    public MaterialCreator data(Function<Data, Data> dataFunction) {
         this.assertNoVariant("data");
         this.data = dataFunction.apply(this.data);
         if (this.data.isDeprecated()) {
@@ -135,24 +135,24 @@ public class MaterialBuilder {
         return this;
     }
 
-    public MaterialBuilder stats(Function<Stats, Stats> statsFunction) {
+    public MaterialCreator stats(Function<Stats, Stats> statsFunction) {
         this.assertNoVariant("stats");
         this.stats = statsFunction.apply(this.stats);
         return this;
     }
 
-    public MaterialBuilder traits(Function<Traits, Traits> traitsFunction) {
+    public MaterialCreator traits(Function<Traits, Traits> traitsFunction) {
         this.assertNoVariant("traits");
         this.traits = traitsFunction.apply(this.traits);
         return this;
     }
 
-    public MaterialBuilder renderInfo(Function<RenderInfo, RenderInfo> renderInfoFunction) {
+    public MaterialCreator renderInfo(Function<RenderInfo, RenderInfo> renderInfoFunction) {
         this.renderInfo = renderInfoFunction.apply(this.renderInfo);
         return this;
     }
 
-    public MaterialBuilder spriteInfo(Function<SpriteInfo, SpriteInfo> spriteInfoFunction) {
+    public MaterialCreator spriteInfo(Function<SpriteInfo, SpriteInfo> spriteInfoFunction) {
         this.spriteInfo = spriteInfoFunction.apply(this.spriteInfo);
         return this;
     }
@@ -164,6 +164,7 @@ public class MaterialBuilder {
         }
     }
 
+    @SuppressWarnings("SameParameterValue")
     private void assertVariant(String type) {
         if (!this.isVariant) {
             throw new IllegalStateException("%s is not a variant and cannot support %s".formatted(this.getId().getLocation('_').toString(), type));
@@ -173,14 +174,14 @@ public class MaterialBuilder {
     public MaterialId buildMaterial() {
         MaterialId materialId = materialId();
         materials.put(materialId, this);
-        materialBuilders.add(this);
+        materialCreators.add(this);
         return materialId;
     }
 
     public MaterialVariantId buildVariant() {
         MaterialVariantId variantId = variantId();
         variants.put(variantId, this);
-        materialBuilders.add(this);
+        materialCreators.add(this);
         return variantId;
     }
 
@@ -295,6 +296,7 @@ public class MaterialBuilder {
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Stats armorStatsOptional(ArmorModuleBuilder<? extends IMaterialStats> statBuilder, IMaterialStats... otherStats) {
             IMaterialStats[] stats = new IMaterialStats[4];
 
@@ -628,6 +630,24 @@ public class MaterialBuilder {
 
         public SpriteInfo bowstring() {
             this.statType(StatlessMaterialStats.BOWSTRING.getIdentifier());
+            this.repairKit();
+            return this;
+        }
+
+        public SpriteInfo ribcage() {
+            this.statType(RepairStats.RIBCAGE);
+            this.repairKit();
+            return this;
+        }
+
+        public SpriteInfo shell() {
+            this.statType(RepairStats.SHELL);
+            this.repairKit();
+            return this;
+        }
+
+        public SpriteInfo laces() {
+            this.statType(RepairStats.LACES);
             this.repairKit();
             return this;
         }

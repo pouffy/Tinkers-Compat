@@ -6,6 +6,7 @@ import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ToolActions;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
 import slimeknights.tconstruct.library.materials.RandomMaterial;
@@ -24,7 +25,6 @@ import slimeknights.tconstruct.library.tools.definition.module.weapon.SweepWeapo
 import slimeknights.tconstruct.library.tools.nbt.MultiplierNBT;
 import slimeknights.tconstruct.library.tools.nbt.StatsNBT;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
@@ -65,8 +65,8 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
                 .largeToolStartingSlots()
                 // traits
                 .module(ToolTraitsModule.builder()
-                        .trait(ModifierIds.reach, 2)
-                        .trait(TinkerModifiers.aoeSilkyShears).build())
+                        .trait(ModifierIds.reach)
+                        .trait(ModifierIds.silkyShears).build())
                 // behavior
                 .module(ToolActionsModule.of(ToolActions.SWORD_DIG))
                 .module(swordHarvest)
@@ -90,9 +90,9 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
 
         define(GlobalDefinitions.dart)
                 .module(PartStatsModule.parts()
-                        .part(TinkerToolParts.arrowHead)
-                        .part(TinkerToolParts.arrowShaft)
                         .part(TinkerToolParts.fletching)
+                        .part(TinkerToolParts.arrowShaft)
+                        .part(TinkerToolParts.arrowHead)
                         .build())
                 .module(DefaultMaterialsModule.builder()
                         .material(new RandomMaterial[]{nonHiddenMaterial, nonHiddenMaterial, nonHiddenMaterial})
@@ -102,7 +102,7 @@ public class TCToolDefinitionProv extends AbstractToolDefinitionDataProvider {
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "Tinker's Compatability Tool Definitions";
     }
 }

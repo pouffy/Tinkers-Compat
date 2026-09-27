@@ -3,9 +3,9 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
-        "tconstruct:arrow_head",
+        "tconstruct:fletching",
         "tconstruct:arrow_shaft",
-        "tconstruct:fletching"
+        "tconstruct:arrow_head"
       ],
       "primary_part": 0
     },

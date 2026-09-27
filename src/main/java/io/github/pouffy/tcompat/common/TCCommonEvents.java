@@ -1,5 +1,6 @@
 package io.github.pouffy.tcompat.common;
 
+import com.google.common.collect.Multiset;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.client.compat.CataclysmClientHandler;
 import io.github.pouffy.tcompat.common.capability.lightning.LightningOwner;
@@ -8,6 +9,7 @@ import io.github.pouffy.tcompat.common.capability.living.void_touched.VoidTouche
 import io.github.pouffy.tcompat.common.capability.projectile.ability.ProjectileAbility;
 import io.github.pouffy.tcompat.common.cooldown.ModifierCooldowns;
 import io.github.pouffy.tcompat.common.modifier.hook.EntitySensitiveAttributesModifierHook;
+import io.github.pouffy.tcompat.common.modifier.module.OptionalEffectImmunityModule;
 import io.github.pouffy.tcompat.common.network.SwingClientArmPacket;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.base.PacketRelay;
@@ -20,8 +22,11 @@ import io.github.pouffy.tcompat.compat.curios.CuriosHandler;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerHandler;
 import io.github.pouffy.tcompat.compat.malum.MalumHandler;
 import io.github.pouffy.tcompat.compat.quark.QuarkHandler;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
@@ -36,10 +41,13 @@ import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.mantle.util.OffhandCooldownTracker;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 @Mod.EventBusSubscriber(modid = TCompat.MOD_ID)
@@ -108,6 +116,26 @@ public class TCCommonEvents {
                 }
             });
         }
+    }
+
+    @SubscribeEvent
+    static void isPotionApplicable(MobEffectEvent.Applicable event) {
+        TinkerDataCapability.Holder data = TinkerDataCapability.getData(event.getEntity());
+        if (data != null) {
+            Multiset<ResourceLocation> multiset = data.get(OptionalEffectImmunityModule.EFFECT_IMMUNITY);
+            if (multiset != null) {
+                // only grant immunity if the amount is high enough
+                MobEffectInstance effectInstance = event.getEffectInstance();
+                if (multiset.count(BuiltInRegistries.MOB_EFFECT.getKey(effectInstance.getEffect())) > effectInstance.getAmplifier()) {
+                    event.setResult(Event.Result.DENY);
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOW)
+    static void livingAttacked(LivingAttackEvent event) {
+        CuriosHandler.handleAttack(event);
     }
 
     @SubscribeEvent

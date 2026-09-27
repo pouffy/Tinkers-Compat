@@ -21,26 +21,18 @@
       "type": "tconstruct:animated_sprite",
       "frames": 2,
       "meta": "tcompat:generator/brimwood",
-      "palette": [
-        {
-          "color": "FF000000",
-          "grey": 0
-        },
-        {
+      "palette": {
+        "000": "FF000000",
+        "063": {
           "color": "FF404040",
-          "grey": 63,
           "path": "tcompat:generator/brimwood"
         },
-        {
+        "102": {
           "color": "FF808080",
-          "grey": 102,
           "path": "tcompat:generator/brimwood"
         },
-        {
-          "grey": 140,
-          "path": "tcompat:generator/brimwood"
-        }
-      ]
+        "140": "tcompat:generator/brimwood"
+      }
     },
     "variant": true
   }

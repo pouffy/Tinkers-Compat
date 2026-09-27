@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.deep_aether;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
@@ -32,7 +32,7 @@ public class DeepAetherMaterials {
     public static final MaterialVariantId aseterite = aetherRockVariant(TCRocks.ASETERITE, 0xFF746772, 0xFF7F717D, 0xFF897A87, 0xFF938595, 0xFFA296A1, 0xFFB9ADB8);
     public static final MaterialVariantId clorite = aetherRockVariant(TCRocks.CLORITE, 0xFF415964, 0xFF4D6A74, 0xFF5B7C88, 0xFF699AA1, 0xFF7DAFAE, 0xFF95C9CB);
 
-    public static final MaterialId skyjade = MaterialBuilder.material("deep_aether", "skyjade")
+    public static final MaterialId skyjade = MaterialCreator.material("deep_aether", "skyjade")
             .flavor("Incredibly brittle.")
             .data(d -> d.tier(2).order(25)).excludeFromLoot()
             .traits(t -> t
@@ -53,7 +53,7 @@ public class DeepAetherMaterials {
             .spriteInfo(s -> s.plating(HeadMaterialStats.ID).statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).arrowHead().maille().fallbacks("gem", "metal").sevenColor(0xFF434e34, 0xFF4e6741, 0xFF729752, 0xFF8cb955, 0xFF9ada5b, 0xFFb2e865, 0xFFd1f397))
             .buildMaterial();
 
-    public static final MaterialId stormforgedSteel = MaterialBuilder.material("deep_aether", "stormforged_steel")
+    public static final MaterialId stormforgedSteel = MaterialCreator.material("deep_aether", "stormforged_steel")
             .flavor("Only he who is worthy.")
             .data(d -> d.tier(2).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged).trait(HeadMaterialStats.ID, DeepAetherInit.gale))
@@ -64,7 +64,7 @@ public class DeepAetherMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().statType(INGOT).sixColor(0xFF353a3f, 0xFF58606c, 0xFF9198a9, 0xFFb8c5d1, 0xFFd6e7f1, 0xFFdeffff))
             .buildMaterial();
 
-    public static final MaterialVariantId yagrootVine = MaterialBuilder.variant("deep_aether", "yagroot_vines", MaterialIds.vine)
+    public static final MaterialVariantId yagrootVine = MaterialCreator.variant("deep_aether", "yagroot_vines", MaterialIds.vine)
             .renderInfo(r -> r.color(0xFF745886).fallbacks("primitive", "cloth"))
             .spriteInfo(s -> s.vines().sixColor(0xFF382e45, 0xFF43344e, 0xFF5a4469, 0xFF745886, 0xFF86679d, 0xFF9b80ac))
             .buildVariant();

@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.ice_and_fire;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.constructs_casting.MagicBaseMaterialStats;
@@ -11,7 +11,6 @@ import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTran
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.*;
 
@@ -27,7 +26,7 @@ public class IFMaterials {
     public static final MaterialId dragonScaleIce = dragonScales("ice", 0xFF002970, 0xFF06279e, 0xFF123ece, 0xFF246fe8, 0xFF5c99e8, 0xFF92d1e8);
     public static final MaterialId dragonScaleLightning = dragonScales("lightning", 0xFF090909, 0xFF151515, 0xFF292929, 0xFF2f2f2f, 0xFF484848, 0xFF636363);
 
-    public static final MaterialId seaSerpentScale = MaterialBuilder.material("iceandfire", "sea_serpent_scale")
+    public static final MaterialId seaSerpentScale = MaterialCreator.material("iceandfire", "sea_serpent_scale")
             .flavor("Torn from a fish that likes to be on land.")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(ARMOR, TCModifiers.tideGuardian).trait(StatlessMaterialStats.FLETCHING.getIdentifier(), ModifierIds.finsAmmo))
@@ -42,7 +41,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.fallbacks("scales", "metal").fletching().repairKit().armor().sixColor(0xFF053755, 0xFF0f5a80, 0xFF1e74b5, 0xFF228eda, 0xFF2aa6fd, 0xFF39cfff))
             .buildMaterial();
 
-    public static final MaterialId trollLeather = MaterialBuilder.material("iceandfire", "troll_leather")
+    public static final MaterialId trollLeather = MaterialCreator.material("iceandfire", "troll_leather")
             .flavor("The light!")
             .data(d -> d.tier(1).order(3).craftable(true))
             .traits(t -> t
@@ -58,7 +57,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.maille().binding().statType(MagicClothMaterialStats.ID).fallbacks("cloth").sixColor(0xFF0f1717, 0xFF1b2529, 0xFF3b474d, 0xFF485961, 0xFF50606b, 0xFF66737a))
             .buildMaterial();
 
-    public static final MaterialId myrmexChitin = MaterialBuilder.material("iceandfire", "myrmex_chitin")
+    public static final MaterialId myrmexChitin = MaterialCreator.material("iceandfire", "myrmex_chitin")
             .flavor("Ew... bugs!")
             .data(d -> d.tier(1).order(3).craftable(true))
             .traits(t -> t.trait(TCModifiers.allythropod))
@@ -73,7 +72,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.plating().head().binding().fallbacks("chitin", "wood").sevenColor(0xFF2c322a, 0xFF4c3f06, 0xFF663f27, 0xFF724f06, 0xFF904a10, 0xFFac6111, 0xFFd06e33))
             .buildMaterial();
 
-    public static final MaterialId deathwormChitin = MaterialBuilder.material("iceandfire", "deathworm_chitin")
+    public static final MaterialId deathwormChitin = MaterialCreator.material("iceandfire", "deathworm_chitin")
             .flavor("It's got me! It's got me!")
             .lang("Death Worm Chitin")
             .data(d -> d.tier(1).order(3).craftable(true))
@@ -117,14 +116,15 @@ public class IFMaterials {
             deathwormRed = deathwormChitinVariant("red", "Red",             0xFF4a1920, 0xFF582020, 0xFF6f1d1d, 0xFF892f2f, 0xFFa1453d, 0xFFae523d, 0xFFc96539),
             deathwormYellow = deathwormChitinVariant("yellow", "Tan",       0xFF63462e, 0xFF7d5a4c, 0xFFb68773, 0xFFc2a58e, 0xFFdec0af, 0xFFe5dbbb, 0xFFffefc3);
 
-    public static final MaterialId dragonBone = MaterialBuilder.material("iceandfire", "dragon_bone")
+    public static final MaterialId dragonBone = MaterialCreator.material("iceandfire", "dragon_bone")
             .flavor("Flamin' hot bones.")
             .data(d -> d.tier(1).order(2).craftable(true))
             .traits(t -> t
-                    .trait(TinkerModifiers.firestarter)
+                    .trait(ModifierIds.firestarter)
                     .trait(StatlessMaterialStats.ARROW_SHAFT.getIdentifier(), ModifierIds.fiery)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.flame_gem, 1))
                     .trait(MagicBaseMaterialStats.ID, TCModifiers.puncturing)
+                    .trait(RepairStats.RIBCAGE, ModifierIds.knockback)
             )
             .stats(s ->
                     s.stat(
@@ -132,17 +132,18 @@ public class IFMaterials {
                             HandleMaterialStats.multipliers().durability(1.05f).attackSpeed(1.25f).build(),
                             StatlessMaterialStats.BINDING,
                             new LimbMaterialStats(200, 0.07f, -0.07f, 0.07f),
-                            new GripMaterialStats(1.0f, 0.15f, 1.5f), StatlessMaterialStats.ARROW_SHAFT
+                            new GripMaterialStats(1.0f, 0.15f, 1.5f), StatlessMaterialStats.ARROW_SHAFT,
+                            RepairStats.ribcage(200)
                     ).statOptional(
                             CompatToolStats.Statless.CUT_GEM,
                             CompatToolStats.magicBase(90, -0.05f)
                     )
             )
             .renderInfo(r -> r.color(0xc7b899).fallbacks("bone", "rock"))
-            .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).statType(MagicBaseMaterialStats.ID).arrowShaft().ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
+            .spriteInfo(s -> s.meleeHarvest().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).statType(MagicBaseMaterialStats.ID).arrowShaft().ribcage().ranged().fallbacks("bone", "rock").sixColor(0xFF52513f, 0xFF646050, 0xFF7d7866, 0xFF9b9883, 0xFFc7b899, 0xFFdfceb7))
             .buildMaterial();
 
-    public static final MaterialId fireDragonsteel = MaterialBuilder.material("iceandfire", "fire_dragonsteel")
+    public static final MaterialId fireDragonsteel = MaterialCreator.material("iceandfire", "fire_dragonsteel")
             .flavor("Overwhelmingly hot.")
             .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.scorchborn))
@@ -164,7 +165,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().ranged().armor().transformer(complexTransformer("fire_dragonsteel", 1, 0xFFBD9FA7, 0xFFEAD0D0)))
             .buildMaterial();
 
-    public static final MaterialId iceDragonsteel = MaterialBuilder.material("iceandfire", "ice_dragonsteel")
+    public static final MaterialId iceDragonsteel = MaterialCreator.material("iceandfire", "ice_dragonsteel")
             .flavor("Overwhelmingly cold.")
             .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.frostborn))
@@ -186,7 +187,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().ranged().armor().transformer(complexTransformer("ice_dragonsteel", 1, 0xFFBAEAEC, 0xFFFFFFFF)))
             .buildMaterial();
 
-    public static final MaterialId lightningDragonsteel = MaterialBuilder.material("iceandfire", "lightning_dragonsteel")
+    public static final MaterialId lightningDragonsteel = MaterialCreator.material("iceandfire", "lightning_dragonsteel")
             .flavor("The secret third option.")
             .data(d -> d.tier(4).order(0).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.voltborn))
@@ -208,7 +209,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(PlainRingMaterialStats.ID).meleeHarvest().ranged().armor().transformer(complexTransformer("lightning_dragonsteel", 1, 0xFFCAA4DA, 0xFFE5CBF7)))
             .buildMaterial();
 
-    public static final MaterialId seaSerpentFang = MaterialBuilder.material("iceandfire", "sea_serpent_fang")
+    public static final MaterialId seaSerpentFang = MaterialCreator.material("iceandfire", "sea_serpent_fang")
             .flavor("Cuts right through the tides.")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(TCModifiers.aquaShot))
@@ -217,7 +218,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.arrowHead().fallbacks("tooth", "bone").sixColor(0xFF4b414c, 0xFF665d5a, 0xFF91817a, 0xFFb7a796, 0xFFdbccb5, 0xFFffe7c4))
             .buildMaterial();
 
-    public static final MaterialId hydraFang = MaterialBuilder.material("iceandfire", "hydra_fang")
+    public static final MaterialId hydraFang = MaterialCreator.material("iceandfire", "hydra_fang")
             .flavor("Saps the life right outta ya!")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.leeching))
@@ -226,7 +227,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.arrowHead().fallbacks("hydra", "bone").sixColor(0xFF4f424b, 0xFF5f5d52, 0xFF81847c, 0xFF989a87, 0xFFb2bea0, 0xFFd6decb))
             .buildMaterial();
 
-    public static final MaterialId amphithereFeather = MaterialBuilder.material("iceandfire", "amphithere_feather")
+    public static final MaterialId amphithereFeather = MaterialCreator.material("iceandfire", "amphithere_feather")
             .flavor("Evacuate the area!")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.amphitheric))
@@ -235,7 +236,7 @@ public class IFMaterials {
             .spriteInfo(s -> s.fletching().fallbacks("amphithere").sixColor(0xFF00361f, 0xFF105a37, 0xFF197956, 0xFF0d7f68, 0xFF1a8b80, 0xFF1c9b86))
             .buildMaterial();
 
-    public static final MaterialId stymphalianBirdFeather = MaterialBuilder.material("iceandfire", "stymphalian_bird_feather")
+    public static final MaterialId stymphalianBirdFeather = MaterialCreator.material("iceandfire", "stymphalian_bird_feather")
             .flavor("Fly straight.")
             .data(d -> d.tier(1).order(4).craftable(true))
             .traits(t -> t.trait(IFInit.stymphalian))
@@ -245,7 +246,7 @@ public class IFMaterials {
             .buildMaterial();
 
     private static MaterialId dragonScales(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
-        var builder = MaterialBuilder.material("iceandfire", type+"_dragon_scale")
+        var builder = MaterialCreator.material("iceandfire", type+"_dragon_scale")
                 .flavor("Comes in (almost) all colors of the rainbow!")
                 .data(d -> d.tier(4).order(5).craftable(true))
                 .traits(t -> {
@@ -271,7 +272,7 @@ public class IFMaterials {
     }
 
     private static MaterialVariantId deathwormChitinVariant(String type, String name, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
-        var builder = MaterialBuilder.variant("iceandfire", type, deathwormChitin)
+        var builder = MaterialCreator.variant("iceandfire", type, deathwormChitin)
                 .lang(name + " Death Worm Chitin")
                 .renderInfo(r -> r.color(c178).fallbacks("chitin", "wood"))
                 .spriteInfo(s -> s.repairKit().plating().fallbacks("chitin", "wood").sevenColor(c63, c102, c140, c178, c216, c234, c255));
@@ -279,7 +280,7 @@ public class IFMaterials {
     }
 
     private static MaterialVariantId myrmexChitinVariant(String type, int c63, int c102, int c140, int c178, int c216, int c234, int c255) {
-        var builder = MaterialBuilder.variant("iceandfire", type, myrmexChitin)
+        var builder = MaterialCreator.variant("iceandfire", type, myrmexChitin)
                 .lang(TCLangProv.toEngStr(type) + " Myrmex Chitin")
                 .renderInfo(r -> r.color(c178).fallbacks("chitin", "wood"))
                 .spriteInfo(s -> s.repairKit().binding().head().plating().fallbacks("chitin", "wood").sevenColor(c63, c102, c140, c178, c216, c234, c255));
@@ -287,7 +288,7 @@ public class IFMaterials {
     }
 
     private static MaterialVariantId trollLeatherVariant(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
-        var builder = MaterialBuilder.variant("iceandfire", type, trollLeather)
+        var builder = MaterialCreator.variant("iceandfire", type, trollLeather)
                 .lang(TCLangProv.toEngStr(type) + " Troll Leather")
                 .renderInfo(r -> r.color(c178).fallbacks("cloth"))
                 .spriteInfo(s -> s.repairKit().binding().maille().fallbacks("cloth").sixColor(c63, c102, c140, c178, c216, c255));
@@ -295,7 +296,7 @@ public class IFMaterials {
     }
 
     private static MaterialVariantId seaSerpentScaleVariant(String type, int c63, int c102, int c140, int c178, int c216, int c255) {
-        var builder = MaterialBuilder.variant("iceandfire", type, seaSerpentScale)
+        var builder = MaterialCreator.variant("iceandfire", type, seaSerpentScale)
                 .lang(TCLangProv.toEngStr(type) + " Sea Serpent Scale")
                 .renderInfo(r -> r.color(c178).fallbacks("scales", "metal"))
                 .spriteInfo(s -> s.repairKit().fletching().armor().fallbacks("scales", "metal").sixColor(c63, c102, c140, c178, c216, c255));
@@ -303,7 +304,7 @@ public class IFMaterials {
     }
 
     private static MaterialVariantId dragonScalesVariant(String type, MaterialId parent, int c63, int c102, int c140, int c178, int c216, int c255) {
-        var builder = MaterialBuilder.variant("iceandfire", type, parent)
+        var builder = MaterialCreator.variant("iceandfire", type, parent)
                 .lang(TCLangProv.toEngStr(type) + " Dragon Scale")
                 .renderInfo(r -> r.color(c178).fallbacks("scales", "metal"))
                 .spriteInfo(s -> s.repairKit().armor().statType(MagicBaseMaterialStats.ID).fallbacks("scales", "metal").sixColor(c63, c102, c140, c178, c216, c255));
@@ -311,7 +312,7 @@ public class IFMaterials {
     }
 
     private static MaterialVariantId dragonScalesVariant(String type, MaterialId parent, ISpriteTransformer spriteTransformer) {
-        var builder = MaterialBuilder.variant("iceandfire", type, parent)
+        var builder = MaterialCreator.variant("iceandfire", type, parent)
                 .lang(TCLangProv.toEngStr(type) + " Dragon Scale")
                 .renderInfo(r -> r.fallbacks("scales", "metal"))
                 .spriteInfo(s -> s.repairKit().armor().fallbacks("scales", "metal").transformer(spriteTransformer));
@@ -319,7 +320,7 @@ public class IFMaterials {
     }
 
     private static MaterialVariantId scalesVariant(String type, String suffix, MaterialId parent, int c63, int c102, int c140, int c178, int c216, int c255) {
-        var builder = MaterialBuilder.variant("iceandfire", type, parent)
+        var builder = MaterialCreator.variant("iceandfire", type, parent)
                 .lang(TCLangProv.toEngStr(type) + " " + suffix)
                 .renderInfo(r -> r.color(c178).fallbacks("scales", "metal"))
                 .spriteInfo(s -> s.repairKit().armor().fallbacks("scales", "metal").sixColor(c63, c102, c140, c178, c216, c255));
@@ -327,7 +328,7 @@ public class IFMaterials {
     }
 
     private static MaterialVariantId scalesVariant(String type, String suffix, MaterialId parent, ISpriteTransformer spriteTransformer) {
-        var builder = MaterialBuilder.variant("iceandfire", type, parent)
+        var builder = MaterialCreator.variant("iceandfire", type, parent)
                 .lang(TCLangProv.toEngStr(type) + " " + suffix)
                 .renderInfo(r -> r.fallbacks("scales", "metal"))
                 .spriteInfo(s -> s.repairKit().armor().fallbacks("scales", "metal").transformer(spriteTransformer));

@@ -1,0 +1,28 @@
+{
+  "color": "FFBC441A",
+  "fallbacks": [
+    "bone",
+    "metal"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:repair_kit",
+      "tconstruct:shell"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": {
+          "000": "FF000000",
+          "063": "FF640700",
+          "102": "FF8E1202",
+          "140": "FFA72F13",
+          "178": "FFBC441A",
+          "216": "FFE86436",
+          "255": "FFFFA889"
+        }
+      }
+    }
+  }
+}

@@ -24,10 +24,7 @@
       }
     },
     {
-      "type": "tconstruct:mob_effect",
-      "chance": {
-        "flat": 1.0
-      },
+      "type": "tconstruct:weapon_mob_effect",
       "effect": "minecraft:wither",
       "level": {
         "flat": 1.0
@@ -41,6 +38,5 @@
         "random": 10.0
       }
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import slimeknights.tconstruct.library.client.data.spritetransformer.ISpriteTransformer;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -41,52 +41,52 @@ public class RockMaterials {
     dripstone = rockVariant(TCRocks.DRIPSTONE,                  0xFF543d3a, 0xFF634a47, 0xFF735450, 0xFF836356, 0xFF927965, 0xFFa08d71);
 
     private static MaterialVariantId rockVariant(TCRocks rockType, int c63, int c102, int c140, int c178, int c216, int c255) {
-        var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.rock)
+        var creator = MaterialCreator.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.rock)
                 .lang(rockType.englishName())
                 .renderInfo(r -> r.color(c216).fallbacks("rock"))
                 .spriteInfo(s -> s.rock().sixColor(c63, c102, c140, c178, c216, c255));
-        MaterialBuilder.rockMaterials.put(builder, rockType);
-        return builder.buildVariant();
+        MaterialCreator.rockMaterials.put(creator, rockType);
+        return creator.buildVariant();
     }
 
     private static MaterialVariantId rockVariant(TCRocks rockType, ISpriteTransformer spriteTransformer) {
-        var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.rock)
+        var creator = MaterialCreator.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.rock)
                 .renderInfo(r -> r.fallbacks("rock"))
                 .spriteInfo(s -> s.rock().fallbacks("rock").transformer(spriteTransformer));
-        MaterialBuilder.rockMaterials.put(builder, rockType);
-        return builder.buildVariant();
+        MaterialCreator.rockMaterials.put(creator, rockType);
+        return creator.buildVariant();
     }
 
     private static MaterialVariantId flintVariant(TCRocks rockType, int c63, int c102, int c140, int c178, int c216, int c255) {
-        var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.flint)
+        var creator = MaterialCreator.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.flint)
                 .renderInfo(r -> r.color(c216).fallbacks("crystal", "rock", "stick"))
                 .spriteInfo(s -> s.flint().sixColor(c63, c102, c140, c178, c216, c255));
-        MaterialBuilder.rockMaterials.put(builder, rockType);
-        return builder.buildVariant();
+        MaterialCreator.rockMaterials.put(creator, rockType);
+        return creator.buildVariant();
     }
 
     private static MaterialVariantId flintVariant(TCRocks rockType, ISpriteTransformer spriteTransformer) {
-        var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.flint)
+        var creator = MaterialCreator.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.flint)
                 .renderInfo(r -> r.fallbacks("crystal", "rock", "stick"))
                 .spriteInfo(s -> s.flint().transformer(spriteTransformer));
-        MaterialBuilder.rockMaterials.put(builder, rockType);
-        return builder.buildVariant();
+        MaterialCreator.rockMaterials.put(creator, rockType);
+        return creator.buildVariant();
     }
 
     private static MaterialVariantId endStoneVariant(TCRocks rockType, int c63, int c102, int c140, int c178, int c216, int c255) {
-        var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.whitestone)
+        var creator = MaterialCreator.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.whitestone)
                 .renderInfo(r -> r.color(c216).fallbacks("rock"))
                 .spriteInfo(s -> s.rock().fallbacks("rock").sixColor(c63, c102, c140, c178, c216, c255));
-        MaterialBuilder.rockMaterials.put(builder, rockType);
-        return builder.buildVariant();
+        MaterialCreator.rockMaterials.put(creator, rockType);
+        return creator.buildVariant();
     }
 
     private static MaterialVariantId endStoneVariant(TCRocks rockType, ISpriteTransformer spriteTransformer) {
-        var builder = MaterialBuilder.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.whitestone)
+        var creator = MaterialCreator.variant(rockType.makeCondition(), rockType.getSerializedName(), MaterialIds.whitestone)
                 .renderInfo(r -> r.fallbacks("rock"))
                 .spriteInfo(s -> s.rock().fallbacks("rock").transformer(spriteTransformer));
-        MaterialBuilder.rockMaterials.put(builder, rockType);
-        return builder.buildVariant();
+        MaterialCreator.rockMaterials.put(creator, rockType);
+        return creator.buildVariant();
     }
 
     public static void staticInit() {}

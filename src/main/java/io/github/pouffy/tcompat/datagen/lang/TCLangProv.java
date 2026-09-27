@@ -3,7 +3,7 @@ package io.github.pouffy.tcompat.datagen.lang;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import net.minecraft.data.PackOutput;
@@ -35,10 +35,10 @@ public class TCLangProv extends LanguageProvider {
     }
 
     private void materials() {
-        MaterialBuilder.materialBuilders.forEach((builder) -> {
-            this.add(builder.getTranslationKey(), builder.getEnglishName());
-            if (builder.getFlavorText() != null) {
-                this.add(builder.getTranslationKey() + ".flavor", builder.getFlavorText());
+        MaterialCreator.materialCreators.forEach((creator) -> {
+            this.add(creator.getTranslationKey(), creator.getEnglishName());
+            if (creator.getFlavorText() != null) {
+                this.add(creator.getTranslationKey() + ".flavor", creator.getFlavorText());
             }
         });
     }
@@ -283,6 +283,7 @@ public class TCLangProv extends LanguageProvider {
         forModifier("modifier.tcompat.standstill", "Stay right there", "Removes all knockback.");
         forModifier("modifier.tcompat.fluxed", "Industrial Grade Combat", "Fully charged shots fire a heavy-duty Wither Rocket.");
         forModifier("modifier.tcompat.ignitium", "Flamin' Hot", "Ignis' rage fills your armor, strengthening stats and providing special abilities.");
+        forModifier("modifier.tcompat.crabs_blessing", "Crab's Blessing", "Don't fear the abyss", "Provides immunity against abyssal burn and fear.");
 
         // Malum
         forModifier("modifier.tcompat.stained", "Iron's cooler sibling", "Tool deals extra magic damage.");

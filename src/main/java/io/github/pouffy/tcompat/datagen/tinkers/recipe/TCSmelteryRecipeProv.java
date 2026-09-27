@@ -60,6 +60,7 @@ public class TCSmelteryRecipeProv extends TCBaseRecipeProvider implements ITCSme
         new CataclysmSmeltery().toData(consumer);
         new MalumSmeltery().toData(consumer);
         new CreateSmeltery().toData(consumer);
+
         recipeOverwrites(consumer);
     }
 

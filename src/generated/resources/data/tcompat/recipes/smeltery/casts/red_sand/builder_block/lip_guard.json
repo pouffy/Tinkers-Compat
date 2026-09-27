@@ -21,5 +21,6 @@
   "result": {
     "count": 4,
     "item": "tcompat:lip_guard_red_sand_cast"
-  }
+  },
+  "title_key": "tconstruct:sand_cast"
 }

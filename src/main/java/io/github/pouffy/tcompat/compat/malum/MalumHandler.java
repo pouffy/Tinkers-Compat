@@ -103,7 +103,7 @@ public class MalumHandler {
 
     public static void idleRestoration(LivingEvent.LivingTickEvent event) {
         // No point running if the player has the actual rune
-        if (EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfIdleRestoration) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_idle_restoration")) {
+        if (EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfIdleRestoration) && CuriosHandler.curioNotEquipped(event.getEntity(), "malum:rune_of_idle_restoration")) {
             if (event.getEntity().level().getGameTime() % 40L == 0L) {
                 event.getEntity().heal(1.0F);
             }
@@ -112,7 +112,7 @@ public class MalumHandler {
 
     public static void volatileDistortion(LivingHurtEvent event, LivingEntity attacker) {
         // No point running if the player has the actual rune
-        if (EquipmentHelper.hasModifier(attacker, TCModifiers.runeOfVolatileDistortion) && !CuriosHandler.hasItem(attacker, "malum:rune_of_volatile_distortion")) {
+        if (EquipmentHelper.hasModifier(attacker, TCModifiers.runeOfVolatileDistortion) && CuriosHandler.curioNotEquipped(attacker, "malum:rune_of_volatile_distortion")) {
             RandomSource random = attacker.getRandom();
             float multiplier = Mth.nextFloat(random, 0.9F, 1.2F);
             if (random.nextFloat() < 0.1F) {
@@ -124,34 +124,34 @@ public class MalumHandler {
 
     public static void reactiveShielding(LivingHurtEvent event, LivingEntity attacker) {
         // No point running if the player has the actual rune
-        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(attacker, TCModifiers.runeOfReactiveShielding) && !CuriosHandler.hasItem(attacker, "malum:rune_of_reactive_shielding")) {
+        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(attacker, TCModifiers.runeOfReactiveShielding) && CuriosHandler.curioNotEquipped(attacker, "malum:rune_of_reactive_shielding")) {
             LoadedOnly.reactiveShielding(event);
         }
     }
 
     public static void ailmentCleansing(MobEffectEvent.Added event) {
         // No point running if the player has the actual rune
-        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfAlimentCleansing) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_aliment_cleansing")) {
+        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfAlimentCleansing) && CuriosHandler.curioNotEquipped(event.getEntity(), "malum:rune_of_aliment_cleansing")) {
             LoadedOnly.ailmentCleansing(event);
         }
     }
 
     public static void fervor(PlayerEvent.BreakSpeed event) {
         // No point running if the player has the actual rune
-        if (EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfFervor) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_fervor")) {
+        if (EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfFervor) && CuriosHandler.curioNotEquipped(event.getEntity(), "malum:rune_of_fervor")) {
             event.setNewSpeed(event.getOriginalSpeed() * 1.25F);
         }
     }
 
     public static void heretic(LivingHurtEvent event) {
         // No point running if the player has the actual rune
-        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfTheHeretic) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_the_heretic")) {
+        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfTheHeretic) && CuriosHandler.curioNotEquipped(event.getEntity(), "malum:rune_of_the_heretic")) {
             LoadedOnly.heretic(event);
         }
     }
 
     public static void igneousSolace(LivingHurtEvent event) {
-        if (EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfIgneousSolace) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_igneous_solace")) {
+        if (EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfIgneousSolace) && CuriosHandler.curioNotEquipped(event.getEntity(), "malum:rune_of_igneous_solace")) {
             if (event.getEntity().isOnFire()) {
                 event.setAmount(event.getAmount() * 0.75F);
             }
@@ -159,19 +159,19 @@ public class MalumHandler {
     }
 
     public static void sacrificialEmpowerment(LivingDeathEvent event) {
-        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfSacrificialEmpowerment) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_sacrificial_empowerment")) {
+        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfSacrificialEmpowerment) && CuriosHandler.curioNotEquipped(event.getEntity(), "malum:rune_of_sacrificial_empowerment")) {
             LoadedOnly.sacrificialEmpowerment(event);
         }
     }
 
     public static void twinnedDuration(MobEffectEvent.Added event) {
-        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfTwinnedDuration) && !CuriosHandler.hasItem(event.getEntity(), "malum:rune_of_twinned_duration")) {
+        if (CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(event.getEntity(), TCModifiers.runeOfTwinnedDuration) && CuriosHandler.curioNotEquipped(event.getEntity(), "malum:rune_of_twinned_duration")) {
             LoadedOnly.twinnedDuration(event);
         }
     }
 
     public static boolean forceSprint(LivingEntity livingEntity) {
-        return CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(livingEntity, MalumInit.runeOfUnnaturalStamina.getId()) && !CuriosHandler.hasItem(livingEntity, "malum:rune_of_unnatural_stamina");
+        return CompatHelper.isLoaded("malum") && EquipmentHelper.hasModifier(livingEntity, MalumInit.runeOfUnnaturalStamina.getId()) && CuriosHandler.curioNotEquipped(livingEntity, "malum:rune_of_unnatural_stamina");
     }
 
     @SuppressWarnings("SuspiciousNameCombination")

@@ -3,7 +3,7 @@ package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
 import io.github.pouffy.tcompat.common.fluid.TCFluids;
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.RockMaterials;
@@ -21,6 +21,7 @@ import io.github.pouffy.tcompat.compat.deep_aether.DeepAetherMaterials;
 import io.github.pouffy.tcompat.compat.deeperdarker.DarkerMaterials;
 import io.github.pouffy.tcompat.compat.ice_and_fire.IFMaterials;
 import io.github.pouffy.tcompat.compat.malum.MalumMaterials;
+import io.github.pouffy.tcompat.compat.quark.QuarkMaterials;
 import io.github.pouffy.tcompat.compat.species.SpeciesMaterials;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.registries.Registries;
@@ -83,7 +84,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> create = withCondition(consumer, modLoaded("create"));
 
         // Streamline variant recipes
-        MaterialBuilder.woodMaterials.forEach((builder, woodType) -> {
+        MaterialCreator.woodMaterials.forEach((builder, woodType) -> {
             if (woodType.hasPlanks())
                 planksVariantRecipe(woodType.makeConsumer(consumer), woodType, builder.variantId());
             if (woodType.hasLogs())
@@ -97,7 +98,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         rockRecipe(TCRocks.TAINTED_ROCK.makeConsumer(consumer), TCRocks.TAINTED_ROCK, MalumMaterials.taintedRock);
         rockVariantRecipe(TCRocks.TWISTED_ROCK.makeConsumer(consumer), TCRocks.TWISTED_ROCK, MalumMaterials.twistedRock);
 
-        MaterialBuilder.rockMaterials.forEach((builder, rockType) -> rockVariantRecipe(rockType.makeConsumer(consumer), rockType, builder.variantId()));
+        MaterialCreator.rockMaterials.forEach((builder, rockType) -> rockVariantRecipe(rockType.makeConsumer(consumer), rockType, builder.variantId()));
 
         planksRecipe(TCWoods.HELLBARK.makeConsumer(consumer), TCWoods.HELLBARK, WoodMaterials.hellbark);
         logRecipe(TCWoods.HELLBARK.makeConsumer(consumer), TCWoods.HELLBARK, WoodMaterials.hellbark);
@@ -198,7 +199,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(iceandfire, IFMaterials.deathwormYellow,         ItemNameIngredient.from(TCompat.getResource("iceandfire:deathworm_chitin_yellow"            )), 1, 1, folder + "deathworm_chitin/yellow");
         materialRecipe(iceandfire, DarkerMaterials.sculkBone,           ItemNameIngredient.from(TCompat.getResource("deeperdarker:sculk_bone"                       )), 1, 1, folder + "sculk_bone/bone");
 
-
+        materialRecipe(cataclysm, QuarkMaterials.crab, ItemNameIngredient.from(TCompat.getResource("quark:crab_shell")), 1, 1, folder + "crab_shell");
 
         metalMaterialRecipe(cataclysm, CataclysmMaterials.ancientMetal, folder, "ancient_metal", true);
         metalMaterialRecipe(cataclysm, CataclysmMaterials.blackSteel, folder, "black_steel", true);
@@ -210,6 +211,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(cataclysm, CataclysmMaterials.voidJaw, ItemNameIngredient.from(TCompat.getResource("cataclysm:void_jaw")), 1, 1, folder + "void_jaw");
         materialRecipe(cataclysm, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:koboleton_bone")), 1, 1, folder + "koboleton_bone/bone");
         materialRecipe(cataclysm, CataclysmMaterials.koboletonBone, ItemNameIngredient.from(TCompat.getResource("cataclysm:kobolediator_skull")), 8, 1, folder + "koboleton_bone/skull");
+        materialRecipe(cataclysm, CataclysmMaterials.bloomStone, ItemNameIngredient.from(TCompat.getResource("cataclysm:amethyst_crab_shell")), 1, 1, folder + "bloom_stone");
 
         metalMaterialRecipe(malum, MalumMaterials.soulStainedSteel, folder, "soul_stained_steel", true);
         metalMaterialRecipe(malum, MalumMaterials.hallowedGold, folder, "hallowed_gold", true);
@@ -266,12 +268,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> malum = withCondition(consumer, modLoaded("malum"));
         Consumer<FinishedRecipe> create = withCondition(consumer, modLoaded("create"));
 
-        //materialMeltingCasting(aetherConsumer, TCMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
         materialMelting(aetherConsumer, AetherMaterials.zanite, TCFluids.moltenZanite, FluidValues.INGOT, folder);
         materialMeltingCasting(aetherConsumer, AetherMaterials.gravitite, TCFluids.moltenGravitite, folder);
         materialMeltingCasting(aetherConsumer, AetherMaterials.lightnum, TCFluids.moltenLightnum, folder);
         materialMeltingCasting(aetherConsumer, AetherMaterials.draculite, TCFluids.moltenDraculite, folder);
-        //materialMeltingCasting(deepAetherConsumer, TCMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
         materialMelting(deepAetherConsumer, DeepAetherMaterials.skyjade, TCFluids.moltenSkyjade, FluidValues.INGOT, folder);
         materialMeltingCasting(deepAetherConsumer, DeepAetherMaterials.stormforgedSteel, TCFluids.moltenStormforgedSteel, folder);
         materialMeltingCasting(aetherReduxConsumer, AetherReduxMaterials.veridium, TCFluids.moltenVeridium, folder);

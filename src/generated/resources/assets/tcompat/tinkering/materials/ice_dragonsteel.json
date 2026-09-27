@@ -24,36 +24,15 @@
     ],
     "transformer": {
       "type": "tconstruct:grey_to_sprite",
-      "palette": [
-        {
-          "color": "FF000000",
-          "grey": 0
-        },
-        {
-          "grey": 63,
-          "path": "tcompat:generator/complex/ice_dragonsteel_63"
-        },
-        {
-          "grey": 102,
-          "path": "tcompat:generator/complex/ice_dragonsteel_102"
-        },
-        {
-          "grey": 140,
-          "path": "tcompat:generator/complex/ice_dragonsteel_140"
-        },
-        {
-          "grey": 178,
-          "path": "tcompat:generator/complex/ice_dragonsteel_178"
-        },
-        {
-          "color": "FFBAEAEC",
-          "grey": 216
-        },
-        {
-          "color": "FFFFFFFF",
-          "grey": 255
-        }
-      ]
+      "palette": {
+        "000": "FF000000",
+        "063": "tcompat:generator/complex/ice_dragonsteel_63",
+        "102": "tcompat:generator/complex/ice_dragonsteel_102",
+        "140": "tcompat:generator/complex/ice_dragonsteel_140",
+        "178": "tcompat:generator/complex/ice_dragonsteel_178",
+        "216": "FFBAEAEC",
+        "255": "FFFFFFFF"
+      }
     }
   },
   "luminosity": 9

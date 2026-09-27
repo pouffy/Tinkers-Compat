@@ -1,12 +1,12 @@
 package io.github.pouffy.tcompat.compat.species;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 public class SpeciesMaterials {
 
-    public static final MaterialId wickedWax = MaterialBuilder.material("species", "wicked_wax")
+    public static final MaterialId wickedWax = MaterialCreator.material("species", "wicked_wax")
             .flavor("No one mourns the wicked.")
             .data(d -> d.tier(1).order(20).craftable(true))
             .traits(t -> t.trait(SpeciesInit.wicked))

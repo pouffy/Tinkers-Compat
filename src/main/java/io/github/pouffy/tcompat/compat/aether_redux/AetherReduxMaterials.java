@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.aether_redux;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.material.TCRocks;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
@@ -32,7 +32,7 @@ public class AetherReduxMaterials {
     public static final MaterialVariantId divinite = aetherRockVariant(TCRocks.DIVINITE, 0xFF8B7149, 0xFF987E55, 0xFFAA8F65, 0xFFBAA170, 0xFFCDB285, 0xFFD8C699);
     public static final MaterialVariantId driftshale = aetherRockVariant(TCRocks.DRIFTSHALE, 0xFFAA9A5D, 0xFFBEB06C, 0xFFCEC277, 0xFFD9CE81, 0xFFDFDA95, 0xFFE3E2A8);
 
-    public static final MaterialId veridium = MaterialBuilder.material("aether_redux", "veridium")
+    public static final MaterialId veridium = MaterialCreator.material("aether_redux", "veridium")
             .flavor("Very close friends with Ambrosium.")
             .data(d -> d.tier(2).order(1).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged, AetherReduxInit.ambrofusion))
@@ -52,7 +52,7 @@ public class AetherReduxMaterials {
             .spriteInfo(s -> s.fallbacks("metal").lipGuard().repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().sixColor(0xFF0e193b, 0xFF142958, 0xFF32578c, 0xFF5a90bd, 0xFF7fbedc, 0xFFb9edfb))
             .buildMaterial();
 
-    public static final MaterialId refinedSentrite = MaterialBuilder.material("aether_redux", "refined_sentrite")
+    public static final MaterialId refinedSentrite = MaterialCreator.material("aether_redux", "refined_sentrite")
             .flavor("Also makes a nice set of bricks.")
             .data(d -> d.tier(2).order(1).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(TCModifiers.aetherForged))
@@ -71,7 +71,7 @@ public class AetherReduxMaterials {
             .spriteInfo(s -> s.fallbacks("metal").dartBarrel().repairKit().statType(PlainRingMaterialStats.ID).statType(GripMaterialStats.ID, HeadMaterialStats.ID).armor().sixColor(0xFF27272b, 0xFF434346, 0xFF5c5c61, 0xFF747477, 0xFF98999b, 0xFFc1c1c1))
             .buildMaterial();
 
-    public static final MaterialId blightbunnyFang = MaterialBuilder.material("aether_redux", "blightbunny_fang")
+    public static final MaterialId blightbunnyFang = MaterialCreator.material("aether_redux", "blightbunny_fang")
             .flavor("Big pointy teeth.")
             .data(d -> d.tier(1).order(4).craftable(true)).excludeFromLoot()
             .traits(t -> t
@@ -85,21 +85,26 @@ public class AetherReduxMaterials {
             .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).arrowHead().sixColor(0xFF5a6972, 0xFF6e7e88, 0xFF7f919b, 0xFFa1b5be, 0xFFc1d3d8, 0xFFdeeef2))
             .buildMaterial();
 
-    public static final MaterialId mykapodShell = MaterialBuilder.material("aether_redux", "mykapod_shell")
+    public static final MaterialId mykapodShell = MaterialCreator.material("aether_redux", "mykapod_shell")
+            .lang("Mykapod")
             .flavor("Stoppable force meets immovable shield.")
             .data(d -> d.tier(1).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t
                     .trait(StatlessMaterialStats.SHIELD_CORE.getIdentifier(), TCModifiers.escarstay)
+                    .trait(RepairStats.SHELL, TCModifiers.escarstay)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.armor_gem, 4))
             )
             .stats(s ->
-                    s.stat(StatlessMaterialStats.SHIELD_CORE).statOptional(CompatToolStats.Statless.CUT_GEM)
+                    s.stat(
+                            StatlessMaterialStats.SHIELD_CORE,
+                            RepairStats.shell(250)
+                    ).statOptional(CompatToolStats.Statless.CUT_GEM)
             )
             .renderInfo(r -> r.color(0x5e65a5).fallbacks("bone", "metal"))
-            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).shieldCore().sixColor(0xFF2c2e5b, 0xFF3a3d6f, 0xFF4b5187, 0xFF5e65a5, 0xFF7178c2, 0xFF8f92d8))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).shieldCore().shell().sixColor(0xFF2c2e5b, 0xFF3a3d6f, 0xFF4b5187, 0xFF5e65a5, 0xFF7178c2, 0xFF8f92d8))
             .buildMaterial();
 
-    public static final MaterialId corruptedVine = MaterialBuilder.material("aether_redux", "corrupted_vine")
+    public static final MaterialId corruptedVine = MaterialCreator.material("aether_redux", "corrupted_vine")
             .flavor("Why are you so toxic?")
             .data(d -> d.tier(2).order(0).craftable(true))
             .traits(t -> t.trait(AetherInit.blighted))
@@ -108,7 +113,7 @@ public class AetherReduxMaterials {
             .spriteInfo(s -> s.vines().sixColor(0xFF3f365f, 0xFF584876, 0xFF705685, 0xFF6072b1, 0xFF6da4bf, 0xFF61cfba))
             .buildMaterial();
 
-    public static final MaterialId goldVine = MaterialBuilder.material("aether_redux", "gold_vine")
+    public static final MaterialId goldVine = MaterialCreator.material("aether_redux", "gold_vine")
             .flavor("Fortunately for you...")
             .lang("Golden Vine")
             .data(d -> d.tier(2).order(0).craftable(true))

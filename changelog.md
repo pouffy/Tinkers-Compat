@@ -22,10 +22,9 @@
   - Recipes:
     - All metal blocks and items can now be melted in the smeltery.
     - Chocolate Bars can now be melted in the smeltery.
-
-## Changes:
-- EMI is no longer compiled as it is only needed during runtime testing.
-- "regions_unexplored:kapok_vines" & "biomesoplenty:willow_vine" can be used to craft normal vine parts.
+- Extra New Materials (For Slimeshells):
+  - Crab (Quark)
+  - Bloom Stone (Cataclysm)
 - Added the following vine materials/variants:
   - Betternether:
     - Black Vine | Variant of Weeping Vine
@@ -45,6 +44,10 @@
     - Yagroot Vine
   - Deeper & Darker
     - Sculk Vine
+
+## Changes:
+- EMI is no longer compiled as it is only needed during runtime testing.
+- "regions_unexplored:kapok_vines" & "biomesoplenty:willow_vine" can be used to craft normal vine parts.
 - Blighted now works for melee and thorns damage.
 - "blightbunny_fang" & "mykapod_shell" now have the correct load conditions.
 - Tweaked Glaive stats:
@@ -52,10 +55,14 @@
   - Durability Multiplier: 1.5 -> 1.2
   - Melee Sweep Range: 3.0 -> 4.0
   - Attack Damage Multiplier: 1.5 -> 0
+  - Reach: 2 -> 1
 - Un-Deprecated Zanite & Skyjade materials.
 - Nether Ruby now uses the proper gem material recipe method.
 - Storage blocks for the niche Malum materials can now be used to craft parts.
 - Gravitite now supports Bow Limbs & Bow Grips.
 - Ascension now floats entities struck by a projectile.
 - Pyral ranged parts should now be obtainable.
+- Renamed Mykapod Shell to Mykapod.
+- Sculk Bone, Dragon Bone & Koboleton Bone now support Ribcages.
+- Mykapod now supports Shells.
 

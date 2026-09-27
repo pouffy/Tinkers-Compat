@@ -1,0 +1,10 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "cataclysm"
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 2,
+  "tier": 1
+}

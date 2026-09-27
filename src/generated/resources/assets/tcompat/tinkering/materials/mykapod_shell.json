@@ -8,42 +8,22 @@
     "supported_stats": [
       "tconstruct:repair_kit",
       "tinkersjewelry:gem",
-      "tconstruct:shield_core"
+      "tconstruct:shield_core",
+      "tconstruct:shell"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",
       "color_mapping": {
         "type": "tconstruct:grey_to_color",
-        "palette": [
-          {
-            "color": "FF000000",
-            "grey": 0
-          },
-          {
-            "color": "FF2C2E5B",
-            "grey": 63
-          },
-          {
-            "color": "FF3A3D6F",
-            "grey": 102
-          },
-          {
-            "color": "FF4B5187",
-            "grey": 140
-          },
-          {
-            "color": "FF5E65A5",
-            "grey": 178
-          },
-          {
-            "color": "FF7178C2",
-            "grey": 216
-          },
-          {
-            "color": "FF8F92D8",
-            "grey": 255
-          }
-        ]
+        "palette": {
+          "000": "FF000000",
+          "063": "FF2C2E5B",
+          "102": "FF3A3D6F",
+          "140": "FF4B5187",
+          "178": "FF5E65A5",
+          "216": "FF7178C2",
+          "255": "FF8F92D8"
+        }
       }
     }
   }

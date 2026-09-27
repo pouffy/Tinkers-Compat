@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.compat.aether.item.DartBarrelMaterialStats;
 import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -21,11 +22,19 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
 
     @Override
     protected void addMaterialStats() {
-        for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            if (builder.isVariant()) continue;
-            addMaterialStats(builder.materialId(), builder.getStats().stats().values().toArray(new IMaterialStats[0]));
-            addOptionalStats(builder.materialId(), builder.getStats().optionalStats().values().toArray(new IMaterialStats[0]));
+        int count = 0;
+        int optionalCount = 0;
+        for (MaterialCreator creator : MaterialCreator.materialCreators) {
+            if (creator.isVariant()) continue;
+            addMaterialStats(creator.materialId(), creator.getStats().stats().values().toArray(new IMaterialStats[0]));
+            addOptionalStats(creator.materialId(), creator.getStats().optionalStats().values().toArray(new IMaterialStats[0]));
+            count++;
+            if (!creator.getStats().optionalStats().isEmpty()) {
+                optionalCount++;
+            }
         }
+        TCompat.LOGGER.info("Added stats for {} materials", count);
+        TCompat.LOGGER.info("Added optional (integration) stats for {} materials", optionalCount);
 
         //Existing materials
         //Pull requests for these would be considered, but I'd have to examine them carefully.

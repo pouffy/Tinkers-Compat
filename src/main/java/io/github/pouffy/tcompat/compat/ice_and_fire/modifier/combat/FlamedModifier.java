@@ -62,7 +62,8 @@ public class FlamedModifier extends NoLevelsModifier implements MeleeHitModifier
         if (projectile instanceof AbstractArrow arrow && !arrow.isCritArrow()) flag = false;
         if (target != null && flag) {
             target.setSecondsOnFire(5);
+            target.knockback(1.0, projectile.getX() - target.getX(), projectile.getZ() - target.getZ());
         }
-        return notBlocked;
+        return false;
     }
 }

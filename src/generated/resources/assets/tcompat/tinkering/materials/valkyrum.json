@@ -21,26 +21,18 @@
     ],
     "transformer": {
       "type": "tconstruct:grey_to_sprite",
-      "palette": [
-        {
-          "color": "FF000000",
-          "grey": 0
-        },
-        {
+      "palette": {
+        "000": "FF000000",
+        "063": {
           "color": "FF404040",
-          "grey": 63,
           "path": "tcompat:generator/valkyrum"
         },
-        {
+        "102": {
           "color": "FF808080",
-          "grey": 102,
           "path": "tcompat:generator/valkyrum"
         },
-        {
-          "grey": 140,
-          "path": "tcompat:generator/valkyrum"
-        }
-      ]
+        "140": "tcompat:generator/valkyrum"
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
@@ -20,15 +21,15 @@ public class TCMaterialTraitsProv extends AbstractMaterialTraitDataProvider {
 
     @Override
     protected void addMaterialTraits() {
-        for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            if(builder.isVariant()) continue;
-            addDefaultTraits(builder.getId().getId(), builder.getTraits().defaultTraits().toArray(new ModifierEntry[0]));
-            for (var statEntry : builder.getTraits().traits().entrySet()) {
-                addTraits(builder.getId().getId(), statEntry.getKey(), statEntry.getValue().toArray(new ModifierEntry[0]));
+        int count = 0;
+        for (MaterialCreator creator : MaterialCreator.materialCreators) {
+            if(creator.isVariant()) continue;
+            addDefaultTraits(creator.getId().getId(), creator.getTraits().defaultTraits().toArray(new ModifierEntry[0]));
+            for (var statEntry : creator.getTraits().traits().entrySet()) {
+                addTraits(creator.getId().getId(), statEntry.getKey(), statEntry.getValue().toArray(new ModifierEntry[0]));
             }
+            count++;
         }
-        //addTraits(TCMaterials.cursium, RANGED, TCModifiers.cataclysmic);
-        //addTraits(TCMaterials.ignitium, MELEE_HARVEST, TCModifiers.cataclysmic);
-        //addTraits(TCMaterials.witherite, RANGED, TCModifiers.cataclysmic);
+        TCompat.LOGGER.info("Added traits for {} materials", count);
     }
 }

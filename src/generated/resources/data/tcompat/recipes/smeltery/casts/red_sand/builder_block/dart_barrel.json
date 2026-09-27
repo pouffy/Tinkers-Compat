@@ -21,5 +21,6 @@
   "result": {
     "count": 4,
     "item": "tcompat:dart_barrel_red_sand_cast"
-  }
+  },
+  "title_key": "tconstruct:sand_cast"
 }

@@ -6,6 +6,9 @@
       "melee_speed": 0.0,
       "mining_speed": 0.0
     },
-    "tconstruct:maille": {}
+    "tconstruct:maille": {},
+    "tconstruct:ribcage": {
+      "repair_amount": 150
+    }
   }
 }

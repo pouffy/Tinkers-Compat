@@ -1,4 +1,10 @@
 {
+  "default": [
+    {
+      "level": 1,
+      "name": "tcompat:escarstay"
+    }
+  ],
   "perStat": {
     "tconstruct:shield_core": [
       {

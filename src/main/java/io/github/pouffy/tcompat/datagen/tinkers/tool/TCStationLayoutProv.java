@@ -2,6 +2,7 @@ package io.github.pouffy.tcompat.datagen.tinkers.tool;
 
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import net.minecraft.data.PackOutput;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.data.tinkering.AbstractStationSlotLayoutProvider;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 
@@ -21,12 +22,12 @@ public class TCStationLayoutProv extends AbstractStationSlotLayoutProvider {
                 .build();
 
         defineModifiable(GlobalInit.dartShooter).sortIndex(SORT_RANGED).addInputItem(GlobalInit.lipGuard, 46, 56).addInputItem(GlobalInit.dartBarrel, 28, 38).build();
-        defineModifiable(GlobalInit.dart).sortIndex(SORT_AMMO).addInputItem(TinkerToolParts.arrowHead, 53, 22).addInputItem(TinkerToolParts.arrowShaft, 33, 42).addInputItem(TinkerToolParts.fletching, 15, 60).build();
+        defineModifiable(GlobalInit.dart).sortIndex(SORT_AMMO).addInputItem(TinkerToolParts.fletching, 53, 22).addInputItem(TinkerToolParts.arrowShaft, 33, 42).addInputItem(TinkerToolParts.arrowHead, 15, 60).build();
 
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "Tinkers' Compatibility Station Slot Layouts";
     }
 }

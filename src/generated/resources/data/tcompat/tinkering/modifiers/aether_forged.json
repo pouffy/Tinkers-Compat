@@ -9,6 +9,5 @@
       "type": "tcompat:aether_forged"
     }
   ],
-  "priority": 200,
-  "tooltip_display": "always"
+  "priority": 200
 }

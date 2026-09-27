@@ -75,6 +75,5 @@
       },
       "unique": "tcompat.modifier.tide_guardian"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

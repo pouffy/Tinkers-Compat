@@ -2,7 +2,7 @@ package io.github.pouffy.tcompat.datagen.tinkers.recipe;
 
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.common.data.TCTags;
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
@@ -90,6 +90,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         Function<String, ResourceLocation> malumId = name -> getResource("malum", name);
 
         ModifierRecipeBuilder.modifier(TCModifiers.zanite)
+                .setTools(TinkerTags.Items.INTERACTABLE)
                 .addInput(TCTags.Items.ZANITE_GEMS)
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.UPGRADE, 1)
@@ -97,6 +98,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .save(aetherConsumer, prefix(TCModifiers.zanite, upgradeFolder));
 
         ModifierRecipeBuilder.modifier(TCModifiers.skyjade)
+                .setTools(TinkerTags.Items.INTERACTABLE)
                 .addInput(TCTags.Items.SKYJADE_GEMS)
                 .setMaxLevel(1).checkTraitLevel()
                 .setSlots(SlotType.UPGRADE, 1)
@@ -464,7 +466,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                 .setMaxLevel(1).checkTraitLevel()
                 .save(aetherConsumer, prefix(TCModifiers.aetherForged, folder));
 
-        MaterialBuilder.woodMaterials.forEach((builder, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, builder.variantId()));
+        MaterialCreator.woodMaterials.forEach((creator, woodType) -> woodTexture(woodType.makeConsumer(consumer), woodType, creator.variantId()));
         woodTexture(TCWoods.RUNEWOOD.makeConsumer(consumer), TCWoods.RUNEWOOD, MalumMaterials.runewood);
         woodTexture(TCWoods.SOULWOOD.makeConsumer(consumer), TCWoods.SOULWOOD, MalumMaterials.soulwood);
     }

@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.cataclysm;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.common.modifier.TCModifiers;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
@@ -16,7 +16,7 @@ import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 
 public class CataclysmMaterials {
 
-    public static final MaterialId ancientMetal = MaterialBuilder.material("cataclysm", "ancient_metal")
+    public static final MaterialId ancientMetal = MaterialCreator.material("cataclysm", "ancient_metal")
             .flavor("Koboleton's go-to.")
             .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t
@@ -40,7 +40,7 @@ public class CataclysmMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().sixColor(0xFF4c1e15, 0xFF682e22, 0xFF945b31, 0xFFb98a3c, 0xFFdbb86a, 0xFFffe69a))
             .buildMaterial();
 
-    public static final MaterialId blackSteel = MaterialBuilder.material("cataclysm", "black_steel")
+    public static final MaterialId blackSteel = MaterialCreator.material("cataclysm", "black_steel")
             .flavor("Why do they all end with 'gr'?")
             .data(d -> d.tier(2).order(2).craftable(false))
             .traits(t -> t
@@ -63,7 +63,7 @@ public class CataclysmMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).statType(PlatingMaterialStats.SHIELD.getId()).meleeHarvest().ranged().sixColor(0xFF171a1e, 0xFF1f232c, 0xFF2d313d, 0xFF485063, 0xFF616879, 0xFF969cad))
             .buildMaterial();
 
-    public static final MaterialId cursium = MaterialBuilder.material("cataclysm", "cursium")
+    public static final MaterialId cursium = MaterialCreator.material("cataclysm", "cursium")
             .flavor("I've got friends on the other side.")
             .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t
@@ -83,7 +83,7 @@ public class CataclysmMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).maille().bowstring().head().sixColor(0xFF0e4b3d, 0xFF156353, 0xFF198871, 0xFF39d2b2, 0xFF56eccc, 0xFF75ffe2))
             .buildMaterial();
 
-    public static final MaterialId lacrima = MaterialBuilder.material("cataclysm", "lacrima")
+    public static final MaterialId lacrima = MaterialCreator.material("cataclysm", "lacrima")
             .flavor("Tears of the sea.")
             .data(d -> d.tier(3).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t
@@ -104,7 +104,7 @@ public class CataclysmMaterials {
             .spriteInfo(s -> s.fallbacks("gem").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).statType(CompatToolStats.Statless.ADORNMENT.getIdentifier()).handle().head().sixColor(0xFF443c86, 0xFF565d95, 0xFF6071c1, 0xFF7eb5d8, 0xFFa4dcea, 0xFFd9f4f7))
             .buildMaterial();
 
-    public static final MaterialId essenceOfTheStorm = MaterialBuilder.material("cataclysm", "essence_of_the_storm")
+    public static final MaterialId essenceOfTheStorm = MaterialCreator.material("cataclysm", "essence_of_the_storm")
             .flavor("Strike me down Zeus!")
             .data(d -> d.tier(1).order(20).craftable(true)).excludeFromLoot()
             .lang("Essence of the Storm")
@@ -114,7 +114,7 @@ public class CataclysmMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().binding().sixColor(0xFF2f7598, 0xFF3d86ab, 0xFF57a9c2, 0xFF67cbd2, 0xFF78dfda, 0xFFc1f1ea))
             .buildMaterial();
 
-    public static final MaterialId witherite = MaterialBuilder.material("cataclysm", "witherite")
+    public static final MaterialId witherite = MaterialCreator.material("cataclysm", "witherite")
             .flavor("A marvel of ancient mechanics.")
             .data(d -> d.tier(4).order(4).craftable(false)).excludeFromLoot()
             .traits(t -> t.trait(GripMaterialStats.ID, CataclysmInit.fluxed).trait(HandleMaterialStats.ID, TCModifiers.standstill))
@@ -130,7 +130,7 @@ public class CataclysmMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).statType(GripMaterialStats.ID).handle().binding().transformer(complexTransformer("witherite", 1, 0xFF5e6777, 0xFF6e7786)))
             .buildMaterial();
 
-    public static final MaterialId coral = MaterialBuilder.material("cataclysm", "coral")
+    public static final MaterialId coral = MaterialCreator.material("cataclysm", "coral")
             .flavor("I'll handle this!")
             .data(d -> d.tier(1).order(2).craftable(true))
             .traits(t -> t
@@ -148,7 +148,7 @@ public class CataclysmMaterials {
             .spriteInfo(s -> s.fallbacks("rock").repairKit().statType(CompatToolStats.Statless.CUT_GEM.getIdentifier()).handle().sixColor(0xFF490911, 0xFF791a26, 0xFF8c1d2a, 0xFFa4222f, 0xFFc62a37, 0xFFe23f36))
             .buildMaterial();
 
-    public static final MaterialId voidJaw = MaterialBuilder.material("cataclysm", "void_jaw")
+    public static final MaterialId voidJaw = MaterialCreator.material("cataclysm", "void_jaw")
             .flavor("Nom nom nom.")
             .data(d -> d.tier(1).order(4).craftable(true)).excludeFromLoot()
             .traits(t -> t.trait(StatlessMaterialStats.ARROW_HEAD.getIdentifier(), CataclysmInit.voidScatter))
@@ -159,15 +159,28 @@ public class CataclysmMaterials {
             .spriteInfo(s -> s.fallbacks("bone").repairKit().arrowHead().sixColor(0xFF340073, 0xFF4d00a9, 0xFF5700bf, 0xFF8219ff, 0xFF9842ff, 0xFFa153fe))
             .buildMaterial();
 
-    public static final MaterialId koboletonBone = MaterialBuilder.material("cataclysm", "koboleton_bone")
+    public static final MaterialId koboletonBone = MaterialCreator.material("cataclysm", "koboleton_bone")
             .flavor("Dusty bones :3")
             .data(d -> d.tier(1).order(2).craftable(true)).excludeFromLoot()
-            .traits(t -> t.trait(HandleMaterialStats.ID, TCModifiers.archaeologist))
+            .traits(t -> t.trait(TCModifiers.archaeologist))
             .stats(s ->
-                    s.stat(StatlessMaterialStats.MAILLE, HandleMaterialStats.multipliers().attackDamage(1.2f).build())
+                    s.stat(
+                            StatlessMaterialStats.MAILLE,
+                            HandleMaterialStats.multipliers().attackDamage(1.2f).build(),
+                            RepairStats.ribcage(150)
+                    )
             )
             .renderInfo(r -> r.color(0x7e675e).fallbacks("bone", "metal"))
-            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().maille().handle().sixColor(0xFF200e07, 0xFF3e291b, 0xFF5f473f, 0xFF7e675e, 0xFF9a887c, 0xFFdbcca7))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().maille().ribcage().handle().sixColor(0xFF200e07, 0xFF3e291b, 0xFF5f473f, 0xFF7e675e, 0xFF9a887c, 0xFFdbcca7))
+            .buildMaterial();
+
+    public static final MaterialId bloomStone = MaterialCreator.material("cataclysm", "bloom_stone")
+            .flavor("Praise the crab.")
+            .data(d -> d.tier(1).order(2).craftable(true)).excludeFromLoot()
+            .traits(t -> t.trait(TCModifiers.crabsBlessing))
+            .stats(s -> s.stat(RepairStats.shell(250)))
+            .renderInfo(r -> r.color(0x5a5a5a).fallbacks("bone", "metal"))
+            .spriteInfo(s -> s.fallbacks("bone", "metal").repairKit().shell().sixColor(0xFF313137, 0xFF3d3d43, 0xFF4b4b50, 0xFF5a5a5a, 0xFF646464, 0xFF747474))
             .buildMaterial();
 
     public static void staticInit() {}

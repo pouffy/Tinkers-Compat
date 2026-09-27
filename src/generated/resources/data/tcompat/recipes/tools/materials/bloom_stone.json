@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "ingredient": {
+    "item": "cataclysm:amethyst_crab_shell"
+  },
+  "material": "tcompat:bloom_stone",
+  "needed": 1,
+  "value": 1
+}

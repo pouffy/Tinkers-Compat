@@ -27,6 +27,7 @@ public class TCModifiers {
     public static final ModifierId archaeologist = id("archaeologist");
     public static final ModifierId standstill = id("standstill");
     public static final ModifierId ignitium = id("ignitium");
+    public static final ModifierId crabsBlessing = id("crabs_blessing");
 
     //Malum
     public static final ModifierId stained = id("stained");

@@ -1,0 +1,17 @@
+{
+  "condition": {
+    "type": "forge:mod_loaded",
+    "modid": "cataclysm"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tcompat:optional_effect_immunity",
+      "effect": "cataclysm:abyssal_burn"
+    },
+    {
+      "type": "tcompat:optional_effect_immunity",
+      "effect": "cataclysm:abyssal_fear"
+    }
+  ]
+}

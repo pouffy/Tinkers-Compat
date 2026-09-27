@@ -268,6 +268,18 @@ public class TCTags {
             return TagKey.create(Registries.ITEM, getResource(name));
         }
 
+        private static TagKey<Item> group(String group, String type) {
+            return TagKey.create(Registries.ITEM, commonResource(group + "/" + type));
+        }
+
+        public static TagKey<Item> ingot(String type) {
+            return group("ingots", type);
+        }
+
+        public static TagKey<Item> gem(String type) {
+            return group("gems", type);
+        }
+
         private static TagKey<Item> common(String name) {
             return TagKey.create(Registries.ITEM, commonResource(name));
         }

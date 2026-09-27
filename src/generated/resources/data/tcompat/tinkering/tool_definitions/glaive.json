@@ -56,12 +56,12 @@
       "type": "tconstruct:traits",
       "traits": [
         {
-          "level": 2,
+          "level": 1,
           "name": "tconstruct:reach"
         },
         {
           "level": 1,
-          "name": "tconstruct:silky_aoe_shears"
+          "name": "tconstruct:silky_shears"
         }
       ]
     },

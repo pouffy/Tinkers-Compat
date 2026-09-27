@@ -41,6 +41,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.resource.PathPackResources;
+import org.jetbrains.annotations.Contract;
 import org.slf4j.Logger;
 import slimeknights.mantle.client.model.NBTKeyModel;
 import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
@@ -52,6 +53,7 @@ import slimeknights.tconstruct.tools.client.material.ThrownToolRenderer;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import java.nio.file.Path;
+import java.util.Objects;
 import java.util.Optional;
 
 @Mod(TCompat.MOD_ID)
@@ -63,7 +65,7 @@ public class TCompat {
 
     public static final RegistryObject<CreativeModeTab> GENERAL_TAB = CREATIVE_TABS.register("general", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.tcompat.general"))
-            .icon(() -> TCFluids.iceBlood.getBucket().getDefaultInstance())
+            .icon(() -> Objects.requireNonNull(TCFluids.iceBlood.getBucket()).getDefaultInstance())
             .displayItems(GlobalInit::collectGeneralItems)
             .build());
 
@@ -104,7 +106,7 @@ public class TCompat {
     }
 
 
-
+    @Contract("_ -> new")
     public static ResourceLocation getResource(String name) {
         if (name.contains(":")) {
             return ResourceLocation.tryParse(name);

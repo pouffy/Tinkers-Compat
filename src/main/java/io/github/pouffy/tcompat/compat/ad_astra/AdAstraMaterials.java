@@ -1,6 +1,6 @@
 package io.github.pouffy.tcompat.compat.ad_astra;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import io.github.pouffy.tcompat.compat.CompatToolStats;
 import io.github.pouffy.tcompat.compat.tinkersjewelry.PlainRingMaterialStats;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
@@ -12,7 +12,7 @@ import static net.minecraft.world.item.Tiers.NETHERITE;
 
 public class AdAstraMaterials {
 
-    public static final MaterialId desh = MaterialBuilder.material("ad_astra", "desh").excludeFromLoot()
+    public static final MaterialId desh = MaterialCreator.material("ad_astra", "desh").excludeFromLoot()
             .flavor("A very confusing battery.")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
@@ -37,7 +37,7 @@ public class AdAstraMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF7a3045, 0xFF9e4539, 0xFFb25b3d, 0xFFc77142, 0xFFd68d4d, 0xFFe9ba5d))
             .buildMaterial();
 
-    public static final MaterialId ostrum = MaterialBuilder.material("ad_astra", "ostrum").excludeFromLoot()
+    public static final MaterialId ostrum = MaterialCreator.material("ad_astra", "ostrum").excludeFromLoot()
             .flavor("Like netherite except it really isn't.")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t
@@ -62,7 +62,7 @@ public class AdAstraMaterials {
             .spriteInfo(s -> s.fallbacks("metal").repairKit().statType(PlainRingMaterialStats.ID).armor().meleeHarvest().ranged().sixColor(0xFF42313d, 0xFF553e4b, 0xFF775360, 0xFF925e64, 0xFFa86c73, 0xFFbf7a82))
             .buildMaterial();
 
-    public static final MaterialId calorite = MaterialBuilder.material("ad_astra", "calorite").excludeFromLoot()
+    public static final MaterialId calorite = MaterialCreator.material("ad_astra", "calorite").excludeFromLoot()
             .flavor("You better watch your calorite.")
             .data(d -> d.tier(3).order(1).craftable(false))
             .traits(t -> t

@@ -9,42 +9,22 @@
       "tconstruct:repair_kit",
       "tconstruct:maille",
       "tconstruct:armor_maille",
+      "tconstruct:ribcage",
       "tconstruct:handle"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",
       "color_mapping": {
         "type": "tconstruct:grey_to_color",
-        "palette": [
-          {
-            "color": "FF000000",
-            "grey": 0
-          },
-          {
-            "color": "FF200E07",
-            "grey": 63
-          },
-          {
-            "color": "FF3E291B",
-            "grey": 102
-          },
-          {
-            "color": "FF5F473F",
-            "grey": 140
-          },
-          {
-            "color": "FF7E675E",
-            "grey": 178
-          },
-          {
-            "color": "FF9A887C",
-            "grey": 216
-          },
-          {
-            "color": "FFDBCCA7",
-            "grey": 255
-          }
-        ]
+        "palette": {
+          "000": "FF000000",
+          "063": "FF200E07",
+          "102": "FF3E291B",
+          "140": "FF5F473F",
+          "178": "FF7E675E",
+          "216": "FF9A887C",
+          "255": "FFDBCCA7"
+        }
       }
     }
   }

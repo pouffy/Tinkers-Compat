@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.TCompat;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -22,10 +23,13 @@ public class TCMaterialDataProv extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            if(builder.isVariant()) continue;
-            addMaterial(builder.getId().getId(), builder.getData().getTier(), builder.getData().getOrder(), builder.getData().isCraftable(), builder.getData().isHidden(), builder.getData().getCondition());
+        int count = 0;
+        for (MaterialCreator creator : MaterialCreator.materialCreators) {
+            if(creator.isVariant()) continue;
+            addMaterial(creator.getId().getId(), creator.getData().getTier(), creator.getData().getOrder(), creator.getData().isCraftable(), creator.getData().isHidden(), creator.getData().getCondition());
+            count++;
         }
+        TCompat.LOGGER.info("Added data for {} materials", count);
     }
 
     private ICondition tagFull(String namespace, String path) {

@@ -18,5 +18,6 @@
   "pattern_item": {
     "tag": "tconstruct:casts/sand"
   },
-  "result": "tcompat:lip_guard_sand_cast"
+  "result": "tcompat:lip_guard_sand_cast",
+  "title_key": "tconstruct:sand_cast"
 }

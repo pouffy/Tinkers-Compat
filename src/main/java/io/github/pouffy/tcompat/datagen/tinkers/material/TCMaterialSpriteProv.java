@@ -1,7 +1,7 @@
 package io.github.pouffy.tcompat.datagen.tinkers.material;
 
 import io.github.pouffy.tcompat.TCompat;
-import io.github.pouffy.tcompat.common.material.MaterialBuilder;
+import io.github.pouffy.tcompat.common.material.MaterialCreator;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
@@ -34,25 +34,32 @@ public class TCMaterialSpriteProv extends AbstractMaterialSpriteProvider {
 
     @Override
     protected void addAllMaterials() {
-        for (MaterialBuilder builder : MaterialBuilder.materialBuilders) {
-            TCompat.LOGGER.info("Adding sprite info for material: {}", builder.getId());
-            var sBuilder = buildMaterial(builder.getId());
-            var fallbacks = builder.getRenderInfo().getFallbacks();
+        int count = 0;
+        int variantCount = 0;
+        for (MaterialCreator creator : MaterialCreator.materialCreators) {
+            TCompat.LOGGER.info("Adding sprite info for material: {}", creator.getId());
+            var sBuilder = buildMaterial(creator.getId());
+            var fallbacks = creator.getRenderInfo().getFallbacks();
             if (!Arrays.equals(fallbacks, new String[0])) {
                 sBuilder.fallbacks(fallbacks);
             }
-            var stats = builder.getSpriteInfo().getStatTypes().build().toArray(new MaterialStatsId[0]);
+            var stats = creator.getSpriteInfo().getStatTypes().build().toArray(new MaterialStatsId[0]);
             if (!Arrays.equals(stats, new MaterialStatsId[0])) {
                 sBuilder.statType(stats);
             }
-            var transformer = builder.getSpriteInfo().getTransformer();
+            var transformer = creator.getSpriteInfo().getTransformer();
             if (transformer != null) {
                 sBuilder.transformer(transformer);
             } else {
-                TCompat.LOGGER.warn("Missing sprite transformer for material: {}! This will cause render info issues!", builder.getId());
+                TCompat.LOGGER.warn("Missing sprite transformer for material: {}! This will cause render info issues!", creator.getId());
             }
-            sBuilder.variant(builder.isVariant());
+            sBuilder.variant(creator.isVariant());
+            if (creator.isVariant()) {
+                variantCount++;
+            } else count++;
         }
+        TCompat.LOGGER.info("Added sprite info for {} materials", count);
+        TCompat.LOGGER.info("Added sprite info for {} material variants", variantCount);
     }
 
     public static ISpriteTransformer transformerFromSprite(ResourceLocation texture, int frames, int highlightColor) {
