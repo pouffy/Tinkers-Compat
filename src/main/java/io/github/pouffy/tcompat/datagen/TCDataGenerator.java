@@ -20,11 +20,15 @@ import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import slimeknights.tconstruct.TConstruct;
+import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPaletteDebugGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
+import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
+import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -62,6 +66,25 @@ public class TCDataGenerator {
         generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, new TinkerPartSpriteProvider(), materialSprites));
         //For TCompat Tools
         generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, partSprites, GlobalInit.getStatOverrides(), materialSprites, new TinkerMaterialSpriteProvider()));
+        // AE2: head sprites for Tinkers' nether quartz, into the pack only added when AE2 is installed (see AE2Init)
+        PackOutput ae2QuartzPack = new PackOutput(packOutput.getOutputFolder().resolve("packs/ae2_quartz"));
+        AbstractMaterialSpriteProvider quartzHeads = new AbstractMaterialSpriteProvider() {
+            @Override
+            public String getName() {
+                return "Tinker's Compatability AE2 Quartz Head Sprites";
+            }
+
+            @Override
+            protected void addAllMaterials() {
+                // same palette as Tinkers' quartz arrow heads
+                buildMaterial(MaterialIds.quartz)
+                        .statType(HeadMaterialStats.ID)
+                        .fallbacks("crystal", "rock")
+                        .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF6F5D5A).addARGB(102, 0xFF897B73).addARGB(140, 0xFFB6A48E).addARGB(178, 0xFFD4CABA).addARGB(216, 0xFFEAE5DE).addARGB(255, 0xFFF7F5F2).build());
+            }
+        };
+        generator.addProvider(client, new MaterialPartTextureGenerator(ae2QuartzPack, existingFileHelper, new TinkerPartSpriteProvider(), quartzHeads));
+        generator.addProvider(client, new MaterialPartTextureGenerator(ae2QuartzPack, existingFileHelper, partSprites, GlobalInit.getStatOverrides(), quartzHeads));
         generator.addProvider(client, new GeneratorPartTextureJsonGenerator(packOutput, TCompat.MOD_ID, partSprites));
         generator.addProvider(client, new GeneratorPartTextureJsonGenerator(packOutput, TConstruct.MOD_ID, partSprites));
         generator.addProvider(server, new TCModifierProv(packOutput));

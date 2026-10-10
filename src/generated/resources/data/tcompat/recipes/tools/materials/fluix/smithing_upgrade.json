@@ -10,7 +10,8 @@
     }
   ],
   "from": [
-    "tcompat:certus_quartz"
+    "tcompat:certus_quartz",
+    "tconstruct:quartz"
   ],
   "template": {
     "item": "ae2:fluix_upgrade_smithing_template"

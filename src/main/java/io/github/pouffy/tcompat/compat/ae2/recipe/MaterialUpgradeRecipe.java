@@ -37,7 +37,7 @@ import java.util.List;
 
 /**
  * Tinker Station recipe that swaps every part made of one of the {@code from} materials to {@code to}, consuming {@code inputs}.
- * Purely a material swap: no modifier is added and no slot is used. Used for AE2's certus quartz -> fluix upgrade.
+ * Purely a material swap: no modifier is added and no slot is used. Used for AE2's certus/nether quartz -> fluix upgrade.
  */
 public class MaterialUpgradeRecipe implements ITinkerStationRecipe, IMultiRecipe<IDisplayToolTinkering> {
     public static final RecordLoadable<MaterialUpgradeRecipe> LOADER = RecordLoadable.create(

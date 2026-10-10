@@ -264,15 +264,15 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         gemMaterialRecipe(ae2, AE2Materials.certusQuartz, folder, "certus_quartz", false, false, true);
         materialRecipe(ae2, AE2Materials.fluix, ItemNameIngredient.from(TCompat.getResource("ae2:fluix_crystal")), 1, 1, folder + "fluix/gem");
         materialRecipe(ae2, AE2Materials.fluix, ItemNameIngredient.from(TCompat.getResource("ae2:fluix_block")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("ae2:fluix_crystal")), folder + "fluix/block");
-        // fluix parts are not craftable: like AE2, a certus quartz tool is upgraded with the fluix template + a fluix block
+        // fluix parts are not craftable: like AE2, a certus or nether quartz tool is upgraded with the fluix template + a fluix block
         LoadableFinishedRecipe.save(ae2, MaterialUpgradeRecipe.LOADER, new MaterialUpgradeRecipe(location(folder + "fluix/upgrade"),
-                Ingredient.of(TinkerTags.Items.MULTIPART_TOOL), List.of(AE2Materials.certusQuartz), AE2Materials.fluix,
+                Ingredient.of(TinkerTags.Items.MULTIPART_TOOL), List.of(AE2Materials.certusQuartz, MaterialIds.quartz), AE2Materials.fluix,
                 List.of(SizedIngredient.of(ItemNameIngredient.from(TCompat.getResource("ae2:fluix_upgrade_smithing_template"))),
                         SizedIngredient.of(ItemNameIngredient.from(TCompat.getResource("ae2:fluix_block"))))));
         // same upgrade in the smithing table, like AE2
         LoadableFinishedRecipe.save(ae2, SmithingMaterialUpgradeRecipe.LOADER, new SmithingMaterialUpgradeRecipe(location(folder + "fluix/smithing_upgrade"),
                 ItemNameIngredient.from(TCompat.getResource("ae2:fluix_upgrade_smithing_template")), Ingredient.of(TinkerTags.Items.MULTIPART_TOOL),
-                List.of(AE2Materials.certusQuartz), AE2Materials.fluix, ItemNameIngredient.from(TCompat.getResource("ae2:fluix_block"))));
+                List.of(AE2Materials.certusQuartz, MaterialIds.quartz), AE2Materials.fluix, ItemNameIngredient.from(TCompat.getResource("ae2:fluix_block"))));
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {
