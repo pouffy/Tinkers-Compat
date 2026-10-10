@@ -1,0 +1,22 @@
+{
+  "type": "tcompat:smithing_material_upgrade",
+  "addition": {
+    "item": "ae2:fluix_block"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "from": [
+    "tcompat:certus_quartz"
+  ],
+  "template": {
+    "item": "ae2:fluix_upgrade_smithing_template"
+  },
+  "to": "tcompat:fluix",
+  "tools": {
+    "tag": "tconstruct:modifiable/multipart"
+  }
+}

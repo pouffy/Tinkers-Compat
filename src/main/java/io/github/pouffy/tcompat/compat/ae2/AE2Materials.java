@@ -20,7 +20,8 @@ public class AE2Materials {
 
     public static final MaterialId fluix = MaterialCreator.material("ae2", "fluix")
             .flavor("Charged with possibility.")
-            .data(d -> d.tier(2).order(25).craftable(true))
+            // like AE2: not crafted directly, certus tools are upgraded in the Tinker Station (see MaterialUpgradeRecipe)
+            .data(d -> d.tier(2).order(25).craftable(false))
             .traits(t -> t.trait(MaterialRegistry.MELEE_HARVEST, ModifierIds.luck))
             .stats(s -> s.stat(new HeadMaterialStats(750, 7.2f, IRON, 2.4f)))
             .renderInfo(r -> r.color(0x915dcd).fallbacks("crystal", "rock"))
