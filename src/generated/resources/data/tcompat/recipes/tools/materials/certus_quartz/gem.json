@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gems/certus_quartz"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gems/certus_quartz"
+  },
+  "material": "tcompat:certus_quartz",
+  "needed": 1,
+  "value": 1
+}

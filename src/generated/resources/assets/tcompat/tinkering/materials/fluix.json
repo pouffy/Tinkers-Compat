@@ -1,0 +1,29 @@
+{
+  "color": "FF915DCD",
+  "fallbacks": [
+    "crystal",
+    "rock"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:head",
+      "tconstruct:repair_kit"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": {
+          "000": "FF000000",
+          "063": "FF25305B",
+          "102": "FF4E3C95",
+          "140": "FF614EAB",
+          "178": "FF915DCD",
+          "216": "FFA470E0",
+          "234": "FFC090F7",
+          "255": "FFDBBCFF"
+        }
+      }
+    }
+  }
+}

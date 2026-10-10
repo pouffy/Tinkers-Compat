@@ -3,6 +3,7 @@ package io.github.pouffy.tcompat.common.util;
 import io.github.pouffy.tcompat.TCompat;
 import io.github.pouffy.tcompat.compat.GlobalInit;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraInit;
+import io.github.pouffy.tcompat.compat.ae2.AE2Init;
 import io.github.pouffy.tcompat.compat.aether.AetherInit;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxInit;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRInit;
@@ -45,6 +46,7 @@ public class CompatHelper {
 
     static {
         compatInitializers.put("ad_astra", AdAstraInit::init);
+        compatInitializers.put("ae2", AE2Init::init);
         compatInitializers.put("aether", AetherInit::init);
         compatInitializers.put("aether_redux", AetherReduxInit::init);
         compatInitializers.put("aether_treasure_reforging", AetherTRInit::init);

@@ -9,6 +9,7 @@ import io.github.pouffy.tcompat.common.material.TCWoods;
 import io.github.pouffy.tcompat.compat.RockMaterials;
 import io.github.pouffy.tcompat.compat.WoodMaterials;
 import io.github.pouffy.tcompat.compat.ad_astra.AdAstraMaterials;
+import io.github.pouffy.tcompat.compat.ae2.AE2Materials;
 import io.github.pouffy.tcompat.compat.aether.AetherMaterials;
 import io.github.pouffy.tcompat.compat.aether_redux.AetherReduxMaterials;
 import io.github.pouffy.tcompat.compat.aether_treasure_reforging.AetherTRMaterials;
@@ -82,6 +83,7 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         Consumer<FinishedRecipe> cataclysm = withCondition(consumer, modLoaded("cataclysm"));
         Consumer<FinishedRecipe> malum = withCondition(consumer, modLoaded("malum"));
         Consumer<FinishedRecipe> create = withCondition(consumer, modLoaded("create"));
+        Consumer<FinishedRecipe> ae2 = withCondition(consumer, modLoaded("ae2"));
 
         // Streamline variant recipes
         MaterialCreator.woodMaterials.forEach((builder, woodType) -> {
@@ -252,6 +254,10 @@ public class TCMaterialRecipeProv extends TCBaseRecipeProvider implements ITCMat
         materialRecipe(speciesConsumer, SpeciesMaterials.wickedWax, ItemNameIngredient.from(TCompat.getResource("species:wicked_wax")), 1, 1, folder + "wicked_wax");
 
         metalMaterialRecipe(create, CreateMaterials.brass, folder, "brass", true);
+
+        gemMaterialRecipe(ae2, AE2Materials.certusQuartz, folder, "certus_quartz", false, false, true);
+        materialRecipe(ae2, AE2Materials.fluix, ItemNameIngredient.from(TCompat.getResource("ae2:fluix_crystal")), 1, 1, folder + "fluix/gem");
+        materialRecipe(ae2, AE2Materials.fluix, ItemNameIngredient.from(TCompat.getResource("ae2:fluix_block")), 4, 1, ItemNameOutput.fromName(TCompat.getResource("ae2:fluix_crystal")), folder + "fluix/block");
     }
 
     private void addMaterialSmeltery(Consumer<FinishedRecipe> consumer) {

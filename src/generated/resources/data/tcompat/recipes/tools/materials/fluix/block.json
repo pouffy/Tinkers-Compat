@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "ingredient": {
+    "item": "ae2:fluix_block"
+  },
+  "leftover": "ae2:fluix_crystal",
+  "material": "tcompat:fluix",
+  "needed": 1,
+  "value": 4
+}

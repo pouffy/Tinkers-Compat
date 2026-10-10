@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/certus_quartz"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/certus_quartz"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:gems/certus_quartz"
+  },
+  "material": "tcompat:certus_quartz",
+  "needed": 1,
+  "value": 4
+}

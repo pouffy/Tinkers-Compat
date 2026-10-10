@@ -108,6 +108,11 @@ dependencies {
     // Deeper and Darker
     modCompileOnly("maven.modrinth:deeperdarker:1.3.3-forge+1.20.1")
     modExtraRuntimeOnly("maven.modrinth:deeperdarker:1.3.3-forge+1.20.1")
+    // Applied Energistics 2
+    modCompileOnly("maven.modrinth:ae2:15.4.10")
+    modExtraRuntimeOnly("maven.modrinth:ae2:15.4.10")
+    modCompileOnly("maven.modrinth:guideme:20.1.14")
+    modExtraRuntimeOnly("maven.modrinth:guideme:20.1.14")
 
     // Create
     modCompileOnly("com.simibubi.create:create-1.20.1:6.0.8-290:slim")
