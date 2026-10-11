@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea or now compatability
+about: Suggest an idea or new compatability
 title: "[Mod Name] Integration"
 labels: suggestion
 assignees: pouffy
