@@ -4,6 +4,10 @@ repositories {
     flatDir {
         dir 'libs'
     }
+    maven {
+        name = "DevAuth Maven"
+        url = uri("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
+    }
     maven { // JEI mirror, AE2
         name = "ModMaven"
         url = "https://modmaven.dev"

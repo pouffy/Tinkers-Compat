@@ -6,6 +6,8 @@ dependencies {
     modImplementation("slimeknights.mantle:Mantle:${minecraft_version}-${mantle_version}")
     modImplementation("slimeknights.tconstruct:TConstruct:${minecraft_version}-${tconstruct_version}")
 
+    runtimeOnly("me.djtheredstoner:DevAuth-forge-latest:1.2.1")
+
     modExtraRuntimeOnly("curse.maven:tconjei-974154:6841685")
     modExtraRuntimeOnly("curse.maven:blessfulled-1182590:6624691")
 
