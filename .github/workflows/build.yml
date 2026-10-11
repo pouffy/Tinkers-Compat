@@ -1,5 +1,13 @@
 name: Build
-on: [ push ]
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - 'src/**'
+      - 'build.gradle'
+      - 'gradle.properties'
+      - 'gradle/**'
 
 jobs:
   build:
@@ -41,8 +49,9 @@ jobs:
         run: |
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "jars<<$EOF" >> $GITHUB_OUTPUT
-          find ./build/libs/ -type f -name "*.jar" ! -name "*-sources.jar" >> $GITHUB_OUTPUT
+          find ./build/libs/ -type f -name "*.jar" ! -name "*-sources.jar" ! -name "*-javadoc.jar" ! -name "*-slim.jar" ! -name "*-dev.jar" >> $GITHUB_OUTPUT
           echo "$EOF" >> $GITHUB_OUTPUT
+
       - name: Send building message to discord
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
