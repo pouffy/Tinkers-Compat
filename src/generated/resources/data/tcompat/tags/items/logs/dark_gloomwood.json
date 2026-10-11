@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "betternether:gloomwood_dark_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_gloomwood_dark_log",
+      "required": false
+    },
+    {
+      "id": "#betternether:gloomwood_dark_logs",
+      "required": false
+    }
+  ]
+}

@@ -321,6 +321,14 @@
       "required": false
     },
     {
+      "id": "#tcompat:planks/gloomwood",
+      "required": false
+    },
+    {
+      "id": "#tcompat:planks/dark_gloomwood",
+      "required": false
+    },
+    {
       "id": "#malum:runewood_planks",
       "required": false
     },

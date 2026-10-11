@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "betternether"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:logs/gloomwood"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tcompat:planks/gloomwood"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tcompat:logs/gloomwood"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "tcompat:planks/gloomwood"
+  },
+  "material": "tconstruct:wood#gloomwood",
+  "needed": 1,
+  "value": 4
+}

@@ -120,6 +120,8 @@ public enum TCWoods implements StringRepresentable {
     NETHER_MUSHROOM(builder("betternether").stem()),
     ANCHOR_TREE(builder("betternether")),
     NETHER_SAKURA(builder("betternether")),
+    GLOOMWOOD(builder("betternether")),
+    DARK_GLOOMWOOD(builder("betternether").specialPlankId("betternether", "gloomwood_dark_planks").specialLogId("betternether", "gloomwood_dark_log").specialLogTag("betternether", "gloomwood_dark_logs")),
 
     //Malum
     RUNEWOOD(builder("malum").redirectPlankTag("malum", "runewood_planks")),

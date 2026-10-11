@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "betternether:gloomwood_dark_planks",
+      "required": false
+    },
+    {
+      "id": "quark:vertical_gloomwood_dark_planks",
+      "required": false
+    },
+    {
+      "id": "everycompat:q/betternether/vertical_gloomwood_dark_planks",
+      "required": false
+    }
+  ]
+}

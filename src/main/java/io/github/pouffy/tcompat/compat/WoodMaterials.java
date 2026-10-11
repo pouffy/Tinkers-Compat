@@ -91,6 +91,8 @@ public class WoodMaterials {
             netherMushroom = woodVariant(TCWoods.NETHER_MUSHROOM,           0xFFcfc29d, 0xFFded2b0, 0xFFe9e1ca, 0xFFeee8d6, 0xFFf4f0e5, 0xFFf9f7f1, 0xFFfaf9f4),
             anchorTree = woodVariant(TCWoods.ANCHOR_TREE,                   0xFF254622, 0xFF2d562a, 0xFF32622f, 0xFF3b7337, 0xFF3e793a, 0xFF458540, 0xFF4d8f47),
             netherSakura = woodVariant(TCWoods.NETHER_SAKURA,               0xFF491e12, 0xFF562618, 0xFF6a3221, 0xFF753926, 0xFF7a3c29, 0xFF8d412c, 0xFF984830),
+            gloomwood = woodVariant(TCWoods.GLOOMWOOD,                      0xFF6b8287, 0xFF7e9599, 0xFF8ea3a5, 0xFFa1b6ab, 0xFFbbc6b8, 0xFFd4d6c7, 0xFFe7e5d9),
+            darkGloomwood = woodVariant(TCWoods.DARK_GLOOMWOOD,             0xFF131123, 0xFF17152a, 0xFF1a1930, 0xFF1d1f38, 0xFF232c44, 0xFF2c3d54, 0xFF415872),
     //Deeper and Darker
             echo = woodVariant(TCWoods.ECHO,                                0xFF708b78, 0xFF78907f, 0xFF819988, 0xFF98a07b, 0xFFa5b287, 0xFFb0ba99, 0xFFb7c1a1),
             blooming = woodVariant(TCWoods.BLOOMING,                        0xFF556f70, 0xFF597779, 0xFF617d83, 0xFF6d8d8f, 0xFF83a2a0, 0xFF90aaa8, 0xFF97b3b1);

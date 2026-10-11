@@ -321,6 +321,14 @@
       "required": false
     },
     {
+      "id": "#tcompat:logs/gloomwood",
+      "required": false
+    },
+    {
+      "id": "#tcompat:logs/dark_gloomwood",
+      "required": false
+    },
+    {
       "id": "#tcompat:logs/runewood",
       "required": false
     },

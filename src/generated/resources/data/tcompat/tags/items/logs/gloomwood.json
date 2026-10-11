@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "betternether:gloomwood_log",
+      "required": false
+    },
+    {
+      "id": "betternether:stripped_gloomwood_log",
+      "required": false
+    },
+    {
+      "id": "#betternether:gloomwood_logs",
+      "required": false
+    }
+  ]
+}
