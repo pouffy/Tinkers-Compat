@@ -1,7 +1,7 @@
 
 
-# Tinker's Compatibility
-**Compatibility between numerous mods and Tinker's Construct for 1.20.1+**
+# Tinkers' Compatibility
+**Compatibility between numerous mods and Tinkers' Construct for 1.20.1+**
 
 [Join My Discord](https://discord.gg/9N8cZh3hdB)
 
