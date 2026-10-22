@@ -18,7 +18,7 @@ public class CataclysmMaterials {
 
     public static final MaterialId ancientMetal = MaterialCreator.material("cataclysm", "ancient_metal")
             .flavor("Koboleton's go-to.")
-            .data(d -> d.tier(4).order(2).craftable(false)).excludeFromLoot()
+            .data(d -> d.tier(3).order(2).craftable(false)).excludeFromLoot()
             .traits(t -> t
                     .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.sandstorm)
                     .trait(ARMOR, TCModifiers.cataclysmic)
@@ -49,14 +49,14 @@ public class CataclysmMaterials {
             )
             .stats(s ->
                     s.stat(
-                            new HeadMaterialStats(750, 8.0F, DIAMOND, 2.0F),
-                            HandleMaterialStats.multipliers().durability(0.89f).build(),
+                            new HeadMaterialStats(550, 8.0F, DIAMOND, 2.0F),
+                            HandleMaterialStats.multipliers().attackSpeed(0.89f).build(),
                             StatlessMaterialStats.BINDING,
-                            new LimbMaterialStats(750, 0.1f, 0, 0.05f),
+                            new LimbMaterialStats(550, 0.1f, 0, 0.05f),
                             new GripMaterialStats(0.15f, 0.1f, 2.0F),
-                            PlatingMaterialStats.builder().shieldDurability(840).buildShield()
+                            PlatingMaterialStats.builder().shieldDurability(720).buildShield()
                     ).statOptional(
-                            CompatToolStats.plainRing(750, 1.1f)
+                            CompatToolStats.plainRing(550, 1.1f)
                     )
             )
             .renderInfo(r -> r.color(0x485063).fallbacks("metal"))
@@ -69,7 +69,7 @@ public class CataclysmMaterials {
             .traits(t -> t
                     .trait(StatlessMaterialStats.MAILLE.getIdentifier(), TCModifiers.cataclysmic, TCModifiers.ghostly)
                     .trait(StatlessMaterialStats.BOWSTRING.getIdentifier(), CataclysmInit.phantasmic)
-                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.glowing_gem, 1))
+                    .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), TCModifiers.ghostly)
             )
             .stats(s ->
                     s.stat(
@@ -85,7 +85,7 @@ public class CataclysmMaterials {
 
     public static final MaterialId lacrima = MaterialCreator.material("cataclysm", "lacrima")
             .flavor("Tears of the sea.")
-            .data(d -> d.tier(3).order(2).craftable(true)).excludeFromLoot()
+            .data(d -> d.tier(4).order(2).craftable(true)).excludeFromLoot()
             .traits(t -> t
                     .trait(HeadMaterialStats.ID, TCModifiers.cataclysmic, CataclysmInit.tidal)
                     .trait(CompatToolStats.Statless.CUT_GEM.getIdentifier(), new ModifierEntry(TCModifiers.swim_gem, 1))
@@ -93,7 +93,7 @@ public class CataclysmMaterials {
             )
             .stats(s ->
                     s.stat(
-                            new HeadMaterialStats(2800, 9.0F, NETHERITE, 2.0F),
+                            new HeadMaterialStats(1480, 9.0F, NETHERITE, 2.0F),
                             HandleMaterialStats.multipliers().durability(1.1f).build()
                     ).statOptional(
                             CompatToolStats.Statless.CUT_GEM,
@@ -120,10 +120,10 @@ public class CataclysmMaterials {
             .traits(t -> t.trait(GripMaterialStats.ID, CataclysmInit.fluxed).trait(HandleMaterialStats.ID, TCModifiers.standstill))
             .stats(s ->
                     s.stat(
-                            HandleMaterialStats.multipliers().durability(1.4f).build(), StatlessMaterialStats.BINDING,
+                            HandleMaterialStats.multipliers().attackDamage(1.2f).build(), StatlessMaterialStats.BINDING,
                             new GripMaterialStats(0.14f, 0.05f, 2.0F)
                     ).statOptional(
-                            CompatToolStats.plainRing(2800, 1.4f)
+                            CompatToolStats.plainRing(1480, 1.4f)
                     )
             )
             .renderInfo(r -> r.color(0x6e7786).fallbacks("metal"))

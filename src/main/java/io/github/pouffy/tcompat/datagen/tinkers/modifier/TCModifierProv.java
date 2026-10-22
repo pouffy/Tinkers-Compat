@@ -211,18 +211,18 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).attacker(allythropodPredicate.inverted()).eachLevel(3.5f));
 
         buildModifier(TCModifiers.cataclysmic, modLoaded("cataclysm"))
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(125)
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(225)
                 .addModule(new DurabilityBarColorModule(0xfb6b1d))
-                .addModule(ReduceToolDamageModule.builder().flat(0.85F));
+                .addModule(ReduceToolDamageModule.builder().flat(0.75F));
         buildModifier(TCModifiers.ghostly, modLoaded("cataclysm"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         IJsonPredicate<LivingEntity> ancientRemnant = LivingEntityPredicate.tag(TCEntityTagProv.create("cataclysm:team_ancient_remnant"));
         buildModifier(TCModifiers.archaeologist, modLoaded("cataclysm"))
-                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE)).target(ancientRemnant).percent().eachLevel(0.25f))
-                .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(ancientRemnant).percent().eachLevel(0.35f))
-                .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(ancientRemnant).amount(0.75f, 0.25f));
+                .addModule(ConditionalMeleeDamageModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.MELEE)).target(ancientRemnant).percent().eachLevel(2.0f))
+                .addModule(ConditionalPowerModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.RANGED)).target(ancientRemnant).percent().eachLevel(0.75f))
+                .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(ancientRemnant).eachLevel(2.5f));
         buildModifier(TCModifiers.standstill, modLoaded("cataclysm"))
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(300)
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS).priority(500)
                 .addModule(KnockbackModule.builder().formula().constant(0.0f).build());
         buildModifier(TCModifiers.ignitium, modLoaded("cataclysm"))
                 .addModule(ModifierRequirementsModule.builder().requireModifier(ModifierIds.netherite, 1).translationKey("recipe.tcompat.requirement.ignitium").build())

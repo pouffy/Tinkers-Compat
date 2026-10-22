@@ -47,7 +47,7 @@ public class SandstormModifier extends NoLevelsModifier implements MeleeHitModif
         if (attacker instanceof Player player) {
             charged = player.getAttackStrengthScale(0.5F) > 0.9F;
         }
-        if (charged) {
+        if (charged && attacker.getRandom().nextFloat() < 0.25f) {
             Level worldIn = attacker.level();
             if (!worldIn.isClientSide) {
                 stack.hurtAndBreak(1, attacker, (p_43388_) -> p_43388_.broadcastBreakEvent(attacker.getUsedItemHand()));

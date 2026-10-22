@@ -7,14 +7,14 @@
       "melee_damage": 2.0
     },
     "tconstruct:handle": {
-      "durability": 0.4,
-      "melee_damage": 0.0,
+      "durability": 0.0,
+      "melee_damage": 0.2,
       "melee_speed": 0.0,
       "mining_speed": 0.0
     },
     "tinkersjewelry:plain_ring": {
       "amplification": 1.4,
-      "durability": 2800,
+      "durability": 1480,
       "optional": true
     }
   }

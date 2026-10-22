@@ -11,8 +11,8 @@
     },
     {
       "type": "tconstruct:reduce_tool_damage",
-      "flat": 0.85
+      "flat": 0.75
     }
   ],
-  "priority": 125
+  "priority": 225
 }
