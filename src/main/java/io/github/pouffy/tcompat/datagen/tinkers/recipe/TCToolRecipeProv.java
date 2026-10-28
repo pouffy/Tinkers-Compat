@@ -53,14 +53,14 @@ public class TCToolRecipeProv extends TCBaseRecipeProvider implements IMaterialR
                 .setCost(2)
                 .save(iceandfireConsumer, location(partFolder + "builder/" + getResource("tconstruct", "boots_plating").getPath()));
 
-        this.partRecipes(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), GlobalInit.dartBarrel, GlobalInit.dartBarrelCast, 2, partFolder, castFolder);
-        this.partRecipes(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), GlobalInit.lipGuard, GlobalInit.lipGuardCast, 1, partFolder, castFolder);
+        this.partRecipes(withCondition(consumer, new DartShooterCondition()), GlobalInit.dartBarrel, GlobalInit.dartBarrelCast, 2, partFolder, castFolder);
+        this.partRecipes(withCondition(consumer, new DartShooterCondition()), GlobalInit.lipGuard, GlobalInit.lipGuardCast, 1, partFolder, castFolder);
 
 
         toolBuilding(consumer, GlobalInit.glaive, folder);
 
-        toolBuilding(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), GlobalInit.dartShooter, folder);
-        ToolBuildingRecipeBuilder.toolBuildingRecipe(GlobalInit.dart.get()).outputSize(4).save(withCondition(consumer, or(modLoaded("aether"), new DartShooterCondition())), this.prefix(GlobalInit.dart, folder));
+        toolBuilding(withCondition(consumer, new DartShooterCondition()), GlobalInit.dartShooter, folder);
+        ToolBuildingRecipeBuilder.toolBuildingRecipe(GlobalInit.dart.get()).outputSize(4).save(withCondition(consumer, new DartShooterCondition()), this.prefix(GlobalInit.dart, folder));
 
     }
 

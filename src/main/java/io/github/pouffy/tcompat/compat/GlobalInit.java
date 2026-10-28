@@ -17,7 +17,7 @@ import io.github.pouffy.tcompat.compat.aether.item.LipGuardMaterialStats;
 import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartItem;
 import io.github.pouffy.tcompat.compat.aether.item.ModifiableDartShooter;
 import io.github.pouffy.tcompat.compat.ice_and_fire.item.ModifiableGlaiveItem;
-import io.github.pouffy.tcompat.config.TCompatConfig;
+import io.github.pouffy.tcompat.config.CommonConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
@@ -195,7 +195,7 @@ public class GlobalInit extends CompatInitializer {
     public static void addToolTabItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output tab) {
         Consumer<ItemStack> output = tab::accept;
         ToolBuildHandler.addVariants(output, glaive.get(), "");
-        if (CompatHelper.isLoaded("aether") || TCompatConfig.SERVER.forceEnableDartShooters.get()) {
+        if (CommonConfig.dartShootersEnabled()) {
             ToolBuildHandler.addVariants(output, dartShooter.get(), "");
             ToolBuildHandler.addVariants(output, dart.get(), "");
         }
@@ -203,14 +203,14 @@ public class GlobalInit extends CompatInitializer {
 
     public static void addPartTabItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output tab) {
         Consumer<ItemStack> output = tab::accept;
-        if (CompatHelper.isLoaded("aether") || TCompatConfig.SERVER.forceEnableDartShooters.get()) {
+        if (CommonConfig.dartShootersEnabled()) {
             dartBarrel.get().addVariants(output, "");
             lipGuard.get().addVariants(output, "");
         }
     }
 
     public static void addCasts(CreativeModeTab.Output output, Function<CastItemObject, ItemLike> getter) {
-        if (CompatHelper.isLoaded("aether") || TCompatConfig.SERVER.forceEnableDartShooters.get()) {
+        if (CommonConfig.dartShootersEnabled()) {
             output.accept(getter.apply(dartBarrelCast));
             output.accept(getter.apply(lipGuardCast));
         }

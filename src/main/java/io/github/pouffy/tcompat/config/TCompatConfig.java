@@ -7,6 +7,8 @@ import org.apache.commons.lang3.tuple.Pair;
 
 public class TCompatConfig {
 
+    public static final ForgeConfigSpec COMMON_SPEC;
+    public static final CommonConfig COMMON;
     public static final ForgeConfigSpec SERVER_SPEC;
     public static final ServerConfig SERVER;
     public static final ForgeConfigSpec CLIENT_SPEC;
@@ -15,6 +17,10 @@ public class TCompatConfig {
     private TCompatConfig() {}
 
     static {
+        Pair<CommonConfig, ForgeConfigSpec> commonPair = new ForgeConfigSpec.Builder().configure(CommonConfig::new);
+        COMMON = commonPair.getLeft();
+        COMMON_SPEC = commonPair.getRight();
+
         Pair<ServerConfig, ForgeConfigSpec> serverPair = new ForgeConfigSpec.Builder().configure(ServerConfig::new);
         SERVER = serverPair.getLeft();
         SERVER_SPEC = serverPair.getRight();
@@ -25,6 +31,7 @@ public class TCompatConfig {
     }
 
     public static void register(ModLoadingContext modLoadingContext) {
+        modLoadingContext.registerConfig(ModConfig.Type.COMMON, TCompatConfig.COMMON_SPEC, String.format("%s-common.toml", "tcompat"));
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, TCompatConfig.SERVER_SPEC, String.format("%s-server.toml", "tcompat"));
         modLoadingContext.registerConfig(ModConfig.Type.CLIENT, TCompatConfig.CLIENT_SPEC, String.format("%s-client.toml", "tcompat"));
     }

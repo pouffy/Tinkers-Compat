@@ -1,6 +1,7 @@
 package io.github.pouffy.tcompat.common.data.condition;
 
 import com.google.gson.JsonObject;
+import io.github.pouffy.tcompat.config.CommonConfig;
 import io.github.pouffy.tcompat.config.TCompatConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -9,7 +10,7 @@ import net.minecraftforge.common.crafting.conditions.IConditionSerializer;
 import static io.github.pouffy.tcompat.TCompat.getResource;
 
 public class DartShooterCondition implements ICondition {
-    private static final ResourceLocation NAME = getResource("force_enabled_dart_shooters");
+    private static final ResourceLocation NAME = getResource("dart_shooters");
 
     @Override
     public ResourceLocation getID() {
@@ -18,7 +19,7 @@ public class DartShooterCondition implements ICondition {
 
     @Override
     public boolean test(IContext iContext) {
-        return TCompatConfig.SERVER.forceEnableDartShooters.get();
+        return CommonConfig.dartShootersEnabled();
     }
 
     public static class Serializer implements IConditionSerializer<DartShooterCondition> {

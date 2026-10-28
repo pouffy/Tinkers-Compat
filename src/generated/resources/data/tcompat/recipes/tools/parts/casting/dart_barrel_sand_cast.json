@@ -6,16 +6,7 @@
   "cast_consumed": true,
   "conditions": [
     {
-      "type": "forge:or",
-      "values": [
-        {
-          "type": "forge:mod_loaded",
-          "modid": "aether"
-        },
-        {
-          "type": "tcompat:force_enabled_dart_shooters"
-        }
-      ]
+      "type": "tcompat:dart_shooters"
     }
   ],
   "item_cost": 2,
