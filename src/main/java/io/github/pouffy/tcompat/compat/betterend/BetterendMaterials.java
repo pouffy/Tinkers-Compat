@@ -48,7 +48,7 @@ public class BetterendMaterials {
                             new LimbMaterialStats(1231, -0.2f, 0f, 0.05f),
                             new GripMaterialStats(0.2f, -0.1f, 1.1f)
                     ).armorShieldStats(
-                            PlatingMaterialStats.builder().durabilityFactor(33).armor(3, 6, 7, 3).toughness(1f).knockbackResistance(0.05f),
+                            PlatingMaterialStats.builder().durabilityFactor(33).armor(2, 4, 5, 2).toughness(1f).knockbackResistance(0.05f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
                             CompatToolStats.plainRing(1231, 1.2f)
@@ -70,7 +70,7 @@ public class BetterendMaterials {
                             new LimbMaterialStats(2197, 0f, -0.05f, 0.1f),
                             new GripMaterialStats(0f, 0.1f, 1.1f)
                     ).armorShieldStats(
-                            PlatingMaterialStats.builder().durabilityFactor(40).armor(4, 7, 9, 4).toughness(3.5f).knockbackResistance(0.2f),
+                            PlatingMaterialStats.builder().durabilityFactor(40).armor(3, 5, 6, 3).toughness(3.5f).knockbackResistance(0.2f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
                             CompatToolStats.plainRing(2197, 1.3f)

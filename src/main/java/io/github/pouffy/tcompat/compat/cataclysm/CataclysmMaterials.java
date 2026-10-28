@@ -30,7 +30,7 @@ public class CataclysmMaterials {
                             HandleMaterialStats.multipliers().durability(1.25f).build(),
                             StatlessMaterialStats.BINDING
                     ).armorStats(
-                            PlatingMaterialStats.builder().durabilityFactor(35).armor(6, 11, 7, 4).toughness(3.0F).knockbackResistance(0.2F),
+                            PlatingMaterialStats.builder().durabilityFactor(35).armor(4, 7, 9, 2).toughness(3.0F).knockbackResistance(0.2F),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
                             CompatToolStats.plainRing(750, 1.4f)

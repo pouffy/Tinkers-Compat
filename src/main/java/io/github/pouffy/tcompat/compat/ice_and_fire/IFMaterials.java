@@ -34,7 +34,7 @@ public class IFMaterials {
                     s.stat(
                             StatlessMaterialStats.FLETCHING
                     ).armorStats(
-                            PlatingMaterialStats.builder().durabilityFactor(30).armor(4, 8, 7, 4).toughness(2.5F), StatlessMaterialStats.MAILLE
+                            PlatingMaterialStats.builder().durabilityFactor(30).armor(4, 7, 8, 4).toughness(2.5F), StatlessMaterialStats.MAILLE
                     )
             )
             .renderInfo(r -> r.color(0x228eda).fallbacks("scales", "metal"))

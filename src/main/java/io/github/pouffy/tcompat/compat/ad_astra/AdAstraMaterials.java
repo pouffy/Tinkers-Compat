@@ -26,7 +26,7 @@ public class AdAstraMaterials {
                             new LimbMaterialStats(940, 0.15f, 0.09f, 0.03f),
                             new GripMaterialStats(-0.15f, 0.06f, 2.6f)
                     ).armorShieldStats(
-                            PlatingMaterialStats.builder().durabilityFactor(35).armor(4, 9, 7, 4).toughness(2f),
+                            PlatingMaterialStats.builder().durabilityFactor(35).armor(2, 5, 7, 2).toughness(2f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
                             CompatToolStats.plainRing(940, 1f)
@@ -52,7 +52,7 @@ public class AdAstraMaterials {
                             new LimbMaterialStats(1250, 0.1f, 0.13f, -0.05f),
                             new GripMaterialStats(0.05f, 0.35f, 3.8f)
                     ).armorShieldStats(
-                            PlatingMaterialStats.builder().durabilityFactor(37).armor(4, 9, 7, 4).toughness(3f).knockbackResistance(0.1f),
+                            PlatingMaterialStats.builder().durabilityFactor(37).armor(2, 5, 7, 2).toughness(3f).knockbackResistance(0.1f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
                             CompatToolStats.plainRing(1250, 1f)
@@ -77,7 +77,7 @@ public class AdAstraMaterials {
                             new LimbMaterialStats(1840, 0.1f, 0.2f, 0.05f),
                             new GripMaterialStats(0f, -0.1f, 4.5f)
                     ).armorShieldStats(
-                            PlatingMaterialStats.builder().durabilityFactor(36).armor(4, 9, 7, 4).toughness(2.5f).knockbackResistance(0.1f),
+                            PlatingMaterialStats.builder().durabilityFactor(36).armor(2, 5, 7, 2).toughness(2.5f).knockbackResistance(0.1f),
                             StatlessMaterialStats.MAILLE
                     ).statOptional(
                             CompatToolStats.plainRing(1840, 1.1f)
