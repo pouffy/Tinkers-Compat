@@ -4,6 +4,7 @@ import io.github.pouffy.tcompat.common.TCSounds;
 import io.github.pouffy.tcompat.common.network.TCompatNetworking;
 import io.github.pouffy.tcompat.common.network.VoidTouchedSyncPacket;
 import io.github.pouffy.tcompat.common.network.base.BasePacket;
+import io.github.pouffy.tcompat.config.TCompatConfig;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -58,7 +59,11 @@ public class VoidTouchedCapability implements VoidTouched {
 
     @Override
     public void setAmplifier(int amplifier) {
-        this.amplifier = amplifier;
+        int newAmp = amplifier;
+        if (TCompatConfig.SERVER.voidTouchedAmpCap.get() != 0) {
+            newAmp = Math.min(newAmp, TCompatConfig.SERVER.voidTouchedAmpCap.get());
+        }
+        this.amplifier = newAmp;
     }
 
     @Override
