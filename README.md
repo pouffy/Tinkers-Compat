@@ -276,6 +276,12 @@ I decided to carry it over to Tinkers' Compatibility when I added Ice & Fire sup
 - Some materials support stats from Tinkers' Jewelry.
 - Added "Armor Toughness" jewelry trait for Soulstained Steel.
 </details>
+<details>
+    <summary><a href="https://modrinth.com/mod/estrogen">Estrogen</a></summary>
+
+- `:3` slotless modifier.
+- For more integration with Estrogen, check out [Conical's Tinkering Grab Pack](https://www.curseforge.com/minecraft/mc-mods/conicals-tinkering-grab-pack)
+</details>
 
 ## Planned
 

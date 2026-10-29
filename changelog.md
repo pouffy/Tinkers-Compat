@@ -4,6 +4,7 @@
 
 ## Additions:
 - Added `betternether` Gloomwood wood variants
+- Added `estrogen` ":3" slotless modifier.
 
 ## Changes:
 ### Materials:
