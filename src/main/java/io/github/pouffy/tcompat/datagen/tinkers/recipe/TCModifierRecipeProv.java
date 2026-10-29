@@ -76,6 +76,7 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
         String abilityFolder = "tools/modifiers/ability/";
         String abilitySalvage = "tools/modifiers/salvage/ability/";
         String slotlessFolder = "tools/modifiers/slotless/";
+        String slotlessSalvage = "tools/modifiers/salvage/slotless/";
         Consumer<FinishedRecipe> aetherConsumer = withCondition(consumer, modLoaded("aether"));
         Consumer<FinishedRecipe> deepAetherConsumer = withCondition(consumer, modLoaded("deep_aether"));
         Consumer<FinishedRecipe> speciesConsumer = withCondition(consumer, modLoaded("species"));
@@ -450,6 +451,11 @@ public class TCModifierRecipeProv extends TCBaseRecipeProvider {
                     .save(iceandfireConsumer, location(recycleFolder + colour + "_dragon_scale_boots"));
         });
 
+        ModifierRecipeBuilder.modifier(TCModifiers.colonThree)
+                .setTools(TinkerTags.Items.MODIFIABLE)
+                .addInput(ItemNameIngredient.from(TCompat.getResource("estrogen:colon_three")))
+                .setMaxLevel(1).checkTraitLevel()
+                .save(withCondition(consumer, and(modLoaded("estrogen"))), prefix(TCModifiers.colonThree, slotlessFolder));
     }
 
     private void addTextureRecipes(Consumer<FinishedRecipe> consumer) {

@@ -20,10 +20,13 @@
     "malum.VoidConduitBlockEntityMixin"
   ],
   "client": [
+    "client.ClientTextTooltipMixin",
     "client.DarknessFogFunctionMixin",
+    "client.FontMixin",
     "client.LevelRendererMixin",
     "client.LightTextureMixin",
-    "client.LocalPlayerMixin"
+    "client.LocalPlayerMixin",
+    "client.MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -171,6 +171,8 @@ public class MantleColorsProvider extends GenericDataProvider {
         addColor(CreateInit.clockwork.getId(),              0xb57849);
         addColor(CreateInit.wrenching.getId(),              0x853836);
         addColor(TCModifiers.goggles,                       0x6093a0);
+        //CTGP
+        addColor(TCModifiers.colonThree,                    0xacbdcd);
     }
 
     public void addColor(MaterialCreator material) {

@@ -33,5 +33,7 @@
   "tcompat:sonorous":   ["deeperdarker:item/soul_crystal", "tconstruct:gui/modifiers/plus"],
 
   "tcompat:wrenching":   "tcompat:gui/modifiers/wrenching",
-  "tcompat:goggles":   ["create:item/goggles", "tconstruct:gui/modifiers/plus"]
+  "tcompat:goggles":   ["create:item/goggles", "tconstruct:gui/modifiers/plus"],
+
+  "tcompat:colon_three":   "estrogen:item/colon_three"
 }

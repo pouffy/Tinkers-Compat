@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "estrogen"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "item": "estrogen:colon_three"
+    }
+  ],
+  "level": 1,
+  "result": "tcompat:colon_three",
+  "tools": {
+    "tag": "tconstruct:modifiable"
+  }
+}

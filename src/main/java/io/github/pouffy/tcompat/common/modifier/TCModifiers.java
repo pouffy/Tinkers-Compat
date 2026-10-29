@@ -51,6 +51,9 @@ public class TCModifiers {
     public static final ModifierId runeOfSacrificialEmpowerment = id("rune_of_sacrificial_empowerment");
     public static final ModifierId runeOfTwinnedDuration = id("rune_of_twinned_duration");
 
+    //Conical's Tinkering Grab Pack
+    public static final ModifierId colonThree = id("colon_three");
+
     //Deeper and Darker
     public static final ModifierId warden = id("warden");
     public static final ModifierId brightness = id("brightness");

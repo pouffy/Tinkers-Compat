@@ -299,6 +299,9 @@ public class TCModifierProv extends AbstractModifierProvider implements IConditi
 
         buildModifier(TCModifiers.goggles, modLoaded("create"))
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
+        buildModifier(TCModifiers.colonThree, and(modLoaded("estrogen")))
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override
