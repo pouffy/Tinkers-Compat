@@ -43,6 +43,8 @@ public class GlobalDefinitions {
         dartBarrelMaterials.add(MaterialIds.necroticBone);
         dartBarrelMaterials.add(MaterialIds.venombone);
 
+        lipGuardMaterials.add(MaterialIds.copper);
+
         //My variants
         MaterialCreator.woodMaterials.forEach((creator, wood) -> dartBarrelMaterials.add(creator.variantId()));
         MaterialCreator.rockMaterials.forEach((creator, wood) -> dartBarrelMaterials.add(creator.variantId()));
@@ -92,5 +94,7 @@ public class GlobalDefinitions {
         dartBarrelMaterials.add(MaterialIds.whitestoneAluminum);
         dartBarrelMaterials.add(MaterialIds.whitestoneTin);
         dartBarrelMaterials.add(MaterialIds.whitestoneZinc);
+
+        lipGuardMaterials.add(MaterialIds.oxidizedCopper);
     }
 }

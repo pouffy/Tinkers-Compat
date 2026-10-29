@@ -51,6 +51,7 @@ public class TCMaterialStatsProv extends AbstractMaterialStatsDataProvider {
         addOptionalStats(MaterialIds.blazingBone, new DartBarrelMaterialStats(530, -0.1f, 3f));
         addOptionalStats(MaterialIds.necroticBone, new DartBarrelMaterialStats(125, 0.1f, 2.25f));
         addOptionalStats(MaterialIds.venombone, new DartBarrelMaterialStats(175, -0.1f, 2.25f));
+        addOptionalStats(MaterialIds.copper, new DartBarrelMaterialStats(210, 0.0f, 0.5f));
 
         //Integration (might add more here?)
         //Use this as a template for any non-tinkers existing materials.
