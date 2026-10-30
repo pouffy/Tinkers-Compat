@@ -28,7 +28,7 @@ public class TCModifierTagProv extends AbstractModifierTagProvider {
                 .addOptional(MalumInit.erosion.getId(), MalumInit.auricFlame.getId(), MalumInit.mnemonic.getId(), DarkerInit.sonorous.getId());
         this.tag(GEMS).addOptional(TCModifiers.zanite, TCModifiers.skyjade, TCModifiers.spoiled, AetherReduxInit.ambrofusion.getId());
         this.tag(ARMOR_UPGRADES).addOptional(TCModifiers.integral, TCModifiers.ignitium);
-        this.tag(GENERAL_UPGRADES).addOptional(TCModifiers.zanite, TCModifiers.skyjade, TCModifiers.warden);
+        this.tag(GENERAL_UPGRADES).addOptional(TCModifiers.zanite, TCModifiers.skyjade, TCModifiers.warden, TCModifiers.colonThree);
         this.tag(DAMAGE_UPGRADES).addOptional(TCModifiers.dreadbane);
         this.tag(HARVEST_UPGRADES).addOptional(TCModifiers.spoiled);
         this.tag(INTERACTION_ABILITIES).addOptional(MalumInit.erosion.getId(), MalumInit.auricFlame.getId(), MalumInit.mnemonic.getId(), DarkerInit.sonorous.getId());

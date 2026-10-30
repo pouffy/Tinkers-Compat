@@ -11,6 +11,10 @@
     {
       "id": "tcompat:warden",
       "required": false
+    },
+    {
+      "id": "tcompat:colon_three",
+      "required": false
     }
   ]
 }
